@@ -1,0 +1,28 @@
+{
+  "enabledCssSnippets": [
+    "parallel-sections",
+    "MCL Multi Column",
+    "MCL Wide Views",
+    "MCL Gallery Cards",
+    "styles",
+    "custom-headings",
+    "dynamic-colors",
+    "obs-color",
+    "text-formatting",
+    "block-quote-theme",
+    "Easy multi-column notes",
+    "custome-text-colour",
+    "my-banners",
+    "grid-wrapper",
+    "dv-grid",
+    "master-home"
+  ],
+  "cssTheme": "Vanilla AMOLED",
+  "theme": "obsidian",
+  "baseFontSize": 15,
+  "monospaceFontFamily": "Consolas",
+  "textFontFamily": "Segoe UI",
+  "accentColor": "",
+  "nativeMenus": false,
+  "interfaceFontFamily": "Segoe UI"
+}

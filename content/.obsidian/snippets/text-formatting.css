@@ -1,0 +1,107 @@
+/* @settings
+
+name: Text Formatting Colors
+id: text-formatting-colors
+settings:
+    - 
+        id: heading-colors-title
+        title: Heading Colors
+        type: heading
+        level: 1
+        collapsed: false
+    - 
+        id: h1-color
+        title: H1 Color
+        type: variable-color
+        format: hex
+        default: '#000000'
+    - 
+        id: h2-color
+        title: H2 Color
+        type: variable-color
+        format: hex
+        default: '#1a1a1a'
+    - 
+        id: h3-color
+        title: H3 Color
+        type: variable-color
+        format: hex
+        default: '#333333'
+    - 
+        id: h4-color
+        title: H4 Color
+        type: variable-color
+        format: hex
+        default: '#4d4d4d'
+    - 
+        id: h5-color
+        title: H5 Color
+        type: variable-color
+        format: hex
+        default: '#666666'
+    - 
+        id: h6-color
+        title: H6 Color
+        type: variable-color
+        format: hex
+        default: '#808080'
+*/
+
+/* Light-mode defaults (original look preserved).
+   :where() keeps specificity at (0,1,0) so Style Settings
+   can still override these values. */
+body:where(.theme-light) {
+  --h1-color: #000000;
+  --h2-color: #1a1a1a;
+  --h3-color: #333333;
+  --h4-color: #4d4d4d;
+  --h5-color: #666666;
+  --h6-color: #808080;
+}
+
+/* Dark-mode readable defaults (mirrors Style Settings preferences). */
+body:where(.theme-dark) {
+  --h1-color: #FF5E5E;
+  --h2-color: #86D4FF;
+  --h3-color: #52AA61;
+  --h4-color: #F39BFF;
+  --h5-color: #FFA591;
+  --h6-color: #A890BE;
+}
+
+/* Heading Colors - Applies to edit (Live Preview) and reading modes */
+.cm-header-1,
+.markdown-preview-view h1,
+.markdown-reading-view h1 {
+  color: var(--h1-color) !important;
+}
+
+.cm-header-2,
+.markdown-preview-view h2,
+.markdown-reading-view h2 {
+  color: var(--h2-color) !important;
+}
+
+.cm-header-3,
+.markdown-preview-view h3,
+.markdown-reading-view h3 {
+  color: var(--h3-color) !important;
+}
+
+.cm-header-4,
+.markdown-preview-view h4,
+.markdown-reading-view h4 {
+  color: var(--h4-color) !important;
+}
+
+.cm-header-5,
+.markdown-preview-view h5,
+.markdown-reading-view h5 {
+  color: var(--h5-color) !important;
+}
+
+.cm-header-6,
+.markdown-preview-view h6,
+.markdown-reading-view h6 {
+  color: var(--h6-color) !important;
+}

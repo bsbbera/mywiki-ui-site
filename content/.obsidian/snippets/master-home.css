@@ -1,0 +1,456 @@
+/* ============================================================
+   Master Home — aesthetics + custom [!grid] flex layout
+   Scoped to .master-home cssclass.
+   ============================================================ */
+
+body .master-home {
+  --mh-amber:       #d4a574;
+  --mh-amber-soft:  #e0b88a;
+  --mh-amber-dim:   rgba(212, 165, 116, 0.20);
+  --mh-card:        #262630;
+  --mh-card-hover:  #2e2e3a;
+  --mh-card-deep:   #1c1c24;
+  --mh-text:        #e8e4dc;
+  --mh-mute:        #8a8a98;
+}
+
+/* ============================================================
+   1. GLOBAL — neutralize theme callout tinting inside master-home
+   ============================================================ */
+
+body .master-home .callout {
+  --callout-color: 212, 165, 116 !important;
+  border-left: none !important;
+  border-radius: 12px !important;
+}
+
+/* ============================================================
+   2. HERO — wordmark, tagline
+   ============================================================ */
+
+body .master-home h1:first-of-type,
+body .master-home h1.inline-title {
+  font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive !important;
+  font-size: 5rem !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  letter-spacing: 0.02em !important;
+  margin: 1.5rem 0 0.25rem 0 !important;
+  border: none !important;
+  color: var(--mh-text) !important;
+  background: none !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+}
+
+body .master-home > blockquote:first-of-type {
+  text-align: center !important;
+  font-style: italic !important;
+  color: var(--mh-amber) !important;
+  font-size: 1.1rem !important;
+  max-width: 720px !important;
+  margin: 0 auto 2rem auto !important;
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  padding: 0 !important;
+}
+body .master-home > blockquote:first-of-type p {
+  color: var(--mh-amber) !important;
+  margin: 0 !important;
+}
+
+/* ============================================================
+   3. SECTION HEADINGS (H2)
+   ============================================================ */
+
+body .master-home h2 {
+  text-align: center !important;
+  color: var(--mh-amber) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  font-size: 1.4rem !important;
+  border: none !important;
+  border-top: 1px solid var(--mh-amber-dim) !important;
+  border-bottom: 1px solid var(--mh-amber-dim) !important;
+  padding: 0.55rem 0 !important;
+  margin: 2.8rem 0 1.5rem 0 !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--mh-amber) !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ============================================================
+   4. SEARCH PILL (standalone callout)
+   ============================================================ */
+
+body .master-home div[data-callout-metadata*="search-pill"].callout {
+  background: var(--mh-amber) !important;
+  border: none !important;
+  border-radius: 999px !important;
+  max-width: 380px !important;
+  margin: 0.5rem auto 3rem auto !important;
+  padding: 0.55rem 1.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 6px 24px rgba(212, 165, 116, 0.22) !important;
+}
+body .master-home div[data-callout-metadata*="search-pill"].callout .callout-title {
+  background: transparent !important;
+  color: var(--mh-card-deep) !important;
+  font-weight: 600 !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  font-size: 0.95rem !important;
+}
+body .master-home div[data-callout-metadata*="search-pill"].callout .callout-icon,
+body .master-home div[data-callout-metadata*="search-pill"].callout .callout-fold {
+  display: none !important;
+}
+body .master-home div[data-callout-metadata*="search-pill"].callout code {
+  background: rgba(28, 28, 36, 0.20) !important;
+  color: var(--mh-card-deep) !important;
+  font-weight: 700 !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* ============================================================
+   5. GRID LAYOUT ENGINE — [!grid] callout wrapper
+   ============================================================ */
+
+body .master-home div[data-callout="grid"].callout {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.7em;
+  background: unset !important;
+  border: unset !important;
+  padding: unset !important;
+  margin: unset !important;
+}
+body .master-home div[data-callout="grid"].callout > .callout-title {
+  display: none !important;
+}
+body .master-home div[data-callout="grid"].callout > .callout-content {
+  display: contents !important;
+}
+/* Collapse stray paragraph separators to zero */
+body .master-home div[data-callout="grid"].callout > .callout-content > p {
+  flex: 0 0 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+/* ============================================================
+   6. PILLS ROW — 6-up
+   ============================================================ */
+
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout {
+  flex: 1 1 calc(16.666% - 0.7em) !important;
+  min-width: 130px !important;
+  background: var(--mh-card) !important;
+  border: 1px solid var(--mh-amber-dim) !important;
+  padding: 0.7rem 0.9rem !important;
+  min-height: 70px !important;
+  transition: border-color 0.18s, transform 0.18s, background 0.18s !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout:hover {
+  border-color: var(--mh-amber) !important;
+  background: var(--mh-card-hover) !important;
+  transform: translateY(-2px) !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-title {
+  background: transparent !important;
+  color: var(--mh-amber) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  padding: 0.1rem 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-title a.internal-link {
+  color: var(--mh-amber) !important;
+  text-decoration: none !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-icon,
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-fold {
+  display: none !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-content {
+  padding: 0.25rem 0 0 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout .callout-content p {
+  color: var(--mh-mute) !important;
+  font-size: 0.78rem !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+/* Reserved pills */
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > div[data-callout-metadata*="pill-reserved"].callout {
+  background: var(--mh-card-deep) !important;
+  opacity: 0.55 !important;
+  filter: grayscale(0.5) !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > div[data-callout-metadata*="pill-reserved"].callout .callout-title {
+  color: var(--mh-mute) !important;
+}
+
+/* ============================================================
+   7. FEATURED ROW — 3 cards
+   ============================================================ */
+
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout {
+  flex: 1 1 calc(33.333% - 0.7em) !important;
+  min-width: 240px !important;
+  background: var(--mh-card) !important;
+  border: 1px solid var(--mh-amber-dim) !important;
+  padding: 0.95rem !important;
+  min-height: 240px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+/* Tag chip */
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout > .callout-title {
+  background: var(--mh-amber) !important;
+  color: var(--mh-card-deep) !important;
+  padding: 0.22rem 0.6rem !important;
+  font-size: 0.65rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  font-weight: 700 !important;
+  width: fit-content !important;
+  border-radius: 4px !important;
+  margin-bottom: 0.8rem !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout > .callout-title .callout-icon,
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout > .callout-title .callout-fold {
+  display: none !important;
+}
+/* Card content */
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout img {
+  width: 100% !important;
+  height: 130px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  margin: 0.2rem 0 0.6rem 0 !important;
+  display: block !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout h3 {
+  color: var(--mh-amber-soft) !important;
+  margin: 0.2rem 0 !important;
+  font-size: 1rem !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout a.internal-link {
+  color: var(--mh-amber-soft) !important;
+  text-decoration: none !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout p {
+  color: var(--mh-mute) !important;
+  font-size: 0.85rem !important;
+  margin: 0.25rem 0 !important;
+}
+/* Quote card variant */
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > div[data-callout-metadata*="quote-card"].callout {
+  background: linear-gradient(135deg, #322840 0%, #241c2c 100%) !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > div[data-callout-metadata*="quote-card"].callout::after {
+  content: '\201C';
+  position: absolute;
+  top: -1.2rem;
+  right: 1rem;
+  font-size: 8rem;
+  color: var(--mh-amber);
+  opacity: 0.25;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1;
+  pointer-events: none;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > div[data-callout-metadata*="quote-card"].callout em,
+body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > div[data-callout-metadata*="quote-card"].callout p {
+  color: var(--mh-text) !important;
+  font-style: italic !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+/* ============================================================
+   8. STATUS ROW — Stats + Random (50/50)
+   ============================================================ */
+
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout {
+  flex: 1 1 calc(50% - 0.7em) !important;
+  min-width: 240px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.4rem 0.5rem !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout > .callout-title {
+  display: none !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout .callout-content {
+  padding: 0 !important;
+  color: var(--mh-mute) !important;
+  font-size: 0.9rem !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout p {
+  margin: 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout strong {
+  color: var(--mh-amber) !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout:first-of-type {
+  text-align: left !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout:last-of-type {
+  text-align: right !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout a.internal-link {
+  color: var(--mh-amber-soft) !important;
+}
+
+/* ============================================================
+   9. A–Z STRIP (standalone)
+   ============================================================ */
+
+body .master-home div[data-callout-metadata*="az-strip"].callout {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--mh-amber-dim) !important;
+  border-bottom: 1px solid var(--mh-amber-dim) !important;
+  border-radius: 0 !important;
+  margin: 1rem 0 1.5rem 0 !important;
+  padding: 0.55rem 0 !important;
+}
+body .master-home div[data-callout-metadata*="az-strip"].callout > .callout-title {
+  text-align: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.45em !important;
+  color: var(--mh-amber) !important;
+  font-size: 0.85rem !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  background: transparent !important;
+  padding: 0 !important;
+  user-select: none !important;
+}
+body .master-home div[data-callout-metadata*="az-strip"].callout .callout-icon,
+body .master-home div[data-callout-metadata*="az-strip"].callout .callout-fold {
+  display: none !important;
+}
+
+/* ============================================================
+   10. DISCOVER ROW — 2-up topic groups
+   ============================================================ */
+
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout {
+  flex: 1 1 calc(50% - 0.7em) !important;
+  min-width: 340px !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--mh-amber-dim) !important;
+  border-radius: 0 !important;
+  padding: 0.7rem 0.5rem 0.6rem 0.5rem !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout > .callout-title {
+  background: transparent !important;
+  color: var(--mh-amber) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  justify-content: center !important;
+  padding: 0.1rem 0 0.5rem 0 !important;
+  text-align: center !important;
+  letter-spacing: 0.02em !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout .callout-icon,
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout .callout-fold {
+  display: none !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout .callout-content {
+  text-align: justify !important;
+  line-height: 1.7 !important;
+  font-size: 0.85rem !important;
+  color: var(--mh-text) !important;
+  padding: 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout .callout-content p {
+  margin: 0 !important;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout a.internal-link {
+  color: var(--mh-text) !important;
+  text-decoration: none !important;
+  border-bottom: 1px dotted transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout a.internal-link:hover {
+  color: var(--mh-amber-soft) !important;
+  border-bottom-color: var(--mh-amber-soft);
+}
+
+/* ============================================================
+   11. FOOTER (standalone)
+   ============================================================ */
+
+body .master-home div[data-callout-metadata*="footer"].callout {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--mh-amber-dim) !important;
+  border-radius: 0 !important;
+  margin: 3rem 0 1rem 0 !important;
+  padding: 1rem 0 !important;
+  text-align: center !important;
+}
+body .master-home div[data-callout-metadata*="footer"].callout > .callout-title {
+  text-align: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  color: var(--mh-mute) !important;
+  font-size: 0.85rem !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  padding: 0 !important;
+}
+body .master-home div[data-callout-metadata*="footer"].callout .callout-icon,
+body .master-home div[data-callout-metadata*="footer"].callout .callout-fold {
+  display: none !important;
+}
+body .master-home div[data-callout-metadata*="footer"].callout a.internal-link {
+  color: var(--mh-amber-soft) !important;
+}
+
+/* ============================================================
+   12. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout {
+    flex: 1 1 calc(33.333% - 0.7em) !important;
+  }
+  body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout {
+    flex: 1 1 calc(50% - 0.7em) !important;
+  }
+}
+@media (max-width: 560px) {
+  body .master-home h1:first-of-type {
+    font-size: 3.2rem !important;
+  }
+  body .master-home div[data-callout="grid"][data-callout-metadata*="pills"].callout > .callout-content > .callout,
+  body .master-home div[data-callout="grid"][data-callout-metadata*="featured"].callout > .callout-content > .callout,
+  body .master-home div[data-callout="grid"][data-callout-metadata*="discover"].callout > .callout-content > .callout {
+    flex: 1 1 100% !important;
+  }
+  body .master-home div[data-callout="grid"][data-callout-metadata*="status"].callout > .callout-content > .callout {
+    flex: 1 1 100% !important;
+    text-align: left !important;
+  }
+}
+
+/* ============================================================
+   13. CLEANUP
+   ============================================================ */
+
+body .master-home hr:first-of-type {
+  display: none !important;
+}

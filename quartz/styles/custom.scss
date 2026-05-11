@@ -1,0 +1,92 @@
+@use "./base.scss";
+
+/* ============================================
+   Tolkien Gateway aesthetic for Quartz
+   ============================================ */
+
+:root {
+  --tg-surface-0: #1a1a1f;
+  --tg-surface-1: #1f1f24;
+  --tg-surface-2: #23232e;
+  --tg-surface-3: #282833;
+  --tg-surface-4: #2c2c3c;
+  --tg-text: #e4ddcf;
+  --tg-text-subtle: #e3d2b0;
+  --tg-text-emphasis: hsl(41.6, 80%, 95%);
+  --tg-gold: #f1c45e;
+  --tg-gold-hover: #ffd16b;
+  --tg-link: hsl(41.6, 84%, 65.7%);
+  --tg-radius-sm: 4px;
+  --tg-radius-md: 8px;
+  --tg-radius-lg: 12px;
+  --tg-t-fast: 100ms;
+  --tg-t-med: 250ms;
+  --tg-shadow-card:
+    0.3px 0.5px 0.7px hsla(41.6, 50%, 3%, 0.3),
+    0.8px 1.6px 2px -0.8px hsla(41.6, 50%, 3%, 0.3),
+    2.1px 4.1px 5.2px -1.7px hsla(41.6, 50%, 3%, 0.3),
+    5px 10px 12.6px -2.5px hsla(41.6, 50%, 3%, 0.3);
+}
+
+/* dark theme (Quartz toggles a [saved-theme="dark"] attr on <html>) */
+:root[saved-theme="dark"] {
+  --light: var(--tg-surface-0);
+  --lightgray: var(--tg-surface-2);
+  --dark: var(--tg-text);
+  --darkgray: var(--tg-text);
+  --secondary: var(--tg-gold);
+  --tertiary: var(--tg-gold-hover);
+}
+
+body {
+  background: var(--light);
+}
+
+a:not(.internal):not(.external) {
+  color: var(--tg-link);
+  transition: color var(--tg-t-fast);
+}
+
+a:hover {
+  color: var(--tg-gold-hover) !important;
+}
+
+.popover .popover-inner {
+  background: var(--tg-surface-2) !important;
+  border-radius: var(--tg-radius-lg) !important;
+  box-shadow: var(--tg-shadow-card);
+  border: 1px solid var(--tg-surface-3);
+}
+
+.callout {
+  background: var(--tg-surface-2);
+  border-radius: var(--tg-radius-md);
+  border-left: 4px solid var(--tg-gold);
+}
+
+a.tag-link,
+.tags > li > a {
+  background: var(--tg-surface-3);
+  color: var(--tg-gold);
+  border: 1px solid var(--tg-gold);
+  border-radius: 9999px;
+  padding: 0.15rem 0.6rem;
+  transition: all var(--tg-t-fast);
+}
+a.tag-link:hover,
+.tags > li > a:hover {
+  background: var(--tg-gold);
+  color: var(--tg-surface-0) !important;
+}
+
+.graph > .graph-outer {
+  background: var(--tg-surface-2);
+  border-radius: var(--tg-radius-lg);
+  box-shadow: var(--tg-shadow-card);
+}
+
+.toc-content {
+  background: var(--tg-surface-1);
+  border-radius: var(--tg-radius-md);
+  padding: 0.5rem 1rem;
+}

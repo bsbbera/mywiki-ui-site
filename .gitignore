@@ -1,0 +1,19 @@
+# Quartz
+node_modules/
+public/
+.quartz-cache/
+*.log
+.DS_Store
+
+# Obsidian (keep config but skip workspace state & plugin data that may hold tokens)
+**/.obsidian/workspace*
+**/.obsidian/cache
+**/.obsidian/.trash/
+**/.obsidian/plugins/**/data.json
+**/.obsidian/plugins/obsidian-excalidraw-plugin/
+**/.obsidian/plugins/obsidian-git/data.json
+
+# Vercel
+.vercel
+.env
+.env.local
