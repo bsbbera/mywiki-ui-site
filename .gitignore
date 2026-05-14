@@ -14,10 +14,8 @@ public/
 **/.obsidian/plugins/obsidian-git/data.json
 
 # Content is auto-copied from MyWiki vault at build time
-content/wiki/
-content/databricks/
-content/**/*.md
-!content/index.md
+# NOTE: We DO commit content/ to git so Vercel has access to it.
+# Run `npm run prebuild` locally before committing to sync vault changes.
 
 # Vercel
 .vercel

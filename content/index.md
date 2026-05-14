@@ -9,13 +9,13 @@ Welcome to **MyWiki** — a personal knowledge garden built with [Quartz](https:
 
 ## Browse
 
-- [[wiki/Home|Wiki Home]] — curated knowledge by topic
+- [[wiki/Master Home|Wiki Home]] — curated knowledge by topic
 - [[databricks/databricks|Databricks]] — cloud data & AI platform notes
 - **Recent changes** — see the sidebar
 - **Tags** — explore by topic
 
 ## About
 
-This site is a public reflection of notes I keep in [Obsidian](https://obsidian.md). Pages with `publish: true` in their frontmatter are mirrored here automatically on every push.
+This site is a public reflection of notes I keep in [Obsidian](https://obsidian.md). Updated automatically on every push.
 
 > Built with care. Updated whenever a new idea arrives.

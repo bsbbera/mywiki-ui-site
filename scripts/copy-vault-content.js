@@ -69,9 +69,12 @@ function main() {
   log(`  DEBUG: CONTENT_PATH = ${CONTENT_PATH}\n`);
 
   try {
-    // Verify vault exists
+    // Verify vault exists - gracefully skip on Vercel where vault isn't present
     if (!fs.existsSync(VAULT_PATH)) {
-      throw new Error(`Vault not found at: ${VAULT_PATH}`);
+      console.log(`  ℹ️  Vault not found at: ${VAULT_PATH}`);
+      console.log(`  ℹ️  Skipping sync - using committed content/ folder`);
+      console.log(`  ℹ️  (This is normal on Vercel/CI builds)\n`);
+      return;
     }
 
     // Ensure content directory exists
