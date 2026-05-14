@@ -1,4 +1,4 @@
-﻿---
+---
 title: Choosing Your Optimal Messaging Service
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A short decision guide for choosing **messaging services** across the major clouds (source: Guides/Choosing your optimal messaging service.md).

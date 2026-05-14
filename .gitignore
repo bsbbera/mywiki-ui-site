@@ -13,6 +13,12 @@ public/
 **/.obsidian/plugins/obsidian-excalidraw-plugin/
 **/.obsidian/plugins/obsidian-git/data.json
 
+# Content is auto-copied from MyWiki vault at build time
+content/wiki/
+content/databricks/
+content/**/*.md
+!content/index.md
+
 # Vercel
 .vercel
 .env

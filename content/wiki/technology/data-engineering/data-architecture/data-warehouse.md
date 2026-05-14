@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Warehouse (concept)
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **data warehouse** is a central repository for data used in reporting and analytics. Data flows in from [[../data-processing/online-transaction-processing|OLTP]] systems, relational databases, and [[data-lake|other sources]] on a regular cadence. Analysts, engineers, and scientists query it through BI tools, SQL clients, and analytics applications. Because the primary use case is analytics, warehouses use **[[../data-processing/online-analytical-processing|OLAP]]**-optimized technology (often columnar storage) (source: Concepts/Data Architecture/Data Warehouse.md).

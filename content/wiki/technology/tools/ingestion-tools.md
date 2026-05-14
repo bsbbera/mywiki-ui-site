@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Ingestion Tools
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Catalog of data ingestion / replication tools (source: Tools/Data Ingestion/*.md).

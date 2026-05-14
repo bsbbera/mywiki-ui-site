@@ -1,4 +1,4 @@
-﻿---
+---
 title: Database Normalization
 Created:
   - 2026-04-27
@@ -19,8 +19,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Database normalization** is the process of organizing a relational schema to **eliminate data redundancy** and **prevent insertion / update / deletion anomalies**. It is one of the foundational ideas of relational database design, introduced by **E. F. Codd** in 1970–72 (source: Introduction to Database Normalization.md).
@@ -171,11 +171,11 @@ Rare in practice; relevant for relations modeling complex many-to-many-to-many r
 >
 >
 >> [!card] Modeling
->> [[../data-engineering/concepts/data-modeling/normalization|Normalization (DE applied)]], [[../data-engineering/concepts/data-modeling/denormalization|Denormalization]], [[../data-engineering/concepts/data-modeling/relational-modeling|Relational Modeling]], [[../data-engineering/concepts/data-modeling/dimensional-modeling|Dimensional Modeling]]
+>> [[../data-engineering/data-modeling/normalization|Normalization (DE applied)]], [[../data-engineering/data-modeling/denormalization|Denormalization]], [[../data-engineering/data-modeling/relational-modeling|Relational Modeling]], [[../data-engineering/data-modeling/dimensional-modeling|Dimensional Modeling]]
 >
 >
 >> [!card] Workloads
->> [[../data-engineering/concepts/data-processing/online-transaction-processing|OLTP]], [[../data-engineering/concepts/data-processing/online-analytical-processing|OLAP]]
+>> [[../data-engineering/data-processing/online-transaction-processing|OLTP]], [[../data-engineering/data-processing/online-analytical-processing|OLAP]]
 >
 >
 >> [!card] People

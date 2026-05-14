@@ -1,4 +1,4 @@
-﻿---
+---
 title: Ralph Kimball
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - data_warehousing
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 American author and one of the original architects of **data warehousing**. Best known for **dimensional modeling** + the **bus architecture** for data warehouses, often called the **Kimball methodology**. Founded the Kimball Group; long-running rival approach to [[bill-inmon|Bill Inmon]]'s top-down EDW.

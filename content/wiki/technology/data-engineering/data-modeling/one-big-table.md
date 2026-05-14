@@ -1,4 +1,4 @@
-﻿---
+---
 title: One Big Table
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - OLAP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **One Big Table (OBT)** — sometimes called **wide tables** — is the practice of **joining all data needed for analytics** into a single very wide [[denormalization|denormalized]] table. OBT is a popular approach at larger scales and takes full advantage of [[../data-storage/column-oriented-database|columnar databases]]. It is often combined with or built on top of other techniques like [[dimensional-modeling|dimensional modeling]] or [[data-vault-modeling|Data Vault]] (source: Concepts/Data Modeling/One Big Table.md).

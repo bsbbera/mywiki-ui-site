@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Storage
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Storage (GCS) is GCP's **object storage** service â€” durable, scalable, region-independent, and accessed via a single REST API. It is the standard place to put unstructured data: images, video, backups, logs, datasets for analytics or ML (source: Cloud Storage in GCP.md).

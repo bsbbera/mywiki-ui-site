@@ -1,4 +1,4 @@
-﻿---
+---
 title: Google Cloud Platform
 Created:
   - 2026-04-30
@@ -14,8 +14,8 @@ banner: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&f
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # ☁️ Google Cloud Platform
 
 > Compute, storage, databases, and the BigQuery / Dataflow analytics ecosystem used to build modern data platforms on **GCP**.

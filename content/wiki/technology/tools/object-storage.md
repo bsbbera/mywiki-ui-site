@@ -1,4 +1,4 @@
-﻿---
+---
 title: Object Storage
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Object storage** (a.k.a. blob storage) is **massive, cheap, durable storage** for unstructured/structured files. The foundation of every modern data lake (source: Tools/Data Stores/*.md).

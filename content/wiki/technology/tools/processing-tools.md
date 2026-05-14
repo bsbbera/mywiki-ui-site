@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Processing Tools
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Catalog of large-scale data processing engines and frameworks (source: Tools/Data Processing/*.md).

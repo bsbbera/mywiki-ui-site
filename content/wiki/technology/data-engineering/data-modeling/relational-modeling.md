@@ -1,4 +1,4 @@
-﻿---
+---
 title: Relational Modeling
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - OLTP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Relational modeling** revolves around using **tables, columns, and rows** to represent data. Each table denotes entities or subjects; every row signifies an individual record. Tables are connected via **unique identifiers** (primary keys) referenced by **foreign keys** (source: Concepts/Data Modeling/Relational Modeling.md).

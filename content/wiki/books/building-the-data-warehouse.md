@@ -1,4 +1,4 @@
-﻿---
+---
 title: Building the Data Warehouse
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - data_warehousing
 banner: "https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg"
 dg-publish: true
-publish: true
 ---
+
 ---
 
 ![Building the Data Warehouse cover](https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg)

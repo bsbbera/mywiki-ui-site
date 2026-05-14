@@ -1,4 +1,4 @@
-﻿---
+---
 title: Kappa Architecture
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Streaming
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Kappa Architecture** is a big-data processing pattern that **treats all data as a stream**. There is **no batch layer** — only a stream-processing speed layer. Reprocessing is achieved by **replaying** the event log, not by running a separate batch job (source: Concepts/Data Architecture/Kappa Architecture.md).

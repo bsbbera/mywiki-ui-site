@@ -1,4 +1,4 @@
-﻿---
+---
 title: Normalization (Data Modeling)
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - OLTP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Normalization** is the process of organizing data in a database to **reduce redundancy** and **improve data integrity**, making the database design simpler, faster, and more accurate. Since inserts/updates/deletes occur rapidly in [[../data-processing/online-transaction-processing|OLTP]] systems, normalization is particularly important for those workloads (source: Concepts/Data Modeling/Normalization.md).

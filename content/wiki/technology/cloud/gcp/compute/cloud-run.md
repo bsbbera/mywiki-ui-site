@@ -13,8 +13,8 @@ tags:
   - Containers
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Run is a fully managed serverless platform for running **stateless containers**. You give it a container image; Google handles HTTPS termination, autoscaling (including scale-to-zero), revision rollout, and traffic splitting (source: Google Cloud Platform - Compute Services.md, source: Google Cloud Run - Working with Python.md).

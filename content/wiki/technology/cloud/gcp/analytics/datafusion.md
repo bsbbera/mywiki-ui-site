@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Data Fusion
 Created:
   - 2026-04-27
@@ -15,8 +15,8 @@ tags:
   - LowCode
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Data Fusion is a **fully managed, low-code data integration service** for building and managing ETL/ELT pipelines through a **drag-and-drop graphical interface** (source: Datafusion in Google Cloud Platform (GCP).md).
@@ -153,11 +153,11 @@ This is invisible to the user but explains pricing (you pay for both Data Fusion
 >
 >
 >> [!card] Data Ingestion
->> [[../../data-engineering/concepts/data-ingestion/data-ingestion|Data Ingestion]]
+>> [[../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
 >
 >
 >> [!card] Tools
->> [[../../data-engineering/tools/ingestion-tools|Ingestion Tools]]
+>> [[../../tools/ingestion-tools|Ingestion Tools]]
 >
 >
 >> [!card] Related products

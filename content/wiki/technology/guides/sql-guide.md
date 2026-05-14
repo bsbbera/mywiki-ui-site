@@ -1,4 +1,4 @@
-﻿---
+---
 title: SQL Guide
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A general SQL reference for data engineers — not specific to any variant, focused on the most-used features in DE work (source: Guides/SQL Guide.md).

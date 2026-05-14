@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Catalog
 Created:
   - 2026-04-27
@@ -15,8 +15,8 @@ tags:
   - Governance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Data Catalog is a **fully managed, scalable data-discovery and metadata-management service**. It provides a **centralized metadata repository** + **powerful search** that lets users find datasets across services like [[bigquery|BigQuery]] and [[pubsub|Pub/Sub]], understand their structure, and access them securely (source: Google Cloud Platform - A High level Overview of Data Catalog Service.md).
@@ -160,7 +160,7 @@ Enter keyword / dataset name / table name. Apply faceted filters:
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/concepts/data-management/data-catalog|Data Catalog (concept)]], [[../../data-engineering/concepts/data-management/data-governance|Data Governance]], [[../../data-engineering/concepts/data-management/data-management|Data Management]]
+>> [[../../data-engineering/data-management/data-catalog|Data Catalog (concept)]], [[../../data-engineering/data-management/data-governance|Data Governance]], [[../../data-engineering/data-management/data-management|Data Management]]
 >
 >
 >> [!card] Guides

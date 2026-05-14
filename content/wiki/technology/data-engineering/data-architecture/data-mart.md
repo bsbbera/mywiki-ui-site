@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Mart
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **data mart** is a **subject-specific database** that acts as a partitioned segment of an enterprise data warehouse. Each mart aligns with a particular business unit — separate marts exist for **finance, marketing, supply chain, sales**, etc. (source: Concepts/Data Architecture/Data Mart.md).

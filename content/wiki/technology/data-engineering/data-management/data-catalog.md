@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Catalog (concept)
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Governance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **data catalog** is a collection of all an organization's data assets, using **metadata + data management** to help users **find data for their use case**. It covers the **discoverability** function of an enterprise data platform and often builds **lineage** of how data flows from source to consumer (source: Concepts/Data Management/Data Catalog.md).

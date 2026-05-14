@@ -1,4 +1,4 @@
-﻿---
+---
 title: Non-relational Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **non-relational (NoSQL) database** does **not** use a tabular schema of rows and columns. Instead, it uses a **storage model optimized for the specific type of data** being stored — key/value pairs, JSON documents, graphs of nodes/edges, etc. (source: Concepts/Data Storage/Non-relational Database.md).

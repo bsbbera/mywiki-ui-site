@@ -1,4 +1,4 @@
-﻿---
+---
 title: Publisher-Subscriber Pattern
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Messaging
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Publisher-Subscriber (Pub/Sub) Pattern** is an **asynchronous messaging pattern** that decouples sending events from one or more subscribers/consumers of those events (source: Concepts/Software Engineering/Publisher-Subscriber Pattern.md).

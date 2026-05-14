@@ -1,4 +1,4 @@
-﻿---
+---
 title: Activity Schema
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Activity Schema** — created by **Ahmed Elsamadisi** — is a data-modeling standard designed to make modeling and analysis **simpler, faster, and more reliable** by representing all data as a **single time-series table** with one universal query pattern (source: Concepts/Data Modeling/Activity Schema.md).

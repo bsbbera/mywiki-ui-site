@@ -15,8 +15,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Bigtable is GCP's **wide-column, massively scalable NoSQL database**, designed for terabytes-to-petabytes of structured data with **low-latency, high-throughput key/value access** (source: Introduction to Google Cloud Bigtable.md).

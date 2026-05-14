@@ -1,4 +1,4 @@
-﻿---
+---
 title: Zhamak Dehghani
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - data_architecture
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Iranian-Australian software architect, formerly Director of Emerging Technologies at **ThoughtWorks**. Coined and articulated **Data Mesh** in 2019 — a sociotechnical paradigm for decentralized, domain-oriented data ownership. Founder of **Nextdata**.

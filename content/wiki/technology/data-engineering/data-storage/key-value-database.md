@@ -1,4 +1,4 @@
-﻿---
+---
 title: Key-Value Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **key-value (KV) database** is a type of [[non-relational-database|NoSQL]] database that stores data as a **table where each unique key maps to a value** (source: Concepts/Data Storage/Key-Value Database.md). The simplest possible data model.

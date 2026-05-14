@@ -1,4 +1,4 @@
-﻿---
+---
 title: Graph Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Graph
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **graph database** is a type of [[non-relational-database|NoSQL]] database that uses **nodes, edges, and properties** to store data about **entities and the relationships between them**. The main purpose: efficiently **traverse** the network of nodes/edges and **analyze relationships** (source: Concepts/Data Storage/Graph Database.md).

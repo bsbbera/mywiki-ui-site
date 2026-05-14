@@ -1,4 +1,4 @@
-﻿---
+---
 title: Pub/Sub
 Created:
   - 2026-04-27
@@ -16,8 +16,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Pub/Sub is a **fully managed, asynchronous messaging service** based on the **publish-subscribe pattern**. It enables **decoupled, scalable, event-driven communication** between independent services and is the **messaging spine** of GCP analytics pipelines (source: How To Create a PubSub Topic on GCP.md).
@@ -187,15 +187,15 @@ For predictable, **partition-based** workloads at lower cost — closer to Apach
 >
 >
 >> [!card] Software Engineering
->> [[../../data-engineering/concepts/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../../data-engineering/concepts/software-engineering/fan-out|Fan-out]], [[../../data-engineering/concepts/software-engineering/claim-check-pattern|Claim Check]]
+>> [[../../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../../software-engineering/fan-out|Fan-out]], [[../../software-engineering/claim-check-pattern|Claim Check]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/concepts/data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/concepts/data-processing/stream-data-processing|Stream Processing]]
+>> [[../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
 >
 >
 >> [!card] Compute integrations

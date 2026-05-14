@@ -1,4 +1,4 @@
-﻿---
+---
 title: Joe Reis + Matt Housley
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - data_engineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Authors of the modern textbook **Fundamentals of Data Engineering** (O'Reilly, 2022) which formalized the **data engineering lifecycle** (generation → ingestion → transformation → serving) and the cross-cutting **undercurrents** (security, data management, DataOps, data architecture, orchestration, software engineering). Joe Reis is co-founder of **Ternary Data**.

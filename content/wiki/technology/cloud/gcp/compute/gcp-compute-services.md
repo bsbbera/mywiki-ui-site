@@ -1,4 +1,4 @@
-﻿---
+---
 title: GCP Compute Services
 Created:
   - 2026-04-27
@@ -12,8 +12,8 @@ tags:
   - Compute
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 GCP exposes a **spectrum of compute options** that trade off between control and abstraction. Choosing the right one is the most common architecture decision on GCP (source: Google Cloud Platform - Compute Services.md).

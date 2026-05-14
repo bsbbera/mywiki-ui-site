@@ -1,4 +1,4 @@
-﻿---
+---
 title: Loading Data to BigQuery
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Ingestion
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Loading data into BigQuery is one of the **three core jobs** ([[bigquery|the others]] are storage and querying). The right loading mechanism depends on whether your data arrives in **batches** or as a **stream**, and where it lives (source: Google Cloud Platform - Loading Data to BigQuery.md).
@@ -134,9 +134,9 @@ Result: **dogs win 43**.
 >
 >
 >> [!card] Data Ingestion
->> [[../../data-engineering/concepts/data-ingestion/data-ingestion|Data Ingestion]]
+>> [[../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
 >
 >
 >> [!card] Tools
->> [[../../data-engineering/tools/ingestion-tools|Ingestion Tools]]
+>> [[../../tools/ingestion-tools|Ingestion Tools]]
 

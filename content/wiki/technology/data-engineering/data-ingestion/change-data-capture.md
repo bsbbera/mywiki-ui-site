@@ -1,4 +1,4 @@
-﻿---
+---
 title: Change Data Capture
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Replication
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Change Data Capture (CDC)** is a specialized incremental ingestion technique that captures changes from a database's **transaction log** using CDC software. It tracks **inserts, updates, and deletes** along with the data itself, and often **schema changes** as well. CDC is widely used because of its efficiency and minimal impact on source systems (source: Concepts/Data Ingestion/Change Data Capture.md).

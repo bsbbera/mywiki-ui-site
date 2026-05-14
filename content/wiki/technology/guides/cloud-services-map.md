@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Services Map
 Created:
   - 2026-04-29
@@ -16,8 +16,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A side-by-side comparison of cloud services across the **big three** providers, organized by category. Useful for migration planning, multi-cloud designs, or choosing which platform to learn (source: Guides/Cloud Services Map.md, inspired by ByteByteGo's Cloud Comparison).

@@ -1,8 +1,8 @@
-﻿---
+---
 title: Wiki Index
 Created:
   - 2026-04-27
-date modified: 2026-05-10
+date modified: Thursday, May 14th 2026, 11:25:57 am
 aliases:
   - TOC
   - Table of Contents
@@ -11,8 +11,8 @@ tags:
   - index
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 > [!warning] Agent-facing catalog — DO NOT DELETE
@@ -106,7 +106,7 @@ Distributed-systems theory and design patterns shared across DE and backend.
 
 ### Databases — `technology/databases/`
 
-CS-theory foundations relevant to every database (replaces the old `dbms/` folder).
+CS-theory foundations relevant to every database (replaces the old `databases/` folder).
 
 - [[acid-properties|ACID Properties]] — atomicity, consistency, isolation, durability; transaction guarantees.
 - [[database-normalization|Database Normalization]] — 1NF → 5NF + BCNF; eliminating redundancy and anomalies.
@@ -259,14 +259,14 @@ These folders do not exist yet. They will be created on the first ingest of rele
 | Mobile/web uploads | [[firebase-cloud-storage|Firebase Cloud Storage]] |
 
 ### Analytics
-| Need | Pick |
-| --- | --- |
-| SQL warehouse | [[bigquery|BigQuery]] |
-| Code-first ETL | [[dataflow|Dataflow]] |
-| Visual ETL | [[datafusion|Data Fusion]] |
-| Messaging / streaming bus | [[pubsub|Pub/Sub]] |
-| Metadata + discovery | [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]] |
-| Spark / lakehouse / ML platform | [[databricks|Databricks]] |
+| Need                            | Pick                                          |
+| ------------------------------- | --------------------------------------------- |
+| SQL warehouse                   | [[bigquery                                    |
+| Code-first ETL                  | [[dataflow                                    |
+| Visual ETL                      | [[datafusion                                  |
+| Messaging / streaming bus       | [[pubsub                                      |
+| Metadata + discovery            | [[technology/cloud/gcp/analytics/data-catalog |
+| Spark / lakehouse / ML platform | [[databricks                                  |
 
 ## Stub topics (referenced but not yet ingested)
 

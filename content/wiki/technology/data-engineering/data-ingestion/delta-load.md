@@ -1,4 +1,4 @@
-﻿---
+---
 title: Delta Load
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Ingestion
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **delta load** (or **incremental load**) extracts only the data that has **changed** since the last extract run. It is typically **query-based** and requires an **incrementing id** or a **`modified_at` timestamp** column to identify new records (source: Concepts/Data Ingestion/Delta Load.md).

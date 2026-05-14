@@ -15,8 +15,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Spanner is GCP's **globally distributed, strongly consistent, relational database** â€” the closest thing the industry has to "impossible" engineering: ACID transactions, horizontal scaling, and 99.999% availability at global scale (source: Google Cloud Platform - Introduction to Cloud Spanner.md).

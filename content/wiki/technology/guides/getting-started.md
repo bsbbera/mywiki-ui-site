@@ -1,4 +1,4 @@
-﻿---
+---
 title: Getting Started With Data Engineering
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A practical roadmap for newcomers to data engineering. Goal: working knowledge + intuition to find answers as your journey continues (source: Guides/Getting Started With Data Engineering.md).

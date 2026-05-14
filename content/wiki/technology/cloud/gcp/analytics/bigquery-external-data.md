@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery External Data
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 BigQuery can query data **stored outside** the warehouse via **external (federated) tables** — leaving the data in place. Currently supported sources include **Google Drive, [[../storage/cloud-storage|Cloud Storage]], [[../databases/cloud-sql|Cloud SQL]], and [[../databases/cloud-bigtable|Bigtable]]** (source: Google Cloud Platform - Working with External Data in BigQuery.md). Modern additions also include **AWS S3** and **Azure Blob** via **BigLake**.
@@ -100,9 +100,9 @@ ORDER BY flights DESC;
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/concepts/data-architecture/data-lake|Data Lake]]
+>> [[../../data-engineering/data-architecture/data-lake|Data Lake]]
 >
 >
 >> [!card] Tools
->> [[../../data-engineering/tools/file-formats|File Formats]]
+>> [[../../tools/file-formats|File Formats]]
 

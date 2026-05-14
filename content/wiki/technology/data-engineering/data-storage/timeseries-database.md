@@ -1,4 +1,4 @@
-﻿---
+---
 title: Timeseries Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - IoT
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **time-series database (TSDB)** is optimized to **store, aggregate, and analyze** large amounts of **continuously generated, time-stamped data** from sources like **IoT devices, sensors, application metrics, financial markets** (source: Concepts/Data Storage/Timeseries Database.md). Used in applications that monitor performance over time or track event sequences.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Online Transaction Processing (OLTP)
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - OLTP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Online Transaction Processing (OLTP)** is the management of **transactional data** — the data generated in the day-to-day operation of an organization. OLTP systems **record** transactional data and **support querying** of it (source: Concepts/Data Processing/Online Transaction Processing.md).

@@ -1,5 +1,5 @@
 ---
-date modified: Sunday, May 10th 2026, 7:26:51 pm
+date modified: Monday, May 11th 2026, 6:39:29 pm
 ---
 # LLM Wiki
 
@@ -26,6 +26,8 @@ questions, and guides direction.
 - `philosophy/`  → reserved for future (ethics, metaphysics, epistemology…)
 - `art/`         → reserved for future (photography, painting, music, cinema…)
 - `science/`     → reserved for future (physics, cosmology, medicine, biology…)
+
+Can be more based on topic.
 
 ### 2. Cross-cutting metadata — referenced from every field
 
@@ -76,13 +78,13 @@ technology/
 When the user drops a new source into `raw/` and asks for ingest, the
 agent's job has **three responsibilities** in this order:
 
-1. **Categorize** — place every new note in the correct folder.
-2. **Interlink** — wikilink to existing pages + add grouped Related-pages callouts.
+1. **Categorize** — place every new note in the correct folder. categorize it based on topic.
+2. **Interlink** — wikilink to existing pages + add grouped Related-pages callouts. add correct properties like category and correct tag to better search for future.
 3. **Record** — update `wiki/index.md` and append to `wiki/log.md`.
 
 ### Phase 1 — Understand
 
-1. Read the full source document.
+1. Read the full source document. it can be .pdf, .md, .doc anything.
 2. Use `brave-search` and `puppeteer` MCPs to enrich with web context.
 3. Read `wiki/index.md` to discover what pages already exist.
 4. Discuss key takeaways with the user before writing anything.
@@ -93,6 +95,10 @@ For each entity / concept extracted, route by this decision tree:
 
 - Is it a **person**? → `wiki/people/<kebab-case-name>.md`
 - Is it a **book**?   → `wiki/books/<kebab-case-title>.md` (extract cover image from the web)
+	- If books then which field or topic. Based on that interlinked, update/create.
+	- For example if the RAW is a Book on GCP put the author in People, put the Book details in Book and GCP details in various notes in Technology/ Science.
+	- Same things apply to All kind of RAW.
+- **Person**/**Book** properly tag to identify the Field/topic.
 - Otherwise it belongs to a **field of knowledge**:
   - **Technology** → `wiki/technology/<sub>/...`
     - Cloud platform-specific (BigQuery, S3, ADLS, Delta Lake…) → `technology/cloud/<gcp|aws|azure|databricks>/<category>/`

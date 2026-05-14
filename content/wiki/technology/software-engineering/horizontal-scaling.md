@@ -1,4 +1,4 @@
-﻿---
+---
 title: Horizontal Scaling
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - DistributedSystems
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **horizontally scalable system** is one that increases capacity by **adding more machines** to the system — also known as **scaling out** (source: Concepts/Software Engineering/Horizontal Scaling.md).

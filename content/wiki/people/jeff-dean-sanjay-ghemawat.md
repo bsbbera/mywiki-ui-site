@@ -1,4 +1,4 @@
-﻿---
+---
 title: Jeff Dean + Sanjay Ghemawat
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - computer_science
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Iconic Google engineering duo. Co-authored the seminal Google papers that catalyzed modern data engineering:

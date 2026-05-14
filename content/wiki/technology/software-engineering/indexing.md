@@ -1,4 +1,4 @@
-﻿---
+---
 title: Indexing
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Performance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 An **index** is a **data structure** that lets you **quickly retrieve records** from a database object by creating **pointers** to where the data is stored. It's typically stored in a **key-value format** where the key is the field/column (sorted) and the value is the pointer(s) to the rows (source: Concepts/Software Engineering/Indexing.md).

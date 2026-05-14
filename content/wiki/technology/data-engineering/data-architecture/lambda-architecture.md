@@ -1,4 +1,4 @@
-﻿---
+---
 title: Lambda Architecture
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Streaming
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Lambda Architecture** is a data processing pattern designed to balance **low latency**, **high throughput**, and **fault tolerance** by combining a **batch layer** (accurate, slow) with a **speed layer** (real-time, approximate). Results from both are merged in a **serving layer** for unified queries (source: Concepts/Data Architecture/Lambda Architecture.md).

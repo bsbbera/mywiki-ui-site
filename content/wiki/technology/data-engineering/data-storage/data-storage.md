@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Storage
 Created:
   - 2026-04-29
@@ -11,8 +11,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data storage** covers the technologies and systems used to store and retrieve data in various formats and structures. Modern storage divides into two categories (source: Concepts/Data Storage/Data Storage.md):
@@ -26,7 +26,7 @@ Provide both storage and built-in compute with structured query interfaces.
 
 ### [[relational-database|Relational Database]]
 
-Traditional structured storage using tables, rows, columns + ACID. See [[../../../dbms/acid-properties|ACID Properties]].
+Traditional structured storage using tables, rows, columns + ACID. See [[../../../databases/acid-properties|ACID Properties]].
 
 ### [[non-relational-database|Non-Relational (NoSQL)]]
 
@@ -113,5 +113,5 @@ Cloud examples:
 >
 >
 >> [!card] Tools + theory
->> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../../dbms/acid-properties|ACID Properties]]
+>> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../../databases/acid-properties|ACID Properties]]
 

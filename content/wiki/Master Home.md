@@ -1,4 +1,4 @@
-﻿---
+---
 title: Master Home
 Created:
   - 2026-04-30
@@ -16,8 +16,8 @@ dg-publish: true
 cssclasses:
   - master-home
   - wide-page
-publish: true
 ---
+
 # Second Brain
 
 > *A life-long, interlinked knowledge vault — where notes, ideas, and insights are connected, compounded, and continually refined across every field of knowledge.*

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Hybrid Transactional Analytical Processing (HTAP)
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - OLAP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Hybrid Transactional Analytical Processing (HTAP)** is a database paradigm that handles **both [[online-transaction-processing|OLTP]] and [[online-analytical-processing|OLAP]] workloads on the same data system** — eliminating the traditional need for a separate ETL pipeline + warehouse for analytics (source: Concepts/Data Processing/Hybrid Transactional Analytical Processing.md).

@@ -13,8 +13,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Persistent Disk (PD) is GCP's **block storage** service for [[compute-engine]] VMs and [[kubernetes-engine]] pods. It is a network-attached, durable, highly available block device that survives the VM it is attached to (source: Cloud Storage in GCP.md, source: Introduction to Google Compute Engine.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Medallion Architecture
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - Databricks
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Medallion Architecture** is a data design pattern, coined by **[[../../../databricks/databricks|Databricks]]**, used to logically organize data in a **lakehouse**. The goal: **incrementally improve data quality** as it flows through three named layers — **bronze (raw)**, **silver (validated)**, and **gold (enriched)** (source: Concepts/Data Architecture/Medallion Architecture.md).

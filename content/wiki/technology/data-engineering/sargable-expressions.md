@@ -1,4 +1,4 @@
-﻿---
+---
 title: Sargable Expressions
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Performance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Sargable**, short for **S**earch **ARG**ument **ABLE**, refers to queries that **can take advantage of indexes** to speed up execution. A query that fails this definition is **non-sargable** and usually has a negative effect on performance. Making a query sargable can dramatically improve performance even without index changes — but combined with the right indexes, the gains are dramatic (source: Concepts/Sargable Expressions.md).

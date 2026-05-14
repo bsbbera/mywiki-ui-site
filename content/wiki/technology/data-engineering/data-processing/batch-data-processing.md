@@ -1,4 +1,4 @@
-﻿---
+---
 title: Batch Data Processing
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Batch
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Batch processing** refers to collecting, modifying, or exporting **multiple data records at a regular cadence** with downtime between batches. Because large amounts of data can be processed all at once, batch processing is **very efficient** and is the most common form of data processing fitting many businesses' needs (source: Concepts/Data Processing/Batch Data Processing.md).

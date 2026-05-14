@@ -1,8 +1,8 @@
-﻿---
+---
 title: Amazon Web Services
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, May 14th 2026, 11:39:53 am
 aliases:
   - AWS
   - Amazon Web Services
@@ -13,8 +13,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/) is a suite of **cloud-based tools** spanning applications, networking, infrastructure, data processing, and storage. AWS pioneered modern public cloud (S3 and EC2 launched 2006) and remains the **market-share leader** (source: Tools/Cloud Providers/Amazon Web Services.md).
@@ -153,16 +153,19 @@ See [[../data-engineering/guides/cloud-services-map|Cloud Services Map]] for the
 
 ## Related pages
 
+
 > [!multi-column]
 >
 >> [!card] Sister cloud platforms
+>> ---
 >> [[../gcp/foundations/google-cloud-platform|Google Cloud Platform]], [[../azure/azure|Microsoft Azure]], [[../databricks/databricks|Databricks]]
 >
 >
 >> [!card] Cross-cloud guides
+>> ---
 >> [[../data-engineering/guides/cloud-services-map|Cloud Services Map]], [[../data-engineering/guides/cost-optimization-cloud|Cost Optimization]], [[../data-engineering/guides/messaging-service-guide|Messaging Service Guide]]
 >
 >
 >> [!card] Tool catalogs
+>> ---
 >> [[../data-engineering/tools/databases-overview|Databases Overview]], [[../data-engineering/tools/orchestrators-overview|Orchestrators]], [[../data-engineering/tools/object-storage|Object Storage]]
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Fan-out
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Messaging
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Fan-out** is a pattern where a message from a **single source** is **spread or copied to many destinations**. In data engineering, fan-out is commonly used to send data from a microservice (publisher) to multiple subscribers (source: Concepts/Software Engineering/Fan-out.md).

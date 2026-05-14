@@ -1,4 +1,4 @@
-﻿---
+---
 title: File Formats
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The file formats commonly used in data engineering pipelines (source: Tools/File Formats/*.md).

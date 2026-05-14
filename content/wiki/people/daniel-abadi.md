@@ -1,4 +1,4 @@
-﻿---
+---
 title: Daniel Abadi
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - database
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Database researcher, professor at the **University of Maryland**. Proposed **PACELC** (2010) — refines [[eric-brewer|CAP]] by acknowledging that in the absence of a partition, distributed systems still trade off **latency vs consistency**. Co-creator of **C-Store / Vertica** (columnar warehouse) + **HadoopDB**.

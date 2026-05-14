@@ -1,4 +1,4 @@
-﻿---
+---
 title: Designing Data-Intensive Applications
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - distributed_systems
 banner: "https://learning.oreilly.com/library/cover/9781491903063/250w/"
 dg-publish: true
-publish: true
 ---
+
 ---
 
 ![DDIA cover](https://learning.oreilly.com/library/cover/9781491903063/250w/)
@@ -34,13 +34,13 @@ Often shortened to **DDIA**. Considered required reading for serious data engine
 >
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]], [[../data-engineering/concepts/software-engineering/database-sharding|Sharding]], [[../data-engineering/concepts/software-engineering/event-sourcing-pattern|Event Sourcing]]
+>> [[../../technology/software-engineering/cap-theorem|CAP Theorem]], [[../../technology/software-engineering/database-sharding|Sharding]], [[../../technology/software-engineering/event-sourcing-pattern|Event Sourcing]]
 >
 >
 >> [!card] Data Ingestion
->> [[../data-engineering/concepts/data-ingestion/change-data-capture|CDC]]
+>> [[../../technology/data-engineering/data-ingestion/change-data-capture|CDC]]
 >
 >
 >> [!card] Data Storage
->> [[../data-engineering/concepts/data-storage/database|Database]]
+>> [[../../technology/data-engineering/data-storage/database|Database]]
 

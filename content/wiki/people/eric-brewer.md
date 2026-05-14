@@ -1,4 +1,4 @@
-﻿---
+---
 title: Eric Brewer
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - computer_science
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 American computer scientist, **VP Infrastructure at Google**, professor at **UC Berkeley**. Proposed the **CAP theorem** (Brewer's theorem, 2000) — a foundational trade-off in distributed systems. Co-founder of Inktomi. Revisited CAP in 2012 ("CAP Twelve Years Later") clarifying it's a spectrum rather than a binary.

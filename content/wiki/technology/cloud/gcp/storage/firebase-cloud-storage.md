@@ -13,8 +13,8 @@ tags:
   - Mobile
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Firebase Cloud Storage is the **Firebase-branded, mobile/web-friendly layer** on top of [[cloud-storage]]. It provides a secure, scalable solution for storing user-generated content â€” photos, videos, audio, and other media â€” with client SDKs designed for mobile and web apps (source: Introduction to Firebase Cloud Storage.md).

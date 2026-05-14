@@ -1,4 +1,4 @@
-﻿---
+---
 title: Doug Cutting
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - search
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Creator of **Apache Lucene**, **Apache Nutch**, and **Apache Hadoop** — turned the [[jeff-dean-sanjay-ghemawat|GFS + MapReduce papers]] into open-source reality at Yahoo!. Hadoop launched the modern big-data era. Named Hadoop after his son's stuffed elephant.

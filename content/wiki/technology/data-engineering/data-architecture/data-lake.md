@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Lake
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **data lake** is a flexible storage pattern used for storing massive amounts of **raw data in its native format** — structured (tabular), semi-structured (JSON, XML), and unstructured (videos, images, audio). Data lakes use cheap, abundant **blob storage** with a compute engine of the user's choice (source: Concepts/Data Architecture/Data Lake.md).

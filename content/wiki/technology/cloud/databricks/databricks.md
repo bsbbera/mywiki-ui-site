@@ -1,8 +1,8 @@
-﻿---
+---
 title: Databricks
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 5:59:15 pm
+date modified: Wednesday, May 13th 2026, 9:25:05 pm
 aliases:
   - Databricks
   - Databricks Lakehouse
@@ -14,8 +14,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 [Databricks](https://www.databricks.com/) is a **cross-cloud unified data + AI platform** built on top of **Apache Spark**, **Delta Lake**, and **MLflow** — all of which originated from its founders' work at **UC Berkeley AMPLab**. It runs on **AWS, Azure, and GCP**, and pioneered the **Lakehouse architecture**, which combines data lake economics with warehouse performance + governance.
@@ -34,7 +34,7 @@ A managed platform that consolidates:
 
 ## Why it matters
 
-- Coined the **Lakehouse** pattern — see [[../data-engineering/concepts/data-architecture/medallion-architecture|Medallion Architecture]].
+- Coined the **Lakehouse** pattern — see [[../data-engineering/data-architecture/medallion-architecture|Medallion Architecture]].
 - Major contributions to OSS: **Spark**, **Delta Lake**, **MLflow**, **Koalas / pandas-on-Spark**.
 - Strong choice when teams want **portability** across AWS / Azure / GCP.
 
@@ -88,4 +88,3 @@ Databricks runs on GCP since 2021 with deep integration to:
 >> [!info|noicon] People
 >> ---
 >> [[Matei Zaharia]]
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title: CAP Theorem
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Database
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **CAP theorem** (Brewer's theorem) states that a **distributed data store** can provide **at most two out of three** of the following guarantees (source: Concepts/Software Engineering/CAP Theorem.md):

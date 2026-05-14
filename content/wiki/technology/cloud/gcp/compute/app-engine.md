@@ -1,4 +1,4 @@
-﻿---
+---
 title: App Engine
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - PaaS
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google App Engine (GAE) is GCP's fully managed **PaaS** for hosting web and mobile back-ends. You upload code; Google provisions, scales, load-balances, patches, and monitors the runtime (source: Google App Engine (GAE).md).

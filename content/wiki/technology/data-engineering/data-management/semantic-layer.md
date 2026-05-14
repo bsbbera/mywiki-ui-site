@@ -1,4 +1,4 @@
-﻿---
+---
 title: Semantic Layer
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Modeling
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **semantic layer** is the [[../data-modeling/data-modeling|data model]] that takes **multiple enterprise data sources** and **combines them into one unified model** for the business. It is traditionally built in the [[../data-architecture/data-warehouse|data warehouse]] and used by reporting tools. Companies have used semantic layers since the early 1990s (source: Concepts/Data Management/Semantic Layer.md).

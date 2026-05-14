@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Warehousing
 Created:
   - 2026-04-27
@@ -17,8 +17,8 @@ tags:
   - Theory
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data warehousing** is the practice of collecting, integrating, cleaning, and storing data from multiple operational sources into a **central repository** optimized for **analysis and reporting**. The data warehouse is the architectural pillar that lets organizations turn raw transactional data into **decision-grade insights** (source: Data Warehousing.md).

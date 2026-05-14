@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cardinality
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - SQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Cardinality** has two distinct meanings in data engineering depending on context (source: Concepts/Data Modeling/Cardinality.md):

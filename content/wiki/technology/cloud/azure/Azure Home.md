@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft Azure
 Created:
   - 2026-04-30
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 🟦 Microsoft Azure
 
 > Azure Synapse, Data Factory, Databricks integrations, and core Azure data infrastructure.

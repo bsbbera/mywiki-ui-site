@@ -1,4 +1,4 @@
-﻿---
+---
 title: Dimensional Modeling
 Created:
   - 2026-04-29
@@ -16,8 +16,8 @@ tags:
   - Warehouse
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Dimensional modeling** is the popular technique developed by **Ralph Kimball** for modeling data for **analytics**. At its core, dimensional modeling organizes data into two types of tables: **fact tables** and **dimension tables**. Facts comprise **numerical, aggregable measures**; dimensions hold **descriptive attributes** of entities (source: Concepts/Data Modeling/Dimensional Modeling.md).

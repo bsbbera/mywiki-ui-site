@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery Sandbox
 Created:
   - 2026-04-27
@@ -12,8 +12,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **BigQuery Sandbox** gives free, no-credit-card access to BigQuery — perfect for learning, prototyping, and exploring public datasets (source: Google Cloud Platform - Introduction to BigQuery Sandbox.md).

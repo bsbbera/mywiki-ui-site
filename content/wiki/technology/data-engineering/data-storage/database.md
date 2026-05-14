@@ -1,4 +1,4 @@
-﻿---
+---
 title: Database
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **database** is an **organized collection of inter-related data** that models some aspect of the real world. Data is stored and accessed via a **database management system (DBMS)** (source: Concepts/Data Storage/Database.md).

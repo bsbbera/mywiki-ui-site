@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Engineering FAQ
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - FAQ
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Common questions about Data Engineering as a discipline + career, consolidated from the source FAQ tree (source: FAQ/*.md).

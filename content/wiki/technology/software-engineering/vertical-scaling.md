@@ -1,4 +1,4 @@
-﻿---
+---
 title: Vertical Scaling
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Scaling
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Vertical scaling** increases the capacity of a system by **increasing the size of a single machine** — more CPU, more RAM, faster storage. Also known as **scaling up** (source: Concepts/Software Engineering/Vertical Scaling.md).

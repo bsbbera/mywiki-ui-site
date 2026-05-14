@@ -1,4 +1,4 @@
-﻿---
+---
 title: Relational Database
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - SQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **relational database** organizes data into **tables** that can be linked together based on **common data**. Each table has one or more columns with **unique identifiers** (primary key) referenced by **foreign keys** in other tables, forming relationships (source: Concepts/Data Storage/Relational Database.md).

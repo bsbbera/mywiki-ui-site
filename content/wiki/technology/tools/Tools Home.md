@@ -1,4 +1,4 @@
-﻿---
+---
 title: Tools Home
 Created:
   - 2026-05-10
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 🧰 Tools
 
 > Vault-wide tooling reference: programming languages, file formats, orchestrators, processing engines, ingestion + analytics + quality tools.

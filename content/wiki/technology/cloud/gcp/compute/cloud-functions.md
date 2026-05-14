@@ -14,8 +14,8 @@ tags:
   - Serverless
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Functions is GCP's **Function as a Service (FaaS)** offering. You write a small piece of code (JavaScript, Python, Go, Java, .NET, Ruby, PHP) that runs in response to an **event** â€” an HTTP request, a Pub/Sub message, a Cloud Storage upload, a scheduler tick â€” and Google manages everything else (source: Cloud Functions in GCP.md).

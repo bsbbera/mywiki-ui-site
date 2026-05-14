@@ -1,4 +1,4 @@
-﻿---
+---
 title: Testing Your Data Pipeline
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A guide to designing a testing strategy for data pipelines (source: Guides/Testing Your Data Pipeline.md).

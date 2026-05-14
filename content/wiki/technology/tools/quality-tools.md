@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Quality Tools
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Catalog of data quality and observability tools (source: Tools/Data Quality/*.md).

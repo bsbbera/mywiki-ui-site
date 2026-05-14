@@ -1,4 +1,4 @@
-﻿---
+---
 title: Analytics + BI Tools
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Catalog of analytics, BI, dashboarding, and metrics-layer tools (source: Tools/Data Analytics/*.md).

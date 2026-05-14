@@ -1,9 +1,0 @@
-{
-  "alwaysUpdateLinks": true,
-  "promptDelete": false,
-  "attachmentFolderPath": "./",
-  "autoConvertHtml": true,
-  "showLineNumber": false,
-  "rightToLeft": false,
-  "readableLineLength": true
-}

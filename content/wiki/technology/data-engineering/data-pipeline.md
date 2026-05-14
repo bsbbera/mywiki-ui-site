@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Pipeline
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - ELT
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **Data Pipeline** is a workflow consisting of one or more tasks that **ingest, move, and transform** raw data from one or more sources to a destination. The data at the destination is then used for analysis, machine learning, or other business functions. Pipelines split into two categories: **[[batch-data-processing|batch processing]]** (most common) and **[[stream-data-processing|real-time / streaming]]** (source: Concepts/Data Pipeline.md).
@@ -28,7 +28,7 @@ Four main parts (source: Concepts/Data Pipeline.md):
 1. **Data source** — application DBs, APIs, files (SFTP, GCS), event streams.
 2. **Business logic** — cleaning, filtering, transformation specific to the business.
 3. **Data destination / target** — usually another DB, often a [[data-warehouse|warehouse]] or [[data-lake|lake]].
-4. **Scheduler / orchestration tool** — Cron for simple, [[../data-engineering/concepts/data-processing/workflow-orchestration|orchestrator]] for complex.
+4. **Scheduler / orchestration tool** — Cron for simple, [[../data-engineering/data-processing/workflow-orchestration|orchestrator]] for complex.
 
 There's no one-size-fits-all architecture. The right choice depends on data volume, velocity, latency requirements, team skills, and budget.
 
@@ -56,7 +56,7 @@ The **transformation** stage — cleaning, deduplication, type casting, enrichme
 ### Scheduler / orchestrator
 
 - **Cron** — simple scripted scheduling on a single machine.
-- **[[../data-engineering/concepts/data-processing/workflow-orchestration|Workflow orchestrator]]** — Airflow, Dagster, Prefect — for multi-step DAGs with retries, alerts, backfills.
+- **[[../data-engineering/data-processing/workflow-orchestration|Workflow orchestrator]]** — Airflow, Dagster, Prefect — for multi-step DAGs with retries, alerts, backfills.
 
 ## Common pipeline types
 

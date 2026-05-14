@@ -1,4 +1,4 @@
-﻿---
+---
 title: Column-oriented Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 In a **column-oriented (columnar) database**, the data for **each column** is stored **together** on disk. Because of this, columnar DBs are a popular foundation for [[../data-architecture/data-warehouse|data warehouses]] (source: Concepts/Data Storage/Column-oriented Database.md).

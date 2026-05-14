@@ -1,4 +1,4 @@
-﻿---
+---
 title: Claim Check Pattern
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Messaging
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Claim-Check Pattern** reduces the **cost and size** of large messages by storing the actual data in **external storage** and sending only a **reference (key)** to consumers (source: Concepts/Software Engineering/Claim Check Pattern.md).

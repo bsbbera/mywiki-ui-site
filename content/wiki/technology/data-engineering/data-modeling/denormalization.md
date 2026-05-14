@@ -1,4 +1,4 @@
-﻿---
+---
 title: Denormalization
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - OLAP
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Denormalization** is the process of combining data into **wide tables** that are optimized for **read workloads**. Denormalized tables are best suited for [[../data-processing/online-analytical-processing|OLAP]] systems where you need to **analyze historical data**, since updates aren't required and **data redundancy is acceptable** (source: Concepts/Data Modeling/Denormalization.md).

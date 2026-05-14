@@ -1,4 +1,4 @@
-﻿---
+---
 title: Seth Gilbert + Nancy Lynch
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - computer_science
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 MIT researchers who **formally proved** the CAP theorem in 2002 (*Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services*), turning [[eric-brewer|Eric Brewer]]'s 2000 conjecture into a theorem. Nancy Lynch is also famous for the **FLP impossibility** result and **distributed algorithms** textbook.

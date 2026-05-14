@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cost Optimization in the Cloud
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Strategies for **reducing cloud spend** across compute, storage, and analytics, illustrated with the major providers (source: Guides/Cost Optimization in the Cloud.md).

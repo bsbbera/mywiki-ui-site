@@ -1,4 +1,4 @@
-﻿---
+---
 title: ACID Properties
 Created:
   - 2026-04-27
@@ -16,8 +16,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **ACID** is the canonical set of properties a database transaction must satisfy to guarantee data integrity — **A**tomicity, **C**onsistency, **I**solation, **D**urability. The acronym was coined by Theo Härder and Andreas Reuter in their 1983 paper and has been the foundation of transactional database design ever since (source: ACID Properties in DBMS.md).
@@ -146,11 +146,11 @@ The NoSQL counterpoint: **BASE** = **B**asically **A**vailable, **S**oft state, 
 > [!multi-column]
 >
 >> [!card] Theory
->> [[database-normalization|Database Normalization]], [[../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]], [[../data-engineering/data-warehousing|Data Warehousing]]
+>> [[database-normalization|Database Normalization]], [[../software-engineering/cap-theorem|CAP Theorem]], [[../data-engineering/data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] Storage
->> [[../data-engineering/concepts/data-storage/relational-database|Relational Database]], [[../data-engineering/concepts/data-storage/non-relational-database|Non-relational Database]]
+>> [[../data-engineering/data-storage/relational-database|Relational Database]], [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] Products

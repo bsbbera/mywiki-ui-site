@@ -16,8 +16,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Memorystore is GCP's **fully managed in-memory data store**, delivering **sub-millisecond latency** for caching, session management, leaderboards, and real-time processing (source: Google Cloud Platform - MemoryStore.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Programming Languages for Data Engineering
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The languages most data engineers use, and where each shines (source: Tools/Programming Languages/*.md).

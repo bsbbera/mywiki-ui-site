@@ -15,8 +15,8 @@ tags:
   - History
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Google File System (GFS)** is a scalable, fault-tolerant **distributed file system** developed by Google and described in the seminal 2003 SOSP paper. It was engineered to store and process massive datasets on clusters of **commodity Linux servers**, using software-level replication rather than specialized hardware to deliver reliability (source: Google File System.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Unit Test
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Quality
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **data unit test** is an **automated test** that ensures the data flowing through your pipeline is what you expect it to be. They're useful for detecting **upstream changes**, **stale or cached data**, and **preventing bad data** from corrupting ML models or public-facing reports/dashboards (source: Concepts/Software Engineering/Data Unit Test.md).

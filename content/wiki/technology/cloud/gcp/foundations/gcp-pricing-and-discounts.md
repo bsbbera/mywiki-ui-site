@@ -1,4 +1,4 @@
-﻿---
+---
 title: GCP Pricing and Discounts
 Created:
   - 2026-04-27
@@ -16,8 +16,8 @@ tags:
   - Pricing
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 GCP's pricing is built around **per-second billing** with multiple stacking discounts that reward sustained or committed usage. Understanding these levers is the difference between a typical bill and a 50–80%-cheaper one.

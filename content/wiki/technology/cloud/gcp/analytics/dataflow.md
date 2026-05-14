@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Dataflow
 Created:
   - 2026-04-27
@@ -16,8 +16,8 @@ tags:
   - ApacheBeam
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Dataflow is GCP's **fully managed, serverless data-processing service** for **batch and streaming** pipelines, built on **Apache Beam** (source: Building Data Pipelines with Google Cloud Dataflow ETL Processing.md).
@@ -162,15 +162,15 @@ The same pipeline with `beam.io.ReadFromPubSub(...)` + `beam.WindowInto(beam.win
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/concepts/data-processing/batch-data-processing|Batch Processing]], [[../../data-engineering/concepts/data-processing/stream-data-processing|Stream Processing]]
+>> [[../../data-engineering/data-processing/batch-data-processing|Batch Processing]], [[../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/concepts/data-architecture/lambda-architecture|Lambda Architecture]], [[../../data-engineering/concepts/data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../../data-engineering/data-architecture/lambda-architecture|Lambda Architecture]], [[../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] Related products + tools
->> [[../storage/cloud-storage|Cloud Storage]], [[../../data-engineering/tools/processing-tools|Processing Tools]]
+>> [[../storage/cloud-storage|Cloud Storage]], [[../../tools/processing-tools|Processing Tools]]
 >
 >
 >> [!card] Certifications

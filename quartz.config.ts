@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "mywiki-ui-site.vercel.app",
-    ignorePatterns: ["private", "templates", ".obsidian", "_my_template"],
+    ignorePatterns: ["private", "templates", ".obsidian", "_my_template", "raw"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -73,7 +73,11 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-    filters: [Plugin.RemoveDrafts(), Plugin.ExplicitPublish()],
+    filters: [
+      Plugin.RemoveDrafts(),
+      // Plugin.ExplicitPublish(),  // Disabled - publish all notes by default
+      // To enable: uncomment above and add "publish: true" frontmatter to notes you want published
+    ],
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),

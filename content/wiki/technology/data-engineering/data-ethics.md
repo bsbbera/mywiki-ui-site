@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Ethics
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Compliance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 > **Data ethics** is a new branch of ethics that studies and evaluates moral problems related to **data** (generation, recording, curation, processing, dissemination, sharing, use), **algorithms** (AI, ML, autonomous agents), and **corresponding practices** (responsible innovation, programming, hacking, professional codes), in order to formulate and support morally good solutions.

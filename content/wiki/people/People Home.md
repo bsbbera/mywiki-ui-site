@@ -1,4 +1,4 @@
-﻿---
+---
 title: People
 Created:
   - 2026-04-30
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 👥 People
 
 > Engineers, researchers, and authors who shaped modern software architecture, distributed systems, and data engineering.

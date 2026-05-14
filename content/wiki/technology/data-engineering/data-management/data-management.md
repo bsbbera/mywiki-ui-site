@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Management
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Quality
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Management** is the practice of collecting, organizing, protecting, and storing data in a way that enables efficient access, analysis, and decision-making throughout its entire lifecycle. It encompasses the policies, procedures, and technologies used to ensure data is **accurate, available, secure, and compliant** while meeting business requirements (source: Concepts/Data Management/Data Management.md).

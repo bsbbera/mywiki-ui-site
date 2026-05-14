@@ -1,4 +1,4 @@
-﻿---
+---
 title: Matei Zaharia
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - databricks
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Romanian-Canadian computer scientist. Created **Apache Spark** at UC Berkeley AMPLab during his PhD. Co-founder + CTO of **Databricks**. Co-creator of **Delta Lake** and **MLflow**. Stanford professor.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Architecture
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Patterns
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data architecture** describes how data is processed, stored, and utilized in an information system. It is the structural blueprint that connects sources, storage, processing engines, and consumers — the discipline of laying out *where data lives, how it flows, and who can use it* (source: Concepts/Data Architecture/Data Architecture.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Martin Fowler
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - architecture
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 British software developer, Chief Scientist at **ThoughtWorks**, prolific author of architecture + refactoring books. Articulated **Event Sourcing**, the **Strangler Fig** pattern, **Data Mesh** essays (with [[zhamak-dehghani|Zhamak Dehghani]]), and many enterprise integration patterns. Books include *Refactoring*, *Patterns of Enterprise Application Architecture*, *NoSQL Distilled*.

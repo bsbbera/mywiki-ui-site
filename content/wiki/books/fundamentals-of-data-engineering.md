@@ -1,4 +1,4 @@
-﻿---
+---
 title: Fundamentals of Data Engineering
 Created:
   - 2026-04-29
@@ -11,8 +11,8 @@ tags:
   - data_engineering
 banner: "https://learning.oreilly.com/library/cover/9781098108298/250w/"
 dg-publish: true
-publish: true
 ---
+
 ---
 
 ![Fundamentals of Data Engineering cover](https://learning.oreilly.com/library/cover/9781098108298/250w/)

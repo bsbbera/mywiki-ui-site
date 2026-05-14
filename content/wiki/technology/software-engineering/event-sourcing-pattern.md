@@ -1,4 +1,4 @@
-﻿---
+---
 title: Event Sourcing Pattern
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Architecture
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Event Sourcing pattern** captures **all changes** to an application as a **sequence of event objects**. This creates a **ledger of changes** that can be **replayed** to reconstruct application state at any point in time (source: Concepts/Software Engineering/Event Sourcing Pattern.md).

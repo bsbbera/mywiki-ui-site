@@ -1,4 +1,4 @@
-﻿---
+---
 title: Stream Data Processing
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Streaming
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Stream processing** refers to the architecture for **continuously collecting, modifying, or exporting data as it is produced or received**. It is used instead of [[batch-data-processing|batch processing]] when **timeliness** is critical and data is needed in **real-time** (source: Concepts/Data Processing/Stream Data Processing.md).

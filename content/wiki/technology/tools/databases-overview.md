@@ -1,4 +1,4 @@
-﻿---
+---
 title: Databases Overview
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A quick reference catalog of databases commonly used in data engineering. Aggregated from the source `Tools/Databases/` tree (source: Tools/Databases/*.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Processing
 Created:
   - 2026-04-29
@@ -11,8 +11,8 @@ tags:
   - Processing
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Processing** is the act of transforming raw data into meaningful, actionable information. It involves **collecting, manipulating, filtering, sorting, and analyzing** data to extract insights, support decisions, and enable business operations. Processing focuses on **what happens to data after it has been ingested** (source: Concepts/Data Processing/Data Processing.md).

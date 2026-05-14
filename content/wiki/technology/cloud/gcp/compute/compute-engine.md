@@ -13,8 +13,8 @@ tags:
   - Compute
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Compute Engine (GCE) is GCP's **IaaS** offering: virtual machines hosted on the same global fiber-connected infrastructure that runs Google Search, Gmail, and YouTube (source: Introduction to Google Compute Engine.md). It is the most flexible, lowest-level compute primitive on the platform â€” you fully control the OS, disks, networking, and security configuration.

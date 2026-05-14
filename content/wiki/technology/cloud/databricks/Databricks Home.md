@@ -1,4 +1,4 @@
-﻿---
+---
 title: Databricks
 Created:
   - 2026-04-30
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&f
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 🧱 Databricks
 
 > A unified open analytics platform — Delta Lake, Spark, MLflow, Unity Catalog — for enterprise data, analytics, and AI at scale.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Governance
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Compliance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Governance** is the set of **policies and procedures** that ensure data used in an organization is of **high quality throughout its lifecycle** — input, storage, transformation, access, and deletion (source: Concepts/Data Management/Data Governance.md).

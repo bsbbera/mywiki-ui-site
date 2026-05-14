@@ -1,4 +1,4 @@
-﻿---
+---
 title: Software Engineering Home
 Created:
   - 2026-05-10
@@ -14,8 +14,8 @@ banner: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 🧩 Software Engineering
 
 > Distributed systems theory, design patterns, and the foundations every backend / data engineer eventually needs.

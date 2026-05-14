@@ -1,4 +1,4 @@
-﻿---
+---
 title: Online Analytical Processing (OLAP)
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Online Analytical Processing (OLAP)** is the term for a [[../data-modeling/data-modeling|data model]] that **aggregates data across multiple dimensions** to make it easier and faster to query. OLAP systems are mostly **optimized for reading** and are used primarily for **reporting + analysis** (source: Concepts/Data Processing/Online Analytical Processing.md).

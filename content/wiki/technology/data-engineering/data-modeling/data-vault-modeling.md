@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Vault Modeling
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Warehouse
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Vault modeling** is a technique developed by **[Dan Linstedt](https://en.wikipedia.org/wiki/Dan_Linstedt)** that aims to be the **most flexible** modeling approach — adapting easily to **change + new datasets** while **storing all historical data by default** (source: Concepts/Data Modeling/Data Vault Modeling.md).

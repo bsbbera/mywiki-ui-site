@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery Query Management
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Productivity
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 BigQuery offers three layers for managing the queries you write — **Query History** (automatic), **Saved Queries** (proactive), and **Shared Queries** (collaboration) (source: Google Cloud Platform - Query History vs Saved Query vs Shared Query in BigQuery.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Guides Home
 Created:
   - 2026-05-10
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 📘 Guides
 
 > Practitioner playbooks: how to do things end-to-end. SQL, testing pipelines, governance, cost optimization, messaging.

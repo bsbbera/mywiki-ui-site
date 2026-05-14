@@ -1,4 +1,4 @@
-﻿---
+---
 title: Building a Scalable Data Warehouse with Data Vault 2.0
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - data_modeling
 banner: "https://m.media-amazon.com/images/I/81HlVuYpCWL._SL1500_.jpg"
 dg-publish: true
-publish: true
 ---
+
 ---
 
 ![Data Vault 2.0 cover](https://m.media-amazon.com/images/I/81HlVuYpCWL._SL1500_.jpg)

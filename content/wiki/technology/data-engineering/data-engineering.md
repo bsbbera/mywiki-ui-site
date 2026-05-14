@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Engineering
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ banner:
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 ---
 
 ## 🧭 Vault Navigation

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Greg Young
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - patterns
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Software architect who coined and popularized **CQRS** (Command Query Responsibility Segregation) and modern **Event Sourcing**. Created **EventStoreDB**. His Domain-Driven Design + event-driven thinking shaped microservice + audit-heavy systems.

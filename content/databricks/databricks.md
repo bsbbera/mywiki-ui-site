@@ -1,4 +1,4 @@
-﻿---
+---
 title: Databricks
 Created:
   - 2026-04-27
@@ -15,8 +15,8 @@ tags:
   - MachineLearning
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Databricks is a **cloud-based data and AI platform** built around **Apache Spark**, with a **unified workspace** for data engineers, data scientists, and analysts to collaborate on data-driven applications (source: Introduction to Databricks.md).

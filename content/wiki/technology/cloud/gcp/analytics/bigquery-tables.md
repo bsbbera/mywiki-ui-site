@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery Tables
 Created:
   - 2026-04-27
@@ -13,8 +13,8 @@ tags:
   - Analytics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 BigQuery stores all data as **tables** organized inside **datasets**. The platform recognizes three table-like constructs (source: Google Cloud Platform - Tables in BigQuery.md):

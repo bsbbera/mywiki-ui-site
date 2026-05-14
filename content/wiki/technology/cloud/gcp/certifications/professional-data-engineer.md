@@ -15,8 +15,8 @@ tags:
 status: studying
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 The **Google Cloud Professional Data Engineer (PDE)** certification validates the ability to design, build, operationalize, secure, and monitor data-processing systems on GCP. It is one of GCP's most popular professional-level exams.

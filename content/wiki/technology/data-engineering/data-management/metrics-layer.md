@@ -1,4 +1,4 @@
-﻿---
+---
 title: Metrics Layer
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - Metrics
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **metrics layer** is the **single source of truth for how metrics are defined** and their business logic across an organization (source: Concepts/Data Management/Metrics Layer.md).

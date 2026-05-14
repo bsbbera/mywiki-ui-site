@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Home
 Created:
   - 2026-05-10
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&f
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # ☁️ Cloud Platforms
 
 > Everything platform-specific: GCP, AWS, Azure, Databricks. Cross-platform comparisons live here too.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Database Sharding
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Scaling
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Database sharding** is the practice of **horizontally partitioning** a database across multiple machines, where each machine holds a **subset** of the data (a "shard"). It's how single-node databases scale beyond the limits of vertical scaling (source: Concepts/Software Engineering/Database Sharding.md — sparse).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Dan Linstedt
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - data_modeling
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Inventor of the **Data Vault** modeling methodology (1990s, formalized as Data Vault 2.0). Designed for auditability + agility in enterprise data warehouses; uses **Hubs / Links / Satellites** to separate business keys from relationships from descriptive context.

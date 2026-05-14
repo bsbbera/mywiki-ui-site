@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Mesh
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Governance
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Mesh** is an analytical data architecture and operating model where **data is treated as a product**, leveraging **domain-driven design** and a **self-serve data platform** (source: Concepts/Data Architecture/Data Mesh.md).

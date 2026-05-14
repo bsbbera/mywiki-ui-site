@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Modeling
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Schema
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data Modeling** is the process of mapping out an information system and how its parts are connected. Data models are typically illustrated as **entity-relationship diagrams** (ERDs) for relational databases (source: Concepts/Data Modeling/Data Modeling.md).

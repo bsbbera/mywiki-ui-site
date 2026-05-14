@@ -1,4 +1,4 @@
-﻿---
+---
 title: Document Database
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **document database** is a type of [[non-relational-database|NoSQL]] database designed to store and query data as **JSON-like documents**. Document databases make it easy to store and query data that **evolves with an application's needs**. The model fits use cases like **catalogs, user profiles, content management** where each document is unique and evolves over time (source: Concepts/Data Storage/Document Database.md).

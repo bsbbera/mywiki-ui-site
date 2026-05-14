@@ -14,8 +14,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud SQL is GCP's **fully managed relational database** service. It runs MySQL, PostgreSQL, or SQL Server on Google's infrastructure, handling patching, backups, replication, failover, and scaling so you focus on the schema and queries (source: Google Cloud SQL.md).
@@ -145,15 +145,15 @@ Cloud SQL Admin API exposes (source: Google Cloud SQL.md):
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/concepts/data-storage/relational-database|Relational Database]]
+>> [[../../data-engineering/data-storage/relational-database|Relational Database]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/concepts/data-processing/online-transaction-processing|OLTP]]
+>> [[../../data-engineering/data-processing/online-transaction-processing|OLTP]]
 >
 >
 >> [!card] DBMS Theory
->> [[../../dbms/acid-properties|ACID Properties]]
+>> [[../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] Foundations + certs

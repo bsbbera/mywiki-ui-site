@@ -1,4 +1,4 @@
-﻿---
+---
 title: In-Memory Database
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 An **in-memory database (IMDB)** stores data in **main memory (RAM)** instead of on disk, giving **far faster access speeds** than traditional databases. This makes it ideal for applications requiring **very high or real-time read/write speeds** — gaming, web apps, financial transactions (source: Concepts/Data Storage/In-Memory Database.md).

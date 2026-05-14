@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Governance Guide
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A practical playbook for implementing **[[../concepts/data-management/data-governance|data governance]]** in an organization (source: Guides/Data Governance Guide.md).

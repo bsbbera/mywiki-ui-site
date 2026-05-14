@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Ingestion
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - ELT
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Data ingestion** is the process of extracting and importing data from various sources into a destination system where it can be stored, transformed, and analyzed (source: Concepts/Data Ingestion/Data Ingestion.md). It commonly involves moving data from operational systems, external APIs, or real-time streams into [[../data-architecture/data-warehouse|warehouses]] and [[../data-architecture/data-lake|lakes]].

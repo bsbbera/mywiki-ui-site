@@ -1,4 +1,4 @@
-﻿---
+---
 title: The Data Warehouse Toolkit
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - data_warehousing
 banner: "https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg"
 dg-publish: true
-publish: true
 ---
+
 ---
 
 ![Kimball Toolkit cover](https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg)

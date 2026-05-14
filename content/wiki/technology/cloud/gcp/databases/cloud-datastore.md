@@ -15,8 +15,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Cloud Datastore is GCP's **fully managed, serverless NoSQL document database**. Applications store, retrieve, and query **entities** (schema-flexible documents) identified by unique **keys**, grouped by **kinds** (source: Use Cloud Datastore For NoSQL Database On GCP.md).

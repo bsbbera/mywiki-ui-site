@@ -13,8 +13,8 @@ tags:
   - Storage
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Filestore is GCP's **managed network file storage** â€” fully managed NFS shares for [[compute-engine]] VMs, [[kubernetes-engine]] pods, and on-prem clients (source: Cloud Storage in GCP.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Google Kubernetes Engine
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Kubernetes
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Kubernetes Engine (GKE) is a managed Kubernetes service for deploying, scaling, and operating containerized applications on GCP. It abstracts the control plane (Kubernetes masters) so you focus on workloads (source: Google Kubernetes Engine.md).

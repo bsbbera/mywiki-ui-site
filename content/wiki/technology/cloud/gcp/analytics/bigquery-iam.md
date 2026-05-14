@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery IAM
 Created:
   - 2026-04-27
@@ -14,8 +14,8 @@ tags:
   - Security
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Access control in BigQuery is governed by **Cloud IAM**. The model is the standard GCP **Member + Role + Policy** triad applied to BigQuery resources (project, dataset, table, view, **column**, **row**) (source: Google Cloud Platform - Managing Access using IAM in BigQuery.md).
@@ -126,7 +126,7 @@ The source emphasises preferring **Google Groups** over individual users — cha
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/concepts/data-management/data-governance|Data Governance]]
+>> [[../../data-engineering/data-management/data-governance|Data Governance]]
 >
 >
 >> [!card] Data Engineering
@@ -134,5 +134,5 @@ The source emphasises preferring **Google Groups** over individual users — cha
 >
 >
 >> [!card] Guides
->> [[../../data-engineering/guides/data-governance-guide|Data Governance Guide]]
+>> [[../../guides/data-governance-guide|Data Governance Guide]]
 

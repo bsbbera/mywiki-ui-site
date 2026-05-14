@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery
 Created:
   - 2026-04-27
@@ -15,8 +15,8 @@ tags:
   - SQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 BigQuery is GCP's **fully managed, serverless data warehouse** — petabyte-scale analytics over structured and unstructured data with **standard SQL**, **automatic scaling**, and **pay-per-use** pricing (source: Google Cloud Platform - Introduction to BigQuery.md).
@@ -172,15 +172,15 @@ Note table-reference syntax: `` `project.dataset.table` `` with **backticks**, n
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/concepts/data-architecture/data-warehouse|Data Warehouse]]
+>> [[../../data-engineering/data-architecture/data-warehouse|Data Warehouse]]
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/concepts/data-storage/column-oriented-database|Column-oriented Database]]
+>> [[../../data-engineering/data-storage/column-oriented-database|Column-oriented Database]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/concepts/data-processing/online-analytical-processing|OLAP]]
+>> [[../../data-engineering/data-processing/online-analytical-processing|OLAP]]
 >
 >
 >> [!card] Related products

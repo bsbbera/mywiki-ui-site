@@ -1,4 +1,4 @@
-﻿---
+---
 title: Regions and Zones
 Created:
   - 2026-04-27
@@ -13,8 +13,8 @@ tags:
   - CloudEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 GCP organizes resources into a three-level geographic hierarchy: **multi-regions ⊃ regions ⊃ zones** (source: Google Cloud Platform (GCP).md).

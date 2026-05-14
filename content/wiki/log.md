@@ -1,4 +1,4 @@
-ï»¿---
+---
 title: Operations Log
 Created:
   - 2026-04-27
@@ -10,8 +10,8 @@ tags:
   - log
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Append-only log of all wiki operations. Newest entries at the top.
@@ -462,7 +462,7 @@ Moved all 28 existing wiki pages into 5 topic folders matching the index structu
 - Frontmatter uses literal values (not Templater syntax) so pages render correctly outside Obsidian Templater context.
 
 
-## 2026-05-10 ï¿½ Vault restructure: fields-of-knowledge top level
+## 2026-05-10 — Vault restructure: fields-of-knowledge top level
 
 **Trigger:** User feedback that the top-level folders (`gcp/`, `aws/`, `azure/`, `databricks/`, `dbms/`, `data-engineering/`, `people/`, `books/`) mixed *technology subdomains* with *cross-cutting metadata*. The mental model should instead be: top level = **fields of knowledge** (`technology/`, future `philosophy/`, `art/`, `science/`) + **cross-cutting metadata** (`people/`, `books/`).
 
@@ -475,7 +475,7 @@ Moved all 28 existing wiki pages into 5 topic folders matching the index structu
 - Moved `wiki/databricks/` ? `wiki/technology/cloud/databricks/`.
 - Moved `wiki/data-engineering/` ? `wiki/technology/data-engineering/`.
 - **Dropped redundant `concepts/` layer**: `wiki/technology/data-engineering/concepts/<X>/` ? `wiki/technology/data-engineering/<X>/` (data-architecture, data-ingestion, data-management, data-modeling, data-processing, data-storage).
-- **Promoted `software-engineering/` out of DE** to top tech level: `wiki/technology/data-engineering/concepts/software-engineering/` ? `wiki/technology/software-engineering/` (CAP, sharding, idempotence, indexing, scaling, patterns ï¿½ these are general SE/distributed-systems concepts, not DE-only).
+- **Promoted `software-engineering/` out of DE** to top tech level: `wiki/technology/data-engineering/concepts/software-engineering/` ? `wiki/technology/software-engineering/` (CAP, sharding, idempotence, indexing, scaling, patterns — these are general SE/distributed-systems concepts, not DE-only).
 - **Promoted `tools/` and `guides/` out of DE** to top tech level: `wiki/technology/data-engineering/{tools,guides}/` ? `wiki/technology/{tools,guides}/` (they were vault-wide reference material trapped inside one domain).
 - **Renamed `dbms/` ? `databases/`** (clearer term): `wiki/dbms/` ? `wiki/technology/databases/`. `DBMS Home.md` renamed to `Databases Home.md`.
 - `people/` and `books/` unchanged at top level (correctly identified as cross-cutting metadata).
@@ -492,19 +492,19 @@ Stripped folder-prefix from wikilinks pointing into the migrated tree, since Obs
 
 Created 4 new sub-hubs to match the new hierarchy:
 
-- `wiki/technology/Technology Home.md` ï¿½ sub-hub for the technology field.
-- `wiki/technology/cloud/Cloud Home.md` ï¿½ sub-hub for cloud platforms.
+- `wiki/technology/Technology Home.md` — sub-hub for the technology field.
+- `wiki/technology/cloud/Cloud Home.md` — sub-hub for cloud platforms.
 - `wiki/technology/software-engineering/Software Engineering Home.md`.
 - `wiki/technology/tools/Tools Home.md`.
 - `wiki/technology/guides/Guides Home.md`.
 
 ### Home pages updated (nav strips + Dataview paths)
 
-- `Master Home.md` ï¿½ completely rewritten. Top-level cards now reflect 3 fields (Technology, Books, People) with reserved cards for Philosophy/Art/Science.
-- `GCP Home.md`, `AWS Home.md`, `Azure Home.md`, `Databricks Home.md` ï¿½ nav strips updated to "Master ? Technology ? Cloud ? <Platform>" hierarchy.
-- `Databases Home.md` ï¿½ nav strip updated to "Master ? Technology ? Databases".
-- `Books Home.md`, `People Home.md` ï¿½ nav strips updated to "Master ? Technology ? Books/People".
-- `data-engineering.md` ï¿½ added Vault Navigation strip with new hierarchy.
+- `Master Home.md` — completely rewritten. Top-level cards now reflect 3 fields (Technology, Books, People) with reserved cards for Philosophy/Art/Science.
+- `GCP Home.md`, `AWS Home.md`, `Azure Home.md`, `Databricks Home.md` — nav strips updated to "Master ? Technology ? Cloud ? <Platform>" hierarchy.
+- `Databases Home.md` — nav strip updated to "Master ? Technology ? Databases".
+- `Books Home.md`, `People Home.md` — nav strips updated to "Master ? Technology ? Books/People".
+- `data-engineering.md` — added Vault Navigation strip with new hierarchy.
 
 ### `windsurf.md` rewrite
 

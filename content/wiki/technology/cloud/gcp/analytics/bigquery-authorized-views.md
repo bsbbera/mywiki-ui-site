@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery Authorized Views
 Created:
   - 2026-04-27
@@ -13,8 +13,8 @@ tags:
   - IAM
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 An **authorized view** lets you **share the results of a query** with users who **don't have access to the underlying tables** — the standard pattern for column- and row-level filtering before column/row-level security existed natively (source: Google Cloud Platform - Implementing Authorized View in BigQuery.md).
@@ -137,5 +137,5 @@ Authorized views remain the most portable pattern, especially across projects.
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/concepts/data-management/data-governance|Data Governance]]
+>> [[../../data-engineering/data-management/data-governance|Data Governance]]
 

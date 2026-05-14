@@ -1,4 +1,4 @@
-﻿---
+---
 title: Martin Kleppmann
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - computer_science
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 German computer scientist, researcher at the **University of Cambridge**, formerly engineer at LinkedIn (Voldemort, Samza). Author of **Designing Data-Intensive Applications** — the modern reference for distributed-systems + data engineering. Active researcher on **CRDTs** and local-first software.

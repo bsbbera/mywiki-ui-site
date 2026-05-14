@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft Azure
 Created:
   - 2026-04-29
@@ -14,8 +14,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 [Microsoft Azure](https://azure.microsoft.com/) is Microsoft's cloud computing platform with **200+ products and services**. It is especially popular among **businesses already using Microsoft data products** (e.g. SQL Server) as they move to a hybrid model — on-prem servers + Azure (source: Tools/Cloud Providers/Microsoft Azure.md).

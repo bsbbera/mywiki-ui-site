@@ -1,4 +1,4 @@
-﻿---
+---
 title: Google Cloud Platform
 Created:
   - 2026-04-27
@@ -13,8 +13,8 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Google Cloud Platform (GCP) is Google's public cloud offering: a portfolio of compute, storage, networking, data, and AI services built on the same global infrastructure that powers Google Search, Gmail, and YouTube (source: Google Cloud Platform (GCP).md). It exposes those resources to businesses and developers via three primary surfaces â€” the **Cloud Console** (web UI), the **gcloud CLI** (terminal/Cloud Shell), and **client libraries / REST APIs** for programmatic access (source: Google Cloud Platform (GCP).md).

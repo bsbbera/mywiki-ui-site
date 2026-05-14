@@ -1,4 +1,4 @@
-﻿---
+---
 title: Technology Home
 Created:
   - 2026-05-10
@@ -14,8 +14,8 @@ banner: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 🛠️ Technology
 
 > Engineering, computer science, cloud platforms, and the tooling that ties them together.

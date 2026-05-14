@@ -1,4 +1,4 @@
-﻿---
+---
 title: Workflow Orchestration
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Pipelines
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 In data engineering, **workflow orchestration** refers to the process of **scheduling and arranging tasks** that form your [[../data-pipeline|data pipeline]]. A workflow orchestration tool lets you **schedule, run, and observe** the entire process (source: Concepts/Data Processing/Workflow Orchestration.md).

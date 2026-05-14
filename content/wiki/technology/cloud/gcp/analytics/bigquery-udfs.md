@@ -1,4 +1,4 @@
-﻿---
+---
 title: BigQuery User-Defined Functions
 Created:
   - 2026-04-27
@@ -13,8 +13,8 @@ tags:
   - SQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **User-Defined Function (UDF)** lets you define a reusable function — in **SQL** or **JavaScript** — that accepts inputs, performs operations, and returns a value, callable like a built-in function (source: Google Cloud Platform - User Defined Functions in BigQuery.md).

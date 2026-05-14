@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Pipeline Best Practices
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - Guide
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Best practices for building **robust, scalable, performant** data pipelines, compiled from the data engineering community (source: Guides/Data Pipeline Best Practices.md).

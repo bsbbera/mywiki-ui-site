@@ -1,4 +1,4 @@
-﻿---
+---
 title: Wide-column Database
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 A **wide-column database** organizes data into **flexible columns** that can be spread across many servers/nodes. Also known as **column-family databases**. They store data in **rows keyed by primary key**, with columns grouped into **column families** that share attributes (source: Concepts/Data Storage/Wide-column Database.md).

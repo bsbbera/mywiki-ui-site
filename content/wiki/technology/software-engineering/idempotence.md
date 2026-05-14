@@ -1,4 +1,4 @@
-﻿---
+---
 title: Idempotence
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Reliability
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 **Idempotence** in data engineering means that **executing a data pipeline multiple times with the same input produces the same output**. The result of running an operation N times is identical to running it once (source: Concepts/Software Engineering/Idempotence.md).

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Workflow Orchestrators Overview
 Created:
   - 2026-04-29
@@ -13,8 +13,8 @@ tags:
   - Tools
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 Catalog of workflow orchestration tools used to schedule, coordinate, and observe data pipelines (source: Tools/Workflow Orchestrators/*.md).

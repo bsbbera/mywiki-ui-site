@@ -1,4 +1,4 @@
-﻿---
+---
 title: Amazon Web Services
 Created:
   - 2026-04-30
@@ -13,8 +13,8 @@ banner: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
+
 # 📦 Amazon Web Services
 
 > Core AWS data services — **S3**, **Redshift**, **EMR**, **Kinesis** — and how they fit into modern data platforms.

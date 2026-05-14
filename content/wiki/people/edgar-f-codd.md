@@ -1,4 +1,4 @@
-﻿---
+---
 title: Edgar F. Codd
 Created:
   - 2026-04-29
@@ -15,8 +15,8 @@ tags:
   - turing_award
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 British computer scientist (1923–2003) who, while at IBM, invented the **relational model** for database management — the theoretical foundation of every relational DBMS. Won the **1981 Turing Award**. Authored the **12 (13) rules of relational databases** and the seminal 1970 paper *A Relational Model of Data for Large Shared Data Banks*.

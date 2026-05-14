@@ -1,4 +1,4 @@
-﻿---
+---
 title: Full Load
 Created:
   - 2026-04-29
@@ -12,8 +12,8 @@ tags:
   - Ingestion
 banner:
 dg-publish: true
-publish: true
 ---
+
 ---
 
 With a **full load**, the **entire dataset is dumped** and is then **completely replaced** (deleted and re-inserted) with the new, updated dataset. No additional information (like timestamps or change markers) is required (source: Concepts/Data Ingestion/Full Load.md).
