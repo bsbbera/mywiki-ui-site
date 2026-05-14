@@ -23,6 +23,9 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import TopNav from "./TopNav"
+import PageTabs from "./PageTabs"
+import Infobox from "./Infobox"
 
 export {
   ArticleTitle,
@@ -50,4 +53,7 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  TopNav,
+  PageTabs,
+  Infobox,
 }

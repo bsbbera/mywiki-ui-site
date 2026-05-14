@@ -42,51 +42,299 @@ body {
   background: var(--light);
 }
 
-a:not(.internal):not(.external) {
-  color: var(--tg-link);
-  transition: color var(--tg-t-fast);
+/* ============================================
+   Dark mode overrides (existing aesthetic preserved)
+   ============================================ */
+
+:root[saved-theme="dark"] {
+  a:not(.internal):not(.external) {
+    color: var(--tg-link);
+    transition: color var(--tg-t-fast);
+  }
+
+  a:hover {
+    color: var(--tg-gold-hover) !important;
+  }
+
+  .popover .popover-inner {
+    background: var(--tg-surface-2) !important;
+    border-radius: var(--tg-radius-lg) !important;
+    box-shadow: var(--tg-shadow-card);
+    border: 1px solid var(--tg-surface-3);
+  }
+
+  .callout {
+    background: var(--tg-surface-2);
+    border-radius: var(--tg-radius-md);
+    border-left: 4px solid var(--tg-gold);
+  }
+
+  a.tag-link,
+  .tags > li > a {
+    background: var(--tg-surface-3);
+    color: var(--tg-gold);
+    border: 1px solid var(--tg-gold);
+    border-radius: 9999px;
+    padding: 0.15rem 0.6rem;
+    transition: all var(--tg-t-fast);
+  }
+  a.tag-link:hover,
+  .tags > li > a:hover {
+    background: var(--tg-gold);
+    color: var(--tg-surface-0) !important;
+  }
+
+  .graph > .graph-outer {
+    background: var(--tg-surface-2);
+    border-radius: var(--tg-radius-lg);
+    box-shadow: var(--tg-shadow-card);
+  }
+
+  .toc-content {
+    background: var(--tg-surface-1);
+    border-radius: var(--tg-radius-md);
+    padding: 0.5rem 1rem;
+  }
+
+  /* Phase E — new components in dark mode */
+  .tg-topnav {
+    background: var(--tg-surface-1);
+    border-bottom: 1px solid var(--tg-surface-3);
+  }
+  .tg-topnav a {
+    color: var(--tg-gold);
+  }
+  .tg-topnav a:hover {
+    color: var(--tg-gold-hover);
+  }
+
+  .tg-tabs a {
+    background: var(--tg-surface-1);
+    border: 1px solid var(--tg-surface-3);
+    border-bottom: none;
+    color: var(--tg-text-subtle);
+  }
+  .tg-tabs a.active {
+    background: var(--tg-surface-2);
+    color: var(--tg-gold);
+  }
+  .tg-tabs a:not(.active):hover {
+    background: var(--tg-surface-3);
+    color: var(--tg-gold);
+  }
+
+  .tg-infobox {
+    background: var(--tg-surface-2);
+    border: 1px solid var(--tg-surface-3);
+    box-shadow: none;
+  }
+  .tg-infobox > header {
+    color: var(--tg-gold);
+    border-bottom: 1px solid var(--tg-surface-3);
+  }
+  .tg-infobox dt {
+    color: var(--tg-text-subtle);
+  }
+  .tg-infobox dd {
+    color: var(--tg-text);
+  }
 }
 
-a:hover {
-  color: var(--tg-gold-hover) !important;
-}
+/* ============================================
+   Light mode — Tolkien Gateway parchment
+   ============================================ */
 
-.popover .popover-inner {
-  background: var(--tg-surface-2) !important;
-  border-radius: var(--tg-radius-lg) !important;
-  box-shadow: var(--tg-shadow-card);
-  border: 1px solid var(--tg-surface-3);
-}
+:root[saved-theme="light"] {
+  /* Phase A — base typography */
+  body {
+    background: var(--light);
+  }
 
-.callout {
-  background: var(--tg-surface-2);
-  border-radius: var(--tg-radius-md);
-  border-left: 4px solid var(--tg-gold);
-}
+  a:not(.internal):not(.external) {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--tg-t-fast);
+  }
+  a:not(.internal):not(.external):hover {
+    color: var(--tertiary);
+  }
 
-a.tag-link,
-.tags > li > a {
-  background: var(--tg-surface-3);
-  color: var(--tg-gold);
-  border: 1px solid var(--tg-gold);
-  border-radius: 9999px;
-  padding: 0.15rem 0.6rem;
-  transition: all var(--tg-t-fast);
-}
-a.tag-link:hover,
-.tags > li > a:hover {
-  background: var(--tg-gold);
-  color: var(--tg-surface-0) !important;
-}
+  a.internal {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--tg-t-fast);
+  }
+  a.internal:hover {
+    color: var(--tertiary);
+  }
 
-.graph > .graph-outer {
-  background: var(--tg-surface-2);
-  border-radius: var(--tg-radius-lg);
-  box-shadow: var(--tg-shadow-card);
-}
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-family: var(--headerFont);
+  }
+  h1, h2 {
+    letter-spacing: 0.02em;
+  }
 
-.toc-content {
-  background: var(--tg-surface-1);
-  border-radius: var(--tg-radius-md);
-  padding: 0.5rem 1rem;
+  ::selection {
+    background: rgba(90, 122, 30, 0.25);
+    color: var(--dark);
+  }
+
+  /* Phase B — boxed article + ornamental hr + drop cap */
+  article {
+    background: var(--lightgray);
+    border: 1px solid var(--gray);
+    padding: 2.5rem 3rem;
+    box-shadow: inset 0 0 0 1px rgba(168, 152, 120, 0.25);
+    border-radius: 0;
+  }
+
+  article hr {
+    border: 0;
+    height: 28px;
+    margin: 2.5em 0;
+    background: center / 260px 24px no-repeat
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 24'><line x1='0' y1='12' x2='110' y2='12' stroke='%23a89878' stroke-width='1'/><text x='130' y='18' text-anchor='middle' font-family='serif' font-size='20' fill='%23a89878'>&#x2766;</text><line x1='150' y1='12' x2='260' y2='12' stroke='%23a89878' stroke-width='1'/></svg>");
+  }
+
+  article > p:first-of-type::first-letter {
+    font-family: var(--headerFont);
+    font-size: 3.4em;
+    float: left;
+    line-height: 0.9;
+    padding: 0.25rem 0.5rem 0 0;
+    color: var(--dark);
+  }
+
+  /* Phase C — callouts restyled as TG infoboxes */
+  .callout {
+    background: var(--light) !important;
+    border: 1px solid var(--gray) !important;
+    box-shadow:
+      inset 0 0 0 3px var(--lightgray),
+      inset 0 0 0 4px var(--gray);
+    border-radius: 0 !important;
+    padding: 1.5rem 2rem;
+    margin: 1.75rem 0;
+  }
+  .callout > .callout-title {
+    text-align: center;
+    font-variant: small-caps;
+    font-family: var(--headerFont);
+    color: var(--dark);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+  .callout > .callout-title .callout-icon {
+    filter: grayscale(1) brightness(0.5);
+  }
+
+  /* Phase D — TopNav */
+  .tg-topnav {
+    background: var(--lightgray);
+    border-bottom: 1px solid var(--gray);
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .tg-topnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .tg-topnav li {
+    margin: 0;
+  }
+  .tg-topnav a {
+    color: var(--secondary);
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .tg-topnav a:hover {
+    color: var(--tertiary);
+    text-decoration: underline;
+  }
+
+  /* Phase D — PageTabs */
+  .tg-tabs {
+    display: flex;
+    gap: 0;
+    margin: 0 0 -1px 0.5rem;
+    padding: 0;
+  }
+  .tg-tabs a {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-bottom: none;
+    color: var(--darkgray);
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-radius: 0;
+    margin-right: 2px;
+  }
+  .tg-tabs a.active {
+    background: var(--lightgray);
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+  }
+  .tg-tabs a:not(.active):hover {
+    background: var(--gray);
+    color: var(--light);
+  }
+
+  /* Phase D — Infobox */
+  .tg-infobox {
+    background: var(--lightgray);
+    border: 1px solid var(--gray);
+    box-shadow:
+      inset 0 0 0 3px var(--light),
+      inset 0 0 0 4px var(--gray);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .tg-infobox > header {
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    text-align: center;
+    color: var(--dark);
+    font-size: 1.05rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid var(--gray);
+    letter-spacing: 0.05em;
+  }
+  .tg-infobox dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  .tg-infobox dt {
+    font-weight: 600;
+    color: var(--gray);
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .tg-infobox dd {
+    margin: 0;
+    color: var(--darkgray);
+    word-break: break-word;
+  }
 }
