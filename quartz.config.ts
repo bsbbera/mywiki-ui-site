@@ -92,8 +92,8 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // CustomOgImages disabled: fails on Vercel (fetch failed) and slows builds
+      // Plugin.CustomOgImages(),
     ],
   },
 }
