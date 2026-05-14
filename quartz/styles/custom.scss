@@ -42,51 +42,100 @@ body {
   background: var(--light);
 }
 
-a:not(.internal):not(.external) {
-  color: var(--tg-link);
-  transition: color var(--tg-t-fast);
+/* ============================================
+   Dark mode overrides (existing aesthetic preserved)
+   ============================================ */
+
+:root[saved-theme="dark"] {
+  a:not(.internal):not(.external) {
+    color: var(--tg-link);
+    transition: color var(--tg-t-fast);
+  }
+
+  a:hover {
+    color: var(--tg-gold-hover) !important;
+  }
+
+  .popover .popover-inner {
+    background: var(--tg-surface-2) !important;
+    border-radius: var(--tg-radius-lg) !important;
+    box-shadow: var(--tg-shadow-card);
+    border: 1px solid var(--tg-surface-3);
+  }
+
+  .callout {
+    background: var(--tg-surface-2);
+    border-radius: var(--tg-radius-md);
+    border-left: 4px solid var(--tg-gold);
+  }
+
+  a.tag-link,
+  .tags > li > a {
+    background: var(--tg-surface-3);
+    color: var(--tg-gold);
+    border: 1px solid var(--tg-gold);
+    border-radius: 9999px;
+    padding: 0.15rem 0.6rem;
+    transition: all var(--tg-t-fast);
+  }
+  a.tag-link:hover,
+  .tags > li > a:hover {
+    background: var(--tg-gold);
+    color: var(--tg-surface-0) !important;
+  }
+
+  .graph > .graph-outer {
+    background: var(--tg-surface-2);
+    border-radius: var(--tg-radius-lg);
+    box-shadow: var(--tg-shadow-card);
+  }
+
+  .toc-content {
+    background: var(--tg-surface-1);
+    border-radius: var(--tg-radius-md);
+    padding: 0.5rem 1rem;
+  }
 }
 
-a:hover {
-  color: var(--tg-gold-hover) !important;
-}
+/* ============================================
+   Light mode — Tolkien Gateway parchment (Phase A)
+   ============================================ */
 
-.popover .popover-inner {
-  background: var(--tg-surface-2) !important;
-  border-radius: var(--tg-radius-lg) !important;
-  box-shadow: var(--tg-shadow-card);
-  border: 1px solid var(--tg-surface-3);
-}
+:root[saved-theme="light"] {
+  body {
+    background: var(--light);
+  }
 
-.callout {
-  background: var(--tg-surface-2);
-  border-radius: var(--tg-radius-md);
-  border-left: 4px solid var(--tg-gold);
-}
+  a:not(.internal):not(.external) {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--tg-t-fast);
+  }
+  a:not(.internal):not(.external):hover {
+    color: var(--tertiary);
+  }
 
-a.tag-link,
-.tags > li > a {
-  background: var(--tg-surface-3);
-  color: var(--tg-gold);
-  border: 1px solid var(--tg-gold);
-  border-radius: 9999px;
-  padding: 0.15rem 0.6rem;
-  transition: all var(--tg-t-fast);
-}
-a.tag-link:hover,
-.tags > li > a:hover {
-  background: var(--tg-gold);
-  color: var(--tg-surface-0) !important;
-}
+  a.internal {
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--tg-t-fast);
+  }
+  a.internal:hover {
+    color: var(--tertiary);
+  }
 
-.graph > .graph-outer {
-  background: var(--tg-surface-2);
-  border-radius: var(--tg-radius-lg);
-  box-shadow: var(--tg-shadow-card);
-}
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-family: var(--headerFont);
+  }
+  h1, h2 {
+    letter-spacing: 0.02em;
+  }
 
-.toc-content {
-  background: var(--tg-surface-1);
-  border-radius: var(--tg-radius-md);
-  padding: 0.5rem 1rem;
+  ::selection {
+    background: rgba(90, 122, 30, 0.25);
+    color: var(--dark);
+  }
 }
