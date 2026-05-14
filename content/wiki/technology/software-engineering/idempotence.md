@@ -13,6 +13,7 @@ tags:
   - Reliability
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

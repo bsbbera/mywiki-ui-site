@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 👥 People

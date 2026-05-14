@@ -11,6 +11,7 @@ tags:
   - Storage
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

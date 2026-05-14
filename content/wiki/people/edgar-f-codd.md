@@ -15,6 +15,7 @@ tags:
   - turing_award
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Run
 Created:
   - 2026-04-27
@@ -13,6 +13,7 @@ tags:
   - Containers
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

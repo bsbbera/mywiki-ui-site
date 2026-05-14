@@ -13,6 +13,7 @@ tags:
   - CloudEngineering
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

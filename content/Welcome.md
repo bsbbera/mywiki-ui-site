@@ -1,5 +1,6 @@
 ---
 date modified: Thursday, April 30th 2026, 12:37:15 am
+publish: true
 ---
 This is your new *vault*.
 

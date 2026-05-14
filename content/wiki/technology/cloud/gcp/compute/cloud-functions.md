@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Functions
 Created:
   - 2026-04-27
@@ -14,6 +14,7 @@ tags:
   - Serverless
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

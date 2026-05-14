@@ -12,6 +12,7 @@ tags:
   - Schema
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

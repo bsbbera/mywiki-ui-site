@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&f
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 🗄️ Database Management Systems

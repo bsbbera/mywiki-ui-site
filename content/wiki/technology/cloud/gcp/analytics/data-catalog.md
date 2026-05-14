@@ -15,6 +15,7 @@ tags:
   - Governance
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

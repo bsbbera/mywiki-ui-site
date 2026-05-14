@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cloud Bigtable
 Created:
   - 2026-04-27
@@ -15,6 +15,7 @@ tags:
   - DataEngineering
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -13,6 +13,7 @@ tags:
   - DistributedSystems
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -16,6 +16,7 @@ tags:
   - Warehouse
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

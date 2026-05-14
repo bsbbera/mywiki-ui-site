@@ -12,6 +12,7 @@ tags:
   - data_architecture
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

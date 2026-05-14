@@ -14,6 +14,7 @@ banner: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 🛠️ Technology

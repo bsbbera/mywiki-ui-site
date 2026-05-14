@@ -1,4 +1,4 @@
-﻿---
+---
 title: Filestore
 Created:
   - 2026-04-27
@@ -13,6 +13,7 @@ tags:
   - Storage
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

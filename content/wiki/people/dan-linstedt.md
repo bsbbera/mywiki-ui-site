@@ -13,6 +13,7 @@ tags:
   - data_modeling
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

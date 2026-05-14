@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 🧰 Tools

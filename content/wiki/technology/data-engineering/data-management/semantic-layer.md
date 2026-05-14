@@ -12,6 +12,7 @@ tags:
   - Modeling
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

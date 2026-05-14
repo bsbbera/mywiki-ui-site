@@ -11,6 +11,7 @@ tags:
   - Processing
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

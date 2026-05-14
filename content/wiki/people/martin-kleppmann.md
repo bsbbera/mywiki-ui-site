@@ -12,6 +12,7 @@ tags:
   - computer_science
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

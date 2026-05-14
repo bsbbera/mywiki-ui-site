@@ -12,6 +12,7 @@ tags:
   - data_warehousing
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

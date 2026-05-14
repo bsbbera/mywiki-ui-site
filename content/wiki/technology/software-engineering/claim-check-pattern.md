@@ -13,6 +13,7 @@ tags:
   - Messaging
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

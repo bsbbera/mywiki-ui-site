@@ -14,6 +14,7 @@ tags:
   - OLAP
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -12,6 +12,7 @@ tags:
   - Compliance
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

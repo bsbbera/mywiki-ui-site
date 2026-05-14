@@ -29,6 +29,46 @@ function ensureDir(dir) {
   }
 }
 
+/**
+ * Copy a markdown file and ensure it has `publish: true` in frontmatter.
+ * Maps Obsidian Digital Garden's `dg-publish: true` to Quartz's `publish: true`.
+ * If no frontmatter exists, prepends one.
+ */
+function copyMarkdownWithPublishFlag(srcFile, destFile) {
+  let content = fs.readFileSync(srcFile, "utf8");
+
+  // Strip BOM (Byte Order Mark) - common on Windows-created files
+  if (content.charCodeAt(0) === 0xfeff) {
+    content = content.slice(1);
+  }
+
+  // Also handle CRLF line endings - normalize to LF for regex
+  const normalized = content.replace(/\r\n/g, "\n");
+
+  // Check if file has frontmatter (starts with ---)
+  const fmMatch = normalized.match(/^---\n([\s\S]*?)\n---\n?/);
+
+  let newContent;
+  if (fmMatch) {
+    const frontmatter = fmMatch[1];
+    const body = normalized.slice(fmMatch[0].length);
+
+    // If already has `publish: true`, leave content as-is
+    if (/^publish:\s*true\s*$/m.test(frontmatter)) {
+      newContent = normalized;
+    } else {
+      // Add publish: true to existing frontmatter
+      const newFm = frontmatter + "\npublish: true";
+      newContent = `---\n${newFm}\n---\n${body}`;
+    }
+  } else {
+    // No frontmatter → prepend one with publish: true
+    newContent = `---\npublish: true\n---\n${normalized}`;
+  }
+
+  fs.writeFileSync(destFile, newContent);
+}
+
 function copyDir(src, dest, depth = 0) {
   if (!fs.existsSync(src)) {
     console.warn(`  ⚠️  Source not found: ${src}`);
@@ -52,7 +92,11 @@ function copyDir(src, dest, depth = 0) {
 
     if (stat.isDirectory()) {
       totalCopied += copyDir(srcFile, destFile, depth + 1);
-    } else if (file.endsWith(".md") || file.endsWith(".pdf")) {
+    } else if (file.endsWith(".md")) {
+      copyMarkdownWithPublishFlag(srcFile, destFile);
+      totalCopied++;
+      log(`    Copied (w/ publish): ${file}`);
+    } else if (file.endsWith(".pdf")) {
       fs.copyFileSync(srcFile, destFile);
       totalCopied++;
       log(`    Copied: ${file}`);
@@ -142,9 +186,9 @@ This site is a public reflection of notes I keep in [Obsidian](https://obsidian.
       const dest = path.join(CONTENT_PATH, file);
 
       if (fs.existsSync(src)) {
-        fs.copyFileSync(src, dest);
+        copyMarkdownWithPublishFlag(src, dest);
         rootCopied++;
-        log(`    Copied: ${file}`);
+        log(`    Copied (w/ publish): ${file}`);
       }
     });
 

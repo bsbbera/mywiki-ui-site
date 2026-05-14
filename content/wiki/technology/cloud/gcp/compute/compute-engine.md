@@ -1,4 +1,4 @@
-﻿---
+---
 title: Compute Engine
 Created:
   - 2026-04-27
@@ -13,6 +13,7 @@ tags:
   - Compute
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

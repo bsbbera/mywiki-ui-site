@@ -13,6 +13,7 @@ tags:
   - Tools
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

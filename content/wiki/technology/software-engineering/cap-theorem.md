@@ -13,6 +13,7 @@ tags:
   - Database
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

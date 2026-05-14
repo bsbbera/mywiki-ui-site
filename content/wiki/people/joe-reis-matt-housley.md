@@ -12,6 +12,7 @@ tags:
   - data_engineering
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

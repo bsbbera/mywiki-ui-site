@@ -12,6 +12,7 @@ tags:
   - Compute
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

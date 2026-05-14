@@ -12,6 +12,7 @@ tags:
   - generative_ai
 banner:
 dg-publish: true
+publish: true
 ---
 ---
 > "It is not uncommon for people to spend their whole life waiting to start living.

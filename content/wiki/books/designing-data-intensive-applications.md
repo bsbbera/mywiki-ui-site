@@ -13,6 +13,7 @@ tags:
   - distributed_systems
 banner: "https://learning.oreilly.com/library/cover/9781491903063/250w/"
 dg-publish: true
+publish: true
 ---
 
 ---

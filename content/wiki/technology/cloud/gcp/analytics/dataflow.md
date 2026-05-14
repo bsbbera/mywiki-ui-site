@@ -16,6 +16,7 @@ tags:
   - ApacheBeam
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

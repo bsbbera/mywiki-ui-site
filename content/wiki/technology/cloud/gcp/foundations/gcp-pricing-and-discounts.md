@@ -16,6 +16,7 @@ tags:
   - Pricing
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

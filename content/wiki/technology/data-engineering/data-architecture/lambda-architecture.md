@@ -12,6 +12,7 @@ tags:
   - Streaming
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

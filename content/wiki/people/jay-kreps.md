@@ -13,6 +13,7 @@ tags:
   - kafka
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

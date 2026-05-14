@@ -13,6 +13,7 @@ tags:
   - NoSQL
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

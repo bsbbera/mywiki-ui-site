@@ -13,6 +13,7 @@ tags:
   - IAM
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

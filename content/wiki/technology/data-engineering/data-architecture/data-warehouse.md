@@ -14,6 +14,7 @@ tags:
   - Analytics
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -13,6 +13,7 @@ tags:
   - data_warehousing
 banner: "https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg"
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -10,6 +10,7 @@ cssclasses:
 - Tolkien Gateway Home
 
 date modified: Wednesday, May 13th 2026, 4:46:09 pm
+publish: true
 ---
 
 # Tolkien Gateway

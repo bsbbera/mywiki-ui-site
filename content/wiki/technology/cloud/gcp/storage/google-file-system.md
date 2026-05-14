@@ -1,4 +1,4 @@
-﻿---
+---
 title: Google File System
 Created:
   - 2026-04-27
@@ -15,6 +15,7 @@ tags:
   - History
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

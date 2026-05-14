@@ -14,6 +14,7 @@ tags:
   - Productivity
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

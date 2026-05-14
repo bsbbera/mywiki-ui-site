@@ -1,4 +1,4 @@
-﻿---
+---
 title: Professional Data Engineer
 Created:
   - 2026-04-27
@@ -15,6 +15,7 @@ tags:
 status: studying
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -15,6 +15,7 @@ tags:
   - Databricks
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

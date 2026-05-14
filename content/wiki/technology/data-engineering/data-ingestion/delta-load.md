@@ -13,6 +13,7 @@ tags:
   - Ingestion
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

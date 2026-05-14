@@ -16,6 +16,7 @@ aliases:
   - The Grey Pilgrim
   - The White Rider
 date modified: Wednesday, May 13th 2026, 9:10:32 pm
+publish: true
 ---
 ---
 

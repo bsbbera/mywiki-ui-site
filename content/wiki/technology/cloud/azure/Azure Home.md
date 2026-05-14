@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 🟦 Microsoft Azure

@@ -16,6 +16,7 @@ dg-publish: true
 cssclasses:
   - master-home
   - wide-page
+publish: true
 ---
 
 # Second Brain

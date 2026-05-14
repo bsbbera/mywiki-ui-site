@@ -14,6 +14,7 @@ banner:
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 ---

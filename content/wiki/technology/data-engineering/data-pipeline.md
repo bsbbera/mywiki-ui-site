@@ -15,6 +15,7 @@ tags:
   - ELT
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

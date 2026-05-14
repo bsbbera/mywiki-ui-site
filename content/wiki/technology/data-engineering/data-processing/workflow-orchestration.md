@@ -13,6 +13,7 @@ tags:
   - Pipelines
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

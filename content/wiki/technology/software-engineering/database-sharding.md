@@ -13,6 +13,7 @@ tags:
   - Scaling
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

@@ -11,6 +11,7 @@ tags:
   - data_engineering
 banner: "https://learning.oreilly.com/library/cover/9781098108298/250w/"
 dg-publish: true
+publish: true
 ---
 
 ---

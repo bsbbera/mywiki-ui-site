@@ -15,6 +15,7 @@ tags:
   - Guide
 banner:
 dg-publish: true
+publish: true
 ---
 
 ---

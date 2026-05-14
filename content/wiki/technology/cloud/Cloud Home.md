@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&f
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # ☁️ Cloud Platforms

@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 📦 Amazon Web Services

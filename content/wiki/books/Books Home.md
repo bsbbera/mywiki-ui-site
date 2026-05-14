@@ -13,6 +13,7 @@ banner: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=forma
 dg-publish: true
 cssclasses:
   - wide-page
+publish: true
 ---
 
 # 📚 Books
