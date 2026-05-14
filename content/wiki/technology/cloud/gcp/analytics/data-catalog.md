@@ -14,7 +14,6 @@ tags:
   - Discovery
   - Governance
 banner:
-dg-publish: true
 publish: true
 ---
 

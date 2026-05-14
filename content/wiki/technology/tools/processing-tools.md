@@ -11,7 +11,6 @@ tags:
   - Processing
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

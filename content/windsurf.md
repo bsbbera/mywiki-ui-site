@@ -156,7 +156,7 @@ aliases:
 category:
 tags:
 banner:
-dg-publish: true
+publish: true
 ---
 
 

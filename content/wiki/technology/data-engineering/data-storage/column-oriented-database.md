@@ -13,7 +13,6 @@ tags:
   - OLAP
   - Analytics
 banner:
-dg-publish: true
 publish: true
 ---
 

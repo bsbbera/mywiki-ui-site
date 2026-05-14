@@ -12,7 +12,6 @@ tags:
   - spark
   - databricks
 banner:
-dg-publish: true
 publish: true
 ---
 

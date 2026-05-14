@@ -14,7 +14,6 @@ tags:
   - ETL
   - ELT
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -12,7 +12,6 @@ tags:
   - Scaling
   - DistributedSystems
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -10,10 +10,9 @@ tags:
   - index
   - people
 banner: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 👥 People

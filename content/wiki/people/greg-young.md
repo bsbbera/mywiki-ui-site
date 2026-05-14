@@ -11,7 +11,6 @@ tags:
   - software_engineering
   - patterns
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -11,7 +11,6 @@ tags:
   - Governance
   - Compliance
 banner:
-dg-publish: true
 publish: true
 ---
 

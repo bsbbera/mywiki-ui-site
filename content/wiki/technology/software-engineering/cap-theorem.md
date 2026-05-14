@@ -12,7 +12,6 @@ tags:
   - Theory
   - Database
 banner:
-dg-publish: true
 publish: true
 ---
 

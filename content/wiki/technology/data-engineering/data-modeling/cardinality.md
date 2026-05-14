@@ -11,7 +11,6 @@ tags:
   - Modeling
   - SQL
 banner:
-dg-publish: true
 publish: true
 ---
 

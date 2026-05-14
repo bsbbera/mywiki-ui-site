@@ -13,7 +13,6 @@ tags:
   - Compute
   - PaaS
 banner:
-dg-publish: true
 publish: true
 ---
 

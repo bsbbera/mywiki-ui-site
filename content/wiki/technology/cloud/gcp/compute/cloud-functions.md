@@ -13,7 +13,6 @@ tags:
   - CloudEngineering
   - Serverless
 banner:
-dg-publish: true
 publish: true
 ---
 

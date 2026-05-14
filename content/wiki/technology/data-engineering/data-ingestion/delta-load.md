@@ -12,7 +12,6 @@ tags:
   - DataEngineering
   - Ingestion
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -13,7 +13,6 @@ tags:
   - BI
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

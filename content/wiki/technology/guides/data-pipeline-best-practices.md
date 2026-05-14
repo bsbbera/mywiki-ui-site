@@ -14,7 +14,6 @@ tags:
   - BestPractices
   - Guide
 banner:
-dg-publish: true
 publish: true
 ---
 

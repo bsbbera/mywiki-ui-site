@@ -12,7 +12,6 @@ tags:
   - Programming
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

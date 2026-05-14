@@ -13,7 +13,6 @@ tags:
   - NoSQL
   - Graph
 banner:
-dg-publish: true
 publish: true
 ---
 

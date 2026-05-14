@@ -16,7 +16,6 @@ tags:
   - ETL
   - Theory
 banner:
-dg-publish: true
 publish: true
 ---
 

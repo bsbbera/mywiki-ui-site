@@ -10,10 +10,9 @@ tags:
   - index
   - azure
 banner: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 🟦 Microsoft Azure

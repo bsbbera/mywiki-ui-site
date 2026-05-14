@@ -15,7 +15,6 @@ tags:
   - GCP
   - Guide
 banner:
-dg-publish: true
 publish: true
 ---
 

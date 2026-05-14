@@ -10,10 +10,9 @@ tags:
   - index
   - dbms
 banner: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 🗄️ Database Management Systems

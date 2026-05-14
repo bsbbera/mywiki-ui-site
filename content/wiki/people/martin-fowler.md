@@ -11,7 +11,6 @@ tags:
   - software_engineering
   - architecture
 banner:
-dg-publish: true
 publish: true
 ---
 

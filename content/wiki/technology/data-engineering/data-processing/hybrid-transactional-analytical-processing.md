@@ -13,7 +13,6 @@ tags:
   - OLTP
   - OLAP
 banner:
-dg-publish: true
 publish: true
 ---
 

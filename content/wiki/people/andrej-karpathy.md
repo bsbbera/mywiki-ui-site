@@ -11,7 +11,6 @@ tags:
   - machine_learning
   - generative_ai
 banner:
-dg-publish: true
 publish: true
 ---
 ---

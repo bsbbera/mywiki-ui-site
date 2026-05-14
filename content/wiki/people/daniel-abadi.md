@@ -12,7 +12,6 @@ tags:
   - distributed_systems
   - database
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -10,10 +10,9 @@ tags:
   - index
   - books
 banner: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 📚 Books

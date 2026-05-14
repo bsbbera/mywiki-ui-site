@@ -14,7 +14,6 @@ tags:
   - DataEngineering
   - SQL
 banner:
-dg-publish: true
 publish: true
 ---
 

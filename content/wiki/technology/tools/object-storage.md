@@ -13,7 +13,6 @@ tags:
   - Storage
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -13,7 +13,6 @@ tags:
   - Architecture
   - Analytics
 banner:
-dg-publish: true
 publish: true
 ---
 

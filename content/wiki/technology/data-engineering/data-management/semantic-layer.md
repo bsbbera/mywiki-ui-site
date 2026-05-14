@@ -11,7 +11,6 @@ tags:
   - BI
   - Modeling
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -11,10 +11,9 @@ tags:
   - index
   - gcp
 banner: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # ☁️ Google Cloud Platform

@@ -11,7 +11,6 @@ tags:
   - Modeling
   - Analytics
 banner:
-dg-publish: true
 publish: true
 ---
 

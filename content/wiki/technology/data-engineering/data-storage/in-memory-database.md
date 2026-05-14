@@ -13,7 +13,6 @@ tags:
   - Performance
   - NoSQL
 banner:
-dg-publish: true
 publish: true
 ---
 

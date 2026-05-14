@@ -10,10 +10,9 @@ tags:
   - index
   - aws
 banner: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 📦 Amazon Web Services

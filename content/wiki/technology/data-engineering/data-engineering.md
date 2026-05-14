@@ -11,10 +11,9 @@ tags:
   - DataEngineering
   - Overview
 banner:
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 ---

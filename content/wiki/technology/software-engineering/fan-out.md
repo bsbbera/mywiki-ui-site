@@ -11,7 +11,6 @@ tags:
   - Patterns
   - Messaging
 banner:
-dg-publish: true
 publish: true
 ---
 

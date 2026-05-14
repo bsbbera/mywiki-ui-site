@@ -12,7 +12,6 @@ tags:
   - SQL
   - Performance
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -14,7 +14,6 @@ tags:
   - Document
   - DataEngineering
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -13,7 +13,6 @@ tags:
   - Quality
   - Guide
 banner:
-dg-publish: true
 publish: true
 ---
 

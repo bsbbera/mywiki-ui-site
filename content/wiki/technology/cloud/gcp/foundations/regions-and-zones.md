@@ -12,7 +12,6 @@ tags:
   - GCP
   - CloudEngineering
 banner:
-dg-publish: true
 publish: true
 ---
 

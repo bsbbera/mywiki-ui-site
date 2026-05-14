@@ -9,7 +9,6 @@ category: Log
 tags:
   - log
 banner:
-dg-publish: true
 publish: true
 ---
 

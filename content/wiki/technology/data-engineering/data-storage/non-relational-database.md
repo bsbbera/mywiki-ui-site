@@ -13,7 +13,6 @@ tags:
   - Storage
   - NoSQL
 banner:
-dg-publish: true
 publish: true
 ---
 

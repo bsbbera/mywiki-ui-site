@@ -11,7 +11,6 @@ tags:
   - Career
   - Guide
 banner:
-dg-publish: true
 publish: true
 ---
 

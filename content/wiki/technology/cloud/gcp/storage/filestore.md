@@ -12,7 +12,6 @@ tags:
   - CloudEngineering
   - Storage
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -14,7 +14,6 @@ tags:
   - Exam
 status: studying
 banner:
-dg-publish: true
 publish: true
 ---
 

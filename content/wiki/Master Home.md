@@ -12,11 +12,10 @@ tags:
   - index
 banner: https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1600
 banner_y: 0.4
-dg-publish: true
+publish: true
 cssclasses:
   - master-home
   - wide-page
-publish: true
 ---
 
 # Second Brain

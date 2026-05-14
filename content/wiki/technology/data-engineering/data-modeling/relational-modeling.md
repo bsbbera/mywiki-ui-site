@@ -11,7 +11,6 @@ tags:
   - Modeling
   - OLTP
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -11,7 +11,6 @@ tags:
   - distributed_systems
   - computer_science
 banner:
-dg-publish: true
 publish: true
 ---
 

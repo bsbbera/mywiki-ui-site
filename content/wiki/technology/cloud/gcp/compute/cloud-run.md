@@ -12,7 +12,6 @@ tags:
   - Serverless
   - Containers
 banner:
-dg-publish: true
 publish: true
 ---
 

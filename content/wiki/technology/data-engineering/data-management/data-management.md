@@ -11,7 +11,6 @@ tags:
   - Governance
   - Quality
 banner:
-dg-publish: true
 publish: true
 ---
 

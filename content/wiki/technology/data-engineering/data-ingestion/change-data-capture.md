@@ -12,7 +12,6 @@ tags:
   - Ingestion
   - Replication
 banner:
-dg-publish: true
 publish: true
 ---
 

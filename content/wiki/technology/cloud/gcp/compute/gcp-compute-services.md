@@ -11,7 +11,6 @@ tags:
   - CloudEngineering
   - Compute
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -11,7 +11,6 @@ tags:
   - Ingestion
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

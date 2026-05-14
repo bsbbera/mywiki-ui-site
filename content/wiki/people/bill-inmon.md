@@ -12,7 +12,6 @@ tags:
   - data_engineering
   - data_warehousing
 banner:
-dg-publish: true
 publish: true
 ---
 

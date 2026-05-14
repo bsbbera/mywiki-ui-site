@@ -13,7 +13,6 @@ tags:
   - Modeling
   - OLAP
 banner:
-dg-publish: true
 publish: true
 ---
 

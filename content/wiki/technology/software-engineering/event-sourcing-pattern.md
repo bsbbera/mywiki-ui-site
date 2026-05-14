@@ -11,7 +11,6 @@ tags:
   - Patterns
   - Architecture
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -12,7 +12,6 @@ tags:
   - streaming
   - kafka
 banner:
-dg-publish: true
 publish: true
 ---
 

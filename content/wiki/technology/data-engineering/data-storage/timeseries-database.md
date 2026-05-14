@@ -13,7 +13,6 @@ tags:
   - TimeSeries
   - IoT
 banner:
-dg-publish: true
 publish: true
 ---
 

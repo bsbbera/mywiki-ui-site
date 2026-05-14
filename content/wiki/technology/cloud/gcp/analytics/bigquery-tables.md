@@ -12,7 +12,6 @@ tags:
   - BigQuery
   - Analytics
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -12,7 +12,6 @@ tags:
   - Security
   - IAM
 banner:
-dg-publish: true
 publish: true
 ---
 

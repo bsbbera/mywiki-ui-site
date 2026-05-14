@@ -13,7 +13,6 @@ tags:
   - Formats
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

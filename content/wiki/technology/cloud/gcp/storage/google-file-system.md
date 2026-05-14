@@ -14,7 +14,6 @@ tags:
   - ComputerScience
   - History
 banner:
-dg-publish: true
 publish: true
 ---
 

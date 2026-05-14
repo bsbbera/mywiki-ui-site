@@ -13,7 +13,6 @@ tags:
   - Spark
   - DataEngineering
 banner:
-dg-publish: true
 publish: true
 ---
 

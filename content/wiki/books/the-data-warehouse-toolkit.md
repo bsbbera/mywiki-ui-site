@@ -12,7 +12,6 @@ tags:
   - data_engineering
   - data_warehousing
 banner: "https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg"
-dg-publish: true
 publish: true
 ---
 

@@ -13,7 +13,6 @@ tags:
   - Containers
   - Kubernetes
 banner:
-dg-publish: true
 publish: true
 ---
 

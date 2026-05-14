@@ -14,7 +14,6 @@ tags:
   - DataEngineering
   - LowCode
 banner:
-dg-publish: true
 publish: true
 ---
 

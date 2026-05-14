@@ -11,7 +11,6 @@ tags:
   - data_engineering
   - data_architecture
 banner:
-dg-publish: true
 publish: true
 ---
 

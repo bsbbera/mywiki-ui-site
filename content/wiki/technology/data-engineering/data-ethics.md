@@ -11,7 +11,6 @@ tags:
   - Ethics
   - Compliance
 banner:
-dg-publish: true
 publish: true
 ---
 

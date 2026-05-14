@@ -15,7 +15,6 @@ tags:
   - CloudEngineering
   - Pricing
 banner:
-dg-publish: true
 publish: true
 ---
 

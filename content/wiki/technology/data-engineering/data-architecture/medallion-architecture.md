@@ -14,7 +14,6 @@ tags:
   - Lakehouse
   - Databricks
 banner:
-dg-publish: true
 publish: true
 ---
 

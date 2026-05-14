@@ -13,7 +13,6 @@ tags:
   - IAM
   - Security
 banner:
-dg-publish: true
 publish: true
 ---
 

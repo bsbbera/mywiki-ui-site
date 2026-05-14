@@ -15,7 +15,6 @@ tags:
   - OLAP
   - Warehouse
 banner:
-dg-publish: true
 publish: true
 ---
 

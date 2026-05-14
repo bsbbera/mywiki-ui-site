@@ -12,7 +12,6 @@ tags:
   - Database
   - Scaling
 banner:
-dg-publish: true
 publish: true
 ---
 

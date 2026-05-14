@@ -12,7 +12,6 @@ tags:
   - Orchestration
   - Tools
 banner:
-dg-publish: true
 publish: true
 ---
 

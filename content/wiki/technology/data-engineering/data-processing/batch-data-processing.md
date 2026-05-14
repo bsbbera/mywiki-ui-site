@@ -11,7 +11,6 @@ tags:
   - Processing
   - Batch
 banner:
-dg-publish: true
 publish: true
 ---
 

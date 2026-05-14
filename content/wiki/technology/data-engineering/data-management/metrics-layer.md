@@ -13,7 +13,6 @@ tags:
   - BI
   - Metrics
 banner:
-dg-publish: true
 publish: true
 ---
 

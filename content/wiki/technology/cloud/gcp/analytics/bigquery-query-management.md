@@ -13,7 +13,6 @@ tags:
   - BigQuery
   - Productivity
 banner:
-dg-publish: true
 publish: true
 ---
 

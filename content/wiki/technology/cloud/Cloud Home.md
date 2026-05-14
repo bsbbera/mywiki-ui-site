@@ -10,10 +10,9 @@ tags:
   - index
   - cloud
 banner: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # ☁️ Cloud Platforms

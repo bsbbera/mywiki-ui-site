@@ -12,7 +12,6 @@ tags:
   - Modeling
   - Warehouse
 banner:
-dg-publish: true
 publish: true
 ---
 

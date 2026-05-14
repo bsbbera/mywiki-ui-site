@@ -11,10 +11,9 @@ tags:
   - index
   - software-engineering
 banner: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000"
-dg-publish: true
+publish: true
 cssclasses:
   - wide-page
-publish: true
 ---
 
 # 🧩 Software Engineering

@@ -15,7 +15,6 @@ tags:
   - InMemory
   - DataEngineering
 banner:
-dg-publish: true
 publish: true
 ---
 

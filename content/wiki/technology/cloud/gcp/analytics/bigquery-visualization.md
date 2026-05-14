@@ -14,7 +14,6 @@ tags:
   - Visualization
   - BI
 banner:
-dg-publish: true
 publish: true
 ---
 

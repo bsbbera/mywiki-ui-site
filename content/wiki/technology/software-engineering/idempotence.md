@@ -12,7 +12,6 @@ tags:
   - Patterns
   - Reliability
 banner:
-dg-publish: true
 publish: true
 ---
 

@@ -11,7 +11,6 @@ tags:
   - person
   - data_engineering
 banner:
-dg-publish: true
 publish: true
 ---
 

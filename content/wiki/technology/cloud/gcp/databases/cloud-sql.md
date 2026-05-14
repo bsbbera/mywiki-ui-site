@@ -13,7 +13,6 @@ tags:
   - Relational
   - DataEngineering
 banner:
-dg-publish: true
 publish: true
 ---
 
