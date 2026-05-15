@@ -132,7 +132,7 @@ const highlightRegex = new RegExp(/==([^=]+)==/g)
 const commentRegex = new RegExp(/%%[\s\S]*?%%/g)
 // from https://github.com/escwxyz/remark-obsidian-callout/blob/main/src/index.ts
 const calloutRegex = new RegExp(/^\[\!([\w-]+)\|?(.+?)?\]([+-]?)/)
-const calloutLineRegex = new RegExp(/^> *\[\!\w+\|?.*?\][+-]?.*$/gm)
+const calloutLineRegex = new RegExp(/^(>+) *\[\!\w+\|?.*?\][+-]?.*$/gm)
 // (?<=^| )             -> a lookbehind assertion, tag should start be separated by a space or be the start of the line
 // #(...)               -> capturing group, tag itself must start with #
 // (?:[-_\p{L}\d\p{Z}])+       -> non-capturing group, non-empty string of (Unicode-aware) alpha-numeric characters and symbols, hyphens and/or underscores
@@ -166,9 +166,9 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
 
       // pre-transform blockquotes
       if (opts.callouts) {
-        src = src.replace(calloutLineRegex, (value) => {
-          // force newline after title of callout
-          return value + "\n> "
+        src = src.replace(calloutLineRegex, (value, depthMarker) => {
+          // force newline after title of callout, preserving nesting depth
+          return value + "\n" + depthMarker + " "
         })
       }
 
