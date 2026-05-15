@@ -1,9 +1,11 @@
+import { FullSlug, resolveRelative } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { JSX } from "preact"
 
 type FieldValue = string | number | boolean | null | undefined | Array<string | number>
 
-function fmt(v: FieldValue): string | null {
+function fmtScalar(v: FieldValue): string | null {
   if (v === null || v === undefined) return null
   if (Array.isArray(v)) {
     const items = v.filter((x) => x !== null && x !== undefined).map((x) => String(x).trim())
@@ -13,38 +15,65 @@ function fmt(v: FieldValue): string | null {
   return s.length === 0 ? null : s
 }
 
+function tagList(raw: FieldValue): string[] | null {
+  if (!Array.isArray(raw)) return null
+  const tags = raw
+    .filter((x) => x !== null && x !== undefined)
+    .map((x) => String(x).trim())
+    .filter((x) => x.length > 0)
+  return tags.length === 0 ? null : tags
+}
+
 const Infobox: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const fm = fileData.frontmatter as Record<string, FieldValue> | undefined
   if (!fm) return null
 
-  const pairs: Array<[string, string]> = []
-  const push = (label: string, raw: FieldValue) => {
-    const v = fmt(raw)
+  const pairs: Array<[string, JSX.Element | string]> = []
+  const pushScalar = (label: string, raw: FieldValue) => {
+    const v = fmtScalar(raw)
     if (v !== null) pairs.push([label, v])
   }
+  const pushTags = (label: string, raw: FieldValue) => {
+    const tags = tagList(raw)
+    if (!tags) return
+    pairs.push([
+      label,
+      <span class="tg-infobox-tags">
+        {tags.map((tag, i) => {
+          const href = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
+          return (
+            <>
+              {i > 0 ? ", " : ""}
+              <a class="internal tag-link" href={href}>
+                {tag}
+              </a>
+            </>
+          )
+        })}
+      </span>,
+    ])
+  }
 
-  push("Aliases", fm.aliases)
-  push("Category", fm.category)
-  push("Tags", fm.tags)
-  push("Created", fm.Created ?? fm.created)
-  push("Modified", fm["date modified"] ?? fm.modified)
-  push("Status", fm.status)
+  pushScalar("Aliases", fm.aliases)
+  pushScalar("Category", fm.category)
+  pushTags("Tags", fm.tags)
+  pushScalar("Created", fm.Created ?? fm.created)
+  pushScalar("Modified", fm["date modified"] ?? fm.modified)
+  pushScalar("Status", fm.status)
 
   if (pairs.length === 0) return null
 
-  const title = fmt(fm.title) ?? fileData.slug ?? "Note"
-
   return (
-    <aside class={classNames(displayClass, "tg-infobox")}>
-      <header>{title}</header>
-      <dl>
+    <aside class={classNames(displayClass, "tg-infobox tg-infobox-top")}>
+      <header>Properties</header>
+      <div class="tg-infobox-grid">
         {pairs.map(([k, v]) => (
-          <>
-            <dt>{k}</dt>
-            <dd>{v}</dd>
-          </>
+          <div class="tg-infobox-row">
+            <span class="tg-infobox-key">{k}</span>
+            <span class="tg-infobox-val">{v}</span>
+          </div>
         ))}
-      </dl>
+      </div>
     </aside>
   )
 }
