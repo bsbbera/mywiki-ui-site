@@ -27,6 +27,7 @@ import TopNav from "./TopNav"
 import PageTabs from "./PageTabs"
 import Infobox from "./Infobox"
 import CollapsibleHeadings from "./CollapsibleHeadings"
+import WidthToggle from "./WidthToggle"
 
 export {
   ArticleTitle,
@@ -58,4 +59,5 @@ export {
   PageTabs,
   Infobox,
   CollapsibleHeadings,
+  WidthToggle,
 }
