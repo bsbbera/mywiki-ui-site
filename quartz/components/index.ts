@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender"
 import TopNav from "./TopNav"
 import PageTabs from "./PageTabs"
 import Infobox from "./Infobox"
+import CollapsibleHeadings from "./CollapsibleHeadings"
 
 export {
   ArticleTitle,
@@ -56,4 +57,5 @@ export {
   TopNav,
   PageTabs,
   Infobox,
+  CollapsibleHeadings,
 }
