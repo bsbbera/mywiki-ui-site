@@ -50,7 +50,7 @@ const Infobox: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
           const href = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
           return (
             <a class={`internal tag-link ${tagColorClass(tag)}`} href={href} data-tag={tag}>
-              {tag}
+              #{tag}
             </a>
           )
         })}
