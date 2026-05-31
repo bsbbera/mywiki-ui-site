@@ -70,10 +70,25 @@
     cursor: pointer;
   }
 
-  & .tc-anim-row {
+  & .tc-fontsize {
+    cursor: pointer;
+    padding: 0.15rem 0.4rem;
+    border-radius: 6px;
+    border: 1px solid var(--lightgray);
+    background: var(--light);
+    color: var(--darkgray);
+    font-family: var(--bodyFont);
+    font-size: 0.8rem;
+  }
+
+  & .tc-size-row {
     margin-top: 0.6rem;
     padding-top: 0.6rem;
     border-top: 1px solid var(--lightgray);
+  }
+
+  & .tc-anim-row {
+    margin-top: 0.3rem;
   }
   & .tc-anim {
     cursor: pointer;
