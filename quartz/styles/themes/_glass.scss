@@ -126,9 +126,6 @@
 
   /* ---- headings: serif, colour-coded, gradient underline on h1/h2 -------- */
   & article {
-    /* Wikipedia-small default; overridable live via the customizer */
-    font-size: var(--mwg-content-size, 0.82rem);
-
     h1,
     h2,
     h3,
@@ -171,16 +168,6 @@
     h6 {
       color: var(--mwg-h6);
     }
-    /* underline hugs the text width (not the full column) like Obsidian */
-    h1,
-    h2 {
-      width: fit-content;
-      max-width: 100%;
-      padding-bottom: 0.16em;
-      border-bottom: 2px solid transparent;
-      border-image: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2)) 1;
-    }
-
     /* ---- body text emphasis --------------------------------------------- */
     strong {
       color: var(--mwg-bold-color);
@@ -215,8 +202,8 @@
       border-radius: var(--mwg-radius);
     }
 
-    /* ---- blockquote: accent bar + soft wash ----------------------------- */
-    & blockquote {
+    /* ---- blockquote: accent bar + soft wash (NOT callouts) -------------- */
+    & blockquote:not(.callout) {
       border-left: 3px solid var(--mwg-accent);
       background: linear-gradient(90deg, var(--mwg-accent-soft), transparent);
       border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0;
@@ -224,16 +211,27 @@
       font-style: italic;
     }
 
-    /* ---- tables: gradient header, hover rows ---------------------------- */
+    /* ---- tables: gradient header, rounded corners, hover rows ----------- */
     & table {
       border-collapse: separate;
       border-spacing: 0;
-      border-radius: var(--mwg-radius);
-      overflow: hidden;
     }
     & th,
     & td {
       border: 1px solid var(--mwg-border-2);
+    }
+    /* round the four outer corners (reliable; overflow:hidden on <table> is not) */
+    & thead tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+    }
+    & thead tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+    }
+    & tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+    & tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
     }
     & thead th {
       background: var(--mwg-th-bg);
@@ -265,20 +263,35 @@
     }
   }
 
-  /* ---- tags: colourful pills (content + sidebar + properties) ----------
-     TG forces infobox tags to plain text with !important, so these win with
-     !important too. Tints cycle for an Obsidian-like splash of colour. ----- */
+  /* ---- headings: gradient underline that HUGS the text (Obsidian-style),
+     painted as a background line so it starts exactly at the text and never
+     appears on headings nested inside callouts / infoboxes ----------------- */
+  & article :is(h1, h2):not(.callout *) {
+    width: fit-content;
+    max-width: 100%;
+    padding-bottom: 0.14em;
+    background-image: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2));
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    background-size: 100% 2px;
+  }
+
+  /* ---- tags: subtle chips with a stable per-tag colour + # prefix -------
+     TG forces infobox tags to plain text with !important, so we win with
+     !important too. Default chip is the accent; a hash class (tag-c0..3 from
+     Infobox.tsx) gives each tag a STABLE colour (not random by position). --- */
   & a.tag-link,
   & .tags > li > a,
   & .tg-infobox .tag-link {
     display: inline-block;
-    background: color-mix(in srgb, var(--mwg-tag-blue) 16%, transparent) !important;
-    color: var(--mwg-tag-blue) !important;
-    border: 1px solid color-mix(in srgb, var(--mwg-tag-blue) 45%, transparent) !important;
+    background: color-mix(in srgb, var(--mwg-accent) 14%, transparent) !important;
+    color: var(--mwg-accent) !important;
+    border: 1px solid color-mix(in srgb, var(--mwg-accent) 32%, transparent) !important;
     border-radius: 9999px !important;
-    padding: 0.08rem 0.6rem !important;
+    padding: 0.06rem 0.55rem !important;
     margin: 0 !important;
     font-size: 0.82em !important;
+    font-weight: 500 !important;
     text-decoration: none !important;
     transition:
       transform var(--mwg-dur) var(--mwg-ease),
@@ -287,32 +300,37 @@
   & .tg-infobox-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.4rem;
   }
-  /* cycle tints by position for colourful variety */
-  & .tg-infobox-tags .tag-link:nth-of-type(4n + 2),
-  & .tags > li:nth-of-type(4n + 2) > a {
+  & .tg-infobox-tags .tag-link::before {
+    content: "#";
+    opacity: 0.55;
+  }
+  & .tag-link.tag-c0 {
+    background: color-mix(in srgb, var(--mwg-tag-blue) 16%, transparent) !important;
+    color: var(--mwg-tag-blue) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-blue) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c1 {
     background: color-mix(in srgb, var(--mwg-tag-green) 16%, transparent) !important;
     color: var(--mwg-tag-green) !important;
-    border-color: color-mix(in srgb, var(--mwg-tag-green) 45%, transparent) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-green) 40%, transparent) !important;
   }
-  & .tg-infobox-tags .tag-link:nth-of-type(4n + 3),
-  & .tags > li:nth-of-type(4n + 3) > a {
+  & .tag-link.tag-c2 {
     background: color-mix(in srgb, var(--mwg-tag-amber) 16%, transparent) !important;
     color: var(--mwg-tag-amber) !important;
-    border-color: color-mix(in srgb, var(--mwg-tag-amber) 45%, transparent) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-amber) 40%, transparent) !important;
   }
-  & .tg-infobox-tags .tag-link:nth-of-type(4n),
-  & .tags > li:nth-of-type(4n) > a {
+  & .tag-link.tag-c3 {
     background: color-mix(in srgb, var(--mwg-tag-rose) 16%, transparent) !important;
     color: var(--mwg-tag-rose) !important;
-    border-color: color-mix(in srgb, var(--mwg-tag-rose) 45%, transparent) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-rose) 40%, transparent) !important;
   }
   & a.tag-link:hover,
   & .tags > li > a:hover,
   & .tg-infobox .tag-link:hover {
     transform: translateY(-1px);
-    filter: brightness(1.15);
+    filter: brightness(1.12);
     text-decoration: none !important;
   }
 }
@@ -511,8 +529,8 @@
   /* ---- Properties (Infobox top): soft glass card ----------------------- */
   & .tg-infobox.tg-infobox-top {
     position: relative;
-    background: color-mix(in srgb, var(--mwg-pane-2) 70%, transparent);
-    border: 1px solid var(--mwg-border);
+    background: var(--mwg-pane-2);
+    border: 1px solid var(--mwg-border-2);
     border-radius: 14px;
     box-shadow: var(--mwg-shadow-soft);
     margin: 0 0 1.9rem;
@@ -572,30 +590,21 @@
 }
 
 /* =============================================================================
-   Layout: pull the whole page to the left (Medium / blog style) so the sidebar
-   hugs the viewport edge instead of floating in centered whitespace.
-   ========================================================================== */
-:root[data-theme="glass"] {
-  & .page {
-    max-width: 100%;
-    margin: 0;
-  }
-  & .page > #quartz-body {
-    justify-content: start;
-    padding: 0 2rem;
-  }
-}
-
-/* =============================================================================
    In-note [!infobox] card (right rail): drop the redundant "INFOBOX" title and
    soften it to match the Glass cards.
    ========================================================================== */
 :root[data-theme="glass"] {
   & .callout[data-callout="infobox"] {
-    background: color-mix(in srgb, var(--mwg-pane-2) 70%, transparent) !important;
-    border: 1px solid var(--mwg-border) !important;
+    background: var(--mwg-pane-2) !important;
+    border: 1px solid var(--mwg-border-2) !important;
     border-radius: 14px !important;
     box-shadow: var(--mwg-shadow-soft) !important;
+  }
+  /* no underline / italic on the infobox's own heading + subtitle */
+  & .callout[data-callout="infobox"] :is(h1, h2, h3, h4) {
+    background-image: none !important;
+    border: none !important;
+    font-style: normal !important;
   }
   /* hide the auto "Infobox" callout title */
   & .callout[data-callout="infobox"] > .callout-title {

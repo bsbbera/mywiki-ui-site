@@ -71,9 +71,9 @@ const ThemeCustomizer: QuartzComponent = ({ displayClass }: QuartzComponentProps
         <label class="tc-row tc-size-row">
           <span>Text size</span>
           <select class="tc-fontsize">
-            <option value="0.82rem">Small</option>
-            <option value="0.9rem">Medium</option>
-            <option value="1rem">Large</option>
+            <option value="0.9rem">Small</option>
+            <option value="1rem">Medium</option>
+            <option value="1.1rem">Large</option>
           </select>
         </label>
 

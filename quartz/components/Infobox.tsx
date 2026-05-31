@@ -15,6 +15,13 @@ function fmtScalar(v: FieldValue): string | null {
   return s.length === 0 ? null : s
 }
 
+// Stable colour bucket per tag name (so a given tag is always the same colour).
+function tagColorClass(tag: string): string {
+  let h = 0
+  for (let i = 0; i < tag.length; i++) h = (h * 31 + tag.charCodeAt(i)) >>> 0
+  return `tag-c${h % 4}`
+}
+
 function tagList(raw: FieldValue): string[] | null {
   if (!Array.isArray(raw)) return null
   const tags = raw
@@ -42,7 +49,7 @@ const Infobox: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
         {tags.map((tag) => {
           const href = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
           return (
-            <a class="internal tag-link" href={href} data-tag={tag}>
+            <a class={`internal tag-link ${tagColorClass(tag)}`} href={href} data-tag={tag}>
               {tag}
             </a>
           )
