@@ -394,3 +394,91 @@
     background: var(--mwg-pane-2);
   }
 }
+
+/* =============================================================================
+   "Softness" pass — match the Obsidian feel: roomier rhythm, a pill search box,
+   and the Properties block restyled as a soft glass card (kill TG's spreadsheet
+   cell borders, add a violet→teal hairline + uppercase teal label).
+   ========================================================================== */
+:root[data-theme="glass"] {
+  /* article rhythm */
+  & article {
+    line-height: 1.7;
+  }
+  & article > p {
+    margin: 0.85em 0;
+  }
+
+  /* ---- search: soft pill ----------------------------------------------- */
+  & .search > .search-button {
+    background: var(--mwg-pane-2);
+    border: 1px solid var(--mwg-border);
+    border-radius: 9999px;
+    height: 2.1rem;
+    transition:
+      border-color var(--mwg-dur) var(--mwg-ease),
+      background-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .search > .search-button:hover {
+    border-color: var(--mwg-accent);
+    background: var(--mwg-accent-soft);
+  }
+  & .search > .search-button > p {
+    color: var(--mwg-muted);
+  }
+
+  /* ---- Properties (Infobox top): soft glass card ----------------------- */
+  & .tg-infobox.tg-infobox-top {
+    position: relative;
+    background: var(--mwg-pane-2);
+    border: 1px solid var(--mwg-border);
+    border-radius: 12px;
+    box-shadow: var(--mwg-shadow-pop);
+    margin: 0 0 1.9rem;
+    padding: 0.5rem 0.5rem 0.6rem;
+    overflow: hidden;
+  }
+  & .tg-infobox.tg-infobox-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2));
+  }
+  & .tg-infobox-top > header {
+    background: transparent;
+    border-bottom: none;
+    text-align: left;
+    text-transform: uppercase;
+    font-variant: normal;
+    font-family: var(--bodyFont);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--mwg-accent-2);
+    padding: 0.55rem 0.95rem 0.35rem;
+  }
+  & .tg-infobox-top .tg-infobox-grid {
+    gap: 0.1rem 1.5rem;
+    padding: 0 0.25rem 0.25rem;
+  }
+  & .tg-infobox-top .tg-infobox-row {
+    border: none;
+    border-radius: 8px;
+    padding: 0.32rem 0.7rem;
+    transition: background-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .tg-infobox-top .tg-infobox-row:hover {
+    background: var(--mwg-accent-soft);
+  }
+  & .tg-infobox-top .tg-infobox-key {
+    color: var(--mwg-muted);
+    font-variant: normal;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+  }
+  & .tg-infobox-top .tg-infobox-val {
+    color: var(--mwg-text);
+  }
+}
