@@ -15,6 +15,18 @@ body {
 }
 article {
   font-size: var(--mwg-content-size, 0.9rem);
+  line-height: 1.72;
+}
+
+/* ---- Visible keyboard focus ring on every interactive element (a11y) ----- */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+.tag-link:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ---- Layout: pull the whole page left (Medium / blog style) ---------------
