@@ -15,8 +15,26 @@ function fmtScalar(v: FieldValue): string | null {
   return s.length === 0 ? null : s
 }
 
-// Stable colour bucket per tag name (so a given tag is always the same colour).
+// Explicit tag → colour mapping (matches the Obsidian setup); unknown tags fall
+// back to a stable hash so a given tag is always the same colour.
+// Buckets: c0 blue · c1 green · c2 amber · c3 rose · c4 neutral/grey.
+const TAG_COLORS: Record<string, string> = {
+  gcp: "tag-c4",
+  aws: "tag-c2",
+  azure: "tag-c0",
+  databricks: "tag-c2",
+  dataengineering: "tag-c1",
+  data: "tag-c1",
+  analytics: "tag-c1",
+  exam: "tag-c2",
+  certification: "tag-c3",
+  sql: "tag-c0",
+  datawarehouse: "tag-c4",
+  index: "tag-c4",
+}
 function tagColorClass(tag: string): string {
+  const key = tag.toLowerCase()
+  if (TAG_COLORS[key]) return TAG_COLORS[key]
   let h = 0
   for (let i = 0; i < tag.length; i++) h = (h * 31 + tag.charCodeAt(i)) >>> 0
   return `tag-c${h % 4}`

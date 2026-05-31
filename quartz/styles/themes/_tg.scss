@@ -68,7 +68,9 @@ body {
    we override `grid-template-columns` on the parent so the center column
    actually grows when the user picks a wider preset. */
 .page > #quartz-body .center {
-  max-width: min(900px, 100%) !important;
+  /* default reading column ~ ideal 65-75 char line length; the WidthToggle
+     presets still override this when the reader picks a wider/narrower width */
+  max-width: min(760px, 100%) !important;
   min-width: 0 !important;
 }
 :root[data-reading-width="narrow"] .page > #quartz-body .center {

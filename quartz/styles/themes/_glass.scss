@@ -23,8 +23,8 @@
   --mwg-raised: #ffffff;
   --mwg-text: #1a1a1a;
   --mwg-text-strong: #14120e;
-  --mwg-muted: #5c5a55;
-  --mwg-faint: #8a8780;
+  --mwg-muted: #4a4843;
+  --mwg-faint: #76736c;
   --mwg-code-fg: #5a47cf;
   --mwg-th-bg: linear-gradient(180deg, #6d5ae6, #5a47cf);
   --mwg-shadow-pop: 0 1px 2px rgba(20, 18, 14, 0.06), 0 20px 50px rgba(20, 18, 14, 0.14);
@@ -317,6 +317,16 @@
     background: color-mix(in srgb, var(--mwg-tag-rose) 16%, transparent) !important;
     color: var(--mwg-tag-rose) !important;
     border-color: color-mix(in srgb, var(--mwg-tag-rose) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c4 {
+    background: color-mix(in srgb, var(--mwg-muted) 14%, transparent) !important;
+    color: var(--mwg-muted) !important;
+    border-color: color-mix(in srgb, var(--mwg-muted) 30%, transparent) !important;
+  }
+  /* inline body tags (no component class) get a leading # via CSS */
+  & article a.tag-link:not(.tag-c0):not(.tag-c1):not(.tag-c2):not(.tag-c3):not(.tag-c4)::before {
+    content: "#";
+    opacity: 0.6;
   }
   & a.tag-link:hover,
   & .tags > li > a:hover,
@@ -635,5 +645,149 @@
       transform var(--mwg-dur) var(--mwg-ease),
       box-shadow var(--mwg-dur) var(--mwg-ease),
       border-color var(--mwg-dur) var(--mwg-ease);
+  }
+}
+
+/* =============================================================================
+   Motion & navigation pack
+   ========================================================================== */
+:root[data-theme="glass"] {
+  /* active page in the explorer: accent bar + tint */
+  & .explorer a.active {
+    color: var(--mwg-accent) !important;
+    background: var(--mwg-accent-soft);
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: inset 2px 0 0 var(--mwg-accent);
+  }
+
+  /* internal links: subtle underline-wipe on hover */
+  & article a.internal {
+    text-decoration: none;
+    background-image: linear-gradient(var(--mwg-accent), var(--mwg-accent));
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    background-size: 0% 1.5px;
+    transition: background-size var(--mwg-dur) var(--mwg-ease);
+  }
+  & article a.internal:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+/* Staggered scroll-reveal — content rises in as it enters the viewport.
+   Pure CSS (scroll-driven animations); gracefully ignored where unsupported. */
+@supports (animation-timeline: view()) {
+  @keyframes mwg-rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  :root[data-theme="glass"]:not(.no-anim) article > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
+    animation: mwg-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 32%;
+  }
+}
+
+/* Reading-progress bar — thin accent gradient that fills as you scroll. */
+@supports (animation-timeline: scroll(root)) {
+  @keyframes mwg-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  :root[data-theme="glass"]:not(.no-anim) body::after {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 100;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2));
+    animation: mwg-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="glass"] article > * {
+    animation: none !important;
+  }
+  :root[data-theme="glass"] body::after {
+    display: none;
+  }
+}
+
+/* =============================================================================
+   Delight pack — code copy button + language chip, backlinks as cards
+   ========================================================================== */
+:root[data-theme="glass"] {
+  /* code block: language chip (top-left) from the highlighter's data-language */
+  & figure[data-rehype-pretty-code-figure],
+  & pre {
+    position: relative;
+  }
+  & pre[data-language]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    left: 0.6rem;
+    transform: translateY(-50%);
+    padding: 0.05rem 0.5rem;
+    font-size: 0.66rem;
+    font-family: var(--codeFont);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--mwg-accent);
+    background: var(--mwg-pane-2);
+    border: 1px solid var(--mwg-border-2);
+    border-radius: 6px;
+  }
+
+  /* copy button: glass pill, accent on hover, check state */
+  & .clipboard-button {
+    background: var(--mwg-pane-2) !important;
+    border: 1px solid var(--mwg-border-2) !important;
+    border-radius: 7px !important;
+    color: var(--mwg-muted) !important;
+    transition:
+      color var(--mwg-dur) var(--mwg-ease),
+      border-color var(--mwg-dur) var(--mwg-ease),
+      background-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .clipboard-button:hover {
+    color: var(--mwg-accent) !important;
+    border-color: var(--mwg-accent) !important;
+    background: var(--mwg-accent-soft) !important;
+  }
+
+  /* backlinks rendered as small glass cards */
+  & .backlinks ul li {
+    margin: 0.3rem 0;
+  }
+  & .backlinks ul li > a {
+    display: block;
+    padding: 0.45rem 0.7rem !important;
+    border: 1px solid var(--mwg-border);
+    border-radius: 9px;
+    background: var(--mwg-pane-2);
+    color: var(--mwg-muted);
+    transition:
+      transform var(--mwg-dur) var(--mwg-ease),
+      color var(--mwg-dur) var(--mwg-ease),
+      border-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .backlinks ul li > a:hover {
+    transform: translateY(-1px);
+    border-color: var(--mwg-accent);
+    color: var(--mwg-accent);
+    background: var(--mwg-pane-2);
   }
 }
