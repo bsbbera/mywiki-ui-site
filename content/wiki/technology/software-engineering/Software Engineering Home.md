@@ -25,26 +25,27 @@ cssclasses:
 > [!info] You are here
 > 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · **🧩 Software Engineering**
 
-## 📚 All Notes (A–Z)
+## 📊 At a Glance
 
 ```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => p.file.link)
-);
+const pages = dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"');
+const latest = pages.sort(p => p.file.mtime, 'desc').first();
+dv.paragraph(`**${pages.length}** notes · last touched **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
 ```
 
-## 🕒 Recently Updated
+## 📚 Browse
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(10)
-    .map(p => p.file.link)
-);
-```
+> [!multi-column]
+>
+> > [!card] 📋 All Notes (A–Z)
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
+> > ```
+>
+> > [!card] 🕒 Recently Updated
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
+> > ```
 
 ## Related pages
 

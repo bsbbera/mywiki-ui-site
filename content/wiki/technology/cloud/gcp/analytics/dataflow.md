@@ -18,6 +18,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Dataflow
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Stream & batch data processing |
+> | **Category** | Analytics / ETL |
+> | **Launched** | 2015 (GA Aug 2015) |
+> | **Interface** | Apache Beam SDK (Java, Python) |
+> | **Website** | cloud.google.com/dataflow |
+
+---
+
+> "The most important battle is one to conquer yourself."
+> <cite>— Yanni</cite>
+
 ---
 
 Cloud Dataflow is GCP's **fully managed, serverless data-processing service** for **batch and streaming** pipelines, built on **Apache Beam** (source: Building Data Pipelines with Google Cloud Dataflow ETL Processing.md).
@@ -31,7 +48,7 @@ If you want a **visual, drag-and-drop** alternative, see [[datafusion]]; for **S
 1. **Serverless** — no clusters to size; Dataflow provisions, autoscales, and tears down workers per job (source: Building Data Pipelines with Google Cloud Dataflow ETL Processing.md).
 2. **Unified batch + streaming** — same code, same SDK, same operators (`ParDo`, `GroupByKey`, `Window`) work for finite or infinite data.
 3. **Apache Beam SDK** — open-source, portable across runners (Dataflow, Flink, Spark, direct local).
-4. **Tight GCP integration** — sources/sinks for [[../storage/cloud-storage|GCS]], [[bigquery|BigQuery]], [[pubsub|Pub/Sub]], [[../databases/cloud-bigtable|Bigtable]], [[../databases/cloud-spanner|Spanner]], etc.
+4. **Tight GCP integration** — sources/sinks for [[Cloud Storage|GCS]], [[bigquery|BigQuery]], [[pubsub|Pub/Sub]], [[../databases/cloud-bigtable|Bigtable]], [[../databases/cloud-spanner|Spanner]], etc.
 5. **Exactly-once** processing semantics by default for streaming.
 
 ## Where Dataflow fits in the ETL pipeline
@@ -162,17 +179,17 @@ The same pipeline with `beam.io.ReadFromPubSub(...)` + `beam.WindowInto(beam.win
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/data-processing/batch-data-processing|Batch Processing]], [[../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
+>> [[../../../data-engineering/data-processing/batch-data-processing|Batch Processing]], [[../../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/data-architecture/lambda-architecture|Lambda Architecture]], [[../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../../../data-engineering/data-architecture/lambda-architecture|Lambda Architecture]], [[../../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] Related products + tools
->> [[../storage/cloud-storage|Cloud Storage]], [[../../tools/processing-tools|Processing Tools]]
+>> [[Cloud Storage|Cloud Storage]], [[../../../tools/processing-tools|Processing Tools]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 

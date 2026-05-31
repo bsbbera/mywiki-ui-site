@@ -15,11 +15,14 @@ banner:
 publish: true
 ---
 
+> "Be like a postage stamp. Stick to it until you get there."
+> <cite>— Bob Proctor</cite>
+
 ---
 
 **Normalization** is the process of organizing data in a database to **reduce redundancy** and **improve data integrity**, making the database design simpler, faster, and more accurate. Since inserts/updates/deletes occur rapidly in [[../data-processing/online-transaction-processing|OLTP]] systems, normalization is particularly important for those workloads (source: Concepts/Data Modeling/Normalization.md).
 
-> For **the full theoretical treatment** — anomalies, normal forms 1NF → BCNF → 5NF, formal definitions — see the canonical page: [[../../../dbms/database-normalization|Database Normalization (DBMS theory)]].
+> For **the full theoretical treatment** — anomalies, normal forms 1NF → BCNF → 5NF, formal definitions — see the canonical page: [[../../databases/database-normalization|Database Normalization (DBMS theory)]].
 
 ## In one paragraph
 
@@ -67,7 +70,7 @@ Take a wide table that mixes data about multiple entities; **split** it into mul
 | **4NF** | No multi-valued dependencies |
 | **5NF** | No join dependencies |
 
-Full examples and explanations: [[../../../dbms/database-normalization|Database Normalization]].
+Full examples and explanations: [[../../databases/database-normalization|Database Normalization]].
 
 ## Interview Questions
 
@@ -84,7 +87,7 @@ Full examples and explanations: [[../../../dbms/database-normalization|Database 
 >
 >
 >> [!card] Theory
->> [[../../../dbms/database-normalization|Database Normalization (theory)]], [[../../../dbms/acid-properties|ACID Properties]]
+>> [[../../databases/database-normalization|Database Normalization (theory)]], [[../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] Workloads

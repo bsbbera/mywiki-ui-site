@@ -2,7 +2,7 @@
 title: Firebase Cloud Storage
 Created:
   - 2026-04-27
-date modified: Monday, April 27th 2026, 10:05:00 pm
+date modified: Saturday, May 30th 2026, 11:41:35 pm
 aliases:
   - Firebase Storage
 category: Cloud
@@ -15,9 +15,26 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Firebase Cloud Storage
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google (Firebase) |
+> | **Type** | Object storage for mobile & web apps |
+> | **Category** | Storage |
+> | **Launched** | 2016 (Google I/O) |
+> | **Interface** | Firebase client SDKs, REST API |
+> | **Website** | firebase.google.com/products/storage |
+
 ---
 
-Firebase Cloud Storage is the **Firebase-branded, mobile/web-friendly layer** on top of [[cloud-storage]]. It provides a secure, scalable solution for storing user-generated content â€” photos, videos, audio, and other media â€” with client SDKs designed for mobile and web apps (source: Introduction to Firebase Cloud Storage.md).
+> "Be like a postage stamp. Stick to it until you get there."
+> <cite>— Bob Proctor</cite>
+
+---
+
+Firebase Cloud Storage is the **Firebase-branded, mobile/web-friendly layer** on top of [[Cloud Storage]]. It provides a secure, scalable solution for storing user-generated content â€” photos, videos, audio, and other media â€” with client SDKs designed for mobile and web apps (source: Introduction to Firebase Cloud Storage.md).
 
 Crucially, **it is not a separate storage system** â€” it's Google Cloud Storage plus three conveniences:
 
@@ -27,12 +44,13 @@ Crucially, **it is not a separate storage system** â€” it's Google Cloud St
 
 ## Architecture
 
-Built on [[cloud-storage]] infrastructure â†’ inherits its scalability, durability, global reach (source: Introduction to Firebase Cloud Storage.md).
+Built on [[Cloud Storage]] infrastructure â†’ inherits its scalability, durability, global reach (source: Introduction to Firebase Cloud Storage.md).
 
 - **Buckets** â€” top-level containers; a Firebase project has a default bucket `gs://<project>.appspot.com` + any number of additional ones.
 - **Objects** â€” uploaded files, with metadata.
 - **Metadata** â€” content type, cache control, custom key-value pairs.
 - **Security rules + Firebase Auth** â€” govern which users can read/write which paths.
+
 
 ## Key features
 
@@ -110,7 +128,7 @@ Rules can reference file metadata, user auth status, claim data, etc. (source: I
 
 ## Firebase Cloud Storage vs Cloud Storage
 
-| | Firebase Cloud Storage | [[cloud-storage]] |
+| | Firebase Cloud Storage | [[Cloud Storage]] |
 | --- | --- | --- |
 | Underlying system | Same GCS bucket | GCS |
 | Primary client | Mobile / web SDK | gsutil / client libs / gcloud |
@@ -128,18 +146,18 @@ You can **mix both** on the same bucket â€” server-side IAM for backend cod
 
 ## Interview Questions can be asked
 
-1. Is Firebase Cloud Storage a separate storage system from [[cloud-storage]]? Why or why not?
+1. Is Firebase Cloud Storage a separate storage system from [[Cloud Storage]]? Why or why not?
 2. How do Firebase Security Rules differ from GCS IAM?
 3. How would you structure a bucket for multi-tenant user uploads?
 4. Why avoid public read/write in production?
-5. When would you use plain [[cloud-storage]] over Firebase Cloud Storage?
+5. When would you use plain [[Cloud Storage]] over Firebase Cloud Storage?
 
 ## Related pages
 
 > [!multi-column]
 >
 >> [!card] Sister storage products
->> [[cloud-storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]
+>> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]
 >
 >
 >> [!card] Foundations

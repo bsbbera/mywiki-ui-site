@@ -14,7 +14,19 @@ banner:
 publish: true
 ---
 
+> "The most important battle is one to conquer yourself."
+> <cite>— Yanni</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Greg Young
+> ###### Software Architect
+> | | |
+> | --- | --- |
+> | **Domain** | Software architecture, DDD |
+> | **Known for** | CQRS; modern Event Sourcing |
+> | **Notable works** | EventStoreDB |
 
 Software architect who coined and popularized **CQRS** (Command Query Responsibility Segregation) and modern **Event Sourcing**. Created **EventStoreDB**. His Domain-Driven Design + event-driven thinking shaped microservice + audit-heavy systems.
 
@@ -23,7 +35,7 @@ Software architect who coined and popularized **CQRS** (Command Query Responsibi
 > [!multi-column]
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-engineering/concepts/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]]
+>> [[../technology/software-engineering/event-sourcing-pattern|Event Sourcing]], [[../technology/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]]
 >
 >
 >> [!card] People

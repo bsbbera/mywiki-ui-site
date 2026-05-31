@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Strategy is a commodity, execution is an art."
+> <cite>— Peter Drucker</cite>
+
 ---
 
 A short decision guide for choosing **messaging services** across the major clouds (source: Guides/Choosing your optimal messaging service.md).
@@ -55,7 +58,7 @@ Source: [AWS re:Invent 2020 — Scalable serverless event-driven architectures w
 
 | Need | GCP service |
 | --- | --- |
-| Pub/Sub fan-out | **[[../../gcp/analytics/pubsub\|Pub/Sub]]** |
+| Pub/Sub fan-out | **[[../cloud/gcp/analytics/pubsub\|Pub/Sub]]** |
 | Kafka-compatible, lower cost | **Pub/Sub Lite** |
 | Queue with task delivery + retries | **Cloud Tasks** |
 | Workflow orchestration of services | **Cloud Workflows** |
@@ -95,10 +98,10 @@ Ask yourself:
 
 ## Patterns to combine
 
-- **[[../concepts/software-engineering/fan-out|Fan-out]]** — pub/sub topic + multiple subscriptions.
+- **[[../software-engineering/fan-out|Fan-out]]** — pub/sub topic + multiple subscriptions.
 - **Dead-letter queue (DLQ)** — capture poison messages for inspection.
-- **Idempotent consumers** — see [[../concepts/software-engineering/idempotence|Idempotence]].
-- **[[../concepts/software-engineering/claim-check-pattern|Claim-check]]** — for large payloads.
+- **Idempotent consumers** — see [[../software-engineering/idempotence|Idempotence]].
+- **[[../software-engineering/claim-check-pattern|Claim-check]]** — for large payloads.
 
 ## Interview Questions
 
@@ -112,11 +115,8 @@ Ask yourself:
 > [!multi-column]
 >
 >> [!card] Patterns
->> [[../concepts/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../concepts/software-engineering/fan-out|Fan-out]], [[../concepts/software-engineering/claim-check-pattern|Claim Check]], [[../concepts/software-engineering/idempotence|Idempotence]]
->
->
->> [!card] Products
->> [[../../gcp/analytics/pubsub|GCP Pub/Sub]], [[../../aws/aws|AWS]], [[../../azure/azure|Azure]]
+>> [[../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../software-engineering/fan-out|Fan-out]], [[../software-engineering/claim-check-pattern|Claim Check]], [[../software-engineering/idempotence|Idempot[[AWS|AWS]] Products
+>> [[../cloud/gcp/analytics/pubsub|GCP Pub/Sub]], [[../cloud/aws/aws|AWS]], [[../cloud/azure/azure|Azure]]
 >
 >
 >> [!card] Sister guides

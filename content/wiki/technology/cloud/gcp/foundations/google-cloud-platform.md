@@ -15,6 +15,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Google Cloud Platform
+> ###### Cloud Platform
+> | | |
+> | --- | --- |
+> | **Provider** | Google |
+> | **Type** | Public cloud platform |
+> | **Category** | Cloud |
+> | **Launched** | 2008 |
+> | **Interface** | Cloud Console, gcloud CLI, REST APIs |
+> | **Website** | cloud.google.com |
+
+---
+
+> "The strongest and sweetest songs yet remain to be sung."
+> <cite>— Walt Whitman</cite>
+
 ---
 
 Google Cloud Platform (GCP) is Google's public cloud offering: a portfolio of compute, storage, networking, data, and AI services built on the same global infrastructure that powers Google Search, Gmail, and YouTube (source: Google Cloud Platform (GCP).md). It exposes those resources to businesses and developers via three primary surfaces â€” the **Cloud Console** (web UI), the **gcloud CLI** (terminal/Cloud Shell), and **client libraries / REST APIs** for programmatic access (source: Google Cloud Platform (GCP).md).
@@ -24,7 +41,7 @@ GCP began in 2008 when Google opened its consumer-grade infrastructure to enterp
 ## Pillars
 
 - **Compute** â€” see [[compute-engine]], [[app-engine]], [[kubernetes-engine]], [[cloud-run]], [[cloud-functions]]. Full taxonomy: [[gcp-compute-services]].
-- **Storage** â€” see [[cloud-storage]], [[persistent-disk]], [[filestore]].
+- **Storage** â€” see [[Cloud Storage]], [[persistent-disk]], [[filestore]].
 - **Networking** â€” Virtual Private Cloud (VPC), Cloud Load Balancing, Cloud CDN (source: Features of GCP.md).
 - **Data & Analytics** â€” BigQuery, Dataflow, Pub/Sub, Dataproc (source: Google Cloud Platform (GCP).md). Stub pages.
 - **ML & AI** â€” Vertex AI, AutoML, AI Platform Training/Prediction (source: Google Cloud Platform (GCP).md).
@@ -96,13 +113,13 @@ GCP intentionally builds on open-source interfaces â€” Cloud Bigtable speak
 >
 >
 >> [!card] Sister cloud platforms
->> [[../../aws/aws|AWS]], [[../../azure/azure|Azure]], [[../../databricks/databricks|Databricks]]
+>> [[AWS|AWS]], [[../../azure/azure|Azure]], [[../../databricks/databricks|Databricks]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 >
 >
 >> [!card] People
->> [[../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
+>> [[../../../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
 

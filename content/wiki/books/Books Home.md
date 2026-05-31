@@ -9,10 +9,9 @@ category: Books
 tags:
   - index
   - books
-banner: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000"
+banner: https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000
 publish: true
 cssclasses:
-  - wide-page
 ---
 
 # 📚 Books
@@ -22,7 +21,15 @@ cssclasses:
 ## 🧭 Vault Navigation
 
 > [!info] You are here
-> 🧠 [[Master Home]] · �️ [[Technology Home]] · **📚 Books** · 👥 [[People Home]]
+> 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · **📚 Books** · 👥 [[People Home]]
+
+## 📊 At a Glance
+
+```dataviewjs
+const pages = dv.pages('"wiki/books" and !"wiki/books/Books Home"');
+const latest = pages.sort(p => p.file.mtime, 'desc').first();
+dv.paragraph(`**${pages.length}** books · last added **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
+```
 
 ## 📚 Library
 
@@ -39,7 +46,7 @@ dv.table(
 );
 ```
 
-## � Recently Added
+## 🕒 Recently Added
 
 ```dataviewjs
 dv.list(
@@ -49,3 +56,9 @@ dv.list(
     .map(p => p.file.link)
 );
 ```
+
+## Related pages
+
+> [!note] Cross-cutting metadata
+> - [[People Home]]
+> - [[Technology Home]]

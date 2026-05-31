@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Dreams are the touchstones of our characters."
+> <cite>— Henry David Thoreau</cite>
+
 ---
 
 Common questions about Data Engineering as a discipline + career, consolidated from the source FAQ tree (source: FAQ/*.md).
@@ -204,7 +207,7 @@ Use certs to:
 **Most valuable certs** (if pursuing):
 
 - [AWS Solutions Architect (Associate / Professional)](https://aws.amazon.com/certification/)
-- [GCP Professional Cloud Engineer](https://cloud.google.com/certification/) — see also [[../gcp/certifications/professional-data-engineer|Professional Data Engineer]]
+- [GCP Professional Cloud Engineer](https://cloud.google.com/certification/) — see also [[Professional Data Engineer|Professional Data Engineer]]
 - [Azure Data Engineer Associate](https://learn.microsoft.com/en-us/certifications/azure-data-engineer/)
 
 ## Related pages
@@ -216,17 +219,17 @@ Use certs to:
 >
 >
 >> [!card] Guides
->> [[guides/getting-started|Getting Started Guide]], [[guides/sql-guide|SQL Guide]]
+>> [[../guides/getting-started|Getting Started Guide]], [[../guides/sql-guide|SQL Guide]]
 >
 >
 >> [!card] Certifications
->> [[../gcp/certifications/professional-data-engineer|GCP Professional Data Engineer]]
+>> [[Professional Data Engineer|GCP Professional Data Engineer]]
 >
 >
 >> [!card] People
->> [[../people/joe-reis-matt-housley|Joe Reis + Matt Housley]], [[../people/martin-kleppmann|Martin Kleppmann]]
+>> [[../../people/joe-reis-matt-housley|Joe Reis + Matt Housley]], [[../../people/martin-kleppmann|Martin Kleppmann]]
 >
 >
 >> [!card] Books
->> [[../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]], [[../books/designing-data-intensive-applications|DDIA]], [[../books/the-data-warehouse-toolkit|The Data Warehouse Toolkit]]
+>> [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]], [[../../books/designing-data-intensive-applications|DDIA]], [[../../books/the-data-warehouse-toolkit|The Data Warehouse Toolkit]]
 

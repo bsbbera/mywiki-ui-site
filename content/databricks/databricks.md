@@ -162,4 +162,4 @@ The two stacks **overlap heavily**; many enterprises use **both** — Databricks
 - [[../gcp/analytics/dataflow|Dataflow]]
 - [[../gcp/analytics/datafusion|Data Fusion]]
 - [[../gcp/analytics/pubsub|Pub/Sub]]
-- [[../gcp/storage/cloud-storage|Cloud Storage]]
+- [[Cloud Storage|Cloud Storage]]

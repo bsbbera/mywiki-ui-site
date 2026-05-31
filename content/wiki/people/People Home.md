@@ -22,25 +22,32 @@ cssclasses:
 ## 🧭 Vault Navigation
 
 > [!info] You are here
-> 🧠 [[Master Home]] · �️ [[Technology Home]] · 📚 [[Books Home]] · **👥 People**
+> 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · 📚 [[Books Home]] · **👥 People**
 
-## � Directory (A–Z)
-
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/people" and !"wiki/people/People Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => p.file.link)
-);
-```
-
-## � Recently Added
+## 📊 At a Glance
 
 ```dataviewjs
-dv.list(
-  dv.pages('"wiki/people" and !"wiki/people/People Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(10)
-    .map(p => p.file.link)
-);
+const pages = dv.pages('"wiki/people" and !"wiki/people/People Home"');
+const latest = pages.sort(p => p.file.mtime, 'desc').first();
+dv.paragraph(`**${pages.length}** people · last added **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
 ```
+
+## 📚 Browse
+
+> [!multi-column]
+>
+> > [!card] 👥 Directory (A–Z)
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
+> > ```
+>
+> > [!card] 🕒 Recently Added
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
+> > ```
+
+## Related pages
+
+> [!note] Cross-cutting metadata
+> - [[Books Home]]
+> - [[Technology Home]]

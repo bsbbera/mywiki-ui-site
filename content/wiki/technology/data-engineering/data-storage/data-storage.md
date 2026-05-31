@@ -13,6 +13,9 @@ banner:
 publish: true
 ---
 
+> "No valid plans for the future can be made by those who have no capacity for living now."
+> <cite>— Alan Watts</cite>
+
 ---
 
 **Data storage** covers the technologies and systems used to store and retrieve data in various formats and structures. Modern storage divides into two categories (source: Concepts/Data Storage/Data Storage.md):
@@ -26,7 +29,7 @@ Provide both storage and built-in compute with structured query interfaces.
 
 ### [[relational-database|Relational Database]]
 
-Traditional structured storage using tables, rows, columns + ACID. See [[../../../databases/acid-properties|ACID Properties]].
+Traditional structured storage using tables, rows, columns + ACID. See [[../../databases/acid-properties|ACID Properties]].
 
 ### [[non-relational-database|Non-Relational (NoSQL)]]
 
@@ -60,7 +63,7 @@ Cloud examples:
 
 - **AWS S3**, **S3 Glacier** (archival)
 - **Azure Blob Storage**, **ADLS Gen2**
-- **[[../../../gcp/storage/cloud-storage|GCP Cloud Storage]]**
+- **[[Cloud Storage|GCP Cloud Storage]]**
 
 ## Choosing the right storage
 
@@ -80,15 +83,15 @@ Cloud examples:
 
 | GCP | AWS | Azure |
 | --- | --- | --- |
-| [[../../../gcp/storage/cloud-storage\|Cloud Storage]] | S3 | Blob Storage |
-| [[../../../gcp/storage/persistent-disk\|Persistent Disk]] | EBS | Disk Storage |
-| [[../../../gcp/storage/filestore\|Filestore]] | EFS | Files |
-| [[../../../gcp/databases/cloud-sql\|Cloud SQL]] | RDS / Aurora | SQL DB |
-| [[../../../gcp/databases/cloud-spanner\|Spanner]] | Aurora Global / DynamoDB Global | Cosmos DB |
-| [[../../../gcp/databases/cloud-bigtable\|Bigtable]] | DynamoDB / Keyspaces | Cosmos DB |
-| [[../../../gcp/databases/cloud-datastore\|Firestore]] | DynamoDB | Cosmos DB |
-| [[../../../gcp/databases/memorystore\|Memorystore]] | ElastiCache | Cache for Redis |
-| [[../../../gcp/analytics/bigquery\|BigQuery]] | Redshift | Synapse |
+| [[Cloud Storage\|Cloud Storage]] | S3 | Blob Storage |
+| [[../../cloud/gcp/storage/persistent-disk\|Persistent Disk]] | EBS | Disk Storage |
+| [[../../cloud/gcp/storage/filestore\|Filestore]] | EFS | Files |
+| [[../../cloud/gcp/databases/cloud-sql\|Cloud SQL]] | RDS / Aurora | SQL DB |
+| [[../../cloud/gcp/databases/cloud-spanner\|Spanner]] | Aurora Global / DynamoDB Global | Cosmos DB |
+| [[../../cloud/gcp/databases/cloud-bigtable\|Bigtable]] | DynamoDB / Keyspaces | Cosmos DB |
+| [[../../cloud/gcp/databases/cloud-datastore\|Firestore]] | DynamoDB | Cosmos DB |
+| [[../../cloud/gcp/databases/memorystore\|Memorystore]] | ElastiCache | Cache for Redis |
+| [[../../cloud/gcp/analytics/bigquery\|BigQuery]] | Redshift | Synapse |
 
 ## Interview Questions
 
@@ -113,5 +116,5 @@ Cloud examples:
 >
 >
 >> [!card] Tools + theory
->> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../../databases/acid-properties|ACID Properties]]
+>> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../databases/acid-properties|ACID Properties]]
 

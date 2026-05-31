@@ -15,7 +15,20 @@ banner:
 publish: true
 ---
 
+> "Sometimes good things fall apart so better things can fall together."
+> <cite>— Marilyn Monroe</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Dan Linstedt
+> ###### Data Modeling Pioneer
+> | | |
+> | --- | --- |
+> | **Nationality** | American |
+> | **Domain** | Data modeling, data warehousing |
+> | **Known for** | Inventor of Data Vault modeling |
+> | **Notable works** | [[../books/building-a-scalable-data-warehouse-with-data-vault-2\|Building a Scalable Data Warehouse with Data Vault 2.0]] |
 
 Inventor of the **Data Vault** modeling methodology (1990s, formalized as Data Vault 2.0). Designed for auditability + agility in enterprise data warehouses; uses **Hubs / Links / Satellites** to separate business keys from relationships from descriptive context.
 
@@ -24,11 +37,11 @@ Inventor of the **Data Vault** modeling methodology (1990s, formalized as Data V
 > [!multi-column]
 >
 >> [!card] Data Modeling
->> [[../data-engineering/concepts/data-modeling/data-vault|Data Vault]]
+>> [[../technology/data-engineering/data-modeling/data-vault-modeling|Data Vault]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-warehouse|Data Warehouse]]
+>> [[../technology/data-engineering/data-architecture/data-warehouse|Data Warehouse]]
 >
 >
 >> [!card] Books

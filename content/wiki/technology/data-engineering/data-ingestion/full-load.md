@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Successful people are not without problems. They're simply people who've learned to solve their problems."
+> <cite>— Earl Nightingale</cite>
+
 ---
 
 With a **full load**, the **entire dataset is dumped** and is then **completely replaced** (deleted and re-inserted) with the new, updated dataset. No additional information (like timestamps or change markers) is required (source: Concepts/Data Ingestion/Full Load.md).
@@ -77,5 +80,5 @@ In tools: `bq load --replace`, dbt's `materialized='table'` (full refresh), Airb
 >
 >
 >> [!card] Reliability
->> [[../software-engineering/idempotence|Idempotence]], [[../../tools/ingestion-tools|Ingestion Tools]]
+>> [[../../software-engineering/idempotence|Idempotence]], [[../../tools/ingestion-tools|Ingestion Tools]]
 

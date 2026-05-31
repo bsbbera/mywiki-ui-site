@@ -18,6 +18,9 @@ banner:
 publish: true
 ---
 
+> "Life begins at the end of our comfort zone."
+> <cite>— Neale Donald Walsch</cite>
+
 ---
 
 **Dimensional modeling** is the popular technique developed by **Ralph Kimball** for modeling data for **analytics**. At its core, dimensional modeling organizes data into two types of tables: **fact tables** and **dimension tables**. Facts comprise **numerical, aggregable measures**; dimensions hold **descriptive attributes** of entities (source: Concepts/Data Modeling/Dimensional Modeling.md).
@@ -106,11 +109,11 @@ Patterns for tracking how dimension attributes change over time:
 >
 >
 >> [!card] Architecture
->> [[../data-architecture/data-warehouse|Data Warehouse]], [[../data-architecture/data-mart|Data Mart]], [[../../data-warehousing|Data Warehousing]]
+>> [[../data-architecture/data-warehouse|Data Warehouse]], [[../data-architecture/data-mart|Data Mart]], [[../data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery|BigQuery]], [[../../../databricks/databricks|Databricks]]
+>> [[../../cloud/gcp/analytics/bigquery|BigQuery]], [[../../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

@@ -17,9 +17,12 @@ banner:
 publish: true
 ---
 
+> "No valid plans for the future can be made by those who have no capacity for living now."
+> <cite>— Alan Watts</cite>
+
 ---
 
-The **Medallion Architecture** is a data design pattern, coined by **[[../../../databricks/databricks|Databricks]]**, used to logically organize data in a **lakehouse**. The goal: **incrementally improve data quality** as it flows through three named layers — **bronze (raw)**, **silver (validated)**, and **gold (enriched)** (source: Concepts/Data Architecture/Medallion Architecture.md).
+The **Medallion Architecture** is a data design pattern, coined by **[[../../cloud/databricks/databricks|Databricks]]**, used to logically organize data in a **lakehouse**. The goal: **incrementally improve data quality** as it flows through three named layers — **bronze (raw)**, **silver (validated)**, and **gold (enriched)** (source: Concepts/Data Architecture/Medallion Architecture.md).
 
 Sometimes called **"multi-hop"** architecture.
 
@@ -65,7 +68,7 @@ Sometimes called **"multi-hop"** architecture.
 
 ## Where it shines
 
-- **[[../../../databricks/databricks|Databricks]]** lakehouse implementations (the original use case).
+- **[[../../cloud/databricks/databricks|Databricks]]** lakehouse implementations (the original use case).
 - Modern **dbt + warehouse** stacks (renamed as `staging → intermediate → marts`).
 - Streaming + batch unified pipelines via [[../data-processing/stream-data-processing|Structured Streaming]].
 
@@ -77,7 +80,7 @@ Sometimes called **"multi-hop"** architecture.
 
 ## Implementation on GCP
 
-- **Bronze**: [[../../../gcp/storage/cloud-storage|Cloud Storage]] (raw files) or [[../../../gcp/analytics/bigquery|BigQuery]] external tables.
+- **Bronze**: [[Cloud Storage|Cloud Storage]] (raw files) or [[../../cloud/gcp/analytics/bigquery|BigQuery]] external tables.
 - **Silver**: BigQuery tables with cleaning UDFs (or Dataflow output).
 - **Gold**: BigQuery materialized views, scheduled queries, or BigLake managed tables.
 
@@ -106,7 +109,7 @@ Sometimes called **"multi-hop"** architecture.
 >
 >
 >> [!card] Products + formats
->> [[../../../databricks/databricks|Databricks]], [[../../tools/file-formats|File Formats (Delta / Iceberg)]]
+>> [[../../cloud/databricks/databricks|Databricks]], [[../../tools/file-formats|File Formats (Delta / Iceberg)]]
 >
 >
 >> [!card] People

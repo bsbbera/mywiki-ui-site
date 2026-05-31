@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "An inventor is a man who asks Why? of the universe and lets nothing stand between the answer and his mind."
+> <cite>— Ayn Rand</cite>
+
 ---
 
 **Data Vault modeling** is a technique developed by **[Dan Linstedt](https://en.wikipedia.org/wiki/Dan_Linstedt)** that aims to be the **most flexible** modeling approach — adapting easily to **change + new datasets** while **storing all historical data by default** (source: Concepts/Data Modeling/Data Vault Modeling.md).
@@ -102,7 +105,7 @@ Engineers love the vault layer; analysts love the mart layer.
 
 - **dbtvault** / **AutomateDV** — open-source dbt packages for Data Vault.
 - **VaultSpeed**, **WhereScape** — commercial Data Vault automation.
-- **Snowflake**, [[../../../gcp/analytics/bigquery|BigQuery]] — popular substrates.
+- **Snowflake**, [[../../cloud/gcp/analytics/bigquery|BigQuery]] — popular substrates.
 
 ## Interesting Facts
 
@@ -125,7 +128,7 @@ Engineers love the vault layer; analysts love the mart layer.
 >
 >
 >> [!card] Architecture
->> [[../data-architecture/data-warehouse|Data Warehouse]], [[../../data-warehousing|Data Warehousing]]
+>> [[../data-architecture/data-warehouse|Data Warehouse]], [[../data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] People

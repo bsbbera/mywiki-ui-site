@@ -17,6 +17,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Bigtable
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Wide-column NoSQL database |
+> | **Category** | Database |
+> | **Launched** | 2015 (GA Aug 2016) |
+> | **Interface** | HBase API, gRPC, client libraries, CLI |
+> | **Website** | cloud.google.com/bigtable |
+
+---
+
+> "Anyone who dreams of an uncommon life eventually discovers there is no choice but to seek an uncommon approach to living it."
+> <cite>— Gary Keller</cite>
+
 ---
 
 Cloud Bigtable is GCP's **wide-column, massively scalable NoSQL database**, designed for terabytes-to-petabytes of structured data with **low-latency, high-throughput key/value access** (source: Introduction to Google Cloud Bigtable.md).
@@ -26,7 +43,7 @@ It is a managed, productized version of the **Bigtable paper (2006)** â€” t
 ## Best for
 
 - High-throughput **key/value** access at massive scale.
-- Values **â‰¤ 10 MB per cell** (larger values should use [[../storage/cloud-storage|Cloud Storage]]).
+- Values **â‰¤ 10 MB per cell** (larger values should use [[Cloud Storage|Cloud Storage]]).
 - **Time-series** data (metrics, IoT telemetry).
 - **Low-latency** (single-digit-ms) reads and writes.
 - Analytics, streaming, and ML pipelines.
@@ -147,7 +164,7 @@ Result: no manual sharding â€” Bigtable handles it transparently.
 | SQL | No (HBase / gRPC API; BigQuery can query via external tables) |
 | Best size | Row value â‰¤ 10 MB |
 
-Prefer [[cloud-spanner]] for relational SQL, [[cloud-datastore]] for documents, [[../storage/cloud-storage|Cloud Storage]] for unstructured blobs.
+Prefer [[cloud-spanner]] for relational SQL, [[cloud-datastore]] for documents, [[Cloud Storage|Cloud Storage]] for unstructured blobs.
 
 ## Interesting Facts
 
@@ -172,17 +189,17 @@ Prefer [[cloud-spanner]] for relational SQL, [[cloud-datastore]] for documents, 
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/concepts/data-storage/wide-column-database|Wide-column Database]], [[../../data-engineering/concepts/data-storage/timeseries-database|Time-series Database]], [[../../data-engineering/concepts/data-storage/key-value-database|Key-Value Database]]
+>> [[../../../data-engineering/data-storage/wide-column-database|Wide-column Database]], [[../../../data-engineering/data-storage/timeseries-database|Time-series Database]], [[../../../data-engineering/data-storage/key-value-database|Key-Value Database]]
 >
 >
 >> [!card] Foundations + certs
->> [[../storage/google-file-system|Google File System]], [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../certifications/professional-data-engineer|PDE Certification]]
+>> [[../storage/google-file-system|Google File System]], [[../foundations/google-cloud-platform|Google Cloud Platform]], [[Professional Data Engineer|PDE Certification]]
 >
 >
 >> [!card] People
->> [[../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
+>> [[../../../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
 >
 >
 >> [!card] Books
->> [[../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../../../books/designing-data-intensive-applications|DDIA]]
 

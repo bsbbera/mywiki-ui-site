@@ -19,6 +19,9 @@ banner:
 publish: true
 ---
 
+> "Most of us live our lives by accident - we live as it happens. Fulfilment comes when we live our lives on purpose."
+> <cite>— Simon Sinek</cite>
+
 ---
 
 **Data warehousing** is the practice of collecting, integrating, cleaning, and storing data from multiple operational sources into a **central repository** optimized for **analysis and reporting**. The data warehouse is the architectural pillar that lets organizations turn raw transactional data into **decision-grade insights** (source: Data Warehousing.md).
@@ -36,7 +39,7 @@ The most important concept in data warehousing is the split between two workload
 | Data freshness | Real-time | Hours / minutes / seconds-old |
 | Volume | GB → low TB | TB → PB |
 | Concurrency | Many short transactions | Few long queries |
-| Examples | [[../gcp/databases/cloud-sql|Cloud SQL]], [[../gcp/databases/cloud-spanner|Spanner]] | [[../gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift |
+| Examples | [[../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../cloud/gcp/databases/cloud-spanner|Spanner]] | [[../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift |
 
 A warehouse is **not** a replacement for the operational DB — it complements it by **copying** data over (via [[#etl---extract-transform-load|ETL]]) and reorganizing for analysis.
 
@@ -50,7 +53,7 @@ A warehouse is **not** a replacement for the operational DB — it complements i
 2. **Enhanced analytics** — optimized for aggregations, joins over millions of rows, complex window functions.
 3. **Centralized storage** — single unified view across departments and sources.
 4. **Trend analysis** — keeps historical data over years; lets you compare across time.
-5. **BI support** — dashboards, reports, ad-hoc analysis via tools like [[../gcp/analytics/bigquery-visualization|Looker Studio]], Tableau, Power BI.
+5. **BI support** — dashboards, reports, ad-hoc analysis via tools like [[../cloud/gcp/analytics/bigquery-visualization|Looker Studio]], Tableau, Power BI.
 
 ## Architecture — the canonical components
 
@@ -70,7 +73,7 @@ A warehouse is **not** a replacement for the operational DB — it complements i
 | **Data sources** | Operational DBs, SaaS, files, IoT, external feeds |
 | **ETL / ELT process** | Extract from sources, transform, load into warehouse |
 | **Warehouse DB** | Central repository, multi-dimensional layout for fast querying |
-| **Metadata** | Describes structure, lineage, ownership; see [[../gcp/analytics/data-catalog|Data Catalog]] |
+| **Metadata** | Describes structure, lineage, ownership; see [[../cloud/gcp/analytics/data-catalog|Data Catalog]] |
 | **Data marts** | Department-focused subsets (e.g. Marketing, Finance) |
 | **OLAP tools** | Multi-dimensional analysis, cubes, drill-down |
 | **End-user tools** | Dashboards, BI, reporting |
@@ -85,9 +88,9 @@ The **ETL process** is the heart of warehousing (source: Data Warehousing.md):
 
 GCP services for each step:
 
-- **Extract**: [[../gcp/analytics/pubsub|Pub/Sub]], **Datastream** (CDC), Storage Transfer Service.
-- **Transform**: [[../gcp/analytics/dataflow|Dataflow]] (Apache Beam), [[../gcp/analytics/datafusion|Data Fusion]] (visual), **Dataproc** (Spark/Hadoop).
-- **Load**: [[../gcp/analytics/bigquery|BigQuery]] load jobs, Storage Write API.
+- **Extract**: [[../cloud/gcp/analytics/pubsub|Pub/Sub]], **Datastream** (CDC), Storage Transfer Service.
+- **Transform**: [[../cloud/gcp/analytics/dataflow|Dataflow]] (Apache Beam), [[../cloud/gcp/analytics/datafusion|Data Fusion]] (visual), **Dataproc** (Spark/Hadoop).
+- **Load**: [[../cloud/gcp/analytics/bigquery|BigQuery]] load jobs, Storage Write API.
 
 ### ETL vs ELT (modern)
 
@@ -124,7 +127,7 @@ The classic warehouse schema is a **star schema** (Ralph Kimball, 1996): one cen
 
 A **snowflake schema** further normalizes dimensions (e.g. `DimCity → DimState → DimCountry`); rarely better in practice — extra joins hurt performance.
 
-Star schemas **violate normalization** deliberately to favour read performance — see [[../dbms/database-normalization|Normalization]] for the OLTP-side rules.
+Star schemas **violate normalization** deliberately to favour read performance — see [[../databases/database-normalization|Normalization]] for the OLTP-side rules.
 
 ## Types of data warehouses
 
@@ -135,9 +138,9 @@ Star schemas **violate normalization** deliberately to favour read performance �
 | **Enterprise Data Warehouse (EDW)** | Centralized, organization-wide; the canonical warehouse |
 | **Operational Data Store (ODS)** | Real-time operational data; for daily ops, not deep analytics |
 | **Data Mart** | Department-scoped subset of an EDW |
-| **Cloud Data Warehouse** | Managed; e.g. [[../gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift |
+| **Cloud Data Warehouse** | Managed; e.g. [[../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift |
 | **Big Data Warehouse** | Petabyte+, often unstructured / semi-structured (Parquet on Hadoop) |
-| **Virtual Data Warehouse** | Query-time federation; no copy (similar to [[../gcp/analytics/bigquery-external-data|BigQuery external tables]]) |
+| **Virtual Data Warehouse** | Query-time federation; no copy (similar to [[../cloud/gcp/analytics/bigquery-external-data|BigQuery external tables]]) |
 | **Hybrid** | On-prem + cloud combination |
 | **Real-time DW** | Streaming ingestion + sub-minute freshness |
 
@@ -146,7 +149,7 @@ Star schemas **violate normalization** deliberately to favour read performance �
 Two more recent architectural patterns extend the warehouse:
 
 - **Data Lake** — cheap object storage holding raw, semi-structured files (Parquet, JSON, Avro). Cheap, schema-on-read, but messy.
-- **Lakehouse** — adds **ACID transactions, schema enforcement, time travel** to a data lake via formats like **Delta Lake** ([[../databricks/databricks|Databricks]]), **Iceberg**, **Hudi**. Best of both worlds: warehouse-grade reliability on lake-grade storage.
+- **Lakehouse** — adds **ACID transactions, schema enforcement, time travel** to a data lake via formats like **Delta Lake** ([[../cloud/databricks/databricks|Databricks]]), **Iceberg**, **Hudi**. Best of both worlds: warehouse-grade reliability on lake-grade storage.
 
 GCP supports the lakehouse pattern via **BigLake** (BigQuery + Iceberg/Delta on GCS).
 
@@ -196,21 +199,21 @@ GCP supports the lakehouse pattern via **BigLake** (BigQuery + Iceberg/Delta on 
 
 ## Where data warehousing meets the rest of this wiki
 
-- [[../gcp/analytics/bigquery|BigQuery]] — the canonical cloud DWH; serverless petabyte-scale.
-- [[../gcp/analytics/dataflow|Dataflow]] — code-first ETL.
-- [[../gcp/analytics/datafusion|Data Fusion]] — visual ETL.
-- [[../gcp/analytics/pubsub|Pub/Sub]] — streaming ingestion.
-- [[../gcp/analytics/data-catalog|Data Catalog]] — metadata + discovery.
-- [[../databricks/databricks|Databricks]] — lakehouse alternative built on Spark + Delta Lake.
-- [[../dbms/database-normalization|Normalization]] — the OLTP-side schema discipline DWH deliberately violates.
-- [[../dbms/acid-properties|ACID]] — relevant for warehouses too (BigQuery has ACID per statement; Spanner-as-warehouse has full ACID).
+- [[../cloud/gcp/analytics/bigquery|BigQuery]] — the canonical cloud DWH; serverless petabyte-scale.
+- [[../cloud/gcp/analytics/dataflow|Dataflow]] — code-first ETL.
+- [[../cloud/gcp/analytics/datafusion|Data Fusion]] — visual ETL.
+- [[../cloud/gcp/analytics/pubsub|Pub/Sub]] — streaming ingestion.
+- [[../cloud/gcp/analytics/data-catalog|Data Catalog]] — metadata + discovery.
+- [[../cloud/databricks/databricks|Databricks]] — lakehouse alternative built on Spark + Delta Lake.
+- [[../databases/database-normalization|Normalization]] — the OLTP-side schema discipline DWH deliberately violates.
+- [[../databases/acid-properties|ACID]] — relevant for warehouses too (BigQuery has ACID per statement; Spanner-as-warehouse has full ACID).
 
 ## Interesting Facts
 
 - **Bill Inmon** (the "father of data warehousing") and **Ralph Kimball** disagreed for decades on warehouse design — Inmon favored top-down normalized EDW; Kimball favored bottom-up dimensional / star-schema marts. Modern practice borrows from both.
 - The **3-tier warehouse architecture** — staging area + integration layer + presentation layer — is still the reference pattern, even in cloud DWHs.
 - **dbt** (data build tool) has become the de-facto SQL transformation framework for ELT in modern warehouses.
-- **BigQuery's Capacitor format** + **Colossus storage** + **Dremel engine** (see [[../gcp/storage/google-file-system|GFS lineage]]) is what makes petabyte queries return in seconds.
+- **BigQuery's Capacitor format** + **Colossus storage** + **Dremel engine** (see [[../cloud/gcp/storage/google-file-system|GFS lineage]]) is what makes petabyte queries return in seconds.
 
 ## Interview Questions can be asked
 
@@ -236,21 +239,21 @@ GCP supports the lakehouse pattern via **BigLake** (BigQuery + Iceberg/Delta on 
 >
 >
 >> [!card] Theory
->> [[../dbms/acid-properties|ACID Properties]], [[../dbms/database-normalization|Database Normalization]], [[online-analytical-processing|OLAP]]
+>> [[../databases/acid-properties|ACID Properties]], [[../databases/database-normalization|Database Normalization]], [[online-analytical-processing|OLAP]]
 >
 >
 >> [!card] Products
->> [[../gcp/analytics/bigquery|BigQuery]], [[../databricks/databricks|Databricks Lakehouse]]
+>> [[../cloud/gcp/analytics/bigquery|BigQuery]], [[../cloud/databricks/databricks|Databricks Lakehouse]]
 >
 >
 >> [!card] People
->> [[../people/bill-inmon|Bill Inmon]], [[../people/ralph-kimball|Ralph Kimball]], [[../people/dan-linstedt|Dan Linstedt]]
+>> [[../../people/bill-inmon|Bill Inmon]], [[../../people/ralph-kimball|Ralph Kimball]], [[../../people/dan-linstedt|Dan Linstedt]]
 >
 >
 >> [!card] Books
->> [[../books/the-data-warehouse-toolkit|The Data Warehouse Toolkit]], [[../books/building-the-data-warehouse|Building the Data Warehouse]], [[../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]
+>> [[../../books/the-data-warehouse-toolkit|The Data Warehouse Toolkit]], [[../../books/building-the-data-warehouse|Building the Data Warehouse]], [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]
 >
 >
 >> [!card] GCP analytics stack
->> [[../gcp/analytics/dataflow|Dataflow]], [[../gcp/analytics/datafusion|Data Fusion]], [[../gcp/analytics/pubsub|Pub/Sub]], [[../gcp/analytics/data-catalog|Data Catalog]], [[../gcp/certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[../cloud/gcp/analytics/dataflow|Dataflow]], [[../cloud/gcp/analytics/datafusion|Data Fusion]], [[../cloud/gcp/analytics/pubsub|Pub/Sub]], [[../cloud/gcp/analytics/data-catalog|Data Catalog]], [[Professional Data Engineer|Professional Data Engineer]]
 

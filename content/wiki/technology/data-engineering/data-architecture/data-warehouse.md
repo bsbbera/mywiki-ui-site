@@ -16,11 +16,14 @@ banner:
 publish: true
 ---
 
+> "I never said it would be easy, I only said it would be worth it."
+> <cite>— Mae West</cite>
+
 ---
 
 A **data warehouse** is a central repository for data used in reporting and analytics. Data flows in from [[../data-processing/online-transaction-processing|OLTP]] systems, relational databases, and [[data-lake|other sources]] on a regular cadence. Analysts, engineers, and scientists query it through BI tools, SQL clients, and analytics applications. Because the primary use case is analytics, warehouses use **[[../data-processing/online-analytical-processing|OLAP]]**-optimized technology (often columnar storage) (source: Concepts/Data Architecture/Data Warehouse.md).
 
-> For the **full theoretical treatment** (Inmon vs Kimball, ETL vs ELT, star schemas, real-world examples) see the canonical page: [[../../data-warehousing|Data Warehousing]].
+> For the **full theoretical treatment** (Inmon vs Kimball, ETL vs ELT, star schemas, real-world examples) see the canonical page: [[../data-warehousing|Data Warehousing]].
 
 ## In one paragraph
 
@@ -43,11 +46,11 @@ For complex queries on large datasets, especially when you need to keep historic
 
 ## Popular cloud warehouses
 
-- [[../../../gcp/analytics/bigquery|Google BigQuery]]
+- [[../../cloud/gcp/analytics/bigquery|Google BigQuery]]
 - **Amazon Redshift** — see [[../../tools/databases-overview|Databases overview]]
 - **Snowflake** — see [[../../tools/databases-overview|Databases overview]]
-- **Azure Synapse Analytics** — see [[../../../azure/azure|Azure]]
-- [[../../../databricks/databricks|Databricks SQL]] (lakehouse-style)
+- **Azure Synapse Analytics** — see [[../../cloud/azure/azure|Azure]]
+- [[../../cloud/databricks/databricks|Databricks SQL]] (lakehouse-style)
 
 ## Benchmarks
 
@@ -70,11 +73,11 @@ For complex queries on large datasets, especially when you need to keep historic
 >
 >
 >> [!card] Modeling + processing
->> [[../data-modeling/dimensional-modeling|Dimensional Modeling]], [[../data-processing/online-analytical-processing|OLAP]], [[../../data-warehousing|Data Warehousing — full treatment]]
+>> [[../data-modeling/dimensional-modeling|Dimensional Modeling]], [[../data-processing/online-analytical-processing|OLAP]], [[../data-warehousing|Data Warehousing — full treatment]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery|BigQuery]], [[../../../databricks/databricks|Databricks Lakehouse]]
+>> [[../../cloud/gcp/analytics/bigquery|BigQuery]], [[../../cloud/databricks/databricks|Databricks Lakehouse]]
 >
 >
 >> [!card] People

@@ -17,6 +17,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Datastore
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Serverless NoSQL document database |
+> | **Category** | Database |
+> | **Launched** | 2013 (now Firestore in Datastore mode) |
+> | **Interface** | REST API, gRPC, client libraries |
+> | **Website** | cloud.google.com/datastore |
+
+---
+
+> "Sometimes a change of perspective is all it takes to see the light."
+> <cite>— Dan Brown</cite>
+
 ---
 
 Cloud Datastore is GCP's **fully managed, serverless NoSQL document database**. Applications store, retrieve, and query **entities** (schema-flexible documents) identified by unique **keys**, grouped by **kinds** (source: Use Cloud Datastore For NoSQL Database On GCP.md).
@@ -141,13 +158,13 @@ for entity in query.fetch():
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/concepts/data-storage/document-database|Document Database]], [[../../data-engineering/concepts/data-storage/non-relational-database|Non-relational Database]]
+>> [[../../../data-engineering/data-storage/document-database|Document Database]], [[../../../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] DBMS Theory
->> [[../../dbms/acid-properties|ACID Properties]]
+>> [[../../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] Foundations + certs
->> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../certifications/professional-data-engineer|PDE Certification]]
+>> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[Professional Data Engineer|PDE Certification]]
 

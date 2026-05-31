@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "It takes half your life before you discover life is a do-it-yourself project."
+> <cite>— Napoleon Hill</cite>
+
 ---
 
 A **delta load** (or **incremental load**) extracts only the data that has **changed** since the last extract run. It is typically **query-based** and requires an **incrementing id** or a **`modified_at` timestamp** column to identify new records (source: Concepts/Data Ingestion/Delta Load.md).
@@ -106,5 +109,5 @@ Add a `deleted_at` column to the source. Deletes become updates (`UPDATE … SET
 >
 >
 >> [!card] Reliability
->> [[../software-engineering/idempotence|Idempotence]], [[../software-engineering/indexing|Indexing]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
+>> [[../../software-engineering/idempotence|Idempotence]], [[../../software-engineering/indexing|Indexing]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
 

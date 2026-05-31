@@ -16,6 +16,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # App Engine
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Platform as a Service (PaaS) |
+> | **Category** | Compute |
+> | **Launched** | 2008 (GA 2011) |
+> | **Interface** | SDK, gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/appengine |
+
+---
+
+> "Life is a journey, not a destination."
+> <cite>— Dan Millman</cite>
+
 ---
 
 Google App Engine (GAE) is GCP's fully managed **PaaS** for hosting web and mobile back-ends. You upload code; Google provisions, scales, load-balances, patches, and monitors the runtime (source: Google App Engine (GAE).md).

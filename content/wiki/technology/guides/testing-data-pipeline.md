@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Seek not the good in external things;seek it in yourselves."
+> <cite>— Epictetus</cite>
+
 ---
 
 A guide to designing a testing strategy for data pipelines (source: Guides/Testing Your Data Pipeline.md).
@@ -38,7 +41,7 @@ Test the **functions and classes** that make up a pipeline.
 - Run on every PR via CI.
 - Tools: `pytest`, `unittest` (Python); `JUnit` (Java).
 
-### [[../concepts/software-engineering/data-unit-test|Data quality tests]]
+### [[../software-engineering/data-unit-test|Data quality tests]]
 
 Test the **data flowing through** the pipeline — not the code.
 
@@ -137,7 +140,7 @@ See [[../tools/quality-tools|Data Quality Tools]] for the full catalog.
 > [!multi-column]
 >
 >> [!card] Reliability patterns
->> [[../concepts/software-engineering/data-unit-test|Data Unit Test]], [[../concepts/software-engineering/idempotence|Idempotence]]
+>> [[../software-engineering/data-unit-test|Data Unit Test]], [[../software-engineering/idempotence|Idempotence]]
 >
 >
 >> [!card] Sister guides

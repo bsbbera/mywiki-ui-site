@@ -16,6 +16,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Microsoft Azure
+> ###### Cloud Platform
+> | | |
+> | --- | --- |
+> | **Provider** | Microsoft |
+> | **Type** | Public cloud platform |
+> | **Category** | Cloud |
+> | **Launched** | 2010 (Feb 2010) |
+> | **Headquarters** | Redmond, USA |
+> | **Website** | azure.microsoft.com |
+
+---
+
+> "It takes half your life before you discover life is a do-it-yourself project."
+> <cite>— Napoleon Hill</cite>
+
 ---
 
 [Microsoft Azure](https://azure.microsoft.com/) is Microsoft's cloud computing platform with **200+ products and services**. It is especially popular among **businesses already using Microsoft data products** (e.g. SQL Server) as they move to a hybrid model — on-prem servers + Azure (source: Tools/Cloud Providers/Microsoft Azure.md).
@@ -128,9 +145,9 @@ For Microsoft-stack orgs, Synapse is one-stop-shopping. For multi-cloud or non-M
 
 ## Comparison with AWS and GCP
 
-See [[../data-engineering/guides/cloud-services-map|Cloud Services Map]] for full side-by-side.
+See [[../../guides/cloud-services-map|Cloud Services Map]] for full side-by-side.
 
-| Need | [[../aws/aws\|AWS]] | [[../gcp/foundations/google-cloud-platform\|GCP]] | Azure |
+| Need | [[AWS\|AWS]] | [[../gcp/foundations/google-cloud-platform\|GCP]] | Azure |
 | --- | --- | --- | --- |
 | Object storage | S3 | Cloud Storage | Blob / ADLS Gen2 |
 | Warehouse | Redshift | BigQuery | Synapse SQL |
@@ -172,13 +189,13 @@ See [[../data-engineering/guides/cloud-services-map|Cloud Services Map]] for ful
 > [!multi-column]
 >
 >> [!card] Sister cloud platforms
->> [[../aws/aws|AWS]], [[../gcp/foundations/google-cloud-platform|GCP]], [[../databricks/databricks|Databricks]]
+>> [[AWS|AWS]], [[../gcp/foundations/google-cloud-platform|GCP]], [[../databricks/databricks|Databricks]]
 >
 >
 >> [!card] Cross-cloud guides
->> [[../data-engineering/guides/cloud-services-map|Cloud Services Map]], [[../data-engineering/guides/cost-optimization-cloud|Cost Optimization]], [[../data-engineering/guides/messaging-service-guide|Messaging Service Guide]]
+>> [[../../guides/cloud-services-map|Cloud Services Map]], [[../../guides/cost-optimization-cloud|Cost Optimization]], [[../../guides/messaging-service-guide|Messaging Service Guide]]
 >
 >
 >> [!card] Tool catalogs
->> [[../data-engineering/tools/databases-overview|Databases Overview]], [[../data-engineering/tools/object-storage|Object Storage]], [[../data-engineering/tools/analytics-tools|Analytics + BI Tools (Power BI)]]
+>> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../tools/analytics-tools|Analytics + BI Tools (Power BI)]]
 

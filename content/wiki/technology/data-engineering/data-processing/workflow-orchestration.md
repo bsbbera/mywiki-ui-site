@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "If you truly expect something to be difficult, it will be."
+> <cite>— Peter A. Cohen</cite>
+
 ---
 
 In data engineering, **workflow orchestration** refers to the process of **scheduling and arranging tasks** that form your [[../data-pipeline|data pipeline]]. A workflow orchestration tool lets you **schedule, run, and observe** the entire process (source: Concepts/Data Processing/Workflow Orchestration.md).
@@ -42,7 +45,7 @@ See [[../../tools/orchestrators-overview|Orchestrators Overview]] for the full c
 ## Advantages
 
 - **Custom workflows** — express complex dependencies declaratively.
-- **Idempotent pipelines** — easier to design retries cleanly. See [[../software-engineering/idempotence|Idempotence]].
+- **Idempotent pipelines** — easier to design retries cleanly. See [[../../software-engineering/idempotence|Idempotence]].
 - **Alerts on failure** — operators get paged.
 - **Graceful retries** — exponential backoff, dead-letter for poison tasks.
 - **Visibility** — UI dashboards show what ran, what's blocked.
@@ -89,11 +92,11 @@ If your pipeline is mostly **dbt** transformations on a warehouse, **dbt Cloud**
 > [!multi-column]
 >
 >> [!card] Pipeline + processing
->> [[../../data-pipeline|Data Pipeline]], [[batch-data-processing|Batch Processing]], [[stream-data-processing|Stream Processing]], [[data-processing|Data Processing]]
+>> [[../data-pipeline|Data Pipeline]], [[batch-data-processing|Batch Processing]], [[stream-data-processing|Stream Processing]], [[data-processing|Data Processing]]
 >
 >
 >> [!card] Reliability
->> [[../software-engineering/idempotence|Idempotence]], [[../software-engineering/data-unit-test|Data Unit Test]]
+>> [[../../software-engineering/idempotence|Idempotence]], [[../../software-engineering/data-unit-test|Data Unit Test]]
 >
 >
 >> [!card] Tools + guides

@@ -17,6 +17,9 @@ banner:
 publish: true
 ---
 
+> "We don't stop playing because we grow old; we grow old because we stop playing."
+> <cite>— George Bernard Shaw</cite>
+
 ---
 
 Strategies for **reducing cloud spend** across compute, storage, and analytics, illustrated with the major providers (source: Guides/Cost Optimization in the Cloud.md).
@@ -29,7 +32,7 @@ General compute = servers for general work (transforms, hosting). Range from ful
 | --- | --- |
 | **AWS** | EC2, Fargate, Batch |
 | **Azure** | Virtual Machine, Container Instances, Batch |
-| **GCP** | [[../../gcp/compute/compute-engine\|Compute Engine]], [[../../gcp/compute/cloud-run\|Cloud Run]], Batch on GKE |
+| **GCP** | [[../cloud/gcp/compute/compute-engine\|Compute Engine]], [[../cloud/gcp/compute/cloud-run\|Cloud Run]], Batch on GKE |
 
 ### 1. Turn on metrics monitoring
 
@@ -146,5 +149,5 @@ Often the biggest hidden cost.
 >
 >
 >> [!card] Cloud product pages
->> [[../../gcp/foundations/gcp-pricing-and-discounts|GCP Pricing + Discounts]], [[../../gcp/analytics/bigquery|BigQuery]], [[../../aws/aws|AWS]], [[../../azure/azure|Azure]]
+>> [[../cloud/gcp/foundations/gcp-pricing-and-discounts|GCP Pricing + Discounts]], [[../cloud/gcp/analytics/bigquery|BigQuery]], [[AWS|AWS]], [[../cloud/azure/azure|Azure]]
 

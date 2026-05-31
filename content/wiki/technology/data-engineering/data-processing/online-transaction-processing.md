@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "The less you respond to negative people, the more positive your life will become."
+> <cite>— Paulo Coelho</cite>
+
 ---
 
 **Online Transaction Processing (OLTP)** is the management of **transactional data** — the data generated in the day-to-day operation of an organization. OLTP systems **record** transactional data and **support querying** of it (source: Concepts/Data Processing/Online Transaction Processing.md).
@@ -45,7 +48,7 @@ Transactional data tracks **business activities** — payments received, payment
 
 - [[../data-storage/relational-database|Relational]] — Postgres, MySQL, SQL Server, Oracle.
 - **NewSQL** — Google Spanner, CockroachDB, YugabyteDB.
-- **Cloud-managed** — [[../../../gcp/databases/cloud-sql|Cloud SQL]], [[../../../gcp/databases/cloud-spanner|Spanner]], Amazon RDS / Aurora, Azure SQL.
+- **Cloud-managed** — [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../../cloud/gcp/databases/cloud-spanner|Spanner]], Amazon RDS / Aurora, Azure SQL.
 - **NoSQL OLTP** — DynamoDB, MongoDB (document), Cassandra (wide-column).
 
 ## OLTP vs OLAP
@@ -66,7 +69,7 @@ Transactional data tracks **business activities** — payments received, payment
 - **Index** carefully — queries vs writes trade-off.
 - **Connection pooling** — DB connections are expensive.
 - **Replication** — primary + read replicas for scale.
-- **Sharding** when vertical scaling stops working — see [[../software-engineering/database-sharding|Sharding]].
+- **Sharding** when vertical scaling stops working — see [[../../software-engineering/database-sharding|Sharding]].
 
 ## Modern OLTP innovations
 
@@ -90,11 +93,11 @@ Transactional data tracks **business activities** — payments received, payment
 >
 >
 >> [!card] Storage + theory
->> [[../data-storage/relational-database|Relational Database]], [[../../../dbms/acid-properties|ACID Properties]], [[../data-modeling/normalization|Normalization]]
+>> [[../data-storage/relational-database|Relational Database]], [[../../databases/acid-properties|ACID Properties]], [[../data-modeling/normalization|Normalization]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-sql|Cloud SQL]], [[../../../gcp/databases/cloud-spanner|Cloud Spanner]]
+>> [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../../cloud/gcp/databases/cloud-spanner|Cloud Spanner]]
 >
 >
 >> [!card] People

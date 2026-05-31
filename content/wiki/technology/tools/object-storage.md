@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "The golden opportunity you are seeking is in yourself. It is not in your environment; it is not in luck or chance, or the help of others; it is in yourself alone."
+> <cite>— Orison Swett Marden</cite>
+
 ---
 
 **Object storage** (a.k.a. blob storage) is **massive, cheap, durable storage** for unstructured/structured files. The foundation of every modern data lake (source: Tools/Data Stores/*.md).
@@ -50,7 +53,7 @@ Long-term **archival** storage (now part of S3 storage classes). Lowest cost but
 
 ### Google Cloud Storage
 
-See [[../../gcp/storage/cloud-storage|Cloud Storage]] for the full GCP treatment.
+See [[Cloud Storage|Cloud Storage]] for the full GCP treatment.
 
 **Storage classes**:
 
@@ -127,17 +130,16 @@ Compliance feature — once written, can't be deleted/modified for a retention p
 > [!multi-column]
 >
 >> [!card] Data Storage
->> [[../concepts/data-storage/data-storage|Data Storage]]
+>> [[../data-engineering/data-storage/data-storage|Data Storage]]
 >
 >
 >> [!card] Data Architecture
->> [[../concepts/data-architecture/data-lake|Data Lake]], [[../concepts/data-architecture/medallion-architecture|Medallion Architecture]]
->
+>> [[../data-engineering/data-architecture/data-lake|Data Lake]], [[../data-engineering/data-architecture/medallion-architecture|Meda[[AWS|AWS]]
 >
 >> [!card] Sister catalogs
 >> [[file-formats|File Formats]], [[databases-overview|Databases]]
 >
 >
 >> [!card] Products
->> [[../../gcp/storage/cloud-storage|Cloud Storage]], [[../../aws/aws|AWS]], [[../../azure/azure|Azure]]
+>> [[Cloud Storage|Cloud Storage]], [[../cloud/aws/aws|AWS]], [[../cloud/azure/azure|Azure]]
 

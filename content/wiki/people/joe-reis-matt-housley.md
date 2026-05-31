@@ -14,7 +14,21 @@ banner:
 publish: true
 ---
 
+> "Investing in yourself is the best investment you will ever make."
+> <cite>— Robin Sharma</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Joe Reis & Matt Housley
+> ###### Authors
+> | | |
+> | --- | --- |
+> | **Members** | Joe Reis, Matt Housley |
+> | **Nationality** | American |
+> | **Domain** | Data engineering |
+> | **Known for** | The data engineering lifecycle |
+> | **Notable works** | [[../books/fundamentals-of-data-engineering\|Fundamentals of Data Engineering]] |
 
 Authors of the modern textbook **Fundamentals of Data Engineering** (O'Reilly, 2022) which formalized the **data engineering lifecycle** (generation → ingestion → transformation → serving) and the cross-cutting **undercurrents** (security, data management, DataOps, data architecture, orchestration, software engineering). Joe Reis is co-founder of **Ternary Data**.
 
@@ -27,5 +41,5 @@ Authors of the modern textbook **Fundamentals of Data Engineering** (O'Reilly, 2
 >
 >
 >> [!card] Data Engineering
->> [[../data-engineering/data-engineering|Data Engineering Overview]], [[../data-engineering/data-pipeline|Data Pipeline]]
+>> [[../technology/data-engineering/data-engineering|Data Engineering Overview]], [[../technology/data-engineering/data-pipeline|Data Pipeline]]
 

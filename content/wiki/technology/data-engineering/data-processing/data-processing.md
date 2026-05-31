@@ -13,6 +13,9 @@ banner:
 publish: true
 ---
 
+> "A wise person should have money in their head, but not in their heart."
+> <cite>— Jonathan Swift</cite>
+
 ---
 
 **Data Processing** is the act of transforming raw data into meaningful, actionable information. It involves **collecting, manipulating, filtering, sorting, and analyzing** data to extract insights, support decisions, and enable business operations. Processing focuses on **what happens to data after it has been ingested** (source: Concepts/Data Processing/Data Processing.md).
@@ -53,12 +56,12 @@ The execution model + processing system combine into named architectures: see [[
 
 | Step | Service |
 | --- | --- |
-| OLTP | [[../../../gcp/databases/cloud-sql|Cloud SQL]], [[../../../gcp/databases/cloud-spanner|Spanner]] |
-| Streaming bus | [[../../../gcp/analytics/pubsub|Pub/Sub]] |
-| Batch + stream processing | [[../../../gcp/analytics/dataflow|Dataflow]] |
-| Visual ETL | [[../../../gcp/analytics/datafusion|Data Fusion]] |
-| Spark/Hadoop | Dataproc |
-| OLAP | [[../../../gcp/analytics/bigquery|BigQuery]] |
+| OLTP | [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../../cloud/gcp/databases/cloud-spanner|Spanner]] |
+| Streaming bus | [[../../cloud/gcp/analytics/pubsub|Pub/Sub]] |
+| Batch + stream processing | [[../../cloud/gcp/analytics/dataflow|Dataflow]] |
+| Visual ETL | [[../../cloud/gcp/analytics/datafusion|Data Fusion]] |
+| [[apache-spark\|Spark]]/Hadoop | Dataproc |
+| OLAP | [[../../cloud/gcp/analytics/bigquery|BigQuery]] |
 | Orchestration | Cloud Composer (Airflow) |
 
 ## Interview Questions
@@ -80,5 +83,9 @@ The execution model + processing system combine into named architectures: see [[
 >
 >
 >> [!card] Architecture
->> [[../data-architecture/data-architecture|Data Architecture]], [[../../data-pipeline|Data Pipeline]]
+>> [[../data-architecture/data-architecture|Data Architecture]], [[../data-pipeline|Data Pipeline]]
+>
+>
+>> [!card] Engines
+>> [[apache-spark|Apache Spark]], [[pyspark|PySpark]], [[spark-streaming|Spark Streaming]]
 

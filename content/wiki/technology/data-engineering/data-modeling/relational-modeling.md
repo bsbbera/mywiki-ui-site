@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "To be able to forget means sanity."
+> <cite>— Jack London</cite>
+
 ---
 
 **Relational modeling** revolves around using **tables, columns, and rows** to represent data. Each table denotes entities or subjects; every row signifies an individual record. Tables are connected via **unique identifiers** (primary keys) referenced by **foreign keys** (source: Concepts/Data Modeling/Relational Modeling.md).
@@ -48,7 +51,7 @@ A core component: **[[normalization]]** — reducing data redundancy.
 
 ## Common patterns
 
-- **3NF** for OLTP — see [[../../../dbms/database-normalization|Normalization]].
+- **3NF** for OLTP — see [[../../databases/database-normalization|Normalization]].
 - **EAV** (entity-attribute-value) — flexible schema; abuse-prone.
 - **Polymorphic associations** — single FK references multiple tables; controversial.
 
@@ -71,7 +74,7 @@ Postgres + MySQL added **JSON columns** that combine relational structure with d
 >
 >
 >> [!card] Storage + theory
->> [[../data-storage/relational-database|Relational Database]], [[../../../dbms/database-normalization|Database Normalization]], [[../../../dbms/acid-properties|ACID Properties]]
+>> [[../data-storage/relational-database|Relational Database]], [[../../databases/database-normalization|Database Normalization]], [[../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] People

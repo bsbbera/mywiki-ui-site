@@ -19,6 +19,32 @@ const CONTENT_PATH = path.join(PROJECT_ROOT, "content");
 // Debug logging
 const DEBUG = process.env.DEBUG_COPY === "true";
 
+/**
+ * RULE: graphify output is NEVER deployed.
+ * graphify (/graphify) generates knowledge-graph artifacts into the vault
+ * (graphify-out/, GRAPH_REPORT.md, graph.json/.svg/.graphml/.html, cypher.txt,
+ * and Obsidian vaults named "graphify*"). These are tooling output, not notes,
+ * and must never be synced to content/ or published. See docs/DEPLOY-RULES.md.
+ * Any file or directory matching the names below — or whose name starts with
+ * "graphify" — is skipped during sync.
+ */
+const EXCLUDED_NAMES = new Set([
+  "_my_template",
+  "raw",
+  "graphify-out",
+  "GRAPH_REPORT.md",
+  "graph.json",
+  "graph.html",
+  "graph.svg",
+  "graph.graphml",
+  "cypher.txt",
+]);
+const GRAPHIFY_RE = /^graphify/i;
+
+function isExcluded(name) {
+  return EXCLUDED_NAMES.has(name) || GRAPHIFY_RE.test(name);
+}
+
 function log(...args) {
   if (DEBUG) console.log(...args);
 }
@@ -81,8 +107,8 @@ function copyDir(src, dest, depth = 0) {
   const files = fs.readdirSync(src);
 
   files.forEach((file) => {
-    // Skip hidden files and excluded folders
-    if (file.startsWith(".") || file === "_my_template" || file === "raw") {
+    // Skip hidden files, excluded folders, and ALL graphify output (never deploy)
+    if (file.startsWith(".") || isExcluded(file)) {
       return;
     }
 

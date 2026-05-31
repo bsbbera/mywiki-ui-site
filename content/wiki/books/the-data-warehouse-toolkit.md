@@ -15,11 +15,23 @@ banner: "https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg"
 publish: true
 ---
 
+> "The strongest and sweetest songs yet remain to be sung."
+> <cite>— Walt Whitman</cite>
+
 ---
 
-![Kimball Toolkit cover](https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg)
-
-Authors: [[../people/ralph-kimball|Ralph Kimball]] + Margy Ross · Publisher: Wiley · Editions: 1996, 2002, 2013 (3rd)
+> [!infobox|wikipedia]
+> # The Data Warehouse Toolkit
+> ![cover](https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg)
+> ###### Book
+> | | |
+> | --- | --- |
+> | **Authors** | [[../people/ralph-kimball\|Ralph Kimball]], Margy Ross |
+> | **Publisher** | Wiley |
+> | **Published** | 1996; 2002; 2013 (3rd ed.) |
+> | **Domain** | Dimensional modeling, data warehousing |
+> | **Pages** | ~600 |
+> | **ISBN** | 978-1118530801 |
 
 The **canonical reference** for **dimensional modeling**. Introduced fact tables, dimensions, conformed dimensions, slowly-changing dimensions (SCD), and the **bus architecture**. Reading this front-to-back is the rite of passage for warehouse designers.
 
@@ -32,13 +44,13 @@ The **canonical reference** for **dimensional modeling**. Introduced fact tables
 >
 >
 >> [!card] Data Modeling
->> [[../data-engineering/concepts/data-modeling/dimensional-modeling|Dimensional Modeling]]
+>> [[../technology/data-engineering/data-modeling/dimensional-modeling|Dimensional Modeling]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-warehouse|Data Warehouse]], [[../data-engineering/concepts/data-architecture/data-mart|Data Mart]]
+>> [[../technology/data-engineering/data-architecture/data-warehouse|Data Warehouse]], [[../technology/data-engineering/data-architecture/data-mart|Data Mart]]
 >
 >
 >> [!card] Data Engineering
->> [[../data-engineering/data-warehousing|Data Warehousing]]
+>> [[../technology/data-engineering/data-warehousing|Data Warehousing]]
 

@@ -17,6 +17,9 @@ banner:
 publish: true
 ---
 
+> "Give a girl the right shoes, and she can conquer the world."
+> <cite>— Bette Midler</cite>
+
 ---
 
 Visualization turns BigQuery's complex data into **stories, dashboards, and insights**. Two Google-native tools cover the common cases (source: Google Cloud Platform - Data Visualization in BigQuery.md):
@@ -124,9 +127,9 @@ Heavy dashboards generate many queries — for cost control, use:
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/data-management/semantic-layer|Semantic Layer]], [[../../data-engineering/data-management/metrics-layer|Metrics Layer]]
+>> [[../../../data-engineering/data-management/semantic-layer|Semantic Layer]], [[../../../data-engineering/data-management/metrics-layer|Metrics Layer]]
 >
 >
 >> [!card] Tools
->> [[../../data-engineering/tools/analytics-tools|Analytics + BI Tools]]
+>> [[../../../tools/analytics-tools|Analytics + BI Tools]]
 

@@ -2,7 +2,7 @@
 title: Amazon Web Services
 Created:
   - 2026-04-29
-date modified: Thursday, May 14th 2026, 11:39:53 am
+date modified: Friday, May 29th 2026, 11:57:44 pm
 aliases:
   - AWS
   - Amazon Web Services
@@ -14,6 +14,23 @@ tags:
 banner:
 publish: true
 ---
+
+> [!infobox|wikipedia]
+> # Amazon Web Services
+> ###### Cloud Platform
+> | | |
+> | --- | --- |
+> | **Provider** | Amazon |
+> | **Type** | Public cloud platform |
+> | **Category** | Cloud |
+> | **Launched** | 2006 (S3 & EC2) |
+> | **Headquarters** | Seattle, USA |
+> | **Website** | aws.amazon.com |
+
+---
+
+> "Quality is not an act, it is a habit."
+> <cite>— Colin R. Davis</cite>
 
 ---
 
@@ -45,7 +62,7 @@ A defining attribute is the breadth of **serverless and managed** products.
 
 ### Storage
 
-- **Amazon S3** — object storage; foundation of every AWS data lake. See [[../data-engineering/tools/object-storage|Object Storage]].
+- **Amazon S3** — object storage; foundation of every AWS data lake. See [[../../tools/object-storage|Object Storage]].
 - **Amazon S3 Glacier** — archival storage classes.
 - **Amazon EBS** — block storage for EC2.
 - **Amazon EFS** — managed NFS.
@@ -85,9 +102,12 @@ A defining attribute is the breadth of **serverless and managed** products.
 - **AWS Secrets Manager** — credential storage.
 - **AWS Lake Formation** — data lake security + governance.
 
+---
+
+
 ## Comparison with GCP and Azure
 
-See [[../data-engineering/guides/cloud-services-map|Cloud Services Map]] for the full side-by-side table.
+See [[../../guides/cloud-services-map|Cloud Services Map]] for the full side-by-side table.
 
 | Need | AWS | [[../gcp/foundations/google-cloud-platform\|GCP]] | [[../azure/azure\|Azure]] |
 | --- | --- | --- | --- |
@@ -163,9 +183,9 @@ See [[../data-engineering/guides/cloud-services-map|Cloud Services Map]] for the
 >
 >> [!card] Cross-cloud guides
 >> ---
->> [[../data-engineering/guides/cloud-services-map|Cloud Services Map]], [[../data-engineering/guides/cost-optimization-cloud|Cost Optimization]], [[../data-engineering/guides/messaging-service-guide|Messaging Service Guide]]
+>> [[../../guides/cloud-services-map|Cloud Services Map]], [[../../guides/cost-optimization-cloud|Cost Optimization]], [[../../guides/messaging-service-guide|Messaging Service Guide]]
 >
 >
 >> [!card] Tool catalogs
 >> ---
->> [[../data-engineering/tools/databases-overview|Databases Overview]], [[../data-engineering/tools/orchestrators-overview|Orchestrators]], [[../data-engineering/tools/object-storage|Object Storage]]
+>> [[../../tools/databases-overview|Databases Overview]], [[../../tools/orchestrators-overview|Orchestrators]], [[../../tools/object-storage|Object Storage]]

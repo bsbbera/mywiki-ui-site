@@ -16,6 +16,9 @@ cssclasses:
   - wide-page
 ---
 
+> "A self that goes on changing is a self that goes on living."
+> <cite>— Virginia Woolf</cite>
+
 ---
 
 ## 🧭 Vault Navigation
@@ -92,11 +95,11 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 
 ## Cross-platform learning paths
 
-- [[../gcp/foundations/google-cloud-platform|Google Cloud Platform]] — full GCP analytics stack
-- [[../aws/aws|Amazon Web Services]] — AWS data tools
-- [[../azure/azure|Microsoft Azure]] — Azure data services
-- [[../databricks/databricks|Databricks]] — multi-cloud lakehouse
-- [[../dbms/acid-properties|ACID Properties]] + [[../dbms/database-normalization|Normalization]] — DBMS theory
+- [[../cloud/gcp/foundations/google-cloud-platform|Google Cloud Platform]] — full GCP analytics stack
+- [[AWS|Amazon Web Services]] — AWS data tools
+- [[../cloud/azure/azure|Microsoft Azure]] — Azure data services
+- [[../cloud/databricks/databricks|Databricks]] — multi-cloud lakehouse
+- [[../databases/acid-properties|ACID Properties]] + [[../databases/database-normalization|Normalization]] — DBMS theory
 
 ## Interesting Facts
 
@@ -119,7 +122,7 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 > [!multi-column]
 >
 >> [!card] Discipline
->> [[data-pipeline|Data Pipeline]], [[data-warehousing|Data Warehousing]], [[faq|FAQ]], [[guides/getting-started|Getting Started]]
+>> [[data-pipeline|Data Pipeline]], [[data-warehousing|Data Warehousing]], [[faq|FAQ]], [[../guides/getting-started|Getting Started]]
 >
 >
 >> [!card] Sub-disciplines
@@ -127,10 +130,10 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 >
 >
 >> [!card] People
->> [[../people/joe-reis-matt-housley|Joe Reis + Matt Housley]], [[../people/martin-kleppmann|Martin Kleppmann]]
+>> [[../../people/joe-reis-matt-housley|Joe Reis + Matt Housley]], [[../../people/martin-kleppmann|Martin Kleppmann]]
 >
 >
 >> [!card] Books
->> [[../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]], [[../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]
+>> [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]], [[../../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]
 
 

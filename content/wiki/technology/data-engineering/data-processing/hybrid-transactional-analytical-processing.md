@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Rewards and punishment is the lowest form of education."
+> <cite>— Zhuangzi</cite>
+
 ---
 
 **Hybrid Transactional Analytical Processing (HTAP)** is a database paradigm that handles **both [[online-transaction-processing|OLTP]] and [[online-analytical-processing|OLAP]] workloads on the same data system** — eliminating the traditional need for a separate ETL pipeline + warehouse for analytics (source: Concepts/Data Processing/Hybrid Transactional Analytical Processing.md).
@@ -83,7 +86,7 @@ Writes go to row store; **delta merging** propagates to column store. Queries ro
 
 ## When NOT to use
 
-- **PB-scale analytics** — dedicated warehouses ([[../../../gcp/analytics/bigquery|BigQuery]], Snowflake) outperform.
+- **PB-scale analytics** — dedicated warehouses ([[../../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake) outperform.
 - **Complex ETL needs** — separate transformation layer cleaner.
 - **Cost-sensitive** — HTAP DBs are usually pricier.
 
@@ -113,5 +116,5 @@ Writes go to row store; **delta merging** propagates to column store. Queries ro
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-spanner|Cloud Spanner]]
+>> [[../../cloud/gcp/databases/cloud-spanner|Cloud Spanner]]
 

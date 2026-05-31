@@ -15,6 +15,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Compute Engine
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Infrastructure as a Service (IaaS) |
+> | **Category** | Compute |
+> | **Launched** | 2012 (GA Dec 2013) |
+> | **Interface** | gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/compute |
+
+---
+
+> "A bird does not sing because it has an answer. It sings because it has a song."
+> <cite>— Chinese Proverb</cite>
+
 ---
 
 Google Compute Engine (GCE) is GCP's **IaaS** offering: virtual machines hosted on the same global fiber-connected infrastructure that runs Google Search, Gmail, and YouTube (source: Introduction to Google Compute Engine.md). It is the most flexible, lowest-level compute primitive on the platform â€” you fully control the OS, disks, networking, and security configuration.

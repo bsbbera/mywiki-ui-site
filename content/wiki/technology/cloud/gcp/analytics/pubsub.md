@@ -18,6 +18,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Pub/Sub
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Asynchronous messaging / event streaming |
+> | **Category** | Messaging |
+> | **Launched** | 2015 (GA Aug 2015) |
+> | **Interface** | REST API, gRPC, client libraries |
+> | **Website** | cloud.google.com/pubsub |
+
+---
+
+> "Dreams are the touchstones of our characters."
+> <cite>— Henry David Thoreau</cite>
+
 ---
 
 Google Cloud Pub/Sub is a **fully managed, asynchronous messaging service** based on the **publish-subscribe pattern**. It enables **decoupled, scalable, event-driven communication** between independent services and is the **messaging spine** of GCP analytics pipelines (source: How To Create a PubSub Topic on GCP.md).
@@ -187,15 +204,15 @@ For predictable, **partition-based** workloads at lower cost — closer to Apach
 >
 >
 >> [!card] Software Engineering
->> [[../../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../../software-engineering/fan-out|Fan-out]], [[../../software-engineering/claim-check-pattern|Claim Check]]
+>> [[../../../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../../../software-engineering/fan-out|Fan-out]], [[../../../software-engineering/claim-check-pattern|Claim Check]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../../../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
+>> [[../../../data-engineering/data-processing/stream-data-processing|Stream Processing]]
 >
 >
 >> [!card] Compute integrations
@@ -203,13 +220,13 @@ For predictable, **partition-based** workloads at lower cost — closer to Apach
 >
 >
 >> [!card] Guides
->> [[../../data-engineering/guides/messaging-service-guide|Messaging Service Guide]]
+>> [[../../../guides/messaging-service-guide|Messaging Service Guide]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 >
 >
 >> [!card] People
->> [[../../people/jay-kreps|Jay Kreps]]
+>> [[../../../../people/jay-kreps|Jay Kreps]]
 

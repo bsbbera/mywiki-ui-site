@@ -14,7 +14,21 @@ banner:
 publish: true
 ---
 
+> "I never said it would be easy, I only said it would be worth it."
+> <cite>— Mae West</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Martin Fowler
+> ###### Software Architect
+> | | |
+> | --- | --- |
+> | **Born** | 1963 |
+> | **Nationality** | British |
+> | **Domain** | Software architecture |
+> | **Known for** | Refactoring; enterprise patterns; Data Mesh essays |
+> | **Institution** | Thoughtworks (Chief Scientist) |
 
 British software developer, Chief Scientist at **ThoughtWorks**, prolific author of architecture + refactoring books. Articulated **Event Sourcing**, the **Strangler Fig** pattern, **Data Mesh** essays (with [[zhamak-dehghani|Zhamak Dehghani]]), and many enterprise integration patterns. Books include *Refactoring*, *Patterns of Enterprise Application Architecture*, *NoSQL Distilled*.
 
@@ -23,11 +37,11 @@ British software developer, Chief Scientist at **ThoughtWorks**, prolific author
 > [!multi-column]
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-engineering/concepts/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]]
+>> [[../technology/software-engineering/event-sourcing-pattern|Event Sourcing]], [[../technology/software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-mesh|Data Mesh]]
+>> [[../technology/data-engineering/data-architecture/data-mesh|Data Mesh]]
 >
 >
 >> [!card] People

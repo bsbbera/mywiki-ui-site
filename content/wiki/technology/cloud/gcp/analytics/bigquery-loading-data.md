@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "The best way to understanding is a few good examples."
+> <cite>— Isaac Newton</cite>
+
 ---
 
 Loading data into BigQuery is one of the **three core jobs** ([[bigquery|the others]] are storage and querying). The right loading mechanism depends on whether your data arrives in **batches** or as a **stream**, and where it lives (source: Google Cloud Platform - Loading Data to BigQuery.md).
@@ -32,7 +35,7 @@ Loading data into BigQuery is one of the **three core jobs** ([[bigquery|the oth
 
 ## Batch loading
 
-The classic flow: data lives in [[../storage/cloud-storage|GCS]] or your laptop; it slowly changes; you load it on a schedule (source: Google Cloud Platform - Loading Data to BigQuery.md).
+The classic flow: data lives in [[Cloud Storage|GCS]] or your laptop; it slowly changes; you load it on a schedule (source: Google Cloud Platform - Loading Data to BigQuery.md).
 
 ### From the UI (small files)
 
@@ -130,13 +133,13 @@ Result: **dogs win 43**.
 >
 >
 >> [!card] Related products
->> [[../storage/cloud-storage|Cloud Storage]]
+>> [[Cloud Storage|Cloud Storage]]
 >
 >
 >> [!card] Data Ingestion
->> [[../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
+>> [[../../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
 >
 >
 >> [!card] Tools
->> [[../../tools/ingestion-tools|Ingestion Tools]]
+>> [[../../../tools/ingestion-tools|Ingestion Tools]]
 

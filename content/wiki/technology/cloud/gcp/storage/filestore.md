@@ -15,11 +15,28 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Filestore
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Managed NFS file storage |
+> | **Category** | Storage |
+> | **Launched** | 2018 (GA Nov 2018) |
+> | **Interface** | NFSv3, gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/filestore |
+
+---
+
+> "The strongest and sweetest songs yet remain to be sung."
+> <cite>— Walt Whitman</cite>
+
 ---
 
 Google Cloud Filestore is GCP's **managed network file storage** â€” fully managed NFS shares for [[compute-engine]] VMs, [[kubernetes-engine]] pods, and on-prem clients (source: Cloud Storage in GCP.md).
 
-Use Filestore when multiple compute instances need **shared filesystem semantics** (POSIX, mountable path) â€” something [[cloud-storage]] (object) and [[persistent-disk]] (single-writer block) cannot offer.
+Use Filestore when multiple compute instances need **shared filesystem semantics** (POSIX, mountable path) â€” something [[Cloud Storage]] (object) and [[persistent-disk]] (single-writer block) cannot offer.
 
 ## Tiers
 
@@ -53,7 +70,7 @@ Enterprise tier offers a **99.99% regional availability SLA** (source: Google Pe
 
 ## Storage type comparison
 
-| | [[cloud-storage]] | [[persistent-disk]] | Filestore |
+| | [[Cloud Storage]] | [[persistent-disk]] | Filestore |
 | --- | --- | --- | --- |
 | Model | Object | Block | File (NFS) |
 | Sharing | Many readers/writers | Single writer (mostly) | Many readers/writers |
@@ -68,7 +85,7 @@ Enterprise tier offers a **99.99% regional availability SLA** (source: Google Pe
 
 ## Interview Questions can be asked
 
-1. When pick Filestore over [[cloud-storage]] or [[persistent-disk]]?
+1. When pick Filestore over [[Cloud Storage]] or [[persistent-disk]]?
 2. Standard vs Premium tier â€” what drives the choice?
 3. How would you mount Filestore in a [[kubernetes-engine]] StatefulSet?
 
@@ -77,7 +94,7 @@ Enterprise tier offers a **99.99% regional availability SLA** (source: Google Pe
 > [!multi-column]
 >
 >> [!card] Sister storage products
->> [[cloud-storage|Cloud Storage]], [[persistent-disk|Persistent Disk]]
+>> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]]
 >
 >
 >> [!card] Compute

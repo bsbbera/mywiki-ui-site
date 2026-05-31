@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Investing in yourself is the best investment you will ever make."
+> <cite>— Robin Sharma</cite>
+
 ---
 
 A **relational database** organizes data into **tables** that can be linked together based on **common data**. Each table has one or more columns with **unique identifiers** (primary key) referenced by **foreign keys** in other tables, forming relationships (source: Concepts/Data Storage/Relational Database.md).
@@ -26,13 +29,13 @@ The relational model was invented by **E. F. Codd** in 1970 (Codd's 12 rules) an
 - **Complex queries** — joins across multiple tables.
 - **Referential integrity** — enforced by foreign keys.
 - **Fast updates** — single-machine writes are sub-millisecond.
-- **ACID transactions** — see [[../../../dbms/acid-properties|ACID]].
+- **ACID transactions** — see [[../../databases/acid-properties|ACID]].
 - **Mature ecosystem** — drivers, ORMs, BI tools, decades of optimization.
 - **Industry-standard SQL**.
 
 ## Disadvantages
 
-- **Harder to scale** — typically [[../software-engineering/vertical-scaling|vertically]]; horizontal scaling needs [[../software-engineering/database-sharding|sharding]] or NewSQL.
+- **Harder to scale** — typically [[../../software-engineering/vertical-scaling|vertically]]; horizontal scaling needs [[../../software-engineering/database-sharding|sharding]] or NewSQL.
 - **More upfront design** — schemas must be modeled before data lands.
 - **Schema migrations** — painful as schemas grow.
 
@@ -49,8 +52,8 @@ The relational model was invented by **E. F. Codd** in 1970 (Codd's 12 rules) an
 
 - **Open-source**: PostgreSQL, MySQL, MariaDB, SQLite.
 - **Commercial**: Oracle, SQL Server, IBM Db2.
-- **Cloud-managed**: [[../../../gcp/databases/cloud-sql|Cloud SQL]], Amazon RDS, Aurora, Azure SQL.
-- **NewSQL** (distributed ACID): [[../../../gcp/databases/cloud-spanner|Cloud Spanner]], CockroachDB, YugabyteDB, TiDB.
+- **Cloud-managed**: [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], Amazon RDS, Aurora, Azure SQL.
+- **NewSQL** (distributed ACID): [[../../cloud/gcp/databases/cloud-spanner|Cloud Spanner]], CockroachDB, YugabyteDB, TiDB.
 
 ## Modern relational features
 
@@ -86,11 +89,11 @@ The relational model was invented by **E. F. Codd** in 1970 (Codd's 12 rules) an
 >
 >
 >> [!card] Modeling + theory
->> [[../data-modeling/relational-modeling|Relational Modeling]], [[../../../dbms/acid-properties|ACID Properties]], [[../../../dbms/database-normalization|Normalization]]
+>> [[../data-modeling/relational-modeling|Relational Modeling]], [[../../databases/acid-properties|ACID Properties]], [[../../databases/database-normalization|Normalization]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-sql|Cloud SQL]], [[../../../gcp/databases/cloud-spanner|Cloud Spanner]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../../cloud/gcp/databases/cloud-spanner|Cloud Spanner]], [[../../tools/databases-overview|Databases Overview]]
 >
 >
 >> [!card] People

@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "A self that goes on changing is a self that goes on living."
+> <cite>— Virginia Woolf</cite>
+
 ---
 
 **Sargable**, short for **S**earch **ARG**ument **ABLE**, refers to queries that **can take advantage of indexes** to speed up execution. A query that fails this definition is **non-sargable** and usually has a negative effect on performance. Making a query sargable can dramatically improve performance even without index changes — but combined with the right indexes, the gains are dramatic (source: Concepts/Sargable Expressions.md).
@@ -100,7 +103,7 @@ A non-sargable predicate forces a **full table scan** even when an index exists,
 
 - **Postgres expression indexes** — `CREATE INDEX ON orders ((YEAR(order_date)))` makes a function-wrapped predicate sargable.
 - **Generated columns** (Postgres, MySQL) — pre-compute the function value into a column, index that.
-- **Columnar warehouses** ([[../gcp/analytics/bigquery|BigQuery]], Snowflake) — sargability is less critical because of full-column pruning + parallel scans, but partition + cluster predicates still matter.
+- **Columnar warehouses** ([[../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake) — sargability is less critical because of full-column pruning + parallel scans, but partition + cluster predicates still matter.
 
 ## Advantages of sargability
 
@@ -125,9 +128,9 @@ A non-sargable predicate forces a **full table scan** even when an index exists,
 >
 >
 >> [!card] SQL
->> [[guides/sql-guide|SQL Guide]]
+>> [[../guides/sql-guide|SQL Guide]]
 >
 >
 >> [!card] People
->> [[../people/edgar-f-codd|Edgar F. Codd]]
+>> [[../../people/edgar-f-codd|Edgar F. Codd]]
 

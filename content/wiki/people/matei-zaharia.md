@@ -15,22 +15,40 @@ banner:
 publish: true
 ---
 
+> "Most of us live our lives by accident - we live as it happens. Fulfilment comes when we live our lives on purpose."
+> <cite>— Simon Sinek</cite>
+
 ---
 
-Romanian-Canadian computer scientist. Created **Apache Spark** at UC Berkeley AMPLab during his PhD. Co-founder + CTO of **Databricks**. Co-creator of **Delta Lake** and **MLflow**. Stanford professor.
+> [!infobox|wikipedia]
+> # Matei Zaharia
+> ###### Computer Scientist
+> | | |
+> | --- | --- |
+> | **Born** | 1984/1985 |
+> | **Nationality** | Romanian-Canadian |
+> | **Domain** | Big data systems, ML |
+> | **Known for** | Creator of Apache Spark; Delta Lake, MLflow |
+> | **Institution** | Databricks (co-founder & CTO); Stanford |
+
+Romanian-Canadian computer scientist. Created **[[apache-spark|Apache Spark]]** at UC Berkeley AMPLab during his PhD. Co-founder + CTO of **Databricks**. Co-creator of **Delta Lake** and **MLflow**. Stanford professor.
 
 ## Related pages
 
 > [!multi-column]
 >
+>> [!card] Spark
+>> [[apache-spark|Apache Spark]], [[pyspark|PySpark]], [[rdd|RDDs]], [[spark-mllib|MLlib]]
+>
+>
 >> [!card] Tools
->> [[../data-engineering/tools/processing-tools|Processing Tools (Spark)]], [[../data-engineering/tools/file-formats|File Formats (Delta)]]
+>> [[processing-tools|Processing Tools (Spark)]], [[file-formats|File Formats (Delta)]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/medallion-architecture|Medallion Architecture]]
+>> [[medallion-architecture|Medallion Architecture]]
 >
 >
 >> [!card] Products
->> [[../databricks/databricks|Databricks]]
+>> [[databricks|Databricks]]
 

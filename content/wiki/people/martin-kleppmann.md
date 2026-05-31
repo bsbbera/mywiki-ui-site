@@ -14,7 +14,21 @@ banner:
 publish: true
 ---
 
+> "Anyone who dreams of an uncommon life eventually discovers there is no choice but to seek an uncommon approach to living it."
+> <cite>— Gary Keller</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Martin Kleppmann
+> ###### Computer Scientist
+> | | |
+> | --- | --- |
+> | **Nationality** | German |
+> | **Domain** | Distributed systems, data engineering |
+> | **Known for** | DDIA; CRDT research |
+> | **Notable works** | [[../books/designing-data-intensive-applications\|DDIA]] |
+> | **Institution** | University of Cambridge (Associate Professor) |
 
 German computer scientist, researcher at the **University of Cambridge**, formerly engineer at LinkedIn (Voldemort, Samza). Author of **Designing Data-Intensive Applications** — the modern reference for distributed-systems + data engineering. Active researcher on **CRDTs** and local-first software.
 
@@ -27,9 +41,9 @@ German computer scientist, researcher at the **University of Cambridge**, former
 >
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]], [[../data-engineering/concepts/software-engineering/event-sourcing-pattern|Event Sourcing]]
+>> [[../technology/software-engineering/cap-theorem|CAP Theorem]], [[../technology/software-engineering/event-sourcing-pattern|Event Sourcing]]
 >
 >
 >> [!card] Data Ingestion
->> [[../data-engineering/concepts/data-ingestion/change-data-capture|CDC]]
+>> [[../technology/data-engineering/data-ingestion/change-data-capture|CDC]]
 

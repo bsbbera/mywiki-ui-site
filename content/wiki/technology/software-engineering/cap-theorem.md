@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Give a girl the right shoes, and she can conquer the world."
+> <cite>— Bette Midler</cite>
+
 ---
 
 The **CAP theorem** (Brewer's theorem) states that a **distributed data store** can provide **at most two out of three** of the following guarantees (source: Concepts/Software Engineering/CAP Theorem.md):
@@ -39,14 +42,14 @@ The classic "pick two" is misleading:
 
 - The trade-off only kicks in **during a partition**, not normally.
 - **Modern systems are often "tunably consistent"** — Cassandra lets you choose per-query.
-- **Spanner** ([[../../../gcp/databases/cloud-spanner|GCP]]) appears to violate CAP by being globally consistent + highly available — but during true partitions it sacrifices availability briefly. Google's TrueTime + Paxos make partitions extremely rare.
+- **Spanner** ([[../cloud/gcp/databases/cloud-spanner|GCP]]) appears to violate CAP by being globally consistent + highly available — but during true partitions it sacrifices availability briefly. Google's TrueTime + Paxos make partitions extremely rare.
 
 ## CAP "C" vs ACID "C"
 
 - **ACID Consistency** = "respects integrity constraints" (DB-internal).
 - **CAP Consistency** = "all nodes return the same data at the same time" (system-level).
 
-These are **different** concepts; don't conflate them. See [[../../../dbms/acid-properties|ACID Properties]] for the database-level story.
+These are **different** concepts; don't conflate them. See [[../databases/acid-properties|ACID Properties]] for the database-level story.
 
 ## PACELC — the modern refinement
 
@@ -73,7 +76,7 @@ This captures that even in a healthy system, you trade latency for consistency (
 ## Interesting Facts
 
 - Brewer himself revisited CAP in 2012 ("CAP twelve years later") — clarifying it's not a binary choice but a spectrum.
-- **Spanner**'s "external consistency" via [[../../../gcp/databases/cloud-spanner|TrueTime]] is the most impressive engineering feat in this space.
+- **Spanner**'s "external consistency" via [[../cloud/gcp/databases/cloud-spanner|TrueTime]] is the most impressive engineering feat in this space.
 
 ## Interview Questions
 
@@ -88,21 +91,21 @@ This captures that even in a healthy system, you trade latency for consistency (
 > [!multi-column]
 >
 >> [!card] Distributed-systems theory
->> [[horizontal-scaling|Horizontal Scaling]], [[database-sharding|Sharding]], [[../../../dbms/acid-properties|ACID Properties]]
+>> [[horizontal-scaling|Horizontal Scaling]], [[database-sharding|Sharding]], [[../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] Storage
->> [[../data-storage/non-relational-database|Non-relational Database]]
+>> [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-spanner|Cloud Spanner]]
+>> [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]]
 >
 >
 >> [!card] People
->> [[../../../people/eric-brewer|Eric Brewer]], [[../../../people/seth-gilbert-nancy-lynch|Seth Gilbert + Nancy Lynch]], [[../../../people/daniel-abadi|Daniel Abadi]], [[../../../people/martin-kleppmann|Martin Kleppmann]]
+>> [[../../people/eric-brewer|Eric Brewer]], [[../../people/seth-gilbert-nancy-lynch|Seth Gilbert + Nancy Lynch]], [[../../people/daniel-abadi|Daniel Abadi]], [[../../people/martin-kleppmann|Martin Kleppmann]]
 >
 >
 >> [!card] Books
->> [[../../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../books/designing-data-intensive-applications|DDIA]]
 

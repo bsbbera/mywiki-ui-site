@@ -16,6 +16,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Functions
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Function as a Service (FaaS) |
+> | **Category** | Serverless compute |
+> | **Launched** | 2017 (GA Jul 2018) |
+> | **Interface** | gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/functions |
+
+---
+
+> "What kills the creative force is not age or lack of talent, but our own spirit, our own attitude."
+> <cite>— Robert Greene</cite>
+
 ---
 
 Cloud Functions is GCP's **Function as a Service (FaaS)** offering. You write a small piece of code (JavaScript, Python, Go, Java, .NET, Ruby, PHP) that runs in response to an **event** â€” an HTTP request, a Pub/Sub message, a Cloud Storage upload, a scheduler tick â€” and Google manages everything else (source: Cloud Functions in GCP.md).

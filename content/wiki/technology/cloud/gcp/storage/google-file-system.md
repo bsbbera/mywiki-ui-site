@@ -17,6 +17,24 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Google File System
+> ###### Tool / Software
+> | | |
+> | --- | --- |
+> | **Developer** | Google |
+> | **Type** | Distributed file system |
+> | **Domain** | Distributed storage |
+> | **Initial release** | 2003 (SOSP paper) |
+> | **Authors** | Sanjay Ghemawat, Howard Gobioff, Shun-Tak Leung |
+> | **Written in** | C++ |
+> | **License** | Proprietary (internal Google) |
+
+---
+
+> "No one has ever become poor by giving."
+> <cite>— Anne Frank</cite>
+
 ---
 
 The **Google File System (GFS)** is a scalable, fault-tolerant **distributed file system** developed by Google and described in the seminal 2003 SOSP paper. It was engineered to store and process massive datasets on clusters of **commodity Linux servers**, using software-level replication rather than specialized hardware to deliver reliability (source: Google File System.md).
@@ -24,7 +42,7 @@ The **Google File System (GFS)** is a scalable, fault-tolerant **distributed fil
 GFS is the **intellectual ancestor** of almost all modern distributed storage:
 
 - Inspired **HDFS** (Hadoop's file system).
-- Succeeded internally by **Colossus (2010)** â€” which now powers [[cloud-storage]], [[cloud-spanner]], [[cloud-bigtable]], BigQuery, and more ([cloud.google.com blog](https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system)).
+- Succeeded internally by **Colossus (2010)** â€” which now powers [[Cloud Storage]], [[cloud-spanner]], [[cloud-bigtable]], BigQuery, and more ([cloud.google.com blog](https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system)).
 
 ## Design goals
 
@@ -161,7 +179,7 @@ Scaling is achieved by adding chunk servers â€” but the **single master** e
 
 GFS â†’ **Colossus** (2010) which is what actually backs modern GCP services:
 
-- [[cloud-storage]] (object storage) â€” Colossus + metadata services.
+- [[Cloud Storage]] (object storage) â€” Colossus + metadata services.
 - [[cloud-bigtable]] â€” stores all tablets in Colossus.
 - [[cloud-spanner]] â€” storage layer is Colossus.
 - BigQuery â€” Colossus-backed columnar storage (Capacitor).
@@ -189,7 +207,7 @@ Colossus solved GFS's single-master bottleneck by distributing metadata, support
 > [!multi-column]
 >
 >> [!card] Sister storage products
->> [[cloud-storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]
+>> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]
 >
 >
 >> [!card] Built on GFS / Colossus
@@ -201,5 +219,5 @@ Colossus solved GFS's single-master bottleneck by distributing metadata, support
 >
 >
 >> [!card] People
->> [[../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]], [[../../people/doug-cutting|Doug Cutting]]
+>> [[../../../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]], [[../../../../people/doug-cutting|Doug Cutting]]
 

@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "To be able to forget means sanity."
+> <cite>— Jack London</cite>
+
 ---
 
 An **index** is a **data structure** that lets you **quickly retrieve records** from a database object by creating **pointers** to where the data is stored. It's typically stored in a **key-value format** where the key is the field/column (sorted) and the value is the pointer(s) to the rows (source: Concepts/Software Engineering/Indexing.md).
@@ -68,7 +71,7 @@ A **single missing index** can turn a 10 ms query into a 10 s query at scale. In
 
 ### LSM-tree (write-optimized)
 
-- Used by Cassandra, RocksDB, [[../../../gcp/databases/cloud-bigtable|Bigtable]].
+- Used by Cassandra, RocksDB, [[../cloud/gcp/databases/cloud-bigtable|Bigtable]].
 - Optimized for **write** throughput — sequential disk writes.
 
 ## Trade-offs
@@ -90,7 +93,7 @@ Pick indexes based on your **most common queries**.
 
 ## Sargable queries
 
-Queries that **can use** indexes are called **[[../sargable-expressions|sargable]]**. `WHERE YEAR(date) = 2024` can't use a date index; `WHERE date BETWEEN '2024-01-01' AND '2024-12-31'` can.
+Queries that **can use** indexes are called **[[../data-engineering/sargable-expressions|sargable]]**. `WHERE YEAR(date) = 2024` can't use a date index; `WHERE date BETWEEN '2024-01-01' AND '2024-12-31'` can.
 
 ## Index tuning
 
@@ -101,7 +104,7 @@ Queries that **can use** indexes are called **[[../sargable-expressions|sargable
 
 ## Indexes in modern stores
 
-- [[../../../gcp/analytics/bigquery|BigQuery]] uses **clustering** + **partitioning** instead of traditional indexes (with limited search index support added 2023).
+- [[../cloud/gcp/analytics/bigquery|BigQuery]] uses **clustering** + **partitioning** instead of traditional indexes (with limited search index support added 2023).
 - **Cassandra** uses partition keys + clustering keys, not B-tree indexes.
 - **Bigtable** uses row keys directly — design row key for queries.
 
@@ -118,13 +121,13 @@ Queries that **can use** indexes are called **[[../sargable-expressions|sargable
 > [!multi-column]
 >
 >> [!card] Performance
->> [[../../sargable-expressions|Sargable Expressions]], [[../data-modeling/cardinality|Cardinality]]
+>> [[../data-engineering/sargable-expressions|Sargable Expressions]], [[../data-engineering/data-modeling/cardinality|Cardinality]]
 >
 >
 >> [!card] SQL + products
->> [[../../guides/sql-guide|SQL Guide]], [[../../../gcp/analytics/bigquery|BigQuery]]
+>> [[../guides/sql-guide|SQL Guide]], [[../cloud/gcp/analytics/bigquery|BigQuery]]
 >
 >
 >> [!card] Storage
->> [[../data-storage/relational-database|Relational Database]], [[../data-storage/column-oriented-database|Columnar Storage]]
+>> [[../data-engineering/data-storage/relational-database|Relational Database]], [[../data-engineering/data-storage/column-oriented-database|Columnar Storage]]
 

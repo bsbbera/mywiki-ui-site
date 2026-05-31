@@ -16,7 +16,22 @@ banner:
 publish: true
 ---
 
+> "A self that goes on changing is a self that goes on living."
+> <cite>— Virginia Woolf</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Seth Gilbert & Nancy Lynch
+> ###### Researchers
+> | | |
+> | --- | --- |
+> | **Members** | Seth Gilbert, Nancy Lynch |
+> | **Born** | 1948 (Lynch) |
+> | **Nationality** | American |
+> | **Domain** | Distributed computing theory |
+> | **Known for** | Formal proof of the CAP theorem (2002) |
+> | **Institution** | MIT |
 
 MIT researchers who **formally proved** the CAP theorem in 2002 (*Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services*), turning [[eric-brewer|Eric Brewer]]'s 2000 conjecture into a theorem. Nancy Lynch is also famous for the **FLP impossibility** result and **distributed algorithms** textbook.
 
@@ -25,7 +40,7 @@ MIT researchers who **formally proved** the CAP theorem in 2002 (*Brewer's Conje
 > [!multi-column]
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]]
+>> [[../technology/software-engineering/cap-theorem|CAP Theorem]]
 >
 >
 >> [!card] People

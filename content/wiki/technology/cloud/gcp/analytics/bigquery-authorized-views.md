@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "We don't stop playing because we grow old; we grow old because we stop playing."
+> <cite>— George Bernard Shaw</cite>
+
 ---
 
 An **authorized view** lets you **share the results of a query** with users who **don't have access to the underlying tables** — the standard pattern for column- and row-level filtering before column/row-level security existed natively (source: Google Cloud Platform - Implementing Authorized View in BigQuery.md).
@@ -137,5 +140,5 @@ Authorized views remain the most portable pattern, especially across projects.
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/data-management/data-governance|Data Governance]]
+>> [[../../../data-engineering/data-management/data-governance|Data Governance]]
 

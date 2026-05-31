@@ -58,8 +58,14 @@
   --mwg-border: color-mix(in srgb, var(--mwg-text-strong) 8%, transparent);
   --mwg-border-2: color-mix(in srgb, var(--mwg-text-strong) 14%, transparent);
   --mwg-border-strong: color-mix(in srgb, var(--mwg-text-strong) 22%, transparent);
+}
 
-  /* ---- BRIDGE → Quartz base vars ---------------------------------------- */
+/* ---- BRIDGE → Quartz base vars -------------------------------------------
+   Quartz appends the config theme's :root and :root[saved-theme="dark"] base
+   vars AFTER custom.scss, so an equal-specificity bridge would lose. Adding
+   [saved-theme] (always present) lifts this to (0,3,0) so it wins regardless
+   of source order. --mwg-* resolve per mode from the token blocks. ---------- */
+:root[data-theme="glass"][saved-theme] {
   --light: var(--mwg-bg-0);
   --lightgray: var(--mwg-pane-2);
   --gray: var(--mwg-faint);
@@ -321,5 +327,70 @@
 @media (prefers-reduced-motion: reduce) {
   :root[data-theme="glass"] article {
     animation: none !important;
+  }
+}
+
+/* =============================================================================
+   Sidebars (explorer / TOC / backlinks) — Obsidian-style Glass polish
+   ========================================================================== */
+:root[data-theme="glass"] {
+  & .sidebar,
+  & .left,
+  & .right {
+    font-family: var(--bodyFont);
+  }
+
+  /* section titles use the serif display face */
+  & .explorer > button,
+  & .page-title,
+  & .toc > button,
+  & .backlinks > h3 {
+    font-family: var(--headerFont);
+    color: var(--mwg-text-strong);
+  }
+
+  /* file tree + toc + backlink links */
+  & .explorer ul li > a,
+  & .toc-content ul li > a,
+  & .backlinks ul li > a {
+    color: var(--mwg-muted);
+    border-radius: 6px;
+    padding: 2px 6px;
+    transition:
+      color var(--mwg-dur) var(--mwg-ease),
+      background-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .explorer ul li > a:hover,
+  & .toc-content ul li > a:hover,
+  & .backlinks ul li > a:hover {
+    color: var(--mwg-accent);
+    background: var(--mwg-accent-soft);
+  }
+
+  /* folder rows */
+  & .explorer .folder-title {
+    color: var(--mwg-text);
+    font-weight: 600;
+  }
+  & .explorer button.folder-button:hover .folder-title,
+  & .explorer .folder-outer:hover > .folder-container .folder-title {
+    color: var(--mwg-accent);
+  }
+
+  /* TOC active item */
+  & .toc-content .in-view {
+    color: var(--mwg-muted);
+  }
+  & .toc-content a.active,
+  & .toc-content li.in-view > a {
+    color: var(--mwg-accent);
+    font-weight: 600;
+  }
+
+  /* graph panel surface */
+  & .graph .graph-outer {
+    border: 1px solid var(--mwg-border);
+    border-radius: var(--mwg-radius);
+    background: var(--mwg-pane-2);
   }
 }

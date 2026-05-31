@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "The best way to understanding is a few good examples."
+> <cite>— Isaac Newton</cite>
+
 ---
 
 A general SQL reference for data engineers — not specific to any variant, focused on the most-used features in DE work (source: Guides/SQL Guide.md).
@@ -192,7 +195,7 @@ Outer references each `emp.department` → subquery runs per outer row. Often re
 
 ### Performance tips
 
-- Make queries **[[../sargable-expressions|sargable]]** — see also [[../concepts/software-engineering/indexing|Indexing]].
+- Make queries **[[../data-engineering/sargable-expressions|sargable]]** — see also [[../software-engineering/indexing|Indexing]].
 - Use **partitioning + clustering** (warehouses).
 - **`EXPLAIN`** queries to understand plans.
 - **Avoid `SELECT *`** in production.
@@ -219,7 +222,7 @@ Outer references each `emp.department` → subquery runs per outer row. Often re
 > [!multi-column]
 >
 >> [!card] Performance
->> [[../sargable-expressions|Sargable Expressions]], [[../concepts/software-engineering/indexing|Indexing]], [[../concepts/data-modeling/cardinality|Cardinality]]
+>> [[../data-engineering/sargable-expressions|Sargable Expressions]], [[../software-engineering/indexing|Indexing]], [[../data-engineering/data-modeling/cardinality|Cardinality]]
 >
 >
 >> [!card] Practitioner guides
@@ -227,7 +230,7 @@ Outer references each `emp.department` → subquery runs per outer row. Often re
 >
 >
 >> [!card] Products
->> [[../../gcp/analytics/bigquery|BigQuery]], [[../tools/databases-overview|Databases Overview]]
+>> [[../cloud/gcp/analytics/bigquery|BigQuery]], [[../tools/databases-overview|Databases Overview]]
 >
 >
 >> [!card] People

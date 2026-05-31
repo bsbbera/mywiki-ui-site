@@ -15,11 +15,14 @@ banner:
 publish: true
 ---
 
+> "Believe you can and you will be halfway there."
+> <cite>— Lolly Daskal</cite>
+
 ---
 
 Catalog of workflow orchestration tools used to schedule, coordinate, and observe data pipelines (source: Tools/Workflow Orchestrators/*.md).
 
-> See [[../concepts/data-processing/workflow-orchestration|Workflow Orchestration]] for the conceptual treatment.
+> See [[../data-engineering/data-processing/workflow-orchestration|Workflow Orchestration]] for the conceptual treatment.
 
 ## Open-source orchestrators
 
@@ -102,15 +105,15 @@ Visual + code-first ETL/orchestration on Azure. Integrates with Synapse, Databri
 > [!multi-column]
 >
 >> [!card] Data Processing
->> [[../concepts/data-processing/workflow-orchestration|Workflow Orchestration]]
+>> [[../data-engineering/data-processing/workflow-orchestration|Workflow Orchestration]]
 >
 >
 >> [!card] Software Engineering
->> [[../concepts/software-engineering/idempotence|Idempotence]]
+>> [[../software-engineering/idempotence|Idempotence]]
 >
 >
 >> [!card] Data Engineering
->> [[../data-pipeline|Data Pipeline]]
+>> [[../data-engineering/data-pipeline|Data Pipeline]]
 >
 >
 >> [!card] Sister catalogs

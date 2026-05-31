@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Life is a journey, not a destination."
+> <cite>— Dan Millman</cite>
+
 ---
 
 **Batch processing** refers to collecting, modifying, or exporting **multiple data records at a regular cadence** with downtime between batches. Because large amounts of data can be processed all at once, batch processing is **very efficient** and is the most common form of data processing fitting many businesses' needs (source: Concepts/Data Processing/Batch Data Processing.md).
@@ -54,10 +57,10 @@ Hybrid of concurrent + parallel. State-of-the-art in **financial services** and 
 
 ## Tools / engines
 
-- **Apache Spark** — the dominant general-purpose batch engine.
+- **[[apache-spark|Apache Spark]]** — the dominant general-purpose batch engine (see also [[pyspark|PySpark]]).
 - **Apache Hadoop / MapReduce** — the original; less common for new workloads.
 - **dbt** — SQL-based batch transformations in the warehouse.
-- **[[../../../gcp/analytics/dataflow|GCP Dataflow]]** — unified batch + stream via Apache Beam.
+- **[[../../cloud/gcp/analytics/dataflow|GCP Dataflow]]** — unified batch + stream via Apache Beam.
 - **AWS Glue**, **Amazon EMR**, **Azure Databricks** — managed services.
 
 ## Batch vs Stream — the trade-off
@@ -102,8 +105,8 @@ Hybrid of concurrent + parallel. State-of-the-art in **financial services** and 
 >> [[../data-architecture/lambda-architecture|Lambda Architecture]], [[../data-ingestion/data-ingestion|Data Ingestion]]
 >
 >
->> [!card] Tools + products
->> [[../../tools/processing-tools|Processing Tools]], [[../../../gcp/analytics/dataflow|Dataflow]], [[../../../databricks/databricks|Databricks]]
+>> [!card] Engines + tools
+>> [[apache-spark|Apache Spark]], [[../../tools/processing-tools|Processing Tools]], [[../../cloud/gcp/analytics/dataflow|Dataflow]], [[../../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

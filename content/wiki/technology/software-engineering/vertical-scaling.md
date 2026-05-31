@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Life is a journey, not a destination."
+> <cite>— Dan Millman</cite>
+
 ---
 
 **Vertical scaling** increases the capacity of a system by **increasing the size of a single machine** — more CPU, more RAM, faster storage. Also known as **scaling up** (source: Concepts/Software Engineering/Vertical Scaling.md).
@@ -86,5 +89,5 @@ A Postgres instance on this can serve **hundreds of TB** with the right schema a
 >
 >
 >> [!card] Storage
->> [[../data-storage/relational-database|Relational Database]]
+>> [[../data-engineering/data-storage/relational-database|Relational Database]]
 

@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "If you truly expect something to be difficult, it will be."
+> <cite>— Peter A. Cohen</cite>
+
 ---
 
 Cloud services are commonly categorized by **how much of the stack the provider manages** vs. how much you control. Going from most-control to most-managed: IaaS → CaaS → PaaS → FaaS → SaaS.

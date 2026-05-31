@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Life begins at the end of our comfort zone."
+> <cite>— Neale Donald Walsch</cite>
+
 ---
 
 **Data Modeling** is the process of mapping out an information system and how its parts are connected. Data models are typically illustrated as **entity-relationship diagrams** (ERDs) for relational databases (source: Concepts/Data Modeling/Data Modeling.md).
@@ -92,7 +95,7 @@ The choice depends on **workload type**: write-heavy vs read-heavy.
 >
 >
 >> [!card] Theory
->> [[../../../dbms/database-normalization|Database Normalization (theory)]], [[../../../dbms/acid-properties|ACID Properties]]
+>> [[../../databases/database-normalization|Database Normalization (theory)]], [[../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] People

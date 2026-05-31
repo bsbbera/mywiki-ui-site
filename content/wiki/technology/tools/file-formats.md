@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "No one has ever become poor by giving."
+> <cite>— Anne Frank</cite>
+
 ---
 
 The file formats commonly used in data engineering pipelines (source: Tools/File Formats/*.md).
@@ -147,11 +150,11 @@ Binary JSON-like; compact; fast. Used as a fast intermediate.
 > [!multi-column]
 >
 >> [!card] Data Storage
->> [[../concepts/data-storage/column-oriented-database|Column-oriented Database]]
+>> [[../data-engineering/data-storage/column-oriented-database|Column-oriented Database]]
 >
 >
 >> [!card] Data Architecture
->> [[../concepts/data-architecture/data-lake|Data Lake]], [[../concepts/data-architecture/medallion-architecture|Medallion Architecture]]
+>> [[../data-engineering/data-architecture/data-lake|Data Lake]], [[../data-engineering/data-architecture/medallion-architecture|Medallion Architecture]]
 >
 >
 >> [!card] Sister catalogs
@@ -159,7 +162,7 @@ Binary JSON-like; compact; fast. Used as a fast intermediate.
 >
 >
 >> [!card] Products
->> [[../../databricks/databricks|Databricks]], [[../../gcp/analytics/bigquery|BigQuery]]
+>> [[../cloud/databricks/databricks|Databricks]], [[../cloud/gcp/analytics/bigquery|BigQuery]]
 >
 >
 >> [!card] People

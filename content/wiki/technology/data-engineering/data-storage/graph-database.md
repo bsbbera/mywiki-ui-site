@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "A good stance and posture reflect a proper state of mind."
+> <cite>— Morihei Ueshiba</cite>
+
 ---
 
 A **graph database** is a type of [[non-relational-database|NoSQL]] database that uses **nodes, edges, and properties** to store data about **entities and the relationships between them**. The main purpose: efficiently **traverse** the network of nodes/edges and **analyze relationships** (source: Concepts/Data Storage/Graph Database.md).

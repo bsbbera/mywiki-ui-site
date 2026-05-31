@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Anyone who dreams of an uncommon life eventually discovers there is no choice but to seek an uncommon approach to living it."
+> <cite>— Gary Keller</cite>
+
 ---
 
 A **wide-column database** organizes data into **flexible columns** that can be spread across many servers/nodes. Also known as **column-family databases**. They store data in **rows keyed by primary key**, with columns grouped into **column families** that share attributes (source: Concepts/Data Storage/Wide-column Database.md).
@@ -65,7 +68,7 @@ Different rows can have completely different columns within the same family.
 ## Popular wide-column DBs
 
 - **Apache Cassandra** — most popular; AP from CAP.
-- **[[../../../gcp/databases/cloud-bigtable|Google Cloud Bigtable]]** — Google's internal-derived; underlies Search, Maps, Gmail.
+- **[[../../cloud/gcp/databases/cloud-bigtable|Google Cloud Bigtable]]** — Google's internal-derived; underlies Search, Maps, Gmail.
 - **HBase** — Hadoop-native; modeled after BigTable paper.
 - **ScyllaDB** — Cassandra-compatible, C++ for performance.
 - **Amazon Keyspaces** — managed Cassandra.
@@ -103,7 +106,7 @@ The **row key** is the most important design decision:
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../tools/databases-overview|Databases Overview]]
 >
 >
 >> [!card] People

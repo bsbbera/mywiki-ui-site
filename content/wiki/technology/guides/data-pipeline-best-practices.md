@@ -17,6 +17,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes good things fall apart so better things can fall together."
+> <cite>— Marilyn Monroe</cite>
+
 ---
 
 Best practices for building **robust, scalable, performant** data pipelines, compiled from the data engineering community (source: Guides/Data Pipeline Best Practices.md).
@@ -27,7 +30,7 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 - **Document** pipelines — purpose, owner, schedule, SLA, dependencies.
 - **Add proper logging** — debug-level for trace, info for milestones, error for failures.
 - **Version control** (Git) — pipelines, configs, schemas.
-- **Make pipelines [[../concepts/software-engineering/idempotence|idempotent]]** — re-runs produce the same result.
+- **Make pipelines [[../software-engineering/idempotence|idempotent]]** — re-runs produce the same result.
 - **Understand the trade-off**: fast data vs accurate data. Quality takes time.
 - **Separate environments** — dev / staging / prod, **color-coded** for clarity.
 - **Templates** — write generic, parameterized code; avoid one-off scripts.
@@ -44,7 +47,7 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 ## Optimization
 
 - **File sizes** — not too large (>1 GB resource-heavy), not too small (overhead). **~250 MB sweet spot** for parallel processing.
-- **Use the [[../concepts/software-engineering/claim-check-pattern|claim-check pattern]]** to pass large data between tasks.
+- **Use the [[../software-engineering/claim-check-pattern|claim-check pattern]]** to pass large data between tasks.
 - **Compress** before storing/transmitting — gzip, snappy, lz4 common.
 - **Partition / cluster** data based on common query patterns.
 
@@ -59,7 +62,7 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 
 ## Testing
 
-- **[[../concepts/software-engineering/data-unit-test|Data unit tests]]** — for the data itself (freshness, nulls, ranges).
+- **[[../software-engineering/data-unit-test|Data unit tests]]** — for the data itself (freshness, nulls, ranges).
 - **Code unit tests** — for transformation logic.
 - **Local environment** — set up Docker / dev DB for pre-prod testing.
 - **Re-define failure** — if pipeline retries x times but data lands on time, count it as success.
@@ -77,7 +80,7 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 - **ELT > ETL** for most modern stacks (cheap warehouse compute makes this cheaper).
 - **Streaming when needed**, batch otherwise — streaming is more expensive + complex.
 - **Schema-on-read in lake**, **schema-on-write in warehouse**.
-- **Lineage** — emit OpenLineage events; integrate with [[../concepts/data-management/data-catalog|catalog]].
+- **Lineage** — emit OpenLineage events; integrate with [[../data-engineering/data-management/data-catalog|catalog]].
 
 ## Cost management
 
@@ -109,11 +112,11 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 > [!multi-column]
 >
 >> [!card] Pipeline foundations
->> [[../data-pipeline|Data Pipeline]], [[../data-engineering|Data Engineering Overview]]
+>> [[../data-engineering/data-pipeline|Data Pipeline]], [[../data-engineering/data-engineering|Data Engineering Overview]]
 >
 >
 >> [!card] Reliability patterns
->> [[../concepts/software-engineering/idempotence|Idempotence]], [[../concepts/software-engineering/claim-check-pattern|Claim Check Pattern]], [[../concepts/software-engineering/data-unit-test|Data Unit Test]]
+>> [[../software-engineering/idempotence|Idempotence]], [[../software-engineering/claim-check-pattern|Claim Check Pattern]], [[../software-engineering/data-unit-test|Data Unit Test]]
 >
 >
 >> [!card] Sister guides

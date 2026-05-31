@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "The road to success and the road to failure are almost exactly the same."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
 **Data Governance** is the set of **policies and procedures** that ensure data used in an organization is of **high quality throughout its lifecycle** — input, storage, transformation, access, and deletion (source: Concepts/Data Management/Data Governance.md).
@@ -36,7 +39,7 @@ Data has become **simultaneously valuable and dangerous** — a competitive asse
 | **Policies** | Rules: what data exists, how it's used, retention, deletion |
 | **Stewardship** | Domain experts who own datasets |
 | **Lineage** | How data flows source → consumer |
-| **Catalog** | Discovery + metadata; see [[data-catalog]] |
+| **Catalog** | Discovery + metadata; see [[../../cloud/gcp/analytics/data-catalog]] |
 | **Quality controls** | Tests, SLAs, monitoring, alerts |
 | **Access control** | IAM, RBAC, ABAC, row/column-level security |
 | **Privacy + compliance** | PII classification, masking, redaction, audit trails |
@@ -88,7 +91,7 @@ Data has become **simultaneously valuable and dangerous** — a competitive asse
 > [!multi-column]
 >
 >> [!card] Adjacent management
->> [[data-catalog|Data Catalog]], [[data-management|Data Management]], [[../../data-ethics|Data Ethics]]
+>> [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]], [[../data-ethics|Data Ethics]]
 >
 >
 >> [!card] Architecture
@@ -96,7 +99,7 @@ Data has become **simultaneously valuable and dangerous** — a competitive asse
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery-iam|BigQuery IAM]], [[../../../gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]]
+>> [[../../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]], [[../../cloud/gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]]
 >
 >
 >> [!card] Guides

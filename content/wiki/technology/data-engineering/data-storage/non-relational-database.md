@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes a change of perspective is all it takes to see the light."
+> <cite>— Dan Brown</cite>
+
 ---
 
 A **non-relational (NoSQL) database** does **not** use a tabular schema of rows and columns. Instead, it uses a **storage model optimized for the specific type of data** being stored — key/value pairs, JSON documents, graphs of nodes/edges, etc. (source: Concepts/Data Storage/Non-relational Database.md).
@@ -24,7 +27,7 @@ The "**NoSQL**" name (originally "no SQL", later softened to "**not only SQL**")
 
 ## Advantages
 
-- **Easier to [[../software-engineering/horizontal-scaling|scale horizontally]]** — designed for distribution from day one.
+- **Easier to [[../../software-engineering/horizontal-scaling|scale horizontally]]** — designed for distribution from day one.
 - **Better at simple queries** — point lookups, document fetches.
 - **Flexible schema** — fast iteration during development.
 - **High throughput** — often millions of ops/sec.
@@ -50,9 +53,9 @@ The "**NoSQL**" name (originally "no SQL", later softened to "**not only SQL**")
 
 ## NoSQL on GCP
 
-- **Document**: [[../../../gcp/databases/cloud-datastore|Firestore / Datastore]].
-- **Wide-column**: [[../../../gcp/databases/cloud-bigtable|Cloud Bigtable]].
-- **In-memory**: [[../../../gcp/databases/memorystore|Memorystore]] (Redis / Memcached).
+- **Document**: [[../../cloud/gcp/databases/cloud-datastore|Firestore / Datastore]].
+- **Wide-column**: [[../../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]].
+- **In-memory**: [[../../cloud/gcp/databases/memorystore|Memorystore]] (Redis / Memcached).
 - **Search**: Vertex AI Search, Elastic Cloud (3rd-party), or run Elasticsearch on GKE.
 
 ## NoSQL vs SQL
@@ -86,7 +89,7 @@ The "**NoSQL**" name (originally "no SQL", later softened to "**not only SQL**")
 >
 >
 >> [!card] Distributed-systems theory
->> [[../software-engineering/cap-theorem|CAP Theorem]], [[../software-engineering/horizontal-scaling|Horizontal Scaling]], [[../software-engineering/database-sharding|Sharding]]
+>> [[../../software-engineering/cap-theorem|CAP Theorem]], [[../../software-engineering/horizontal-scaling|Horizontal Scaling]], [[../../software-engineering/database-sharding|Sharding]]
 >
 >
 >> [!card] People

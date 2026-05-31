@@ -18,6 +18,9 @@ banner:
 publish: true
 ---
 
+> "To be prepared is half the victory."
+> <cite>— Miguel de Cervantes</cite>
+
 ---
 
 GCP's pricing is built around **per-second billing** with multiple stacking discounts that reward sustained or committed usage. Understanding these levers is the difference between a typical bill and a 50–80%-cheaper one.
@@ -51,7 +54,7 @@ Best for fault-tolerant workloads: batch processing, rendering, CI, big-data job
 - **$300 in credits** for new accounts to explore the platform (source: Features of GCP.md).
 - **Always-free quotas** on 20+ services, including:
   - [[compute-engine]]: 1 e2-micro VM/month (US regions only)
-  - [[cloud-storage]]: 5 GB Standard / month
+  - [[Cloud Storage]]: 5 GB Standard / month
   - [[cloud-functions]]: 2 million invocations / month
   - [[cloud-run]]: 2 M requests + 360k GiB-s + 180k vCPU-s / month
   - [[app-engine]]: 28 instance-hours / day (Standard)
@@ -69,7 +72,7 @@ Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what 
 2. Use **CUDs** for predictable steady-state workloads (-57%).
 3. Let **SUDs** apply automatically — don't restart VMs unnecessarily.
 4. **Right-size** with custom machine types.
-5. Apply **lifecycle management** in [[cloud-storage]] to tier cold data.
+5. Apply **lifecycle management** in [[Cloud Storage]] to tier cold data.
 6. **Scale to zero** with [[cloud-run]] / [[app-engine]] Standard / [[cloud-functions]] for bursty workloads.
 7. Use **autoscaling** to match demand.
 8. Monitor with **GCP Billing Reports** and budgets to catch surprises.
@@ -107,9 +110,9 @@ Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what 
 >
 >
 >> [!card] Products
->> [[../compute/compute-engine|Compute Engine]], [[../compute/gcp-compute-services|GCP Compute Services]], [[../storage/cloud-storage|Cloud Storage]]
+>> [[../compute/compute-engine|Compute Engine]], [[../compute/gcp-compute-services|GCP Compute Services]], [[Cloud Storage|Cloud Storage]]
 >
 >
 >> [!card] Cross-cloud guides
->> [[../../data-engineering/guides/cost-optimization-cloud|Cost Optimization in the Cloud]]
+>> [[../../../guides/cost-optimization-cloud|Cost Optimization in the Cloud]]
 

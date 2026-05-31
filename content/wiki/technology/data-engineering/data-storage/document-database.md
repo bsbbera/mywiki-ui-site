@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Misfortune shows those who are not really friends."
+> <cite>— Aristotle</cite>
+
 ---
 
 A **document database** is a type of [[non-relational-database|NoSQL]] database designed to store and query data as **JSON-like documents**. Document databases make it easy to store and query data that **evolves with an application's needs**. The model fits use cases like **catalogs, user profiles, content management** where each document is unique and evolves over time (source: Concepts/Data Storage/Document Database.md).
@@ -70,7 +73,7 @@ Documents are grouped in **collections** (similar to tables, but schema-less).
 - **Amazon DynamoDB** — managed (key-value + document).
 - **RavenDB** — .NET-friendly.
 - **Azure Cosmos DB** — multi-model.
-- **Firestore** ([[../../../gcp/databases/cloud-datastore|GCP]]) — real-time mobile/web focus.
+- **Firestore** ([[../../cloud/gcp/databases/cloud-datastore|GCP]]) — real-time mobile/web focus.
 
 ## Document vs Relational
 
@@ -105,5 +108,5 @@ Documents are grouped in **collections** (similar to tables, but schema-less).
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-datastore|Firestore / Datastore]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/cloud-datastore|Firestore / Datastore]], [[../../tools/databases-overview|Databases Overview]]
 

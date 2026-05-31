@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "I never said it would be easy, I only said it would be worth it."
+> <cite>— Mae West</cite>
+
 ---
 
 A **time-series database (TSDB)** is optimized to **store, aggregate, and analyze** large amounts of **continuously generated, time-stamped data** from sources like **IoT devices, sensors, application metrics, financial markets** (source: Concepts/Data Storage/Timeseries Database.md). Used in applications that monitor performance over time or track event sequences.
@@ -70,7 +73,7 @@ TSDBs optimize all of these.
 
 GCP doesn't offer a dedicated managed TSDB, but:
 
-- [[../../../gcp/databases/cloud-bigtable|Bigtable]] is **excellent for time-series at scale** — Google's recommended pattern.
+- [[../../cloud/gcp/databases/cloud-bigtable|Bigtable]] is **excellent for time-series at scale** — Google's recommended pattern.
 - **InfluxDB on GKE** is common.
 - **Cloud Monitoring** uses an internal TSDB for metrics.
 - **TimescaleDB on Cloud SQL** (Postgres) for SQL-native TS.
@@ -103,5 +106,5 @@ GCP doesn't offer a dedicated managed TSDB, but:
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../tools/databases-overview|Databases Overview]]
 

@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "To be prepared is half the victory."
+> <cite>— Miguel de Cervantes</cite>
+
 ---
 
 GCP organizes resources into a three-level geographic hierarchy: **multi-regions ⊃ regions ⊃ zones** (source: Google Cloud Platform (GCP).md).
@@ -29,7 +32,7 @@ A **region** is an independent geographic area (e.g. `europe-west2` in London) c
 
 ## Multi-Region
 
-Some services (notably [[cloud-storage]]) support **multi-region** locations such as `EU` or `US`, which replicate data across at least two geographic locations **separated by 160+ km** for disaster resilience (source: Google Cloud Platform (GCP).md).
+Some services (notably [[Cloud Storage]]) support **multi-region** locations such as `EU` or `US`, which replicate data across at least two geographic locations **separated by 160+ km** for disaster resilience (source: Google Cloud Platform (GCP).md).
 
 ## Current scale
 
@@ -39,7 +42,7 @@ As of 2025 GCP operates **43 regions and 130 zones** globally ([cloud.google.com
 
 - Spread instances across **multiple zones** in one region to survive zone failures.
 - Spread across **multiple regions** to survive regional disasters or to bring data closer to users (source: Google Cloud Platform (GCP).md).
-- Use multi-region [[cloud-storage]] for strong cross-region durability.
+- Use multi-region [[Cloud Storage]] for strong cross-region durability.
 
 ## Interesting Facts
 
@@ -61,5 +64,5 @@ As of 2025 GCP operates **43 regions and 130 zones** globally ([cloud.google.com
 >
 >
 >> [!card] Products
->> [[../compute/compute-engine|Compute Engine]], [[../storage/cloud-storage|Cloud Storage]]
+>> [[../compute/compute-engine|Compute Engine]], [[Cloud Storage|Cloud Storage]]
 

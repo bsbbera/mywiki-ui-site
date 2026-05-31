@@ -17,6 +17,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # BigQuery
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Serverless data warehouse |
+> | **Category** | Analytics |
+> | **Launched** | 2011 |
+> | **Interface** | SQL, REST API, CLI, client libraries |
+> | **Website** | cloud.google.com/bigquery |
+
+---
+
+> "A good stance and posture reflect a proper state of mind."
+> <cite>— Morihei Ueshiba</cite>
+
 ---
 
 BigQuery is GCP's **fully managed, serverless data warehouse** — petabyte-scale analytics over structured and unstructured data with **standard SQL**, **automatic scaling**, and **pay-per-use** pricing (source: Google Cloud Platform - Introduction to BigQuery.md).
@@ -50,7 +67,7 @@ Compute and storage are **decoupled**. Tables live in a columnar format (**Capac
 3. **Real-time analysis** — streaming ingestion via the Storage Write API or Pub/Sub.
 4. **SQL-based** — ANSI-compliant; familiar tooling.
 5. **Cost-efficient** — separate storage + compute pricing (or **BigQuery Editions** flat-rate slots since 2023).
-6. **GCP integration** — [[../storage/cloud-storage|Cloud Storage]], [[pubsub]], [[dataflow]], [[../databases/cloud-bigtable|Bigtable]], [[../databases/cloud-sql|Cloud SQL]] (federated).
+6. **GCP integration** — [[Cloud Storage|Cloud Storage]], [[pubsub]], [[dataflow]], [[../databases/cloud-bigtable|Bigtable]], [[../databases/cloud-sql|Cloud SQL]] (federated).
 7. **BigQuery ML (BQML)** — train ML models with `CREATE MODEL ... AS SELECT` — no data movement.
 8. **Security and compliance** — encryption at rest + in transit, GDPR / HIPAA / PCI-DSS, IAM, CMEK.
 9. **Easy data sharing** — [[bigquery-authorized-views]], **Analytics Hub**, no copying.
@@ -168,29 +185,29 @@ Note table-reference syntax: `` `project.dataset.table` `` with **backticks**, n
 >
 >
 >> [!card] Data Engineering
->> [[../../data-engineering/data-warehousing|Data Warehousing]]
+>> [[../../../data-engineering/data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/data-architecture/data-warehouse|Data Warehouse]]
+>> [[../../../data-engineering/data-architecture/data-warehouse|Data Warehouse]]
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/data-storage/column-oriented-database|Column-oriented Database]]
+>> [[../../../data-engineering/data-storage/column-oriented-database|Column-oriented Database]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/data-processing/online-analytical-processing|OLAP]]
+>> [[../../../data-engineering/data-processing/online-analytical-processing|OLAP]]
 >
 >
 >> [!card] Related products
->> [[../storage/cloud-storage|Cloud Storage]], [[../databases/cloud-bigtable|Cloud Bigtable]], [[../../databricks/databricks|Databricks (alternative)]]
+>> [[Cloud Storage|Cloud Storage]], [[../databases/cloud-bigtable|Cloud Bigtable]], [[../../databricks/databricks|Databricks (alternative)]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 >
 >
 >> [!card] People
->> [[../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
+>> [[../../../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]]
 

@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "The most important battle is one to conquer yourself."
+> <cite>— Yanni</cite>
+
 ---
 
 An **in-memory database (IMDB)** stores data in **main memory (RAM)** instead of on disk, giving **far faster access speeds** than traditional databases. This makes it ideal for applications requiring **very high or real-time read/write speeds** — gaming, web apps, financial transactions (source: Concepts/Data Storage/In-Memory Database.md).
@@ -65,7 +68,7 @@ Most "in-memory" DBs offer durability:
 
 ## In-memory on cloud
 
-- **GCP**: [[../../../gcp/databases/memorystore|Memorystore]] for Redis / Memcached / Valkey.
+- **GCP**: [[../../cloud/gcp/databases/memorystore|Memorystore]] for Redis / Memcached / Valkey.
 - **AWS**: ElastiCache for Redis / Memcached, MemoryDB.
 - **Azure**: Cache for Redis.
 
@@ -95,5 +98,5 @@ Most "in-memory" DBs offer durability:
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/memorystore|Memorystore]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/memorystore|Memorystore]], [[../../tools/databases-overview|Databases Overview]]
 

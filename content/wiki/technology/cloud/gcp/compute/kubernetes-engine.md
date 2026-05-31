@@ -16,6 +16,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Google Kubernetes Engine
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Managed Kubernetes service |
+> | **Category** | Containers / Compute |
+> | **Launched** | 2015 (GA Aug 2015) |
+> | **Interface** | kubectl, gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/kubernetes-engine |
+
+---
+
+> "Believe you can and you will be halfway there."
+> <cite>— Lolly Daskal</cite>
+
 ---
 
 Google Kubernetes Engine (GKE) is a managed Kubernetes service for deploying, scaling, and operating containerized applications on GCP. It abstracts the control plane (Kubernetes masters) so you focus on workloads (source: Google Kubernetes Engine.md).

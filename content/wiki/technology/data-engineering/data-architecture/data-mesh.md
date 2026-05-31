@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Investing in yourself is the best investment you will ever make."
+> <cite>— Robin Sharma</cite>
+
 ---
 
 **Data Mesh** is an analytical data architecture and operating model where **data is treated as a product**, leveraging **domain-driven design** and a **self-serve data platform** (source: Concepts/Data Architecture/Data Mesh.md).

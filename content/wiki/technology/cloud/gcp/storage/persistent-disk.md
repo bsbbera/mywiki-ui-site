@@ -15,11 +15,28 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Persistent Disk
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Network-attached block storage |
+> | **Category** | Storage |
+> | **Launched** | 2013 (GA with Compute Engine) |
+> | **Interface** | gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/persistent-disk |
+
+---
+
+> "Quality is not an act, it is a habit."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
 Persistent Disk (PD) is GCP's **block storage** service for [[compute-engine]] VMs and [[kubernetes-engine]] pods. It is a network-attached, durable, highly available block device that survives the VM it is attached to (source: Cloud Storage in GCP.md, source: Introduction to Google Compute Engine.md).
 
-Where [[cloud-storage]] is unstructured object storage and [[filestore]] is shared filesystem storage, Persistent Disk is the equivalent of "an EBS volume" â€” a raw block device you mount as a filesystem.
+Where [[Cloud Storage]] is unstructured object storage and [[filestore]] is shared filesystem storage, Persistent Disk is the equivalent of "an EBS volume" â€” a raw block device you mount as a filesystem.
 
 ## Disk types
 
@@ -52,7 +69,7 @@ Where [[cloud-storage]] is unstructured object storage and [[filestore]] is shar
 
 - **Zonal by default** â€” a zone failure takes the disk offline; use regional PD for HA.
 - **Single-writer** â€” read-write attach is to one VM at a time.
-- **Pricier per-GB than [[cloud-storage]]** â€” only use for data needing block semantics.
+- **Pricier per-GB than [[Cloud Storage]]** â€” only use for data needing block semantics.
 
 ## Interesting Facts
 
@@ -71,7 +88,7 @@ Where [[cloud-storage]] is unstructured object storage and [[filestore]] is shar
 > [!multi-column]
 >
 >> [!card] Sister storage products
->> [[cloud-storage|Cloud Storage]], [[filestore|Filestore]], [[firebase-cloud-storage|Firebase Cloud Storage]]
+>> [[Cloud Storage|Cloud Storage]], [[filestore|Filestore]], [[firebase-cloud-storage|Firebase Cloud Storage]]
 >
 >
 >> [!card] Compute
