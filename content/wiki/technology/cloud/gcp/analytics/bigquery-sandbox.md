@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Give a girl the right shoes, and she can conquer the world."
+> <cite>— Bette Midler</cite>
+
 ---
 
 The **BigQuery Sandbox** gives free, no-credit-card access to BigQuery — perfect for learning, prototyping, and exploring public datasets (source: Google Cloud Platform - Introduction to BigQuery Sandbox.md).
@@ -80,5 +83,5 @@ LIMIT 3;
 >
 >
 >> [!card] Getting started
->> [[../../data-engineering/guides/getting-started|Getting Started With Data Engineering]], [[../../data-engineering/faq|FAQ]]
+>> [[../../../guides/getting-started|Getting Started With Data Engineering]], [[../../../data-engineering/faq|FAQ]]
 

@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Seek not the good in external things;seek it in yourselves."
+> <cite>— Epictetus</cite>
+
 ---
 
 The **semantic layer** is the [[../data-modeling/data-modeling|data model]] that takes **multiple enterprise data sources** and **combines them into one unified model** for the business. It is traditionally built in the [[../data-architecture/data-warehouse|data warehouse]] and used by reporting tools. Companies have used semantic layers since the early 1990s (source: Concepts/Data Management/Semantic Layer.md).
@@ -87,7 +90,7 @@ The metrics layer emerged as a lighter, **headless** alternative for orgs that w
 > [!multi-column]
 >
 >> [!card] Sister concepts
->> [[metrics-layer|Metrics Layer]], [[data-catalog|Data Catalog]], [[data-management|Data Management]]
+>> [[metrics-layer|Metrics Layer]], [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]]
 >
 >
 >> [!card] Modeling

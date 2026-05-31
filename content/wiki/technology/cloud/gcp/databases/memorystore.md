@@ -18,6 +18,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Memorystore
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Managed in-memory data store (Redis, Memcached, Valkey) |
+> | **Category** | Database / Cache |
+> | **Launched** | 2018 (GA for Redis 2018) |
+> | **Interface** | Redis/Memcached protocol, gcloud CLI, REST API |
+> | **Website** | cloud.google.com/memorystore |
+
+---
+
+> "If you want to see things just as they are, then you yourself must practice just as you are."
+> <cite>— Dogen</cite>
+
 ---
 
 Memorystore is GCP's **fully managed in-memory data store**, delivering **sub-millisecond latency** for caching, session management, leaderboards, and real-time processing (source: Google Cloud Platform - MemoryStore.md).
@@ -123,9 +140,9 @@ Also scriptable via `gcloud` and REST APIs.
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/concepts/data-storage/in-memory-database|In-memory Database]], [[../../data-engineering/concepts/data-storage/key-value-database|Key-Value Database]]
+>> [[../../../data-engineering/data-storage/in-memory-database|In-memory Database]], [[../../../data-engineering/data-storage/key-value-database|Key-Value Database]]
 >
 >
 >> [!card] Foundations + certs
->> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../certifications/professional-data-engineer|PDE Certification]]
+>> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[Professional Data Engineer|PDE Certification]]
 

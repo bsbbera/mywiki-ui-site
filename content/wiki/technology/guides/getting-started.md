@@ -14,13 +14,16 @@ banner:
 publish: true
 ---
 
+> "The road to success and the road to failure are almost exactly the same."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
 A practical roadmap for newcomers to data engineering. Goal: working knowledge + intuition to find answers as your journey continues (source: Guides/Getting Started With Data Engineering.md).
 
 ## Step 1 — Read the FAQ
 
-See [[../faq|Frequently Asked Questions]] for:
+See [[../data-engineering/faq|Frequently Asked Questions]] for:
 
 - What is data engineering?
 - What does a Data Engineer do?
@@ -32,13 +35,13 @@ See [[../faq|Frequently Asked Questions]] for:
 
 | Topic | Page |
 | --- | --- |
-| Pipelines | [[../data-pipeline\|Data Pipeline]] |
-| Batch vs Stream | [[../concepts/data-processing/batch-data-processing\|Batch]] / [[../concepts/data-processing/stream-data-processing\|Stream]] |
-| OLTP vs OLAP | [[../concepts/data-processing/online-transaction-processing\|OLTP]] / [[../concepts/data-processing/online-analytical-processing\|OLAP]] |
-| Relational vs NoSQL | [[../concepts/data-storage/relational-database\|Relational]] / [[../concepts/data-storage/non-relational-database\|NoSQL]] |
-| Data Modeling | [[../concepts/data-modeling/relational-modeling\|Relational]] / [[../concepts/data-modeling/dimensional-modeling\|Dimensional]] |
-| Architectures | [[../concepts/data-architecture/data-warehouse\|Warehouse]], [[../concepts/data-architecture/data-lake\|Lake]], [[../concepts/data-architecture/medallion-architecture\|Medallion]] |
-| Ingestion | [[../concepts/data-ingestion/full-load\|Full Load]], [[../concepts/data-ingestion/delta-load\|Delta Load]], [[../concepts/data-ingestion/change-data-capture\|CDC]] |
+| Pipelines | [[../data-engineering/data-pipeline\|Data Pipeline]] |
+| Batch vs Stream | [[../data-engineering/data-processing/batch-data-processing\|Batch]] / [[../data-engineering/data-processing/stream-data-processing\|Stream]] |
+| OLTP vs OLAP | [[../data-engineering/data-processing/online-transaction-processing\|OLTP]] / [[../data-engineering/data-processing/online-analytical-processing\|OLAP]] |
+| Relational vs NoSQL | [[../data-engineering/data-storage/relational-database\|Relational]] / [[../data-engineering/data-storage/non-relational-database\|NoSQL]] |
+| Data Modeling | [[../data-engineering/data-modeling/relational-modeling\|Relational]] / [[../data-engineering/data-modeling/dimensional-modeling\|Dimensional]] |
+| Architectures | [[../data-engineering/data-architecture/data-warehouse\|Warehouse]], [[../data-engineering/data-architecture/data-lake\|Lake]], [[../data-engineering/data-architecture/medallion-architecture\|Medallion]] |
+| Ingestion | [[../data-engineering/data-ingestion/full-load\|Full Load]], [[../data-engineering/data-ingestion/delta-load\|Delta Load]], [[../data-engineering/data-ingestion/change-data-capture\|CDC]] |
 
 ## Step 3 — Learn core tools
 
@@ -51,11 +54,9 @@ See [[../faq|Frequently Asked Questions]] for:
 
 ### A cloud platform
 
-Pick one and go deep. **AWS** has the most market share; GCP and Azure are also great.
-
-- [[../../gcp/foundations/google-cloud-platform|Google Cloud Platform]]
-- [[../../aws/aws|Amazon Web Services]]
-- [[../../azure/azure|Microsoft Azure]]
+Pick one and go deep. **AWS** has the most market share[[AWS|Amazon Web Services]]./cloud/gcp/foundations/google-cloud-platform|Google Cloud Platform]]
+- [[../cloud/aws/aws|Amazon Web Services]]
+- [[../cloud/azure/azure|Microsoft Azure]]
 
 ## Step 4 — Hands-on practice
 
@@ -71,7 +72,7 @@ Once basics click, learn:
 - **Data warehouse modeling** with **dbt**.
 - **Streaming** — Kafka or Pub/Sub fundamentals.
 - **Infrastructure-as-code** — Terraform or Pulumi.
-- **Observability** — logging, metrics, alerting, [[../concepts/software-engineering/data-unit-test|data unit tests]].
+- **Observability** — logging, metrics, alerting, [[../software-engineering/data-unit-test|data unit tests]].
 
 ## Step 6 — Connect with the community
 
@@ -96,7 +97,7 @@ Once basics click, learn:
 > [!multi-column]
 >
 >> [!card] Onboarding
->> [[../faq|FAQ]], [[../data-engineering|Data Engineering Overview]]
+>> [[../data-engineering/faq|FAQ]], [[../data-engineering/data-engineering|Data Engineering Overview]]
 >
 >
 >> [!card] Practical guides

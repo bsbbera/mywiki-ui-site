@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "No one has ever become poor by giving."
+> <cite>— Anne Frank</cite>
+
 ---
 
 [[compute-engine]] (GCE) and [[app-engine]] (GAE) sit at opposite ends of GCP's IaaS-to-PaaS spectrum. Picking between them is one of the most common architecture decisions on GCP (source: Difference Between Google Cloud Compute Engine and App Engine.md).

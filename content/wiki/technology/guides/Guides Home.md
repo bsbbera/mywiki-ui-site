@@ -24,26 +24,27 @@ cssclasses:
 > [!info] You are here
 > 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · **📘 Guides**
 
-## 📚 All Guides (A–Z)
+## 📊 At a Glance
 
 ```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => p.file.link)
-);
+const pages = dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"');
+const latest = pages.sort(p => p.file.mtime, 'desc').first();
+dv.paragraph(`**${pages.length}** guides · last touched **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
 ```
 
-## 🕒 Recently Updated
+## 📚 Browse
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(10)
-    .map(p => p.file.link)
-);
-```
+> [!multi-column]
+>
+> > [!card] 📋 All Guides (A–Z)
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
+> > ```
+>
+> > [!card] 🕒 Recently Updated
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
+> > ```
 
 ## Related pages
 

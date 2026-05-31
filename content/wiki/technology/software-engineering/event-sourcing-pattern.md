@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "It all depends on what you choose to believe."
+> <cite>— Spencer Johnson</cite>
+
 ---
 
 The **Event Sourcing pattern** captures **all changes** to an application as a **sequence of event objects**. This creates a **ledger of changes** that can be **replayed** to reconstruct application state at any point in time (source: Concepts/Software Engineering/Event Sourcing Pattern.md).
@@ -78,7 +81,7 @@ To avoid replaying millions of events for every query:
 - **EventStoreDB** — purpose-built event store.
 - **Postgres** with event tables — simplest, works at moderate scale.
 - **DynamoDB Streams** + **DynamoDB** — AWS-native pattern.
-- **GCP**: [[../../../gcp/analytics/pubsub|Pub/Sub]] + [[../../../gcp/databases/cloud-spanner|Spanner]] / Bigtable.
+- **GCP**: [[../cloud/gcp/analytics/pubsub|Pub/Sub]] + [[../cloud/gcp/databases/cloud-spanner|Spanner]] / Bigtable.
 
 ## When to use
 
@@ -110,7 +113,7 @@ To avoid replaying millions of events for every query:
 2. **CQRS** — why does it pair with event sourcing?
 3. **Schema evolution** of events — strategies.
 4. Implementing **GDPR right-to-erase** with event sourcing.
-5. How does event sourcing differ from log-based [[../data-ingestion/change-data-capture|CDC]]?
+5. How does event sourcing differ from log-based [[../data-engineering/data-ingestion/change-data-capture|CDC]]?
 
 ## Related pages
 
@@ -121,13 +124,13 @@ To avoid replaying millions of events for every query:
 >
 >
 >> [!card] Architecture
->> [[../data-ingestion/change-data-capture|CDC]], [[../data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../data-engineering/data-ingestion/change-data-capture|CDC]], [[../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] People
->> [[../../../people/greg-young|Greg Young]], [[../../../people/martin-fowler|Martin Fowler]], [[../../../people/jay-kreps|Jay Kreps]], [[../../../people/martin-kleppmann|Martin Kleppmann]]
+>> [[../../people/greg-young|Greg Young]], [[../../people/martin-fowler|Martin Fowler]], [[../../people/jay-kreps|Jay Kreps]], [[../../people/martin-kleppmann|Martin Kleppmann]]
 >
 >
 >> [!card] Books
->> [[../../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../books/designing-data-intensive-applications|DDIA]]
 

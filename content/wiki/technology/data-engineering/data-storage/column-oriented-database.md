@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes good things fall apart so better things can fall together."
+> <cite>— Marilyn Monroe</cite>
+
 ---
 
 In a **column-oriented (columnar) database**, the data for **each column** is stored **together** on disk. Because of this, columnar DBs are a popular foundation for [[../data-architecture/data-warehouse|data warehouses]] (source: Concepts/Data Storage/Column-oriented Database.md).
@@ -88,7 +91,7 @@ Plus:
 
 ## Popular columnar systems
 
-- **Cloud warehouses**: [[../../../gcp/analytics/bigquery|BigQuery]] (Capacitor format), Snowflake (FDN), Amazon Redshift, Azure Synapse.
+- **Cloud warehouses**: [[../../cloud/gcp/analytics/bigquery|BigQuery]] (Capacitor format), Snowflake (FDN), Amazon Redshift, Azure Synapse.
 - **Open-source DBs**: ClickHouse, Apache Druid, Apache Pinot, DuckDB.
 - **File formats**: [[../../tools/file-formats|Apache Parquet, ORC, Apache Arrow, Delta Lake, Iceberg]] — these are **columnar formats** that any compute engine can read.
 
@@ -116,7 +119,7 @@ See [[wide-column-database|wide-column]] for the distinction. **Column-oriented*
 >
 >
 >> [!card] Tools + products
->> [[../../tools/file-formats|File Formats (Parquet / ORC)]], [[../../../gcp/analytics/bigquery|BigQuery]], [[../../../databricks/databricks|Databricks]]
+>> [[../../tools/file-formats|File Formats (Parquet / ORC)]], [[../../cloud/gcp/analytics/bigquery|BigQuery]], [[../../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

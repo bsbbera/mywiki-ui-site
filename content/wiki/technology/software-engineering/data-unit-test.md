@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Life begins at the end of our comfort zone."
+> <cite>— Neale Donald Walsch</cite>
+
 ---
 
 A **data unit test** is an **automated test** that ensures the data flowing through your pipeline is what you expect it to be. They're useful for detecting **upstream changes**, **stale or cached data**, and **preventing bad data** from corrupting ML models or public-facing reports/dashboards (source: Concepts/Software Engineering/Data Unit Test.md).
@@ -55,7 +58,7 @@ A pipeline that runs successfully but produces **wrong or missing data** is a **
 - **Post-load** — validate output before exposing to consumers.
 - **Continuous** — periodic data quality scans.
 
-The **Write-Audit-Publish (WAP)** pattern: write to a staging area, run audits (data unit tests), publish only if tests pass. See [[../../guides/testing-data-pipeline|Testing Your Data Pipeline]].
+The **Write-Audit-Publish (WAP)** pattern: write to a staging area, run audits (data unit tests), publish only if tests pass. See [[../guides/testing-data-pipeline|Testing Your Data Pipeline]].
 
 ## Test data over code
 
@@ -85,9 +88,9 @@ Data unit tests test the **data**; classic unit tests test the **code**. You nee
 >
 >
 >> [!card] Guides
->> [[../../guides/testing-data-pipeline|Testing Your Data Pipeline]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
+>> [[../guides/testing-data-pipeline|Testing Your Data Pipeline]], [[../guides/data-pipeline-best-practices|Pipeline Best Practices]]
 >
 >
 >> [!card] Tools
->> [[../../tools/quality-tools|Data Quality Tools]]
+>> [[../tools/quality-tools|Data Quality Tools]]
 

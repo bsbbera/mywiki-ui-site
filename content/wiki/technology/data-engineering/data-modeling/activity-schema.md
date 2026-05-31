@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Give a girl the right shoes, and she can conquer the world."
+> <cite>— Bette Midler</cite>
+
 ---
 
 **Activity Schema** — created by **Ahmed Elsamadisi** — is a data-modeling standard designed to make modeling and analysis **simpler, faster, and more reliable** by representing all data as a **single time-series table** with one universal query pattern (source: Concepts/Data Modeling/Activity Schema.md).
@@ -83,5 +86,5 @@ In a star schema this would require multiple joins on dimensions, surrogate keys
 >
 >
 >> [!card] Event-driven concepts
->> [[../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-processing/stream-data-processing|Stream Processing]]
+>> [[../../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-processing/stream-data-processing|Stream Processing]]
 

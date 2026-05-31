@@ -14,7 +14,21 @@ banner:
 publish: true
 ---
 
+> "Dreams are the touchstones of our characters."
+> <cite>— Henry David Thoreau</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Ralph Kimball
+> ###### Data Warehousing Pioneer
+> | | |
+> | --- | --- |
+> | **Born** | 1944 |
+> | **Nationality** | American |
+> | **Domain** | Data warehousing |
+> | **Known for** | Dimensional modeling; Kimball methodology |
+> | **Notable works** | [[../books/the-data-warehouse-toolkit\|The Data Warehouse Toolkit]] |
 
 American author and one of the original architects of **data warehousing**. Best known for **dimensional modeling** + the **bus architecture** for data warehouses, often called the **Kimball methodology**. Founded the Kimball Group; long-running rival approach to [[bill-inmon|Bill Inmon]]'s top-down EDW.
 
@@ -23,11 +37,11 @@ American author and one of the original architects of **data warehousing**. Best
 > [!multi-column]
 >
 >> [!card] Data Modeling
->> [[../data-engineering/concepts/data-modeling/dimensional-modeling|Dimensional Modeling]]
+>> [[../technology/data-engineering/data-modeling/dimensional-modeling|Dimensional Modeling]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-warehouse|Data Warehouse]], [[../data-engineering/concepts/data-architecture/data-mart|Data Mart]]
+>> [[../technology/data-engineering/data-architecture/data-warehouse|Data Warehouse]], [[../technology/data-engineering/data-architecture/data-mart|Data Mart]]
 >
 >
 >> [!card] Books

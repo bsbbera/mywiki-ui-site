@@ -84,7 +84,7 @@ wiki/
 
 #### Data Management — `technology/data-engineering/data-management/`
 
-- [[data-management|Data Management]] · [[data-management/data-catalog|Data Catalog]] · [[data-governance|Data Governance]] · [[semantic-layer|Semantic Layer]] · [[metrics-layer|Metrics Layer]].
+- [[data-management|Data Management]] · [[technology/data-engineering/data-management/data-catalog|Data Catalog]] · [[data-governance|Data Governance]] · [[semantic-layer|Semantic Layer]] · [[metrics-layer|Metrics Layer]].
 
 #### Data Modeling — `technology/data-engineering/data-modeling/`
 
@@ -93,6 +93,10 @@ wiki/
 #### Data Processing — `technology/data-engineering/data-processing/`
 
 - [[data-processing|Data Processing]] · [[batch-data-processing|Batch]] · [[stream-data-processing|Stream]] · [[online-transaction-processing|OLTP]] · [[online-analytical-processing|OLAP]] · [[hybrid-transactional-analytical-processing|HTAP]] · [[workflow-orchestration|Workflow Orchestration]].
+
+##### Apache Spark / PySpark — `technology/data-engineering/data-processing/spark/`
+
+- [[apache-spark|Apache Spark]] (engine hub) · [[pyspark|PySpark]] (Python API) · [[spark-architecture|Architecture]] (driver/executor, jobs/stages/tasks, deploy modes) · [[rdd|RDDs]] (transformations/actions, lineage, lazy eval) · [[spark-dataframe|DataFrames]] (schema, StructType, RDD vs DF vs Dataset) · [[spark-sql|Spark SQL]] (Catalyst, temp views, UDFs) · [[spark-performance|Performance]] (shuffle, partitioning, caching, broadcast, AQE, skew) · [[spark-streaming|Streaming]] (DStreams, checkpointing, receivers) · [[spark-mllib|MLlib]] (distributed ML summary).
 
 #### Data Storage — `technology/data-engineering/data-storage/`
 
@@ -131,7 +135,7 @@ CS-theory foundations relevant to every database (replaces the old `databases/` 
 - [[compute-engine-vs-app-engine|Compute Engine vs App Engine]] — decision guide.
 
 ##### Storage — `technology/cloud/gcp/storage/`
-- [[cloud-storage|Cloud Storage]] — object storage (Standard, Nearline, Coldline, Archive).
+- [[Cloud Storage|Cloud Storage]] — object storage (Standard, Nearline, Coldline, Archive).
 - [[persistent-disk|Persistent Disk]] — block storage for VMs.
 - [[filestore|Filestore]] — managed NFS.
 - [[firebase-cloud-storage|Firebase Cloud Storage]] — mobile/web layer on GCS.
@@ -157,14 +161,14 @@ CS-theory foundations relevant to every database (replaces the old `databases/` 
   - [[bigquery-query-management|BigQuery Query Management]] — history, saved, shared queries.
 - [[dataflow|Cloud Dataflow]] — code-first ETL (Apache Beam, Java/Python).
 - [[datafusion|Cloud Data Fusion]] — visual / low-code ETL.
-- [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]] — metadata + discovery (now part of Dataplex). *(Path-qualified to disambiguate from the DE concept page `[[data-management/data-catalog]]`.)*
+- [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]] — metadata + discovery (now part of Dataplex). *(Path-qualified to disambiguate from the DE concept page `[[technology/data-engineering/data-management/data-catalog]]`.)*
 - [[pubsub|Pub/Sub]] — managed messaging spine.
 
 ##### Certifications — `technology/cloud/gcp/certifications/`
-- [[professional-data-engineer|Professional Data Engineer]] — PDE exam guide.
+- [[Professional Data Engineer|Professional Data Engineer]] — PDE exam guide.
 
 #### AWS — `technology/cloud/aws/`
-- [[aws|Amazon Web Services]] — service catalog, data engineering services, comparison.
+- [[AWS|Amazon Web Services]] — service catalog, data engineering services, comparison.
 
 #### Azure — `technology/cloud/azure/`
 - [[azure|Microsoft Azure]] — service catalog, data engineering services, comparison.
@@ -220,6 +224,7 @@ Stub pages (frontmatter + minimal bio + related-page links) for individuals refe
 - [[andrej-karpathy|Andrej Karpathy]] — LLM Wiki pattern this knowledge base follows.
 - [[doug-cutting|Doug Cutting]] — created Apache Hadoop / Lucene.
 - [[matei-zaharia|Matei Zaharia]] — created Apache Spark; co-founded Databricks.
+- [[wenqiang-feng|Wenqiang Feng]] — author of *Learning Apache Spark with Python*.
 
 ## Books — `books/`
 
@@ -230,6 +235,7 @@ Stub pages for influential books with cover images.
 - [[fundamentals-of-data-engineering|Fundamentals of Data Engineering]] — Joe Reis + Matt Housley.
 - [[building-a-scalable-data-warehouse-with-data-vault-2|Building a Scalable Data Warehouse with Data Vault 2.0]] — Dan Linstedt.
 - [[building-the-data-warehouse|Building the Data Warehouse]] — Bill Inmon.
+- [[learning-apache-spark-with-python|Learning Apache Spark with Python]] — Wenqiang Feng (free PySpark + MLlib tutorial).
 
 ## Reserved fields (not yet ingested)
 
@@ -288,12 +294,13 @@ These folders do not exist yet. They will be created on the first ingest of rele
 - **Top-level folders**: 3 active (`technology/`, `people/`, `books/`) + 3 reserved (`philosophy/`, `art/`, `science/`).
 - **Sub-domains under `technology/`**: 6 (`data-engineering/`, `software-engineering/`, `databases/`, `cloud/`, `tools/`, `guides/`).
 - **Cloud platforms under `technology/cloud/`**: 4 (`gcp/`, `aws/`, `azure/`, `databricks/`).
-- **People stubs**: 17.
-- **Book stubs**: 5.
-- **Concept pages**: ~110.
+- **People stubs**: 18.
+- **Book stubs**: 6.
+- **Concept pages**: ~119 (incl. 9 Apache Spark / PySpark pages).
 - **Source-summary pages**: 0 (concept pages cite raw sources inline).
 - **Related-pages format**: topic-grouped callouts (per `windsurf.md`).
-- **Total wiki pages**: ~145 + index + log + 7 Home dashboards.
+- **Infoboxes**: `> [!infobox|wikipedia]` on all named-entity notes (18 people + 6 books + 27 tools/cloud-services/platforms + 1 certification = 51); placed above the daily-quote block. Abstract concept/theory/pattern/guide pages intentionally have **no infobox**.
+- **Total wiki pages**: ~156 + index + log + 7 Home dashboards.
 
 ## See also
 

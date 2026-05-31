@@ -15,9 +15,12 @@ banner:
 publish: true
 ---
 
+> "Successful people are not without problems. They're simply people who've learned to solve their problems."
+> <cite>— Earl Nightingale</cite>
+
 ---
 
-A practical playbook for implementing **[[../concepts/data-management/data-governance|data governance]]** in an organization (source: Guides/Data Governance Guide.md).
+A practical playbook for implementing **[[../data-engineering/data-management/data-governance|data governance]]** in an organization (source: Guides/Data Governance Guide.md).
 
 ## Why governance now
 
@@ -76,7 +79,7 @@ The execution stage. Success indicator: **engagement of key stakeholders**.
 The three core processes:
 
 1. **Query engine** — the system data flows through.
-2. **Data catalog** — see [[../concepts/data-management/data-catalog|Data Catalog]].
+2. **Data catalog** — see [[../data-engineering/data-management/data-catalog|Data Catalog]].
 3. **Policy engine** — policies applied to the catalog, enforced via the query engine.
 
 ### 5. Enforcement
@@ -108,7 +111,7 @@ The remaining manual work: keeping **stakeholders engaged**. This is largely **c
 
 - **No leadership buy-in** → governance ignored.
 - **Over-engineering** → tooling without behavior change.
-- **Centralized everything** → bottleneck. Federate where possible (see [[../concepts/data-architecture/data-mesh|Data Mesh]]).
+- **Centralized everything** → bottleneck. Federate where possible (see [[../data-engineering/data-architecture/data-mesh|Data Mesh]]).
 - **No automation** → manual policy reviews don't scale.
 
 ## Summary
@@ -136,15 +139,15 @@ All three are **mapped + consolidated** in the **data catalog** with full metada
 > [!multi-column]
 >
 >> [!card] Data Management
->> [[../concepts/data-management/data-governance|Data Governance]], [[../concepts/data-management/data-catalog|Data Catalog]], [[../concepts/data-management/data-management|Data Management]]
+>> [[../data-engineering/data-management/data-governance|Data Governance]], [[../data-engineering/data-management/data-catalog|Data Catalog]], [[../data-engineering/data-management/data-management|Data Management]]
 >
 >
 >> [!card] Architecture
->> [[../concepts/data-architecture/data-mesh|Data Mesh]], [[../data-ethics|Data Ethics]]
+>> [[../data-engineering/data-architecture/data-mesh|Data Mesh]], [[../data-engineering/data-ethics|Data Ethics]]
 >
 >
 >> [!card] Products
->> [[../../gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]], [[../../gcp/analytics/bigquery-iam|BigQuery IAM]]
+>> [[../cloud/gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]], [[../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]]
 >
 >
 >> [!card] People

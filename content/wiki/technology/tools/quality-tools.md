@@ -15,11 +15,14 @@ banner:
 publish: true
 ---
 
+> "It is indeed a radical act of love just to sit down and be quiet for a time by yourself."
+> <cite>— Jon Kabat-Zinn</cite>
+
 ---
 
 Catalog of data quality and observability tools (source: Tools/Data Quality/*.md).
 
-> See [[../concepts/software-engineering/data-unit-test|Data Unit Test]] for the concept and [[../guides/testing-data-pipeline|Testing Your Data Pipeline]] for the practical guide.
+> See [[../software-engineering/data-unit-test|Data Unit Test]] for the concept and [[../guides/testing-data-pipeline|Testing Your Data Pipeline]] for the practical guide.
 
 ## Open-source
 
@@ -112,11 +115,11 @@ A common modern stack: dbt for SQL transforms + tests; Great Expectations for Py
 > [!multi-column]
 >
 >> [!card] Software Engineering
->> [[../concepts/software-engineering/data-unit-test|Data Unit Test]], [[../concepts/software-engineering/idempotence|Idempotence]]
+>> [[../software-engineering/data-unit-test|Data Unit Test]], [[../software-engineering/idempotence|Idempotence]]
 >
 >
 >> [!card] Data Management
->> [[../concepts/data-management/data-governance|Data Governance]]
+>> [[../data-engineering/data-management/data-governance|Data Governance]]
 >
 >
 >> [!card] Guides

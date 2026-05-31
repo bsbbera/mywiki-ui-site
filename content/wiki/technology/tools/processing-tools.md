@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes success isn't about making the right decision, it's more about making some decision."
+> <cite>— Robin Sharma</cite>
+
 ---
 
 Catalog of large-scale data processing engines and frameworks (source: Tools/Data Processing/*.md).
@@ -24,7 +27,9 @@ Catalog of large-scale data processing engines and frameworks (source: Tools/Dat
 
 [Apache Spark](https://spark.apache.org/) — the dominant data-processing engine for Data Engineering large-scale processing (source: Tools/Data Processing/Apache Spark.md).
 
-**Programming model**: parallel operators on a **DAG** (Directed Acyclic Graph). Tasks expressed via **RDDs** (Resilient Distributed Datasets) — fault-tolerant, parallelizable element sets supporting:
+**Deep dive**: [[apache-spark|Apache Spark]] · [[pyspark|PySpark]] · [[spark-architecture|architecture]] · [[rdd|RDDs]] · [[spark-dataframe|DataFrames]] · [[spark-sql|Spark SQL]] · [[spark-performance|tuning]] · [[spark-streaming|streaming]] · [[spark-mllib|MLlib]].
+
+**Programming model**: parallel operators on a **DAG** (Directed Acyclic Graph). Tasks expressed via [[rdd|RDDs]] (Resilient Distributed Datasets) — fault-tolerant, parallelizable element sets supporting:
 
 - **Transformations** (filter, map) — lazy.
 - **Actions** (reduce, collect) — trigger execution.
@@ -49,7 +54,7 @@ The original distributed compute + storage stack. **HDFS** (storage) + **MapRedu
 
 ### Apache Beam
 
-Google's unified batch + stream programming model. Pipelines are portable across runners (Dataflow, Flink, Spark, Samza). See [[../../gcp/analytics/dataflow|Dataflow]].
+Google's unified batch + stream programming model. Pipelines are portable across runners (Dataflow, Flink, Spark, Samza). See [[../cloud/gcp/analytics/dataflow|Dataflow]].
 
 ### Apache Flink
 
@@ -59,11 +64,11 @@ Premier open-source streaming engine. True streaming (event-at-a-time) with stro
 
 ### dbt (data build tool)
 
-[dbt](https://www.getdbt.com/) — used to **transform and create [[../concepts/data-modeling/data-modeling|data models]] within a [[../concepts/data-architecture/data-warehouse|data warehouse]] using [[../guides/sql-guide|SQL]]**. Marketed as empowering analysts to become **self-serve analytics engineers** (source: Tools/Data Processing/dbt.md).
+[dbt](https://www.getdbt.com/) — used to **transform and create [[../data-engineering/data-modeling/data-modeling|data models]] within a [[../data-engineering/data-architecture/data-warehouse|data warehouse]] using [[../guides/sql-guide|SQL]]**. Marketed as empowering analysts to become **self-serve analytics engineers** (source: Tools/Data Processing/dbt.md).
 
 **Strengths**:
 - Version control + CI/CD for data models.
-- Built-in **[[../concepts/software-engineering/data-unit-test|data unit tests]]** + auto-documentation.
+- Built-in **[[../software-engineering/data-unit-test|data unit tests]]** + auto-documentation.
 - SQL-only → accessible to broader teams.
 - Massive ecosystem (dbt-utils, dbt-expectations, dbt-osmosis).
 
@@ -85,7 +90,7 @@ Managed serverless ETL. Built on Spark + Glue Data Catalog. Visual + code author
 
 ### Google Cloud Dataflow
 
-See [[../../gcp/analytics/dataflow|Dataflow]] — managed Apache Beam runner. Auto-scales, handles batch + stream uniformly.
+See [[../cloud/gcp/analytics/dataflow|Dataflow]] — managed Apache Beam runner. Auto-scales, handles batch + stream uniformly.
 
 ### Google Dataproc
 
@@ -93,7 +98,7 @@ Managed Hadoop / Spark / Hive on GCP. Per-second billing; ephemeral clusters com
 
 ### Databricks
 
-See [[../../databricks/databricks|Databricks]] — managed Spark + Delta Lake + MLflow. Multi-cloud (AWS / Azure / GCP).
+See [[../cloud/databricks/databricks|Databricks]] — managed Spark + Delta Lake + MLflow. Multi-cloud (AWS / Azure / GCP).
 
 ### Azure Synapse Spark
 
@@ -148,7 +153,7 @@ Unified model on managed Dataflow.
 > [!multi-column]
 >
 >> [!card] Processing concepts
->> [[../concepts/data-processing/batch-data-processing|Batch Processing]], [[../concepts/data-processing/stream-data-processing|Stream Processing]], [[../concepts/data-processing/workflow-orchestration|Workflow Orchestration]]
+>> [[../data-engineering/data-processing/batch-data-processing|Batch Processing]], [[../data-engineering/data-processing/stream-data-processing|Stream Processing]], [[../data-engineering/data-processing/workflow-orchestration|Workflow Orchestration]]
 >
 >
 >> [!card] Sister catalogs
@@ -156,7 +161,7 @@ Unified model on managed Dataflow.
 >
 >
 >> [!card] Products
->> [[../../gcp/analytics/dataflow|Dataflow]], [[../../databricks/databricks|Databricks]]
+>> [[../cloud/gcp/analytics/dataflow|Dataflow]], [[../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

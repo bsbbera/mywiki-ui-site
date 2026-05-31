@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Life begins at the end of our comfort zone."
+> <cite>— Neale Donald Walsch</cite>
+
 ---
 
 A **User-Defined Function (UDF)** lets you define a reusable function — in **SQL** or **JavaScript** — that accepts inputs, performs operations, and returns a value, callable like a built-in function (source: Google Cloud Platform - User Defined Functions in BigQuery.md).
@@ -122,5 +125,5 @@ By granting **Data Viewer** on a `udfs` dataset to your whole org, you create a 
 >
 >
 >> [!card] SQL
->> [[../../data-engineering/guides/sql-guide|SQL Guide]]
+>> [[../../../guides/sql-guide|SQL Guide]]
 

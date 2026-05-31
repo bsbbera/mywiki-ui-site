@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "The best way to understanding is a few good examples."
+> <cite>— Isaac Newton</cite>
+
 ---
 
 A **metrics layer** is the **single source of truth for how metrics are defined** and their business logic across an organization (source: Concepts/Data Management/Metrics Layer.md).
@@ -91,7 +94,7 @@ The metrics layer is essentially a **focused subset of the semantic layer** — 
 > [!multi-column]
 >
 >> [!card] Sister concepts
->> [[semantic-layer|Semantic Layer]], [[data-catalog|Data Catalog]], [[data-management|Data Management]]
+>> [[semantic-layer|Semantic Layer]], [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]]
 >
 >
 >> [!card] Tools

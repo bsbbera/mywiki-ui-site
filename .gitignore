@@ -17,6 +17,15 @@ public/
 # NOTE: We DO commit content/ to git so Vercel has access to it.
 # Run `npm run prebuild` locally before committing to sync vault changes.
 
+# graphify output is NEVER deployed (knowledge-graph tooling artifacts).
+# Belt-and-braces: even if something lands in content/, never commit it.
+# See docs/DEPLOY-RULES.md and scripts/copy-vault-content.js.
+graphify-out/
+**/graphify-out/
+**/GRAPH_REPORT.md
+content/**/graphify*/
+content/**/GRAPH_REPORT.md
+
 # Vercel
 .vercel
 .env

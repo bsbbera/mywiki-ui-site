@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "When we allow negative messages to fester in our head, they take on a life of their own."
+> <cite>— Lolly Daskal</cite>
+
 ---
 
 The **Claim-Check Pattern** reduces the **cost and size** of large messages by storing the actual data in **external storage** and sending only a **reference (key)** to consumers (source: Concepts/Software Engineering/Claim Check Pattern.md).
@@ -63,7 +66,7 @@ Airflow's [XComs](https://airflow.apache.org/docs/apache-airflow/stable/core-con
 
 ### Pub/Sub on GCP
 
-[[../../../gcp/analytics/pubsub|Pub/Sub]] has a **10 MB message limit**. For larger payloads, write to GCS and pass the GCS URI in the message.
+[[../cloud/gcp/analytics/pubsub|Pub/Sub]] has a **10 MB message limit**. For larger payloads, write to GCS and pass the GCS URI in the message.
 
 ## When to use
 
@@ -104,5 +107,5 @@ Don't pass just a string key — give consumers everything they need.
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/pubsub|GCP Pub/Sub]], [[../../tools/object-storage|Object Storage]]
+>> [[../cloud/gcp/analytics/pubsub|GCP Pub/Sub]], [[../tools/object-storage|Object Storage]]
 

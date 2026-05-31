@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "No one has ever become poor by giving."
+> <cite>— Anne Frank</cite>
+
 ---
 
 **Online Analytical Processing (OLAP)** is the term for a [[../data-modeling/data-modeling|data model]] that **aggregates data across multiple dimensions** to make it easier and faster to query. OLAP systems are mostly **optimized for reading** and are used primarily for **reporting + analysis** (source: Concepts/Data Processing/Online Analytical Processing.md).
@@ -44,13 +47,13 @@ Modern columnar warehouses make explicit cubes mostly unnecessary; the warehouse
 
 ## Popular OLAP systems
 
-- [[../../../gcp/analytics/bigquery|Google BigQuery]]
+- [[../../cloud/gcp/analytics/bigquery|Google BigQuery]]
 - **Snowflake**
 - **Amazon Redshift**
 - **Azure Synapse**
 - **ClickHouse**
 - **Apache Druid**, **Apache Pinot** — real-time OLAP for sub-second analytics.
-- [[../../../databricks/databricks|Databricks SQL]] (lakehouse-style)
+- [[../../cloud/databricks/databricks|Databricks SQL]] (lakehouse-style)
 
 ## OLAP vs OLTP
 
@@ -103,11 +106,11 @@ These power **user-facing analytics** (e.g. "your post got 1342 views in the las
 >
 >
 >> [!card] Architecture
->> [[../data-architecture/data-warehouse|Data Warehouse]], [[../../data-warehousing|Data Warehousing]]
+>> [[../data-architecture/data-warehouse|Data Warehouse]], [[../data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery|BigQuery]], [[../../../databricks/databricks|Databricks]]
+>> [[../../cloud/gcp/analytics/bigquery|BigQuery]], [[../../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

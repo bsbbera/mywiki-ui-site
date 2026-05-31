@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Good things aren't supposed to just fall into your lap."
+> <cite>— Audrey Hepburn</cite>
+
 ---
 
 A **key-value (KV) database** is a type of [[non-relational-database|NoSQL]] database that stores data as a **table where each unique key maps to a value** (source: Concepts/Data Storage/Key-Value Database.md). The simplest possible data model.
@@ -67,9 +70,9 @@ A **key-value (KV) database** is a type of [[non-relational-database|NoSQL]] dat
 
 ## KV on GCP
 
-- [[../../../gcp/databases/memorystore|Memorystore]] — managed Redis / Memcached / Valkey.
-- [[../../../gcp/databases/cloud-bigtable|Bigtable]] — KV-like at petabyte scale.
-- [[../../../gcp/databases/cloud-datastore|Datastore / Firestore]] — KV-style via entity keys.
+- [[../../cloud/gcp/databases/memorystore|Memorystore]] — managed Redis / Memcached / Valkey.
+- [[../../cloud/gcp/databases/cloud-bigtable|Bigtable]] — KV-like at petabyte scale.
+- [[../../cloud/gcp/databases/cloud-datastore|Datastore / Firestore]] — KV-style via entity keys.
 
 ## In-memory vs persistent
 
@@ -93,5 +96,5 @@ A **key-value (KV) database** is a type of [[non-relational-database|NoSQL]] dat
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/memorystore|Memorystore]], [[../../../gcp/databases/cloud-bigtable|Bigtable]], [[../../tools/databases-overview|Databases Overview]]
+>> [[../../cloud/gcp/databases/memorystore|Memorystore]], [[../../cloud/gcp/databases/cloud-bigtable|Bigtable]], [[../../tools/databases-overview|Databases Overview]]
 

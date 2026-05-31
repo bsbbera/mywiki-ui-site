@@ -16,11 +16,14 @@ banner:
 publish: true
 ---
 
+> "We don't stop playing because we grow old; we grow old because we stop playing."
+> <cite>— George Bernard Shaw</cite>
+
 ---
 
 A **data catalog** is a collection of all an organization's data assets, using **metadata + data management** to help users **find data for their use case**. It covers the **discoverability** function of an enterprise data platform and often builds **lineage** of how data flows from source to consumer (source: Concepts/Data Management/Data Catalog.md).
 
-> For the **GCP product** specifically, see [[../../../gcp/analytics/data-catalog|Data Catalog (GCP)]] — now part of **Dataplex Catalog**.
+> For the **GCP product** specifically, see [[../../cloud/gcp/analytics/data-catalog|Data Catalog (GCP)]] — now part of **Dataplex Catalog**.
 
 ## What a catalog stores
 
@@ -50,7 +53,7 @@ A **data catalog** is a collection of all an organization's data assets, using *
 | --- | --- |
 | **Open-source** | DataHub, Amundsen, OpenMetadata, Apache Atlas |
 | **Commercial** | Alation, Collibra, Atlan, data.world |
-| **Cloud-native** | [[../../../gcp/analytics/data-catalog|GCP Dataplex Catalog]], AWS Glue Data Catalog, Microsoft Purview |
+| **Cloud-native** | [[../../cloud/gcp/analytics/data-catalog|GCP Dataplex Catalog]], AWS Glue Data Catalog, Microsoft Purview |
 
 ## What good catalog UX looks like
 
@@ -83,7 +86,7 @@ A **data catalog** is a collection of all an organization's data assets, using *
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/data-catalog|GCP Data Catalog]]
+>> [[../../cloud/gcp/analytics/data-catalog|GCP Data Catalog]]
 >
 >
 >> [!card] Guides
@@ -91,5 +94,5 @@ A **data catalog** is a collection of all an organization's data assets, using *
 >
 >
 >> [!card] Security + access
->> [[../../../gcp/analytics/bigquery-iam|BigQuery IAM]], [[../../../gcp/analytics/bigquery-authorized-views|Authorized Views]]
+>> [[../../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]], [[../../cloud/gcp/analytics/bigquery-authorized-views|Authorized Views]]
 

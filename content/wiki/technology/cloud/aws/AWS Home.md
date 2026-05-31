@@ -22,27 +22,36 @@ cssclasses:
 ## 🧭 Vault Navigation
 
 > [!info] You are here
-> 🧠 [[Master Home]] · �️ [[Technology Home]] · ☁️ [[Cloud Home]] · **📦 AWS**
+> 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · ☁️ [[Cloud Home]] · **📦 AWS**
 >
 > **Sibling clouds:** ☁️ [[GCP Home]] · 🟦 [[Azure Home]] · 🧱 [[Databricks Home]]
 
-## � All Notes (A–Z)
+## 📊 At a Glance
 
 ```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => p.file.link)
-);
+const pages = dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"');
+const latest = pages.sort(p => p.file.mtime, 'desc').first();
+dv.paragraph(`**${pages.length}** notes · last touched **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
 ```
 
-## � Recently Updated
+## 📚 Browse
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(10)
-    .map(p => p.file.link)
-);
-```
+> [!multi-column]
+>
+> > [!card] 📋 All Notes (A–Z)
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
+> > ```
+>
+> > [!card] 🕒 Recently Updated
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
+> > ```
+
+## Related pages
+
+> [!note] Sibling clouds
+> - [[GCP Home]]
+> - [[Azure Home]]
+> - [[Databricks Home]]
+> - [[Cloud Home]]

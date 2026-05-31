@@ -14,11 +14,14 @@ banner:
 publish: true
 ---
 
+> "The less you respond to negative people, the more positive your life will become."
+> <cite>— Paulo Coelho</cite>
+
 ---
 
 Catalog of data ingestion / replication tools (source: Tools/Data Ingestion/*.md).
 
-> See [[../concepts/data-ingestion/data-ingestion|Data Ingestion]] for the conceptual treatment.
+> See [[../data-engineering/data-ingestion/data-ingestion|Data Ingestion]] for the conceptual treatment.
 
 ## Open-source / open-core
 
@@ -40,7 +43,7 @@ Lightweight Python library for building custom ingestion pipelines. "**Stream-fi
 
 ### Debezium
 
-The de-facto **log-based [[../concepts/data-ingestion/change-data-capture|CDC]]** platform. Reads transaction logs from Postgres, MySQL, SQL Server, MongoDB, Oracle, DB2 → publishes change events to Kafka.
+The de-facto **log-based [[../data-engineering/data-ingestion/change-data-capture|CDC]]** platform. Reads transaction logs from Postgres, MySQL, SQL Server, MongoDB, Oracle, DB2 → publishes change events to Kafka.
 
 ## Commercial / managed
 
@@ -90,17 +93,17 @@ Azure's CDC + ingestion offerings. Synapse Link enables near-real-time analytics
 
 ## Patterns
 
-- **Full + incremental** — initial full load + ongoing delta. See [[../concepts/data-ingestion/full-load|Full]] / [[../concepts/data-ingestion/delta-load|Delta]].
-- **Log-based CDC** for real-time. See [[../concepts/data-ingestion/change-data-capture|CDC]].
+- **Full + incremental** — initial full load + ongoing delta. See [[../data-engineering/data-ingestion/full-load|Full]] / [[../data-engineering/data-ingestion/delta-load|Delta]].
+- **Log-based CDC** for real-time. See [[../data-engineering/data-ingestion/change-data-capture|CDC]].
 - **Schema evolution** — modern tools handle it automatically; legacy ones don't.
-- **Idempotent** consumers — see [[../concepts/software-engineering/idempotence|Idempotence]].
+- **Idempotent** consumers — see [[../software-engineering/idempotence|Idempotence]].
 
 ## Related pages
 
 > [!multi-column]
 >
 >> [!card] Ingestion concepts
->> [[../concepts/data-ingestion/data-ingestion|Data Ingestion]], [[../concepts/data-ingestion/change-data-capture|CDC]], [[../concepts/data-ingestion/full-load|Full Load]], [[../concepts/data-ingestion/delta-load|Delta Load]]
+>> [[../data-engineering/data-ingestion/data-ingestion|Data Ingestion]], [[../data-engineering/data-ingestion/change-data-capture|CDC]], [[../data-engineering/data-ingestion/full-load|Full Load]], [[../data-engineering/data-ingestion/delta-load|Delta Load]]
 >
 >
 >> [!card] Sister catalogs

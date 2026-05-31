@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "It all depends on what you choose to believe."
+> <cite>— Spencer Johnson</cite>
+
 ---
 
 **Denormalization** is the process of combining data into **wide tables** that are optimized for **read workloads**. Denormalized tables are best suited for [[../data-processing/online-analytical-processing|OLAP]] systems where you need to **analyze historical data**, since updates aren't required and **data redundancy is acceptable** (source: Concepts/Data Modeling/Denormalization.md).
@@ -58,7 +61,7 @@ A query that does 10 joins to assemble a customer's monthly invoice in a normali
 
 ## In modern warehouses
 
-[[../../../gcp/analytics/bigquery|BigQuery]], Snowflake, and Redshift all benefit massively from denormalization — their **columnar storage** + **query optimizers** are designed for wide tables. Joins still work but cost more.
+[[../../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake, and Redshift all benefit massively from denormalization — their **columnar storage** + **query optimizers** are designed for wide tables. Joins still work but cost more.
 
 ## Interview Questions
 
@@ -79,5 +82,5 @@ A query that does 10 joins to assemble a customer's monthly invoice in a normali
 >
 >
 >> [!card] Theory
->> [[../../../dbms/database-normalization|Database Normalization (theory)]]
+>> [[../../databases/database-normalization|Database Normalization (theory)]]
 

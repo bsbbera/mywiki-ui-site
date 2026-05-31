@@ -117,6 +117,8 @@ For each entity / concept extracted, route by this decision tree:
 6. For every person / book / cross-domain entity mentioned, create the corresponding stub in `people/` or `books/`. Stubs carry only frontmatter, a one-line description, and a `Related pages` block.
 7. Add `[[wikilinks]]` inline through the prose to connect concepts. Prefer **bare filenames** (`[[bigquery]]`) over folder-qualified paths — Obsidian resolves them automatically. Use a folder-qualified path only when filenames collide (e.g. `[[technology/cloud/gcp/analytics/data-catalog]]` vs `[[data-catalog]]` for the DE concept).
 8. Set frontmatter: `title`, `Created`, `date modified`, `aliases`, `category`, `tags`, `banner`, `dg-publish`.
+8a. **Pick the right template** from `_my_template/` by note type (see [[#Infobox standard]]): `Person Note`, `Book Note`, `Tool Note`, `Cloud Service Note`, or `Concept Note`. Every note keeps the **daily-quote block** from the base template.
+8b. **Add an infobox only to named entities** (people, books, tools/software, cloud services, platforms, certifications — and future art/science entities). **Concepts, theory, patterns, guides, overview/feature pages get NO infobox.** Fill every infobox field **from the internet** (use `brave-search` / `puppeteer`); leave a field blank only if it genuinely has no public value.
 9. End every page with a grouped `## Related pages` block — **one callout per topical group, never a flat bullet list**:
 
    ```markdown
@@ -159,7 +161,17 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]              <- ENTITIES ONLY (omit for concepts)
+> # <Title>
+> ###### <Type>
+> | | |
+> | --- | --- |
+> | **Field** | value (from the internet) |
 
+---
+<daily-quote block from the base template>
+
+---
 
 Main content. Use clear headings and informative paragraphs.
 Link related concepts inline using [[wikilinks]].
@@ -177,6 +189,30 @@ Use codeblocks, examples, excalidraw diagrams where useful.
 > [!example] Topic group 2
 > - [[related-concept-3]]
 ```
+
+The infobox sits **at the top of the body, directly after the frontmatter** so it floats to the right (Wikipedia style). The float only renders in **Reading view** (an ITS Theme limitation); in Live Preview it shows inline.
+
+## Infobox standard
+
+Infoboxes use the ITS Theme callout `> [!infobox|wikipedia]`. Rules:
+
+- **Only named entities get an infobox.** Concepts / theory / patterns / guides / overview & feature pages do **not**.
+- **All values come from the internet** — verify with `brave-search` / `puppeteer` at ingest time.
+- Inside table cells, escape wikilink pipes: `[[note\|Label]]`.
+- One template per type lives in `_my_template/`.
+
+| Note type | Template | Infobox? | Fields |
+| --- | --- | --- | --- |
+| Person | `Person Note.md` | Yes | Born, Died, Nationality, Domain, Known for, Notable works, Institution |
+| Book | `Book Note.md` | Yes | cover, Author(s), Publisher, Published, Domain, Pages, ISBN |
+| Tool / software | `Tool Note.md` | Yes | Developer, Type, Domain, Initial release, Written in, License, Website |
+| Cloud service | `Cloud Service Note.md` | Yes | Provider, Type, Category, Launched, Interface, Website |
+| Certification | `Tool Note.md` (adapt) | Yes | Provider, Type, Level, Format, Validity |
+| Concept / theory / pattern / guide / overview | `Concept Note.md` | **No** | — (prose only) |
+| Artwork *(future)* | `Artwork Note.md` | Yes | Artist, Art style, Year, Medium, Dimensions, Location |
+| Artist *(future)* | `Artist Note.md` | Yes | Born, Died, Nationality, Movement, Medium, Notable works |
+
+When a **new domain** appears (art, science, philosophy…), create its `<Type> Note.md` template in `_my_template/` following this pattern, document its schema in the table above, then use it.
 
 ## Citation rules
 

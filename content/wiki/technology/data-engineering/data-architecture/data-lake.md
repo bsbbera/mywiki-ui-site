@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Good things aren't supposed to just fall into your lap."
+> <cite>— Audrey Hepburn</cite>
+
 ---
 
 A **data lake** is a flexible storage pattern used for storing massive amounts of **raw data in its native format** — structured (tabular), semi-structured (JSON, XML), and unstructured (videos, images, audio). Data lakes use cheap, abundant **blob storage** with a compute engine of the user's choice (source: Concepts/Data Architecture/Data Lake.md).
@@ -52,7 +55,7 @@ graph LR
 
 - **AWS**: S3 + Glue + Athena + EMR — [Serverless Data Lake](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/deploy-and-manage-a-serverless-data-lake-on-the-aws-cloud-by-using-infrastructure-as-code.html)
 - **Azure**: ADLS Gen2 + Synapse
-- **GCP**: [[../../../gcp/storage/cloud-storage|Cloud Storage]] + [[../../../gcp/analytics/dataflow|Dataflow]] + [[../../../gcp/analytics/bigquery|BigQuery]] (BigLake for federation)
+- **GCP**: [[Cloud Storage|Cloud Storage]] + [[../../cloud/gcp/analytics/dataflow|Dataflow]] + [[../../cloud/gcp/analytics/bigquery|BigQuery]] (BigLake for federation)
 
 ## Lake vs Warehouse vs Lakehouse
 
@@ -83,7 +86,7 @@ graph LR
 >
 >
 >> [!card] Products
->> [[../../../gcp/storage/cloud-storage|Cloud Storage]], [[../../../databricks/databricks|Databricks]]
+>> [[Cloud Storage|Cloud Storage]], [[../../cloud/databricks/databricks|Databricks]]
 >
 >
 >> [!card] People

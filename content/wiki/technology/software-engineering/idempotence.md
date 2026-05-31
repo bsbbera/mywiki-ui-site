@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "The best mind-altering drug is the truth."
+> <cite>— Lily Tomlin</cite>
+
 ---
 
 **Idempotence** in data engineering means that **executing a data pipeline multiple times with the same input produces the same output**. The result of running an operation N times is identical to running it once (source: Concepts/Software Engineering/Idempotence.md).
@@ -94,7 +97,7 @@ Stripe's API and many cloud services support this natively.
 ## In streaming
 
 - **Exactly-once semantics** in modern stream engines (Flink, Beam, Kafka Streams) provide effective idempotence — at-least-once + idempotent sinks = effectively exactly-once.
-- See [[../data-processing/stream-data-processing|Stream Processing]].
+- See [[../data-engineering/data-processing/stream-data-processing|Stream Processing]].
 
 ## Interview Questions
 
@@ -113,9 +116,9 @@ Stripe's API and many cloud services support this natively.
 >
 >
 >> [!card] Processing
->> [[../data-processing/stream-data-processing|Stream Processing]], [[../data-ingestion/delta-load|Delta Load]]
+>> [[../data-engineering/data-processing/stream-data-processing|Stream Processing]], [[../data-engineering/data-ingestion/delta-load|Delta Load]]
 >
 >
 >> [!card] Guides
->> [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]], [[../../guides/testing-data-pipeline|Testing Data Pipeline]]
+>> [[../guides/data-pipeline-best-practices|Pipeline Best Practices]], [[../guides/testing-data-pipeline|Testing Data Pipeline]]
 

@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "When we allow negative messages to fester in our head, they take on a life of their own."
+> <cite>— Lolly Daskal</cite>
+
 ---
 
 BigQuery stores all data as **tables** organized inside **datasets**. The platform recognizes three table-like constructs (source: Google Cloud Platform - Tables in BigQuery.md):
@@ -56,7 +59,7 @@ Create one via the Query Editor → **Save View** → choose project/dataset/nam
 
 ## External tables (not in raw)
 
-A table **definition** that points to data in [[../storage/cloud-storage|Cloud Storage]], Google Drive, [[../databases/cloud-sql|Cloud SQL]], or [[../databases/cloud-bigtable|Bigtable]]. BigQuery reads the data on demand — see [[bigquery-external-data]].
+A table **definition** that points to data in [[Cloud Storage|Cloud Storage]], Google Drive, [[../databases/cloud-sql|Cloud SQL]], or [[../databases/cloud-bigtable|Bigtable]]. BigQuery reads the data on demand — see [[bigquery-external-data]].
 
 ## Materialized views (not in raw)
 

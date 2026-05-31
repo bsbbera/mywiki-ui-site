@@ -16,6 +16,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud SQL
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Managed relational database (MySQL, PostgreSQL, SQL Server) |
+> | **Category** | Database |
+> | **Launched** | 2011 (GA Feb 2014) |
+> | **Interface** | SQL, gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/sql |
+
+---
+
+> "The road to success and the road to failure are almost exactly the same."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
 Cloud SQL is GCP's **fully managed relational database** service. It runs MySQL, PostgreSQL, or SQL Server on Google's infrastructure, handling patching, backups, replication, failover, and scaling so you focus on the schema and queries (source: Google Cloud SQL.md).
@@ -92,8 +109,8 @@ Cloud SQL Admin API exposes (source: Google Cloud SQL.md):
 - List instances / tiers / SSL certs in a project
 - Create / delete / restart instances
 - Query backup runs
-- Export DB to [[cloud-storage]] (`.sql.gz` / CSV)
-- Import from [[cloud-storage]] into an instance
+- Export DB to [[Cloud Storage]] (`.sql.gz` / CSV)
+- Import from [[Cloud Storage]] into an instance
 - Restore from backup
 
 ## Advantages
@@ -145,21 +162,21 @@ Cloud SQL Admin API exposes (source: Google Cloud SQL.md):
 >
 >
 >> [!card] Data Storage
->> [[../../data-engineering/data-storage/relational-database|Relational Database]]
+>> [[../../../data-engineering/data-storage/relational-database|Relational Database]]
 >
 >
 >> [!card] Data Processing
->> [[../../data-engineering/data-processing/online-transaction-processing|OLTP]]
+>> [[../../../data-engineering/data-processing/online-transaction-processing|OLTP]]
 >
 >
 >> [!card] DBMS Theory
->> [[../../databases/acid-properties|ACID Properties]]
+>> [[../../../databases/acid-properties|ACID Properties]]
 >
 >
 >> [!card] Foundations + certs
->> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../certifications/professional-data-engineer|PDE Certification]]
+>> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[Professional Data Engineer|PDE Certification]]
 >
 >
 >> [!card] People
->> [[../../people/edgar-f-codd|Edgar F. Codd]]
+>> [[../../../../people/edgar-f-codd|Edgar F. Codd]]
 

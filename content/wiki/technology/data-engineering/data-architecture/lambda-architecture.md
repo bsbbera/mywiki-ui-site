@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Most of us live our lives by accident - we live as it happens. Fulfilment comes when we live our lives on purpose."
+> <cite>— Simon Sinek</cite>
+
 ---
 
 **Lambda Architecture** is a data processing pattern designed to balance **low latency**, **high throughput**, and **fault tolerance** by combining a **batch layer** (accurate, slow) with a **speed layer** (real-time, approximate). Results from both are merged in a **serving layer** for unified queries (source: Concepts/Data Architecture/Lambda Architecture.md).

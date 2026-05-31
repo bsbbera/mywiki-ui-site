@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Quality is not an act, it is a habit."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
 **Data ingestion** is the process of extracting and importing data from various sources into a destination system where it can be stored, transformed, and analyzed (source: Concepts/Data Ingestion/Data Ingestion.md). It commonly involves moving data from operational systems, external APIs, or real-time streams into [[../data-architecture/data-warehouse|warehouses]] and [[../data-architecture/data-lake|lakes]].
@@ -124,10 +127,10 @@ ELT has won mindshare since cloud warehouse compute is cheap and elastic. Notabl
 
 ## GCP service mapping
 
-- **Batch**: [[../../../gcp/analytics/bigquery|BigQuery]] load jobs, [[../../../gcp/analytics/dataflow|Dataflow]] from [[../../../gcp/storage/cloud-storage|GCS]].
-- **Streaming**: [[../../../gcp/analytics/pubsub|Pub/Sub]] → [[../../../gcp/analytics/dataflow|Dataflow]] → BigQuery; or Pub/Sub → BigQuery direct subscription.
+- **Batch**: [[../../cloud/gcp/analytics/bigquery|BigQuery]] load jobs, [[../../cloud/gcp/analytics/dataflow|Dataflow]] from [[Cloud Storage|GCS]].
+- **Streaming**: [[../../cloud/gcp/analytics/pubsub|Pub/Sub]] → [[../../cloud/gcp/analytics/dataflow|Dataflow]] → BigQuery; or Pub/Sub → BigQuery direct subscription.
 - **CDC**: **Datastream** for managed CDC into BigQuery / GCS.
-- **Visual ETL**: [[../../../gcp/analytics/datafusion|Data Fusion]].
+- **Visual ETL**: [[../../cloud/gcp/analytics/datafusion|Data Fusion]].
 
 ## Popular ingestion tools
 
@@ -154,7 +157,7 @@ See [[../../tools/ingestion-tools|Ingestion Tools]] for the full catalog.
 >
 >
 >> [!card] Pipelines + tools
->> [[../../data-pipeline|Data Pipeline]], [[../../tools/ingestion-tools|Ingestion Tools]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
+>> [[../data-pipeline|Data Pipeline]], [[../../tools/ingestion-tools|Ingestion Tools]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
 >
 >
 >> [!card] People

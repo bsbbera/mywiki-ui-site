@@ -17,11 +17,28 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Data Fusion
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Managed data integration (ETL/ELT) |
+> | **Category** | Analytics / Integration |
+> | **Launched** | 2019 (GA Nov 2019) |
+> | **Interface** | Drag-and-drop GUI, CDAP, REST API |
+> | **Website** | cloud.google.com/data-fusion |
+
+---
+
+> "Investing in yourself is the best investment you will ever make."
+> <cite>— Robin Sharma</cite>
+
 ---
 
 Google Cloud Data Fusion is a **fully managed, low-code data integration service** for building and managing ETL/ELT pipelines through a **drag-and-drop graphical interface** (source: Datafusion in Google Cloud Platform (GCP).md).
 
-It is built on the open-source **CDAP** (Cask Data Application Platform) and supports **parallel execution**, hundreds of built-in connectors, and integration with [[bigquery|BigQuery]], [[../storage/cloud-storage|Cloud Storage]], [[../databases/cloud-bigtable|Bigtable]], on-prem databases, and many SaaS APIs.
+It is built on the open-source **CDAP** (Cask Data Application Platform) and supports **parallel execution**, hundreds of built-in connectors, and integration with [[bigquery|BigQuery]], [[Cloud Storage|Cloud Storage]], [[../databases/cloud-bigtable|Bigtable]], on-prem databases, and many SaaS APIs.
 
 If you want **code-first** pipelines, use [[dataflow]]. Data Fusion is the **visual / no-code** alternative for the same family of problems.
 
@@ -58,7 +75,7 @@ Modify data in flight.
 
 Where the transformed data lands.
 
-- Common sinks: [[bigquery|BigQuery]], [[../storage/cloud-storage|GCS]], Cloud SQL, on-prem DBs.
+- Common sinks: [[bigquery|BigQuery]], [[Cloud Storage|GCS]], Cloud SQL, on-prem DBs.
 - Final stage of the pipeline.
 
 ### 4. Error handlers
@@ -149,21 +166,21 @@ This is invisible to the user but explains pricing (you pay for both Data Fusion
 >
 >
 >> [!card] Data Engineering
->> [[../../data-engineering/data-pipeline|Data Pipeline]]
+>> [[../../../data-engineering/data-pipeline|Data Pipeline]]
 >
 >
 >> [!card] Data Ingestion
->> [[../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
+>> [[../../../data-engineering/data-ingestion/data-ingestion|Data Ingestion]]
 >
 >
 >> [!card] Tools
->> [[../../tools/ingestion-tools|Ingestion Tools]]
+>> [[../../../tools/ingestion-tools|Ingestion Tools]]
 >
 >
 >> [!card] Related products
->> [[../storage/cloud-storage|Cloud Storage]]
+>> [[Cloud Storage|Cloud Storage]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 

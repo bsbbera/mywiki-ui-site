@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "A bird does not sing because it has an answer. It sings because it has a song."
+> <cite>— Chinese Proverb</cite>
+
 ---
 
 **Change Data Capture (CDC)** is a specialized incremental ingestion technique that captures changes from a database's **transaction log** using CDC software. It tracks **inserts, updates, and deletes** along with the data itself, and often **schema changes** as well. CDC is widely used because of its efficiency and minimal impact on source systems (source: Concepts/Data Ingestion/Change Data Capture.md).
@@ -65,7 +68,7 @@ Logs by DB:
 ## When to use
 
 - Replicate transactional DB into a warehouse or lake for analytics.
-- Feed microservices via [[../software-engineering/publisher-subscriber-pattern|Pub/Sub]].
+- Feed microservices via [[../../software-engineering/publisher-subscriber-pattern|Pub/Sub]].
 - Database **upgrades / migrations** with minimal downtime.
 - **Migrate** between heterogeneous DBs.
 
@@ -94,7 +97,7 @@ Or fully managed on GCP:
 ## CDC patterns
 
 - **Outbox pattern** — application writes domain event to an `outbox` table within the same transaction; CDC publishes outbox rows to Kafka. Achieves dual-write consistency without 2PC.
-- **Event sourcing** — every state change is an event in the log; current state is derived. See [[../software-engineering/event-sourcing-pattern|Event Sourcing]].
+- **Event sourcing** — every state change is an event in the log; current state is derived. See [[../../software-engineering/event-sourcing-pattern|Event Sourcing]].
 
 ## Interesting Facts
 
@@ -116,7 +119,7 @@ Or fully managed on GCP:
 >
 >
 >> [!card] Streaming + event-driven
->> [[../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-architecture/kappa-architecture|Kappa Architecture]], [[../data-processing/stream-data-processing|Stream Processing]]
+>> [[../../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-architecture/kappa-architecture|Kappa Architecture]], [[../data-processing/stream-data-processing|Stream Processing]]
 >
 >
 >> [!card] Tools

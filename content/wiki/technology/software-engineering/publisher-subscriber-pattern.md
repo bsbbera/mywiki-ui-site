@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "The meaning of life is to find your gift. The purpose of life is to give it away."
+> <cite>— Pablo Picasso</cite>
+
 ---
 
 The **Publisher-Subscriber (Pub/Sub) Pattern** is an **asynchronous messaging pattern** that decouples sending events from one or more subscribers/consumers of those events (source: Concepts/Software Engineering/Publisher-Subscriber Pattern.md).
@@ -34,7 +37,7 @@ B -->|Event| E((Subscriber))
 - **Topic** — named channel that holds messages.
 - **Subscription** — durable consumer's view of the topic.
 - **Subscriber** — application that processes messages.
-- **Message Broker** — intermediary (Kafka, [[../../../gcp/analytics/pubsub|Pub/Sub]], RabbitMQ).
+- **Message Broker** — intermediary (Kafka, [[../cloud/gcp/analytics/pubsub|Pub/Sub]], RabbitMQ).
 
 The publisher knows nothing about subscribers. Subscribers know nothing about publishers. Decoupling is the win.
 
@@ -55,7 +58,7 @@ The publisher knows nothing about subscribers. Subscribers know nothing about pu
 ## Popular tools
 
 - **Apache Kafka** — partitioned log with very high throughput.
-- **[[../../../gcp/analytics/pubsub|GCP Pub/Sub]]** — managed, autoscaling, global.
+- **[[../cloud/gcp/analytics/pubsub|GCP Pub/Sub]]** — managed, autoscaling, global.
 - **AWS SNS** — pub/sub; **EventBridge** for event routing.
 - **Azure Event Grid** / **Service Bus topics**.
 - **Redis Pub/Sub** — lightweight (no durability by default).
@@ -81,7 +84,7 @@ Modern brokers support both via different abstractions (Kafka consumer groups, S
 - **[[fan-out|Fan-out]]** — one event → multiple subscribers.
 - **[[event-sourcing-pattern|Event sourcing]]** — pub/sub log as source of truth.
 - **CQRS** — commands + queries separated; events flow through pub/sub.
-- **[[../data-architecture/kappa-architecture|Kappa architecture]]** — entire data architecture built on pub/sub log.
+- **[[../data-engineering/data-architecture/kappa-architecture|Kappa architecture]]** — entire data architecture built on pub/sub log.
 - **Microservices choreography** — services react to each other's events.
 
 ## Pitfalls
@@ -114,13 +117,13 @@ Modern brokers support both via different abstractions (Kafka consumer groups, S
 >
 >
 >> [!card] Processing
->> [[../data-processing/stream-data-processing|Stream Processing]], [[../data-architecture/kappa-architecture|Kappa Architecture]]
+>> [[../data-engineering/data-processing/stream-data-processing|Stream Processing]], [[../data-engineering/data-architecture/kappa-architecture|Kappa Architecture]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/pubsub|GCP Pub/Sub]]
+>> [[../cloud/gcp/analytics/pubsub|GCP Pub/Sub]]
 >
 >
 >> [!card] People
->> [[../../../people/jay-kreps|Jay Kreps]], [[../../../people/martin-fowler|Martin Fowler]]
+>> [[../../people/jay-kreps|Jay Kreps]], [[../../people/martin-fowler|Martin Fowler]]
 

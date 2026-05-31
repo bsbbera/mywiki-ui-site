@@ -17,6 +17,9 @@ banner:
 publish: true
 ---
 
+> "The meaning of life is to find your gift. The purpose of life is to give it away."
+> <cite>— Pablo Picasso</cite>
+
 ---
 
 A **Data Pipeline** is a workflow consisting of one or more tasks that **ingest, move, and transform** raw data from one or more sources to a destination. The data at the destination is then used for analysis, machine learning, or other business functions. Pipelines split into two categories: **[[batch-data-processing|batch processing]]** (most common) and **[[stream-data-processing|real-time / streaming]]** (source: Concepts/Data Pipeline.md).
@@ -37,7 +40,7 @@ There's no one-size-fits-all architecture. The right choice depends on data volu
 - Application databases (Postgres, MySQL).
 - APIs (REST, GraphQL).
 - Files on SFTP / cloud storage.
-- Streaming events (Kafka, [[../gcp/analytics/pubsub|Pub/Sub]]).
+- Streaming events (Kafka, [[../cloud/gcp/analytics/pubsub|Pub/Sub]]).
 - Public datasets (search "open data portal").
 
 ### Business logic
@@ -103,7 +106,7 @@ Modern pattern. Storage is cheap; keeping raw data preserves flexibility.
 
 ## Pipeline best practices
 
-See [[guides/data-pipeline-best-practices|Pipeline Best Practices]] for the full guide. Top hits:
+See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the full guide. Top hits:
 
 - **Idempotent** — see [[idempotence|Idempotence]].
 - **Logged + monitored** — alerts on failure + latency.
@@ -114,10 +117,10 @@ See [[guides/data-pipeline-best-practices|Pipeline Best Practices]] for the full
 
 ## On GCP
 
-- **Batch**: [[../gcp/storage/cloud-storage|GCS]] → [[../gcp/analytics/dataflow|Dataflow]] → [[../gcp/analytics/bigquery|BigQuery]].
-- **Streaming**: [[../gcp/analytics/pubsub|Pub/Sub]] → Dataflow → BigQuery.
+- **Batch**: [[Cloud Storage|GCS]] → [[../cloud/gcp/analytics/dataflow|Dataflow]] → [[../cloud/gcp/analytics/bigquery|BigQuery]].
+- **Streaming**: [[../cloud/gcp/analytics/pubsub|Pub/Sub]] → Dataflow → BigQuery.
 - **CDC**: Datastream → BigQuery.
-- **Visual**: [[../gcp/analytics/datafusion|Data Fusion]].
+- **Visual**: [[../cloud/gcp/analytics/datafusion|Data Fusion]].
 - **Orchestration**: Cloud Composer (Airflow).
 
 ## Interesting Facts
@@ -143,13 +146,13 @@ See [[guides/data-pipeline-best-practices|Pipeline Best Practices]] for the full
 >
 >
 >> [!card] Practitioner guides
->> [[guides/data-pipeline-best-practices|Pipeline Best Practices]], [[guides/testing-data-pipeline|Testing Your Data Pipeline]], [[guides/getting-started|Getting Started]]
+>> [[../guides/data-pipeline-best-practices|Pipeline Best Practices]], [[../guides/testing-data-pipeline|Testing Your Data Pipeline]], [[../guides/getting-started|Getting Started]]
 >
 >
 >> [!card] People
->> [[../people/joe-reis-matt-housley|Joe Reis + Matt Housley]]
+>> [[../../people/joe-reis-matt-housley|Joe Reis + Matt Housley]]
 >
 >
 >> [!card] Books
->> [[../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]
+>> [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]
 

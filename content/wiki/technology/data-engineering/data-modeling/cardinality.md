@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "When we allow negative messages to fester in our head, they take on a life of their own."
+> <cite>— Lolly Daskal</cite>
+
 ---
 
 **Cardinality** has two distinct meanings in data engineering depending on context (source: Concepts/Data Modeling/Cardinality.md):
@@ -54,7 +57,7 @@ The query optimizer uses cardinality estimates to choose efficient query plans:
 
 - **Query optimization** — knowing cardinality helps you index correctly.
 - **Storage** — low-cardinality columns compress better (run-length encoding, dictionary encoding).
-- **Cost** — in [[../../../gcp/analytics/bigquery|BigQuery]], `COUNT(DISTINCT high_card_col)` can be expensive; use `APPROX_COUNT_DISTINCT` for HyperLogLog estimates.
+- **Cost** — in [[../../cloud/gcp/analytics/bigquery|BigQuery]], `COUNT(DISTINCT high_card_col)` can be expensive; use `APPROX_COUNT_DISTINCT` for HyperLogLog estimates.
 
 ## Estimating cardinality
 
@@ -82,9 +85,9 @@ SELECT APPROX_COUNT_DISTINCT(user_id) FROM events;
 >
 >
 >> [!card] Performance
->> [[../software-engineering/indexing|Indexing]], [[../data-storage/column-oriented-database|Columnar storage]], [[../../sargable-expressions|Sargable Expressions]]
+>> [[../../software-engineering/indexing|Indexing]], [[../data-storage/column-oriented-database|Columnar storage]], [[../sargable-expressions|Sargable Expressions]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery|BigQuery]]
+>> [[../../cloud/gcp/analytics/bigquery|BigQuery]]
 

@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Be like a postage stamp. Stick to it until you get there."
+> <cite>— Bob Proctor</cite>
+
 ---
 
 A **horizontally scalable system** is one that increases capacity by **adding more machines** to the system — also known as **scaling out** (source: Concepts/Software Engineering/Horizontal Scaling.md).
@@ -43,10 +46,10 @@ Before:           After:
 Almost every modern cloud-scale workload:
 
 - **Stateless services** — horizontal-scale-friendly by default.
-- **NoSQL databases** — Cassandra, DynamoDB, MongoDB, [[../../../gcp/databases/cloud-bigtable|Bigtable]].
+- **NoSQL databases** — Cassandra, DynamoDB, MongoDB, [[../cloud/gcp/databases/cloud-bigtable|Bigtable]].
 - **Object storage** — S3, GCS, Blob.
 - **Stream processing** — Flink, Beam/Dataflow, Spark Streaming.
-- **MPP analytics** — [[../../../gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift.
+- **MPP analytics** — [[../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake, Redshift.
 
 ## Implementation techniques
 
@@ -64,9 +67,9 @@ Almost every modern cloud-scale workload:
 ## On GCP
 
 - **GKE** auto-scales pods + nodes.
-- [[../../../gcp/compute/cloud-run|Cloud Run]] auto-scales containers from 0 → many.
-- [[../../../gcp/databases/cloud-spanner|Spanner]] auto-shards transparently.
-- [[../../../gcp/analytics/dataflow|Dataflow]] auto-scales workers.
+- [[../cloud/gcp/compute/cloud-run|Cloud Run]] auto-scales containers from 0 → many.
+- [[../cloud/gcp/databases/cloud-spanner|Spanner]] auto-shards transparently.
+- [[../cloud/gcp/analytics/dataflow|Dataflow]] auto-scales workers.
 
 ## Interview Questions
 
@@ -84,9 +87,9 @@ Almost every modern cloud-scale workload:
 >
 >
 >> [!card] Storage
->> [[../data-storage/non-relational-database|Non-relational Database]]
+>> [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] Books
->> [[../../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../books/designing-data-intensive-applications|DDIA]]
 

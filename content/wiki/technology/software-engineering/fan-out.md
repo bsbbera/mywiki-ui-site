@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "What kills the creative force is not age or lack of talent, but our own spirit, our own attitude."
+> <cite>— Robert Greene</cite>
+
 ---
 
 **Fan-out** is a pattern where a message from a **single source** is **spread or copied to many destinations**. In data engineering, fan-out is commonly used to send data from a microservice (publisher) to multiple subscribers (source: Concepts/Software Engineering/Fan-out.md).
@@ -29,7 +32,7 @@ B -->|Message 1| E[Subscriber 3]
 ## Common implementations
 
 - **AWS SNS** — pub/sub fan-out to multiple SQS queues, Lambda, HTTP endpoints.
-- **GCP [[../../../gcp/analytics/pubsub|Pub/Sub]]** — one topic, many subscriptions; each subscription gets its own copy.
+- **GCP [[../cloud/gcp/analytics/pubsub|Pub/Sub]]** — one topic, many subscriptions; each subscription gets its own copy.
 - **Kafka** — multiple consumer groups subscribe to the same topic; each consumes independently.
 - **Azure Event Grid** / **Service Bus topics** — pub/sub fan-out.
 
@@ -82,9 +85,9 @@ If Service A goes down for 1 hour, its subscription buffers messages until recov
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/pubsub|GCP Pub/Sub]]
+>> [[../cloud/gcp/analytics/pubsub|GCP Pub/Sub]]
 >
 >
 >> [!card] Guides
->> [[../../guides/messaging-service-guide|Messaging Service Guide]]
+>> [[../guides/messaging-service-guide|Messaging Service Guide]]
 

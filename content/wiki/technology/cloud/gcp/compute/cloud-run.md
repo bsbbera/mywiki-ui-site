@@ -15,6 +15,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Run
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Serverless container platform |
+> | **Category** | Serverless compute |
+> | **Launched** | 2019 (GA Nov 2019) |
+> | **Interface** | gcloud CLI, console, REST API |
+> | **Website** | cloud.google.com/run |
+
+---
+
+> "Strategy is a commodity, execution is an art."
+> <cite>— Peter Drucker</cite>
+
 ---
 
 Cloud Run is a fully managed serverless platform for running **stateless containers**. You give it a container image; Google handles HTTPS termination, autoscaling (including scale-to-zero), revision rollout, and traffic splitting (source: Google Cloud Platform - Compute Services.md, source: Google Cloud Run - Working with Python.md).

@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "An inventor is a man who asks Why? of the universe and lets nothing stand between the answer and his mind."
+> <cite>— Ayn Rand</cite>
+
 ---
 
 **Database sharding** is the practice of **horizontally partitioning** a database across multiple machines, where each machine holds a **subset** of the data (a "shard"). It's how single-node databases scale beyond the limits of vertical scaling (source: Concepts/Software Engineering/Database Sharding.md — sparse).
@@ -87,7 +90,7 @@ A central service maps shard key → shard.
 - **Storage growth without write growth** — use **partitioning** (within a single DB).
 - **Caching opportunities** — Redis in front of the DB.
 - **Migration to NewSQL / managed scale-out**:
-  - [[../../../gcp/databases/cloud-spanner|Cloud Spanner]] — auto-shards under the hood.
+  - [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]] — auto-shards under the hood.
   - **CockroachDB**, **YugabyteDB** — same.
   - **Vitess** (used by YouTube) for MySQL.
   - **Citus** for Postgres.
@@ -119,13 +122,13 @@ These give you sharding's benefits without the manual pain.
 >
 >
 >> [!card] Storage
->> [[../data-storage/relational-database|Relational Database]], [[../data-storage/non-relational-database|Non-relational Database]]
+>> [[../data-engineering/data-storage/relational-database|Relational Database]], [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/databases/cloud-spanner|Cloud Spanner]]
+>> [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]]
 >
 >
 >> [!card] Books
->> [[../../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../books/designing-data-intensive-applications|DDIA]]
 

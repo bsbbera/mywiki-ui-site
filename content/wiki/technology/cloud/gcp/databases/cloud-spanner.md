@@ -17,6 +17,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Cloud Spanner
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Globally distributed relational database |
+> | **Category** | Database |
+> | **Launched** | 2017 (GA May 2017) |
+> | **Interface** | SQL, REST API, gRPC, client libraries |
+> | **Website** | cloud.google.com/spanner |
+
+---
+
+> "Good things aren't supposed to just fall into your lap."
+> <cite>— Audrey Hepburn</cite>
+
 ---
 
 Cloud Spanner is GCP's **globally distributed, strongly consistent, relational database** â€” the closest thing the industry has to "impossible" engineering: ACID transactions, horizontal scaling, and 99.999% availability at global scale (source: Google Cloud Platform - Introduction to Cloud Spanner.md).
@@ -151,17 +168,17 @@ Spanner's "secret sauce" â€” a time API that returns not just a timestamp b
 >
 >
 >> [!card] Distributed-systems theory
->> [[../../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]], [[../../data-engineering/concepts/software-engineering/database-sharding|Sharding]], [[../../dbms/acid-properties|ACID Properties]], [[../../data-engineering/concepts/data-processing/hybrid-transactional-analytical-processing|HTAP]]
+>> [[../../../software-engineering/cap-theorem|CAP Theorem]], [[../../../software-engineering/database-sharding|Sharding]], [[../../../databases/acid-properties|ACID Properties]], [[../../../data-engineering/data-processing/hybrid-transactional-analytical-processing|HTAP]]
 >
 >
 >> [!card] Foundations + certs
->> [[../storage/google-file-system|Google File System]], [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../certifications/professional-data-engineer|PDE Certification]]
+>> [[../storage/google-file-system|Google File System]], [[../foundations/google-cloud-platform|Google Cloud Platform]], [[Professional Data Engineer|PDE Certification]]
 >
 >
 >> [!card] People
->> [[../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]], [[../../people/eric-brewer|Eric Brewer]], [[../../people/daniel-abadi|Daniel Abadi]]
+>> [[../../../../people/jeff-dean-sanjay-ghemawat|Jeff Dean + Sanjay Ghemawat]], [[../../../../people/eric-brewer|Eric Brewer]], [[../../../../people/daniel-abadi|Daniel Abadi]]
 >
 >
 >> [!card] Books
->> [[../../books/designing-data-intensive-applications|DDIA]]
+>> [[../../../../books/designing-data-intensive-applications|DDIA]]
 

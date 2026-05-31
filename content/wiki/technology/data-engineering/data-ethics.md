@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Don't measure yourself by what you have accomplished, but by what you should have accomplished with your ability."
+> <cite>— John Wooden</cite>
+
 ---
 
 > **Data ethics** is a new branch of ethics that studies and evaluates moral problems related to **data** (generation, recording, curation, processing, dissemination, sharing, use), **algorithms** (AI, ML, autonomous agents), and **corresponding practices** (responsible innovation, programming, hacking, professional codes), in order to formulate and support morally good solutions.
@@ -73,7 +76,7 @@ Users can request deletion of their data. This conflicts with [[event-sourcing-p
 
 - **Least privilege** by default.
 - **Audit** all access to PII.
-- **Column-level security** — see [[../gcp/analytics/bigquery-iam|BigQuery IAM]].
+- **Column-level security** — see [[../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]].
 - **Row-level security** — predicate filters per user.
 
 ## Codes of conduct
@@ -94,9 +97,9 @@ Users can request deletion of their data. This conflicts with [[event-sourcing-p
 > [!multi-column]
 >
 >> [!card] Governance
->> [[data-governance|Data Governance]], [[data-catalog|Data Catalog]], [[guides/data-governance-guide|Data Governance Guide]]
+>> [[data-governance|Data Governance]], [[../cloud/gcp/analytics/data-catalog|Data Catalog]], [[../guides/data-governance-guide|Data Governance Guide]]
 >
 >
 >> [!card] Security
->> [[../gcp/analytics/bigquery-iam|BigQuery IAM]]
+>> [[../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]]
 

@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "A wise person should have money in their head, but not in their heart."
+> <cite>— Jonathan Swift</cite>
+
 ---
 
 Catalog of analytics, BI, dashboarding, and metrics-layer tools (source: Tools/Data Analytics/*.md).
@@ -24,11 +27,11 @@ Catalog of analytics, BI, dashboarding, and metrics-layer tools (source: Tools/D
 
 ### Looker Studio (formerly Data Studio)
 
-Google's free BI tool. See [[../../gcp/analytics/bigquery-visualization|BigQuery Visualization]] for the full treatment. Drag-and-drop, free, integrates with BigQuery + 100s of connectors. Looker Studio Pro adds team workspaces, scheduled reports.
+Google's free BI tool. See [[../cloud/gcp/analytics/bigquery-visualization|BigQuery Visualization]] for the full treatment. Drag-and-drop, free, integrates with BigQuery + 100s of connectors. Looker Studio Pro adds team workspaces, scheduled reports.
 
 ### Looker
 
-Google-owned BI platform with **LookML** — code-based [[../concepts/data-management/semantic-layer|semantic layer]]. Different from Looker Studio.
+Google-owned BI platform with **LookML** — code-based [[../data-engineering/data-management/semantic-layer|semantic layer]]. Different from Looker Studio.
 
 ### Power BI
 
@@ -58,7 +61,7 @@ Modern data workspace combining notebooks, SQL, dashboards.
 
 ### Cube.js
 
-Open-source [[../concepts/data-management/metrics-layer|metrics layer]]; framework-agnostic; embedded BI ready.
+Open-source [[../data-engineering/data-management/metrics-layer|metrics layer]]; framework-agnostic; embedded BI ready.
 
 ### MetricFlow / dbt Semantic Layer
 
@@ -134,7 +137,7 @@ Collaborative notebook + dashboard hybrids.
 > [!multi-column]
 >
 >> [!card] Data Management
->> [[../concepts/data-management/semantic-layer|Semantic Layer]], [[../concepts/data-management/metrics-layer|Metrics Layer]], [[../concepts/data-management/data-catalog|Data Catalog]]
+>> [[../data-engineering/data-management/semantic-layer|Semantic Layer]], [[../data-engineering/data-management/metrics-layer|Metrics Layer]], [[../data-engineering/data-management/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Sister catalogs
@@ -142,5 +145,5 @@ Collaborative notebook + dashboard hybrids.
 >
 >
 >> [!card] Products
->> [[../../gcp/analytics/bigquery-visualization|BigQuery Visualization (Looker Studio)]], [[../../gcp/analytics/bigquery|BigQuery]]
+>> [[../cloud/gcp/analytics/bigquery-visualization|BigQuery Visualization (Looker Studio)]], [[../cloud/gcp/analytics/bigquery|BigQuery]]
 

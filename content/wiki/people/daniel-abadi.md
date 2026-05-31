@@ -15,7 +15,19 @@ banner:
 publish: true
 ---
 
+> "No valid plans for the future can be made by those who have no capacity for living now."
+> <cite>— Alan Watts</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Daniel Abadi
+> ###### Database Researcher
+> | | |
+> | --- | --- |
+> | **Domain** | Database systems |
+> | **Known for** | PACELC theorem; C-Store / Vertica; HadoopDB |
+> | **Institution** | University of Maryland (Darnell-Kanal Professor) |
 
 Database researcher, professor at the **University of Maryland**. Proposed **PACELC** (2010) — refines [[eric-brewer|CAP]] by acknowledging that in the absence of a partition, distributed systems still trade off **latency vs consistency**. Co-creator of **C-Store / Vertica** (columnar warehouse) + **HadoopDB**.
 
@@ -24,9 +36,9 @@ Database researcher, professor at the **University of Maryland**. Proposed **PAC
 > [!multi-column]
 >
 >> [!card] Software Engineering
->> [[../data-engineering/concepts/software-engineering/cap-theorem|CAP Theorem]]
+>> [[../technology/software-engineering/cap-theorem|CAP Theorem]]
 >
 >
 >> [!card] Data Storage
->> [[../data-engineering/concepts/data-storage/column-oriented-database|Column-oriented Database]]
+>> [[../technology/data-engineering/data-storage/column-oriented-database|Column-oriented Database]]
 

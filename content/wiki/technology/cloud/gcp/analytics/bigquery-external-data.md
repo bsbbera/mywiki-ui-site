@@ -16,9 +16,12 @@ banner:
 publish: true
 ---
 
+> "The road to success and the road to failure are almost exactly the same."
+> <cite>— Colin R. Davis</cite>
+
 ---
 
-BigQuery can query data **stored outside** the warehouse via **external (federated) tables** — leaving the data in place. Currently supported sources include **Google Drive, [[../storage/cloud-storage|Cloud Storage]], [[../databases/cloud-sql|Cloud SQL]], and [[../databases/cloud-bigtable|Bigtable]]** (source: Google Cloud Platform - Working with External Data in BigQuery.md). Modern additions also include **AWS S3** and **Azure Blob** via **BigLake**.
+BigQuery can query data **stored outside** the warehouse via **external (federated) tables** — leaving the data in place. Currently supported sources include **Google Drive, [[Cloud Storage|Cloud Storage]], [[../databases/cloud-sql|Cloud SQL]], and [[../databases/cloud-bigtable|Bigtable]]** (source: Google Cloud Platform - Working with External Data in BigQuery.md). Modern additions also include **AWS S3** and **Azure Blob** via **BigLake**.
 
 ## Why federate
 
@@ -96,13 +99,13 @@ ORDER BY flights DESC;
 >
 >
 >> [!card] External sources
->> [[../storage/cloud-storage|Cloud Storage]], [[../databases/cloud-sql|Cloud SQL]], [[../databases/cloud-bigtable|Cloud Bigtable]]
+>> [[Cloud Storage|Cloud Storage]], [[../databases/cloud-sql|Cloud SQL]], [[../databases/cloud-bigtable|Cloud Bigtable]]
 >
 >
 >> [!card] Data Architecture
->> [[../../data-engineering/data-architecture/data-lake|Data Lake]]
+>> [[../../../data-engineering/data-architecture/data-lake|Data Lake]]
 >
 >
 >> [!card] Tools
->> [[../../tools/file-formats|File Formats]]
+>> [[../../../tools/file-formats|File Formats]]
 

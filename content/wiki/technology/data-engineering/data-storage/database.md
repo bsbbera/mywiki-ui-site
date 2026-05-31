@@ -14,11 +14,14 @@ banner:
 publish: true
 ---
 
+> "Change happens when the pain of holding on becomes greater than the fear of letting go."
+> <cite>— Spencer Johnson</cite>
+
 ---
 
 A **database** is an **organized collection of inter-related data** that models some aspect of the real world. Data is stored and accessed via a **database management system (DBMS)** (source: Concepts/Data Storage/Database.md).
 
-> See [[../../../dbms/acid-properties|ACID Properties]] and [[../../../dbms/database-normalization|Normalization]] for the foundational DBMS theory.
+> See [[../../databases/acid-properties|ACID Properties]] and [[../../databases/database-normalization|Normalization]] for the foundational DBMS theory.
 
 ## What a database provides
 
@@ -57,10 +60,10 @@ NoSQL further splits into [[document-database|document]], [[key-value-database|K
 
 ## On GCP
 
-- **OLTP**: [[../../../gcp/databases/cloud-sql|Cloud SQL]], [[../../../gcp/databases/cloud-spanner|Spanner]].
-- **NoSQL**: [[../../../gcp/databases/cloud-bigtable|Bigtable]], [[../../../gcp/databases/cloud-datastore|Firestore/Datastore]].
-- **Cache**: [[../../../gcp/databases/memorystore|Memorystore]].
-- **Analytics**: [[../../../gcp/analytics/bigquery|BigQuery]].
+- **OLTP**: [[../../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../../cloud/gcp/databases/cloud-spanner|Spanner]].
+- **NoSQL**: [[../../cloud/gcp/databases/cloud-bigtable|Bigtable]], [[../../cloud/gcp/databases/cloud-datastore|Firestore/Datastore]].
+- **Cache**: [[../../cloud/gcp/databases/memorystore|Memorystore]].
+- **Analytics**: [[../../cloud/gcp/analytics/bigquery|BigQuery]].
 
 ## Interview Questions
 
@@ -77,7 +80,7 @@ NoSQL further splits into [[document-database|document]], [[key-value-database|K
 >
 >
 >> [!card] Theory
->> [[../../../dbms/acid-properties|ACID Properties]], [[../../../dbms/database-normalization|Normalization]]
+>> [[../../databases/acid-properties|ACID Properties]], [[../../databases/database-normalization|Normalization]]
 >
 >
 >> [!card] Management

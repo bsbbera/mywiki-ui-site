@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes a change of perspective is all it takes to see the light."
+> <cite>— Dan Brown</cite>
+
 ---
 
 A **data mart** is a **subject-specific database** that acts as a partitioned segment of an enterprise data warehouse. Each mart aligns with a particular business unit — separate marts exist for **finance, marketing, supply chain, sales**, etc. (source: Concepts/Data Architecture/Data Mart.md).
@@ -71,7 +74,7 @@ In **data mesh** architecture, marts evolve into **domain-owned data products** 
 > [!multi-column]
 >
 >> [!card] Sister architectures
->> [[data-warehouse|Data Warehouse]], [[medallion-architecture|Medallion Architecture]], [[../../data-warehousing|Data Warehousing]]
+>> [[data-warehouse|Data Warehouse]], [[medallion-architecture|Medallion Architecture]], [[../data-warehousing|Data Warehousing]]
 >
 >
 >> [!card] Modeling + serving
@@ -79,7 +82,7 @@ In **data mesh** architecture, marts evolve into **domain-owned data products** 
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/bigquery|BigQuery]]
+>> [[../../cloud/gcp/analytics/bigquery|BigQuery]]
 >
 >
 >> [!card] People

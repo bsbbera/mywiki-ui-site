@@ -18,6 +18,130 @@ Append-only log of all wiki operations. Newest entries at the top.
 
 ---
 
+## 2026-05-29 (eighth pass) — Wikipedia-style infoboxes + daily-quote backfill
+
+**Operator**: Cascade
+**Trigger**: User asked to add Wikipedia-style infoboxes to named-entity notes (People, Books, Tools/Software, Cloud Services/Platforms, Certifications) while **excluding abstract concept/theory/pattern pages**, sourcing infobox facts from the internet. Schema approved after a 5-note pilot (since reverted and replaced by the per-domain template approach).
+
+### Standard adopted
+
+Infoboxes use the ITS Theme callout `> [!infobox|wikipedia]` placed **above** the daily-quote block, ordered: frontmatter → infobox → `---` → quote → `---` → body. Per-domain field sets:
+
+- **Person** → Born, Nationality, Domain, Known for, Notable works, Institution.
+- **Book** → cover, Author(s), Publisher, Published, Domain, Pages, ISBN.
+- **Tool / Software** → Developer, Type, Domain, Initial release, Written in, License.
+- **Cloud Service / Platform** → Provider, Type, Category, Launched, Interface, Website.
+- **Certification** → Provider, Type, Domain, Format, Validity, Website.
+
+### Templates
+
+`_my_template/` per-domain note templates created earlier this initiative: `Person Note.md`, `Book Note.md`, `Tool Note.md`, `Cloud Service Note.md`, `Concept Note.md` (concept = quote only, **no infobox**). `windsurf.md` updated with the infobox standard, template-selection rules, and the web-enrichment ingest step.
+
+### Daily-quote backfill
+
+Backfilled the `> "quote" / <cite>` block into all existing notes (BOM-safe; duplicate blocks from double-insertion collapsed).
+
+### Infoboxes added (51 notes)
+
+- **People (18)**: edgar-f-codd, ralph-kimball, bill-inmon, dan-linstedt, zhamak-dehghani, martin-kleppmann, eric-brewer, seth-gilbert-nancy-lynch, jay-kreps, jeff-dean-sanjay-ghemawat, joe-reis-matt-housley, daniel-abadi, greg-young, martin-fowler, andrej-karpathy, doug-cutting, matei-zaharia, wenqiang-feng.
+- **Books (6)**: designing-data-intensive-applications, the-data-warehouse-toolkit, fundamentals-of-data-engineering, building-a-scalable-data-warehouse-with-data-vault-2, building-the-data-warehouse, learning-apache-spark-with-python.
+- **Cloud Services — GCP analytics (5)**: bigquery, dataflow, datafusion, pubsub, data-catalog.
+- **Cloud Services — GCP compute (5)**: app-engine, cloud-functions, cloud-run, compute-engine, kubernetes-engine.
+- **Cloud Services — GCP databases (5)**: cloud-bigtable, cloud-datastore, cloud-spanner, cloud-sql, memorystore.
+- **Cloud Services — GCP storage (4)**: cloud-storage, filestore, firebase-cloud-storage, persistent-disk.
+- **Cloud Platforms (3)**: aws, azure, google-cloud-platform.
+- **Tools / Software (4)**: apache-spark, pyspark, databricks, google-file-system (concrete system w/ paper authors).
+- **Certification (1)**: professional-data-engineer.
+
+### Explicitly skipped (per scope)
+
+Abstract concept/theory/pattern/guide pages received the daily-quote block but **no infobox** — e.g. `cap-theorem`, the BigQuery how-to sub-pages, all `data-engineering/` concept pages, `tools/` catalogs, and `guides/`.
+
+### Web enrichment
+
+Launch/GA years and authorship verified via web search (e.g. Dataflow & Pub/Sub GA Aug 2015, Spanner GA May 2017, Data Fusion GA Nov 2019). GCP service facts cross-checked against `cloud.google.com` product pages.
+
+### Fixes
+
+- `andrej-karpathy.md` — repaired malformed header (stray double `---`, broken multi-line quote) and reordered infobox above the quote to match the standard.
+
+### Record
+
+- `index.md` — statistics note added for the infobox standard.
+- `log.md` — this entry.
+
+---
+
+## 2026-05-28 (seventh pass) — Apache Spark / PySpark ingest (4 raw PDFs)
+
+**Operator**: Claude Code (Opus 4.7)
+**Trigger**: User dropped four PySpark PDFs into `raw/` and asked to ingest. Per `windsurf.md` Phase 1, key takeaways were discussed and three routing decisions confirmed with the user before any writing.
+
+### Sources
+
+1. `Pyspark -Book.pdf` — *Learning Apache Spark with Python* (Wenqiang Feng, 2018) — full book: Spark fundamentals + a large MLlib / data-science half.
+2. `pyspark basics.pdf` — "Spark Tutorial" notes (driver/executor, partitions, shuffle, AQE, skew/salting, caching, Z-order, file formats, read modes).
+3. `pyspark interview prep.pdf` — "Top 50 PySpark Interview Questions" (Rahul Pupreja).
+4. `Pyspark-cheatsheet.pdf` — **SKIPPED**: image-only PDF, `pdftotext` extracted zero text; user confirmed skip (no OCR tool available in this environment).
+
+PDFs were text-extracted with `pdftotext` (poppler, from Git) into a temp dir — `raw/` left untouched per the hard rules. (The Read tool's PDF renderer `pdftoppm` is not installed here.)
+
+### User decisions (Phase 1)
+
+1. **Placement** → dedicated `technology/data-engineering/data-processing/spark/` subfolder (Spark treated as a processing engine alongside the batch/stream concept pages).
+2. **Cheatsheet** → skip (image-only).
+3. **ML scope** → one `spark-mllib.md` summary page (keep DE focus; don't spawn an ML topic tree the vault hasn't started).
+
+### New pages created (9 concept + 1 book + 1 person = 11)
+
+`technology/data-engineering/data-processing/spark/`:
+
+- `apache-spark.md` (hub) — what Spark is, the stack, why Spark, vs MapReduce, cluster managers, job lifecycle.
+- `pyspark.md` — Python API: SparkSession, py4j, findspark, SparkConf, PySpark vs pandas.
+- `spark-architecture.md` — driver/executor, DAG/Task schedulers, job→stage→task, client vs cluster mode, executor sizing.
+- `rdd.md` — RDD abstraction, transformations vs actions, narrow vs wide, lazy evaluation, lineage graph.
+- `spark-dataframe.md` — DataFrame/Dataset, StructType schema, common ops, `toPandas()`.
+- `spark-sql.md` — temp views, Catalog, Catalyst optimizer (rule/cost-based), UDFs.
+- `spark-performance.md` — partitioning, shuffle, repartition vs coalesce, persistence levels, broadcast/accumulators, AQE, skew/salting, columnar formats, read modes.
+- `spark-streaming.md` — DStreams, micro-batch, receivers, checkpointing.
+- `spark-mllib.md` — distributed-ML summary of the book's ML half.
+
+`books/`:
+
+- `learning-apache-spark-with-python.md` — book stub (no conventional cover; free online doc, linked to official site).
+
+`people/`:
+
+- `wenqiang-feng.md` — author stub.
+
+Interview-prep author **Rahul Pupreja** is cited inline only (content aggregator, not a domain figure) — no person stub, following the spirit of the `people/` rule.
+
+### Existing pages updated (interlink)
+
+- `batch-data-processing.md` — linked Apache Spark + PySpark; added Spark to Related pages.
+- `stream-data-processing.md` — Spark Structured Streaming now links to `spark-streaming`.
+- `data-processing.md` — linked Spark in the GCP table; added an Engines card.
+- `tools/processing-tools.md` — added a "Deep dive" link row into the new Spark pages; linked RDDs.
+- `cloud/databricks/databricks.md` — linked Apache Spark in intro; added a Spark-internals card.
+- `people/matei-zaharia.md` — linked Apache Spark; **fixed its pre-existing broken relative links** (pre-restructure paths) by switching to bare filenames.
+
+### Record
+
+- `index.md` — added the Apache Spark / PySpark sub-section under Data Processing; added Wenqiang Feng (People) + the book (Books); updated statistics (People 17→18, Books 5→6, concept pages ~110→~119).
+- `log.md` — this entry.
+
+### Conventions used
+
+- All new links use **bare filenames** per `windsurf.md` rule 7 (resolve across the tree; avoids the broken relative-path problem seen on older stubs).
+- Frontmatter uses `publish: true` (matching existing pages, not the `dg-publish` in the windsurf format snippet).
+- Citations use `(source: <pdf filename>)`.
+
+### Lint flag (not fixed this pass)
+
+Several older pages still carry **broken relative wikilinks** from before the 2026-05-10 restructure (e.g. `[[../data-engineering/concepts/...]]` on people stubs; `books/` stubs using `[[../../technology/...]]`). Only `matei-zaharia.md` was fixed this pass (it was being edited anyway). A vault-wide bare-filename rewrite would clear the rest.
+
+---
+
 ## 2026-04-29 (sixth pass) — People + Books folders + Related-pages refactor
 
 **Operator**: Cascade
@@ -319,15 +443,15 @@ Moved all 28 existing wiki pages into 5 topic folders matching the index structu
 
 ### New sources ingested
 
-1. `Google Cloud Platform - Cloud Storage.md` — enriches existing [[storage/cloud-storage]].
-2. `Google Persistent Disk & Google Filestore Services.md` — enriches [[storage/persistent-disk]] and [[storage/filestore]].
-3. `Google Cloud Platform - Introduction to Cloud Spanner.md` — new [[databases/cloud-spanner]].
-4. `Google Cloud Platform - MemoryStore.md` — new [[databases/memorystore]].
-5. `Google Cloud SQL.md` — new [[databases/cloud-sql]].
-6. `Google File System.md` — new [[storage/google-file-system]].
-7. `Introduction to Firebase Cloud Storage.md` — new [[storage/firebase-cloud-storage]].
-8. `Introduction to Google Cloud Bigtable.md` — new [[databases/cloud-bigtable]].
-9. `Use Cloud Datastore For NoSQL Database On GCP.md` — new [[databases/cloud-datastore]].
+1. `Google Cloud Platform - Cloud Storage.md` — enriches existing [[technology/cloud/gcp/storage/cloud-storage]].
+2. `Google Persistent Disk & Google Filestore Services.md` — enriches [[technology/cloud/gcp/storage/persistent-disk]] and [[technology/cloud/gcp/storage/filestore]].
+3. `Google Cloud Platform - Introduction to Cloud Spanner.md` — new [[technology/cloud/gcp/databases/cloud-spanner]].
+4. `Google Cloud Platform - MemoryStore.md` — new [[technology/cloud/gcp/databases/memorystore]].
+5. `Google Cloud SQL.md` — new [[technology/cloud/gcp/databases/cloud-sql]].
+6. `Google File System.md` — new [[technology/cloud/gcp/storage/google-file-system]].
+7. `Introduction to Firebase Cloud Storage.md` — new [[technology/cloud/gcp/storage/firebase-cloud-storage]].
+8. `Introduction to Google Cloud Bigtable.md` — new [[technology/cloud/gcp/databases/cloud-bigtable]].
+9. `Use Cloud Datastore For NoSQL Database On GCP.md` — new [[technology/cloud/gcp/databases/cloud-datastore]].
 
 ### New pages created (16)
 
@@ -375,9 +499,9 @@ Moved all 28 existing wiki pages into 5 topic folders matching the index structu
 
 ### Notes
 
-- Wiki-links use relative paths with alias (`[[../foundations/google-cloud-platform|Google Cloud Platform]]`) across folders; Obsidian still resolves `[[page-name]]` shortcuts within the same folder.
+- Wiki-links use relative paths with alias (`[[technology/cloud/gcp/foundations/google-cloud-platform|Google Cloud Platform]]`) across folders; Obsidian still resolves `[[page-name]]` shortcuts within the same folder.
 - **AlloyDB** added to stub-topic list (modern successor to Cloud SQL Postgres for higher-performance use cases).
-- **Colossus** added as an important but non-customer-facing stub — it underlies all GCP storage and is the direct descendant of [[storage/google-file-system]].
+- **Colossus** added as an important but non-customer-facing stub — it underlies all GCP storage and is the direct descendant of [[technology/cloud/gcp/storage/google-file-system]].
 
 ---
 

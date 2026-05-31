@@ -18,6 +18,9 @@ banner:
 publish: true
 ---
 
+> "Sometimes success isn't about making the right decision, it's more about making some decision."
+> <cite>— Robin Sharma</cite>
+
 ---
 
 **ACID** is the canonical set of properties a database transaction must satisfy to guarantee data integrity — **A**tomicity, **C**onsistency, **I**solation, **D**urability. The acronym was coined by Theo Härder and Andreas Reuter in their 1983 paper and has been the foundation of transactional database design ever since (source: ACID Properties in DBMS.md).
@@ -93,7 +96,7 @@ ANSI SQL defines four standard isolation levels with progressively stronger guar
 | **REPEATABLE READ** | prevented | prevented | possible |
 | **SERIALIZABLE** | prevented | prevented | prevented |
 
-Modern databases add **SNAPSHOT ISOLATION** (Postgres' default repeatable read; SQL Server's snapshot mode) which uses MVCC to give serial-like reads without blocking. **Strict serializability** (Spanner's external consistency) is the strongest available — see [[../gcp/databases/cloud-spanner|Cloud Spanner]].
+Modern databases add **SNAPSHOT ISOLATION** (Postgres' default repeatable read; SQL Server's snapshot mode) which uses MVCC to give serial-like reads without blocking. **Strict serializability** (Spanner's external consistency) is the strongest available — see [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]].
 
 ## Why ACID matters
 
@@ -109,12 +112,12 @@ Critical use cases: **banking** (transfers, fraud), **e-commerce** (inventory, o
 
 | Service | ACID scope |
 | --- | --- |
-| [[../gcp/databases/cloud-sql|Cloud SQL]] | Full ACID at the **single-instance** scope (MySQL/Postgres/SQL Server) |
-| [[../gcp/databases/cloud-spanner|Cloud Spanner]] | Full ACID **globally distributed** — external consistency via **TrueTime + Paxos** |
-| [[../gcp/databases/cloud-datastore|Datastore / Firestore]] | ACID **within an entity group** (ancestor queries / transactions); cross-group has limits |
-| [[../gcp/databases/cloud-bigtable|Cloud Bigtable]] | ACID **only at the row level**; cross-row is eventually consistent — by design, for scale |
-| [[../gcp/databases/memorystore|Memorystore]] | Redis MULTI/EXEC gives partial atomicity; NOT a durable transactional system |
-| [[../gcp/analytics/bigquery|BigQuery]] | ACID at the **per-statement** level; supports multi-statement transactions since 2021 |
+| [[../cloud/gcp/databases/cloud-sql|Cloud SQL]] | Full ACID at the **single-instance** scope (MySQL/Postgres/SQL Server) |
+| [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]] | Full ACID **globally distributed** — external consistency via **TrueTime + Paxos** |
+| [[../cloud/gcp/databases/cloud-datastore|Datastore / Firestore]] | ACID **within an entity group** (ancestor queries / transactions); cross-group has limits |
+| [[../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]] | ACID **only at the row level**; cross-row is eventually consistent — by design, for scale |
+| [[../cloud/gcp/databases/memorystore|Memorystore]] | Redis MULTI/EXEC gives partial atomicity; NOT a durable transactional system |
+| [[../cloud/gcp/analytics/bigquery|BigQuery]] | ACID at the **per-statement** level; supports multi-statement transactions since 2021 |
 
 The sliding-scale trade-off: **stronger ACID guarantees ↔ harder to scale horizontally**. The Spanner breakthrough was demonstrating you can have both — at significant cost.
 
@@ -125,7 +128,7 @@ The NoSQL counterpoint: **BASE** = **B**asically **A**vailable, **S**oft state, 
 ## Interesting Facts
 
 - The "C" in ACID and the "C" in **CAP theorem** mean **different things**. ACID consistency = "respects constraints"; CAP consistency = "all nodes see the same data at the same time".
-- **Spanner's external consistency** uses Google's atomic clocks (**TrueTime**) — see [[../gcp/databases/cloud-spanner|Cloud Spanner]] — to deliver globally serializable transactions, the strongest ACID guarantee in any production database.
+- **Spanner's external consistency** uses Google's atomic clocks (**TrueTime**) — see [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]] — to deliver globally serializable transactions, the strongest ACID guarantee in any production database.
 - **Two-Phase Commit (2PC)** is the classical protocol for atomic distributed transactions; **Paxos / Raft** are its modern, fault-tolerant successors.
 - **Write-Ahead Logging (WAL)** is the primary durability mechanism for Postgres, SQL Server, MySQL InnoDB, and most other engines.
 
@@ -136,7 +139,7 @@ The NoSQL counterpoint: **BASE** = **B**asically **A**vailable, **S**oft state, 
 3. What does **consistency** mean in ACID? How is it different from CAP consistency?
 4. How does a database implement **durability**? (WAL, fsync, checkpoints)
 5. What isolation level would you pick for an e-commerce checkout? Why?
-6. Compare ACID guarantees in [[../gcp/databases/cloud-sql|Cloud SQL]], [[../gcp/databases/cloud-spanner|Spanner]], and [[../gcp/databases/cloud-bigtable|Bigtable]].
+6. Compare ACID guarantees in [[../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../cloud/gcp/databases/cloud-spanner|Spanner]], and [[../cloud/gcp/databases/cloud-bigtable|Bigtable]].
 7. What is **2PL** vs **MVCC**?
 8. Explain **Two-Phase Commit** and why it's blocking.
 9. ACID vs BASE — when would you accept eventual consistency?
@@ -154,13 +157,13 @@ The NoSQL counterpoint: **BASE** = **B**asically **A**vailable, **S**oft state, 
 >
 >
 >> [!card] Products
->> [[../gcp/databases/cloud-sql|Cloud SQL]], [[../gcp/databases/cloud-spanner|Cloud Spanner]], [[../gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../gcp/databases/cloud-datastore|Cloud Datastore]]
+>> [[../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]], [[../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../cloud/gcp/databases/cloud-datastore|Cloud Datastore]]
 >
 >
 >> [!card] People
->> [[../people/edgar-f-codd|Edgar F. Codd]], [[../people/eric-brewer|Eric Brewer]]
+>> [[../../people/edgar-f-codd|Edgar F. Codd]], [[../../people/eric-brewer|Eric Brewer]]
 >
 >
 >> [!card] Books
->> [[../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]
+>> [[../../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]
 

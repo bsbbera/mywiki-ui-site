@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Seek not the good in external things;seek it in yourselves."
+> <cite>— Epictetus</cite>
+
 ---
 
 BigQuery offers three layers for managing the queries you write — **Query History** (automatic), **Saved Queries** (proactive), and **Shared Queries** (collaboration) (source: Google Cloud Platform - Query History vs Saved Query vs Shared Query in BigQuery.md).
@@ -100,5 +103,5 @@ By default, others **cannot edit** your saved queries. To allow editing:
 >
 >
 >> [!card] SQL
->> [[../../data-engineering/guides/sql-guide|SQL Guide]]
+>> [[../../../guides/sql-guide|SQL Guide]]
 

@@ -21,6 +21,9 @@ banner:
 publish: true
 ---
 
+> "A self that goes on changing is a self that goes on living."
+> <cite>— Virginia Woolf</cite>
+
 ---
 
 **Database normalization** is the process of organizing a relational schema to **eliminate data redundancy** and **prevent insertion / update / deletion anomalies**. It is one of the foundational ideas of relational database design, introduced by **E. F. Codd** in 1970–72 (source: Introduction to Database Normalization.md).
@@ -129,11 +132,11 @@ Rare in practice; relevant for relations modeling complex many-to-many-to-many r
 
 ## Practical advice
 
-- **3NF or BCNF** is the standard target for OLTP schemas (e.g. [[../gcp/databases/cloud-sql|Cloud SQL]] applications).
+- **3NF or BCNF** is the standard target for OLTP schemas (e.g. [[../cloud/gcp/databases/cloud-sql|Cloud SQL]] applications).
 - **Denormalize deliberately** for read-heavy workloads — caching, materialized views, derived columns. Always document why.
-- **Analytics warehouses** (e.g. [[../gcp/analytics/bigquery|BigQuery]]) often use **denormalized star/snowflake schemas** — see [[../data-engineering/data-warehousing|Data Warehousing]]. Joins are expensive at PB scale; pre-aggregated wide tables win.
-- **Document data** (Firestore, MongoDB) is **deliberately denormalized** — embedded documents reduce reads at the cost of update complexity. See [[../gcp/databases/cloud-datastore|Datastore]].
-- **Wide-column** ([[../gcp/databases/cloud-bigtable|Bigtable]]) abandons the relational model entirely; "normal form" doesn't apply.
+- **Analytics warehouses** (e.g. [[../cloud/gcp/analytics/bigquery|BigQuery]]) often use **denormalized star/snowflake schemas** — see [[../data-engineering/data-warehousing|Data Warehousing]]. Joins are expensive at PB scale; pre-aggregated wide tables win.
+- **Document data** (Firestore, MongoDB) is **deliberately denormalized** — embedded documents reduce reads at the cost of update complexity. See [[../cloud/gcp/databases/cloud-datastore|Datastore]].
+- **Wide-column** ([[../cloud/gcp/databases/cloud-bigtable|Bigtable]]) abandons the relational model entirely; "normal form" doesn't apply.
 
 ## Normalization vs denormalization
 
@@ -150,7 +153,7 @@ Rare in practice; relevant for relations modeling complex many-to-many-to-many r
 - **E. F. Codd** invented the relational model **and** the normal forms, then later argued for **6NF** and even introduced the term "denormalization is corruption" — a stance most modern engineers reject.
 - **BCNF** is the work of **Raymond Boyce** and Codd, published in 1974.
 - **Domain-key normal form (DKNF)** is the theoretical "ultimate" normal form (every constraint follows from domain + key constraints) — almost no real schema reaches it.
-- Modern data warehouses ([[../gcp/analytics/bigquery|BigQuery]], Snowflake) deliberately use **star schemas** (1 fact + many denormalized dimensions) — joins are expensive at scale.
+- Modern data warehouses ([[../cloud/gcp/analytics/bigquery|BigQuery]], Snowflake) deliberately use **star schemas** (1 fact + many denormalized dimensions) — joins are expensive at scale.
 
 ## Interview Questions can be asked
 
@@ -179,9 +182,9 @@ Rare in practice; relevant for relations modeling complex many-to-many-to-many r
 >
 >
 >> [!card] People
->> [[../people/edgar-f-codd|Edgar F. Codd]]
+>> [[../../people/edgar-f-codd|Edgar F. Codd]]
 >
 >
 >> [!card] Products
->> [[../gcp/databases/cloud-sql|Cloud SQL]], [[../gcp/databases/cloud-spanner|Cloud Spanner]], [[../gcp/databases/cloud-datastore|Cloud Datastore]], [[../gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../gcp/analytics/bigquery|BigQuery]]
+>> [[../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]], [[../cloud/gcp/databases/cloud-datastore|Cloud Datastore]], [[../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../cloud/gcp/analytics/bigquery|BigQuery]]
 

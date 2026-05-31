@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "The most important battle is one to conquer yourself."
+> <cite>— Yanni</cite>
+
 ---
 
 **Data architecture** describes how data is processed, stored, and utilized in an information system. It is the structural blueprint that connects sources, storage, processing engines, and consumers — the discipline of laying out *where data lives, how it flows, and who can use it* (source: Concepts/Data Architecture/Data Architecture.md).
@@ -51,12 +54,12 @@ A **lakehouse** combines the cheap, flexible storage of a data lake with the **t
 
 ## How architecture maps onto GCP services
 
-- **Warehouse**: [[../../../gcp/analytics/bigquery|BigQuery]]
-- **Lake**: [[../../../gcp/storage/cloud-storage|Cloud Storage]] + BigLake
-- **Streaming spine**: [[../../../gcp/analytics/pubsub|Pub/Sub]]
-- **Batch + stream processing**: [[../../../gcp/analytics/dataflow|Dataflow]]
-- **Visual ETL**: [[../../../gcp/analytics/datafusion|Data Fusion]]
-- **Lakehouse**: [[../../../databricks/databricks|Databricks]] + Delta Lake
+- **Warehouse**: [[../../cloud/gcp/analytics/bigquery|BigQuery]]
+- **Lake**: [[Cloud Storage|Cloud Storage]] + BigLake
+- **Streaming spine**: [[../../cloud/gcp/analytics/pubsub|Pub/Sub]]
+- **Batch + stream processing**: [[../../cloud/gcp/analytics/dataflow|Dataflow]]
+- **Visual ETL**: [[../../cloud/gcp/analytics/datafusion|Data Fusion]]
+- **Lakehouse**: [[../../cloud/databricks/databricks|Databricks]] + Delta Lake
 
 ## Interview Questions
 
@@ -73,7 +76,7 @@ A **lakehouse** combines the cheap, flexible storage of a data lake with the **t
 >
 >
 >> [!card] Adjacent concepts
->> [[../../data-warehousing|Data Warehousing]], [[../data-modeling/data-modeling|Data Modeling]], [[../data-processing/data-processing|Data Processing]]
+>> [[../data-warehousing|Data Warehousing]], [[../data-modeling/data-modeling|Data Modeling]], [[../data-processing/data-processing|Data Processing]]
 >
 >
 >> [!card] People

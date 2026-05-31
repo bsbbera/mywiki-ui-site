@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "The golden opportunity you are seeking is in yourself. It is not in your environment; it is not in luck or chance, or the help of others; it is in yourself alone."
+> <cite>— Orison Swett Marden</cite>
+
 ---
 
 GCP exposes a **spectrum of compute options** that trade off between control and abstraction. Choosing the right one is the most common architecture decision on GCP (source: Google Cloud Platform - Compute Services.md).

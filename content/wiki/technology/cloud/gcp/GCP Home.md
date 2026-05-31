@@ -23,7 +23,7 @@ cssclasses:
 ## 🧭 Vault Navigation
 
 > [!info] You are here
-> 🧠 [[Master Home]] · �️ [[Technology Home]] · ☁️ [[Cloud Home]] · **☁️ GCP**
+> 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · ☁️ [[Cloud Home]] · **☁️ GCP**
 >
 > **Sibling clouds:** 📦 [[AWS Home]] · 🟦 [[Azure Home]] · 🧱 [[Databricks Home]]
 

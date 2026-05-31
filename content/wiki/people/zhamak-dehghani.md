@@ -14,7 +14,20 @@ banner:
 publish: true
 ---
 
+> "A bird does not sing because it has an answer. It sings because it has a song."
+> <cite>— Chinese Proverb</cite>
+
 ---
+
+> [!infobox|wikipedia]
+> # Zhamak Dehghani
+> ###### Software Architect
+> | | |
+> | --- | --- |
+> | **Nationality** | Iranian-Australian |
+> | **Domain** | Data architecture |
+> | **Known for** | Creator of Data Mesh |
+> | **Institution** | Nextdata (founder & CEO); ex-Thoughtworks |
 
 Iranian-Australian software architect, formerly Director of Emerging Technologies at **ThoughtWorks**. Coined and articulated **Data Mesh** in 2019 — a sociotechnical paradigm for decentralized, domain-oriented data ownership. Founder of **Nextdata**.
 
@@ -23,9 +36,9 @@ Iranian-Australian software architect, formerly Director of Emerging Technologie
 > [!multi-column]
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-mesh|Data Mesh]], [[../data-engineering/concepts/data-architecture/data-architecture|Data Architecture]]
+>> [[../technology/data-engineering/data-architecture/data-mesh|Data Mesh]], [[../technology/data-engineering/data-architecture/data-architecture|Data Architecture]]
 >
 >
 >> [!card] Data Management
->> [[../data-engineering/concepts/data-management/data-governance|Data Governance]]
+>> [[../technology/data-engineering/data-management/data-governance|Data Governance]]
 

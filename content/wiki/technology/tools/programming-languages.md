@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "The first man gets the oyster, the second man gets the shell."
+> <cite>— Andrew Carnegie</cite>
+
 ---
 
 The languages most data engineers use, and where each shines (source: Tools/Programming Languages/*.md).
@@ -129,11 +132,11 @@ Performance-critical engines: ClickHouse, RocksDB, Apache Arrow C++ implementati
 >
 >
 >> [!card] Software Engineering
->> [[../concepts/software-engineering/indexing|Indexing]]
+>> [[../software-engineering/indexing|Indexing]]
 >
 >
 >> [!card] Data Engineering
->> [[../sargable-expressions|Sargable Expressions]]
+>> [[../data-engineering/sargable-expressions|Sargable Expressions]]
 >
 >
 >> [!card] Sister catalogs

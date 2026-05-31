@@ -15,11 +15,23 @@ banner: "https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg"
 publish: true
 ---
 
+> "It is indeed a radical act of love just to sit down and be quiet for a time by yourself."
+> <cite>— Jon Kabat-Zinn</cite>
+
 ---
 
-![Building the Data Warehouse cover](https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg)
-
-Author: [[../people/bill-inmon|Bill Inmon]] · Publisher: Wiley · 1st ed. 1991 · multiple editions since
+> [!infobox|wikipedia]
+> # Building the Data Warehouse
+> ![cover](https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg)
+> ###### Book
+> | | |
+> | --- | --- |
+> | **Author** | [[../people/bill-inmon\|Bill Inmon]] |
+> | **Publisher** | Wiley |
+> | **Published** | 1991 (1st ed.); 4th ed. 2005 |
+> | **Domain** | Data warehousing |
+> | **Pages** | ~576 (4th ed.) |
+> | **ISBN** | 978-0764599446 |
 
 The **original** data warehouse text. Defined the term, articulated the **subject-oriented, integrated, time-variant, non-volatile** definition, and laid out the top-down **enterprise data warehouse (EDW)** approach.
 
@@ -32,9 +44,9 @@ The **original** data warehouse text. Defined the term, articulated the **subjec
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-warehouse|Data Warehouse]], [[../data-engineering/concepts/data-architecture/data-mart|Data Mart]]
+>> [[../technology/data-engineering/data-architecture/data-warehouse|Data Warehouse]], [[../technology/data-engineering/data-architecture/data-mart|Data Mart]]
 >
 >
 >> [!card] Data Engineering
->> [[../data-engineering/data-warehousing|Data Warehousing]]
+>> [[../technology/data-engineering/data-warehousing|Data Warehousing]]
 

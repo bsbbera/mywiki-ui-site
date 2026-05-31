@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Anyone who dreams of an uncommon life eventually discovers there is no choice but to seek an uncommon approach to living it."
+> <cite>— Gary Keller</cite>
+
 ---
 
 **Kappa Architecture** is a big-data processing pattern that **treats all data as a stream**. There is **no batch layer** — only a stream-processing speed layer. Reprocessing is achieved by **replaying** the event log, not by running a separate batch job (source: Concepts/Data Architecture/Kappa Architecture.md).
@@ -37,7 +40,7 @@ graph LR
 
 ## Key idea
 
-The **append-only event log** (Kafka, [[../../../gcp/analytics/pubsub|Pub/Sub]] with retention, Kinesis with extended retention) is the source of truth. To reprocess history, you simply **start a new stream job from offset zero** — it consumes the same data the original job did, and produces a corrected output.
+The **append-only event log** (Kafka, [[../../cloud/gcp/analytics/pubsub|Pub/Sub]] with retention, Kinesis with extended retention) is the source of truth. To reprocess history, you simply **start a new stream job from offset zero** — it consumes the same data the original job did, and produces a corrected output.
 
 This eliminates the duplicate code maintained in Lambda's batch and speed layers.
 
@@ -67,9 +70,9 @@ This eliminates the duplicate code maintained in Lambda's batch and speed layers
 
 ## Implementation on GCP
 
-- **Event log**: [[../../../gcp/analytics/pubsub|Pub/Sub]] (or Pub/Sub Lite for Kafka-like partitioned semantics).
-- **Stream engine**: [[../../../gcp/analytics/dataflow|Dataflow]] with Apache Beam.
-- **Sink**: [[../../../gcp/analytics/bigquery|BigQuery]] (via Pub/Sub→BigQuery subscription or Dataflow).
+- **Event log**: [[../../cloud/gcp/analytics/pubsub|Pub/Sub]] (or Pub/Sub Lite for Kafka-like partitioned semantics).
+- **Stream engine**: [[../../cloud/gcp/analytics/dataflow|Dataflow]] with Apache Beam.
+- **Sink**: [[../../cloud/gcp/analytics/bigquery|BigQuery]] (via Pub/Sub→BigQuery subscription or Dataflow).
 
 ## Interesting Facts
 
@@ -91,11 +94,11 @@ This eliminates the duplicate code maintained in Lambda's batch and speed layers
 >
 >
 >> [!card] Streaming patterns
->> [[../data-processing/stream-data-processing|Stream Processing]], [[../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-ingestion/change-data-capture|CDC]]
+>> [[../data-processing/stream-data-processing|Stream Processing]], [[../../software-engineering/event-sourcing-pattern|Event Sourcing]], [[../data-ingestion/change-data-capture|CDC]]
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/pubsub|Pub/Sub]], [[../../../gcp/analytics/dataflow|Dataflow]]
+>> [[../../cloud/gcp/analytics/pubsub|Pub/Sub]], [[../../cloud/gcp/analytics/dataflow|Dataflow]]
 >
 >
 >> [!card] People

@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "Strategy is a commodity, execution is an art."
+> <cite>— Peter Drucker</cite>
+
 ---
 
 **Data Management** is the practice of collecting, organizing, protecting, and storing data in a way that enables efficient access, analysis, and decision-making throughout its entire lifecycle. It encompasses the policies, procedures, and technologies used to ensure data is **accurate, available, secure, and compliant** while meeting business requirements (source: Concepts/Data Management/Data Management.md).
@@ -28,9 +31,9 @@ Establishes the **policies, procedures, and standards** for managing data across
 
 Ensures data is **accurate, complete, consistent, and fit for purpose**. Tooling: [[../../tools/quality-tools|Great Expectations, Soda, Monte Carlo, dbt tests]].
 
-### 3. [[data-catalog|Data Catalog]]
+### 3. [[../../cloud/gcp/analytics/data-catalog|Data Catalog]]
 
-Centralized **inventory of data assets** with metadata to improve discoverability. Tools: Alation, Atlan, Collibra; cloud-native [[../../../gcp/analytics/data-catalog|Dataplex Catalog]] (GCP), AWS Glue Data Catalog, Microsoft Purview.
+Centralized **inventory of data assets** with metadata to improve discoverability. Tools: Alation, Atlan, Collibra; cloud-native [[../../cloud/gcp/analytics/data-catalog|Dataplex Catalog]] (GCP), AWS Glue Data Catalog, Microsoft Purview.
 
 ### 4. Data Security
 
@@ -53,9 +56,9 @@ Both are core data-management abstractions for analytics consumers.
 
 ## Disciplines often grouped here
 
-- [[../../../dbms/database-normalization|Normalization]] — schema-design discipline at the DBMS layer.
-- [[../../../dbms/acid-properties|ACID properties]] — transactional guarantees of well-managed databases.
-- [[../software-engineering/data-unit-test|Data unit tests]] — automated quality enforcement.
+- [[../../databases/database-normalization|Normalization]] — schema-design discipline at the DBMS layer.
+- [[../../databases/acid-properties|ACID properties]] — transactional guarantees of well-managed databases.
+- [[../../software-engineering/data-unit-test|Data unit tests]] — automated quality enforcement.
 
 ## Interview Questions
 
@@ -68,11 +71,11 @@ Both are core data-management abstractions for analytics consumers.
 > [!multi-column]
 >
 >> [!card] Sub-disciplines
->> [[data-catalog|Data Catalog]], [[data-governance|Data Governance]], [[semantic-layer|Semantic Layer]], [[metrics-layer|Metrics Layer]]
+>> [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-governance|Data Governance]], [[semantic-layer|Semantic Layer]], [[metrics-layer|Metrics Layer]]
 >
 >
 >> [!card] Practitioner guides
->> [[../../guides/data-governance-guide|Data Governance Guide]], [[../../data-ethics|Data Ethics]]
+>> [[../../guides/data-governance-guide|Data Governance Guide]], [[../data-ethics|Data Ethics]]
 >
 >
 >> [!card] People
@@ -80,5 +83,5 @@ Both are core data-management abstractions for analytics consumers.
 >
 >
 >> [!card] Products
->> [[../../../gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]]
+>> [[../../cloud/gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]]
 

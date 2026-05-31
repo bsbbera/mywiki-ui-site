@@ -18,6 +18,9 @@ banner:
 publish: true
 ---
 
+> "I never said it would be easy, I only said it would be worth it."
+> <cite>— Mae West</cite>
+
 ---
 
 A side-by-side comparison of cloud services across the **big three** providers, organized by category. Useful for migration planning, multi-cloud designs, or choosing which platform to learn (source: Guides/Cloud Services Map.md, inspired by ByteByteGo's Cloud Comparison).
@@ -26,10 +29,10 @@ A side-by-side comparison of cloud services across the **big three** providers, 
 
 | AWS | Azure | GCP |
 | --- | --- | --- |
-| EC2 | Virtual Machines | [[../../gcp/compute/compute-engine\|Compute Engine]] |
-| ECS | Container Instances | [[../../gcp/compute/cloud-run\|Cloud Run]] |
-| EKS | AKS | [[../../gcp/compute/kubernetes-engine\|GKE]] |
-| Lambda | Functions | [[../../gcp/compute/cloud-functions\|Cloud Functions]] |
+| EC2 | Virtual Machines | [[../cloud/gcp/compute/compute-engine\|Compute Engine]] |
+| ECS | Container Instances | [[../cloud/gcp/compute/cloud-run\|Cloud Run]] |
+| EKS | AKS | [[../cloud/gcp/compute/kubernetes-engine\|GKE]] |
+| Lambda | Functions | [[../cloud/gcp/compute/cloud-functions\|Cloud Functions]] |
 | Fargate | Container Apps | Cloud Run |
 | Batch | Batch | Batch on GKE |
 
@@ -37,20 +40,20 @@ A side-by-side comparison of cloud services across the **big three** providers, 
 
 | AWS | Azure | GCP |
 | --- | --- | --- |
-| S3 | Blob Storage | [[../../gcp/storage/cloud-storage\|Cloud Storage]] |
-| EBS | Disk Storage | [[../../gcp/storage/persistent-disk\|Persistent Disk]] |
-| EFS | Files | [[../../gcp/storage/filestore\|Filestore]] |
+| S3 | Blob Storage | [[Cloud Storage\|Cloud Storage]] |
+| EBS | Disk Storage | [[../cloud/gcp/storage/persistent-disk\|Persistent Disk]] |
+| EFS | Files | [[../cloud/gcp/storage/filestore\|Filestore]] |
 | S3 Glacier | Archive Blob | Cloud Storage Archive class |
 
 ## Databases
 
 | AWS | Azure | GCP |
 | --- | --- | --- |
-| RDS | SQL Database | [[../../gcp/databases/cloud-sql\|Cloud SQL]] |
-| Aurora | Cosmos DB | [[../../gcp/databases/cloud-spanner\|Cloud Spanner]] |
-| DynamoDB | Cosmos DB | [[../../gcp/databases/cloud-bigtable\|Bigtable]] / [[../../gcp/databases/cloud-datastore\|Firestore]] |
-| ElastiCache | Cache for Redis | [[../../gcp/databases/memorystore\|Memorystore]] |
-| Redshift | Synapse Analytics | [[../../gcp/analytics/bigquery\|BigQuery]] |
+| RDS | SQL Database | [[../cloud/gcp/databases/cloud-sql\|Cloud SQL]] |
+| Aurora | Cosmos DB | [[../cloud/gcp/databases/cloud-spanner\|Cloud Spanner]] |
+| DynamoDB | Cosmos DB | [[../cloud/gcp/databases/cloud-bigtable\|Bigtable]] / [[../cloud/gcp/databases/cloud-datastore\|Firestore]] |
+| ElastiCache | Cache for Redis | [[../cloud/gcp/databases/memorystore\|Memorystore]] |
+| Redshift | Synapse Analytics | [[../cloud/gcp/analytics/bigquery\|BigQuery]] |
 | Neptune | Cosmos DB Gremlin | (3rd-party) |
 | Timestream | Data Explorer | (Bigtable) |
 
@@ -58,8 +61,8 @@ A side-by-side comparison of cloud services across the **big three** providers, 
 
 | AWS | Azure | GCP |
 | --- | --- | --- |
-| Kinesis Data Streams | Stream Analytics | [[../../gcp/analytics/dataflow\|Dataflow]] |
-| Glue | Data Factory | [[../../gcp/analytics/datafusion\|Data Fusion]] |
+| Kinesis Data Streams | Stream Analytics | [[../cloud/gcp/analytics/dataflow\|Dataflow]] |
+| Glue | Data Factory | [[../cloud/gcp/analytics/datafusion\|Data Fusion]] |
 | EMR | HDInsight | Dataproc |
 | Step Functions | Logic Apps | Cloud Workflows |
 | MWAA (Airflow) | Data Factory + Airflow | Cloud Composer |
@@ -70,7 +73,7 @@ A side-by-side comparison of cloud services across the **big three** providers, 
 | AWS | Azure | GCP |
 | --- | --- | --- |
 | SNS | Service Bus topics | (Pub/Sub) |
-| SQS | Queue Storage | [[../../gcp/analytics/pubsub\|Pub/Sub]] |
+| SQS | Queue Storage | [[../cloud/gcp/analytics/pubsub\|Pub/Sub]] |
 | EventBridge | Event Grid | Eventarc |
 | Kinesis Data Firehose | Event Hubs | Pub/Sub Lite |
 | MSK (Kafka) | Event Hubs Kafka API | Confluent on GCP |
@@ -82,7 +85,7 @@ A side-by-side comparison of cloud services across the **big three** providers, 
 | CloudWatch | Azure Monitor | Cloud Operations Suite |
 | CloudFormation | Resource Manager (ARM) | Deployment Manager / Config Connector |
 | CloudTrail | Activity Log | Cloud Audit Logs |
-| Glue Data Catalog | Purview | [[../../gcp/analytics/data-catalog\|Data Catalog / Dataplex]] |
+| Glue Data Catalog | Purview | [[../cloud/gcp/analytics/data-catalog\|Data Catalog / Dataplex]] |
 | Lake Formation | Purview | Dataplex |
 
 ## Networking + Security
@@ -146,5 +149,5 @@ Most large enterprises now run **multi-cloud** for redundancy, vendor leverage, 
 >
 >
 >> [!card] Cloud platforms
->> [[../../gcp/foundations/google-cloud-platform|GCP]], [[../../aws/aws|AWS]], [[../../azure/azure|Azure]], [[../../databricks/databricks|Databricks]]
+>> [[../cloud/gcp/foundations/google-cloud-platform|GCP]], [[AWS|AWS]], [[../cloud/azure/azure|Azure]], [[../cloud/databricks/databricks|Databricks]]
 

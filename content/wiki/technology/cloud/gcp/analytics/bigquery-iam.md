@@ -16,6 +16,9 @@ banner:
 publish: true
 ---
 
+> "Strategy is a commodity, execution is an art."
+> <cite>— Peter Drucker</cite>
+
 ---
 
 Access control in BigQuery is governed by **Cloud IAM**. The model is the standard GCP **Member + Role + Policy** triad applied to BigQuery resources (project, dataset, table, view, **column**, **row**) (source: Google Cloud Platform - Managing Access using IAM in BigQuery.md).
@@ -126,13 +129,13 @@ The source emphasises preferring **Google Groups** over individual users — cha
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/data-management/data-governance|Data Governance]]
+>> [[../../../data-engineering/data-management/data-governance|Data Governance]]
 >
 >
 >> [!card] Data Engineering
->> [[../../data-engineering/data-ethics|Data Ethics]]
+>> [[../../../data-engineering/data-ethics|Data Ethics]]
 >
 >
 >> [!card] Guides
->> [[../../guides/data-governance-guide|Data Governance Guide]]
+>> [[../../../guides/data-governance-guide|Data Governance Guide]]
 

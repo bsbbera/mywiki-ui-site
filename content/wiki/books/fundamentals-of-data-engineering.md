@@ -13,11 +13,23 @@ banner: "https://learning.oreilly.com/library/cover/9781098108298/250w/"
 publish: true
 ---
 
+> "If you want to see things just as they are, then you yourself must practice just as you are."
+> <cite>— Dogen</cite>
+
 ---
 
-![Fundamentals of Data Engineering cover](https://learning.oreilly.com/library/cover/9781098108298/250w/)
-
-Authors: [[../people/joe-reis-matt-housley|Joe Reis + Matt Housley]] · Publisher: O'Reilly · 2022
+> [!infobox|wikipedia]
+> # Fundamentals of Data Engineering
+> ![cover](https://learning.oreilly.com/library/cover/9781098108298/250w/)
+> ###### Book
+> | | |
+> | --- | --- |
+> | **Authors** | [[../people/joe-reis-matt-housley\|Joe Reis & Matt Housley]] |
+> | **Publisher** | O'Reilly Media |
+> | **Published** | 2022 (1st ed.) |
+> | **Domain** | Data engineering |
+> | **Pages** | 447 |
+> | **ISBN** | 978-1098108304 |
 
 Modern textbook formalizing the **data engineering lifecycle** (generation → ingestion → transformation → serving) and the **undercurrents** that span every stage (security, data management, DataOps, architecture, orchestration, software engineering). Tool-agnostic; principles-first.
 
@@ -30,9 +42,9 @@ Modern textbook formalizing the **data engineering lifecycle** (generation → i
 >
 >
 >> [!card] Data Engineering
->> [[../data-engineering/data-engineering|Data Engineering Overview]], [[../data-engineering/data-pipeline|Data Pipeline]]
+>> [[../technology/data-engineering/data-engineering|Data Engineering Overview]], [[../technology/data-engineering/data-pipeline|Data Pipeline]]
 >
 >
 >> [!card] Data Architecture
->> [[../data-engineering/concepts/data-architecture/data-architecture|Data Architecture]]
+>> [[../technology/data-engineering/data-architecture/data-architecture|Data Architecture]]
 

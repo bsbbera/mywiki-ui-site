@@ -14,6 +14,9 @@ banner:
 publish: true
 ---
 
+> "To be prepared is half the victory."
+> <cite>— Miguel de Cervantes</cite>
+
 ---
 
 **Stream processing** refers to the architecture for **continuously collecting, modifying, or exporting data as it is produced or received**. It is used instead of [[batch-data-processing|batch processing]] when **timeliness** is critical and data is needed in **real-time** (source: Concepts/Data Processing/Stream Data Processing.md).
@@ -51,15 +54,15 @@ The hardest distributed-systems guarantee. Modern engines (Flink, Beam/Dataflow,
 ## Tools / engines
 
 - **Apache Flink** — gold standard for true streaming.
-- **Apache Spark Structured Streaming** — micro-batch with streaming API.
-- **Apache Beam** — portable model; runs on Flink, Spark, [[../../../gcp/analytics/dataflow|Dataflow]].
+- **[[spark-streaming|Apache Spark Structured Streaming]]** — micro-batch with streaming API.
+- **Apache Beam** — portable model; runs on Flink, Spark, [[../../cloud/gcp/analytics/dataflow|Dataflow]].
 - **Kafka Streams / ksqlDB** — Kafka-native lightweight processing.
 - **Amazon Kinesis Data Analytics**, **Azure Stream Analytics**.
 
 ## Sources + sinks
 
-- **Sources**: [[../../../gcp/analytics/pubsub|Pub/Sub]], Kafka, Kinesis, EventHub, MSK, MQTT, IoT Core.
-- **Sinks**: [[../../../gcp/analytics/bigquery|BigQuery]], data lake, KV stores, dashboards, downstream services.
+- **Sources**: [[../../cloud/gcp/analytics/pubsub|Pub/Sub]], Kafka, Kinesis, EventHub, MSK, MQTT, IoT Core.
+- **Sinks**: [[../../cloud/gcp/analytics/bigquery|BigQuery]], data lake, KV stores, dashboards, downstream services.
 
 ## Use cases
 
@@ -103,11 +106,11 @@ See [[batch-data-processing]] for the comparison table.
 >
 >
 >> [!card] Streaming architecture
->> [[../data-architecture/kappa-architecture|Kappa Architecture]], [[../data-architecture/lambda-architecture|Lambda Architecture]], [[../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../software-engineering/event-sourcing-pattern|Event Sourcing]]
+>> [[../data-architecture/kappa-architecture|Kappa Architecture]], [[../data-architecture/lambda-architecture|Lambda Architecture]], [[../../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../../software-engineering/event-sourcing-pattern|Event Sourcing]]
 >
 >
 >> [!card] Tools + products
->> [[../../tools/processing-tools|Processing Tools]], [[../../../gcp/analytics/pubsub|GCP Pub/Sub]], [[../../../gcp/analytics/dataflow|Dataflow]]
+>> [[spark-streaming|Spark Streaming]], [[../../tools/processing-tools|Processing Tools]], [[../../cloud/gcp/analytics/pubsub|GCP Pub/Sub]], [[../../cloud/gcp/analytics/dataflow|Dataflow]]
 >
 >
 >> [!card] People

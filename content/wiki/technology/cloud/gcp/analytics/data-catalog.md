@@ -17,6 +17,23 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Data Catalog
+> ###### Cloud Service
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Metadata management & data discovery |
+> | **Category** | Governance |
+> | **Launched** | 2020 (now Dataplex Catalog) |
+> | **Interface** | Console, REST API, client libraries |
+> | **Website** | cloud.google.com/dataplex |
+
+---
+
+> "Life begins at the end of our comfort zone."
+> <cite>— Neale Donald Walsch</cite>
+
 ---
 
 Google Cloud Data Catalog is a **fully managed, scalable data-discovery and metadata-management service**. It provides a **centralized metadata repository** + **powerful search** that lets users find datasets across services like [[bigquery|BigQuery]] and [[pubsub|Pub/Sub]], understand their structure, and access them securely (source: Google Cloud Platform - A High level Overview of Data Catalog Service.md).
@@ -160,13 +177,13 @@ Enter keyword / dataset name / table name. Apply faceted filters:
 >
 >
 >> [!card] Data Management
->> [[../../data-engineering/data-management/data-catalog|Data Catalog (concept)]], [[../../data-engineering/data-management/data-governance|Data Governance]], [[../../data-engineering/data-management/data-management|Data Management]]
+>> [[../../../data-engineering/data-management/data-catalog|Data Catalog (concept)]], [[../../../data-engineering/data-management/data-governance|Data Governance]], [[../../../data-engineering/data-management/data-management|Data Management]]
 >
 >
 >> [!card] Guides
->> [[../../data-engineering/guides/data-governance-guide|Data Governance Guide]]
+>> [[../../../guides/data-governance-guide|Data Governance Guide]]
 >
 >
 >> [!card] Certifications
->> [[../certifications/professional-data-engineer|Professional Data Engineer]]
+>> [[Professional Data Engineer|Professional Data Engineer]]
 

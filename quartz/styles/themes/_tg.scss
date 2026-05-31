@@ -87,13 +87,13 @@ body {
    actually gains width even when the viewport is constrained. */
 @media (min-width: 1200px) {
   :root[data-reading-width="narrow"] .page > #quartz-body {
-    grid-template-columns: 320px minmax(0, 720px) 320px !important;
+    grid-template-columns: 380px minmax(0, 720px) 380px !important;
   }
   :root[data-reading-width="normal"] .page > #quartz-body {
-    grid-template-columns: 320px minmax(0, 900px) 320px !important;
+    grid-template-columns: 380px minmax(0, 900px) 380px !important;
   }
   :root[data-reading-width="wide"] .page > #quartz-body {
-    grid-template-columns: 240px minmax(0, 1fr) 240px !important;
+    grid-template-columns: 300px minmax(0, 1fr) 300px !important;
   }
 
   /* "Full" mode: the left sidebar collapses into a horizontal top menu bar

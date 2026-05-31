@@ -16,9 +16,27 @@ banner:
 publish: true
 ---
 
+> [!infobox|wikipedia]
+> # Databricks
+> ###### Tool / Software
+> | | |
+> | --- | --- |
+> | **Developer** | Databricks, Inc. |
+> | **Type** | Unified data & AI platform (Lakehouse) |
+> | **Domain** | Data engineering, analytics, ML |
+> | **Founded** | 2013 |
+> | **Built on** | Apache Spark, Delta Lake, MLflow |
+> | **Runs on** | AWS, Azure, GCP |
+> | **Website** | databricks.com |
+
 ---
 
-[Databricks](https://www.databricks.com/) is a **cross-cloud unified data + AI platform** built on top of **Apache Spark**, **Delta Lake**, and **MLflow** — all of which originated from its founders' work at **UC Berkeley AMPLab**. It runs on **AWS, Azure, and GCP**, and pioneered the **Lakehouse architecture**, which combines data lake economics with warehouse performance + governance.
+> "Successful people are not without problems. They're simply people who've learned to solve their problems."
+> <cite>— Earl Nightingale</cite>
+
+---
+
+[Databricks](https://www.databricks.com/) is a **cross-cloud unified data + AI platform** built on top of **[[apache-spark|Apache Spark]]**, **Delta Lake**, and **MLflow** — all of which originated from its founders' work at **UC Berkeley AMPLab**. It runs on **AWS, Azure, and GCP**, and pioneered the **Lakehouse architecture**, which combines data lake economics with warehouse performance + governance.
 
 ## What it is
 
@@ -34,7 +52,7 @@ A managed platform that consolidates:
 
 ## Why it matters
 
-- Coined the **Lakehouse** pattern — see [[../data-engineering/data-architecture/medallion-architecture|Medallion Architecture]].
+- Coined the **Lakehouse** pattern — see [[../../data-engineering/data-architecture/medallion-architecture|Medallion Architecture]].
 - Major contributions to OSS: **Spark**, **Delta Lake**, **MLflow**, **Koalas / pandas-on-Spark**.
 - Strong choice when teams want **portability** across AWS / Azure / GCP.
 
@@ -52,7 +70,7 @@ A managed platform that consolidates:
 
 Databricks runs on GCP since 2021 with deep integration to:
 
-- [[../gcp/storage/cloud-storage|Cloud Storage]]
+- [[Cloud Storage|Cloud Storage]]
 - [[../gcp/analytics/bigquery|BigQuery]] (federated read / BigLake)
 - [[../gcp/analytics/pubsub|Pub/Sub]]
 - IAM via Workload Identity Federation
@@ -77,9 +95,13 @@ Databricks runs on GCP since 2021 with deep integration to:
 >> ---
 >> [[Batch Processing]], [[Stream Processing]]
 >
+>> [!abstract|noicon] Spark internals
+>> ---
+>> [[apache-spark|Apache Spark]], [[pyspark|PySpark]], [[rdd|RDDs]], [[spark-performance|Tuning]]
+>
 >> [!warning|noicon] Tools + formats
 >> ---
->> [[Processing Tools (Spark)]], [[File Formats (Delta)]]
+>> [[processing-tools|Processing Tools (Spark)]], [[file-formats|File Formats (Delta)]]
 >
 >> [!quote|noicon] Sister cloud platforms
 >> ---

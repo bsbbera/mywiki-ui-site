@@ -15,6 +15,9 @@ banner:
 publish: true
 ---
 
+> "Rewards and punishment is the lowest form of education."
+> <cite>— Zhuangzi</cite>
+
 ---
 
 A quick reference catalog of databases commonly used in data engineering. Aggregated from the source `Tools/Databases/` tree (source: Tools/Databases/*.md).
@@ -23,7 +26,7 @@ A quick reference catalog of databases commonly used in data engineering. Aggreg
 
 ### PostgreSQL
 
-[Postgres](https://www.postgresql.org/) — open-source [[../concepts/data-storage/relational-database|RDBMS]] with 30+ years of active development. Renowned for **reliability, feature breadth, and performance**. Killer features: JSONB, PostGIS (geospatial), full-text search, extensions ecosystem (TimescaleDB, AGE for graph, pgvector). Default modern OLTP choice.
+[Postgres](https://www.postgresql.org/) — open-source [[../data-engineering/data-storage/relational-database|RDBMS]] with 30+ years of active development. Renowned for **reliability, feature breadth, and performance**. Killer features: JSONB, PostGIS (geospatial), full-text search, extensions ecosystem (TimescaleDB, AGE for graph, pgvector). Default modern OLTP choice.
 
 ### MySQL
 
@@ -59,7 +62,7 @@ AWS's enhanced RDS — MySQL/Postgres-compatible with **3× throughput** and sto
 
 ### Google Cloud SQL
 
-See [[../../gcp/databases/cloud-sql|Cloud SQL]] — managed Postgres / MySQL / SQL Server on GCP.
+See [[../cloud/gcp/databases/cloud-sql|Cloud SQL]] — managed Postgres / MySQL / SQL Server on GCP.
 
 ### Azure SQL Database
 
@@ -69,7 +72,7 @@ Microsoft's managed SQL Server. Fully managed, intelligent tuning, geo-replicati
 
 ### Google Cloud Spanner
 
-See [[../../gcp/databases/cloud-spanner|Cloud Spanner]] — globally distributed ACID via TrueTime.
+See [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]] — globally distributed ACID via TrueTime.
 
 ### CockroachDB
 
@@ -91,7 +94,7 @@ In-memory + columnar store. HTAP workload focus.
 
 ### Google BigQuery
 
-See [[../../gcp/analytics/bigquery|BigQuery]] — serverless petabyte-scale analytics on GCP. Capacitor columnar format on Colossus storage; Dremel query engine.
+See [[../cloud/gcp/analytics/bigquery|BigQuery]] — serverless petabyte-scale analytics on GCP. Capacitor columnar format on Colossus storage; Dremel query engine.
 
 ### Amazon Redshift
 
@@ -107,7 +110,7 @@ Microsoft's unified analytics platform — combines warehouse, data lake, Spark 
 
 ### Databricks SQL (Lakehouse)
 
-See [[../../databricks/databricks|Databricks]] — Spark + Delta Lake-based analytics.
+See [[../cloud/databricks/databricks|Databricks]] — Spark + Delta Lake-based analytics.
 
 ### ClickHouse
 
@@ -143,11 +146,11 @@ Multi-model; document API among others.
 
 ### Apache Cassandra
 
-Open-source [[../concepts/data-storage/wide-column-database|wide-column]] DB; AP from CAP. Used by Netflix, Apple, Discord. Tunable consistency.
+Open-source [[../data-engineering/data-storage/wide-column-database|wide-column]] DB; AP from CAP. Used by Netflix, Apple, Discord. Tunable consistency.
 
 ### Google Cloud Bigtable
 
-See [[../../gcp/databases/cloud-bigtable|Cloud Bigtable]] — Google's BigTable paper made manifest. Powers Search, Maps, Gmail internally.
+See [[../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]] — Google's BigTable paper made manifest. Powers Search, Maps, Gmail internally.
 
 ### HBase
 
@@ -161,7 +164,7 @@ C++ rewrite of Cassandra; faster, lower latency.
 
 ### Redis
 
-Open-source [[../concepts/data-storage/in-memory-database|in-memory]] KV store. Rich data structures (lists, sets, sorted sets, streams, HyperLogLog). Used as cache, queue, leaderboard, pub/sub. Now **Redis 7.x**; some forks emerged after license change (Valkey, KeyDB).
+Open-source [[../data-engineering/data-storage/in-memory-database|in-memory]] KV store. Rich data structures (lists, sets, sorted sets, streams, HyperLogLog). Used as cache, queue, leaderboard, pub/sub. Now **Redis 7.x**; some forks emerged after license change (Valkey, KeyDB).
 
 ### Amazon DynamoDB
 
@@ -228,7 +231,7 @@ Financial industry standard; q programming language; extremely fast.
 > [!multi-column]
 >
 >> [!card] Storage concepts
->> [[../concepts/data-storage/data-storage|Data Storage]], [[../concepts/data-storage/relational-database|Relational Database]], [[../concepts/data-storage/non-relational-database|Non-relational Database]]
+>> [[../data-engineering/data-storage/data-storage|Data Storage]], [[../data-engineering/data-storage/relational-database|Relational Database]], [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]
 >
 >
 >> [!card] Sister catalogs
@@ -236,7 +239,7 @@ Financial industry standard; q programming language; extremely fast.
 >
 >
 >> [!card] GCP products
->> [[../../gcp/databases/cloud-sql|Cloud SQL]], [[../../gcp/databases/cloud-spanner|Cloud Spanner]], [[../../gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../gcp/databases/memorystore|Memorystore]], [[../../gcp/analytics/bigquery|BigQuery]]
+>> [[../cloud/gcp/databases/cloud-sql|Cloud SQL]], [[../cloud/gcp/databases/cloud-spanner|Cloud Spanner]], [[../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../cloud/gcp/databases/memorystore|Memorystore]], [[../cloud/gcp/analytics/bigquery|BigQuery]]
 >
 >
 >> [!card] People
