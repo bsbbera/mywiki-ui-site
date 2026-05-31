@@ -9,6 +9,8 @@ interface CustomEventMap {
   nav: CustomEvent<{ url: FullSlug }>
   themechange: CustomEvent<{ theme: "light" | "dark" }>
   readermodechange: CustomEvent<{ mode: "on" | "off" }>
+  themefamilychange: CustomEvent<{ family: string }>
+  themecustomchange: CustomEvent<{ family: string }>
 }
 
 type ContentIndex = Record<FullSlug, ContentDetails>
