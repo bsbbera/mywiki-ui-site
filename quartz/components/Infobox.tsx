@@ -39,15 +39,12 @@ const Infobox: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
     pairs.push([
       label,
       <span class="tg-infobox-tags">
-        {tags.map((tag, i) => {
+        {tags.map((tag) => {
           const href = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
           return (
-            <>
-              {i > 0 ? ", " : ""}
-              <a class="internal tag-link" href={href}>
-                {tag}
-              </a>
-            </>
+            <a class="internal tag-link" href={href} data-tag={tag}>
+              {tag}
+            </a>
           )
         })}
       </span>,

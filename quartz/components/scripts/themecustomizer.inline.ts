@@ -2,6 +2,8 @@ const DEFAULT_FAMILY = "glass"
 const FAMILY_KEY = "theme-family"
 const CUSTOM_KEY = "theme-custom"
 const NOANIM_KEY = "theme-no-anim"
+const FONTSIZE_KEY = "theme-fontsize"
+const DEFAULT_FONTSIZE = "0.82rem"
 const HEX6 = /^#[0-9a-fA-F]{6}$/
 
 type Overrides = Record<string, Record<string, string>>
@@ -45,8 +47,14 @@ function applyAnimations() {
   document.documentElement.classList.toggle("no-anim", off)
 }
 
+function applyFontSize() {
+  const size = localStorage.getItem(FONTSIZE_KEY) ?? DEFAULT_FONTSIZE
+  document.documentElement.style.setProperty("--mwg-content-size", size)
+}
+
 // ---- run before paint: restore persisted look ----------------------------
 applyAnimations()
+applyFontSize()
 applyOverrides(currentFamily())
 
 function emitCustomChange(family: string) {
@@ -77,6 +85,9 @@ function syncControls(panel: HTMLElement, family: string) {
 
   const anim = panel.querySelector<HTMLInputElement>(".tc-anim")
   if (anim) anim.checked = localStorage.getItem(NOANIM_KEY) !== "1"
+
+  const fontsize = panel.querySelector<HTMLSelectElement>(".tc-fontsize")
+  if (fontsize) fontsize.value = localStorage.getItem(FONTSIZE_KEY) ?? DEFAULT_FONTSIZE
 }
 
 document.addEventListener("nav", () => {
@@ -125,6 +136,17 @@ document.addEventListener("nav", () => {
     }
     anim.addEventListener("change", onAnim)
     window.addCleanup(() => anim.removeEventListener("change", onAnim))
+  }
+
+  // text size
+  const fontsize = panel.querySelector<HTMLSelectElement>(".tc-fontsize")
+  if (fontsize) {
+    const onSize = () => {
+      localStorage.setItem(FONTSIZE_KEY, fontsize.value)
+      applyFontSize()
+    }
+    fontsize.addEventListener("change", onSize)
+    window.addCleanup(() => fontsize.removeEventListener("change", onSize))
   }
 
   // reset active family

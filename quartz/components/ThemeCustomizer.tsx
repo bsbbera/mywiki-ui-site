@@ -68,6 +68,15 @@ const ThemeCustomizer: QuartzComponent = ({ displayClass }: QuartzComponentProps
           </div>
         ))}
 
+        <label class="tc-row tc-size-row">
+          <span>Text size</span>
+          <select class="tc-fontsize">
+            <option value="0.82rem">Small</option>
+            <option value="0.9rem">Medium</option>
+            <option value="1rem">Large</option>
+          </select>
+        </label>
+
         <label class="tc-row tc-anim-row">
           <span>Animations</span>
           <input type="checkbox" class="tc-anim" checked />

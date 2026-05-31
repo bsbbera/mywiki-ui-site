@@ -28,6 +28,7 @@
   --mwg-code-fg: #5a47cf;
   --mwg-th-bg: linear-gradient(180deg, #6d5ae6, #5a47cf);
   --mwg-shadow-pop: 0 1px 2px rgba(20, 18, 14, 0.06), 0 20px 50px rgba(20, 18, 14, 0.14);
+  --mwg-shadow-soft: 0 2px 12px -6px rgba(20, 18, 14, 0.18);
   --mwg-h1: #14120e;
   --mwg-h2: #14120e;
   --mwg-h3: #2a2733;
@@ -100,6 +101,7 @@
   --mwg-code-fg: #c4b4ff;
   --mwg-th-bg: linear-gradient(180deg, #2b2350, #211a40);
   --mwg-shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.7);
+  --mwg-shadow-soft: 0 2px 10px -6px rgba(0, 0, 0, 0.55);
   --mwg-h1: #fbfbfa;
   --mwg-h2: #fbfbfa;
   --mwg-h3: #ececec;
@@ -124,6 +126,9 @@
 
   /* ---- headings: serif, colour-coded, gradient underline on h1/h2 -------- */
   & article {
+    /* Wikipedia-small default; overridable live via the customizer */
+    font-size: var(--mwg-content-size, 0.82rem);
+
     h1,
     h2,
     h3,
@@ -132,6 +137,21 @@
     h6 {
       font-family: var(--headerFont);
       letter-spacing: -0.01em;
+    }
+    /* generous space ABOVE section headings, tight below (Obsidian rhythm) */
+    h2 {
+      margin-top: 2.2em;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      margin-top: 1.7em;
+      margin-bottom: 0.4em;
+    }
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.3em;
+      margin-bottom: 0.3em;
     }
     h1 {
       color: var(--mwg-h1);
@@ -151,9 +171,12 @@
     h6 {
       color: var(--mwg-h6);
     }
+    /* underline hugs the text width (not the full column) like Obsidian */
     h1,
     h2 {
-      padding-bottom: 0.18em;
+      width: fit-content;
+      max-width: 100%;
+      padding-bottom: 0.16em;
       border-bottom: 2px solid transparent;
       border-image: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2)) 1;
     }
@@ -224,36 +247,73 @@
       background: var(--mwg-accent-soft);
     }
 
-    /* ---- callouts: card + accent left bar + hover lift ------------------ */
+    /* ---- callouts: soft card + accent left bar + gentle hover ----------- */
     & .callout {
       background: var(--mwg-pane-2);
       border: 1px solid var(--mwg-border);
       border-left: 3px solid var(--mwg-accent);
       border-radius: var(--mwg-radius);
+      box-shadow: var(--mwg-shadow-soft);
       transition:
         box-shadow var(--mwg-dur) var(--mwg-ease),
+        transform var(--mwg-dur) var(--mwg-ease),
         border-color var(--mwg-dur) var(--mwg-ease);
     }
     & .callout:hover {
-      border-color: var(--mwg-border-strong);
+      border-color: var(--mwg-border-2);
       box-shadow: var(--mwg-shadow-pop);
     }
   }
 
-  /* ---- tags as accent pills (content + sidebar) ------------------------- */
+  /* ---- tags: colourful pills (content + sidebar + properties) ----------
+     TG forces infobox tags to plain text with !important, so these win with
+     !important too. Tints cycle for an Obsidian-like splash of colour. ----- */
   & a.tag-link,
-  & .tags > li > a {
-    background: var(--mwg-chip-bg);
-    color: var(--mwg-accent);
-    border: 1px solid var(--mwg-accent-line);
-    border-radius: 9999px;
-    padding: 0.15rem 0.6rem;
-    transition: all var(--mwg-dur) var(--mwg-ease);
+  & .tags > li > a,
+  & .tg-infobox .tag-link {
+    display: inline-block;
+    background: color-mix(in srgb, var(--mwg-tag-blue) 16%, transparent) !important;
+    color: var(--mwg-tag-blue) !important;
+    border: 1px solid color-mix(in srgb, var(--mwg-tag-blue) 45%, transparent) !important;
+    border-radius: 9999px !important;
+    padding: 0.08rem 0.6rem !important;
+    margin: 0 !important;
+    font-size: 0.82em !important;
+    text-decoration: none !important;
+    transition:
+      transform var(--mwg-dur) var(--mwg-ease),
+      filter var(--mwg-dur) var(--mwg-ease) !important;
+  }
+  & .tg-infobox-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  /* cycle tints by position for colourful variety */
+  & .tg-infobox-tags .tag-link:nth-of-type(4n + 2),
+  & .tags > li:nth-of-type(4n + 2) > a {
+    background: color-mix(in srgb, var(--mwg-tag-green) 16%, transparent) !important;
+    color: var(--mwg-tag-green) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-green) 45%, transparent) !important;
+  }
+  & .tg-infobox-tags .tag-link:nth-of-type(4n + 3),
+  & .tags > li:nth-of-type(4n + 3) > a {
+    background: color-mix(in srgb, var(--mwg-tag-amber) 16%, transparent) !important;
+    color: var(--mwg-tag-amber) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-amber) 45%, transparent) !important;
+  }
+  & .tg-infobox-tags .tag-link:nth-of-type(4n),
+  & .tags > li:nth-of-type(4n) > a {
+    background: color-mix(in srgb, var(--mwg-tag-rose) 16%, transparent) !important;
+    color: var(--mwg-tag-rose) !important;
+    border-color: color-mix(in srgb, var(--mwg-tag-rose) 45%, transparent) !important;
   }
   & a.tag-link:hover,
-  & .tags > li > a:hover {
-    background: var(--mwg-accent);
-    color: #ffffff !important;
+  & .tags > li > a:hover,
+  & .tg-infobox .tag-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.15);
+    text-decoration: none !important;
   }
 }
 
@@ -304,11 +364,12 @@
 /* =============================================================================
    Animations — gated by :not(.no-anim) + prefers-reduced-motion
    ========================================================================== */
+/* Apple-style page entrance: gentle blur + lift + micro-zoom, soft settle */
 @keyframes mwg-view-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
-    filter: blur(4px);
+    transform: translateY(12px) scale(0.992);
+    filter: blur(6px);
   }
   to {
     opacity: 1;
@@ -318,14 +379,20 @@
 }
 
 :root[data-theme="glass"]:not(.no-anim) article {
-  animation: mwg-view-in 500ms var(--mwg-ease) both;
+  animation: mwg-view-in 650ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+/* the Properties card + infobox drift in just after the body */
+:root[data-theme="glass"]:not(.no-anim) .tg-infobox-top {
+  animation: mwg-view-in 650ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 60ms;
 }
 :root[data-theme="glass"]:not(.no-anim) article .callout:hover {
   transform: translateY(-1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :root[data-theme="glass"] article {
+  :root[data-theme="glass"] article,
+  :root[data-theme="glass"] .tg-infobox-top {
     animation: none !important;
   }
 }
@@ -367,17 +434,30 @@
     background: var(--mwg-accent-soft);
   }
 
-  /* folder rows */
+  /* folder rows — muted + light weight, accent only on hover (not intense) */
   & .explorer .folder-title {
-    color: var(--mwg-text);
-    font-weight: 600;
+    color: var(--mwg-muted) !important;
+    font-weight: 400 !important;
   }
   & .explorer button.folder-button:hover .folder-title,
   & .explorer .folder-outer:hover > .folder-container .folder-title {
-    color: var(--mwg-accent);
+    color: var(--mwg-text) !important;
   }
 
-  /* TOC active item */
+  /* ---- TOC: clean, no weird background blocks ------------------------- */
+  & .toc,
+  & .toc-content,
+  & .toc-content ul,
+  & .toc-content li {
+    background: none !important;
+    border: none !important;
+  }
+  & .toc-content ul li > a {
+    background: none;
+  }
+  & .toc-content ul li > a:hover {
+    background: var(--mwg-accent-soft);
+  }
   & .toc-content .in-view {
     color: var(--mwg-muted);
   }
@@ -385,6 +465,7 @@
   & .toc-content li.in-view > a {
     color: var(--mwg-accent);
     font-weight: 600;
+    background: none;
   }
 
   /* graph panel surface */
@@ -430,13 +511,20 @@
   /* ---- Properties (Infobox top): soft glass card ----------------------- */
   & .tg-infobox.tg-infobox-top {
     position: relative;
-    background: var(--mwg-pane-2);
+    background: color-mix(in srgb, var(--mwg-pane-2) 70%, transparent);
     border: 1px solid var(--mwg-border);
-    border-radius: 12px;
-    box-shadow: var(--mwg-shadow-pop);
+    border-radius: 14px;
+    box-shadow: var(--mwg-shadow-soft);
     margin: 0 0 1.9rem;
     padding: 0.5rem 0.5rem 0.6rem;
     overflow: hidden;
+    transition:
+      box-shadow var(--mwg-dur) var(--mwg-ease),
+      border-color var(--mwg-dur) var(--mwg-ease);
+  }
+  & .tg-infobox.tg-infobox-top:hover {
+    border-color: var(--mwg-border-2);
+    box-shadow: var(--mwg-shadow-pop);
   }
   & .tg-infobox.tg-infobox-top::before {
     content: "";
@@ -480,5 +568,51 @@
   }
   & .tg-infobox-top .tg-infobox-val {
     color: var(--mwg-text);
+  }
+}
+
+/* =============================================================================
+   Layout: pull the whole page to the left (Medium / blog style) so the sidebar
+   hugs the viewport edge instead of floating in centered whitespace.
+   ========================================================================== */
+:root[data-theme="glass"] {
+  & .page {
+    max-width: 100%;
+    margin: 0;
+  }
+  & .page > #quartz-body {
+    justify-content: start;
+    padding: 0 2rem;
+  }
+}
+
+/* =============================================================================
+   In-note [!infobox] card (right rail): drop the redundant "INFOBOX" title and
+   soften it to match the Glass cards.
+   ========================================================================== */
+:root[data-theme="glass"] {
+  & .callout[data-callout="infobox"] {
+    background: color-mix(in srgb, var(--mwg-pane-2) 70%, transparent) !important;
+    border: 1px solid var(--mwg-border) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--mwg-shadow-soft) !important;
+  }
+  /* hide the auto "Infobox" callout title */
+  & .callout[data-callout="infobox"] > .callout-title {
+    display: none !important;
+  }
+}
+
+/* =============================================================================
+   Subtle, shared micro-motion for cards / infobox / tables (gated by no-anim).
+   ========================================================================== */
+:root[data-theme="glass"]:not(.no-anim) {
+  & article .callout,
+  & .tg-infobox-top,
+  & .callout[data-callout="infobox"] {
+    transition:
+      transform var(--mwg-dur) var(--mwg-ease),
+      box-shadow var(--mwg-dur) var(--mwg-ease),
+      border-color var(--mwg-dur) var(--mwg-ease);
   }
 }

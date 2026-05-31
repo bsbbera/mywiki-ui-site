@@ -1,0 +1,123 @@
+.tag-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+
+  &.open {
+    display: flex;
+  }
+
+  & .tag-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    animation: tag-popup-fade 180ms ease both;
+  }
+
+  & .tag-popup-panel {
+    position: relative;
+    margin-top: 12vh;
+    width: min(28rem, 92vw);
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 14px;
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+    animation: tag-popup-rise 220ms cubic-bezier(0.32, 0.72, 0, 1) both;
+  }
+
+  & .tag-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+  & .tag-popup-title {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 1rem;
+  }
+  & .tag-popup-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 6px;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease;
+    &:hover {
+      color: var(--dark);
+      background: var(--lightgray);
+    }
+  }
+
+  & .tag-popup-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    overflow-y: auto;
+
+    & li {
+      margin: 0;
+    }
+    & li > a {
+      display: block;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      color: var(--darkgray);
+      text-decoration: none;
+      transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
+      &:hover {
+        color: var(--secondary);
+        background: var(--highlight);
+      }
+    }
+    & .tag-popup-empty {
+      padding: 0.7rem;
+      color: var(--gray);
+      font-style: italic;
+    }
+  }
+}
+
+@keyframes tag-popup-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tag-popup-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag-popup .tag-popup-backdrop,
+  .tag-popup .tag-popup-panel {
+    animation: none;
+  }
+}

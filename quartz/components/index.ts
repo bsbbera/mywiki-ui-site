@@ -30,6 +30,7 @@ import CollapsibleHeadings from "./CollapsibleHeadings"
 import WidthToggle from "./WidthToggle"
 import ThemeSelector from "./ThemeSelector"
 import ThemeCustomizer from "./ThemeCustomizer"
+import TagPopup from "./TagPopup"
 
 export {
   ArticleTitle,
@@ -64,4 +65,5 @@ export {
   WidthToggle,
   ThemeSelector,
   ThemeCustomizer,
+  TagPopup,
 }
