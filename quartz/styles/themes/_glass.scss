@@ -1,0 +1,325 @@
+/* =============================================================================
+   MyWiki Glass  →  Quartz theme   (data-theme="glass")
+   Ported from the Obsidian "MyWiki Glass" theme.css token map.
+   Two layers:
+     1. tokens (--mwg-*)  +  bridge onto Quartz base vars (--light/--secondary/…)
+     2. component overrides + animations, scoped under [data-theme="glass"]
+   See docs/THEME-PORTING.md for the recipe.
+   The Glass web fonts (Plus Jakarta Sans / Newsreader / JetBrains Mono) are
+   loaded as a <link> injected before paint by themeselector.inline.ts — a CSS
+   @import here would be emitted mid-bundle and ignored by the browser.
+   ========================================================================== */
+
+/* ---- tokens: LIGHT defaults --------------------------------------------- */
+:root[data-theme="glass"] {
+  --mwg-accent: #6d5ae6;
+  --mwg-accent-2: #3d82d0;
+  --mwg-gold: #b07d20;
+  --mwg-danger: #c34a26;
+  --mwg-bg-0: #f7f8fb;
+  --mwg-pane: #f2f4f9;
+  --mwg-pane-2: #eaedf4;
+  --mwg-editor: #ffffff;
+  --mwg-raised: #ffffff;
+  --mwg-text: #1a1a1a;
+  --mwg-text-strong: #14120e;
+  --mwg-muted: #5c5a55;
+  --mwg-faint: #8a8780;
+  --mwg-code-fg: #5a47cf;
+  --mwg-th-bg: linear-gradient(180deg, #6d5ae6, #5a47cf);
+  --mwg-shadow-pop: 0 1px 2px rgba(20, 18, 14, 0.06), 0 20px 50px rgba(20, 18, 14, 0.14);
+  --mwg-h1: #14120e;
+  --mwg-h2: #14120e;
+  --mwg-h3: #2a2733;
+  --mwg-h4: #3a3833;
+  --mwg-h5: #4a4843;
+  --mwg-h6: #5c5a55;
+  --mwg-bold-color: #14120e;
+  --mwg-italic-color: #1a1a1a;
+  --mwg-bold-italic-color: #14120e;
+  --mwg-strikethrough-color: #5c5a55;
+
+  /* tag tints (fixed across both modes) */
+  --mwg-tag-blue: #5b9bd5;
+  --mwg-tag-green: #4cb782;
+  --mwg-tag-amber: #d9a441;
+  --mwg-tag-rose: #e0708a;
+
+  /* shape + motion */
+  --mwg-radius: 8px;
+  --mwg-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --mwg-dur: 240ms;
+
+  /* derived (same formulas in both modes) */
+  --mwg-accent-soft: color-mix(in srgb, var(--mwg-accent) 14%, transparent);
+  --mwg-accent-line: color-mix(in srgb, var(--mwg-accent) 55%, transparent);
+  --mwg-code-bg: color-mix(in srgb, var(--mwg-accent) 12%, transparent);
+  --mwg-chip-bg: color-mix(in srgb, var(--mwg-accent) 13%, transparent);
+  --mwg-border: color-mix(in srgb, var(--mwg-text-strong) 8%, transparent);
+  --mwg-border-2: color-mix(in srgb, var(--mwg-text-strong) 14%, transparent);
+  --mwg-border-strong: color-mix(in srgb, var(--mwg-text-strong) 22%, transparent);
+
+  /* ---- BRIDGE → Quartz base vars ---------------------------------------- */
+  --light: var(--mwg-bg-0);
+  --lightgray: var(--mwg-pane-2);
+  --gray: var(--mwg-faint);
+  --darkgray: var(--mwg-text);
+  --dark: var(--mwg-text-strong);
+  --secondary: var(--mwg-accent);
+  --tertiary: var(--mwg-accent-2);
+  --highlight: var(--mwg-accent-soft);
+  --textHighlight: var(--mwg-chip-bg);
+
+  --headerFont: "Newsreader", Georgia, serif;
+  --titleFont: "Newsreader", Georgia, serif;
+  --bodyFont: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --codeFont: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---- tokens: DARK overrides --------------------------------------------- */
+:root[data-theme="glass"][saved-theme="dark"] {
+  --mwg-accent: #a78bfa;
+  --mwg-accent-2: #5ad0c0;
+  --mwg-gold: #d9a441;
+  --mwg-danger: #e0623f;
+  --mwg-bg-0: #0a0a0b;
+  --mwg-pane: #0e0e10;
+  --mwg-pane-2: #161618;
+  --mwg-editor: #0a0a0b;
+  --mwg-raised: #1f1f22;
+  --mwg-text: #ececec;
+  --mwg-text-strong: #fbfbfa;
+  --mwg-muted: #a3a2a0;
+  --mwg-faint: #6e6d6b;
+  --mwg-code-fg: #c4b4ff;
+  --mwg-th-bg: linear-gradient(180deg, #2b2350, #211a40);
+  --mwg-shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.7);
+  --mwg-h1: #fbfbfa;
+  --mwg-h2: #fbfbfa;
+  --mwg-h3: #ececec;
+  --mwg-h4: #d6d5d3;
+  --mwg-h5: #d6d5d3;
+  --mwg-h6: #a3a2a0;
+  --mwg-bold-color: #fbfbfa;
+  --mwg-italic-color: #ececec;
+  --mwg-bold-italic-color: #fbfbfa;
+  --mwg-strikethrough-color: #a3a2a0;
+}
+
+/* =============================================================================
+   Component overrides — Quartz HTML targets
+   ========================================================================== */
+:root[data-theme="glass"] {
+  /* body surface */
+  & body {
+    background: var(--light);
+    font-family: var(--bodyFont);
+  }
+
+  /* ---- headings: serif, colour-coded, gradient underline on h1/h2 -------- */
+  & article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--headerFont);
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      color: var(--mwg-h1);
+    }
+    h2 {
+      color: var(--mwg-h2);
+    }
+    h3 {
+      color: var(--mwg-h3);
+    }
+    h4 {
+      color: var(--mwg-h4);
+    }
+    h5 {
+      color: var(--mwg-h5);
+    }
+    h6 {
+      color: var(--mwg-h6);
+    }
+    h1,
+    h2 {
+      padding-bottom: 0.18em;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--mwg-accent), var(--mwg-accent-2)) 1;
+    }
+
+    /* ---- body text emphasis --------------------------------------------- */
+    strong {
+      color: var(--mwg-bold-color);
+    }
+    em {
+      color: var(--mwg-italic-color);
+    }
+    del {
+      color: var(--mwg-strikethrough-color);
+    }
+
+    /* ---- list markers --------------------------------------------------- */
+    ul > li::marker {
+      color: var(--mwg-accent);
+    }
+    ol > li::marker {
+      color: var(--mwg-accent-2);
+    }
+
+    /* ---- inline code as a pill ------------------------------------------ */
+    & :not(pre) > code {
+      background: var(--mwg-code-bg);
+      color: var(--mwg-code-fg);
+      border-radius: 5px;
+      padding: 0.1em 0.36em;
+      font-size: 0.88em;
+      font-family: var(--codeFont);
+    }
+    & pre {
+      background: var(--mwg-pane-2);
+      border: 1px solid var(--mwg-border);
+      border-radius: var(--mwg-radius);
+    }
+
+    /* ---- blockquote: accent bar + soft wash ----------------------------- */
+    & blockquote {
+      border-left: 3px solid var(--mwg-accent);
+      background: linear-gradient(90deg, var(--mwg-accent-soft), transparent);
+      border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0;
+      color: var(--mwg-text-strong);
+      font-style: italic;
+    }
+
+    /* ---- tables: gradient header, hover rows ---------------------------- */
+    & table {
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: var(--mwg-radius);
+      overflow: hidden;
+    }
+    & th,
+    & td {
+      border: 1px solid var(--mwg-border-2);
+    }
+    & thead th {
+      background: var(--mwg-th-bg);
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    & tbody tr {
+      transition: background-color var(--mwg-dur) var(--mwg-ease);
+    }
+    & tbody tr:hover {
+      background: var(--mwg-accent-soft);
+    }
+
+    /* ---- callouts: card + accent left bar + hover lift ------------------ */
+    & .callout {
+      background: var(--mwg-pane-2);
+      border: 1px solid var(--mwg-border);
+      border-left: 3px solid var(--mwg-accent);
+      border-radius: var(--mwg-radius);
+      transition:
+        box-shadow var(--mwg-dur) var(--mwg-ease),
+        border-color var(--mwg-dur) var(--mwg-ease);
+    }
+    & .callout:hover {
+      border-color: var(--mwg-border-strong);
+      box-shadow: var(--mwg-shadow-pop);
+    }
+  }
+
+  /* ---- tags as accent pills (content + sidebar) ------------------------- */
+  & a.tag-link,
+  & .tags > li > a {
+    background: var(--mwg-chip-bg);
+    color: var(--mwg-accent);
+    border: 1px solid var(--mwg-accent-line);
+    border-radius: 9999px;
+    padding: 0.15rem 0.6rem;
+    transition: all var(--mwg-dur) var(--mwg-ease);
+  }
+  & a.tag-link:hover,
+  & .tags > li > a:hover {
+    background: var(--mwg-accent);
+    color: #ffffff !important;
+  }
+}
+
+/* =============================================================================
+   Neutralize Tolkien-Gateway-only flourishes when Glass is active.
+   _tg.scss styles these under `:root[saved-theme=…]`, which still matches under
+   Glass (both attributes are present). These same-shape rules load later and so
+   win on equal specificity; `.callout` needs !important to beat TG's !important.
+   ========================================================================== */
+:root[data-theme="glass"] {
+  /* no oversized drop cap */
+  & article > p:first-of-type::first-letter {
+    font-family: var(--bodyFont);
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding: 0;
+    color: inherit;
+  }
+
+  /* plain accent hairline instead of the ❦ dingbat rule */
+  & article hr {
+    height: 1px;
+    margin: 2em 0;
+    background-color: var(--mwg-border-2);
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  /* Glass card callouts (override TG's !important infobox look) */
+  & article .callout {
+    background: var(--mwg-pane-2) !important;
+    border: 1px solid var(--mwg-border) !important;
+    border-left: 3px solid var(--mwg-accent) !important;
+    border-radius: var(--mwg-radius) !important;
+    box-shadow: none !important;
+  }
+  & article .callout > .callout-title {
+    text-align: left;
+    font-variant: normal;
+    font-family: var(--bodyFont);
+    color: var(--mwg-text-strong);
+    border-bottom: none;
+    letter-spacing: normal;
+  }
+}
+
+/* =============================================================================
+   Animations — gated by :not(.no-anim) + prefers-reduced-motion
+   ========================================================================== */
+@keyframes mwg-view-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+:root[data-theme="glass"]:not(.no-anim) article {
+  animation: mwg-view-in 500ms var(--mwg-ease) both;
+}
+:root[data-theme="glass"]:not(.no-anim) article .callout:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="glass"] article {
+    animation: none !important;
+  }
+}

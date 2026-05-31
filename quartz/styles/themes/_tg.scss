@@ -1,0 +1,983 @@
+
+/* ============================================
+   Tolkien Gateway aesthetic for Quartz
+   ============================================ */
+
+:root {
+  --tg-surface-0: #1a1a1f;
+  --tg-surface-1: #1f1f24;
+  --tg-surface-2: #23232e;
+  --tg-surface-3: #282833;
+  --tg-surface-4: #2c2c3c;
+  --tg-text: #e4ddcf;
+  --tg-text-subtle: #e3d2b0;
+  --tg-text-emphasis: hsl(41.6, 80%, 95%);
+  --tg-gold: #f1c45e;
+  --tg-gold-hover: #ffd16b;
+  --tg-link: hsl(41.6, 84%, 65.7%);
+  --tg-radius-sm: 4px;
+  --tg-radius-md: 8px;
+  --tg-radius-lg: 12px;
+  --tg-t-fast: 100ms;
+  --tg-t-med: 250ms;
+  --tg-shadow-card:
+    0.3px 0.5px 0.7px hsla(41.6, 50%, 3%, 0.3),
+    0.8px 1.6px 2px -0.8px hsla(41.6, 50%, 3%, 0.3),
+    2.1px 4.1px 5.2px -1.7px hsla(41.6, 50%, 3%, 0.3),
+    5px 10px 12.6px -2.5px hsla(41.6, 50%, 3%, 0.3);
+}
+
+/* Per-theme tint vars so the shared structural rules below can reference them */
+:root[saved-theme="light"] {
+  --tg-rule: #a89e8a;
+  --tg-rule-soft: rgba(140, 132, 116, 0.22);
+  --tg-header-bg: rgba(140, 132, 116, 0.15);
+  --tg-selection: rgba(90, 122, 30, 0.25);
+  --tg-hr-svg-color: "%23a89e8a";
+}
+
+/* dark theme (Quartz toggles a [saved-theme="dark"] attr on <html>) */
+:root[saved-theme="dark"] {
+  --light: var(--tg-surface-0);
+  --lightgray: var(--tg-surface-2);
+  --dark: var(--tg-text);
+  --darkgray: var(--tg-text);
+  --secondary: var(--tg-gold);
+  --tertiary: var(--tg-gold-hover);
+  --tg-rule: var(--tg-surface-3);
+  --tg-rule-soft: rgba(241, 196, 94, 0.18);
+  --tg-header-bg: rgba(241, 196, 94, 0.10);
+  --tg-selection: rgba(241, 196, 94, 0.25);
+}
+
+body {
+  background:
+    var(--light)
+    /* subtle paper grain — low-opacity SVG noise tiles invisibly across the page */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-attachment: fixed;
+}
+
+/* ============================================
+   Theme-independent layout overrides
+   ============================================ */
+
+/* Flexible content width: default to 900px; `data-reading-width` (set by
+   WidthToggle) overrides per user preference, persisted in localStorage.
+   The middle grid track on desktop is `auto` by default (sized to content) —
+   we override `grid-template-columns` on the parent so the center column
+   actually grows when the user picks a wider preset. */
+.page > #quartz-body .center {
+  max-width: min(900px, 100%) !important;
+  min-width: 0 !important;
+}
+:root[data-reading-width="narrow"] .page > #quartz-body .center {
+  max-width: min(720px, 100%) !important;
+}
+:root[data-reading-width="normal"] .page > #quartz-body .center {
+  max-width: min(900px, 100%) !important;
+}
+:root[data-reading-width="wide"] .page > #quartz-body .center {
+  max-width: min(1100px, 100%) !important;
+}
+:root[data-reading-width="full"] .page > #quartz-body .center {
+  max-width: 100% !important;
+}
+/* On desktop, sidebars also shrink in wider presets so the reading column
+   actually gains width even when the viewport is constrained. */
+@media (min-width: 1200px) {
+  :root[data-reading-width="narrow"] .page > #quartz-body {
+    grid-template-columns: 320px minmax(0, 720px) 320px !important;
+  }
+  :root[data-reading-width="normal"] .page > #quartz-body {
+    grid-template-columns: 320px minmax(0, 900px) 320px !important;
+  }
+  :root[data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 240px minmax(0, 1fr) 240px !important;
+  }
+
+  /* "Full" mode: the left sidebar collapses into a horizontal top menu bar
+     (Page title + Search + Darkmode + ReaderMode); the right sidebar is
+     stowed; the article gets the full width of the page. */
+  :root[data-reading-width="full"] .page > #quartz-body {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "grid-sidebar-left"
+      "grid-header"
+      "grid-center"
+      "grid-footer" !important;
+  }
+  :root[data-reading-width="full"] .sidebar.right {
+    display: none !important;
+  }
+  :root[data-reading-width="full"] .page > #quartz-body > .center {
+    grid-area: grid-center !important;
+    padding: 0 1.5rem;
+  }
+
+  /* Left sidebar reflowed as a single horizontal menu bar at the top */
+  :root[data-reading-width="full"] .sidebar.left {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    grid-area: grid-sidebar-left !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0.45rem 1.5rem !important;
+    background: var(--lightgray);
+    border-bottom: 1px solid var(--gray);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    overflow: visible !important;
+  }
+  /* The grid row holding the menu bar should not be stretched to fill height */
+  :root[data-reading-width="full"] .page > #quartz-body {
+    grid-template-rows: auto auto 1fr auto !important;
+  }
+  :root[data-reading-width="full"] .sidebar.left > * {
+    margin: 0 !important;
+  }
+  :root[data-reading-width="full"] .sidebar.left .page-title {
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+    margin-right: 0.5rem !important;
+  }
+  :root[data-reading-width="full"] .sidebar.left .flex-component {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  /* Graph stays stowed (no compact horizontal representation makes sense).
+     Explorer is repositioned as an absolute dropdown anchored to the Browse
+     button — hidden by default, revealed when the user clicks Browse. */
+  :root[data-reading-width="full"] .sidebar.left .graph {
+    display: none !important;
+  }
+  :root[data-reading-width="full"] .sidebar.left .explorer {
+    position: absolute !important;
+    top: calc(100% + 4px);
+    left: 1.5rem;
+    width: 320px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: var(--lightgray);
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    z-index: 60;
+    display: none !important;
+    margin: 0 !important;
+  }
+  :root[data-reading-width="full"] .sidebar.left.nav-open .explorer {
+    display: block !important;
+  }
+  /* The Browse toggle is only shown in Full mode (script injects it into
+     every page; CSS controls visibility). */
+  :root[data-reading-width="full"] .sidebar.left .nav-toggle {
+    display: inline-flex;
+  }
+}
+
+/* Browse toggle: a small text+icon button injected into the menu bar by the
+   WidthToggle script. Hidden outside Full mode. */
+.sidebar.left .nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--gray);
+  border-radius: 999px;
+  color: var(--darkgray);
+  font-family: var(--headerFont);
+  font-variant: small-caps;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+.sidebar.left .nav-toggle:hover {
+  background: var(--secondary);
+  color: var(--light);
+  border-color: var(--secondary);
+}
+.sidebar.left.nav-open .nav-toggle {
+  background: var(--secondary);
+  color: var(--light);
+  border-color: var(--secondary);
+}
+
+/* WidthToggle — small button group above the article */
+.width-toggle {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+  padding: 0.25rem 0.4rem;
+  background: var(--lightgray);
+  border: 1px solid var(--gray);
+  border-radius: 999px;
+  width: max-content;
+}
+.width-toggle .width-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 2px 6px;
+  cursor: pointer;
+  color: var(--gray);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+.width-toggle .width-btn:hover {
+  color: var(--secondary);
+  border-color: var(--gray);
+}
+.width-toggle .width-btn.active {
+  background: var(--secondary);
+  color: var(--light);
+  border-color: var(--secondary);
+}
+.width-toggle .width-btn.active:hover {
+  background: var(--tertiary);
+  border-color: var(--tertiary);
+  color: var(--light);
+}
+@media all and (max-width: 800px) {
+  .width-toggle {
+    display: none;
+  }
+}
+
+/* Trim the giant 6rem top spacing that pushes content far below the viewport */
+.page > #quartz-body .page-header,
+.page > #quartz-body > .sidebar {
+  margin-top: 1.5rem !important;
+}
+@media all and (max-width: 800px) {
+  .page > #quartz-body .page-header,
+  .page > #quartz-body > .sidebar {
+    margin-top: 0 !important;
+  }
+}
+
+/* Readable line-length + comfortable line-height for long-form reading */
+article p,
+article li {
+  line-height: 1.65;
+}
+article {
+  max-width: none;
+}
+
+/* ============================================
+   TG-style tag chips (rounded, thin border)
+   ============================================ */
+a.tag-link,
+.tags > li > a.tag-link {
+  display: inline-block;
+  background: rgba(90, 122, 30, 0.07) !important;
+  border: 1px solid rgba(90, 122, 30, 0.45) !important;
+  border-radius: 999px !important;
+  padding: 0.12rem 0.7rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 500;
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+  margin: 0 0.15rem !important;
+  line-height: 1.4;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+a.tag-link:hover {
+  background: var(--secondary) !important;
+  color: var(--light) !important;
+  border-color: var(--secondary) !important;
+  text-decoration: none !important;
+}
+/* Strip any leading '#' that Quartz/ITS may prepend via ::before */
+a.tag-link::before,
+.tags > li > a.tag-link::before {
+  content: "" !important;
+  display: none !important;
+}
+
+/* ============================================
+   Prominent TG-style search button (green pill)
+   ============================================ */
+.search > .search-button {
+  background: var(--secondary) !important;
+  border: 1px solid var(--secondary) !important;
+  border-radius: 999px !important;
+  padding: 0.18rem 0.65rem !important;
+  height: auto !important;
+  color: var(--light) !important;
+  font-family: var(--headerFont);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition:
+    background 200ms ease,
+    box-shadow 150ms ease;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+.search > .search-button > p {
+  color: var(--light) !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+.search > .search-button svg {
+  width: 11px !important;
+  min-width: 11px !important;
+  height: 11px !important;
+}
+.search > .search-button svg .search-path {
+  stroke: var(--light) !important;
+  stroke-width: 2px !important;
+}
+.search > .search-button:hover {
+  background: var(--tertiary) !important;
+  border-color: var(--tertiary) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   Graph: visible border + paper-textured surface + shadow
+   ============================================ */
+.graph > .graph-outer {
+  border: 1px solid var(--gray) !important;
+  background: var(--lightgray);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   Subtle parchment-toned scrollbar
+   ============================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(140, 132, 116, 0.35) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 132, 116, 0.35);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 132, 116, 0.55);
+  background-clip: padding-box;
+}
+:root[saved-theme="dark"] * {
+  scrollbar-color: rgba(241, 196, 94, 0.25) transparent;
+}
+:root[saved-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(241, 196, 94, 0.25);
+  background-clip: padding-box;
+}
+:root[saved-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(241, 196, 94, 0.45);
+  background-clip: padding-box;
+}
+
+/* Collapsible headings — chevron prefix that rotates when section is folded */
+.tg-collapsible {
+  user-select: none;
+}
+.tg-collapsible .tg-chevron {
+  display: inline-block;
+  font-size: 0.7em;
+  color: var(--gray);
+  margin-right: 0.45em;
+  transition: transform 180ms ease;
+  transform: rotate(0deg);
+  vertical-align: middle;
+  line-height: 1;
+}
+.tg-collapsible.tg-collapsed .tg-chevron {
+  transform: rotate(-90deg);
+}
+.tg-collapsible:hover .tg-chevron {
+  color: var(--secondary);
+}
+
+/* Explorer typography hierarchy: folders prominent, files secondary */
+.folder-container > div > a,
+.folder-container > div > button > span {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+.explorer-content > ul li:not(:has(> .folder-container)) > a,
+.explorer-content > ul ul li > a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.78;
+  line-height: 1.4rem;
+}
+
+/* Smoother folder expand/collapse (drop the visibility pop, add opacity fade) */
+.explorer-content .folder-outer {
+  opacity: 0;
+  transition:
+    grid-template-rows 0.3s ease-in-out,
+    opacity 0.25s ease-in-out;
+}
+.explorer-content .folder-outer.open {
+  opacity: 1;
+}
+
+/* ============================================
+   Dark mode overrides (existing aesthetic preserved)
+   ============================================ */
+
+:root[saved-theme="dark"] {
+  a:not(.internal):not(.external) {
+    color: var(--tg-link);
+    transition: color var(--tg-t-fast);
+  }
+
+  a:hover {
+    color: var(--tg-gold-hover) !important;
+  }
+
+  .popover .popover-inner {
+    background: var(--tg-surface-2) !important;
+    border-radius: var(--tg-radius-lg) !important;
+    box-shadow: var(--tg-shadow-card);
+    border: 1px solid var(--tg-surface-3);
+  }
+
+  /* Note: TG-flat callout + rounded-pill tag styles now apply in BOTH themes
+     (see the shared block below). Dark-only visual extras like graph card
+     shadow + TOC bg stay below. */
+
+  .graph > .graph-outer {
+    background: var(--tg-surface-2);
+    box-shadow: var(--tg-shadow-card);
+  }
+
+  .toc-content {
+    background: var(--tg-surface-1);
+    padding: 0.5rem 1rem;
+  }
+
+  /* Phase E — new components in dark mode */
+  .tg-topnav {
+    background: var(--tg-surface-1);
+    border-bottom: 1px solid var(--tg-surface-3);
+  }
+  .tg-topnav a {
+    color: var(--tg-gold);
+  }
+  .tg-topnav a:hover {
+    color: var(--tg-gold-hover);
+  }
+
+  .tg-tabs a {
+    background: var(--tg-surface-1);
+    border: 1px solid var(--tg-surface-3);
+    border-bottom: none;
+    color: var(--tg-text-subtle);
+  }
+  .tg-tabs a.active {
+    background: var(--tg-surface-2);
+    color: var(--tg-gold);
+  }
+  .tg-tabs a:not(.active):hover {
+    background: var(--tg-surface-3);
+    color: var(--tg-gold);
+  }
+
+  .tg-infobox {
+    background: var(--tg-surface-2);
+    border: 1px solid var(--tg-surface-3);
+    box-shadow: none;
+  }
+  .tg-infobox > header {
+    color: var(--tg-gold);
+    border-bottom: 1px solid var(--tg-surface-3);
+  }
+  .tg-infobox dt {
+    color: var(--tg-text-subtle);
+  }
+  .tg-infobox dd {
+    color: var(--tg-text);
+  }
+  .tg-infobox a.tag-link,
+  .tg-infobox .tag-link {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: var(--tg-gold);
+    text-decoration: none;
+  }
+  .tg-infobox a.tag-link:hover {
+    color: var(--tg-gold-hover) !important;
+    background: transparent !important;
+    text-decoration: underline;
+  }
+}
+
+/* ============================================
+   Shared TG structural rules (apply to BOTH light + dark via theme vars)
+   ============================================ */
+
+:root[saved-theme="light"],
+:root[saved-theme="dark"] {
+  /* Base typography */
+  body {
+    background: var(--light);
+  }
+
+  a:not(.internal):not(.external),
+  a.internal {
+    color: var(--secondary);
+    text-decoration: none;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-weight: 400;
+    transition: color var(--tg-t-fast);
+  }
+  a:not(.internal):not(.external):hover,
+  a.internal:hover {
+    color: var(--tertiary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-family: var(--headerFont);
+  }
+  h1, h2 {
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background: var(--tg-selection);
+    color: var(--dark);
+  }
+
+  /* Phase B — article flows directly on the parchment (no box) */
+  article {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0 2rem;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  article hr {
+    border: 0;
+    height: 20px;
+    margin: 1em 0;
+    background-color: var(--gray);
+    -webkit-mask: center / 220px 18px no-repeat
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 24'><line x1='0' y1='12' x2='110' y2='12' stroke='white' stroke-width='1'/><text x='130' y='18' text-anchor='middle' font-family='serif' font-size='20' fill='white'>&#x2766;</text><line x1='150' y1='12' x2='260' y2='12' stroke='white' stroke-width='1'/></svg>");
+    mask: center / 220px 18px no-repeat
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 24'><line x1='0' y1='12' x2='110' y2='12' stroke='white' stroke-width='1'/><text x='130' y='18' text-anchor='middle' font-family='serif' font-size='20' fill='white'>&#x2766;</text><line x1='150' y1='12' x2='260' y2='12' stroke='white' stroke-width='1'/></svg>");
+  }
+
+  /* Tighten heading rhythm — defaults from base.scss are too generous for a wiki */
+  article > h2 {
+    margin-top: 0.9em;
+    margin-bottom: 0.4em;
+  }
+  article > h3 {
+    margin-top: 0.7em;
+    margin-bottom: 0.3em;
+  }
+  article > p {
+    margin: 0.55em 0;
+  }
+
+  article > p:first-of-type::first-letter {
+    font-family: var(--headerFont);
+    font-size: 3.4em;
+    float: left;
+    line-height: 0.9;
+    padding: 0.25rem 0.5rem 0 0;
+    color: var(--dark);
+  }
+
+  /* Phase C — callouts restyled as TG infoboxes (thin clean border + paper feel) */
+  .callout {
+    background: var(--light) !important;
+    border: 1px solid var(--gray) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 4px !important;
+    padding: 0.9rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .callout > .callout-title {
+    text-align: center;
+    font-variant: small-caps;
+    font-family: var(--headerFont);
+    color: var(--dark);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+  .callout > .callout-title .callout-icon {
+    filter: grayscale(1) brightness(0.5);
+  }
+
+  /* [!infobox] callouts: float right (MediaWiki/TG style). Content flows around
+     it; once the infobox ends vertically, content returns to full article width. */
+  .callout[data-callout="infobox"] {
+    float: right;
+    width: 320px;
+    margin: 0 0 1rem 1.5rem !important;
+    background: var(--lightgray) !important;
+    border: 1px solid var(--gray) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    shape-outside: margin-box;
+  }
+  /* For the article body to flow ALONGSIDE the floated infobox, no descendant
+     can establish a Block Formatting Context. Two browser/Quartz defaults
+     create BFCs that get pushed below the float: <hr> has UA `overflow:hidden`,
+     and .callout has Quartz `overflow-y:hidden`. Reset both. */
+  article > * {
+    clear: none !important;
+  }
+  article > hr {
+    overflow: visible !important;
+  }
+  article > blockquote.callout:not([data-callout="infobox"]) {
+    overflow: visible !important;
+    overflow-y: visible !important;
+  }
+  .callout[data-callout="infobox"] > .callout-title {
+    background: var(--tg-header-bg);
+    padding: 0.45rem 0.75rem !important;
+    margin: 0 !important;
+    border-bottom: 1px solid var(--gray);
+    text-align: center;
+  }
+  .callout[data-callout="infobox"] > .callout-title .callout-title-inner > p {
+    margin: 0;
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+  }
+  .callout[data-callout="infobox"] > .callout-title .callout-icon,
+  .callout[data-callout="infobox"] > .callout-title .fold {
+    display: none !important;
+  }
+  .callout[data-callout="infobox"] > .callout-content {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .callout[data-callout="infobox"] > .callout-content > p:first-child {
+    margin-top: 0;
+  }
+  .callout[data-callout="infobox"] table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.4rem 0;
+    font-size: 0.85rem;
+  }
+  .callout[data-callout="infobox"] th,
+  .callout[data-callout="infobox"] td {
+    border: none;
+    border-bottom: 1px solid var(--tg-rule-soft);
+    padding: 0.25rem 0.4rem;
+    vertical-align: top;
+    text-align: left;
+    background: transparent !important;
+  }
+  .callout[data-callout="infobox"] th {
+    font-weight: 600;
+    color: var(--darkgray);
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+  }
+  .callout[data-callout="infobox"] tr:last-child th,
+  .callout[data-callout="infobox"] tr:last-child td {
+    border-bottom: none;
+  }
+  @media all and (max-width: 800px) {
+    .callout[data-callout="infobox"] {
+      float: none;
+      width: 100%;
+      margin: 1rem 0 !important;
+    }
+  }
+
+  /* Multi-column callouts: TG-style card grid. The outer wrapper is a thin
+     panel; inner cards are softly tinted with a header bar so each card reads
+     as a distinct entity (matching the TG main-page sectioned look). */
+  .callout[data-callout="multi-column"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 1.5rem 0;
+  }
+  /* The outer "Multi column" wrapper title is just organizational — hide it */
+  .callout[data-callout="multi-column"] > .callout-title {
+    display: none !important;
+  }
+  .callout[data-callout="multi-column"] > .callout-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem 1.25rem;
+    margin: 0;
+  }
+  /* Each card: a clean panel with a header band + body */
+  .callout[data-callout="multi-column"] .callout.card,
+  .callout[data-callout="multi-column"] [data-callout="card"] {
+    background: var(--lightgray) !important;
+    border: 1px solid var(--gray) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 6px !important;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .callout[data-callout="multi-column"] .callout.card > .callout-title {
+    background: var(--tg-header-bg);
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0.4rem 0.85rem !important;
+    margin: 0 !important;
+    text-align: center;
+    justify-content: center;
+  }
+  .callout[data-callout="multi-column"] .callout.card .callout-title-inner {
+    flex: 0 0 auto;
+  }
+  .callout[data-callout="multi-column"] .callout.card .callout-title-inner > p {
+    margin: 0;
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--dark);
+    letter-spacing: 0.06em;
+    text-transform: none;
+  }
+  .callout[data-callout="multi-column"] .callout.card > .callout-content {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    padding: 0.7rem 0.95rem 0.85rem;
+    background: var(--light);
+    flex: 1 1 auto;
+  }
+  .callout[data-callout="multi-column"] .callout.card > .callout-content p {
+    margin: 0.25rem 0;
+  }
+  .callout[data-callout="multi-column"] .callout.card > .callout-content p:first-child {
+    margin-top: 0;
+  }
+  .callout[data-callout="multi-column"] .callout.card > .callout-content p:last-child {
+    margin-bottom: 0;
+  }
+  /* Kill the pencil/edit/fold chevron icons inside multi-column */
+  .callout[data-callout="multi-column"] .callout-icon,
+  .callout[data-callout="multi-column"] svg.fold,
+  .callout[data-callout="multi-column"] .fold,
+  .callout[data-callout="multi-column"] .callout-title svg {
+    display: none !important;
+  }
+
+  /* Phase D — TopNav */
+  .tg-topnav {
+    background: var(--lightgray);
+    border-bottom: 1px solid var(--gray);
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .tg-topnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .tg-topnav li {
+    margin: 0;
+  }
+  .tg-topnav a {
+    color: var(--secondary);
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .tg-topnav a:hover {
+    color: var(--tertiary);
+    text-decoration: underline;
+  }
+
+  /* Phase D — PageTabs */
+  .tg-tabs {
+    display: flex;
+    gap: 0;
+    margin: 0 0 -1px 0.5rem;
+    padding: 0;
+  }
+  .tg-tabs a {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-bottom: none;
+    color: var(--darkgray);
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-radius: 0;
+    margin-right: 2px;
+  }
+  .tg-tabs a.active {
+    background: var(--lightgray);
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+  }
+  .tg-tabs a:not(.active):hover {
+    background: var(--gray);
+    color: var(--light);
+  }
+
+  /* Phase D — Infobox (TG-style: title bar + clean fields).
+     `.tg-infobox-top` is the new horizontal "Properties" bar above the article,
+     using a responsive multi-column grid so rows align cleanly regardless of
+     value length. The legacy right-rail dl styling is kept for back-compat. */
+  .tg-infobox {
+    background: var(--lightgray);
+    border: 1px solid var(--gray);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 0;
+    margin: 0 0 1.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tg-infobox > header {
+    background: rgba(140, 132, 116, 0.18);
+    font-family: var(--headerFont);
+    font-variant: small-caps;
+    text-align: center;
+    color: var(--dark);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.85rem;
+    margin: 0;
+    border-bottom: 1px solid var(--gray);
+    letter-spacing: 0.08em;
+  }
+  /* New horizontal Properties bar at the top of the article */
+  .tg-infobox-top .tg-infobox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    padding: 0;
+    font-size: 0.85rem;
+  }
+  .tg-infobox-top .tg-infobox-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: baseline;
+    padding: 0.45rem 0.9rem;
+    border-bottom: 1px solid var(--tg-rule-soft);
+    border-right: 1px solid var(--tg-rule-soft);
+    min-width: 0;
+  }
+  .tg-infobox-top .tg-infobox-key {
+    font-weight: 600;
+    color: var(--gray);
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+  }
+  .tg-infobox-top .tg-infobox-val {
+    color: var(--darkgray);
+    word-break: break-word;
+    min-width: 0;
+  }
+  /* Legacy dl rendering kept for any non-top contexts */
+  .tg-infobox dl {
+    margin: 0;
+    padding: 0.65rem 0.9rem 0.75rem;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.3rem 0.85rem;
+    font-size: 0.85rem;
+  }
+  .tg-infobox dt {
+    font-weight: 600;
+    color: var(--gray);
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .tg-infobox dd {
+    margin: 0;
+    color: var(--darkgray);
+    word-break: break-word;
+  }
+  /* Tags inside the Infobox: inline text links, not chips */
+  .tg-infobox a.tag-link,
+  .tg-infobox .tag-link {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: inherit;
+  }
+  .tg-infobox a.tag-link:hover {
+    color: var(--tertiary);
+    text-decoration: underline;
+    background: transparent !important;
+  }
+}

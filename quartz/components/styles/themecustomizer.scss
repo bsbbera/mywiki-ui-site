@@ -1,0 +1,101 @@
+.theme-customizer {
+  position: relative;
+  flex-shrink: 0;
+
+  & .theme-customizer-toggle {
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 20px;
+    height: 32px;
+    color: var(--darkgray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  & .theme-customizer-panel {
+    display: none;
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 0.4rem);
+    right: 0;
+    width: 16rem;
+    max-width: 80vw;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--lightgray);
+    background: var(--light);
+    box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.45);
+    font-family: var(--bodyFont);
+  }
+
+  &.open .theme-customizer-panel {
+    display: block;
+  }
+
+  & .tc-header {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin-bottom: 0.7rem;
+  }
+  & .tc-family-name {
+    color: var(--secondary);
+  }
+
+  & .tc-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0.35rem 0;
+    font-size: 0.82rem;
+    color: var(--darkgray);
+  }
+
+  & .tc-color {
+    width: 2.2rem;
+    height: 1.4rem;
+    padding: 0;
+    border: 1px solid var(--lightgray);
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+  }
+
+  & .tc-anim-row {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--lightgray);
+  }
+  & .tc-anim {
+    cursor: pointer;
+  }
+
+  & .tc-reset {
+    margin-top: 0.7rem;
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--lightgray);
+    background: var(--lightgray);
+    color: var(--darkgray);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      border-color: var(--secondary);
+      color: var(--dark);
+    }
+  }
+}

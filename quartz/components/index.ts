@@ -28,6 +28,8 @@ import PageTabs from "./PageTabs"
 import Infobox from "./Infobox"
 import CollapsibleHeadings from "./CollapsibleHeadings"
 import WidthToggle from "./WidthToggle"
+import ThemeSelector from "./ThemeSelector"
+import ThemeCustomizer from "./ThemeCustomizer"
 
 export {
   ArticleTitle,
@@ -60,4 +62,6 @@ export {
   Infobox,
   CollapsibleHeadings,
   WidthToggle,
+  ThemeSelector,
+  ThemeCustomizer,
 }

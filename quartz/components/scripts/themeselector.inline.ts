@@ -1,0 +1,59 @@
+const DEFAULT_FAMILY = "glass"
+const FAMILY_KEY = "theme-family"
+
+// Fonts required by themes that need web fonts. A CSS @import inside the SCSS
+// bundle would be emitted mid-file and ignored, so we inject a <link> instead.
+const FONT_HREFS: Record<string, string> = {
+  glass:
+    "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap",
+}
+
+function ensureThemeFonts(family: string) {
+  const href = FONT_HREFS[family]
+  if (!href) return
+  const id = `theme-font-${family}`
+  if (document.getElementById(id)) return
+  const link = document.createElement("link")
+  link.id = id
+  link.rel = "stylesheet"
+  link.href = href
+  document.head.appendChild(link)
+}
+
+function applyFamily(family: string) {
+  document.documentElement.setAttribute("data-theme", family)
+  ensureThemeFonts(family)
+}
+
+// Run before paint to avoid a flash of the wrong theme.
+const savedFamily = localStorage.getItem(FAMILY_KEY) ?? DEFAULT_FAMILY
+applyFamily(savedFamily)
+
+const emitFamilyChangeEvent = (family: string) => {
+  const event: CustomEventMap["themefamilychange"] = new CustomEvent("themefamilychange", {
+    detail: { family },
+  })
+  document.dispatchEvent(event)
+}
+
+document.addEventListener("nav", () => {
+  const current = document.documentElement.getAttribute("data-theme") ?? DEFAULT_FAMILY
+
+  for (const el of document.getElementsByClassName("theme-selector")) {
+    const select = el as HTMLSelectElement
+    // reflect the active family in the control
+    select.value = current
+
+    const onChange = () => {
+      const family = select.value
+      applyFamily(family)
+      localStorage.setItem(FAMILY_KEY, family)
+      emitFamilyChangeEvent(family)
+    }
+
+    select.addEventListener("change", onChange)
+    window.addCleanup(() => select.removeEventListener("change", onChange))
+  }
+})
+
+export {}
