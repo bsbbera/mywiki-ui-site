@@ -11,5 +11,6 @@
    To add a new theme, see docs/THEME-PORTING.md.
    ============================================================================ */
 
+@use "./themes/shared";
 @use "./themes/tg";
 @use "./themes/glass";

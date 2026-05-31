@@ -1,0 +1,30 @@
+/* =============================================================================
+   Shared / structural layer — applies to ALL theme families.
+   Rule of thumb:  structure = global (here);  skin = [data-theme]-scoped.
+   ========================================================================== */
+
+body {
+  background: var(--light);
+}
+
+/* ---- Reading font size (Wikipedia-small default) -------------------------
+   Driven by the ThemeCustomizer "Text size" control via --mwg-content-size,
+   applied to every theme so the preference is consistent. ------------------ */
+:root {
+  --mwg-content-size: 0.9rem;
+}
+article {
+  font-size: var(--mwg-content-size, 0.9rem);
+}
+
+/* ---- Layout: pull the whole page left (Medium / blog style) ---------------
+   Global so every theme shares the same layout — the sidebar hugs the viewport
+   edge instead of floating in centered whitespace. ------------------------- */
+.page {
+  max-width: 100%;
+  margin: 0;
+}
+.page > #quartz-body {
+  justify-content: start;
+  padding: 0 2rem;
+}

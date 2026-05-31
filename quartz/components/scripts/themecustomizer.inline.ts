@@ -3,7 +3,7 @@ const FAMILY_KEY = "theme-family"
 const CUSTOM_KEY = "theme-custom"
 const NOANIM_KEY = "theme-no-anim"
 const FONTSIZE_KEY = "theme-fontsize"
-const DEFAULT_FONTSIZE = "0.82rem"
+const DEFAULT_FONTSIZE = "0.9rem"
 const HEX6 = /^#[0-9a-fA-F]{6}$/
 
 type Overrides = Record<string, Record<string, string>>
