@@ -383,12 +383,13 @@
     content: "\201C";
     position: absolute;
     top: 0.05em;
-    right: 0.5rem;
+    right: 8px;
     font-family: var(--headerFont);
     font-size: 3.4em;
     line-height: 1;
     color: var(--mwg-accent);
-    opacity: 0.32;
+    /* match the Obsidian reference: faint mark (Obsidian uses 0.1) */
+    opacity: 0.1;
     pointer-events: none;
     z-index: 0;
   }
