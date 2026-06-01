@@ -362,14 +362,15 @@
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* RICH purple → panel gradient. accent-soft (14%, semi-transparent) was
-       almost invisible on the dark panel; use an opaque 30% accent mix so the
-       violet actually shows. Fade completes by min(80%, 42rem) so narrow and
-       wide quotes share the same rich left-fade onto the solid panel colour. */
+    /* SIMPLE violet→dark gradient. Mix the accent into the PAGE background (not
+       the lighter grey panel — that produced an ugly grey slab on the right).
+       Left = rich violet, right = near page-dark, smooth. Second stop capped at
+       min(85%, 46rem) so wide quotes keep the rich left instead of washing out.
+       The 1px border keeps the box defined where it blends into the page. */
     background: linear-gradient(
       90deg,
-      color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-pane-2)),
-      var(--mwg-pane-2) min(80%, 42rem)
+      color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-bg-0)),
+      color-mix(in srgb, var(--mwg-accent) 5%, var(--mwg-bg-0)) min(85%, 46rem)
     ) !important;
     padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
