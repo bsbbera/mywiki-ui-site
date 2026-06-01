@@ -356,10 +356,10 @@
   & article .callout[data-callout="quote"] {
     position: relative;
     overflow: hidden;
-    /* solid panel base + subtle full border so blockquote and [!quote] callout
-       look identical (the callout used to show a panel, the bare blockquote
-       faded to page-black). border-left is the accent bar. */
-    border: 1px solid var(--mwg-border) !important;
+    /* NO full border — a light 1px border drew a bright "edge glow" along the
+       top/right in dark mode. Only the accent left bar remains; the box is
+       defined by the gradient softly meeting the page. */
+    border: none !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
     /* ONE subtle violet gradient across the WHOLE box (the reference look):
