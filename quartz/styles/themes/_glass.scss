@@ -362,16 +362,17 @@
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* SIMPLE violet→dark gradient. Mix the accent into the PAGE background (not
-       the lighter grey panel — that produced an ugly grey slab on the right).
-       Left = rich violet, right = near page-dark, smooth. Second stop capped at
-       min(85%, 46rem) so wide quotes keep the rich left instead of washing out.
-       The 1px border keeps the box defined where it blends into the page. */
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-bg-0)),
-      color-mix(in srgb, var(--mwg-accent) 5%, var(--mwg-bg-0)) min(85%, 46rem)
-    ) !important;
+    /* Glass CARD: a solid panel visible full-width, with a violet GLOW on the
+       left that fades smoothly to transparent (a coloured light, not a stripe).
+       The glow is a semi-transparent accent overlay so it blends INTO the panel
+       — no hard seam, no grey slab. Same look at any width. */
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--mwg-accent) 40%, transparent),
+        transparent 55%
+      ),
+      var(--mwg-pane-2) !important;
     padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
