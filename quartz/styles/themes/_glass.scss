@@ -356,16 +356,12 @@
   & article .callout[data-callout="quote"] {
     position: relative;
     overflow: hidden;
-    /* the box hugs its text instead of spanning the full column, so the
-       gradient + decorative mark stay beside the words (like Obsidian) */
-    width: fit-content;
-    max-width: 100%;
     border: none !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* gradient now spans the (smaller) box so the colour reaches the mark */
-    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent) !important;
-    padding: 1rem 3.2rem 1rem 1.4rem !important;
+    /* fade is capped so wide quotes keep their colour (don't look washed out) */
+    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent 80%) !important;
+    padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
     box-shadow: none !important;
