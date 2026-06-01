@@ -362,14 +362,13 @@
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* ONE violet gradient across the WHOLE box: stronger violet on the left,
-       dissolving into the DARK page background on the right (mix into bg-0, the
-       dark page colour — NOT the lighter pane-2, which left a pale panel on the
-       right). Right end is dark with a faint violet tint. */
+    /* ONE subtle violet gradient across the WHOLE box (the reference look):
+       stronger violet on the left, softening to a faint violet panel on the
+       right — both stops mixed into the panel colour, no dark right end. */
     background: linear-gradient(
       90deg,
-      color-mix(in srgb, var(--mwg-accent) 34%, var(--mwg-bg-0)),
-      color-mix(in srgb, var(--mwg-accent) 6%, var(--mwg-bg-0))
+      color-mix(in srgb, var(--mwg-accent) 36%, var(--mwg-pane-2)),
+      color-mix(in srgb, var(--mwg-accent) 12%, var(--mwg-pane-2))
     ) !important;
     padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
