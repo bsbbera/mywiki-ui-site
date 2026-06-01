@@ -202,14 +202,8 @@
       border-radius: var(--mwg-radius);
     }
 
-    /* ---- blockquote: accent bar + soft wash (NOT callouts) -------------- */
-    & blockquote:not(.callout) {
-      border-left: 3px solid var(--mwg-accent);
-      background: linear-gradient(90deg, var(--mwg-accent-soft), transparent);
-      border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0;
-      color: var(--mwg-text-strong);
-      font-style: italic;
-    }
+    /* blockquote + [!quote] callout share ONE soft card design — see the
+       "Unified quote" block lower in this file. */
 
     /* ---- tables: gradient header, rounded corners, hover rows ----------- */
     & table {
@@ -261,15 +255,6 @@
       border-color: var(--mwg-border-2);
       box-shadow: var(--mwg-shadow-pop);
     }
-  }
-
-  /* ---- blockquote citation on its own line (Obsidian style) ------------ */
-  & article blockquote cite {
-    display: block;
-    margin-top: 0.5em;
-    font-style: normal;
-    font-size: 0.92em;
-    color: var(--mwg-muted);
   }
 
   /* ---- tags: subtle chips with a stable per-tag colour ------------------
@@ -361,6 +346,34 @@
     background-color: var(--mwg-border-2);
     -webkit-mask: none;
     mask: none;
+  }
+
+  /* ---- UNIFIED QUOTE: a plain blockquote and a [!quote] callout look the
+     SAME — accent left bar + left-fading wash, italic, no "Quote" label.
+     The [data-callout="quote"] selector out-specifies the generic `.callout`
+     rule below, so it wins. -------------------------------------------------- */
+  & article blockquote:not(.callout),
+  & article .callout[data-callout="quote"] {
+    border: none !important;
+    border-left: 3px solid var(--mwg-accent) !important;
+    border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
+    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent) !important;
+    padding: 0.9rem 1.3rem !important;
+    color: var(--mwg-text-strong) !important;
+    font-style: italic;
+    box-shadow: none !important;
+  }
+  /* hide the "Quote" callout title so it matches a bare blockquote */
+  & article .callout[data-callout="quote"] > .callout-title {
+    display: none !important;
+  }
+  /* citation / author on its own line, de-emphasised */
+  & article blockquote cite {
+    display: block;
+    margin-top: 0.5em;
+    font-style: normal;
+    font-size: 0.92em;
+    color: var(--mwg-muted);
   }
 
   /* Glass card callouts (override TG's !important infobox look) */
