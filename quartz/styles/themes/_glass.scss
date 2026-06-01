@@ -364,23 +364,25 @@
        wide box and looks washed out; min(80%, 42rem) keeps narrow quotes as-is
        but caps the fade length so wide quotes match the narrow ones. */
     background: linear-gradient(90deg, var(--mwg-accent-soft), transparent min(80%, 42rem)) !important;
-    padding: 1rem 1.4rem !important;
+    padding: 1rem 1.4rem 1rem 2.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
     box-shadow: none !important;
   }
-  /* decorative oversized quotation mark (like the Obsidian quote) */
+  /* decorative quotation mark — anchored to the TEXT START (top-left), so it
+     sits beside the opening words in EVERY quote, narrow or full-width. Pinning
+     it to the right edge made it drift far from the text on wide quotes. */
   & article blockquote:not(.callout)::before,
   & article .callout[data-callout="quote"]::before {
     content: "\201C";
     position: absolute;
-    top: -0.12em;
-    right: 0.12em;
+    top: 0.05em;
+    left: 0.35rem;
     font-family: var(--headerFont);
-    font-size: 5.5em;
+    font-size: 3.6em;
     line-height: 1;
     color: var(--mwg-accent);
-    opacity: 0.13;
+    opacity: 0.18;
     pointer-events: none;
     z-index: 0;
   }
