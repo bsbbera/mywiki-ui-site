@@ -354,14 +354,37 @@
      rule below, so it wins. -------------------------------------------------- */
   & article blockquote:not(.callout),
   & article .callout[data-callout="quote"] {
+    position: relative;
+    overflow: hidden;
     border: none !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent) !important;
-    padding: 0.9rem 1.3rem !important;
+    /* fade is capped so wide quotes keep their colour (don't look washed out) */
+    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent 80%) !important;
+    padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
     box-shadow: none !important;
+  }
+  /* decorative oversized quotation mark (like the Obsidian quote) */
+  & article blockquote:not(.callout)::before,
+  & article .callout[data-callout="quote"]::before {
+    content: "\201C";
+    position: absolute;
+    top: -0.12em;
+    right: 0.12em;
+    font-family: var(--headerFont);
+    font-size: 5.5em;
+    line-height: 1;
+    color: var(--mwg-accent);
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: 0;
+  }
+  & article blockquote:not(.callout) > *,
+  & article .callout[data-callout="quote"] > * {
+    position: relative;
+    z-index: 1;
   }
   /* hide the "Quote" callout title so it matches a bare blockquote */
   & article .callout[data-callout="quote"] > .callout-title {
