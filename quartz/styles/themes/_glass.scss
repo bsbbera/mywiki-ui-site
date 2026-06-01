@@ -362,17 +362,15 @@
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* Glass CARD: a solid panel visible full-width, with a violet GLOW on the
-       left that fades smoothly to transparent (a coloured light, not a stripe).
-       The glow is a semi-transparent accent overlay so it blends INTO the panel
-       — no hard seam, no grey slab. Same look at any width. */
-    background:
-      linear-gradient(
-        90deg,
-        color-mix(in srgb, var(--mwg-accent) 40%, transparent),
-        transparent 55%
-      ),
-      var(--mwg-pane-2) !important;
+    /* ONE subtle violet gradient across the WHOLE box, edge to edge: stronger
+       violet on the left, softening to a faint violet on the right. Both stops
+       are violet-tinted (never grey/transparent) so the panel stays purple the
+       whole width — no grey half. Same look at any width. */
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--mwg-accent) 36%, var(--mwg-pane-2)),
+      color-mix(in srgb, var(--mwg-accent) 12%, var(--mwg-pane-2))
+    ) !important;
     padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
