@@ -362,31 +362,34 @@
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* accent tint fades over a FIXED distance onto the solid panel, so the
-       gradient looks the same on a short quote and a full-width one. The panel
-       colour (last layer) fills the rest, so the box never bleeds to black. */
-    background:
-      linear-gradient(90deg, var(--mwg-accent-soft), transparent min(80%, 42rem)),
-      var(--mwg-pane-2) !important;
-    padding: 1rem 1.4rem 1rem 2.4rem !important;
+    /* RICH purple → panel gradient. accent-soft (14%, semi-transparent) was
+       almost invisible on the dark panel; use an opaque 30% accent mix so the
+       violet actually shows. Fade completes by min(80%, 42rem) so narrow and
+       wide quotes share the same rich left-fade onto the solid panel colour. */
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-pane-2)),
+      var(--mwg-pane-2) min(80%, 42rem)
+    ) !important;
+    padding: 1rem 1.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
     box-shadow: none !important;
   }
-  /* decorative quotation mark — anchored to the TEXT START (top-left), so it
-     sits beside the opening words in EVERY quote, narrow or full-width. Pinning
-     it to the right edge made it drift far from the text on wide quotes. */
+  /* small decorative quotation mark, top-right. Safe to pin to the right now
+     that the box has a solid panel base — it sits on the panel, not floating
+     on page-black, at any width. */
   & article blockquote:not(.callout)::before,
   & article .callout[data-callout="quote"]::before {
     content: "\201C";
     position: absolute;
     top: 0.05em;
-    left: 0.35rem;
+    right: 0.5rem;
     font-family: var(--headerFont);
-    font-size: 3.6em;
+    font-size: 3.4em;
     line-height: 1;
     color: var(--mwg-accent);
-    opacity: 0.18;
+    opacity: 0.32;
     pointer-events: none;
     z-index: 0;
   }
