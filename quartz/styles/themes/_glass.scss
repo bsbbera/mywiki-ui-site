@@ -356,14 +356,18 @@
   & article .callout[data-callout="quote"] {
     position: relative;
     overflow: hidden;
-    border: none !important;
+    /* solid panel base + subtle full border so blockquote and [!quote] callout
+       look identical (the callout used to show a panel, the bare blockquote
+       faded to page-black). border-left is the accent bar. */
+    border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: 0 var(--mwg-radius) var(--mwg-radius) 0 !important;
-    /* Fade over a FIXED distance, not a % of width, so a short quote and a long
-       quote share the same rich left-fade. A % stop stretches the fade across a
-       wide box and looks washed out; min(80%, 42rem) keeps narrow quotes as-is
-       but caps the fade length so wide quotes match the narrow ones. */
-    background: linear-gradient(90deg, var(--mwg-accent-soft), transparent min(80%, 42rem)) !important;
+    /* accent tint fades over a FIXED distance onto the solid panel, so the
+       gradient looks the same on a short quote and a full-width one. The panel
+       colour (last layer) fills the rest, so the box never bleeds to black. */
+    background:
+      linear-gradient(90deg, var(--mwg-accent-soft), transparent min(80%, 42rem)),
+      var(--mwg-pane-2) !important;
     padding: 1rem 1.4rem 1rem 2.4rem !important;
     color: var(--mwg-text-strong) !important;
     font-style: italic;
