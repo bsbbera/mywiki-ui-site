@@ -10,6 +10,10 @@
    @import here would be emitted mid-bundle and ignored by the browser.
    ========================================================================== */
 
+// Exclude the bespoke card-system callout types from the generic !important
+// callout overrides, so card/grid/infobox/hero surfaces are not clobbered.
+$not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-callout="infobox"]):not([data-callout="columns"]):not([data-callout="col"])';
+
 /* ---- tokens: LIGHT defaults --------------------------------------------- */
 :root[data-theme="glass"] {
   --mwg-accent: #2a5fd6;
@@ -73,6 +77,40 @@
     var(--mwg-grad-3) 66%,
     var(--mwg-grad-4)
   );
+
+  /* ---- card-system tokens (used by _glass-cards.scss) — LIGHT + shared ---- */
+  --mwg-font-body: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --mwg-font-heading: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mwg-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-s: var(--mwg-radius);
+  --radius-m: calc(var(--mwg-radius) + 4px);
+  --radius-l: calc(var(--mwg-radius) + 6px);
+  --mwg-dur-fast: 150ms;
+  --mwg-dur-slow: 360ms;
+  --mwg-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --mwg-card-min: 260px;
+  --mwg-grid-gap: 1.3rem;
+  --mwg-col-gap: 30px;
+  --mwg-col-min: 200px;
+  --mwg-card-blur: 24px;
+  --mwg-infobox-width: 300px;
+  /* on-dark trio (same both modes) */
+  --mwg-on-dark: #ececec;
+  --mwg-on-dark-muted: #b9b8c4;
+  --mwg-on-dark-border: rgba(255, 255, 255, 0.1);
+  /* LIGHT surfaces */
+  --mwg-shadow-card: 0 6px 22px rgba(20, 18, 14, 0.1);
+  --mwg-shadow-card-hover: 0 12px 32px rgba(20, 18, 14, 0.14);
+  --mwg-dark-surface: #1c1b24;
+  --mwg-accent-surface: #2a5fd6;
+  --mwg-on-accent: #ffffff;
+  --mwg-on-accent-em: #ece7ff;
+  --mwg-on-accent-kick: #ece7ff;
+  --mwg-accent-btn-bg: #14120e;
+  --mwg-accent-btn-fg: #ffffff;
+  --mwg-accent-nested: #1b1a22;
+  --mwg-accent-nested-h: #ffffff;
+  --mwg-accent-nested-p: #c7c5d2;
 }
 
 /* ---- BRIDGE → Quartz base vars -------------------------------------------
@@ -126,6 +164,20 @@
   --mwg-italic-color: #4fd0bf;
   --mwg-bold-italic-color: #4fd0bf;
   --mwg-strikethrough-color: #a3a2a0;
+
+  /* ---- card-system tokens — DARK overrides ---- */
+  --mwg-shadow-card: 0 6px 22px rgba(0, 0, 0, 0.4);
+  --mwg-shadow-card-hover: 0 12px 34px rgba(0, 0, 0, 0.5);
+  --mwg-dark-surface: #1a1922;
+  --mwg-accent-surface: #121620;
+  --mwg-on-accent: #ececec;
+  --mwg-on-accent-em: var(--mwg-accent);
+  --mwg-on-accent-kick: var(--mwg-accent);
+  --mwg-accent-btn-bg: var(--mwg-accent);
+  --mwg-accent-btn-fg: #ffffff;
+  --mwg-accent-nested: #20202a;
+  --mwg-accent-nested-h: #fbfbfa;
+  --mwg-accent-nested-p: #b9b8c4;
 }
 
 /* =============================================================================
@@ -425,15 +477,17 @@
     color: var(--mwg-muted);
   }
 
-  /* Glass card callouts (override TG's !important infobox look) */
-  & article .callout {
+  /* Standard callouts only (override TG's !important infobox look). The card
+     SYSTEM types (card/grid/infobox/columns/col) are EXCLUDED so the bespoke
+     card surfaces — incl. accent/dark heroes — are not clobbered by !important. */
+  & article .callout#{$not-cards} {
     background: var(--mwg-pane-2) !important;
     border: 1px solid var(--mwg-border) !important;
     border-left: 3px solid var(--mwg-accent) !important;
     border-radius: var(--mwg-radius) !important;
     box-shadow: none !important;
   }
-  & article .callout > .callout-title {
+  & article .callout#{$not-cards} > .callout-title {
     text-align: left;
     font-variant: normal;
     font-family: var(--bodyFont);

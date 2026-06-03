@@ -1,0 +1,881 @@
+/* Glass CARD SYSTEM (data-theme=glass) — auto-ported from Obsidian theme.css; scoped + .markdown-rendered->article. Tokens/keyframes in _glass.scss. */
+:root[data-theme="glass"] {
+/* ----- GRID container: flows any number of cards, any rows × columns.
+   !important defeats plugin CSS (Minimal/contextual-typography) that re-paints a
+   callout surface AFTER the theme — otherwise a cream box shows behind the cards
+   wherever they don't fill the grid (revealed once cards size to content). ----- */
+.callout[data-callout="grid"] {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 1.4em 0;
+}
+.callout[data-callout="grid"] > .callout-content { background: none !important; padding: 0 !important; }
+.callout[data-callout="grid"] > .callout-title { display: none; }
+.callout[data-callout="grid"] > .callout-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--mwg-card-min, 260px), 1fr));
+    column-gap: var(--mwg-grid-gap, 1.3rem);
+    row-gap: var(--mwg-grid-row-gap, var(--mwg-grid-gap, 1.3rem));
+    padding: 0;
+    align-items: stretch;
+}
+/* zero the grid items' own margin so row-gap (not Obsidian's default .callout
+   margin) is what controls the vertical distance between card rows */
+.callout[data-callout="grid"] > .callout-content > .callout { margin: 0 !important; }
+.callout[data-callout="grid"][data-callout-metadata*="cols2"] > .callout-content { grid-template-columns: repeat(2, 1fr); }
+.callout[data-callout="grid"][data-callout-metadata*="cols3"] > .callout-content { grid-template-columns: repeat(3, 1fr); }
+.callout[data-callout="grid"][data-callout-metadata*="cols4"] > .callout-content { grid-template-columns: repeat(4, 1fr); }
+.callout[data-callout="grid"][data-callout-metadata*="cols5"] > .callout-content { grid-template-columns: repeat(5, 1fr); }
+.callout[data-callout="grid"][data-callout-metadata*="cols6"] > .callout-content { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 700px) {
+    .callout[data-callout="grid"] > .callout-content { grid-template-columns: 1fr; }
+}
+/* the blank ">" separators between child cards can leave empty paragraphs —
+   don't let them become stray grid cells */
+.callout[data-callout="grid"] > .callout-content > p:empty,
+.callout[data-callout="grid"] > .callout-content > br { display: none; }
+/* Cards stretch to equal height per row via the grid's align-items:stretch (set on
+   .callout-content above). Do NOT add `height:100%` to the children — in the user's
+   plugin-heavy vault it resolves against the preview sizer and balloons/collapses the
+   whole panel into one empty dark box. align-items:stretch alone gives equal height. */
+/* spans (place on a child card) */
+.callout[data-callout="card"][data-callout-metadata*="span2"] { grid-column: span 2; }
+.callout[data-callout="card"][data-callout-metadata*="span3"] { grid-column: span 3; }
+.callout[data-callout="card"][data-callout-metadata*="spanfull"] { grid-column: 1 / -1; }
+
+/* ----- shared card chrome (all styles) ----- */
+.callout[data-callout="card"] {
+    --cc: var(--mwg-accent);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--mwg-border-2);
+    border-radius: var(--radius-l);
+    background: var(--mwg-pane-2);
+    box-shadow: var(--mwg-shadow-card);
+    padding: 2px 4px 6px;
+    overflow: hidden;
+    transition: transform var(--mwg-dur) var(--mwg-ease), box-shadow var(--mwg-dur) var(--mwg-ease), border-color var(--mwg-dur) var(--mwg-ease);
+    animation: mwg-rise var(--mwg-dur-slow) var(--mwg-ease);
+}
+.callout[data-callout="card"]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mwg-shadow-card-hover);
+    border-color: color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-border-2));
+}
+.callout[data-callout="card"] > .callout-title { padding: 14px 20px 0; align-items: flex-start; }
+.callout[data-callout="card"] .callout-icon { display: none; }
+.callout[data-callout="card"] .callout-title-inner {
+    font-family: var(--mwg-font-heading);
+    font-weight: 500;
+    font-size: 1.7em;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
+    color: var(--mwg-text-strong);
+}
+.callout[data-callout="card"] .callout-title-inner em { color: var(--mwg-italic-color); font-style: italic; }
+.callout[data-callout="card"] > .callout-content { padding: 6px 20px 16px; flex: 1; overflow: visible; }
+/* cards must never show their own scrollbar (Minimal/core set overflow:auto on
+   callout-content to handle wide content). Only an inner code block may scroll. */
+.callout[data-callout="card"] > .callout-content > pre { overflow-x: auto; }
+.callout[data-callout="card"] > .callout-content > :not(pre) { overflow: visible; }
+/* first h6 in a card = coral mono kicker label (e.g. ###### THE SKILL) */
+.callout[data-callout="card"] .callout-content > h6:first-child {
+    font-family: var(--mwg-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72em;
+    color: var(--mwg-accent);
+    font-weight: 500;
+    margin: 0 0 10px;
+    border: none;
+    padding: 0;
+}
+.callout[data-callout="card"] .callout-content > h6:first-child::before {
+    content: "● ";
+    font-size: 0.8em;
+    vertical-align: 0.1em;
+}
+
+/* ----- SURFACES (direct-child scoped so they NEVER bleed into nested cards) ----- */
+.callout[data-callout="card"][data-callout-metadata*="dark"] {
+    background: var(--mwg-dark-surface) !important;
+    border-color: var(--mwg-on-dark-border);
+    color: var(--mwg-on-dark);
+}
+.callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-title .callout-title-inner { color: var(--mwg-on-dark); }
+.callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content { color: var(--mwg-on-dark-muted); }
+.callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(h1, h2, h3, h4) { color: var(--mwg-on-dark); }
+.callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > hr { border-top-color: var(--mwg-on-dark-border); }
+/* NESTED cards inside a dark surface that don't set their OWN surface still need
+   light text — Obsidian/other themes set `color` directly on every .callout, which
+   breaks inheritance and makes them render black-on-black (the four-step step cards
+   were invisible for exactly this reason, not clipping). */
+.callout[data-callout="card"][data-callout-metadata*="dark"] .callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"]) {
+    color: var(--mwg-on-dark-muted);
+}
+.callout[data-callout="card"][data-callout-metadata*="dark"] .callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"]) :is(h1, h2, h3, h4, p, li) {
+    color: var(--mwg-on-dark);
+}
+.callout[data-callout="card"][data-callout-metadata*="dark"] .callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"]) p {
+    color: var(--mwg-on-dark-muted);
+}
+
+/* ACCENT hero. LIGHT = coral panel (reference); DARK = warm-dark panel (the black
+   version). All colours come from mode-aware tokens so each mode is correct. */
+.callout[data-callout="card"][data-callout-metadata*="accent"] {
+    background: var(--mwg-accent-surface);
+    border-color: transparent;
+    color: var(--mwg-on-accent);
+}
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-title .callout-title-inner,
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(h1, h2, h3, h4) { color: var(--mwg-on-accent); }
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-title .callout-title-inner em,
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(h1, h2, h3) em { color: var(--mwg-on-accent-em); }
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content { color: color-mix(in srgb, var(--mwg-on-accent) 84%, var(--mwg-accent)); }
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > h6:first-child,
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > h6:first-child::before { color: var(--mwg-on-accent-kick); }
+
+/* NESTED cards inside the accent hero. The 6× .callout specificity (the MCL
+   "kill any background" technique) forces the fill past any vault override. Ancestor
+   requires class .callout so it matches the hero CALLOUT only — NOT the .el-div
+   wrapper (which shares the metadata) and NOT the hero itself. Token-driven fill:
+   dark cards on the coral hero (light) / lifted cards on the dark hero (dark). */
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"],
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] > .callout-content {
+    background: var(--mwg-accent-nested) !important;
+    background-color: var(--mwg-accent-nested) !important;
+    background-image: none !important;
+}
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] {
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: var(--radius-l) !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30) !important;
+}
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] :is(h1, h2, h3, h4) { color: var(--mwg-accent-nested-h) !important; }
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] :is(p, li, td) { color: var(--mwg-accent-nested-p) !important; }
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] :is(h6, em) { color: var(--mwg-accent) !important; }
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout-metadata*="channels"] tr > :first-child { color: var(--mwg-accent) !important; }
+.callout[data-callout="card"][data-callout-metadata*="accent"] .callout.callout.callout.callout.callout.callout[data-callout="card"] img { border-color: var(--mwg-accent) !important; }
+
+/* ----- SPLIT: side-by-side hero — text flows left, nested grid FLOATS right.
+   Float (not grid) so the card height = its content. (grid-row spanning ballooned
+   the card to a runaway height.) ----- */
+.callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content { display: block; }
+.callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content::after { content: ""; display: block; clear: both; }
+.callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content > p:empty,
+.callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content > br { display: none; }
+.callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content > .callout[data-callout="grid"] {
+    float: right;
+    width: 50%;
+    margin: 0 0 1rem 2.4rem;
+}
+@media (max-width: 820px) {
+    .callout[data-callout="card"][data-callout-metadata*="split"] > .callout-content > .callout[data-callout="grid"] {
+        float: none;
+        width: 100%;
+        margin: 1.4rem 0 0;
+    }
+}
+
+/* ----- STYLE: skill — kicker, big title, dark command bar + steps ----- */
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) pre {
+    position: relative;
+    background: var(--mwg-dark-surface) !important;
+    border: 1px solid var(--mwg-on-dark-border);
+    border-radius: var(--radius-m);
+    padding: 15px 104px 15px 18px;
+    margin: 6px 0 18px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) pre code {
+    color: var(--mwg-on-dark) !important;
+    background: none;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) pre .copy-code-button {
+    opacity: 1;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--mwg-on-dark);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-family: var(--mwg-font-mono);
+    font-size: 0.66em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) ol {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) ol > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 3.2em;
+    margin: 1em 0;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) ol > li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: var(--mwg-font-mono);
+    font-size: 0.95em;
+    color: var(--mwg-accent);
+    opacity: 0.55;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="skill"],
+    body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) ol > li strong {
+    display: block;
+    font-family: var(--mwg-font-heading);
+    font-weight: 600;
+    font-size: 1.12em;
+    color: var(--mwg-text-strong);
+    margin-bottom: 2px;
+}
+
+/* ----- STYLE: section — flat column block (use inside [!grid|cols3]) ----- */
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])):hover {
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 4px 0; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) h3 { margin: 4px 0 8px; font-size: 1.4em; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul { padding-left: 1.1em; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul > li::marker { color: var(--mwg-accent); }
+/* vertical divider between section columns (skips the first in a row) */
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"] {
+    border-left: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    padding-left: 1.8rem;
+}
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"]:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+/* ----- STYLE: step — SELF-CONTAINED dark tile (ring + "Step 0N" + heading + body).
+   Built like the honor/profile cards (which render reliably) — a complete dark card,
+   NOT a transparent child relying on a special parent. Use in a plain [!grid]. ----- */
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) {
+    background: var(--mwg-dark-surface) !important;
+    border: none;
+    border-radius: var(--radius-l);
+    box-shadow: none;
+    color: var(--mwg-on-dark-muted);
+}
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])):hover {
+    transform: none; box-shadow: none; border-color: transparent;
+}
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 30px 26px 40px; }
+/* "Step 0N" kicker: title-case (not all-caps) like the reference */
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child { text-transform: none; letter-spacing: 0.12em; }
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--mwg-accent) 60%, transparent);
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+}
+/* per-step reference icons (file / chat / list). The spanfull hero is the grid's
+   1st child, so Step 01 = nth-of-type(2) keeps the default magnifier and the
+   file/chat/list icons sit on nth-of-type 3/4/5 (Steps 02/03/04). */
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(3) > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z'/%3E%3Cpath d='M14 4v5h5'/%3E%3C/svg%3E");
+}
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(4) > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E");
+}
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(5) > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12l2 2 4-4M3 6l2 2 4-4M3 18l2 2 4-4M13 6h8M13 12h8M13 18h8'/%3E%3C/svg%3E");
+}
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) h3 {
+    margin: 0 0 10px;
+    font-family: var(--mwg-font-heading);
+    font-weight: 500;
+    font-size: 1.55em;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--mwg-on-dark);
+}
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) h3 em { color: var(--mwg-italic-color); font-style: italic; }
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) p { color: var(--mwg-on-dark-muted); }
+
+/* grids never show their own scrollbar (Minimal/core add overflow:auto) */
+.callout[data-callout="grid"],
+.callout[data-callout="grid"] > .callout-content { overflow: visible; }
+
+/* ===== FOUR-STEP CTA — SEAMLESS SLAB ===========================================
+   Built on the rendering path PROVEN to work in the vault: each tile keeps its OWN
+   opaque dark background (the separated-tile version rendered dark with cream text).
+   To read as ONE slab we just flush the tiles (gap:0) and draw hairline dividers
+   with borders. Corner tiles round; middle tiles square. No transparent tiles, no
+   container background, no overflow:hidden — none of the things that broke before.
+   Text colours forced so they always sit cream/coral on the dark tiles. ========= */
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content {
+    gap: 0 !important;
+}
+/* every tile squared by default; corner rules below round the four outer corners.
+   margin:0 is critical — Obsidian's default .callout margin is what opens the cream
+   gap between the header and the step row and stops them fusing into one slab. */
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout="card"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+/* hairline dividers: a line under the header / between rows (each step's top) and
+   between columns (each step after the first). Adapts on wrap automatically. */
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout-metadata~="step"] {
+    border-top: 1px solid color-mix(in srgb, var(--mwg-on-dark) 16%, transparent) !important;
+}
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout-metadata~="step"] + .callout[data-callout-metadata~="step"] {
+    border-left: 1px solid color-mix(in srgb, var(--mwg-on-dark) 16%, transparent) !important;
+}
+/* round the four outer corners of the slab (corner tiles only) */
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout-metadata*="hero"] {
+    border-radius: var(--radius-l) var(--radius-l) 0 0 !important;
+}
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout-metadata*="hero"] + .callout[data-callout-metadata~="step"] {
+    border-bottom-left-radius: var(--radius-l) !important;
+}
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) > .callout-content > .callout[data-callout-metadata~="step"]:last-of-type {
+    border-bottom-right-radius: var(--radius-l) !important;
+}
+/* force the slab's text colours so nothing can wash them out */
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) :is(h1, h2, h3) { color: var(--mwg-on-dark) !important; }
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) :is(h6, em) { color: var(--mwg-accent) !important; }
+.callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) p:not(:has(strong)) { color: var(--mwg-on-dark-muted) !important; }
+
+/* HEADER: two columns — display heading left, intro paragraph right (reference). */
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="hero"] > .callout-content {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    column-gap: 48px;
+    align-items: start;
+}
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content > h6:first-child { grid-column: 1 / -1; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content > h1 { grid-column: 1; margin-bottom: 0; }
+/* intro = the plain paragraph (no button); send it to the right column */
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content > p:not(:has(strong)) {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+    align-self: start;
+    margin-top: 8px;
+}
+/* button paragraph stays in the left column, below the heading */
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content > p:has(strong) { grid-column: 1; }
+@media (max-width: 820px) {
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content { grid-template-columns: 1fr; }
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata*="hero"] > .callout-content > p:not(:has(strong)) { grid-column: 1; grid-row: auto; text-align: left; }
+}
+
+/* ----- STYLE: profile — avatar, label, name, bio, link (centered) ----- */
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) {
+    text-align: center;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 18px 16px; }
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 8px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) h6 {
+    font-family: var(--mwg-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.7em;
+    color: var(--mwg-accent);
+    border: none;
+    margin: 0 0 6px;
+    padding: 0;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) :is(h2, h3) {
+    font-family: var(--mwg-font-heading);
+    font-weight: 500;
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="profile"],
+    body.at-card-profile .callout[data-callout="card"]:not([data-callout-metadata])) a {
+    font-family: var(--mwg-font-mono);
+    font-size: 0.8em;
+    border-bottom: none;
+}
+
+/* ----- STYLE: honor — dark, rank badge, ringed avatar, pull quote, stats ----- */
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) {
+    background: var(--mwg-dark-surface);
+    border-color: var(--mwg-on-dark-border);
+    color: var(--mwg-on-dark);
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child {
+    display: inline-block;
+    background: var(--mwg-accent);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child::before { content: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--mwg-accent);
+    padding: 3px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) :is(h2, h3) {
+    font-family: var(--mwg-font-heading);
+    font-weight: 500;
+    font-size: 2em;
+    color: var(--mwg-on-dark);
+    margin: 8px 0 6px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) blockquote {
+    background: none;
+    border-left: 2px solid var(--mwg-accent);
+    border-radius: 0;
+    font-family: var(--mwg-font-heading);
+    font-style: italic;
+    font-size: 1.3em;
+    color: var(--mwg-on-dark);
+    padding: 4px 0 4px 18px;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) strong { color: var(--mwg-accent); font-size: 1.4em; }
+:is(.callout[data-callout="card"][data-callout-metadata*="honor"],
+    body.at-card-honor .callout[data-callout="card"]:not([data-callout-metadata])) hr {
+    border: none;
+    border-top: 1px solid var(--mwg-on-dark-border);
+    margin: 14px 0;
+}
+
+/* ----- STYLE: channels — dark list (channel ........ LABEL) ----- */
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) {
+    background: var(--mwg-dark-surface);
+    border-color: var(--mwg-on-dark-border);
+    color: var(--mwg-on-dark);
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) table {
+    width: 100%;
+    border: none;
+    background: none;
+    border-radius: 0;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) thead { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) :is(th, td) {
+    border: none;
+    border-bottom: 1px solid var(--mwg-on-dark-border);
+    padding: 9px 4px;
+    background: none;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--mwg-font-body);
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) tr > :first-child {
+    color: var(--mwg-accent);
+    font-weight: 600;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) tr > :first-child::before { content: "# "; opacity: 0.7; }
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) tr > :last-child {
+    text-align: right;
+    color: var(--mwg-on-dark-muted);
+    font-family: var(--mwg-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.76em;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="channels"],
+    body.at-card-channels .callout[data-callout="card"]:not([data-callout-metadata])) tr:last-child :is(th, td) { border-bottom: none; }
+
+/* ----- STYLE: hero / cta — big display heading + buttons ----- */
+/* title comes from the inner "# heading"; hide the auto callout title ("Card") */
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 20px 28px 26px; }
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content > :is(h1, h2) {
+    font-size: 3.2em;
+    line-height: 1.02;
+    margin: 0 0 16px;
+    border: none;
+}
+/* buttons (direct children only, so nested-card links are NOT turned into pills):
+   plain link = outline pill, bold link **[x](y)** = filled pill */
+/* buttons — style EVERY link in the hero's own content (robust to whatever
+   wrapper Obsidian puts the buttons paragraph in), then reset nested-card links.
+   plain link = outline pill, bold link **[x](y)** = filled pill */
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content a {
+    display: inline-block;
+    border: 1.5px solid var(--mwg-accent);
+    border-radius: 99px;
+    padding: 11px 24px;
+    margin: 16px 12px 0 0;
+    font-family: var(--mwg-font-body);
+    font-weight: 600;
+    color: var(--mwg-accent);
+    cursor: pointer;
+    transition: opacity var(--mwg-dur-fast) var(--mwg-ease);
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content strong a {
+    background: var(--mwg-accent);
+    color: #fff;
+    border-color: var(--mwg-accent);
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content a:hover { opacity: 0.85; }
+/* links INSIDE nested cards are not buttons — undo the pill look */
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content .callout a {
+    display: inline;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    font-weight: inherit;
+    color: var(--mwg-accent);
+}
+/* on the coral (accent) surface, invert buttons to dark (!important to beat the
+   high-specificity :is() default-class arm in the base button rule) */
+/* outline button — border + text follow the hero's text colour so it's visible on
+   the coral hero (light: dark ink) AND the dark hero (dark: cream) */
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content a {
+    border-color: color-mix(in srgb, var(--mwg-on-accent) 55%, transparent) !important;
+    color: var(--mwg-on-accent) !important;
+}
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content a:hover {
+    border-color: var(--mwg-on-accent) !important;
+    background: color-mix(in srgb, var(--mwg-on-accent) 8%, transparent) !important;
+}
+/* filled button — light: dark pill (reference) · dark: CORAL pill (matches accent) */
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content strong a {
+    background: var(--mwg-accent-btn-bg) !important;
+    color: var(--mwg-accent-btn-fg) !important;
+    border-color: var(--mwg-accent-btn-bg) !important;
+}
+.callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content .callout a { color: inherit !important; border: none !important; background: none !important; }
+/* Discord glyph on any "discord" link styled as a hero button */
+:is(.callout[data-callout="card"][data-callout-metadata*="hero"],
+    body.at-card-hero .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content a[href*="discord"]::before {
+    content: "";
+    display: inline-block;
+    width: 1.05em;
+    height: 1.05em;
+    margin-right: 0.5em;
+    vertical-align: -0.16em;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19.27 5.33A18 18 0 0 0 14.72 4l-.2.4a13.7 13.7 0 0 0-5.04 0L9.27 4a18 18 0 0 0-4.54 1.33C2.4 8.94 1.78 12.45 2.09 15.9a18.4 18.4 0 0 0 5.6 2.83l1.13-1.55a11.6 11.6 0 0 1-1.78-.86l.44-.34a13 13 0 0 0 11.04 0l.44.34c-.55.33-1.16.61-1.78.86l1.13 1.55a18.3 18.3 0 0 0 5.6-2.83c.45-4.05-.5-7.53-2.64-10.57Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19.27 5.33A18 18 0 0 0 14.72 4l-.2.4a13.7 13.7 0 0 0-5.04 0L9.27 4a18 18 0 0 0-4.54 1.33C2.4 8.94 1.78 12.45 2.09 15.9a18.4 18.4 0 0 0 5.6 2.83l1.13-1.55a11.6 11.6 0 0 1-1.78-.86l.44-.34a13 13 0 0 0 11.04 0l.44.34c-.55.33-1.16.61-1.78.86l1.13 1.55a18.3 18.3 0 0 0 5.6-2.83c.45-4.05-.5-7.53-2.64-10.57Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+
+body { --mwg-col-gap: 30px; --mwg-col-min: 200px; }
+
+.callout[data-callout="columns"] {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 1.3em 0;
+}
+.callout[data-callout="columns"] > .callout-title { display: none; }
+.callout[data-callout="columns"] > .callout-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mwg-col-gap);
+    align-items: stretch;
+    padding: 0 !important;
+}
+/* drop the empty-paragraph separators so they don't become stray columns */
+.callout[data-callout="columns"] > .callout-content > p:empty,
+.callout[data-callout="columns"] > .callout-content > br { display: none; }
+/* each COLUMN = a plain content block: strip all card chrome, keep note content */
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] {
+    flex: 1 1 0;
+    min-width: var(--mwg-col-min);
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    animation: none !important;
+}
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"]:hover { transform: none; box-shadow: none; }
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] > .callout-title { display: none; }
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] > .callout-content { padding: 0 !important; }
+.callout[data-callout="columns"] > .callout-content > .callout[data-callout="col"] > .callout-content > :first-child { margin-top: 0; }
+/* WIDTH WEIGHTS — flex-basis:0 makes the grow values exact ratios (w3:w7 = 30/70).
+   !important beats the higher-specificity base `flex:1 1 0` shorthand above. */
+.callout[data-callout="col"][data-callout-metadata~="w1"]  { flex-grow: 1 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w2"]  { flex-grow: 2 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w3"]  { flex-grow: 3 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w4"]  { flex-grow: 4 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w5"]  { flex-grow: 5 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w6"]  { flex-grow: 6 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w7"]  { flex-grow: 7 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w8"]  { flex-grow: 8 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w9"]  { flex-grow: 9 !important; }
+.callout[data-callout="col"][data-callout-metadata~="w10"] { flex-grow: 10 !important; }
+/* optional hairline dividers between columns: [!columns|ruled] */
+.callout[data-callout="columns"][data-callout-metadata~="ruled"] > .callout-content > .callout[data-callout="col"] + .callout[data-callout="col"] {
+    border-left: 1px solid var(--mwg-border) !important;
+    padding-left: var(--mwg-col-gap) !important;
+}
+
+/* ============================================================================
+   [Anthropic-Touch parity II]  text utilities · lists · font-size (Glass skin)
+   --------------------------------------------------------------------------
+   SAME class names as Anthropic Touch (.at-kicker/.at-badge/.at-display/.at-lead/
+   .at-stat/.at-mark, inline .at-xs…at-4xl/.at-fs, list markers, per-note text-*),
+   so a note using them renders in BOTH themes — here they resolve through --mwg-*,
+   so the colour is violet, the fonts are Glass's, the look is Glass's. ========= */
+
+/* ----- Lists: render AS lists with themed markers ----- */
+/* LISTS — force them to actually render AS lists (markers + indent). Some vault
+   setups flatten list indent to 0, which hides the native markers; this restores
+   them everywhere, including inside callouts/columns. */
+article :is(ul, ol) {
+    padding-inline-start: 1.7em;
+    list-style-position: outside;
+    margin: 0.4em 0;
+}
+article ul { list-style-type: disc; }
+article ul ul { list-style-type: circle; }
+article ul ul ul { list-style-type: square; }
+article ol { list-style-type: decimal; }
+article :is(ul, ol) > li { display: list-item; margin: 0.3em 0; }
+article ul > li::marker { color: var(--mwg-accent); }
+/* ordered lists: coral mono numerals (the Anthropic numbered-list look) */
+article ol > li::marker { color: var(--mwg-accent); font-family: var(--mwg-font-mono); font-weight: 600; }
+.markdown-source-view.mod-cm6 .cm-formatting-list { color: var(--mwg-accent); }
+/* task list checkboxes pick up the accent (and keep their item un-bulleted) */
+article li.task-list-item { list-style-type: none; }
+article input[type="checkbox"] { accent-color: var(--mwg-accent); }
+
+/* ----- Body font size + per-note text-sm/md/lg/xl ----- */
+/* BODY FONT SIZE — apply --font-text-size ourselves so the Style Settings slider
+   ("Body font size") and the per-note text-sm/md/lg/xl classes always take effect,
+   even if something overrides Obsidian core. Headings use em, so they scale too. */
+.markdown-preview-view,
+.markdown-reading-view .markdown-preview-sizer,
+.markdown-source-view .cm-content { font-size: var(--font-text-size); }
+
+/* ----- Per-note BODY TEXT SIZE via cssclass (frontmatter: cssclasses: [text-lg])
+   Global default lives in Style Settings → "Body font size"; these override it for
+   a single note. text-sm · text-md · text-lg · text-xl. ----------------------- */
+:is(.markdown-preview-view, .markdown-source-view, .markdown-reading-view).text-sm { --font-text-size: 14px; }
+:is(.markdown-preview-view, .markdown-source-view, .markdown-reading-view).text-md { --font-text-size: 16px; }
+:is(.markdown-preview-view, .markdown-source-view, .markdown-reading-view).text-lg { --font-text-size: 18px; }
+:is(.markdown-preview-view, .markdown-source-view, .markdown-reading-view).text-xl { --font-text-size: 20px; }
+
+/* ----- Reusable inline text utilities + inline font-size ----- */
+/* at-kicker — mono small-caps coral label with a dot (the "THE SKILL" look) */
+article .at-kicker {
+    font-family: var(--mwg-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.74em;
+    font-weight: 500;
+    color: var(--mwg-accent);
+}
+article .at-kicker::before { content: "● "; font-size: 0.8em; vertical-align: 0.1em; }
+article .at-kicker.no-dot::before { content: none; }
+
+/* at-badge — filled coral pill, mono caps (the "01 · ALL-TIME CONTRIBUTOR" look) */
+article .at-badge {
+    display: inline-block;
+    font-family: var(--mwg-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72em;
+    font-weight: 500;
+    background: var(--mwg-accent);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+/* at-badge.ghost — outline variant */
+article .at-badge.ghost {
+    background: transparent;
+    color: var(--mwg-accent);
+    border: 1px solid color-mix(in srgb, var(--mwg-accent) 50%, transparent);
+}
+
+/* at-display — serif display run; <em> inside shows the coral italic emphasis */
+article .at-display {
+    font-family: var(--mwg-font-heading);
+    font-weight: 500;
+    font-size: 1.55em;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: var(--mwg-text-strong);
+}
+article .at-display em { color: var(--mwg-italic-color); font-style: italic; }
+
+/* at-lead — larger, calmer intro paragraph */
+article .at-lead {
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: var(--mwg-muted);
+}
+
+/* at-stat — big coral display numeral for inline stats */
+article .at-stat {
+    font-family: var(--mwg-font-heading);
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--mwg-accent);
+    line-height: 1;
+}
+
+/* at-mark — soft coral highlight (alternative to ==mark==) */
+article .at-mark {
+    background: color-mix(in srgb, var(--mwg-accent) 16%, transparent);
+    color: var(--mwg-text-strong);
+    border-radius: 4px;
+    padding: 0.05em 0.3em;
+}
+
+/* ----- INLINE FONT-SIZE utilities -------------------------------------------
+   Resize ANY run of text, like the colour/label classes. Wrap with inline HTML:
+       This is <span class="at-xl">much bigger</span> and <span class="at-sm">smaller</span>.
+   Sizes are em-relative, so they also scale with the global Body-font-size slider.
+   Scale: at-xs · at-sm · at-md · at-lg · at-xl · at-2xl · at-3xl · at-4xl       */
+article .at-xs  { font-size: 0.72em; }
+article .at-sm  { font-size: 0.85em; }
+article .at-md  { font-size: 1em; }
+article .at-lg  { font-size: 1.25em; }
+article .at-xl  { font-size: 1.5em; }
+article .at-2xl { font-size: 2em; line-height: 1.15; }
+article .at-3xl { font-size: 2.75em; line-height: 1.1; }
+article .at-4xl { font-size: 3.6em; line-height: 1.05; }
+/* exact pt/px control when you need it: <span class="at-fs" style="--fs: 28px">…</span> */
+article .at-fs { font-size: var(--fs, 1em); }
+
+/* ============================================================================
+   [Glass identity]  give the shared elements Glass's OWN skin — frosted glass +
+   Apple spring. The CARD GEOMETRY is shared with Anthropic Touch, but here the
+   surface is translucent with a backdrop blur and a crisp top-edge highlight, so
+   it reads as glass rather than paper. Only light/default cards are frosted; the
+   dark "honor/CTA" and accent-hero surfaces stay solid for legibility.
+   ========================================================================== */
+.callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"]) {
+    position: relative;
+    /* translucent pane + a faint diagonal sheen so the surface reads as glass */
+    background:
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--mwg-text-strong) 6%, transparent),
+            transparent 38%),
+        color-mix(in srgb, var(--mwg-pane-2) 58%, transparent);
+    -webkit-backdrop-filter: blur(var(--mwg-card-blur)) saturate(1.8);
+            backdrop-filter: blur(var(--mwg-card-blur)) saturate(1.8);
+    border: 1px solid color-mix(in srgb, var(--mwg-text-strong) 10%, transparent);
+    /* one subtle, neutral elevation — no colored or white glow */
+    box-shadow: var(--mwg-shadow-card);
+    transition:
+        transform var(--mwg-dur) var(--mwg-ease-spring),
+        box-shadow var(--mwg-dur) var(--mwg-ease),
+        border-color var(--mwg-dur) var(--mwg-ease);
+}
+/* glassy top + left rim highlight (light catches the edge, Apple-style) */
+.callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"])::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border-top: 1px solid color-mix(in srgb, var(--mwg-text-strong) 14%, transparent);
+    border-left: 1px solid color-mix(in srgb, var(--mwg-text-strong) 8%, transparent);
+    -webkit-mask: linear-gradient(135deg, #000, transparent 46%);
+            mask: linear-gradient(135deg, #000, transparent 46%);
+    pointer-events: none;
+    z-index: 0;
+}
+.callout[data-callout="card"]:not([data-callout-metadata*="dark"]):not([data-callout-metadata*="accent"]):hover {
+    transform: translateY(-4px) scale(1.006);
+    border-color: color-mix(in srgb, var(--mwg-accent) 30%, var(--mwg-border-strong));
+    box-shadow: var(--mwg-shadow-card-hover);
+}
+/* frost the infobox too (it shares the [!infobox] name across both themes) */
+.callout[data-callout="infobox"] {
+    background:
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--mwg-text-strong) 6%, transparent),
+            transparent 38%),
+        color-mix(in srgb, var(--mwg-pane-2) 60%, transparent);
+    -webkit-backdrop-filter: blur(22px) saturate(1.6);
+            backdrop-filter: blur(22px) saturate(1.6);
+}
+}
