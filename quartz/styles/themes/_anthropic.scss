@@ -155,7 +155,7 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
 
   /* ---- card-system tokens — DARK overrides ---- */
   --at-card-surface: var(--at-pane-2); /* dark cards already lift off the dark page */
-  --at-accent-surface: #1f1810;
+  --at-accent-surface: #0e0b08; /* deep near-black hero (was muddy brown #1f1810) */
   --at-accent-btn-bg: var(--at-accent);
   --at-accent-btn-fg: #ffffff;
   --at-accent-nested: #2c2418;
