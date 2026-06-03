@@ -20,7 +20,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Building the Data Warehouse
 > ![cover](https://m.media-amazon.com/images/I/71IKHmaiOpL._SL1500_.jpg)
 > ###### Book
@@ -37,7 +37,7 @@ The **original** data warehouse text. Defined the term, articulated the **subjec
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[../people/bill-inmon|Bill Inmon]]

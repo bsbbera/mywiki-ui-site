@@ -34,7 +34,7 @@ dv.paragraph(`**${pages.length}** guides · last touched **${latest ? latest.fil
 
 ## 📚 Browse
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 📋 All Guides (A–Z)
 > > ```dataviewjs

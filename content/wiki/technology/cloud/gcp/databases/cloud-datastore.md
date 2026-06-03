@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Datastore
 > ###### Cloud Service
 > | | |
@@ -151,7 +151,7 @@ for entity in query.fetch():
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP databases
 >> [[cloud-sql|Cloud SQL]], [[cloud-spanner|Cloud Spanner]], [[cloud-bigtable|Cloud Bigtable]], [[memorystore|Memorystore]]

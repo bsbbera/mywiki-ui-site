@@ -18,7 +18,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Pub/Sub
 > ###### Cloud Service
 > | | |
@@ -197,7 +197,7 @@ For predictable, **partition-based** workloads at lower cost — closer to Apach
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP analytics
 >> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[datafusion|Data Fusion]], [[data-catalog|Data Catalog]]

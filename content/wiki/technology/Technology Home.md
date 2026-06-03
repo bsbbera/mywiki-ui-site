@@ -54,7 +54,7 @@ dv.table(
 
 ## 🗺️ Browse by Sub-domain
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 📊 Data Engineering
 > > Pipelines, modeling, ingestion, processing, storage, warehousing.
@@ -77,7 +77,7 @@ dv.table(
 > > dv.list(dv.pages('"wiki/technology/databases" and !"wiki/technology/databases/Databases Home"').sort(p => p.file.mtime, 'desc').limit(5).map(p => p.file.link))
 > > ```
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] ☁️ Cloud
 > > GCP, AWS, Azure, Databricks — platform-specific products & services.

@@ -112,7 +112,7 @@ Ask yourself:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Patterns
 >> [[../software-engineering/publisher-subscriber-pattern|Pub/Sub Pattern]], [[../software-engineering/fan-out|Fan-out]], [[../software-engineering/claim-check-pattern|Claim Check]], [[../software-engineering/idempotence|Idempot[[AWS|AWS]] Products

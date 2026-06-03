@@ -20,7 +20,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Designing Data-Intensive Applications
 > ![cover](https://learning.oreilly.com/library/cover/9781491903063/250w/)
 > ###### Book
@@ -39,7 +39,7 @@ Often shortened to **DDIA**. Considered required reading for serious data engine
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[../people/martin-kleppmann|Martin Kleppmann]]

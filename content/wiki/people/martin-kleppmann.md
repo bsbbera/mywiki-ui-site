@@ -19,22 +19,40 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Martin Kleppmann
-> ###### Computer Scientist
+> ###### Computer Scientist & Author
 > | | |
 > | --- | --- |
 > | **Nationality** | German |
-> | **Domain** | Distributed systems, data engineering |
-> | **Known for** | DDIA; CRDT research |
-> | **Notable works** | [[../books/designing-data-intensive-applications\|DDIA]] |
-> | **Institution** | University of Cambridge (Associate Professor) |
+> | **Domain** | Distributed systems, local-first software, security protocols, CRDTs |
+> | **Known for** | *Designing Data-Intensive Applications* (DDIA); CRDT research; local-first software movement |
+> | **Notable works** | [[../books/designing-data-intensive-applications\|DDIA]] (O'Reilly, 2017) |
+> | **Institution** | University of Cambridge (Associate Professor, since 2024) |
+> | **Education** | PhD, Computer Science, University of Cambridge |
 
-German computer scientist, researcher at the **University of Cambridge**, formerly engineer at LinkedIn (Voldemort, Samza). Author of **Designing Data-Intensive Applications** — the modern reference for distributed-systems + data engineering. Active researcher on **CRDTs** and local-first software.
+German computer scientist and **Associate Professor** at the **University of Cambridge** (Department of Computer Science and Technology, since 2024). Before academia, worked as a software engineer and entrepreneur at internet companies: co-founded and sold **two startups**, including **Rapportive** (email contact enrichment, acquired by LinkedIn), and worked on large-scale data infrastructure at **LinkedIn** — experiences that became the practical foundation for *Designing Data-Intensive Applications*.
+
+Published **Designing Data-Intensive Applications** (O'Reilly, 2017) — widely considered the single most comprehensive modern reference for building reliable, scalable, and maintainable data systems. Covers the full spectrum of data infrastructure: replication, partitioning, transactions, consistency models, distributed consensus (Paxos, Raft, ZooKeeper), batch processing (MapReduce, Spark), and stream processing (Kafka, Flink). Commonly abbreviated **DDIA**; has become required reading for senior engineers and data engineers worldwide.
+
+Active researcher on **CRDTs** (Conflict-free Replicated Data Types) — mathematical data structures that allow distributed replicas to be edited concurrently and merged automatically without central coordination or conflict resolution logic. Heads research on **local-first software**: applications that work fully offline, sync over the network when available, and give users true data ownership — in contrast to cloud-first apps where the server holds the authoritative state.
+
+## Key contributions
+
+- **DDIA** (2017): definitive reference on data systems — replication, consensus, transactions, stream/batch processing
+- **CRDT research**: formal proofs and algorithms enabling offline-first collaborative software
+- **Local-first software** movement: manifesto and tooling for user-controlled, offline-capable apps
+- **Rapportive** (startup, acquired by LinkedIn): email intelligence product
+
+## Interesting facts
+
+- DDIA is often recommended as *the* book to read before any senior data/backend engineering interview
+- CRDTs are the underlying mechanism enabling **conflict-free real-time collaboration** in tools like Figma, Notion, and multiplayer code editors — without requiring a central server to arbitrate conflicts
+- Kleppmann's approach of building startups and working in industry *before* returning to academia gives DDIA an unusually practical grounding compared to purely theoretical distributed systems texts
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Books
 >> [[../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]

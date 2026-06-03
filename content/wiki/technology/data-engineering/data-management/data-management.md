@@ -68,7 +68,7 @@ Both are core data-management abstractions for analytics consumers.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sub-disciplines
 >> [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-governance|Data Governance]], [[semantic-layer|Semantic Layer]], [[metrics-layer|Metrics Layer]]

@@ -46,7 +46,7 @@ dv.table(
 
 ## 📂 Browse by Category
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 🏗️ Foundations
 > > GCP overview, regions, service models, pricing.
@@ -66,7 +66,7 @@ dv.table(
 > > dv.list(dv.pages('"wiki/technology/cloud/gcp/storage"').sort(p => p.file.name).map(p => p.file.link))
 > > ```
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 🗄️ Databases
 > > Cloud SQL, Spanner, Bigtable, Datastore, Memorystore.

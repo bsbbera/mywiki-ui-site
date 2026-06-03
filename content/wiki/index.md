@@ -299,7 +299,7 @@ These folders do not exist yet. They will be created on the first ingest of rele
 - **Concept pages**: ~119 (incl. 9 Apache Spark / PySpark pages).
 - **Source-summary pages**: 0 (concept pages cite raw sources inline).
 - **Related-pages format**: topic-grouped callouts (per `windsurf.md`).
-- **Infoboxes**: `> [!infobox|wikipedia]` on all named-entity notes (18 people + 6 books + 27 tools/cloud-services/platforms + 1 certification = 51); placed above the daily-quote block. Abstract concept/theory/pattern/guide pages intentionally have **no infobox**.
+- **Infoboxes**: `> [!infobox|right]` on all named-entity notes (18 people + 6 books + 27 tools/cloud-services/platforms + 1 certification = 51); placed above the daily-quote block. Abstract concept/theory/pattern/guide pages intentionally have **no infobox**.
 - **Total wiki pages**: ~156 + index + log + 7 Home dashboards.
 
 ## See also

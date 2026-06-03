@@ -94,7 +94,7 @@ Once basics click, learn:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Onboarding
 >> [[../data-engineering/faq|FAQ]], [[../data-engineering/data-engineering|Data Engineering Overview]]

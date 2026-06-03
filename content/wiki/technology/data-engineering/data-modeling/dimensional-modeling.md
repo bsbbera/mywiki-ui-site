@@ -102,7 +102,7 @@ Patterns for tracking how dimension attributes change over time:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister modeling techniques
 >> [[data-modeling|Data Modeling]], [[one-big-table|One Big Table]], [[data-vault-modeling|Data Vault]], [[denormalization|Denormalization]], [[normalization|Normalization]]

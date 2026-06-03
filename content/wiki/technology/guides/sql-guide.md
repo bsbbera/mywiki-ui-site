@@ -219,7 +219,7 @@ Outer references each `emp.department` → subquery runs per outer row. Often re
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Performance
 >> [[../data-engineering/sargable-expressions|Sargable Expressions]], [[../software-engineering/indexing|Indexing]], [[../data-engineering/data-modeling/cardinality|Cardinality]]

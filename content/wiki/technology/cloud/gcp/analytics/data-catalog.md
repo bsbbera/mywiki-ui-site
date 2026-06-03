@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Data Catalog
 > ###### Cloud Service
 > | | |
@@ -170,7 +170,7 @@ Enter keyword / dataset name / table name. Apply faceted filters:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP analytics
 >> [[bigquery|BigQuery]], [[bigquery-iam|BigQuery IAM]], [[bigquery-authorized-views|BigQuery Authorized Views]], [[pubsub|Pub/Sub]], [[dataflow|Dataflow]]

@@ -110,7 +110,7 @@ Modern brokers support both via different abstractions (Kafka consumer groups, S
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister patterns
 >> [[fan-out|Fan-out]], [[claim-check-pattern|Claim Check]], [[event-sourcing-pattern|Event Sourcing]], [[idempotence|Idempotence]]

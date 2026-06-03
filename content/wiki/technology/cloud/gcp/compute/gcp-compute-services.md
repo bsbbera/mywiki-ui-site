@@ -122,7 +122,7 @@ These appear alongside the core compute services in many architectures (source: 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/service-models|Service Models]], [[../foundations/gcp-pricing-and-discounts|GCP Pricing + Discounts]]

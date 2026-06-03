@@ -18,7 +18,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Dataflow
 > ###### Cloud Service
 > | | |
@@ -172,7 +172,7 @@ The same pipeline with `beam.io.ReadFromPubSub(...)` + `beam.WindowInto(beam.win
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP analytics
 >> [[bigquery|BigQuery]], [[datafusion|Data Fusion]], [[pubsub|Pub/Sub]], [[data-catalog|Data Catalog]]

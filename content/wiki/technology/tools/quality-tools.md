@@ -112,7 +112,7 @@ A common modern stack: dbt for SQL transforms + tests; Great Expectations for Py
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Software Engineering
 >> [[../software-engineering/data-unit-test|Data Unit Test]], [[../software-engineering/idempotence|Idempotence]]

@@ -119,22 +119,21 @@ For each entity / concept extracted, route by this decision tree:
 8. Set frontmatter: `title`, `Created`, `date modified`, `aliases`, `category`, `tags`, `banner`, `dg-publish`.
 8a. **Pick the right template** from `_my_template/` by note type (see [[#Infobox standard]]): `Person Note`, `Book Note`, `Tool Note`, `Cloud Service Note`, or `Concept Note`. Every note keeps the **daily-quote block** from the base template.
 8b. **Add an infobox only to named entities** (people, books, tools/software, cloud services, platforms, certifications — and future art/science entities). **Concepts, theory, patterns, guides, overview/feature pages get NO infobox.** Fill every infobox field **from the internet** (use `brave-search` / `puppeteer`); leave a field blank only if it genuinely has no public value.
-9. End every page with a grouped `## Related pages` block — **one callout per topical group, never a flat bullet list**:
+9. End every page with a grouped `## Related pages` block — **use `[!grid]` with `[!card]` per topical group, never a flat bullet list**:
 
    ```markdown
    ## Related pages
 
-   > [!note] Sister concepts
-   > - [[concept-a]]
-   > - [[concept-b]]
-
-   > [!example] Products
-   > - [[bigquery]]
-   > - [[redshift]]
-
-   > [!info] People & books
-   > - [[edgar-codd]]
-   > - [[the-data-warehouse-toolkit]]
+   > [!grid]
+   >
+   >> [!card] Sister concepts
+   >> [[concept-a]], [[concept-b]]
+   >
+   >> [!card] Products
+   >> [[bigquery]], [[redshift]]
+   >
+   >> [!card] People & books
+   >> [[edgar-codd]], [[the-data-warehouse-toolkit]]
    ```
 
 ### Phase 4 — Record (always do both)
@@ -161,7 +160,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]              <- ENTITIES ONLY (omit for concepts)
+> [!infobox|right]              <- ENTITIES ONLY (omit for concepts)
 > # <Title>
 > ###### <Type>
 > | | |
@@ -190,11 +189,11 @@ Use codeblocks, examples, excalidraw diagrams where useful.
 > - [[related-concept-3]]
 ```
 
-The infobox sits **at the top of the body, directly after the frontmatter** so it floats to the right (Wikipedia style). The float only renders in **Reading view** (an ITS Theme limitation); in Live Preview it shows inline.
+The infobox sits **at the top of the body, directly after the frontmatter** so it floats to the right. The float renders in **Reading view** and **Live Preview** with the Anthropic Touch theme.
 
 ## Infobox standard
 
-Infoboxes use the ITS Theme callout `> [!infobox|wikipedia]`. Rules:
+Infoboxes use the Anthropic Touch callout `> [!infobox|right]`. Rules:
 
 - **Only named entities get an infobox.** Concepts / theory / patterns / guides / overview & feature pages do **not**.
 - **All values come from the internet** — verify with `brave-search` / `puppeteer` at ingest time.

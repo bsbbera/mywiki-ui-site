@@ -72,7 +72,7 @@ The execution model + processing system combine into named architectures: see [[
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Processing modes
 >> [[batch-data-processing|Batch Processing]], [[stream-data-processing|Stream Processing]], [[workflow-orchestration|Workflow Orchestration]]

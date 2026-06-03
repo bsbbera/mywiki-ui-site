@@ -121,7 +121,7 @@ Engineers love the vault layer; analysts love the mart layer.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister modeling techniques
 >> [[data-modeling|Data Modeling]], [[dimensional-modeling|Dimensional Modeling]], [[normalization|Normalization]]

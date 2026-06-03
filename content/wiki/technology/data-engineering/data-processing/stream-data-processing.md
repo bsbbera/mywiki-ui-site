@@ -99,7 +99,7 @@ See [[batch-data-processing]] for the comparison table.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister processing modes
 >> [[batch-data-processing|Batch Processing]], [[data-processing|Data Processing]]

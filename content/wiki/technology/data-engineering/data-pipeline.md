@@ -139,7 +139,7 @@ See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the f
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Pipeline phases
 >> [[data-ingestion|Data Ingestion]], [[batch-data-processing|Batch Processing]], [[stream-data-processing|Stream Processing]], [[workflow-orchestration|Workflow Orchestration]]

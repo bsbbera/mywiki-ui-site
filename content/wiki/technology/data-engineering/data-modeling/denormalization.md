@@ -71,7 +71,7 @@ A query that does 10 joins to assemble a customer's monthly invoice in a normali
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister concepts
 >> [[normalization|Normalization]], [[dimensional-modeling|Dimensional Modeling]], [[one-big-table|One Big Table]]

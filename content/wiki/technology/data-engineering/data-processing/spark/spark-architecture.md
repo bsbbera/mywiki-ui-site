@@ -96,7 +96,7 @@ A rule-of-thumb worked example (source: pyspark interview prep.pdf):
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[rdd|RDDs]], [[spark-performance|Performance]], [[spark-sql|Spark SQL]]

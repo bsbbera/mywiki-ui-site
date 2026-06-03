@@ -2,7 +2,7 @@
 title: Professional Data Engineer
 Created:
   - 2026-04-27
-date modified: Sunday, May 31st 2026, 8:12:50 pm
+date modified: Wednesday, June 3rd 2026, 12:22:27 am
 aliases:
   - PDE
   - GCP PDE
@@ -17,9 +17,9 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right] Certification
 > # Professional Data Engineer
-> ###### Certification
+>
 > | | |
 > | --- | --- |
 > | **Provider** | Google Cloud |
@@ -31,8 +31,10 @@ publish: true
 
 ---
 
+
+
 > "The meaning of life is to find your gift. The purpose of life is to give it away."
-> <cite>— Pablo Picasso</cite>
+> <cite>Pablo Picasso</cite>
 
 
 
@@ -46,6 +48,9 @@ The **Google Cloud Professional Data Engineer (PDE)** certification validates th
 - **Validity**: 2 years
 - **Recommended experience**: 3+ years industry, 1+ year GCP
 
+> [!quote] 
+> "The only way to do great work is to love what you do."
+> — Steve Jobs
 
 
 (general format â€” confirm at [cloud.google.com/learn/certification/data-engineer](https://cloud.google.com/learn/certification/data-engineer))
@@ -155,7 +160,7 @@ ML & AI: BigQuery ML, Vertex AI, embeddings/RAG.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/regions-and-zones|Regions and Zones]], [[../foundations/gcp-pricing-and-discounts|GCP Pricing + Discounts]]

@@ -109,7 +109,7 @@ Best practices for building **robust, scalable, performant** data pipelines, com
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Pipeline foundations
 >> [[../data-engineering/data-pipeline|Data Pipeline]], [[../data-engineering/data-engineering|Data Engineering Overview]]

@@ -94,7 +94,7 @@ Users can request deletion of their data. This conflicts with [[event-sourcing-p
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Governance
 >> [[data-governance|Data Governance]], [[../cloud/gcp/analytics/data-catalog|Data Catalog]], [[../guides/data-governance-guide|Data Governance Guide]]

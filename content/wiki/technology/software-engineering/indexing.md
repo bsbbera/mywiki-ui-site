@@ -118,7 +118,7 @@ Queries that **can use** indexes are called **[[../data-engineering/sargable-exp
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Performance
 >> [[../data-engineering/sargable-expressions|Sargable Expressions]], [[../data-engineering/data-modeling/cardinality|Cardinality]]

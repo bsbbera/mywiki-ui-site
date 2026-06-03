@@ -127,7 +127,7 @@ Compliance feature — once written, can't be deleted/modified for a retention p
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Data Storage
 >> [[../data-engineering/data-storage/data-storage|Data Storage]]

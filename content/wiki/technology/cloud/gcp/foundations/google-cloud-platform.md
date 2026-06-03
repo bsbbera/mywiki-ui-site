@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Google Cloud Platform
 > ###### Cloud Platform
 > | | |
@@ -102,7 +102,7 @@ GCP intentionally builds on open-source interfaces â€” Cloud Bigtable speak
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[regions-and-zones|Regions and Zones]], [[service-models|Service Models]], [[gcp-pricing-and-discounts|GCP Pricing + Discounts]]

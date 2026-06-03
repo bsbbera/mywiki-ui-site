@@ -18,7 +18,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Fundamentals of Data Engineering
 > ![cover](https://learning.oreilly.com/library/cover/9781098108298/250w/)
 > ###### Book
@@ -35,7 +35,7 @@ Modern textbook formalizing the **data engineering lifecycle** (generation → i
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[../people/joe-reis-matt-housley|Joe Reis + Matt Housley]]

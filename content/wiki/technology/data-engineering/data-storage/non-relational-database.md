@@ -78,7 +78,7 @@ The "**NoSQL**" name (originally "no SQL", later softened to "**not only SQL**")
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage
 >> [[relational-database|Relational Database]], [[database|Database]], [[data-storage|Data Storage]]

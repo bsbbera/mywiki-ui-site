@@ -80,7 +80,7 @@ Full examples and explanations: [[../../databases/database-normalization|Databas
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister concepts
 >> [[denormalization|Denormalization]], [[relational-modeling|Relational Modeling]], [[dimensional-modeling|Dimensional Modeling]]

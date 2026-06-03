@@ -51,7 +51,7 @@ dv.table(
 
 ## 🗺️ Browse by Platform
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] ☁️ Google Cloud
 > > BigQuery, Dataflow, Pub/Sub, GCS, Spanner, certifications.

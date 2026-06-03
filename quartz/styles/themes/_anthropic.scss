@@ -1,0 +1,786 @@
+/* =============================================================================
+   Atelier  →  Quartz theme   (data-theme="atelier")
+   Ported from the Obsidian "Anthropic Touch" (Atelier) theme.css token map.
+   Warm parchment paper · coral accent · Newsreader serif display · coral italics.
+   Mirrors the structure of _glass.scss:
+     1. tokens (--at-*) + bridge onto Quartz base vars (--light/--secondary/…)
+     2. component overrides + animations, scoped under [data-theme="atelier"]
+   See docs/THEME-PORTING.md. The Atelier web fonts (Newsreader / Inter /
+   JetBrains Mono) are loaded as a <link> injected before paint by
+   themeselector.inline.ts — a CSS @import here is emitted mid-bundle and ignored.
+   ========================================================================== */
+
+/* ---- tokens: LIGHT defaults (Atelier is light-first) -------------------- */
+:root[data-theme="atelier"] {
+  --at-accent: #d8552f;
+  --at-accent-2: #b8442a;
+  --at-bg-0: #ece3d0;
+  --at-pane: #efe7d6;
+  --at-pane-2: #f6f1e6;
+  --at-text: #3a352c;
+  --at-text-strong: #1f1b14;
+  --at-muted: #8a7f6d;
+  --at-faint: #b3a892;
+  --at-code-fg: #b8442a;
+  --at-th-bg: linear-gradient(180deg, #d8552f, #b8442a);
+  --at-shadow-pop: 0 1px 2px rgba(31, 27, 20, 0.07), 0 20px 50px rgba(31, 27, 20, 0.16);
+  --at-shadow-soft: 0 2px 12px -6px rgba(31, 27, 20, 0.22);
+  --at-h1: #1f1b14;
+  --at-h2: #1f1b14;
+  --at-h3: #2a241a;
+  --at-h4: #3a352c;
+  --at-h5: #4a4438;
+  --at-h6: #5c5446;
+  --at-bold-color: #1f1b14;
+  --at-italic-color: var(--at-accent); /* italic = coral signature */
+  --at-bold-italic-color: var(--at-accent);
+  --at-strikethrough-color: #8a7f6d;
+
+  /* warm tag tints (fixed across both modes) */
+  --at-tag-terra: #c8643c;
+  --at-tag-olive: #7f8a3c;
+  --at-tag-gold: #c79a3e;
+  --at-tag-rose: #c06a8e;
+
+  /* shape + motion */
+  --at-radius: 12px;
+  --at-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --at-dur: 240ms;
+
+  /* derived (same formulas in both modes) */
+  --at-accent-soft: color-mix(in srgb, var(--at-accent) 14%, transparent);
+  --at-accent-line: color-mix(in srgb, var(--at-accent) 55%, transparent);
+  --at-code-bg: color-mix(in srgb, var(--at-accent) 12%, transparent);
+  --at-chip-bg: color-mix(in srgb, var(--at-accent) 14%, transparent);
+  --at-border: color-mix(in srgb, var(--at-text-strong) 10%, transparent);
+  --at-border-2: color-mix(in srgb, var(--at-text-strong) 16%, transparent);
+  --at-border-strong: color-mix(in srgb, var(--at-text-strong) 26%, transparent);
+
+  /* .at-gradient renders as a SINGLE accent colour in Atelier (no ramp/shimmer).
+     Override per use with inline style="--grad-color: #…". */
+  --at-grad-color: var(--at-accent);
+}
+
+/* ---- BRIDGE → Quartz base vars (see _glass.scss for the specificity note) -- */
+:root[data-theme="atelier"][saved-theme] {
+  --light: var(--at-bg-0);
+  --lightgray: var(--at-pane-2);
+  --gray: var(--at-faint);
+  --darkgray: var(--at-text);
+  --dark: var(--at-text-strong);
+  --secondary: var(--at-accent);
+  --tertiary: var(--at-accent-2);
+  --highlight: var(--at-accent-soft);
+  --textHighlight: var(--at-chip-bg);
+
+  --headerFont: "Newsreader", Georgia, "Times New Roman", serif;
+  --titleFont: "Newsreader", Georgia, "Times New Roman", serif;
+  --bodyFont: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --codeFont: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+/* ---- tokens: DARK overrides --------------------------------------------- */
+:root[data-theme="atelier"][saved-theme="dark"] {
+  --at-accent: #e8714c;
+  --at-accent-2: #d2603f;
+  --at-bg-0: #18130d;
+  --at-pane: #221b13;
+  --at-pane-2: #2a2218;
+  --at-text: #e7ddc8;
+  --at-text-strong: #f5efe1;
+  --at-muted: #a99e87;
+  --at-faint: #6f6555;
+  --at-code-fg: #f0a07f;
+  --at-th-bg: linear-gradient(180deg, #e8714c, #d2603f);
+  --at-shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.7);
+  --at-shadow-soft: 0 2px 10px -6px rgba(0, 0, 0, 0.55);
+  --at-h1: #f5efe1;
+  --at-h2: #f5efe1;
+  --at-h3: #e7ddc8;
+  --at-h4: #d8ccb4;
+  --at-h5: #c9bd9f;
+  --at-h6: #a99e87;
+  --at-bold-color: #f5efe1;
+  --at-italic-color: var(--at-accent);
+  --at-bold-italic-color: var(--at-accent);
+  --at-strikethrough-color: #a99e87;
+}
+
+/* =============================================================================
+   Component overrides — Quartz HTML targets
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & body {
+    background: var(--light);
+    font-family: var(--bodyFont);
+  }
+
+  /* ---- headings: Newsreader serif, colour-coded -------------------------- */
+  & article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--headerFont);
+      letter-spacing: -0.005em;
+    }
+    h2 {
+      margin-top: 2.2em;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      margin-top: 1.7em;
+      margin-bottom: 0.4em;
+    }
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.3em;
+      margin-bottom: 0.3em;
+    }
+    h1 {
+      color: var(--at-h1);
+    }
+    h2 {
+      color: var(--at-h2);
+    }
+    h3 {
+      color: var(--at-h3);
+    }
+    h4 {
+      color: var(--at-h4);
+    }
+    h5 {
+      color: var(--at-h5);
+    }
+    h6 {
+      color: var(--at-h6);
+    }
+
+    /* ---- body text emphasis --------------------------------------------- */
+    strong {
+      color: var(--at-bold-color);
+    }
+    em {
+      color: var(--at-italic-color);
+    }
+    del {
+      color: var(--at-strikethrough-color);
+    }
+
+    /* ---- list markers --------------------------------------------------- */
+    ul > li::marker {
+      color: var(--at-accent);
+    }
+    ol > li::marker {
+      color: var(--at-accent-2);
+    }
+
+    /* ---- inline code as a pill ------------------------------------------ */
+    & :not(pre) > code {
+      background: var(--at-code-bg);
+      color: var(--at-code-fg);
+      border-radius: 5px;
+      padding: 0.1em 0.36em;
+      font-size: 0.88em;
+      font-family: var(--codeFont);
+    }
+    & pre {
+      background: var(--at-pane-2);
+      border: 1px solid var(--at-border);
+      border-radius: var(--at-radius);
+    }
+
+    /* ---- tables: gradient header, rounded corners, hover rows ----------- */
+    & table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    & th,
+    & td {
+      border: 1px solid var(--at-border-2);
+    }
+    & thead tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+    }
+    & thead tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+    }
+    & tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+    & tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+    & thead th {
+      background: var(--at-th-bg);
+      color: #fff8ee;
+      letter-spacing: 0.02em;
+    }
+    & tbody tr {
+      transition: background-color var(--at-dur) var(--at-ease);
+    }
+    & tbody tr:hover {
+      background: var(--at-accent-soft);
+    }
+
+    /* ---- callouts: warm card + accent left bar + gentle hover ----------- */
+    & .callout {
+      background: var(--at-pane-2);
+      border: 1px solid var(--at-border);
+      border-left: 3px solid var(--at-accent);
+      border-radius: var(--at-radius);
+      box-shadow: var(--at-shadow-soft);
+      transition:
+        box-shadow var(--at-dur) var(--at-ease),
+        transform var(--at-dur) var(--at-ease),
+        border-color var(--at-dur) var(--at-ease);
+    }
+    & .callout:hover {
+      border-color: var(--at-border-2);
+      box-shadow: var(--at-shadow-pop);
+    }
+  }
+
+  /* ---- tags: warm chips with a stable per-tag colour -------------------- */
+  & a.tag-link,
+  & .tags > li > a,
+  & .tg-infobox .tag-link {
+    display: inline-block;
+    background: color-mix(in srgb, var(--at-accent) 14%, transparent) !important;
+    color: var(--at-accent) !important;
+    border: 1px solid color-mix(in srgb, var(--at-accent) 32%, transparent) !important;
+    border-radius: 9999px !important;
+    padding: 0.06rem 0.55rem !important;
+    margin: 0 !important;
+    font-size: 0.82em !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition:
+      transform var(--at-dur) var(--at-ease),
+      filter var(--at-dur) var(--at-ease) !important;
+  }
+  & .tg-infobox-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  & .tag-link.tag-c0 {
+    background: color-mix(in srgb, var(--at-tag-terra) 16%, transparent) !important;
+    color: var(--at-tag-terra) !important;
+    border-color: color-mix(in srgb, var(--at-tag-terra) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c1 {
+    background: color-mix(in srgb, var(--at-tag-olive) 16%, transparent) !important;
+    color: var(--at-tag-olive) !important;
+    border-color: color-mix(in srgb, var(--at-tag-olive) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c2 {
+    background: color-mix(in srgb, var(--at-tag-gold) 16%, transparent) !important;
+    color: var(--at-tag-gold) !important;
+    border-color: color-mix(in srgb, var(--at-tag-gold) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c3 {
+    background: color-mix(in srgb, var(--at-tag-rose) 16%, transparent) !important;
+    color: var(--at-tag-rose) !important;
+    border-color: color-mix(in srgb, var(--at-tag-rose) 40%, transparent) !important;
+  }
+  & .tag-link.tag-c4 {
+    background: color-mix(in srgb, var(--at-muted) 14%, transparent) !important;
+    color: var(--at-muted) !important;
+    border-color: color-mix(in srgb, var(--at-muted) 30%, transparent) !important;
+  }
+  & article a.tag-link:not(.tag-c0):not(.tag-c1):not(.tag-c2):not(.tag-c3):not(.tag-c4)::before {
+    content: "#";
+    opacity: 0.6;
+  }
+  & a.tag-link:hover,
+  & .tags > li > a:hover,
+  & .tg-infobox .tag-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    text-decoration: none !important;
+  }
+}
+
+/* =============================================================================
+   Neutralize Tolkien-Gateway-only flourishes when Atelier is active.
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  /* no oversized drop cap */
+  & article > p:first-of-type::first-letter {
+    font-family: var(--bodyFont);
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding: 0;
+    color: inherit;
+  }
+
+  /* plain accent hairline instead of the ❦ dingbat rule */
+  & article hr {
+    height: 1px;
+    margin: 2em 0;
+    background-color: var(--at-border-2);
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  /* ---- UNIFIED QUOTE: blockquote and [!quote] callout match — coral bar +
+     warm left-fading wash, italic, no "Quote" label. ---------------------- */
+  & article blockquote:not(.callout),
+  & article .callout[data-callout="quote"] {
+    position: relative;
+    overflow: hidden;
+    border: none !important;
+    border-left: 3px solid var(--at-accent) !important;
+    border-radius: 0 var(--at-radius) var(--at-radius) 0 !important;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--at-accent) 28%, var(--at-pane-2)),
+      color-mix(in srgb, var(--at-accent) 9%, var(--at-pane-2))
+    ) !important;
+    padding: 1rem 1.4rem !important;
+    color: var(--at-text-strong) !important;
+    font-style: italic;
+    box-shadow: none !important;
+  }
+  & article blockquote:not(.callout)::before,
+  & article .callout[data-callout="quote"]::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.05em;
+    right: 8px;
+    font-family: var(--headerFont);
+    font-size: 3.4em;
+    line-height: 1;
+    color: var(--at-accent);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+  }
+  & article blockquote:not(.callout) > *,
+  & article .callout[data-callout="quote"] > * {
+    position: relative;
+    z-index: 1;
+  }
+  & article .callout[data-callout="quote"] > .callout-title {
+    display: none !important;
+  }
+  & article blockquote cite {
+    display: block;
+    margin-top: 0.5em;
+    font-style: normal;
+    font-size: 0.92em;
+    color: var(--at-muted);
+  }
+
+  /* Atelier card callouts (override TG's !important infobox look) */
+  & article .callout {
+    background: var(--at-pane-2) !important;
+    border: 1px solid var(--at-border) !important;
+    border-left: 3px solid var(--at-accent) !important;
+    border-radius: var(--at-radius) !important;
+    box-shadow: none !important;
+  }
+  & article .callout > .callout-title {
+    text-align: left;
+    font-variant: normal;
+    font-family: var(--headerFont);
+    color: var(--at-text-strong);
+    border-bottom: none;
+    letter-spacing: normal;
+  }
+}
+
+/* =============================================================================
+   Animations — gated by :not(.no-anim) + prefers-reduced-motion
+   ========================================================================== */
+@keyframes at-view-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+:root[data-theme="atelier"]:not(.no-anim) article {
+  animation: at-view-in 620ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+:root[data-theme="atelier"]:not(.no-anim) .tg-infobox-top {
+  animation: at-view-in 620ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 60ms;
+}
+:root[data-theme="atelier"]:not(.no-anim) article .callout:hover {
+  transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="atelier"] article,
+  :root[data-theme="atelier"] .tg-infobox-top {
+    animation: none !important;
+  }
+}
+
+/* =============================================================================
+   Sidebars (explorer / TOC / backlinks) — editorial polish
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & .sidebar,
+  & .left,
+  & .right {
+    font-family: var(--bodyFont);
+  }
+  & .explorer > button,
+  & .page-title,
+  & .toc > button,
+  & .backlinks > h3 {
+    font-family: var(--headerFont);
+    color: var(--at-text-strong);
+  }
+  & .explorer ul li > a,
+  & .toc-content ul li > a,
+  & .backlinks ul li > a {
+    color: var(--at-muted);
+    border-radius: 6px;
+    padding: 2px 6px;
+    transition:
+      color var(--at-dur) var(--at-ease),
+      background-color var(--at-dur) var(--at-ease);
+  }
+  & .explorer ul li > a:hover,
+  & .toc-content ul li > a:hover,
+  & .backlinks ul li > a:hover {
+    color: var(--at-accent);
+    background: var(--at-accent-soft);
+  }
+  & .explorer .folder-title {
+    color: var(--at-muted) !important;
+    font-weight: 400 !important;
+  }
+  & .explorer button.folder-button:hover .folder-title,
+  & .explorer .folder-outer:hover > .folder-container .folder-title {
+    color: var(--at-text) !important;
+  }
+  & .toc,
+  & .toc-content,
+  & .toc-content ul,
+  & .toc-content li {
+    background: none !important;
+    border: none !important;
+  }
+  & .toc-content ul li > a {
+    background: none;
+  }
+  & .toc-content ul li > a:hover {
+    background: var(--at-accent-soft);
+  }
+  & .toc-content .in-view {
+    color: var(--at-muted);
+  }
+  & .toc-content a.active,
+  & .toc-content li.in-view > a {
+    color: var(--at-accent);
+    font-weight: 600;
+    background: none;
+  }
+  & .graph .graph-outer {
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-radius);
+    background: var(--at-pane-2);
+  }
+}
+
+/* =============================================================================
+   "Softness" pass — roomier rhythm, pill search box, Properties as a warm card.
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & article {
+    line-height: 1.7;
+  }
+  & article > p {
+    margin: 0.85em 0;
+  }
+
+  /* ---- search: soft pill ----------------------------------------------- */
+  & .search > .search-button {
+    background: var(--at-pane-2);
+    border: 1px solid var(--at-border-2);
+    border-radius: 9999px;
+    height: 2.6rem;
+    padding: 0 1rem;
+    gap: 0.1rem;
+    transition:
+      border-color var(--at-dur) var(--at-ease),
+      background-color var(--at-dur) var(--at-ease);
+  }
+  & .search > .search-button:hover {
+    border-color: var(--at-accent);
+    background: var(--at-accent-soft);
+  }
+  & .search > .search-button > p {
+    color: var(--at-muted);
+    font-size: 0.9rem;
+  }
+  & .search > .search-button svg {
+    width: 16px;
+    min-width: 16px;
+  }
+
+  /* ---- Properties (Infobox top): warm card ----------------------------- */
+  & .tg-infobox.tg-infobox-top {
+    position: relative;
+    background: var(--at-pane-2);
+    border: 1px solid var(--at-border-2);
+    border-radius: 14px;
+    box-shadow: var(--at-shadow-soft);
+    margin: 0 0 1.9rem;
+    padding: 0.5rem 0.5rem 0.6rem;
+    overflow: hidden;
+    transition:
+      box-shadow var(--at-dur) var(--at-ease),
+      border-color var(--at-dur) var(--at-ease);
+  }
+  & .tg-infobox.tg-infobox-top:hover {
+    border-color: var(--at-border-2);
+    box-shadow: var(--at-shadow-pop);
+  }
+  & .tg-infobox.tg-infobox-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--at-accent), var(--at-accent-2));
+  }
+  & .tg-infobox-top > header {
+    background: transparent;
+    border-bottom: none;
+    text-align: left;
+    text-transform: uppercase;
+    font-variant: normal;
+    font-family: var(--bodyFont);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--at-accent);
+    padding: 0.55rem 0.95rem 0.35rem;
+  }
+  & .tg-infobox-top .tg-infobox-grid {
+    gap: 0.1rem 1.5rem;
+    padding: 0 0.25rem 0.25rem;
+  }
+  & .tg-infobox-top .tg-infobox-row {
+    border: none;
+    border-radius: 8px;
+    padding: 0.32rem 0.7rem;
+    transition: background-color var(--at-dur) var(--at-ease);
+  }
+  & .tg-infobox-top .tg-infobox-row:hover {
+    background: var(--at-accent-soft);
+  }
+  & .tg-infobox-top .tg-infobox-key {
+    color: var(--at-muted);
+    font-variant: normal;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+  }
+  & .tg-infobox-top .tg-infobox-val {
+    color: var(--at-text);
+  }
+}
+
+/* =============================================================================
+   In-note [!infobox] card (right rail)
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & .callout[data-callout="infobox"] {
+    background: var(--at-pane-2) !important;
+    border: 1px solid var(--at-border-2) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--at-shadow-soft) !important;
+  }
+  & .callout[data-callout="infobox"] :is(h1, h2, h3, h4) {
+    background-image: none !important;
+    border: none !important;
+    font-style: normal !important;
+  }
+  & .callout[data-callout="infobox"] > .callout-title {
+    display: none !important;
+  }
+  & .callout[data-callout="infobox"] .table-container {
+    overflow-x: visible !important;
+  }
+  & .callout[data-callout="infobox"] table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  & .callout[data-callout="infobox"] td,
+  & .callout[data-callout="infobox"] th {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* =============================================================================
+   Shared micro-motion (gated by no-anim)
+   ========================================================================== */
+:root[data-theme="atelier"]:not(.no-anim) {
+  & article .callout,
+  & .tg-infobox-top,
+  & .callout[data-callout="infobox"] {
+    transition:
+      transform var(--at-dur) var(--at-ease),
+      box-shadow var(--at-dur) var(--at-ease),
+      border-color var(--at-dur) var(--at-ease);
+  }
+}
+
+/* =============================================================================
+   Motion & navigation pack
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & .explorer a.active {
+    color: var(--at-accent) !important;
+    background: var(--at-accent-soft);
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: inset 2px 0 0 var(--at-accent);
+  }
+
+  /* internal links: editorial ink-draw underline-wipe on hover */
+  & article a.internal {
+    text-decoration: none;
+    background-image: linear-gradient(var(--at-accent), var(--at-accent));
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    background-size: 0% 1.5px;
+    transition: background-size var(--at-dur) var(--at-ease);
+  }
+  & article a.internal:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+/* Staggered scroll-reveal */
+@supports (animation-timeline: view()) {
+  @keyframes at-rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  :root[data-theme="atelier"]:not(.no-anim) article > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
+    animation: at-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 32%;
+  }
+}
+
+/* Reading-progress bar */
+@supports (animation-timeline: scroll(root)) {
+  @keyframes at-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  :root[data-theme="atelier"]:not(.no-anim) body::after {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 100;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--at-accent), var(--at-accent-2));
+    animation: at-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="atelier"] article > * {
+    animation: none !important;
+  }
+  :root[data-theme="atelier"] body::after {
+    display: none;
+  }
+}
+
+/* =============================================================================
+   Delight pack — code language chip + copy button, backlinks as cards
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & figure[data-rehype-pretty-code-figure],
+  & pre {
+    position: relative;
+  }
+  & pre[data-language]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    left: 0.6rem;
+    transform: translateY(-50%);
+    padding: 0.05rem 0.5rem;
+    font-size: 0.66rem;
+    font-family: var(--codeFont);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--at-accent);
+    background: var(--at-pane-2);
+    border: 1px solid var(--at-border-2);
+    border-radius: 6px;
+  }
+  & .clipboard-button {
+    background: var(--at-pane-2) !important;
+    border: 1px solid var(--at-border-2) !important;
+    border-radius: 7px !important;
+    color: var(--at-muted) !important;
+    transition:
+      color var(--at-dur) var(--at-ease),
+      border-color var(--at-dur) var(--at-ease),
+      background-color var(--at-dur) var(--at-ease);
+  }
+  & .clipboard-button:hover {
+    color: var(--at-accent) !important;
+    border-color: var(--at-accent) !important;
+    background: var(--at-accent-soft) !important;
+  }
+  & .backlinks ul li {
+    margin: 0.3rem 0;
+  }
+  & .backlinks ul li > a {
+    display: block;
+    padding: 0.45rem 0.7rem !important;
+    border: 1px solid var(--at-border);
+    border-radius: 9px;
+    background: var(--at-pane-2);
+    color: var(--at-muted);
+    transition:
+      transform var(--at-dur) var(--at-ease),
+      color var(--at-dur) var(--at-ease),
+      border-color var(--at-dur) var(--at-ease);
+  }
+  & .backlinks ul li > a:hover {
+    transform: translateY(-1px);
+    border-color: var(--at-accent);
+    color: var(--at-accent);
+    background: var(--at-pane-2);
+  }
+}
+
+/* =============================================================================
+   .at-gradient — Atelier renders it as a SINGLE coral colour (no shimmer),
+   matching the Obsidian theme. (In Glass the same class is an animated ramp.)
+   ========================================================================== */
+:root[data-theme="atelier"] article .at-gradient {
+  color: var(--grad-color, var(--at-grad-color, var(--at-accent)));
+  font-weight: 600;
+}

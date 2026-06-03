@@ -8,6 +8,7 @@ import { classNames } from "../util/lang"
 // matching quartz/styles/themes/_<value>.scss) to expose a new theme.
 export const THEMES: { value: string; label: string }[] = [
   { value: "glass", label: "MyWiki Glass" },
+  { value: "atelier", label: "Atelier" },
   { value: "tg", label: "Tolkien Gateway" },
 ]
 

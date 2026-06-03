@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Storage
 > ###### Cloud Service
 > | | |
@@ -144,7 +144,7 @@ GCS is backed by **Colossus**, the internal distributed file system that succeed
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/regions-and-zones|Regions and Zones]], [[../foundations/gcp-pricing-and-discounts|GCP Pricing and Discounts]]

@@ -19,7 +19,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Building a Scalable Data Warehouse with Data Vault 2.0
 > ![cover](https://m.media-amazon.com/images/I/81HlVuYpCWL._SL1500_.jpg)
 > ###### Book
@@ -36,7 +36,7 @@ The definitive reference for **Data Vault 2.0** modeling — Hubs, Links, Satell
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[../people/dan-linstedt|Dan Linstedt]]

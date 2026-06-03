@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Spanner
 > ###### Cloud Service
 > | | |
@@ -161,7 +161,7 @@ Spanner's "secret sauce" â€” a time API that returns not just a timestamp b
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP databases
 >> [[cloud-sql|Cloud SQL]], [[cloud-bigtable|Cloud Bigtable]], [[cloud-datastore|Cloud Datastore]], [[memorystore|Memorystore]]

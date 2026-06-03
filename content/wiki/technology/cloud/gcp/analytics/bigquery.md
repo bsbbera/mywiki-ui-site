@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # BigQuery
 > ###### Cloud Service
 > | | |
@@ -174,7 +174,7 @@ Note table-reference syntax: `` `project.dataset.table` `` with **backticks**, n
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery sub-pages
 >> [[bigquery-tables|BigQuery Tables]], [[bigquery-loading-data|Loading Data to BigQuery]], [[bigquery-external-data|BigQuery External Data]], [[bigquery-iam|BigQuery IAM]], [[bigquery-udfs|BigQuery UDFs]], [[bigquery-authorized-views|BigQuery Authorized Views]], [[bigquery-visualization|BigQuery Data Visualization]], [[bigquery-query-management|BigQuery Query Management]], [[bigquery-sandbox|BigQuery Sandbox]]

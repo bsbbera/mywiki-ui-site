@@ -34,7 +34,7 @@ dv.paragraph(`**${pages.length}** notes · last touched **${latest ? latest.file
 
 ## 📚 Browse
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 📋 All Tools (A–Z)
 > > ```dataviewjs

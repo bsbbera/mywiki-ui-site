@@ -78,7 +78,7 @@ If Service A goes down for 1 hour, its subscription buffers messages until recov
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister patterns
 >> [[publisher-subscriber-pattern|Pub/Sub Pattern]], [[claim-check-pattern|Claim Check]], [[idempotence|Idempotence]]

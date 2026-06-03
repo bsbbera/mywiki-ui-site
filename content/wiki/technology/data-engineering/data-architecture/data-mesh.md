@@ -76,7 +76,7 @@ For small companies, a centralized warehouse is usually simpler and cheaper.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[data-warehouse|Data Warehouse]], [[data-lake|Data Lake]], [[medallion-architecture|Medallion Architecture]]

@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Microsoft Azure
 > ###### Cloud Platform
 > | | |
@@ -186,7 +186,7 @@ See [[../../guides/cloud-services-map|Cloud Services Map]] for full side-by-side
 ## Related pages
 
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister cloud platforms
 >> [[AWS|AWS]], [[../gcp/foundations/google-cloud-platform|GCP]], [[../databricks/databricks|Databricks]]

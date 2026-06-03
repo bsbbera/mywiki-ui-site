@@ -67,7 +67,7 @@ Postgres + MySQL added **JSON columns** that combine relational structure with d
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister modeling techniques
 >> [[data-modeling|Data Modeling]], [[dimensional-modeling|Dimensional Modeling]], [[normalization|Normalization]], [[denormalization|Denormalization]]

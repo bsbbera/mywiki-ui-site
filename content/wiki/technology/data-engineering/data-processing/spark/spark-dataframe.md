@@ -95,7 +95,7 @@ A **[[spark-sql|UDF]]** wraps a Python function so it can be applied column-wise
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[rdd|RDDs]], [[spark-sql|Spark SQL]], [[spark-performance|Performance]]

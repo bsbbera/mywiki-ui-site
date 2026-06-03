@@ -91,7 +91,7 @@ The metrics layer is essentially a **focused subset of the semantic layer** — 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister concepts
 >> [[semantic-layer|Semantic Layer]], [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]]

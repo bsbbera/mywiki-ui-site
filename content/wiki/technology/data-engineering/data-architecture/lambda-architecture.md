@@ -81,7 +81,7 @@ Many teams who started with Lambda have moved to [[kappa-architecture|Kappa]] (s
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[kappa-architecture|Kappa Architecture]], [[medallion-architecture|Medallion]], [[data-warehouse|Data Warehouse]]

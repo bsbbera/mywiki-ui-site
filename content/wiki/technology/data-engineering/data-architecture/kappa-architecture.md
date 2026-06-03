@@ -87,7 +87,7 @@ This eliminates the duplicate code maintained in Lambda's batch and speed layers
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[lambda-architecture|Lambda Architecture]], [[medallion-architecture|Medallion]], [[data-lake|Data Lake]]

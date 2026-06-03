@@ -95,7 +95,7 @@ GCP doesn't offer a dedicated managed TSDB, but:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage
 >> [[non-relational-database|Non-relational Database]], [[wide-column-database|Wide-column Database]], [[column-oriented-database|Column-oriented Database]]

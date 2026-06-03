@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Apache Spark
 > ###### Tool / Software
 > | | |
@@ -104,7 +104,7 @@ Spark can run under several resource managers (source: pyspark interview prep.pd
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[spark-architecture|Architecture]], [[rdd|RDDs]], [[spark-dataframe|DataFrames]], [[spark-sql|Spark SQL]], [[spark-performance|Performance]], [[spark-streaming|Streaming]], [[spark-mllib|MLlib]]

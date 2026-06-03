@@ -9,7 +9,7 @@ Welcome to **MyWiki** — a personal knowledge garden built with [Quartz](https:
 
 ## Browse
 
-- [[wiki/Master Home|Wiki Home]] — curated knowledge by topic
+- [Wiki notes](./wiki/) — curated knowledge by topic
 - [[databricks/databricks|Databricks]] — cloud data & AI platform notes
 - **Recent changes** — see the sidebar
 - **Tags** — explore by topic

@@ -112,7 +112,7 @@ Or fully managed on GCP:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Ingestion patterns
 >> [[full-load|Full Load]], [[delta-load|Delta Load]], [[data-ingestion|Data Ingestion]]

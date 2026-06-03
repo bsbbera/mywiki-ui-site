@@ -142,7 +142,7 @@ Most large enterprises now run **multi-cloud** for redundancy, vendor leverage, 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister guides
 >> [[messaging-service-guide|Messaging Service Guide]], [[cost-optimization-cloud|Cost Optimization]], [[data-pipeline-best-practices|Pipeline Best Practices]]

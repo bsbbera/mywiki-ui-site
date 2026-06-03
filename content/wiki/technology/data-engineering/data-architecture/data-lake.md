@@ -75,7 +75,7 @@ graph LR
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[data-warehouse|Data Warehouse]], [[medallion-architecture|Medallion Architecture]], [[data-mesh|Data Mesh]]

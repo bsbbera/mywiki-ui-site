@@ -79,7 +79,7 @@ In a star schema this would require multiple joins on dimensions, surrogate keys
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister modeling techniques
 >> [[data-modeling|Data Modeling]], [[dimensional-modeling|Dimensional Modeling]], [[one-big-table|One Big Table]]

@@ -129,7 +129,7 @@ Authorized views remain the most portable pattern, especially across projects.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-iam|BigQuery IAM]], [[bigquery-tables|BigQuery Tables]]
