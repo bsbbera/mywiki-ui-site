@@ -899,6 +899,28 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(ul, ol) li {
     color: var(--at-on-accent);
   }
+
+  /* honor / channels / step are their OWN dark surfaces (not via `dark` metadata),
+     so Quartz's `p{color:darkgray}` leaves their body text dark-on-dark = invisible
+     in LIGHT mode. Re-assert on-dark text (these card styles never nest cards). */
+  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(p, li, td) {
+    color: var(--at-on-dark-muted);
+  }
+  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--at-on-dark);
+  }
+  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote,
+  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote p {
+    color: var(--at-on-dark);
+  }
+
+  /* Skill command bar (and other dark card code bars) stay dark in BOTH modes;
+     force the dark (light-coloured) shiki token palette so syntax stays legible in
+     light mode too — otherwise the light-theme tokens are dark-on-dark. */
+  & .callout[data-callout="card"]:is([data-callout-metadata*="skill"], [data-callout-metadata*="dark"], [data-callout-metadata*="honor"]) pre span {
+    color: var(--shiki-dark) !important;
+  }
+
   & .callout[data-callout="card"] pre[data-language]::before {
     display: none;
   }

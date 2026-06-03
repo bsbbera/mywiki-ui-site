@@ -269,7 +269,7 @@
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul > li::marker { color: var(--mwg-accent); }
 /* vertical divider between section columns (skips the first in a row) */
 .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"] {
-    border-left: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    border-left: 1px solid color-mix(in srgb, currentColor 30%, transparent);
     padding-left: 1.8rem;
 }
 .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"]:first-child {
@@ -690,7 +690,7 @@ body { --mwg-col-gap: 30px; --mwg-col-min: 200px; }
 .callout[data-callout="col"][data-callout-metadata~="w10"] { flex-grow: 10 !important; }
 /* optional hairline dividers between columns: [!columns|ruled] */
 .callout[data-callout="columns"][data-callout-metadata~="ruled"] > .callout-content > .callout[data-callout="col"] + .callout[data-callout="col"] {
-    border-left: 1px solid var(--mwg-border) !important;
+    border-left: 1px solid var(--mwg-border-strong) !important;
     padding-left: var(--mwg-col-gap) !important;
 }
 
