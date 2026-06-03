@@ -939,3 +939,25 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     animation: none !important;
   }
 }
+
+/* =============================================================================
+   Quartz delta — dark/accent card body text. Quartz sets `p { color: var(--darkgray) }`
+   DIRECTLY on <p>, which beats the Obsidian card rule that coloured body text by
+   INHERITANCE from .callout-content. Re-assert it on the card's own text (direct
+   grandchildren only, so nested light cards inside a dark hero keep their own colour).
+   ========================================================================== */
+:root[data-theme="glass"] {
+  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(p, ul, ol, blockquote),
+  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(ul, ol) li {
+    color: var(--mwg-on-dark-muted);
+  }
+  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(p, ul, ol, blockquote),
+  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(ul, ol) li {
+    color: var(--mwg-on-accent);
+  }
+  /* the in-card code language chip (Quartz extra) clutters the skill command bar —
+     Obsidian shows none; hide it inside cards. */
+  & .callout[data-callout="card"] pre[data-language]::before {
+    display: none;
+  }
+}

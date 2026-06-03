@@ -829,3 +829,21 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   color: var(--grad-color, var(--at-grad-color, var(--at-accent)));
   font-weight: 600;
 }
+
+/* =============================================================================
+   Quartz delta — dark/accent card body text (see _glass.scss for the why:
+   Quartz's `p { color: var(--darkgray) }` beats inheritance from .callout-content).
+   ========================================================================== */
+:root[data-theme="atelier"] {
+  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(p, ul, ol, blockquote),
+  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(ul, ol) li {
+    color: var(--at-on-dark-muted);
+  }
+  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(p, ul, ol, blockquote),
+  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(ul, ol) li {
+    color: var(--at-on-accent);
+  }
+  & .callout[data-callout="card"] pre[data-language]::before {
+    display: none;
+  }
+}
