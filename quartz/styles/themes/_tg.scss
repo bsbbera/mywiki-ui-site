@@ -1,4 +1,7 @@
 
+// Card-system callout types to exclude from TG's blanket !important callout styling.
+$not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-callout="infobox"]):not([data-callout="columns"]):not([data-callout="col"])';
+
 /* ============================================
    Tolkien Gateway aesthetic for Quartz
    ============================================ */
@@ -635,8 +638,10 @@ a.tag-link::before,
     color: var(--dark);
   }
 
-  /* Phase C — callouts restyled as TG infoboxes (thin clean border + paper feel) */
-  .callout {
+  /* Phase C — callouts restyled as TG infoboxes (thin clean border + paper feel).
+     Card-system callout types are EXCLUDED so the glass/atelier card partials own
+     their surfaces (this blanket !important previously clobbered accent/honor). */
+  .callout#{$not-cards} {
     background: var(--light) !important;
     border: 1px solid var(--gray) !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
@@ -644,7 +649,7 @@ a.tag-link::before,
     padding: 0.9rem 1.25rem;
     margin: 1.25rem 0;
   }
-  .callout > .callout-title {
+  .callout#{$not-cards} > .callout-title {
     text-align: center;
     font-variant: small-caps;
     font-family: var(--headerFont);
