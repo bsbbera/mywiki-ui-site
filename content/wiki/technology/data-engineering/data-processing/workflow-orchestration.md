@@ -89,7 +89,7 @@ If your pipeline is mostly **dbt** transformations on a warehouse, **dbt Cloud**
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Pipeline + processing
 >> [[../data-pipeline|Data Pipeline]], [[batch-data-processing|Batch Processing]], [[stream-data-processing|Stream Processing]], [[data-processing|Data Processing]]

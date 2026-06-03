@@ -78,7 +78,7 @@ SELECT APPROX_COUNT_DISTINCT(user_id) FROM events;
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Modeling
 >> [[data-modeling|Data Modeling]], [[normalization|Normalization]], [[denormalization|Denormalization]]

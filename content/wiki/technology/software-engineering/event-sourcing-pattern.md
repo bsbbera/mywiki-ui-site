@@ -117,7 +117,7 @@ To avoid replaying millions of events for every query:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister patterns
 >> [[publisher-subscriber-pattern|Pub/Sub Pattern]], [[claim-check-pattern|Claim Check]], [[fan-out|Fan-out]]

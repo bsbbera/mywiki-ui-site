@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Run
 > ###### Cloud Service
 > | | |
@@ -115,7 +115,7 @@ The raw source's "50 free vCPU-seconds & 50,000 requests/month" figure is outdat
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/service-models|Service Models]]

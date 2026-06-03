@@ -121,7 +121,7 @@ A non-sargable predicate forces a **full table scan** even when an index exists,
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Performance
 >> [[indexing|Indexing]], [[cardinality|Cardinality]]

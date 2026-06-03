@@ -150,7 +150,7 @@ Unified model on managed Dataflow.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Processing concepts
 >> [[../data-engineering/data-processing/batch-data-processing|Batch Processing]], [[../data-engineering/data-processing/stream-data-processing|Stream Processing]], [[../data-engineering/data-processing/workflow-orchestration|Workflow Orchestration]]

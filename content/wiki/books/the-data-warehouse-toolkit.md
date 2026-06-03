@@ -20,7 +20,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # The Data Warehouse Toolkit
 > ![cover](https://m.media-amazon.com/images/I/91qrLFl-iaL._SL1500_.jpg)
 > ###### Book
@@ -37,7 +37,7 @@ The **canonical reference** for **dimensional modeling**. Introduced fact tables
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[../people/ralph-kimball|Ralph Kimball]], [[../people/bill-inmon|Bill Inmon]]

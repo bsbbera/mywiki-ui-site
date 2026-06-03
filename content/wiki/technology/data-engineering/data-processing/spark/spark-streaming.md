@@ -65,7 +65,7 @@ A streaming app must run 24/7 and survive failures external to the code (system 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[rdd|RDDs]], [[spark-performance|Performance]]

@@ -82,7 +82,7 @@ The relational model was invented by **E. F. Codd** in 1970 (Codd's 12 rules) an
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage
 >> [[non-relational-database|Non-relational Database]], [[database|Database]], [[data-storage|Data Storage]]

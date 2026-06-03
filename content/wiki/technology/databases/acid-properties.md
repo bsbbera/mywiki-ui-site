@@ -146,7 +146,7 @@ The NoSQL counterpoint: **BASE** = **B**asically **A**vailable, **S**oft state, 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Theory
 >> [[database-normalization|Database Normalization]], [[../software-engineering/cap-theorem|CAP Theorem]], [[../data-engineering/data-warehousing|Data Warehousing]]

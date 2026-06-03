@@ -82,7 +82,7 @@ In 2026 the GCE-vs-GAE choice is rarely binary — [[cloud-run]] often beats App
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Compared products
 >> [[compute-engine|Compute Engine]], [[app-engine|App Engine]]

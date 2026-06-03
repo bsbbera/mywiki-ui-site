@@ -69,7 +69,7 @@ A **lakehouse** combines the cheap, flexible storage of a data lake with the **t
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Architectures
 >> [[data-warehouse|Data Warehouse]], [[data-lake|Data Lake]], [[data-mart|Data Mart]], [[data-mesh|Data Mesh]], [[lambda-architecture|Lambda]], [[kappa-architecture|Kappa]], [[medallion-architecture|Medallion]]

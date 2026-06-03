@@ -81,7 +81,7 @@ Data unit tests test the **data**; classic unit tests test the **code**. You nee
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Reliability patterns
 >> [[idempotence|Idempotence]]

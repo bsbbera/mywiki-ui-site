@@ -89,7 +89,7 @@ For efficiency across tasks, Spark offers two shared-variable types (covered in 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[spark-architecture|Architecture]], [[spark-dataframe|DataFrames]], [[spark-performance|Performance]]

@@ -96,7 +96,7 @@ By default, others **cannot edit** your saved queries. To allow editing:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-iam|BigQuery IAM]], [[bigquery-udfs|BigQuery UDFs]], [[bigquery-tables|BigQuery Tables]], [[bigquery-visualization|Visualization]]

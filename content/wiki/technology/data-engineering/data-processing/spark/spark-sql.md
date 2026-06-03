@@ -82,7 +82,7 @@ UDFs work on both the DataFrame API and SQL. Because they run as opaque Python (
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[spark-dataframe|DataFrames]], [[rdd|RDDs]], [[spark-performance|Performance]]

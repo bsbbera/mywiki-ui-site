@@ -80,7 +80,7 @@ Almost every modern cloud-scale workload:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister scaling concepts
 >> [[vertical-scaling|Vertical Scaling]], [[database-sharding|Sharding]], [[cap-theorem|CAP Theorem]]

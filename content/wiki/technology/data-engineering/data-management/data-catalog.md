@@ -79,7 +79,7 @@ A **data catalog** is a collection of all an organization's data assets, using *
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Adjacent management concepts
 >> [[data-governance|Data Governance]], [[data-management|Data Management]], [[semantic-layer|Semantic Layer]], [[metrics-layer|Metrics Layer]]

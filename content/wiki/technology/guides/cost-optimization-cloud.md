@@ -142,7 +142,7 @@ Often the biggest hidden cost.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister guides
 >> [[data-pipeline-best-practices|Pipeline Best Practices]], [[cloud-services-map|Cloud Services Map]], [[messaging-service-guide|Messaging Service Guide]]

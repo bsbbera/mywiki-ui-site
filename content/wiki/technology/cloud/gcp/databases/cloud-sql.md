@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud SQL
 > ###### Cloud Service
 > | | |
@@ -155,7 +155,7 @@ Cloud SQL Admin API exposes (source: Google Cloud SQL.md):
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP databases
 >> [[cloud-spanner|Cloud Spanner]], [[cloud-bigtable|Cloud Bigtable]], [[cloud-datastore|Cloud Datastore]], [[memorystore|Memorystore]]

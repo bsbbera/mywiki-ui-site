@@ -34,7 +34,7 @@ dv.paragraph(`**${pages.length}** people · last added **${latest ? latest.file.
 
 ## 📚 Browse
 
-> [!multi-column]
+> [!grid]
 >
 > > [!card] 👥 Directory (A–Z)
 > > ```dataviewjs

@@ -95,7 +95,7 @@ These power **user-facing analytics** (e.g. "your post got 1342 views in the las
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister workloads
 >> [[online-transaction-processing|OLTP]], [[hybrid-transactional-analytical-processing|HTAP]]

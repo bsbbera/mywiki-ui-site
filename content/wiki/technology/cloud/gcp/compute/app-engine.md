@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # App Engine
 > ###### Cloud Service
 > | | |
@@ -101,7 +101,7 @@ Pay-per-instance-hour with a **free tier of 28 instance-hours/day** in Standard 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/service-models|Service Models]]

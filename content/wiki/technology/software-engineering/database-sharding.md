@@ -115,7 +115,7 @@ These give you sharding's benefits without the manual pain.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Distributed-systems
 >> [[horizontal-scaling|Horizontal Scaling]], [[vertical-scaling|Vertical Scaling]], [[cap-theorem|CAP Theorem]]

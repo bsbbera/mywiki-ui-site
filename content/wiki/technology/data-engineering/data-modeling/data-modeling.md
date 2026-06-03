@@ -84,7 +84,7 @@ The choice depends on **workload type**: write-heavy vs read-heavy.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Modeling techniques
 >> [[relational-modeling|Relational Modeling]], [[dimensional-modeling|Dimensional Modeling]], [[data-vault-modeling|Data Vault Modeling]], [[one-big-table|One Big Table]], [[activity-schema|Activity Schema]]

@@ -76,7 +76,7 @@ publish: true
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister modeling techniques
 >> [[dimensional-modeling|Dimensional Modeling]], [[denormalization|Denormalization]], [[data-vault-modeling|Data Vault]], [[activity-schema|Activity Schema]]

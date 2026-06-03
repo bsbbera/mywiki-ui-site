@@ -228,7 +228,7 @@ GCP supports the lakehouse pattern via **BigLake** (BigQuery + Iceberg/Delta on 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Architecture
 >> [[data-warehouse|Data Warehouse]], [[data-lake|Data Lake]], [[data-mart|Data Mart]], [[medallion-architecture|Medallion]]

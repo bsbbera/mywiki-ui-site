@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Bigtable
 > ###### Cloud Service
 > | | |
@@ -182,7 +182,7 @@ Prefer [[cloud-spanner]] for relational SQL, [[cloud-datastore]] for documents, 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP databases
 >> [[cloud-spanner|Cloud Spanner]], [[cloud-sql|Cloud SQL]], [[cloud-datastore|Cloud Datastore]], [[memorystore|Memorystore]]

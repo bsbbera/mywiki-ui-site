@@ -136,7 +136,7 @@ All three are **mapped + consolidated** in the **data catalog** with full metada
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Data Management
 >> [[../data-engineering/data-management/data-governance|Data Governance]], [[../data-engineering/data-management/data-catalog|Data Catalog]], [[../data-engineering/data-management/data-management|Data Management]]

@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # PySpark
 > ###### Tool / Software
 > | | |
@@ -90,7 +90,7 @@ The key difference: PySpark is **distributed** — operations run in parallel ac
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[spark-architecture|Architecture]], [[rdd|RDDs]], [[spark-dataframe|DataFrames]], [[spark-sql|Spark SQL]], [[spark-streaming|Streaming]], [[spark-mllib|MLlib]]

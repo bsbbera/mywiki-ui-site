@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Persistent Disk
 > ###### Cloud Service
 > | | |
@@ -85,7 +85,7 @@ Where [[Cloud Storage]] is unstructured object storage and [[filestore]] is shar
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage products
 >> [[Cloud Storage|Cloud Storage]], [[filestore|Filestore]], [[firebase-cloud-storage|Firebase Cloud Storage]]

@@ -89,7 +89,7 @@ A **key-value (KV) database** is a type of [[non-relational-database|NoSQL]] dat
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister NoSQL
 >> [[non-relational-database|Non-relational Database]], [[in-memory-database|In-memory Database]], [[document-database|Document Database]], [[wide-column-database|Wide-column Database]]

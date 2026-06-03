@@ -150,7 +150,7 @@ See [[../../tools/ingestion-tools|Ingestion Tools]] for the full catalog.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Ingestion patterns
 >> [[full-load|Full Load]], [[delta-load|Delta Load]], [[change-data-capture|Change Data Capture]]

@@ -137,7 +137,7 @@ See [[../tools/quality-tools|Data Quality Tools]] for the full catalog.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Reliability patterns
 >> [[../software-engineering/data-unit-test|Data Unit Test]], [[../software-engineering/idempotence|Idempotence]]

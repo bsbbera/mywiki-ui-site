@@ -73,7 +73,7 @@ In tools: `bq load --replace`, dbt's `materialized='table'` (full refresh), Airb
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Ingestion patterns
 >> [[data-ingestion|Data Ingestion]], [[delta-load|Delta Load]], [[change-data-capture|CDC]]

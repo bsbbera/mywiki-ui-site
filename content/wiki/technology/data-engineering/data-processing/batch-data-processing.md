@@ -95,7 +95,7 @@ Hybrid of concurrent + parallel. State-of-the-art in **financial services** and 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister processing modes
 >> [[stream-data-processing|Stream Processing]], [[workflow-orchestration|Workflow Orchestration]], [[data-processing|Data Processing]]

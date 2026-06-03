@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Filestore
 > ###### Cloud Service
 > | | |
@@ -91,7 +91,7 @@ Enterprise tier offers a **99.99% regional availability SLA** (source: Google Pe
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage products
 >> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]]

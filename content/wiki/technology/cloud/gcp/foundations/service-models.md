@@ -75,7 +75,7 @@ A specialization of PaaS where you deploy individual **functions** triggered by 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[google-cloud-platform|Google Cloud Platform]], [[regions-and-zones|Regions and Zones]], [[gcp-pricing-and-discounts|GCP Pricing + Discounts]]

@@ -4,8 +4,11 @@ const FAMILY_KEY = "theme-family"
 // Fonts required by themes that need web fonts. A CSS @import inside the SCSS
 // bundle would be emitted mid-file and ignored, so we inject a <link> instead.
 const FONT_HREFS: Record<string, string> = {
-  glass:
-    "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap",
+  // Glass now uses Segoe UI (system) for UI/headings; only the code face is a web font.
+  glass: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap",
+  // Atelier: Newsreader serif display + Inter body + JetBrains Mono code.
+  atelier:
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap",
 }
 
 function ensureThemeFonts(family: string) {

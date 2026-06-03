@@ -91,7 +91,7 @@ Most "in-memory" DBs offer durability:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage
 >> [[key-value-database|Key-Value Database]], [[non-relational-database|Non-relational Database]], [[data-storage|Data Storage]]

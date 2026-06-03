@@ -19,22 +19,42 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Joe Reis & Matt Housley
-> ###### Authors
+> ###### Authors & Data Engineering Educators
 > | | |
 > | --- | --- |
 > | **Members** | Joe Reis, Matt Housley |
 > | **Nationality** | American |
-> | **Domain** | Data engineering |
-> | **Known for** | The data engineering lifecycle |
-> | **Notable works** | [[../books/fundamentals-of-data-engineering\|Fundamentals of Data Engineering]] |
+> | **Domain** | Data engineering, data architecture |
+> | **Known for** | *Fundamentals of Data Engineering*; data engineering lifecycle framework |
+> | **Notable works** | [[../books/fundamentals-of-data-engineering\|Fundamentals of Data Engineering]] (O'Reilly, 2022) |
+> | **Institution** | Ternary Data (co-founders) — Salt Lake City, Utah |
 
-Authors of the modern textbook **Fundamentals of Data Engineering** (O'Reilly, 2022) which formalized the **data engineering lifecycle** (generation → ingestion → transformation → serving) and the cross-cutting **undercurrents** (security, data management, DataOps, data architecture, orchestration, software engineering). Joe Reis is co-founder of **Ternary Data**.
+Co-authors of **Fundamentals of Data Engineering** (O'Reilly, 2022) — the book that gave the field a canonical, technology-agnostic framework. Co-founders of **Ternary Data**, a data engineering and architecture consulting firm based in Salt Lake City, Utah.
+
+**Joe Reis** has worked in the data industry for **20+ years**, spanning statistical modeling, forecasting, machine learning, data engineering, and data architecture. CEO of Ternary Data. Hosts the *The Joe Reis Show* podcast and runs a community called *Data Therapy Session* — a judgment-free space for data practitioners.
+
+**Matt Housley** holds a **PhD in Mathematics from the University of Utah**, with formative early programming experience in Logo, Basic, and 6502 assembly. Transitioned through data science into cloud-based data engineering. Co-founded Ternary Data with Reis.
+
+Their book formalized the **data engineering lifecycle** — the end-to-end flow of data from generation through ingestion, transformation, and serving — and defined five cross-cutting **undercurrents** that span every stage: security, data management, DataOps, data architecture, and orchestration + software engineering best practices. This framework became the standard vocabulary for the field.
+
+## Key contributions
+
+- **Data engineering lifecycle** framework: generation → ingestion → transformation → serving
+- **Undercurrents** concept: the cross-cutting concerns that govern every stage of the lifecycle
+- *Fundamentals of Data Engineering* (O'Reilly, 2022): the canonical modern reference text
+- **Ternary Data**: consulting and education firm advancing data engineering practices
+
+## Interesting facts
+
+- Matt Housley's PhD is in pure **mathematics** — an unusual background that brings rigorous, first-principles thinking to data engineering architecture
+- The book was written as a **technology-agnostic** guide — deliberately avoiding vendor-specific tools so the lifecycle framework remains relevant as tools evolve
+- Joe Reis uses the phrase *"data therapy"* to describe the emotional and organizational complexity of working with data in enterprises — a sign that data engineering is as much about people and culture as it is about technology
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Books
 >> [[../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]

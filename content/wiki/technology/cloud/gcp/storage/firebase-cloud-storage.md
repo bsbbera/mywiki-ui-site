@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Firebase Cloud Storage
 > ###### Cloud Service
 > | | |
@@ -154,7 +154,7 @@ You can **mix both** on the same bucket â€” server-side IAM for backend cod
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage products
 >> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]

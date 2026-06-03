@@ -167,7 +167,7 @@ Rare in practice; relevant for relations modeling complex many-to-many-to-many r
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Theory
 >> [[acid-properties|ACID Properties]], [[../data-engineering/data-warehousing|Data Warehousing]]

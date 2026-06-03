@@ -86,7 +86,7 @@ Transactional data tracks **business activities** — payments received, payment
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister workloads
 >> [[online-analytical-processing|OLAP]], [[hybrid-transactional-analytical-processing|HTAP]]

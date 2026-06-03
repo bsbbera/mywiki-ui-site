@@ -92,7 +92,7 @@ ORDER BY flights DESC;
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-loading-data|Loading Data]], [[bigquery-tables|BigQuery Tables]]

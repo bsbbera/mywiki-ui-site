@@ -55,7 +55,7 @@ publish: true
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Spark internals
 >> [[apache-spark|Apache Spark]], [[spark-dataframe|DataFrames]], [[rdd|RDDs]], [[spark-performance|Performance]]

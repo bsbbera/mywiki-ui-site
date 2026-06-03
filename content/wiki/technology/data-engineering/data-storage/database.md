@@ -73,7 +73,7 @@ NoSQL further splits into [[document-database|document]], [[key-value-database|K
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Storage hub
 >> [[data-storage|Data Storage]], [[relational-database|Relational Database]], [[non-relational-database|Non-relational Database]]

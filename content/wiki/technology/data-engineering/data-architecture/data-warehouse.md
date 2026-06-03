@@ -66,7 +66,7 @@ For complex queries on large datasets, especially when you need to keep historic
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[data-lake|Data Lake]], [[data-mart|Data Mart]], [[medallion-architecture|Medallion]]

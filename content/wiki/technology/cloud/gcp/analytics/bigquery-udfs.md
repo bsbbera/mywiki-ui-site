@@ -118,7 +118,7 @@ By granting **Data Viewer** on a `udfs` dataset to your whole org, you create a 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-tables|BigQuery Tables]], [[bigquery-iam|BigQuery IAM]]

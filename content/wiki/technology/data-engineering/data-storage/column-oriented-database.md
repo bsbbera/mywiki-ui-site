@@ -108,7 +108,7 @@ See [[wide-column-database|wide-column]] for the distinction. **Column-oriented*
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage
 >> [[wide-column-database|Wide-column Database]], [[non-relational-database|Non-relational Database]], [[data-storage|Data Storage]]

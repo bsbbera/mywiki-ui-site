@@ -118,7 +118,7 @@ The source emphasises preferring **Google Groups** over individual users — cha
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-authorized-views|Authorized Views]], [[bigquery-tables|BigQuery Tables]]

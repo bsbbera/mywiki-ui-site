@@ -212,7 +212,7 @@ Use certs to:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Discipline
 >> [[data-engineering|Data Engineering Overview]], [[data-pipeline|Data Pipeline]]

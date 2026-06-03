@@ -122,7 +122,7 @@ Result: **dogs win 43**.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-tables|BigQuery Tables]], [[bigquery-external-data|External Data]]

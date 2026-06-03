@@ -101,7 +101,7 @@ Cloud examples:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Storage hub
 >> [[database|Database]], [[relational-database|Relational Database]], [[non-relational-database|Non-relational / NoSQL]]

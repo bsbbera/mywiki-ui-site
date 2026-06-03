@@ -71,7 +71,7 @@ In **data mesh** architecture, marts evolve into **domain-owned data products** 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[data-warehouse|Data Warehouse]], [[medallion-architecture|Medallion Architecture]], [[../data-warehousing|Data Warehousing]]

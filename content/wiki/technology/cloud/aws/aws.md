@@ -15,7 +15,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Amazon Web Services
 > ###### Cloud Platform
 > | | |
@@ -174,7 +174,7 @@ See [[../../guides/cloud-services-map|Cloud Services Map]] for the full side-by-
 ## Related pages
 
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister cloud platforms
 >> ---

@@ -20,7 +20,7 @@ publish: true
 
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Learning Apache Spark with Python
 > ###### Online Tutorial
 > | | |
@@ -37,7 +37,7 @@ Official document: <https://runawayhorse001.github.io/LearningApacheSpark/>. *(N
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] People
 >> [[wenqiang-feng|Wenqiang Feng]], [[matei-zaharia|Matei Zaharia]]

@@ -95,7 +95,7 @@ Lightweight, point-in-time copies. Useful for backups and testing schema migrati
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub
 >> [[bigquery|BigQuery]]

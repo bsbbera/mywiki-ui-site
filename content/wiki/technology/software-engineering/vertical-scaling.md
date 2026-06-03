@@ -82,7 +82,7 @@ A Postgres instance on this can serve **hundreds of TB** with the right schema a
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister scaling concepts
 >> [[horizontal-scaling|Horizontal Scaling]], [[database-sharding|Sharding]], [[cap-theorem|CAP Theorem]]

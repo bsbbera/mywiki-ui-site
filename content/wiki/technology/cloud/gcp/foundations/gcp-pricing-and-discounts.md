@@ -103,7 +103,7 @@ Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what 
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[google-cloud-platform|Google Cloud Platform]], [[regions-and-zones|Regions and Zones]], [[service-models|Service Models]]

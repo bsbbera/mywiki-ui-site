@@ -101,7 +101,7 @@ Documents are grouped in **collections** (similar to tables, but schema-less).
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister NoSQL
 >> [[non-relational-database|Non-relational Database]], [[key-value-database|Key-Value Database]], [[wide-column-database|Wide-column Database]]

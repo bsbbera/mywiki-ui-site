@@ -147,7 +147,7 @@ Binary JSON-like; compact; fast. Used as a fast intermediate.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Data Storage
 >> [[../data-engineering/data-storage/column-oriented-database|Column-oriented Database]]

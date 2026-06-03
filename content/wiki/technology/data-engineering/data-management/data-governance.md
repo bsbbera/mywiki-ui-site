@@ -88,7 +88,7 @@ Data has become **simultaneously valuable and dangerous** — a competitive asse
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Adjacent management
 >> [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]], [[../data-ethics|Data Ethics]]

@@ -96,7 +96,7 @@ GCP doesn't offer a managed graph DB; users typically run **Neo4j on GKE** or us
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister NoSQL
 >> [[non-relational-database|Non-relational Database]], [[document-database|Document Database]]

@@ -32,7 +32,7 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 
 ---
 
-> [!mcol]
+> [!columns]
 > 
 > ## What data engineers do
 > 
@@ -119,7 +119,7 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Discipline
 >> [[data-pipeline|Data Pipeline]], [[data-warehousing|Data Warehousing]], [[faq|FAQ]], [[../guides/getting-started|Getting Started]]

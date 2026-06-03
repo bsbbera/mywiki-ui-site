@@ -88,7 +88,7 @@ This captures that even in a healthy system, you trade latency for consistency (
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Distributed-systems theory
 >> [[horizontal-scaling|Horizontal Scaling]], [[database-sharding|Sharding]], [[../databases/acid-properties|ACID Properties]]

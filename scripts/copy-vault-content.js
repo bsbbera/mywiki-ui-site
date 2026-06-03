@@ -31,6 +31,7 @@ const DEBUG = process.env.DEBUG_COPY === "true";
 const EXCLUDED_NAMES = new Set([
   "_my_template",
   "raw",
+  "Notion", // imported/clipped Notion content — kept private, never published
   "graphify-out",
   "GRAPH_REPORT.md",
   "graph.json",
@@ -53,6 +54,18 @@ function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
+}
+
+/**
+ * MIRROR (deletion-aware) sync: wipe a destination subtree before copying so
+ * notes deleted/renamed in the vault also disappear from content/. The copy is
+ * otherwise additive, which left orphaned files behind on the published site.
+ * Scoped to the synced subtrees (wiki/, databricks/) only — never the whole
+ * content/ root, so the generated index.md and committed extras are preserved.
+ */
+function resetDir(dir) {
+  fs.rmSync(dir, { recursive: true, force: true });
+  ensureDir(dir);
 }
 
 /**
@@ -152,8 +165,9 @@ function main() {
 
     let totalCopied = 0;
 
-    // Copy wiki/ folder
+    // Copy wiki/ folder (mirror: wipe first so vault deletions propagate)
     console.log("  📖 Copying wiki notes...");
+    resetDir(path.join(CONTENT_PATH, "wiki"));
     const wikiCopied = copyDir(
       path.join(VAULT_PATH, "wiki"),
       path.join(CONTENT_PATH, "wiki")
@@ -164,6 +178,7 @@ function main() {
     // Copy databricks/ folder (if exists)
     if (fs.existsSync(path.join(VAULT_PATH, "databricks"))) {
       console.log("  ☁️  Copying databricks notes...");
+      resetDir(path.join(CONTENT_PATH, "databricks"));
       const dbCopied = copyDir(
         path.join(VAULT_PATH, "databricks"),
         path.join(CONTENT_PATH, "databricks")
@@ -186,7 +201,7 @@ Welcome to **MyWiki** — a personal knowledge garden built with [Quartz](https:
 
 ## Browse
 
-- [[wiki/Master Home|Wiki Home]] — curated knowledge by topic
+- [Wiki notes](./wiki/) — curated knowledge by topic
 - [[databricks/databricks|Databricks]] — cloud data & AI platform notes
 - **Recent changes** — see the sidebar
 - **Tags** — explore by topic

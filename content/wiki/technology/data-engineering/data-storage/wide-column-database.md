@@ -99,7 +99,7 @@ The **row key** is the most important design decision:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister NoSQL
 >> [[non-relational-database|Non-relational Database]], [[column-oriented-database|Column-oriented Database]], [[timeseries-database|Time-series Database]], [[key-value-database|Key-Value Database]]

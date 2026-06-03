@@ -57,7 +57,7 @@ As of 2025 GCP operates **43 regions and 130 zones** globally ([cloud.google.com
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[google-cloud-platform|Google Cloud Platform]], [[service-models|Service Models]], [[gcp-pricing-and-discounts|GCP Pricing + Discounts]]

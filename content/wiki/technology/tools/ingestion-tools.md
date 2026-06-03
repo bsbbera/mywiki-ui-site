@@ -100,7 +100,7 @@ Azure's CDC + ingestion offerings. Synapse Link enables near-real-time analytics
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Ingestion concepts
 >> [[../data-engineering/data-ingestion/data-ingestion|Data Ingestion]], [[../data-engineering/data-ingestion/change-data-capture|CDC]], [[../data-engineering/data-ingestion/full-load|Full Load]], [[../data-engineering/data-ingestion/delta-load|Delta Load]]

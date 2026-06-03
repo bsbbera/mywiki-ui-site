@@ -100,7 +100,7 @@ Don't pass just a string key — give consumers everything they need.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister patterns
 >> [[publisher-subscriber-pattern|Pub/Sub Pattern]], [[fan-out|Fan-out]], [[event-sourcing-pattern|Event Sourcing]]

@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Google Kubernetes Engine
 > ###### Cloud Service
 > | | |
@@ -114,7 +114,7 @@ The raw source predates Autopilot's GA so doesn't cover it (source: Google Kuber
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Foundations
 >> [[../foundations/google-cloud-platform|Google Cloud Platform]], [[../foundations/service-models|Service Models]]

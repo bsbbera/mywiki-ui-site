@@ -102,7 +102,7 @@ Visual + code-first ETL/orchestration on Azure. Integrates with Synapse, Databri
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Data Processing
 >> [[../data-engineering/data-processing/workflow-orchestration|Workflow Orchestration]]

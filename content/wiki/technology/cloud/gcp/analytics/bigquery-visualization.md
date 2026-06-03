@@ -120,7 +120,7 @@ Heavy dashboards generate many queries — for cost control, use:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] BigQuery hub + sub-pages
 >> [[bigquery|BigQuery]], [[bigquery-iam|BigQuery IAM]], [[bigquery-tables|BigQuery Tables]], [[bigquery-query-management|Query Management]]

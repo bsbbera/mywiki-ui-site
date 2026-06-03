@@ -105,7 +105,7 @@ Writes go to row store; **delta merging** propagates to column store. Queries ro
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister workloads
 >> [[online-transaction-processing|OLTP]], [[online-analytical-processing|OLAP]]

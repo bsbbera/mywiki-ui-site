@@ -87,7 +87,7 @@ The metrics layer emerged as a lighter, **headless** alternative for orgs that w
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister concepts
 >> [[metrics-layer|Metrics Layer]], [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[data-management|Data Management]]

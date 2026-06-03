@@ -98,7 +98,7 @@ Sometimes called **"multi-hop"** architecture.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister architectures
 >> [[data-lake|Data Lake]], [[data-warehouse|Data Warehouse]], [[lambda-architecture|Lambda]], [[kappa-architecture|Kappa]]

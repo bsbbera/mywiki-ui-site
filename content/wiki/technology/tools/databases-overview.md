@@ -228,7 +228,7 @@ Financial industry standard; q programming language; extremely fast.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Storage concepts
 >> [[../data-engineering/data-storage/data-storage|Data Storage]], [[../data-engineering/data-storage/relational-database|Relational Database]], [[../data-engineering/data-storage/non-relational-database|Non-relational Database]]

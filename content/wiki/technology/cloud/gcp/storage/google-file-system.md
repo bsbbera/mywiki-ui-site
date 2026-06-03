@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Google File System
 > ###### Tool / Software
 > | | |
@@ -204,7 +204,7 @@ Colossus solved GFS's single-master bottleneck by distributing metadata, support
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister storage products
 >> [[Cloud Storage|Cloud Storage]], [[persistent-disk|Persistent Disk]], [[filestore|Filestore]]

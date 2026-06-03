@@ -134,7 +134,7 @@ Collaborative notebook + dashboard hybrids.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Data Management
 >> [[../data-engineering/data-management/semantic-layer|Semantic Layer]], [[../data-engineering/data-management/metrics-layer|Metrics Layer]], [[../data-engineering/data-management/data-catalog|Data Catalog]]

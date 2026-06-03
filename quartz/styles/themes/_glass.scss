@@ -12,7 +12,7 @@
 
 /* ---- tokens: LIGHT defaults --------------------------------------------- */
 :root[data-theme="glass"] {
-  --mwg-accent: #6d5ae6;
+  --mwg-accent: #2a5fd6;
   --mwg-accent-2: #3d82d0;
   --mwg-gold: #b07d20;
   --mwg-danger: #c34a26;
@@ -25,8 +25,8 @@
   --mwg-text-strong: #14120e;
   --mwg-muted: #4a4843;
   --mwg-faint: #76736c;
-  --mwg-code-fg: #5a47cf;
-  --mwg-th-bg: linear-gradient(180deg, #6d5ae6, #5a47cf);
+  --mwg-code-fg: #1f5fd0;
+  --mwg-th-bg: linear-gradient(180deg, #2a5fd6, #1f5fd0);
   --mwg-shadow-pop: 0 1px 2px rgba(20, 18, 14, 0.06), 0 20px 50px rgba(20, 18, 14, 0.14);
   --mwg-shadow-soft: 0 2px 12px -6px rgba(20, 18, 14, 0.18);
   --mwg-h1: #14120e;
@@ -36,8 +36,8 @@
   --mwg-h5: #4a4843;
   --mwg-h6: #5c5a55;
   --mwg-bold-color: #14120e;
-  --mwg-italic-color: #1a1a1a;
-  --mwg-bold-italic-color: #14120e;
+  --mwg-italic-color: #0d7d72;
+  --mwg-bold-italic-color: #0d7d72;
   --mwg-strikethrough-color: #5c5a55;
 
   /* tag tints (fixed across both modes) */
@@ -59,6 +59,20 @@
   --mwg-border: color-mix(in srgb, var(--mwg-text-strong) 8%, transparent);
   --mwg-border-2: color-mix(in srgb, var(--mwg-text-strong) 14%, transparent);
   --mwg-border-strong: color-mix(in srgb, var(--mwg-text-strong) 22%, transparent);
+
+  /* .at-gradient ramp (same stops in both modes — Apple-style gradient text) */
+  --mwg-grad-1: #3d8fe6;
+  --mwg-grad-2: #7b6cff;
+  --mwg-grad-3: #ff6aa0;
+  --mwg-grad-4: #ff8a3d;
+  --mwg-grad-angle: 100deg;
+  --mwg-grad: linear-gradient(
+    var(--mwg-grad-angle),
+    var(--mwg-grad-1),
+    var(--mwg-grad-2) 34%,
+    var(--mwg-grad-3) 66%,
+    var(--mwg-grad-4)
+  );
 }
 
 /* ---- BRIDGE → Quartz base vars -------------------------------------------
@@ -77,15 +91,15 @@
   --highlight: var(--mwg-accent-soft);
   --textHighlight: var(--mwg-chip-bg);
 
-  --headerFont: "Newsreader", Georgia, serif;
-  --titleFont: "Newsreader", Georgia, serif;
-  --bodyFont: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --headerFont: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --titleFont: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --bodyFont: "Segoe UI", system-ui, -apple-system, sans-serif;
   --codeFont: "JetBrains Mono", ui-monospace, monospace;
 }
 
 /* ---- tokens: DARK overrides --------------------------------------------- */
 :root[data-theme="glass"][saved-theme="dark"] {
-  --mwg-accent: #a78bfa;
+  --mwg-accent: #3d8fe6;
   --mwg-accent-2: #5ad0c0;
   --mwg-gold: #d9a441;
   --mwg-danger: #e0623f;
@@ -98,8 +112,8 @@
   --mwg-text-strong: #fbfbfa;
   --mwg-muted: #a3a2a0;
   --mwg-faint: #6e6d6b;
-  --mwg-code-fg: #c4b4ff;
-  --mwg-th-bg: linear-gradient(180deg, #2b2350, #211a40);
+  --mwg-code-fg: #9ccbff;
+  --mwg-th-bg: linear-gradient(180deg, #1c2f50, #16243f);
   --mwg-shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.7);
   --mwg-shadow-soft: 0 2px 10px -6px rgba(0, 0, 0, 0.55);
   --mwg-h1: #fbfbfa;
@@ -109,8 +123,8 @@
   --mwg-h5: #d6d5d3;
   --mwg-h6: #a3a2a0;
   --mwg-bold-color: #fbfbfa;
-  --mwg-italic-color: #ececec;
-  --mwg-bold-italic-color: #fbfbfa;
+  --mwg-italic-color: #4fd0bf;
+  --mwg-bold-italic-color: #4fd0bf;
   --mwg-strikethrough-color: #a3a2a0;
 }
 
@@ -837,5 +851,37 @@
     border-color: var(--mwg-accent);
     color: var(--mwg-accent);
     background: var(--mwg-pane-2);
+  }
+}
+
+/* =============================================================================
+   .at-gradient — Apple-style gradient text (inline HTML in notes:
+   <span class="at-gradient">…</span>). Mirrors the Obsidian Glass utility.
+   The ramp gently drifts (shimmer), gated by :not(.no-anim) + reduced-motion.
+   ========================================================================== */
+:root[data-theme="glass"] article .at-gradient {
+  background: var(--grad, var(--mwg-grad));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 600;
+}
+@keyframes mwg-grad-flow {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
+}
+:root[data-theme="glass"]:not(.no-anim) article .at-gradient {
+  background-size: 220% auto;
+  background-position: 0% center;
+  animation: mwg-grad-flow 7s var(--mwg-ease) infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="glass"] article .at-gradient {
+    animation: none !important;
   }
 }

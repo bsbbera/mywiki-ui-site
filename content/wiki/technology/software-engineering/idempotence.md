@@ -109,7 +109,7 @@ Stripe's API and many cloud services support this natively.
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Reliability patterns
 >> [[fan-out|Fan-out]], [[publisher-subscriber-pattern|Pub/Sub Pattern]], [[claim-check-pattern|Claim Check Pattern]], [[data-unit-test|Data Unit Test]]

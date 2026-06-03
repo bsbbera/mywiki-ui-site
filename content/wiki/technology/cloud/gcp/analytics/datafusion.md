@@ -17,7 +17,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Cloud Data Fusion
 > ###### Cloud Service
 > | | |
@@ -159,7 +159,7 @@ This is invisible to the user but explains pricing (you pay for both Data Fusion
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Sister GCP analytics
 >> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[pubsub|Pub/Sub]], [[data-catalog|Data Catalog]]

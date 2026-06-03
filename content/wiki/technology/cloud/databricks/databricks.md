@@ -16,7 +16,7 @@ banner:
 publish: true
 ---
 
-> [!infobox|wikipedia]
+> [!infobox|right]
 > # Databricks
 > ###### Tool / Software
 > | | |
@@ -85,7 +85,7 @@ Databricks runs on GCP since 2021 with deep integration to:
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!error|noicon] Data Architecture
 >> ---

@@ -25,7 +25,7 @@ Append-only log of all wiki operations. Newest entries at the top.
 
 ### Standard adopted
 
-Infoboxes use the ITS Theme callout `> [!infobox|wikipedia]` placed **above** the daily-quote block, ordered: frontmatter → infobox → `---` → quote → `---` → body. Per-domain field sets:
+Infoboxes use the ITS Theme callout `> [!infobox|right]` placed **above** the daily-quote block, ordered: frontmatter → infobox → `---` → quote → `---` → body. Per-domain field sets:
 
 - **Person** → Born, Nationality, Domain, Known for, Notable works, Institution.
 - **Book** → cover, Author(s), Publisher, Published, Domain, Pages, ISBN.
@@ -177,7 +177,7 @@ Refactored every page created in pass 5 to convert flat bullet lists → topic-g
 ```markdown
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Topic 1
 >> [[link1|Label]], [[link2|Label]]

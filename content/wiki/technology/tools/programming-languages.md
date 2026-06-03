@@ -125,7 +125,7 @@ Performance-critical engines: ClickHouse, RocksDB, Apache Arrow C++ implementati
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Guides
 >> [[../guides/sql-guide|SQL Guide]], [[../guides/getting-started|Getting Started]]

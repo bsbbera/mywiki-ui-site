@@ -102,7 +102,7 @@ Add a `deleted_at` column to the source. Deletes become updates (`UPDATE … SET
 
 ## Related pages
 
-> [!multi-column]
+> [!grid]
 >
 >> [!card] Ingestion patterns
 >> [[full-load|Full Load]], [[change-data-capture|CDC]], [[data-ingestion|Data Ingestion]]
