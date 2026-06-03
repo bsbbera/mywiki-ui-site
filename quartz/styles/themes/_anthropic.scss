@@ -91,6 +91,17 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-on-accent: #1a1208;
   --at-on-accent-em: #f7eed9;
   --at-on-accent-kick: #1a1208;
+
+  /* gold/danger + standard-callout per-type colours */
+  --at-gold: #b07d20;
+  --at-danger: #c0392b;
+  --at-callout-note: var(--at-accent);
+  --at-callout-tip: #5a9e6a;
+  --at-callout-warning: var(--at-gold);
+  --at-callout-question: var(--at-gold);
+  --at-callout-danger: var(--at-danger);
+  --at-callout-example: #9a6b8e;
+  --at-callout-quote: var(--at-accent-2);
 }
 
 /* ---- BRIDGE → Quartz base vars (see _glass.scss for the specificity note) -- */
@@ -148,6 +159,8 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-on-accent: #f5efe1;
   --at-on-accent-em: var(--at-accent);
   --at-on-accent-kick: var(--at-accent);
+  --at-gold: #d9a441;
+  --at-danger: #e0623f;
 }
 
 /* =============================================================================
@@ -421,22 +434,39 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     color: var(--at-muted);
   }
 
-  /* Standard callouts only — card SYSTEM types excluded so bespoke card
-     surfaces (accent/dark heroes) are not clobbered by !important. */
-  & article .callout#{$not-cards} {
-    background: var(--at-pane-2) !important;
+  /* Standard callouts — Obsidian per-type treatment (colour bar + faint tint +
+     mono UPPERCASE small-caps title). Card-system types excluded; [!quote] keeps
+     the unified blockquote look. */
+  & article .callout#{$not-cards}:not([data-callout="quote"]) {
+    --cc: var(--at-callout-note);
+    background: color-mix(in srgb, var(--cc) 8%, var(--at-pane-2)) !important;
     border: 1px solid var(--at-border) !important;
-    border-left: 3px solid var(--at-accent) !important;
+    border-left: 3px solid var(--cc) !important;
     border-radius: var(--at-radius) !important;
     box-shadow: none !important;
   }
-  & article .callout#{$not-cards} > .callout-title {
+  & article .callout#{$not-cards}:is([data-callout="tip"], [data-callout="success"], [data-callout="check"]) { --cc: var(--at-callout-tip); }
+  & article .callout#{$not-cards}:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) { --cc: var(--at-callout-warning); }
+  & article .callout#{$not-cards}:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --cc: var(--at-callout-question); }
+  & article .callout#{$not-cards}:is([data-callout="danger"], [data-callout="failure"], [data-callout="error"], [data-callout="bug"]) { --cc: var(--at-callout-danger); }
+  & article .callout#{$not-cards}:is([data-callout="example"]) { --cc: var(--at-callout-example); }
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title {
     text-align: left;
-    font-variant: normal;
-    font-family: var(--headerFont);
-    color: var(--at-text-strong);
     border-bottom: none;
-    letter-spacing: normal;
+  }
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner,
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner p {
+    font-family: var(--at-font-mono) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--cc) !important;
+    margin: 0;
+  }
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-icon svg {
+    color: var(--cc) !important;
+    stroke: var(--cc);
   }
 }
 
