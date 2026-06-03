@@ -981,4 +981,23 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   & .callout[data-callout="card"] .callout-content li {
     margin: 0.15em 0;
   }
+
+  /* Quartz colours `.callout-title-inner > p` with var(--color) (a blue default
+     for the unmapped "card" type), which carries the visible title text. Re-assert
+     the card title colour per surface; keep the italic emphasis from the partial. */
+  & .callout[data-callout="card"] .callout-title-inner p {
+    color: var(--mwg-text-strong);
+    margin: 0;
+  }
+  & .callout[data-callout="card"][data-callout-metadata*="dark"] .callout-title-inner p {
+    color: var(--mwg-on-dark);
+  }
+  & .callout[data-callout="card"][data-callout-metadata*="accent"] .callout-title-inner p {
+    color: var(--mwg-on-accent);
+  }
+
+  /* TG-only chevron flourish on headings — Obsidian has none, so hide it here. */
+  & .tg-chevron {
+    display: none;
+  }
 }
