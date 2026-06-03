@@ -111,6 +111,15 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --mwg-accent-nested: #1b1a22;
   --mwg-accent-nested-h: #ffffff;
   --mwg-accent-nested-p: #c7c5d2;
+
+  /* standard-callout per-type colours (resolve via accent/gold/danger per mode) */
+  --mwg-callout-note: var(--mwg-accent);
+  --mwg-callout-tip: var(--mwg-accent-2);
+  --mwg-callout-warning: var(--mwg-gold);
+  --mwg-callout-question: var(--mwg-gold);
+  --mwg-callout-danger: var(--mwg-danger);
+  --mwg-callout-example: #a890be;
+  --mwg-callout-quote: #a890be;
 }
 
 /* ---- BRIDGE → Quartz base vars -------------------------------------------
@@ -477,23 +486,40 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     color: var(--mwg-muted);
   }
 
-  /* Standard callouts only (override TG's !important infobox look). The card
-     SYSTEM types (card/grid/infobox/columns/col) are EXCLUDED so the bespoke
-     card surfaces — incl. accent/dark heroes — are not clobbered by !important. */
-  & article .callout#{$not-cards} {
-    background: var(--mwg-pane-2) !important;
+  /* Standard callouts — Obsidian per-type treatment: per-type colour bar + faint
+     tint + a mono UPPERCASE small-caps title in that colour. Card-system types are
+     excluded (they own their surfaces); [!quote] keeps the unified blockquote look. */
+  & article .callout#{$not-cards}:not([data-callout="quote"]) {
+    --cc: var(--mwg-callout-note);
+    background: color-mix(in srgb, var(--cc) 8%, var(--mwg-pane-2)) !important;
     border: 1px solid var(--mwg-border) !important;
-    border-left: 3px solid var(--mwg-accent) !important;
+    border-left: 3px solid var(--cc) !important;
     border-radius: var(--mwg-radius) !important;
     box-shadow: none !important;
   }
-  & article .callout#{$not-cards} > .callout-title {
+  & article .callout#{$not-cards}:is([data-callout="tip"], [data-callout="success"], [data-callout="check"]) { --cc: var(--mwg-callout-tip); }
+  & article .callout#{$not-cards}:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) { --cc: var(--mwg-callout-warning); }
+  & article .callout#{$not-cards}:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --cc: var(--mwg-callout-question); }
+  & article .callout#{$not-cards}:is([data-callout="danger"], [data-callout="failure"], [data-callout="error"], [data-callout="bug"]) { --cc: var(--mwg-callout-danger); }
+  & article .callout#{$not-cards}:is([data-callout="example"]) { --cc: var(--mwg-callout-example); }
+  /* title: mono uppercase small-caps in --cc (also target the <p> Quartz wraps it in) */
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title {
     text-align: left;
-    font-variant: normal;
-    font-family: var(--bodyFont);
-    color: var(--mwg-text-strong);
     border-bottom: none;
-    letter-spacing: normal;
+  }
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner,
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner p {
+    font-family: var(--mwg-font-mono) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--cc) !important;
+    margin: 0;
+  }
+  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-icon svg {
+    color: var(--cc) !important;
+    stroke: var(--cc);
   }
 }
 
