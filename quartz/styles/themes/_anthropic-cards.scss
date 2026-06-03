@@ -149,7 +149,7 @@ article .at-fs { font-size: var(--fs, 1em); }
     flex-direction: column;
     border: 1px solid var(--at-border-2);
     border-radius: var(--radius-l);
-    background: var(--at-pane-2);
+    background: var(--at-card-surface, var(--at-pane-2));
     box-shadow: var(--at-shadow-pop);
     padding: 2px 4px 6px;
     overflow: hidden;
@@ -786,15 +786,38 @@ body { --at-infobox-width: 300px; }
 
 .callout[data-callout="infobox"] {
     position: relative;
-    float: none;
-    width: 100%;
-    margin: 0;
+    /* QUARTZ: the infobox callout is a DIRECT child of <article> (no floated
+       Obsidian wrapper exists), so the callout itself must float for the body text
+       to wrap beside it — matching the Obsidian reading view. */
+    float: right;
+    width: var(--at-infobox-width, 300px);
+    max-width: 42%;
+    margin: 4px 0 18px 24px;
     border: 1px solid var(--at-border-2);
     border-radius: var(--radius-l);
-    background: var(--at-pane-2);
+    background: var(--at-card-surface, var(--at-pane-2));
     overflow: hidden;                /* clip the rounded corners cleanly */
     box-shadow: var(--at-shadow-pop);
     transition: transform var(--at-dur) var(--at-ease), box-shadow var(--at-dur) var(--at-ease);
+}
+/* left / center placement variants (Quartz) */
+.callout[data-callout="infobox"][data-callout-metadata*="left"] {
+    float: left;
+    margin: 4px 24px 18px 0;
+}
+.callout[data-callout="infobox"][data-callout-metadata*="center"] {
+    float: none;
+    margin: 22px auto;
+    max-width: var(--at-infobox-width, 300px);
+}
+/* narrow panes: stop floating, span full width (webpage-like reflow) */
+@media (max-width: 700px) {
+    .callout[data-callout="infobox"] {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 16px 0 !important;
+    }
 }
 /* HOVER: lift + deepen shadow */
 .callout[data-callout="infobox"]:hover {
@@ -825,6 +848,9 @@ body { --at-infobox-width: 300px; }
     color: #fff;
 }
 .callout[data-callout="infobox"] > .callout-content { padding: 14px 16px 16px; }
+/* QUARTZ: top-level headings/rules clear a floated infobox so the next section
+   never overlaps it (paragraphs still wrap beside the float). */
+article > :is(h1, h2, h3, h4, h5, h6, hr) { clear: both; }
 /* a serif NAME heading inside the box (## Name) sits below the tag */
 .callout[data-callout="infobox"] .callout-content > :is(h1, h2, h3):first-child {
     font-family: var(--at-font-heading);
@@ -872,8 +898,8 @@ body { --at-infobox-width: 300px; }
 /* infobox v2 — dark honor card */
 .callout[data-callout="infobox"][data-callout-metadata*="v2"],
 body.at-ib-v2 .callout[data-callout="infobox"]:not([data-callout-metadata*="v"]) {
-    background: var(--at-dark-surface);
-    border-color: var(--at-on-dark-border);
+    background: var(--at-dark-surface) !important;
+    border-color: var(--at-on-dark-border) !important;
     color: var(--at-on-dark);
 }
 :is(.callout[data-callout="infobox"][data-callout-metadata*="v2"],
@@ -886,10 +912,10 @@ body.at-ib-v2 .callout[data-callout="infobox"]:not([data-callout-metadata*="v"])
 /* infobox v3 — flat bordered (no shadow) */
 .callout[data-callout="infobox"][data-callout-metadata*="v3"],
 body.at-ib-v3 .callout[data-callout="infobox"]:not([data-callout-metadata*="v"]) {
-    background: transparent;
-    border: 1px solid var(--at-border-strong);
-    border-radius: var(--radius-s);
-    box-shadow: none;
+    background: transparent !important;
+    border: 1px solid var(--at-border-strong) !important;
+    border-radius: var(--radius-s) !important;
+    box-shadow: none !important;
 }
 
 /* ----- OPTIONAL extras (apply to ANY infobox; require no image) -----------------

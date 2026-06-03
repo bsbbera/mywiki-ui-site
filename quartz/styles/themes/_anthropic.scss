@@ -20,6 +20,11 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-bg-0: #ece3d0;
   --at-pane: #efe7d6;
   --at-pane-2: #f6f1e6;
+  /* Card/infobox surface — warm cream tuned for the WEB. In Obsidian the card
+     (#f6f1e6) sits on the near-identical note bg (#f7f1e4) so it blends; on the
+     Quartz site the page is the tan #ece3d0, against which #f6f1e6 reads as stark
+     white. This mid-cream keeps the card clearly lifted but warm (not white). */
+  --at-card-surface: #f3ecdb;
   --at-text: #3a352c;
   --at-text-strong: #1f1b14;
   --at-muted: #8a7f6d;
@@ -149,6 +154,7 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-strikethrough-color: #a99e87;
 
   /* ---- card-system tokens — DARK overrides ---- */
+  --at-card-surface: var(--at-pane-2); /* dark cards already lift off the dark page */
   --at-accent-surface: #1f1810;
   --at-accent-btn-bg: var(--at-accent);
   --at-accent-btn-fg: #ffffff;
@@ -434,6 +440,23 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     color: var(--at-muted);
   }
 
+  /* Blockquotes INSIDE a card (e.g. the honor pull-quote) must NOT get the page's
+     coral gradient wash + decorative mark — they keep the card-system look (plain
+     coral bar, italic). The unified-quote rule above uses !important, so this
+     override needs both higher specificity AND !important to win. */
+  & .callout[data-callout="card"] blockquote {
+    overflow: visible !important;
+    background: none !important;
+    border: none !important;
+    border-left: 2px solid var(--at-accent) !important;
+    border-radius: 0 !important;
+    padding: 4px 0 4px 18px !important;
+    box-shadow: none !important;
+  }
+  & .callout[data-callout="card"] blockquote::before {
+    content: none !important;
+  }
+
   /* Standard callouts — Obsidian per-type treatment (colour bar + faint tint +
      mono UPPERCASE small-caps title). Card-system types excluded; [!quote] keeps
      the unified blockquote look. */
@@ -669,29 +692,32 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
 }
 
 /* =============================================================================
-   In-note [!infobox] card (right rail)
+   In-note [!infobox] card — the FULL faithful Obsidian design (coral tag title,
+   table, caption footer) lives in _anthropic-cards.scss. _tg.scss applies a
+   theme-AGNOSTIC infobox skin with `!important` (lightgray bg, gray border, 4px
+   radius) scoped by [saved-theme]; we must re-assert the Atelier paper-card chrome
+   with `!important` to win (this is exactly what _glass.scss does). We do NOT hide
+   the title here — that's the coral tag, which we want to keep.
    ========================================================================== */
 :root[data-theme="atelier"] {
-  & .callout[data-callout="infobox"] {
-    background: var(--at-pane-2) !important;
-    border: 1px solid var(--at-border-2) !important;
-    border-radius: 14px !important;
-    box-shadow: var(--at-shadow-soft) !important;
+  & .callout[data-callout="infobox"]:not([data-callout-metadata*="v2"]):not([data-callout-metadata*="v3"]) {
+    background: var(--at-card-surface) !important;
   }
+  & .callout[data-callout="infobox"] {
+    border: 1px solid var(--at-border-2) !important;
+    border-radius: var(--radius-l) !important;
+    box-shadow: var(--at-shadow-pop) !important;
+    padding: 0 !important;
+    margin: 4px 0 18px 24px !important;
+  }
+  & .callout[data-callout="infobox"][data-callout-metadata*="left"] { margin: 4px 24px 18px 0 !important; }
+  & .callout[data-callout="infobox"][data-callout-metadata*="center"] { margin: 22px auto !important; }
   & .callout[data-callout="infobox"] :is(h1, h2, h3, h4) {
     background-image: none !important;
-    border: none !important;
-    font-style: normal !important;
-  }
-  & .callout[data-callout="infobox"] > .callout-title {
-    display: none !important;
+    text-decoration: none !important;
   }
   & .callout[data-callout="infobox"] .table-container {
     overflow-x: visible !important;
-  }
-  & .callout[data-callout="infobox"] table {
-    table-layout: fixed;
-    width: 100%;
   }
   & .callout[data-callout="infobox"] td,
   & .callout[data-callout="infobox"] th {
