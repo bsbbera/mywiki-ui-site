@@ -99,20 +99,27 @@ const FONTS_MONO: { label: string; value: string }[] = [
 ]
 
 // Global typography sliders (apply to every theme). Defaults match _shared.scss.
-const SLIDERS: { var: string; label: string; min: number; max: number; step: number; unit: string }[] =
-  [
-    { var: "--mwg-content-size", label: "Body size", min: 0.8, max: 1.3, step: 0.05, unit: "rem" },
-    { var: "--mwg-line-height", label: "Line height", min: 1.3, max: 2.2, step: 0.05, unit: "" },
-    { var: "--mwg-h1-size", label: "H1 size", min: 1.2, max: 3, step: 0.05, unit: "rem" },
-    { var: "--mwg-h2-size", label: "H2 size", min: 1.1, max: 2.5, step: 0.05, unit: "rem" },
-    { var: "--mwg-h3-size", label: "H3 size", min: 1, max: 2, step: 0.05, unit: "rem" },
-  ]
-
-const FONT_SELECTS: { var: string; label: string; options: { label: string; value: string }[] }[] = [
-  { var: "--bodyFont", label: "Body font", options: FONTS_SANS },
-  { var: "--headerFont", label: "Heading font", options: FONTS_SANS },
-  { var: "--codeFont", label: "Mono font", options: FONTS_MONO },
+const SLIDERS: {
+  var: string
+  label: string
+  min: number
+  max: number
+  step: number
+  unit: string
+}[] = [
+  { var: "--mwg-content-size", label: "Body size", min: 0.8, max: 1.3, step: 0.05, unit: "rem" },
+  { var: "--mwg-line-height", label: "Line height", min: 1.3, max: 2.2, step: 0.05, unit: "" },
+  { var: "--mwg-h1-size", label: "H1 size", min: 1.2, max: 3, step: 0.05, unit: "rem" },
+  { var: "--mwg-h2-size", label: "H2 size", min: 1.1, max: 2.5, step: 0.05, unit: "rem" },
+  { var: "--mwg-h3-size", label: "H3 size", min: 1, max: 2, step: 0.05, unit: "rem" },
 ]
+
+const FONT_SELECTS: { var: string; label: string; options: { label: string; value: string }[] }[] =
+  [
+    { var: "--bodyFont", label: "Body font", options: FONTS_SANS },
+    { var: "--headerFont", label: "Heading font", options: FONTS_SANS },
+    { var: "--codeFont", label: "Mono font", options: FONTS_MONO },
+  ]
 
 const ThemeCustomizer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
   return (
@@ -156,6 +163,10 @@ const ThemeCustomizer: QuartzComponent = ({ displayClass }: QuartzComponentProps
           <label class="tc-row">
             <span>{f.label}</span>
             <select class="tc-font" data-var={f.var}>
+              {/* Empty value = no override → the active theme's own font wins. This
+                  is what shows out of the box (e.g. Atelier → Inter / Newsreader),
+                  instead of mis-reporting "System default". */}
+              <option value="">Theme default</option>
               {f.options.map((o) => (
                 <option value={o.value}>{o.label}</option>
               ))}

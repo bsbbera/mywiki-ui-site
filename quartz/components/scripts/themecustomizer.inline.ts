@@ -137,9 +137,17 @@ function syncControls(panel: HTMLElement, family: string) {
 
   for (const sel of panel.querySelectorAll<HTMLSelectElement>(".tc-font")) {
     const varName = sel.dataset.var!
-    const value = (globals[varName] ?? computed.getPropertyValue(varName).trim()).trim()
-    const match = [...sel.options].find((o) => o.value.trim() === value)
-    if (match) sel.value = match.value
+    const override = globals[varName]?.trim()
+    if (override) {
+      // An explicit user override — reflect it (fall back to "Theme default" if the
+      // stored value isn't one of the menu options).
+      const match = [...sel.options].find((o) => o.value.trim() === override)
+      sel.value = match ? match.value : ""
+    } else {
+      // No override → "Theme default" (value=""), so the theme's own font is shown
+      // instead of mis-matching to "System default".
+      sel.value = ""
+    }
   }
 
   for (const slider of panel.querySelectorAll<HTMLInputElement>(".tc-slider")) {
@@ -197,8 +205,18 @@ document.addEventListener("nav", () => {
   for (const sel of panel.querySelectorAll<HTMLSelectElement>(".tc-font")) {
     const onChange = () => {
       const varName = sel.dataset.var!
-      ensureFont(sel.value)
-      setGlobal(varName, sel.value)
+      if (sel.value === "") {
+        // "Theme default" → drop the override so the theme's own font wins.
+        const o = readOverrides()
+        if (o[GLOBAL]) {
+          delete o[GLOBAL][varName]
+          writeOverrides(o)
+        }
+        document.documentElement.style.removeProperty(varName)
+      } else {
+        ensureFont(sel.value)
+        setGlobal(varName, sel.value)
+      }
       emitCustomChange(currentFamily())
     }
     sel.addEventListener("change", onChange)

@@ -22,6 +22,9 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-bg-0: #ece3d0;
   --at-pane: #efe7d6;
   --at-pane-2: #f6f1e6;
+  /* The bright "note" surface — lighter than the page + sidebars so the reading
+     column floats (mirrors Obsidian's --at-editor). */
+  --at-editor: #f7f1e4;
   /* Card/infobox surface — warm cream tuned for the WEB. In Obsidian the card
      (#f6f1e6) sits on the near-identical note bg (#f7f1e4) so it blends; on the
      Quartz site the page is the tan #ece3d0, against which #f6f1e6 reads as stark
@@ -32,7 +35,9 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-muted: #8a7f6d;
   --at-faint: #b3a892;
   --at-code-fg: #b8442a;
-  --at-th-bg: linear-gradient(180deg, #d8552f, #b8442a);
+  /* table header = subtle cream (NOT a bold coral fill) — matches Obsidian's
+     understated editorial table; the bold colour-fill header is a Glass trait. */
+  --at-th-bg: var(--at-pane);
   --at-shadow-pop: 0 1px 2px rgba(31, 27, 20, 0.07), 0 20px 50px rgba(31, 27, 20, 0.16);
   --at-shadow-soft: 0 2px 12px -6px rgba(31, 27, 20, 0.22);
   --at-h1: #1f1b14;
@@ -80,7 +85,7 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-grad-color: var(--at-accent);
 
   /* ---- card-system tokens (used by _anthropic-cards.scss) — LIGHT ---- */
-  --at-font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --at-font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --at-font-heading: "Newsreader", Georgia, "Times New Roman", serif;
   --at-font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
   --radius-s: calc(var(--at-radius) - 4px);
@@ -132,9 +137,14 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --highlight: var(--at-accent-soft);
   --textHighlight: var(--at-chip-bg);
 
+  /* Layered surfaces (consumed by _shared.scss): bright reading column + subtly
+     tinted side rails, both sitting on the darker page (--light). */
+  --reading-surface: var(--at-editor);
+  --rail-surface: var(--at-pane);
+
   --headerFont: "Newsreader", Georgia, "Times New Roman", serif;
   --titleFont: "Newsreader", Georgia, "Times New Roman", serif;
-  --bodyFont: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bodyFont: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --codeFont: "JetBrains Mono", ui-monospace, Consolas, monospace;
 }
 
@@ -145,12 +155,13 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-bg-0: #18130d;
   --at-pane: #221b13;
   --at-pane-2: #2a2218;
+  --at-editor: #1c1710; /* note surface sits between page and cards */
   --at-text: #e7ddc8;
   --at-text-strong: #f5efe1;
   --at-muted: #a99e87;
   --at-faint: #6f6555;
   --at-code-fg: #f0a07f;
-  --at-th-bg: linear-gradient(180deg, #e8714c, #d2603f);
+  --at-th-bg: var(--at-pane); /* subtle dark-cream header (matches Obsidian) */
   --at-shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.7);
   --at-shadow-soft: 0 2px 10px -6px rgba(0, 0, 0, 0.55);
   --at-h1: #f5efe1;
@@ -300,10 +311,16 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     & tbody tr:last-child td:last-child {
       border-bottom-right-radius: 10px;
     }
+    /* Header: subtle cream fill, dark ink, mono UPPERCASE — Obsidian's editorial
+       table look (not the bold coral colour-fill, which reads as "Glass"). */
     & thead th {
       background: var(--at-th-bg);
-      color: #fff8ee;
-      letter-spacing: 0.02em;
+      color: var(--at-text-strong);
+      font-family: var(--at-font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78em;
+      border-bottom: 1px solid var(--at-border-2);
     }
     & tbody tr {
       transition: background-color var(--at-dur) var(--at-ease);
@@ -378,8 +395,13 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     color: var(--at-muted) !important;
     border-color: color-mix(in srgb, var(--at-muted) 30%, transparent) !important;
   }
-  & article a.tag-link:not(.tag-c0):not(.tag-c1):not(.tag-c2):not(.tag-c3):not(.tag-c4)::before {
-    content: "#";
+  /* Leading "#" for tags rendered INSIDE the note body. Properties/infobox tags
+     live outside <article> and already carry their own "#" in the text, so this
+     never doubles them. !important + the article scope beat _tg.scss, which
+     strips the marker globally (content:"" !important; display:none). */
+  & article a.tag-link::before {
+    content: "#" !important;
+    display: inline-block !important;
     opacity: 0.6;
   }
   & a.tag-link:hover,
@@ -491,17 +513,57 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     border-radius: var(--at-radius) !important;
     box-shadow: none !important;
   }
-  & article .callout#{$not-cards}:is([data-callout="tip"], [data-callout="success"], [data-callout="check"]) { --cc: var(--at-callout-tip); }
-  & article .callout#{$not-cards}:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) { --cc: var(--at-callout-warning); }
-  & article .callout#{$not-cards}:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --cc: var(--at-callout-question); }
-  & article .callout#{$not-cards}:is([data-callout="danger"], [data-callout="failure"], [data-callout="error"], [data-callout="bug"]) { --cc: var(--at-callout-danger); }
-  & article .callout#{$not-cards}:is([data-callout="example"]) { --cc: var(--at-callout-example); }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="tip"],
+      [data-callout="success"],
+      [data-callout="check"]
+    ) {
+    --cc: var(--at-callout-tip);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="warning"],
+      [data-callout="caution"],
+      [data-callout="attention"]
+    ) {
+    --cc: var(--at-callout-warning);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="question"],
+      [data-callout="help"],
+      [data-callout="faq"]
+    ) {
+    --cc: var(--at-callout-question);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="danger"],
+      [data-callout="failure"],
+      [data-callout="error"],
+      [data-callout="bug"]
+    ) {
+    --cc: var(--at-callout-danger);
+  }
+  & article .callout#{$not-cards}:is([data-callout="example"]) {
+    --cc: var(--at-callout-example);
+  }
   & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title {
     text-align: left;
     border-bottom: none;
   }
   & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner,
-  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner p {
+  &
+    article
+    .callout#{$not-cards}:not([data-callout="quote"])
+    > .callout-title
+    .callout-title-inner
+    p {
     font-family: var(--at-font-mono) !important;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -723,7 +785,10 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
    the title here — that's the coral tag, which we want to keep.
    ========================================================================== */
 :root[data-theme="atelier"] {
-  & .callout[data-callout="infobox"]:not([data-callout-metadata*="v2"]):not([data-callout-metadata*="v3"]) {
+  &
+    .callout[data-callout="infobox"]:not([data-callout-metadata*="v2"]):not(
+      [data-callout-metadata*="v3"]
+    ) {
     background: var(--at-card-surface) !important;
   }
   & .callout[data-callout="infobox"] {
@@ -733,8 +798,12 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     padding: 0 !important;
     margin: 4px 0 18px 24px !important;
   }
-  & .callout[data-callout="infobox"][data-callout-metadata*="left"] { margin: 4px 24px 18px 0 !important; }
-  & .callout[data-callout="infobox"][data-callout-metadata*="center"] { margin: 22px auto !important; }
+  & .callout[data-callout="infobox"][data-callout-metadata*="left"] {
+    margin: 4px 24px 18px 0 !important;
+  }
+  & .callout[data-callout="infobox"][data-callout-metadata*="center"] {
+    margin: 22px auto !important;
+  }
   & .callout[data-callout="infobox"] :is(h1, h2, h3, h4) {
     background-image: none !important;
     text-decoration: none !important;
@@ -801,7 +870,9 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
       transform: none;
     }
   }
-  :root[data-theme="atelier"]:not(.no-anim) article > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
+  :root[data-theme="atelier"]:not(.no-anim)
+    article
+    > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
     animation: at-rise linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 32%;
@@ -914,33 +985,83 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
    Quartz's `p { color: var(--darkgray) }` beats inheritance from .callout-content).
    ========================================================================== */
 :root[data-theme="atelier"] {
-  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(p, ul, ol, blockquote),
-  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(ul, ol) li {
+  &
+    .callout[data-callout="card"][data-callout-metadata*="dark"]
+    > .callout-content
+    > :is(p, ul, ol, blockquote),
+  &
+    .callout[data-callout="card"][data-callout-metadata*="dark"]
+    > .callout-content
+    > :is(ul, ol)
+    li {
     color: var(--at-on-dark-muted);
   }
-  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(p, ul, ol, blockquote),
-  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(ul, ol) li {
+  &
+    .callout[data-callout="card"][data-callout-metadata*="accent"]
+    > .callout-content
+    > :is(p, ul, ol, blockquote),
+  &
+    .callout[data-callout="card"][data-callout-metadata*="accent"]
+    > .callout-content
+    > :is(ul, ol)
+    li {
     color: var(--at-on-accent);
   }
 
   /* honor / channels / step are their OWN dark surfaces (not via `dark` metadata),
      so Quartz's `p{color:darkgray}` leaves their body text dark-on-dark = invisible
      in LIGHT mode. Re-assert on-dark text (these card styles never nest cards). */
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(p, li, td) {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    :is(p, li, td) {
     color: var(--at-on-dark-muted);
   }
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(h1, h2, h3, h4, h5, h6) {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    :is(h1, h2, h3, h4, h5, h6) {
     color: var(--at-on-dark);
   }
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote,
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote p {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    blockquote,
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    blockquote
+    p {
     color: var(--at-on-dark);
   }
 
   /* Skill command bar (and other dark card code bars) stay dark in BOTH modes;
      force the dark (light-coloured) shiki token palette so syntax stays legible in
      light mode too — otherwise the light-theme tokens are dark-on-dark. */
-  & .callout[data-callout="card"]:is([data-callout-metadata*="skill"], [data-callout-metadata*="dark"], [data-callout-metadata*="honor"]) pre span {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="skill"],
+      [data-callout-metadata*="dark"],
+      [data-callout-metadata*="honor"]
+    )
+    pre
+    span {
     color: var(--shiki-dark) !important;
   }
 
