@@ -138,6 +138,11 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --highlight: var(--mwg-accent-soft);
   --textHighlight: var(--mwg-chip-bg);
 
+  /* Layered surfaces (consumed by _shared.scss): bright reading column + subtly
+     tinted side rails on the page bg (--light). Mirrors Obsidian's window/note. */
+  --reading-surface: var(--mwg-editor);
+  --rail-surface: var(--mwg-pane);
+
   --headerFont: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
   --titleFont: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
   --bodyFont: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -383,9 +388,13 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     color: var(--mwg-muted) !important;
     border-color: color-mix(in srgb, var(--mwg-muted) 30%, transparent) !important;
   }
-  /* inline body tags (no component class) get a leading # via CSS */
-  & article a.tag-link:not(.tag-c0):not(.tag-c1):not(.tag-c2):not(.tag-c3):not(.tag-c4)::before {
-    content: "#";
+  /* Leading "#" for tags rendered INSIDE the note body. Properties/infobox tags
+     live outside <article> and already carry their own "#" in the text, so this
+     never doubles them. !important + the article scope beat _tg.scss, which
+     strips the marker globally (content:"" !important; display:none). */
+  & article a.tag-link::before {
+    content: "#" !important;
+    display: inline-block !important;
     opacity: 0.6;
   }
   & a.tag-link:hover,
@@ -497,18 +506,58 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     border-radius: var(--mwg-radius) !important;
     box-shadow: none !important;
   }
-  & article .callout#{$not-cards}:is([data-callout="tip"], [data-callout="success"], [data-callout="check"]) { --cc: var(--mwg-callout-tip); }
-  & article .callout#{$not-cards}:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"]) { --cc: var(--mwg-callout-warning); }
-  & article .callout#{$not-cards}:is([data-callout="question"], [data-callout="help"], [data-callout="faq"]) { --cc: var(--mwg-callout-question); }
-  & article .callout#{$not-cards}:is([data-callout="danger"], [data-callout="failure"], [data-callout="error"], [data-callout="bug"]) { --cc: var(--mwg-callout-danger); }
-  & article .callout#{$not-cards}:is([data-callout="example"]) { --cc: var(--mwg-callout-example); }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="tip"],
+      [data-callout="success"],
+      [data-callout="check"]
+    ) {
+    --cc: var(--mwg-callout-tip);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="warning"],
+      [data-callout="caution"],
+      [data-callout="attention"]
+    ) {
+    --cc: var(--mwg-callout-warning);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="question"],
+      [data-callout="help"],
+      [data-callout="faq"]
+    ) {
+    --cc: var(--mwg-callout-question);
+  }
+  &
+    article
+    .callout#{$not-cards}:is(
+      [data-callout="danger"],
+      [data-callout="failure"],
+      [data-callout="error"],
+      [data-callout="bug"]
+    ) {
+    --cc: var(--mwg-callout-danger);
+  }
+  & article .callout#{$not-cards}:is([data-callout="example"]) {
+    --cc: var(--mwg-callout-example);
+  }
   /* title: mono uppercase small-caps in --cc (also target the <p> Quartz wraps it in) */
   & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title {
     text-align: left;
     border-bottom: none;
   }
   & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner,
-  & article .callout#{$not-cards}:not([data-callout="quote"]) > .callout-title .callout-title-inner p {
+  &
+    article
+    .callout#{$not-cards}:not([data-callout="quote"])
+    > .callout-title
+    .callout-title-inner
+    p {
     font-family: var(--mwg-font-mono) !important;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -858,7 +907,9 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
       transform: none;
     }
   }
-  :root[data-theme="glass"]:not(.no-anim) article > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
+  :root[data-theme="glass"]:not(.no-anim)
+    article
+    > :is(h2, h3, blockquote, table, .callout, ul, ol, pre) {
     animation: mwg-rise linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 32%;
@@ -1001,26 +1052,69 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
    grandchildren only, so nested light cards inside a dark hero keep their own colour).
    ========================================================================== */
 :root[data-theme="glass"] {
-  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(p, ul, ol, blockquote),
-  & .callout[data-callout="card"][data-callout-metadata*="dark"] > .callout-content > :is(ul, ol) li {
+  &
+    .callout[data-callout="card"][data-callout-metadata*="dark"]
+    > .callout-content
+    > :is(p, ul, ol, blockquote),
+  &
+    .callout[data-callout="card"][data-callout-metadata*="dark"]
+    > .callout-content
+    > :is(ul, ol)
+    li {
     color: var(--mwg-on-dark-muted);
   }
-  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(p, ul, ol, blockquote),
-  & .callout[data-callout="card"][data-callout-metadata*="accent"] > .callout-content > :is(ul, ol) li {
+  &
+    .callout[data-callout="card"][data-callout-metadata*="accent"]
+    > .callout-content
+    > :is(p, ul, ol, blockquote),
+  &
+    .callout[data-callout="card"][data-callout-metadata*="accent"]
+    > .callout-content
+    > :is(ul, ol)
+    li {
     color: var(--mwg-on-accent);
   }
 
   /* honor / channels / step are their OWN dark surfaces (not via `dark` metadata),
      so Quartz's `p{color:darkgray}` leaves their body text dark-on-dark = invisible
      in LIGHT mode. Re-assert on-dark text (these card styles never nest cards). */
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(p, li, td) {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    :is(p, li, td) {
     color: var(--mwg-on-dark-muted);
   }
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content :is(h1, h2, h3, h4, h5, h6) {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    :is(h1, h2, h3, h4, h5, h6) {
     color: var(--mwg-on-dark);
   }
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote,
-  & .callout[data-callout="card"]:is([data-callout-metadata*="honor"], [data-callout-metadata*="channels"], [data-callout-metadata~="step"]) .callout-content blockquote p {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    blockquote,
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="honor"],
+      [data-callout-metadata*="channels"],
+      [data-callout-metadata~="step"]
+    )
+    .callout-content
+    blockquote
+    p {
     color: var(--mwg-on-dark);
   }
 
@@ -1043,7 +1137,14 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   /* Skill command bar (and other dark card code bars) stay dark in BOTH modes;
      force the dark (light-coloured) shiki token palette so syntax is legible in
      light mode too — otherwise the light-theme tokens are dark-on-dark. */
-  & .callout[data-callout="card"]:is([data-callout-metadata*="skill"], [data-callout-metadata*="dark"], [data-callout-metadata*="honor"]) pre span {
+  &
+    .callout[data-callout="card"]:is(
+      [data-callout-metadata*="skill"],
+      [data-callout-metadata*="dark"],
+      [data-callout-metadata*="honor"]
+    )
+    pre
+    span {
     color: var(--shiki-dark) !important;
   }
 

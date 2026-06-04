@@ -42,6 +42,52 @@ if (localStorage.getItem(FAMILY_KEY) !== savedFamily) {
   localStorage.setItem(FAMILY_KEY, savedFamily)
 }
 
+// ---- Tag colours ----------------------------------------------------------
+// Quartz only assigns the tag-cN colour class to PROPERTY/infobox tags (via
+// Infobox.tsx). Inline tags in the note body get no class, so they all render in
+// the single accent colour. Mirror Infobox.tsx's exact map + hash here so a body
+// tag gets the SAME colour as the same tag in the properties box (e.g. #Cloud is
+// olive in both). KEEP IN SYNC with quartz/components/Infobox.tsx.
+const TAG_COLORS: Record<string, string> = {
+  gcp: "tag-c4",
+  aws: "tag-c2",
+  azure: "tag-c0",
+  databricks: "tag-c2",
+  dataengineering: "tag-c1",
+  data: "tag-c1",
+  analytics: "tag-c1",
+  exam: "tag-c2",
+  certification: "tag-c3",
+  sql: "tag-c0",
+  datawarehouse: "tag-c4",
+  index: "tag-c4",
+}
+function tagColorClass(tag: string): string {
+  const key = tag.toLowerCase()
+  if (TAG_COLORS[key]) return TAG_COLORS[key]
+  let h = 0
+  for (let i = 0; i < tag.length; i++) h = (h * 31 + tag.charCodeAt(i)) >>> 0
+  return `tag-c${h % 4}`
+}
+function tagNameFromLink(a: HTMLAnchorElement): string {
+  const href = a.getAttribute("href") ?? ""
+  let seg = href.split("#")[0].split("?")[0].replace(/\/+$/, "").split("/").pop() ?? ""
+  try {
+    seg = decodeURIComponent(seg)
+  } catch {
+    /* leave as-is */
+  }
+  if (seg && seg.toLowerCase() !== "tags") return seg
+  return (a.textContent ?? "").replace(/^#/, "").trim()
+}
+function colorizeTags() {
+  for (const a of document.querySelectorAll<HTMLAnchorElement>("a.tag-link")) {
+    if (/\btag-c[0-4]\b/.test(a.className)) continue // already coloured (properties)
+    const name = tagNameFromLink(a)
+    if (name) a.classList.add(tagColorClass(name))
+  }
+}
+
 const emitFamilyChangeEvent = (family: string) => {
   const event: CustomEventMap["themefamilychange"] = new CustomEvent("themefamilychange", {
     detail: { family },
@@ -50,6 +96,8 @@ const emitFamilyChangeEvent = (family: string) => {
 }
 
 document.addEventListener("nav", () => {
+  colorizeTags()
+
   const current = normalizeFamily(document.documentElement.getAttribute("data-theme"))
 
   for (const el of document.getElementsByClassName("theme-selector")) {

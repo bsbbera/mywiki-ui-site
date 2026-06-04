@@ -3,6 +3,8 @@
    Rule of thumb:  structure = global (here);  skin = [data-theme]-scoped.
    ========================================================================== */
 
+@use "../variables.scss" as *;
+
 body {
   background: var(--light);
 }
@@ -58,4 +60,42 @@ input:focus-visible,
 .page > #quartz-body {
   justify-content: start;
   padding: 0 2rem;
+}
+
+/* ---- Layered surfaces (matches the Obsidian app) -------------------------
+   Obsidian stacks three tones: window (page) < side rails < the bright note.
+   Quartz ships everything flat on --light, which reads dull next to the app.
+   Each theme bridges --reading-surface (note) and --rail-surface (sidebars);
+   we paint the centre column bright and tint the rails so the page gains the
+   same depth. Both fall back to --light, so any theme without the tokens is
+   unchanged. ------------------------------------------------------------- */
+.page > #quartz-body {
+  /* Flush panels like the Obsidian app — the default 40px column-gap left dark
+     page-coloured strips between the (now tinted) rails and the bright column. */
+  column-gap: 0;
+  /* The page FIELD is the rail tone (not the darkest bg-0). This grid container
+     spans the whole page, so every bit of unavoidable peek-through — the outer
+     padding, the sticky-sidebar notch at the top, the tracks below the fold —
+     is painted the SAME tone as the rails and never reads as a stark dark "gap".
+     The reading column floats on top as the one distinct surface, like the app. */
+  background: var(--rail-surface, var(--light));
+}
+.page > #quartz-body > .center {
+  background: var(--reading-surface, var(--light));
+  padding-inline: clamp(1rem, 3vw, 2.75rem);
+  /* hairline dividers where the column meets the rails (instead of a gap) */
+  border-inline: 1px solid color-mix(in srgb, var(--dark) 9%, transparent);
+}
+.page > #quartz-body > .sidebar {
+  background: var(--rail-surface, var(--light));
+}
+@media all and not ($desktop) {
+  /* On stacked layouts the rails sit inline with content — keep them flush so
+     they don't paint odd full-width bands. */
+  .page > #quartz-body > .sidebar {
+    background: transparent;
+  }
+  .page > #quartz-body > .center {
+    padding-inline: clamp(0.75rem, 4vw, 1.5rem);
+  }
 }
