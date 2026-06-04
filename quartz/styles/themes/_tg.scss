@@ -1,4 +1,3 @@
-
 // Card-system callout types to exclude from TG's blanket !important callout styling.
 $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-callout="infobox"]):not([data-callout="columns"]):not([data-callout="col"])';
 
@@ -24,8 +23,7 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --tg-t-fast: 100ms;
   --tg-t-med: 250ms;
   --tg-shadow-card:
-    0.3px 0.5px 0.7px hsla(41.6, 50%, 3%, 0.3),
-    0.8px 1.6px 2px -0.8px hsla(41.6, 50%, 3%, 0.3),
+    0.3px 0.5px 0.7px hsla(41.6, 50%, 3%, 0.3), 0.8px 1.6px 2px -0.8px hsla(41.6, 50%, 3%, 0.3),
     2.1px 4.1px 5.2px -1.7px hsla(41.6, 50%, 3%, 0.3),
     5px 10px 12.6px -2.5px hsla(41.6, 50%, 3%, 0.3);
 }
@@ -49,13 +47,12 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --tertiary: var(--tg-gold-hover);
   --tg-rule: var(--tg-surface-3);
   --tg-rule-soft: rgba(241, 196, 94, 0.18);
-  --tg-header-bg: rgba(241, 196, 94, 0.10);
+  --tg-header-bg: rgba(241, 196, 94, 0.1);
   --tg-selection: rgba(241, 196, 94, 0.25);
 }
 
 body {
-  background:
-    var(--light)
+  background: var(--light)
     /* subtle paper grain — low-opacity SVG noise tiles invisibly across the page */
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   background-attachment: fixed;
@@ -89,16 +86,29 @@ body {
   max-width: 100% !important;
 }
 /* On desktop, sidebars also shrink in wider presets so the reading column
-   actually gains width even when the viewport is constrained. */
+   actually gains width even when the viewport is constrained.
+   Every preset CAPS the centre track (matching the .center max-width above) and
+   the cluster is CENTRED — so on big/ultrawide monitors the extra space becomes
+   balanced gutters (the rail-tone field still fills them edge-to-edge) instead
+   of a sprawling reading column or a bright surface stranded beside the rails.
+   Rails are slimmed to 300px so the body stays the dominant column. */
 @media (min-width: 1200px) {
+  /* Centre the cluster; the full-width #quartz-body field shows in the gutters. */
+  .page > #quartz-body {
+    justify-content: center;
+  }
+  /* Default (no explicit preset) — match the 760px .center cap above. */
+  :root:not([data-reading-width]) .page > #quartz-body {
+    grid-template-columns: 300px minmax(0, 760px) 300px !important;
+  }
   :root[data-reading-width="narrow"] .page > #quartz-body {
-    grid-template-columns: 380px minmax(0, 720px) 380px !important;
+    grid-template-columns: 300px minmax(0, 720px) 300px !important;
   }
   :root[data-reading-width="normal"] .page > #quartz-body {
-    grid-template-columns: 380px minmax(0, 900px) 380px !important;
+    grid-template-columns: 300px minmax(0, 900px) 300px !important;
   }
   :root[data-reading-width="wide"] .page > #quartz-body {
-    grid-template-columns: 300px minmax(0, 1fr) 300px !important;
+    grid-template-columns: 300px minmax(0, 1100px) 300px !important;
   }
 
   /* "Full" mode: the left sidebar collapses into a horizontal top menu bar
@@ -583,11 +593,17 @@ a.tag-link::before,
     text-underline-offset: 2px;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--dark);
     font-family: var(--headerFont);
   }
-  h1, h2 {
+  h1,
+  h2 {
     letter-spacing: 0.02em;
   }
 
