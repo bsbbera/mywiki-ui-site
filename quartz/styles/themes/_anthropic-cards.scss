@@ -280,8 +280,10 @@ article .at-fs { font-size: var(--fs, 1em); }
 :is(.callout[data-callout="card"][data-callout-metadata*="skill"],
     body.at-card-skill .callout[data-callout="card"]:not([data-callout-metadata])) pre {
     position: relative;
-    background: var(--at-dark-surface) !important;
-    border: 1px solid var(--at-on-dark-border);
+    /* deep code surface (matches every other code block) so the command bar reads
+       as a true dark code panel, not just the card's brown dark-surface. */
+    background: var(--at-code-surface) !important;
+    border: 1px solid var(--at-code-surface-border);
     border-radius: var(--radius-m);
     padding: 15px 104px 15px 18px;
     margin: 6px 0 18px;

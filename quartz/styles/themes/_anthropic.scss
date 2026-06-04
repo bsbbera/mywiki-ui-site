@@ -17,6 +17,8 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
 :root[data-theme="atelier"] {
   --at-accent: #d8552f;
   --at-accent-2: #b8442a;
+  --at-gold: #b07d20;
+  --at-danger: #c0392b;
   --at-bg-0: #ece3d0;
   --at-pane: #efe7d6;
   --at-pane-2: #f6f1e6;
@@ -60,6 +62,15 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   --at-accent-line: color-mix(in srgb, var(--at-accent) 55%, transparent);
   --at-code-bg: color-mix(in srgb, var(--at-accent) 12%, transparent);
   --at-chip-bg: color-mix(in srgb, var(--at-accent) 14%, transparent);
+
+  /* CODE BLOCKS — warm dark ink in BOTH modes (mirrors the Obsidian theme) so the
+     syntax highlight pops; deeper than the dark page so it reads as a recessed
+     terminal panel. Because the surface is always dark, code spans are forced to the
+     dark (light-coloured) shiki palette below — see `& pre span`. */
+  --at-code-surface: #14100a;
+  --at-code-surface-border: rgba(245, 239, 225, 0.12);
+  --at-code-text: #ece3d0;
+  --at-code-line-nr: rgba(211, 199, 175, 0.45);
   --at-border: color-mix(in srgb, var(--at-text-strong) 10%, transparent);
   --at-border-2: color-mix(in srgb, var(--at-text-strong) 16%, transparent);
   --at-border-strong: color-mix(in srgb, var(--at-text-strong) 26%, transparent);
@@ -251,9 +262,18 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
       font-family: var(--codeFont);
     }
     & pre {
-      background: var(--at-pane-2);
-      border: 1px solid var(--at-border);
+      background: var(--at-code-surface);
+      border: 1px solid var(--at-code-surface-border);
       border-radius: var(--at-radius);
+      color: var(--at-code-text);
+    }
+    /* Surface is dark in BOTH modes, so force the dark (light-coloured) shiki token
+       palette — otherwise the light-theme tokens render dark-on-dark in light mode. */
+    & pre span {
+      color: var(--shiki-dark) !important;
+    }
+    & pre > [data-line]::before {
+      color: var(--at-code-line-nr);
     }
 
     /* ---- tables: gradient header, rounded corners, hover rows ----------- */

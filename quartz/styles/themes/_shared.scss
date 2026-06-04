@@ -12,10 +12,29 @@ body {
    applied to every theme so the preference is consistent. ------------------ */
 :root {
   --mwg-content-size: 0.9rem;
+  --mwg-line-height: 1.72;
+  /* heading scale — defaults match base.scss so an untouched site looks identical */
+  --mwg-h1-size: 1.75rem;
+  --mwg-h2-size: 1.4rem;
+  --mwg-h3-size: 1.12rem;
 }
 article {
   font-size: var(--mwg-content-size, 0.9rem);
-  line-height: 1.72;
+  line-height: var(--mwg-line-height, 1.72);
+}
+/* Typography sliders in the ThemeCustomizer drive these (global, both themes). */
+article p,
+article li {
+  line-height: var(--mwg-line-height, 1.72);
+}
+article h1 {
+  font-size: var(--mwg-h1-size, 1.75rem);
+}
+article h2 {
+  font-size: var(--mwg-h2-size, 1.4rem);
+}
+article h3 {
+  font-size: var(--mwg-h3-size, 1.12rem);
 }
 
 /* ---- Visible keyboard focus ring on every interactive element (a11y) ----- */

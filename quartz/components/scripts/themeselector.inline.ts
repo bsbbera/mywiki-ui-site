@@ -1,6 +1,12 @@
 const DEFAULT_FAMILY = "glass"
 const FAMILY_KEY = "theme-family"
 
+// Selectable theme families. Anything else (e.g. a removed theme still stored in a
+// returning visitor's localStorage, like the retired "tg") falls back to the default.
+const VALID_FAMILIES = new Set(["glass", "atelier"])
+const normalizeFamily = (family: string | null): string =>
+  family && VALID_FAMILIES.has(family) ? family : DEFAULT_FAMILY
+
 // Fonts required by themes that need web fonts. A CSS @import inside the SCSS
 // bundle would be emitted mid-file and ignored, so we inject a <link> instead.
 const FONT_HREFS: Record<string, string> = {
@@ -29,8 +35,12 @@ function applyFamily(family: string) {
 }
 
 // Run before paint to avoid a flash of the wrong theme.
-const savedFamily = localStorage.getItem(FAMILY_KEY) ?? DEFAULT_FAMILY
+const savedFamily = normalizeFamily(localStorage.getItem(FAMILY_KEY))
 applyFamily(savedFamily)
+// Heal a stale/removed value so the rest of the app reads a valid family.
+if (localStorage.getItem(FAMILY_KEY) !== savedFamily) {
+  localStorage.setItem(FAMILY_KEY, savedFamily)
+}
 
 const emitFamilyChangeEvent = (family: string) => {
   const event: CustomEventMap["themefamilychange"] = new CustomEvent("themefamilychange", {
@@ -40,7 +50,7 @@ const emitFamilyChangeEvent = (family: string) => {
 }
 
 document.addEventListener("nav", () => {
-  const current = document.documentElement.getAttribute("data-theme") ?? DEFAULT_FAMILY
+  const current = normalizeFamily(document.documentElement.getAttribute("data-theme"))
 
   for (const el of document.getElementsByClassName("theme-selector")) {
     const select = el as HTMLSelectElement

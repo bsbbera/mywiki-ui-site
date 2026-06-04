@@ -9,7 +9,6 @@ import { classNames } from "../util/lang"
 export const THEMES: { value: string; label: string }[] = [
   { value: "glass", label: "MyWiki Glass" },
   { value: "atelier", label: "Atelier" },
-  { value: "tg", label: "Tolkien Gateway" },
 ]
 
 const ThemeSelector: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {

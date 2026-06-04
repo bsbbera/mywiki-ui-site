@@ -2,11 +2,55 @@ const DEFAULT_FAMILY = "glass"
 const FAMILY_KEY = "theme-family"
 const CUSTOM_KEY = "theme-custom"
 const NOANIM_KEY = "theme-no-anim"
-const FONTSIZE_KEY = "theme-fontsize"
-const DEFAULT_FONTSIZE = "0.9rem"
+const GLOBAL = "_global" // fonts + sizes apply to every family
 const HEX6 = /^#[0-9a-fA-F]{6}$/
 
 type Overrides = Record<string, Record<string, string>>
+
+// Web fonts (subset of the font menus) lazy-loaded from Google Fonts on use.
+const GOOGLE_FONTS: Record<string, string> = {
+  Inter: "Inter:wght@400;500;600;700",
+  Roboto: "Roboto:wght@400;500;700",
+  "Open Sans": "Open+Sans:wght@400;600;700",
+  Lato: "Lato:wght@400;700",
+  Montserrat: "Montserrat:wght@400;500;600;700",
+  Poppins: "Poppins:wght@400;500;600",
+  Nunito: "Nunito:wght@400;600;700",
+  "Source Sans 3": "Source+Sans+3:wght@400;600;700",
+  "Work Sans": "Work+Sans:wght@400;500;600",
+  "Fira Sans": "Fira+Sans:wght@400;500;700",
+  Ubuntu: "Ubuntu:wght@400;500;700",
+  "Noto Sans": "Noto+Sans:wght@400;600;700",
+  Newsreader:
+    "Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500",
+  "Source Serif 4": "Source+Serif+4:wght@400;600;700",
+  Merriweather: "Merriweather:wght@400;700",
+  Lora: "Lora:wght@400;500;600",
+  "Playfair Display": "Playfair+Display:wght@400;600;700",
+  "JetBrains Mono": "JetBrains+Mono:wght@400;500;600",
+  "Fira Code": "Fira+Code:wght@400;500",
+  "Source Code Pro": "Source+Code+Pro:wght@400;500",
+  "IBM Plex Mono": "IBM+Plex+Mono:wght@400;500",
+  "Roboto Mono": "Roboto+Mono:wght@400;500",
+}
+
+function primaryFamily(value: string): string {
+  const m = value.match(/^\s*['"]?([^'",]+)/)
+  return m ? m[1].trim() : ""
+}
+
+function ensureFont(value: string) {
+  const name = primaryFamily(value)
+  const spec = GOOGLE_FONTS[name]
+  if (!spec) return
+  const id = `tc-font-${name.replace(/\s+/g, "-")}`
+  if (document.getElementById(id)) return
+  const link = document.createElement("link")
+  link.id = id
+  link.rel = "stylesheet"
+  link.href = `https://fonts.googleapis.com/css2?family=${spec}&display=swap`
+  document.head.appendChild(link)
+}
 
 function readOverrides(): Overrides {
   try {
@@ -28,7 +72,7 @@ function currentFamily(): string {
   )
 }
 
-// Remove every custom prop we might have set, then apply the active family's.
+// Clear every custom prop we might have set, then re-apply globals + active family.
 function applyOverrides(family: string) {
   const all = readOverrides()
   const root = document.documentElement
@@ -37,9 +81,14 @@ function applyOverrides(family: string) {
       root.style.removeProperty(varName)
     }
   }
-  for (const [varName, value] of Object.entries(all[family] ?? {})) {
-    root.style.setProperty(varName, value)
+  const apply = (group?: Record<string, string>) => {
+    for (const [varName, value] of Object.entries(group ?? {})) {
+      root.style.setProperty(varName, value)
+      if (varName.endsWith("Font")) ensureFont(value)
+    }
   }
+  apply(all[GLOBAL]) // fonts + sizes first (theme-agnostic)
+  apply(all[family]) // then the active family's colors
 }
 
 function applyAnimations() {
@@ -47,14 +96,8 @@ function applyAnimations() {
   document.documentElement.classList.toggle("no-anim", off)
 }
 
-function applyFontSize() {
-  const size = localStorage.getItem(FONTSIZE_KEY) ?? DEFAULT_FONTSIZE
-  document.documentElement.style.setProperty("--mwg-content-size", size)
-}
-
 // ---- run before paint: restore persisted look ----------------------------
 applyAnimations()
-applyFontSize()
 applyOverrides(currentFamily())
 
 function emitCustomChange(family: string) {
@@ -64,8 +107,15 @@ function emitCustomChange(family: string) {
   document.dispatchEvent(event)
 }
 
+function setGlobal(varName: string, value: string) {
+  const o = readOverrides()
+  o[GLOBAL] = { ...(o[GLOBAL] ?? {}), [varName]: value }
+  writeOverrides(o)
+  document.documentElement.style.setProperty(varName, value)
+}
+
 function syncControls(panel: HTMLElement, family: string) {
-  // show only the active family's group
+  // show only the active family's color group
   for (const group of panel.querySelectorAll<HTMLElement>(".tc-group")) {
     group.style.display = group.dataset.family === family ? "" : "none"
   }
@@ -74,20 +124,36 @@ function syncControls(panel: HTMLElement, family: string) {
     .label
   if (nameEl && label) nameEl.textContent = label
 
-  const overrides = readOverrides()[family] ?? {}
+  const overrides = readOverrides()
+  const famColors = overrides[family] ?? {}
+  const globals = overrides[GLOBAL] ?? {}
+  const computed = getComputedStyle(document.documentElement)
+
   for (const input of panel.querySelectorAll<HTMLInputElement>(".tc-color")) {
     const varName = input.dataset.var!
-    const stored = overrides[varName]
-    const value =
-      stored ?? getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+    const value = famColors[varName] ?? computed.getPropertyValue(varName).trim()
     if (HEX6.test(value)) input.value = value
+  }
+
+  for (const sel of panel.querySelectorAll<HTMLSelectElement>(".tc-font")) {
+    const varName = sel.dataset.var!
+    const value = (globals[varName] ?? computed.getPropertyValue(varName).trim()).trim()
+    const match = [...sel.options].find((o) => o.value.trim() === value)
+    if (match) sel.value = match.value
+  }
+
+  for (const slider of panel.querySelectorAll<HTMLInputElement>(".tc-slider")) {
+    const varName = slider.dataset.var!
+    const unit = slider.dataset.unit ?? ""
+    const raw = (globals[varName] ?? computed.getPropertyValue(varName).trim()).trim()
+    const num = parseFloat(raw)
+    if (!Number.isNaN(num)) slider.value = String(num)
+    const valEl = slider.parentElement?.querySelector<HTMLElement>(".tc-slider-val")
+    if (valEl) valEl.textContent = `${slider.value}${unit}`
   }
 
   const anim = panel.querySelector<HTMLInputElement>(".tc-anim")
   if (anim) anim.checked = localStorage.getItem(NOANIM_KEY) !== "1"
-
-  const fontsize = panel.querySelector<HTMLSelectElement>(".tc-fontsize")
-  if (fontsize) fontsize.value = localStorage.getItem(FONTSIZE_KEY) ?? DEFAULT_FONTSIZE
 }
 
 document.addEventListener("nav", () => {
@@ -112,7 +178,7 @@ document.addEventListener("nav", () => {
   document.addEventListener("click", onDocClick)
   window.addCleanup(() => document.removeEventListener("click", onDocClick))
 
-  // colour pickers
+  // colour pickers (per-family)
   for (const input of panel.querySelectorAll<HTMLInputElement>(".tc-color")) {
     const onInput = () => {
       const family = currentFamily()
@@ -127,6 +193,32 @@ document.addEventListener("nav", () => {
     window.addCleanup(() => input.removeEventListener("input", onInput))
   }
 
+  // font pickers (global)
+  for (const sel of panel.querySelectorAll<HTMLSelectElement>(".tc-font")) {
+    const onChange = () => {
+      const varName = sel.dataset.var!
+      ensureFont(sel.value)
+      setGlobal(varName, sel.value)
+      emitCustomChange(currentFamily())
+    }
+    sel.addEventListener("change", onChange)
+    window.addCleanup(() => sel.removeEventListener("change", onChange))
+  }
+
+  // size sliders (global)
+  for (const slider of panel.querySelectorAll<HTMLInputElement>(".tc-slider")) {
+    const onInput = () => {
+      const varName = slider.dataset.var!
+      const unit = slider.dataset.unit ?? ""
+      const value = `${slider.value}${unit}`
+      setGlobal(varName, value)
+      const valEl = slider.parentElement?.querySelector<HTMLElement>(".tc-slider-val")
+      if (valEl) valEl.textContent = value
+    }
+    slider.addEventListener("input", onInput)
+    window.addCleanup(() => slider.removeEventListener("input", onInput))
+  }
+
   // animations toggle
   const anim = panel.querySelector<HTMLInputElement>(".tc-anim")
   if (anim) {
@@ -138,24 +230,19 @@ document.addEventListener("nav", () => {
     window.addCleanup(() => anim.removeEventListener("change", onAnim))
   }
 
-  // text size
-  const fontsize = panel.querySelector<HTMLSelectElement>(".tc-fontsize")
-  if (fontsize) {
-    const onSize = () => {
-      localStorage.setItem(FONTSIZE_KEY, fontsize.value)
-      applyFontSize()
-    }
-    fontsize.addEventListener("change", onSize)
-    window.addCleanup(() => fontsize.removeEventListener("change", onSize))
-  }
-
-  // reset active family
+  // reset active family colors + the shared font/size globals
   const reset = panel.querySelector<HTMLButtonElement>(".tc-reset")
   if (reset) {
     const onReset = () => {
       const family = currentFamily()
       const overrides = readOverrides()
+      const root = document.documentElement
+      // Remove the inline props FIRST — once deleted from storage, applyOverrides
+      // can no longer find them to clear, so they'd otherwise stick.
+      for (const k of Object.keys(overrides[family] ?? {})) root.style.removeProperty(k)
+      for (const k of Object.keys(overrides[GLOBAL] ?? {})) root.style.removeProperty(k)
       delete overrides[family]
+      delete overrides[GLOBAL]
       writeOverrides(overrides)
       applyOverrides(family)
       syncControls(panel, family)

@@ -195,9 +195,9 @@ title: MyWiki
 publish: true
 ---
 
-> *"All that is gold does not glitter, not all those who wander are lost."*
+> *"The palest ink is better than the best memory."*
 
-Welcome to **MyWiki** — a personal knowledge garden built with [Quartz](https://quartz.jzhao.xyz) and styled after the [Tolkien Gateway](https://tolkiengateway.net).
+Welcome to **MyWiki** — a personal knowledge garden built with [Quartz](https://quartz.jzhao.xyz), with switchable **MyWiki Glass** and **Atelier** themes (pick one from the sidebar).
 
 ## Browse
 

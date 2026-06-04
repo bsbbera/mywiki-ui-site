@@ -28,6 +28,8 @@
     left: 1rem;
     width: 16rem;
     max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 11rem);
+    overflow-y: auto;
     padding: 0.9rem 1rem;
     border-radius: 10px;
     border: 1px solid var(--lightgray);
@@ -70,21 +72,49 @@
     cursor: pointer;
   }
 
-  & .tc-fontsize {
+  & .tc-section-label {
+    margin: 0.8rem 0 0.3rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--lightgray);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+  }
+  & .tc-section-label:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  & .tc-font {
     cursor: pointer;
+    max-width: 9rem;
     padding: 0.15rem 0.4rem;
     border-radius: 6px;
     border: 1px solid var(--lightgray);
     background: var(--light);
     color: var(--darkgray);
     font-family: var(--bodyFont);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
-  & .tc-size-row {
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid var(--lightgray);
+  & .tc-slider-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  & .tc-slider {
+    width: 6.5rem;
+    cursor: pointer;
+    accent-color: var(--secondary);
+  }
+  & .tc-slider-val {
+    min-width: 2.8rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--gray);
+    font-size: 0.75rem;
   }
 
   & .tc-anim-row {
