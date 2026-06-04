@@ -252,13 +252,16 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
       color: var(--at-accent-2);
     }
 
-    /* ---- inline code as a pill ------------------------------------------ */
+    /* ---- inline code as a DARK pill (matches the code blocks) ------------
+       Light coral on the deep code surface, legible in both modes; the subtle
+       border keeps it visible on the near-black dark-mode page too. */
     & :not(pre) > code {
-      background: var(--at-code-bg);
-      color: var(--at-code-fg);
+      background: var(--at-code-surface);
+      color: #f0a07f;
+      border: 1px solid var(--at-code-surface-border);
       border-radius: 5px;
-      padding: 0.1em 0.36em;
-      font-size: 0.88em;
+      padding: 0.05em 0.36em;
+      font-size: 0.86em;
       font-family: var(--codeFont);
     }
     & pre {
