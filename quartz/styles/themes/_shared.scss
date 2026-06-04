@@ -50,9 +50,10 @@ input:focus-visible,
   border-radius: 4px;
 }
 
-/* ---- Layout: pull the whole page left (Medium / blog style) ---------------
-   Global so every theme shares the same layout — the sidebar hugs the viewport
-   edge instead of floating in centered whitespace. ------------------------- */
+/* ---- Layout ---------------------------------------------------------------
+   Full-bleed grid container (so the rail-tone field paints edge-to-edge), with
+   the column cluster centred and capped on large screens (see the $desktop block
+   below). ------------------------------------------------------------------- */
 .page {
   max-width: 100%;
   margin: 0;
@@ -61,6 +62,10 @@ input:focus-visible,
   justify-content: start;
   padding: 0 2rem;
 }
+
+/* Wide-screen balance (cap reading width + centre the cluster) is owned by
+   _tg.scss alongside the reading-width toggle presets, which set the grid with
+   !important — see the `data-reading-width` block there. */
 
 /* ---- Layered surfaces (matches the Obsidian app) -------------------------
    Obsidian stacks three tones: window (page) < side rails < the bright note.
@@ -85,11 +90,36 @@ input:focus-visible,
   padding-inline: clamp(1rem, 3vw, 2.75rem);
   /* hairline dividers where the column meets the rails (instead of a gap) */
   border-inline: 1px solid color-mix(in srgb, var(--dark) 9%, transparent);
+  /* contain wide children so they can't push the page sideways */
+  overflow-x: clip;
+}
+/* Code blocks (and tables) must never widen the reading column: cap them to the
+   column width so their own overflow-x:auto scrolls long lines, instead of the
+   <pre> growing to its intrinsic line width and overflowing the page (visible at
+   narrow/tablet widths). The `figure` wrapper matters too — inside a card-callout
+   CSS grid it defaults to min-width:auto (= the code's min-content), which forces
+   the whole column wide; min-width:0 lets the track shrink so the pre scrolls. */
+.page > #quartz-body > .center :is(pre, figure, .table-container) {
+  max-width: 100%;
+  min-width: 0;
 }
 .page > #quartz-body > .sidebar {
   background: var(--rail-surface, var(--light));
 }
+/* Tablet: the base center track is `auto`, which grows to a code block's
+   min-content (a long line) and can't shrink — overflowing the page. Make it
+   minmax(0, 1fr) so it can shrink and the <pre>'s own overflow-x:auto scrolls. */
+@media all and ($tablet) {
+  .page > #quartz-body {
+    grid-template-columns: #{$sidePanelWidth} minmax(0, 1fr);
+  }
+}
 @media all and not ($desktop) {
+  /* Restore Quartz's tighter container padding on tablet/mobile — the 2rem above
+     is for the roomy desktop layout and would overflow narrow viewports. */
+  .page > #quartz-body {
+    padding: 0 1rem;
+  }
   /* On stacked layouts the rails sit inline with content — keep them flush so
      they don't paint odd full-width bands. */
   .page > #quartz-body > .sidebar {
