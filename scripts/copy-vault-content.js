@@ -95,6 +95,11 @@ function copyMarkdownWithPublishFlag(srcFile, destFile) {
     // If already has `publish: true`, leave content as-is
     if (/^publish:\s*true\s*$/m.test(frontmatter)) {
       newContent = normalized;
+    } else if (/^publish:/m.test(frontmatter)) {
+      // Replace any other publish value (e.g. false) — appending would
+      // create a duplicate YAML key and break the Quartz build
+      const newFm = frontmatter.replace(/^publish:.*$/m, "publish: true");
+      newContent = `---\n${newFm}\n---\n${body}`;
     } else {
       // Add publish: true to existing frontmatter
       const newFm = frontmatter + "\npublish: true";

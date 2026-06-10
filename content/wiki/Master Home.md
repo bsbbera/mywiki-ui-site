@@ -15,7 +15,6 @@ tags:
 cssclasses:
   - wide-page
 banner:
-publish: false
 publish: true
 ---
 

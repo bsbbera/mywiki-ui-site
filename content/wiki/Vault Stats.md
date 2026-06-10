@@ -11,7 +11,6 @@ tags:
   - dashboard
 cssclasses:
   - wide-page
-publish: false
 publish: true
 ---
 
