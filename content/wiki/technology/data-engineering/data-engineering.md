@@ -2,7 +2,7 @@
 title: Data Engineering
 Created:
   - 2026-04-29
-date modified: Thursday, April 30th 2026, 1:51:26 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - Data Engineering
   - DE
@@ -10,10 +10,10 @@ category: Computer Science
 tags:
   - DataEngineering
   - Overview
-banner:
+banner: https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=1400
 publish: true
-cssclasses:
-  - wide-page
+cssclass: wide-page
+maturity: evergreen
 ---
 
 > "A self that goes on changing is a self that goes on living."
@@ -21,41 +21,53 @@ cssclasses:
 
 ---
 
-## 🧭 Vault Navigation
+<span class="at-kicker">Data Engineering · Overview</span>
 
-> [!info] You are here
-> 🧠 [[Master Home]] · 🛠️ [[Technology Home]] · **📊 Data Engineering**
+# Data Engineering
+
+<p class="at-lead">
+Modern-day Data Engineering is a subset of software engineering that focuses on moving, storing, and structuring data for use in applications or reporting — the discipline of building reliable, scalable data infrastructure for analytical and operational use.
+</p>
+
+<span class="at-stat">7</span> sub-disciplines &nbsp;·&nbsp; <span class="at-stat">3</span> skill levels &nbsp;·&nbsp; <span class="at-mark">the discipline of building reliable, scalable data infrastructure for analytical and operational use</span>
+
+*📄 `$= dv.pages('"wiki/technology/data-engineering"').length` notes in this field · ⏱ `$= Math.max(1, Math.ceil(dv.current().file.size / 1100))` min read · 🕘 updated `$= dv.current().file.mtime.toFormat("MMM d, yyyy")`* <span class="mw-maturity is-evergreen">🌳 Evergreen</span>
+
+> [!tip] The DE Career Path
+> Data engineering is typically not an entry-level job — most start in adjacent roles (Data Analyst, BI Developer, Backend Engineer) and transition. The journey progresses from SQL and data modeling basics to advanced cloud, streaming, and infrastructure-as-code skills.
+
+<span class="at-kicker">What We Do</span>
+
+## What data engineers do
+
+> [!grid|cols2]
 >
-> **Sibling tech hubs:** 🧩 [[Software Engineering Home]] · 🗄️ [[Databases Home]] · ☁️ [[Cloud Home]] · 🧰 [[Tools Home]] · 📘 [[Guides Home]]
-
-Modern-day **Data Engineering** is a subset of software engineering that focuses on **moving, storing, and structuring data** for use in applications or reporting (source: Concepts/Data Engineering.md).
-
----
-
-> [!columns]
-> 
-> ## What data engineers do
-> 
-> - **Gather data requirements** — how long stored, how used, who/what needs access.
-> - **Maintain metadata** — technologies in use, documentation, security, source, ownership.
-> - **Ensure security + governance** — IAM, encryption, audit access.
-> - **Store data** in the right system — [[relational-database|relational]], [[non-relational-database|NoSQL]], [[data-storage|object/blob]].
-> - **Process data** — pipelines that extract, transform, enrich, summarize, load.
+> > [!card|section] Requirements
+> > **Gather data requirements** — how long stored, how used, who/what needs access.
 >
-> ---
-> ---
+> > [!card|section] Metadata
+> > **Maintain metadata** — technologies in use, documentation, security, source, ownership.
 >
-> ## Core skill set
-> 
-> | Level | Required |
-> | --- | --- |
-> | **Junior DE** | SQL (beginner), Data Modeling (beginner), Relational DB (beginner), Soft skills |
-> | **Data Engineer** | + Python/Java/Scala (intermediate), Indexing & query opt (intermediate), Batch processing (intermediate), Data Pipeline (beginner), Data Warehouse (beginner) |
-> | **Senior DE** | + Cloud (advanced), Infra-as-code, Stream processing (intermediate), NoSQL (advanced), all of the above at advanced level |
+> > [!card|section] Security
+> > **Ensure security + governance** — IAM, encryption, audit access.
+>
+> > [!card|section] Storage
+> > **Store data** in the right system — [[relational-database|relational]], [[non-relational-database|NoSQL]], [[data-storage|object/blob]].
+>
+> > [!card|section] Processing
+> > **Process data** — pipelines that extract, transform, enrich, summarize, load.
 
+<span class="at-kicker">Skill Progression</span>
 
+## Core skill set
 
-**Data engineering is typically not an entry-level job** — most start in adjacent roles (Data Analyst, BI Developer, Backend Engineer) and transition. See [[faq#how-can-i-transition-into-data-engineering|How to transition]].
+| Level | Required |
+| --- | --- |
+| **Junior DE** | SQL (beginner), Data Modeling (beginner), Relational DB (beginner), Soft skills |
+| **Data Engineer** | + Python/Java/Scala (intermediate), Indexing & query opt (intermediate), Batch processing (intermediate), Data Pipeline (beginner), Data Warehouse (beginner) |
+| **Senior DE** | + Cloud (advanced), Infra-as-code, Stream processing (intermediate), NoSQL (advanced), all of the above at advanced level |
+
+<span class="at-kicker">Role Distinctions</span>
 
 ## How DE differs from related roles
 
@@ -70,6 +82,8 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 | **Data Analyst** | SQL + reports + dashboards; consumer of DE work |
 | **Data Scientist** | Research, in-depth analysis, ML models |
 
+<span class="at-kicker">The Stack</span>
+
 ## The data engineering stack
 
 ```
@@ -83,29 +97,61 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 [Pub/Sub / Kafka]
 ```
 
+<span class="at-kicker">Wiki Areas</span>
+
 ## Areas covered in this wiki
 
-- **[[data-architecture|Data Architecture]]** — patterns: lake, warehouse, mart, mesh, lambda, kappa, medallion.
-- **[[data-ingestion|Data Ingestion]]** — full load, delta load, CDC.
-- **[[data-management|Data Management]]** — catalog, governance, semantic + metrics layers.
-- **[[data-modeling|Data Modeling]]** — relational, dimensional, vault, OBT, activity schema.
-- **[[data-processing|Data Processing]]** — batch, stream, OLTP, OLAP, HTAP, orchestration.
-- **[[data-storage|Data Storage]]** — relational, NoSQL, graph, columnar, in-memory, time-series.
-- **Software Engineering** — CAP, sharding, scaling, indexing, idempotence, patterns.
+> [!grid|cols3]
+>
+> > [!card|section] [[data-architecture|Data Architecture]]
+> > Patterns: lake, warehouse, mart, mesh, lambda, kappa, medallion.
+>
+> > [!card|section] [[data-ingestion|Data Ingestion]]
+> > Full load, delta load, CDC.
+>
+> > [!card|section] [[data-management|Data Management]]
+> > Catalog, governance, semantic + metrics layers.
+>
+> > [!card|section] [[data-modeling|Data Modeling]]
+> > Relational, dimensional, vault, OBT, activity schema.
+>
+> > [!card|section] [[data-processing|Data Processing]]
+> > Batch, stream, OLTP, OLAP, HTAP, orchestration.
+>
+> > [!card|section] [[data-storage|Data Storage]]
+> > Relational, NoSQL, graph, columnar, in-memory, time-series.
+>
+> > [!card|section] Software Engineering
+> > CAP, sharding, scaling, indexing, idempotence, patterns.
 
 ## Cross-platform learning paths
 
-- [[../cloud/gcp/foundations/google-cloud-platform|Google Cloud Platform]] — full GCP analytics stack
-- [[AWS|Amazon Web Services]] — AWS data tools
-- [[../cloud/azure/azure|Microsoft Azure]] — Azure data services
-- [[../cloud/databricks/databricks|Databricks]] — multi-cloud lakehouse
-- [[../databases/acid-properties|ACID Properties]] + [[../databases/database-normalization|Normalization]] — DBMS theory
+> [!grid|cols3]
+>
+> > [!card|section] [[../cloud/gcp/foundations/google-cloud-platform|Google Cloud Platform]]
+> > Full GCP analytics stack.
+>
+> > [!card|section] [AWS](AWS)
+> > AWS data tools.
+>
+> > [!card|section] [[../cloud/azure/azure|Microsoft Azure]]
+> > Azure data services.
+>
+> > [!card|section] [[../cloud/databricks/databricks|Databricks]]
+> > Multi-cloud lakehouse.
+>
+> > [!card|section] [[../databases/acid-properties|ACID Properties]]
+> > + [[../databases/database-normalization|Normalization]] — DBMS theory.
+
+<span class="at-kicker">Context</span>
 
 ## Interesting Facts
 
 - The job title "Data Engineer" exploded in popularity around **2014–2016** as cloud warehouses (Redshift, BigQuery) made big-data analytics accessible.
 - The Apache Beam / Dataflow team coined "**Beam = Batch + Stream**" — capturing how DE work converged.
 - **dbt** (created in 2016) made *analytics engineering* a recognized role between DE and DA.
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview Questions
 
@@ -115,7 +161,7 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 4. **OLTP** vs **OLAP** — fundamental differences.
 5. What does a senior DE do that a junior doesn't?
 
----
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -135,5 +181,3 @@ Modern-day **Data Engineering** is a subset of software engineering that focuses
 >
 >> [!card] Books
 >> [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]], [[../../books/designing-data-intensive-applications|Designing Data-Intensive Applications]]
-
-

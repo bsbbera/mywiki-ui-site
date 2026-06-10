@@ -2,7 +2,7 @@
 title: Normalization (Data Modeling)
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - Database Normalization
   - Data Normalization
@@ -11,8 +11,9 @@ tags:
   - DataEngineering
   - Modeling
   - OLTP
-banner:
+banner: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1400
 publish: true
+cssclass: wide-page
 ---
 
 > "Be like a postage stamp. Stick to it until you get there."
@@ -20,35 +21,79 @@ publish: true
 
 ---
 
-**Normalization** is the process of organizing data in a database to **reduce redundancy** and **improve data integrity**, making the database design simpler, faster, and more accurate. Since inserts/updates/deletes occur rapidly in [[../data-processing/online-transaction-processing|OLTP]] systems, normalization is particularly important for those workloads (source: Concepts/Data Modeling/Normalization.md).
+<span class="at-kicker">Data Modeling · Design Principle</span>
 
-> For **the full theoretical treatment** — anomalies, normal forms 1NF → BCNF → 5NF, formal definitions — see the canonical page: [[../../databases/database-normalization|Database Normalization (DBMS theory)]].
+# Normalization
+
+<p class="at-lead">
+Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. By splitting wide tables into multiple narrow tables linked via foreign keys, every fact is stored exactly once — essential for OLTP workloads with rapid inserts, updates, and deletes.
+</p>
+
+<span class="at-stat">1NF</span> to 5NF &nbsp;·&nbsp; <span class="at-stat">Zero</span> redundancy goal &nbsp;·&nbsp; <span class="at-mark">eliminate redundancy through progressive normal forms</span>
+
+> [!tip] When to Normalize
+> Normalize for OLTP transactional systems where write-heavy workloads need data integrity. Take a wide table mixing data about multiple entities, split it into narrow tables each holding facts about exactly one entity, link them via foreign keys. The result: every fact stored exactly once.
+
+<span class="at-kicker">Core Concept</span>
 
 ## In one paragraph
 
 Take a wide table that mixes data about multiple entities; **split** it into multiple narrow tables, each holding facts about exactly one entity; **link** them via foreign keys. The result: every fact is stored exactly once.
 
+> For **the full theoretical treatment** — anomalies, normal forms 1NF → BCNF → 5NF, formal definitions — see the canonical page: [[../../databases/database-normalization|Database Normalization (DBMS theory)]].
+
+<span class="at-kicker">Process</span>
+
 ## Steps
 
 (source: Concepts/Data Modeling/Normalization.md)
 
-1. Divide data into tables based on relationships.
-2. Each table contains only **related** data.
-3. Each column has a **specific purpose** (single piece of information).
-4. Avoid **repeating groups** of information.
+> [!grid|cols2]
+>
+> > [!card|section] 1. Divide by Relationships
+> > Divide data into tables based on relationships.
+>
+> > [!card|section] 2. Related Data Only
+> > Each table contains only **related** data.
+>
+> > [!card|section] 3. Specific Purpose
+> > Each column has a **specific purpose** (single piece of information).
+>
+> > [!card|section] 4. No Repeating Groups
+> > Avoid **repeating groups** of information.
+
+<span class="at-kicker">Trade-offs</span>
 
 ## Advantages
 
-- Minimized redundancy and null values.
-- More **compact** database structure.
-- **Simpler** queries (smaller, focused tables).
-- **Faster** searching, sorting, indexing.
-- Better **integrity** (one place to update).
+> [!grid|cols2]
+>
+> > [!card|section] Reduced Redundancy
+> > Minimized redundancy and null values.
+>
+> > [!card|section] Compact Structure
+> > More **compact** database structure.
+>
+> > [!card|section] Simpler Queries
+> > **Simpler** queries (smaller, focused tables).
+>
+> > [!card|section] Faster Operations
+> > **Faster** searching, sorting, indexing.
+>
+> > [!card|section] Better Integrity
+> > Better **integrity** (one place to update).
 
 ## Disadvantages
 
-- **Complex queries** can be slower because of more joins.
-- Less suited for analytical / read-heavy workloads → [[denormalization]] wins there.
+> [!grid|cols2]
+>
+> > [!card|section] Join Overhead
+> > **Complex queries** can be slower because of more joins.
+>
+> > [!card|section] OLAP Mismatch
+> > Less suited for analytical / read-heavy workloads → [[denormalization]] wins there.
+
+<span class="at-kicker">Workloads</span>
 
 ## Where it fits in the bigger picture
 
@@ -59,7 +104,9 @@ Take a wide table that mixes data about multiple entities; **split** it into mul
 | **Document store** | Embed (no formal NF) |
 | **Wide-column / KV** | Skip relational rules entirely |
 
-## Quick reference (linking to DBMS page)
+<span class="at-kicker">Normal Forms</span>
+
+## Quick reference
 
 | NF | Rule |
 | --- | --- |
@@ -72,11 +119,15 @@ Take a wide table that mixes data about multiple entities; **split** it into mul
 
 Full examples and explanations: [[../../databases/database-normalization|Database Normalization]].
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. Walk through 1NF → 3NF with a concrete example.
 2. Why do data warehouses **deliberately denormalize**?
 3. **Normalization** vs **denormalization** — workload-driven choice.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -96,4 +147,3 @@ Full examples and explanations: [[../../databases/database-normalization|Databas
 >
 >> [!card] People
 >> [[../../../people/edgar-f-codd|Edgar F. Codd]]
-

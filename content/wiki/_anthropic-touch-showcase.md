@@ -2,10 +2,10 @@
 cssclass: wide-page
 tags:
   - index
-date modified: Wednesday, June 3rd 2026, 12:13:54 am
+date modified: Friday, June 5th 2026, 4:34:29 pm
 publish: true
 ---
-
+ 
 # Anthropic Touch — UI showcase
 
 > [!info] Dev/test note
@@ -420,3 +420,20 @@ ratio. Columns hold normal note content (headings, lists, callouts) — no card 
 >> [!col]
 >> ### C
 >> Equal width.
+
+
+### Code *Block*
+
+
+```text
+I am Subhadip
+```
+
+```python
+print(Hello)
+```
+
+```sql
+SELECT *
+```
+

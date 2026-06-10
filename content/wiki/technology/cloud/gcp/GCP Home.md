@@ -2,7 +2,7 @@
 title: Google Cloud Platform
 Created:
   - 2026-04-30
-date modified: 2026-05-09
+date modified: Thursday, June 4th 2026, 6:00:00 pm
 aliases:
   - Google Cloud Platform
   - GCP
@@ -18,7 +18,7 @@ cssclasses:
 
 # ☁️ Google Cloud Platform
 
-> Compute, storage, databases, and the BigQuery / Dataflow analytics ecosystem used to build modern data platforms on **GCP**.
+> The complete Google Cloud ecosystem: compute, storage, databases, analytics, AI/ML, networking, security, DevOps, and operations — covering **all GCP products**.
 
 ## 🧭 Vault Navigation
 
@@ -36,6 +36,11 @@ const subs = [
   { icon: "💾", name: "Storage",        path: "wiki/technology/cloud/gcp/storage" },
   { icon: "🗄️", name: "Databases",      path: "wiki/technology/cloud/gcp/databases" },
   { icon: "📊", name: "Analytics",      path: "wiki/technology/cloud/gcp/analytics" },
+  { icon: "🤖", name: "AI & ML",        path: "wiki/technology/cloud/gcp/ai-ml" },
+  { icon: "🌐", name: "Networking",     path: "wiki/technology/cloud/gcp/networking" },
+  { icon: "🔒", name: "Security",       path: "wiki/technology/cloud/gcp/security" },
+  { icon: "🚀", name: "DevOps",         path: "wiki/technology/cloud/gcp/devops" },
+  { icon: "📡", name: "Operations",     path: "wiki/technology/cloud/gcp/operations" },
   { icon: "🎓", name: "Certifications", path: "wiki/technology/cloud/gcp/certifications" },
 ];
 dv.table(
@@ -69,7 +74,7 @@ dv.table(
 > [!grid]
 >
 > > [!card] 🗄️ Databases
-> > Cloud SQL, Spanner, Bigtable, Datastore, Memorystore.
+> > Cloud SQL, Spanner, Bigtable, Firestore, AlloyDB, Memorystore.
 > > ```dataviewjs
 > > dv.list(dv.pages('"wiki/technology/cloud/gcp/databases"').sort(p => p.file.name).map(p => p.file.link))
 > > ```
@@ -78,6 +83,40 @@ dv.table(
 > > BigQuery, Dataflow, Pub/Sub, Data Catalog, Datafusion.
 > > ```dataviewjs
 > > dv.list(dv.pages('"wiki/technology/cloud/gcp/analytics"').sort(p => p.file.name).map(p => p.file.link))
+> > ```
+>
+> > [!card] 🤖 AI & ML
+> > Vertex AI, Gemini, Document AI, Vision, Speech, Dialogflow.
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/gcp/ai-ml"').sort(p => p.file.name).map(p => p.file.link))
+> > ```
+
+> [!grid]
+>
+> > [!card] 🌐 Networking
+> > VPC, Load Balancing, Cloud CDN, DNS, NAT, Armor, Interconnect.
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/gcp/networking"').sort(p => p.file.name).map(p => p.file.link))
+> > ```
+>
+> > [!card] 🔒 Security
+> > IAM, Secret Manager, KMS, SCC, Cloud Identity, Binary Authorization.
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/gcp/security"').sort(p => p.file.name).map(p => p.file.link))
+> > ```
+>
+> > [!card] 🚀 DevOps
+> > Cloud Build, Artifact Registry, Cloud Deploy, Apigee, Eventarc.
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/gcp/devops"').sort(p => p.file.name).map(p => p.file.link))
+> > ```
+
+> [!grid]
+>
+> > [!card] 📡 Operations
+> > Cloud Monitoring, Logging, Trace, Profiler, Error Reporting.
+> > ```dataviewjs
+> > dv.list(dv.pages('"wiki/technology/cloud/gcp/operations"').sort(p => p.file.name).map(p => p.file.link))
 > > ```
 >
 > > [!card] 🎓 Certifications

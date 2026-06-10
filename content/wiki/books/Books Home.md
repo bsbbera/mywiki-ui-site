@@ -31,20 +31,31 @@ const latest = pages.sort(p => p.file.mtime, 'desc').first();
 dv.paragraph(`**${pages.length}** books · last added **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
 ```
 
-## 📚 Library
+## 📚 The shelf
+
+*Scroll sideways — every cover opens its notes.*
 
 ```dataviewjs
-dv.table(
-  ["Cover", "Title", "Tags"],
-  dv.pages('"wiki/books" and !"wiki/books/Books Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => [
-      p.banner ? `![cover\\|60](${p.banner})` : "—",
-      p.file.link,
-      (p.tags ?? []).filter(t => t !== "book").join(", ")
-    ])
-);
+const books = dv.pages('"wiki/books"')
+  .where(p => p.file.name !== "Books Home")
+  .sort(p => p.file.name, 'asc')
+  .array();
+const shelf = books.map(p => {
+  const title = p.title ?? p.file.name;
+  const cover = p.banner
+    ? `<img src="${p.banner}" alt="${title} cover" loading="lazy" />`
+    : `<div class="mw-book-fallback">${title}</div>`;
+  return `<div class="mw-book">
+    <a class="internal-link" data-href="${p.file.path}" href="${p.file.path}" aria-label="${title}">${cover}</a>
+    <a class="internal-link" data-href="${p.file.path}" href="${p.file.path}">${title}</a>
+  </div>`;
+}).join("");
+dv.el("div", shelf, { cls: "mw-shelf" });
 ```
+
+## ⭐ Featured pick
+
+![[designing-data-intensive-applications#Designing Data-Intensive Applications]]
 
 ## 🕒 Recently Added
 

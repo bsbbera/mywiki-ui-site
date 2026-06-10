@@ -1,32 +1,42 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Data Pipeline
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Data Pipeline
   - ETL Pipeline
   - ELT Pipeline
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Pipelines
   - ETL
   - ELT
-banner:
+banner: https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "The meaning of life is to find your gift. The purpose of life is to give it away."
-> <cite>— Pablo Picasso</cite>
+<span class="at-kicker">Data Engineering · Core Concepts</span>
 
----
+# Data Pipeline
 
-A **Data Pipeline** is a workflow consisting of one or more tasks that **ingest, move, and transform** raw data from one or more sources to a destination. The data at the destination is then used for analysis, machine learning, or other business functions. Pipelines split into two categories: **[[batch-data-processing|batch processing]]** (most common) and **[[stream-data-processing|real-time / streaming]]** (source: Concepts/Data Pipeline.md).
+<p class="at-lead">
+A Data Pipeline is a workflow consisting of one or more tasks that ingest, move, and transform raw data from one or more sources to a destination. The data at the destination is then used for analysis, machine learning, or other business functions. Pipelines split into two categories: batch processing (most common) and real-time / streaming.
+</p>
+
+<span class="at-stat">4</span> main architecture parts &nbsp;·&nbsp; <span class="at-stat">2</span> major categories (batch/stream) &nbsp;·&nbsp; <span class="at-mark">The arteries that move data from source to value</span>
+
+> [!tip] The Pipeline Golden Rule
+> Make pipelines **idempotent** — running the same job twice produces the same result. This enables safe retries, backfills, and recovery from failures. See [[../../software-engineering/idempotence|Idempotence]] for patterns.
+
+<span class="at-kicker">Architecture</span>
 
 ## Architecture
 
-Four main parts (source: Concepts/Data Pipeline.md):
+Four main parts:
 
 1. **Data source** — application DBs, APIs, files (SFTP, GCS), event streams.
 2. **Business logic** — cleaning, filtering, transformation specific to the business.
@@ -34,6 +44,8 @@ Four main parts (source: Concepts/Data Pipeline.md):
 4. **Scheduler / orchestration tool** — Cron for simple, [[../data-engineering/data-processing/workflow-orchestration|orchestrator]] for complex.
 
 There's no one-size-fits-all architecture. The right choice depends on data volume, velocity, latency requirements, team skills, and budget.
+
+<span class="at-kicker">Pipeline Components</span>
 
 ### Data sources
 
@@ -60,6 +72,8 @@ The **transformation** stage — cleaning, deduplication, type casting, enrichme
 
 - **Cron** — simple scripted scheduling on a single machine.
 - **[[../data-engineering/data-processing/workflow-orchestration|Workflow orchestrator]]** — Airflow, Dagster, Prefect — for multi-step DAGs with retries, alerts, backfills.
+
+<span class="at-kicker">Pipeline Types</span>
 
 ## Common pipeline types
 
@@ -96,13 +110,15 @@ Extract, load, transform. Load **raw** data first; transform inside the warehous
 
 Modern pattern. Storage is cheap; keeping raw data preserves flexibility.
 
-(source: Concepts/Data Pipeline.md)
+<span class="at-kicker">Examples</span>
 
 ## Example pipelines
 
 - **SaaS daily ETL** — application data + marketing data → daily dashboard.
 - **E-commerce real-time** — order events → fraud detection → inventory + analytics.
 - **IoT** — device telemetry → Pub/Sub → Dataflow → BigQuery.
+
+<span class="at-kicker">Best Practices</span>
 
 ## Pipeline best practices
 
@@ -115,6 +131,8 @@ See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the f
 - **Parameterized** — config files, not hard-coded values.
 - **Separate envs** — dev / staging / prod, color-coded.
 
+<span class="at-kicker">Cloud Platforms</span>
+
 ## On GCP
 
 - **Batch**: [[Cloud Storage|GCS]] → [[../cloud/gcp/analytics/dataflow|Dataflow]] → [[../cloud/gcp/analytics/bigquery|BigQuery]].
@@ -123,11 +141,15 @@ See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the f
 - **Visual**: [[../cloud/gcp/analytics/datafusion|Data Fusion]].
 - **Orchestration**: Cloud Composer (Airflow).
 
+<span class="at-kicker">Interesting Facts</span>
+
 ## Interesting Facts
 
 - **Apache Beam** was Google's gift to the OSS world — a unified batch + stream programming model.
 - The **DAG** abstraction (used by Airflow, Dagster, Prefect, Dataflow, Spark) traces back to academic dataflow research from the 1970s.
 - **dbt** popularized the idea that analytics engineers can build transformations using just SQL + version control.
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview Questions
 
@@ -136,6 +158,8 @@ See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the f
 3. **CDC** pipeline architecture end-to-end.
 4. How do you make a pipeline **idempotent**?
 5. **Cron** vs **orchestrator** — when each.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -155,4 +179,3 @@ See [[../guides/data-pipeline-best-practices|Pipeline Best Practices]] for the f
 >
 >> [!card] Books
 >> [[../../books/fundamentals-of-data-engineering|Fundamentals of Data Engineering]]
-

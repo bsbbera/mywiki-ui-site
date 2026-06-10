@@ -1,25 +1,35 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Data Management
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Data Management
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Governance
   - Quality
-banner:
+banner: https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "Strategy is a commodity, execution is an art."
-> <cite>— Peter Drucker</cite>
+<span class="at-kicker">Data Engineering · Management</span>
 
----
+# Data Management
 
-**Data Management** is the practice of collecting, organizing, protecting, and storing data in a way that enables efficient access, analysis, and decision-making throughout its entire lifecycle. It encompasses the policies, procedures, and technologies used to ensure data is **accurate, available, secure, and compliant** while meeting business requirements (source: Concepts/Data Management/Data Management.md).
+<p class="at-lead">
+Data Management is the practice of collecting, organizing, protecting, and storing data in a way that enables efficient access, analysis, and decision-making throughout its entire lifecycle. It encompasses the policies, procedures, and technologies used to ensure data is accurate, available, secure, and compliant.
+</p>
+
+<span class="at-stat">6</span> core components &nbsp;·&nbsp; <span class="at-stat">Lifecycle</span> from creation to deletion &nbsp;·&nbsp; <span class="at-mark">The operational discipline behind trustworthy data</span>
+
+> [!tip] Governance vs Management
+> **Governance** sets the policies and rules. **Management** executes them. Think of governance as the constitution and management as the government — one defines what should be, the other makes it happen.
+
+<span class="at-kicker">Core Components</span>
 
 ## Components
 
@@ -39,13 +49,15 @@ Centralized **inventory of data assets** with metadata to improve discoverabilit
 
 Protects data from unauthorized access, corruption, theft. Encryption at rest + in transit, IAM, audit logging, masking, DLP.
 
-### 5. Master + Reference Data Management (MDM, not in raw)
+### 5. Master + Reference Data Management (MDM)
 
 Maintains **single source of truth** for entities like customers, products, locations across systems.
 
 ### 6. Metadata Management
 
 Technical, business, and operational metadata about each dataset — schema, owner, lineage, freshness, classification, sensitivity.
+
+<span class="at-kicker">Abstraction Layers</span>
 
 ## Where the [[semantic-layer|semantic]] and [[metrics-layer|metrics]] layers fit
 
@@ -54,17 +66,23 @@ Technical, business, and operational metadata about each dataset — schema, own
 
 Both are core data-management abstractions for analytics consumers.
 
+<span class="at-kicker">Related Disciplines</span>
+
 ## Disciplines often grouped here
 
 - [[../../databases/database-normalization|Normalization]] — schema-design discipline at the DBMS layer.
 - [[../../databases/acid-properties|ACID properties]] — transactional guarantees of well-managed databases.
 - [[../../software-engineering/data-unit-test|Data unit tests]] — automated quality enforcement.
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. What's the difference between **data governance** and **data management**?
 2. Why is a **data catalog** essential for any analytics org > 50 people?
 3. **Semantic layer** vs **metrics layer** — overlap and difference.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -84,4 +102,3 @@ Both are core data-management abstractions for analytics consumers.
 >
 >> [!card] Products
 >> [[../../cloud/gcp/analytics/data-catalog|GCP Data Catalog / Dataplex]]
-

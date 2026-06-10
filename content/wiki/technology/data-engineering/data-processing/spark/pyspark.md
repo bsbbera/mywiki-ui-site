@@ -1,18 +1,20 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: PySpark
 Created:
   - 2026-05-28
-date modified: Thursday, May 28th 2026
 aliases:
   - PySpark
   - SparkSession
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Processing
   - Spark
   - Python
-banner:
+banner: https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
@@ -26,22 +28,24 @@ publish: true
 > | **Domain** | Distributed data processing |
 > | **Initial release** | 2014 |
 > | **Written in** | Python (wraps Scala/JVM) |
-> | **License** | Apache License 2.0 |
+> | **License** | Apache License 2.0
 
----
+<span class="at-kicker">Data Engineering · Spark</span>
 
-> "Believe you can and you will be halfway there."
-> <cite>— Lolly Daskal</cite>
+# PySpark
 
----
+<p class="at-lead">
+PySpark is the Python API for Apache Spark, created and distributed by the Apache Spark project so Python developers can work with Spark. Spark itself is written in Scala (a compile-time, type-safe JVM language) and also speaks Java, R, and Python.
+</p>
 
-**PySpark** is the **Python API for [[apache-spark|Apache Spark]]**, created and distributed by the Apache Spark project so Python developers can work with Spark (source: pyspark interview prep.pdf). Spark itself is written in **Scala** (a compile-time, type-safe JVM language) and also speaks Java, R, and Python.
+<span class="at-stat">100×</span> faster than MapReduce &nbsp;·&nbsp; <span class="at-stat">2014</span> initial release &nbsp;·&nbsp; <span class="at-mark">Python's gateway to distributed big data processing</span>
 
-Because Scala is compile-time type-safe, plain Spark has a few capabilities PySpark lacks — most notably **[[spark-dataframe|Datasets]]** (typed, domain-specific objects). PySpark works with [[rdd|RDDs]] and DataFrames instead (source: pyspark interview prep.pdf).
+> [!tip] PySpark vs Spark
+> Because Scala is compile-time type-safe, plain Spark has a few capabilities PySpark lacks — most notably Datasets (typed, domain-specific objects). PySpark works with [[rdd|RDDs]] and DataFrames instead. For most work, this is more than sufficient.
+
+<span class="at-kicker">Why PySpark</span>
 
 ## Why PySpark
-
-(source: pyspark interview prep.pdf)
 
 - In-memory distributed processing — programs run **~100× faster** than traditional apps.
 - Reads from Hadoop HDFS, Amazon S3, and many other file systems.
@@ -51,9 +55,11 @@ Because Scala is compile-time type-safe, plain Spark has a few capabilities PySp
 
 **Drawbacks**: MapReduce-style problems can be awkward to express; it can be less efficient than some alternative paradigms; and (like all Spark) it is memory-hungry.
 
+<span class="at-kicker">Entry Point</span>
+
 ## SparkSession — the entry point
 
-Since **Spark 2.0**, `SparkSession` (from `pyspark.sql`) is the unified entry point, replacing the older `SQLContext` and `HiveContext`. It's how you create [[rdd|RDDs]] and [[spark-dataframe|DataFrames]] programmatically (source: pyspark interview prep.pdf):
+Since **Spark 2.0**, `SparkSession` (from `pyspark.sql`) is the unified entry point, replacing the older `SQLContext` and `HiveContext`. It's how you create [[rdd|RDDs]] and [[spark-dataframe|DataFrames]] programmatically:
 
 ```python
 from pyspark.sql import SparkSession
@@ -64,21 +70,27 @@ spark = SparkSession.builder \
 ```
 
 - The **builder pattern** plus `getOrCreate()` returns the existing session or creates a new one.
-- In the `pyspark` shell, Databricks, and Spark shell, a `spark` object exists **by default**; in a `.py` file you must create it yourself or you'll hit `NameError: Name 'spark' is not Defined` (source: pyspark interview prep.pdf).
-- `master("local[*]")` runs Spark locally with one worker thread per logical core (source: pyspark basics.pdf).
+- In the `pyspark` shell, Databricks, and Spark shell, a `spark` object exists **by default**; in a `.py` file you must create it yourself or you'll hit `NameError: Name 'spark' is not Defined`.
+- `master("local[*]")` runs Spark locally with one worker thread per logical core.
+
+<span class="at-kicker">Configuration</span>
 
 ## SparkConf
 
-`SparkConf` holds the settings to run an application locally or on a cluster (source: pyspark interview prep.pdf). Key setters: `set(key, value)`, `setMaster(value)`, `setAppName(value)`, `setSparkHome(value)`, `get(key, default)`.
+`SparkConf` holds the settings to run an application locally or on a cluster. Key setters: `set(key, value)`, `setMaster(value)`, `setAppName(value)`, `setSparkHome(value)`, `get(key, default)`.
 
 ## py4j and findspark
 
-- **py4j** is the Java library that lets Python talk to JVM instances; it lives at `$SPARK_HOME/python/lib/py4j-*-src.zip`. The error `ImportError: No module named py4j.java_gateway` means py4j isn't on `PYTHONPATH` — fix by exporting `SPARK_HOME` and adding py4j to `PYTHONPATH` (source: pyspark interview prep.pdf).
-- **findspark** (`pip install findspark`, then `findspark.init()`) locates the Spark install when you get `No module named pyspark` (source: pyspark interview prep.pdf).
+- **py4j** is the Java library that lets Python talk to JVM instances; it lives at `$SPARK_HOME/python/lib/py4j-*-src.zip`. The error `ImportError: No module named py4j.java_gateway` means py4j isn't on `PYTHONPATH` — fix by exporting `SPARK_HOME` and adding py4j to `PYTHONPATH`.
+- **findspark** (`pip install findspark`, then `findspark.init()`) locates the Spark install when you get `No module named pyspark`.
+
+<span class="at-kicker">Comparison</span>
 
 ## PySpark vs pandas
 
-The key difference: PySpark is **distributed** — operations run in parallel across many cores and machines — whereas **pandas runs on a single node** (source: pyspark interview prep.pdf). Use `toPandas()` only on small/aggregated results (it collects everything to the driver). For scalable pipelines, **avoid eager operations and Python-native types** (dicts, lists) that can't be distributed; add filter columns to a DataFrame instead of indexing dictionaries (source: pyspark interview prep.pdf).
+The key difference: PySpark is **distributed** — operations run in parallel across many cores and machines — whereas **pandas runs on a single node**. Use `toPandas()` only on small/aggregated results (it collects everything to the driver). For scalable pipelines, **avoid eager operations and Python-native types** (dicts, lists) that can't be distributed; add filter columns to a DataFrame instead of indexing dictionaries.
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview questions
 
@@ -87,6 +99,8 @@ The key difference: PySpark is **distributed** — operations run in parallel ac
 3. What is **py4j**, and how do you fix the `py4j.java_gateway` import error?
 4. **PySpark vs pandas** — when does each make sense?
 5. List benefits and drawbacks of PySpark.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 

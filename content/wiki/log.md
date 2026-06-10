@@ -16,7 +16,597 @@ publish: true
 
 Append-only log of all wiki operations. Newest entries at the top.
 
+------
+
+## 2026-06-11 (eighteenth pass) — Paradoxes field ingest
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested full ingest of 
+aw/List of paradoxes.md (Wikipedia clipping, 89 KB, ~297 paradoxes) per plan.md.
+
+### New field of knowledge activated: paradoxes/
+
+**Hub & curated list (2)**:
+- Paradoxes Home.md — field hub; veridical / falsidical / antinomy definitions, map of 17 thematic notes, link to Top 100.
+- 	op-100-paradoxes.md — curated ranking of ~40 most important paradoxes across all domains.
+
+**Thematic notes (17)** — one per topic from the raw source:
+- logical-paradoxes.md — Logic + Self-reference + Vagueness (~40 paradoxes).
+- mathematical-paradoxes.md — Mathematics + Infinity + Geometry & topology (~30 paradoxes).
+- statistical-paradoxes.md — Statistics (~10 paradoxes). *Promoted from Mathematics sub-section for vault relevance.*
+- probability-paradoxes.md — Probability (~14 paradoxes). *Promoted from Mathematics sub-section for vault relevance.*
+- decision-theory-paradoxes.md — Decision theory (~12 paradoxes).
+- physics-paradoxes.md — Physics + Astro + QM + Relativity + Thermodynamics (~45 paradoxes).
+- iological-paradoxes.md — Biology + Health & nutrition (~20 paradoxes).
+- chemical-paradoxes.md — Chemistry (~5 paradoxes).
+- 	ime-travel-paradoxes.md — Time travel (~6 paradoxes).
+- linguistic-ai-paradoxes.md — Linguistics & AI (~8 paradoxes).
+- philosophical-paradoxes.md — Philosophy (~25 paradoxes).
+- mystical-paradoxes.md — Mysticism (~4 paradoxes).
+- economic-paradoxes.md — Economics (~30 paradoxes).
+- perceptual-paradoxes.md — Perception (~9 paradoxes).
+- political-paradoxes.md — Politics (~7 paradoxes).
+- psychological-paradoxes.md — Psychology & sociology (~17 paradoxes).
+- miscellaneous-paradoxes.md — Miscellaneous (~12 paradoxes).
+
+### Cross-links added to existing vault pages (8)
+- imbalanced-classification.md — Accuracy Paradox card.
+- hypothesis-testing.md — False Positive Paradox & Lindley's Paradox cards.
+- law-of-large-numbers.md — Gambler's Fallacy card linking to probability-paradoxes.
+- survivorship-bias.md — Survivorship Paradox card linking to statistical-paradoxes.
+- descriptive-statistics.md — Simpson's Paradox card.
+- machine-learning.md — Moravec's Paradox card.
+- science/mathematics/series.md — Zeno's Paradoxes card.
+- science/mathematics/combinatorics.md — Birthday Paradox card.
+
+### People stubs created (8)
+- people/zeno-of-elea.md — pre-Socratic philosopher; Zeno's paradoxes.
+- people/bertrand-russell.md — Russell's paradox, Principia Mathematica, Nobel Literature 1950.
+- people/georg-cantor.md — founded set theory, transfinite numbers, diagonal argument.
+- people/david-hilbert.md — Hilbert's 23 problems, Hilbert's hotel, formalism.
+- people/erwin-schrodinger.md — Schrödinger equation, Schrödinger's cat; Nobel Physics 1933.
+- people/enrico-fermi.md — Fermi paradox, first nuclear reactor; Nobel Physics 1938.
+- people/kenneth-arrow.md — Arrow's impossibility theorem; Nobel Economics 1972.
+- people/maurice-allais.md — Allais paradox; Nobel Economics 1988.
+
+### Record updates
+- wiki/index.md — added Paradoxes section (19 pages), updated People count (27 -> 35), updated concept/total counts.
+- Master Home.md — added "VII · THE PUZZLES" field card, updated stats (370+ -> 390+ notes, 6 -> 7 fields).
+- plan.md — all 6 batches marked COMPLETED.
+
+### Summary
+19 new concept pages created (18 thematic + hub + Top 100), 8 people stubs, 8 existing pages enriched with paradox cross-links. Dedicated paradoxes/ field now active.
+
+
+## 2026-06-08 (seventeenth pass) — DataScienceNotes-master ingest
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested full ingest of `raw/DataScienceNotes-master` (424 `.md` files) per `plan.md`.
+
+### Batches executed
+
+**Batch 1 — NLP expansion** (`technology/machine-learning/nlp/`):
+- `sequence-models.md` — NEW. RNN/LSTM/Transformer architectures, attention, encoder-decoder, machine translation.
+- `n-gram-model.md` — NEW. Markov assumption, smoothing, Zipf's Law, linguistic power laws.
+- Updated `nlp-fundamentals.md` Related-pages grid with links to new pages.
+
+**Batch 2 — Reinforcement Learning** (`technology/machine-learning/ml-algorithms/`):
+- `reinforcement-learning.md` — NEW. MDP, Bellman equations, Q-Learning, DQN, policy gradients, exploration-exploitation.
+
+**Batch 3 — ML fundamentals gaps** (`technology/machine-learning/ml-fundamentals/`):
+- `data-labeling.md` — NEW. Process feedback, human labeling, semi-supervised, active learning, weak supervision, Snorkel.
+- `classification-types.md` — NEW. Binary, multiclass, multi-label, multi-output; architecture patterns, evaluation metrics.
+
+**Batch 4 — Mathematics** (NEW field `science/mathematics/`):
+- `calculus.md` — NEW. Derivatives, integrals, chain rule, L'Hôpital's, Euler's number, exponential growth/decay, Newton's method.
+- `series.md` — NEW. Summation formulae, Taylor & Maclaurin series, convergence tests, ML applications.
+- `combinatorics.md` — NEW. Permutations, combinations, binomial theorem, Catalan numbers, Stirling numbers.
+
+**Batch 5 — Probability & Statistics** (moved to `technology/machine-learning/statistics/`; originally created under `science/statistics/` then consolidated 2026-06-09):
+- `random-variables.md` — NEW. Discrete/continuous RVs, PMF/PDF/CDF, expected value, LOTUS, variance, moments.
+- `law-of-large-numbers.md` — NEW. WLLN, SLLN, standard error, confidence intervals, Gambler's Fallacy.
+- `survivorship-bias.md` — NEW. Wald's bomber problem, invisible failures, publication bias, mitigation strategies.
+
+**Batch 6 — Programming / Python** (`technology/tools/python/`):
+- `python-patterns.md` — NEW. Closures, decorators, context managers, super()/MRO, deep/shallow copy, NamedTuple.
+- `pandas-patterns.md` — NEW. Vectorisation, method chaining, apply strategies, memory optimisation, Polars/Dask.
+- `keras.md` — NEW. Sequential/Functional/Subclassing APIs, callbacks, saving/loading, custom components.
+
+**Batch 7 — Shell / CLI** (`technology/tools/`):
+- `shell-toolkit.md` — NEW. grep, cut, tr, xargs, regex, pipelines, network diagnostics, shell shortcuts.
+- `ssh.md` — NEW. Key-based auth, local/remote/dynamic port forwarding, ProxyJump, agent forwarding.
+- `tmux.md` — NEW. Sessions, windows, panes, configuration, persistent remote workflows.
+
+**Batch 8 — SE/CS concepts** (`technology/software-engineering/`):
+- `latency-throughput.md` — NEW. Latency sources, throughput limits, Little's Law, performance vs scalability, tail latency.
+- `algorithms.md` — NEW. Greedy algorithms, dynamic programming, complexity analysis, approximation, Metcalfe's Law, network effects.
+
+**Batch 9 — Career** (NEW field `career/`):
+- `career.md` — NEW. Field hub; professional development, interview prep.
+- `interview-techniques.md` — NEW. STAR format, behavioural questions, salary negotiation, 30-60-90 day plans.
+- `technical-interviews.md` — NEW. SQL patterns, Python coding, probability puzzles, ML system design.
+
+**Batch 10 — Misc verify**:
+- GCP/ (28 files), AWS Sagemaker, Docker, SQL/ (4 files), Research_Paper/ (2 files) — all already covered by existing wiki pages. No new pages created.
+
+### Record updates
+- `wiki/index.md` — added 22 new page entries across science/, career/, technology/ml/, technology/tools/, technology/se/; updated folder counts and statistics.
+- `plan.md` — created as the ingest roadmap for this source.
+
+### Summary
+~75% of the 243 root notes mapped to existing wiki pages. Two new top-level fields created: `science/` and `career/`. 22 new concept pages created, 1 existing page updated (nlp-fundamentals.md).
+
 ---
+
+## 2026-06-09 (sixteenth pass) — People & Books stubs + windsurf.md compliance audit
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested audit of all previously ingested files against windsurf.md rules, focusing on missing People/Books stubs and Related-pages cards.
+
+### People stubs created (8)
+
+**Finance domain (4)**:
+- `people/warren-buffett.md` — chairman of Berkshire Hathaway; Oracle of Omaha; value investing practitioner.
+- `people/benjamin-graham.md` — father of value investing; *Security Analysis* & *The Intelligent Investor*; mentor to Buffett.
+- `people/peter-lynch.md` — Magellan Fund manager (1977–1990); 29.2% CAGR; GARP investing; *One Up on Wall Street*.
+- `people/joseph-piotroski.md` — Stanford accounting professor; creator of Piotroski F-Score (2000).
+
+**Tech domain (4)**:
+- `people/solomon-hykes.md` — creator of Docker (2013); founder dotCloud, Dagger.
+- `people/mitchell-hashimoto.md` — co-founder HashiCorp; creator of Terraform, Vagrant, Vault, Consul, Nomad.
+- `people/gene-kim.md` — author *The Phoenix Project*, *Accelerate*, *DevOps Handbook*; founder Tripwire.
+- `people/jez-humble.md` — co-author *Continuous Delivery*, *Accelerate*; DORA metrics contributor.
+
+### Books stubs created (5)
+
+**Finance domain (2)**:
+- `books/the-intelligent-investor.md` — Benjamin Graham (1949); Mr. Market, Margin of Safety; bible of value investing.
+- `books/security-analysis.md` — Graham & Dodd (1934); founding text of fundamental analysis; earnings power value.
+
+**Tech/DevOps domain (3)**:
+- `books/the-phoenix-project.md` — Gene Kim et al. (2013); DevOps business novel; The Three Ways framework.
+- `books/accelerate.md` — Forsgren, Humble, Kim (2018); DORA metrics; evidence-based DevOps research.
+- `books/site-reliability-engineering.md` — Beyer et al., Google (2016); SLIs/SLOs/SLAs, error budgets, blameless postmortems.
+
+### Existing files patched
+
+**People & books Related-pages cards added to 8 tech files**:
+`docker.md`, `kubernetes.md`, `devops-sre.md`, `terraform.md`, `rest-api.md`, `hadoop.md`, `sagemaker.md`, `sql-patterns.md`
+
+**People & books Related-pages cards added to 13 finance files**:
+`Finance Home.md`, `financial-statements.md`, `income-statement.md`, `balance-sheet.md`, `cash-flow-statement.md`,
+`financial-ratios.md`, `profitability-ratios.md`, `leverage-ratios.md`, `operating-ratios.md`,
+`investing.md`, `dcf-valuation.md`, `stock-analysis.md`, `valuation-ratios.md`
+
+### index.md updated
+
+- 8 new people entries added to the People section.
+- 5 new books entries added to the Books section.
+- People stubs counter updated: 18 -> 27.
+- Book stubs counter updated: 6 -> 11.
+
+---
+
+## 2026-06-09 (fifteenth pass) — Finance field · 13 new notes across 3 sub-domains
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested ingestion of Finance raw files as a new top-level field of knowledge.
+
+### New field of knowledge activated: `finance/`
+
+### Notes created (13)
+
+**Hub (1)**:
+- `Finance Home.md` — top-level Finance knowledge hub; overview, sub-sections, essential formulas, three-statement connection.
+
+**Financial Statements sub-domain (4)** — `finance/financial-statements/`:
+- `financial-statements.md` — hub; the three core statements, annual report structure, P&L-to-Balance-Sheet connection.
+- `income-statement.md` — revenue, COGS, gross profit, SG&A, R&D, interest expense, EBITDA, operating income, PBT, PAT/Net Income.
+- `balance-sheet.md` — assets (current/non-current), liabilities (current/long-term), shareholders’ equity, accounting equation, analytical signals.
+- `cash-flow-statement.md` — operating/investing/financing activities, free cash flow, Balance Sheet bridge, OCF quality checks.
+
+**Financial Ratios sub-domain (4)** — `finance/financial-ratios/`:
+- `financial-ratios.md` — hub; 4 ratio families, master reference table (23 ratios), screening thresholds.
+- `profitability-ratios.md` — Gross margin, EBITDA margin, PAT margin, ROE (DuPont decomposition), ROA, ROCE.
+- `leverage-ratios.md` — Debt/Equity, Debt/Assets, Financial Leverage, ICR, Current Ratio.
+- `operating-ratios.md` — Inventory Turnover, Inventory Days, AR Turnover, DSO, Total Asset Turnover, Working Capital Turnover.
+
+**Investing & Valuation sub-domain (4)** — `finance/investing/`:
+- `investing.md` — fundamental analysis, core/satellite allocation, risk parity, Sharpe ratio, CAPE/Shiller PE, shares outstanding, stock splits.
+- `valuation-ratios.md` — EPS, P/E, PEG, P/B, P/S, EV/EBITDA, Dividend Yield; when each applies, screening workflow.
+- `dcf-valuation.md` — time value of money, intrinsic value, FCF, owner’s earnings, DCF Method 1 & 2 (full worked example), terminal value, NPV, margin of safety.
+- `stock-analysis.md` — 4-stage methodology, ratio screening, 18-question checklist, Piotroski Score (9 criteria), value trap warning signs.
+
+### Design
+
+All 13 files: full GCP-level Anthropic Touch styling (at-kicker, at-lead, at-stat, at-mark, card grids, hero/step cards, Unsplash banners, `cssclass: wide-page`). No infoboxes (financial concept pages). Source: 50+ finance raw notes synthesised into 13 hub+detail pages.
+
+### Files modified
+
+- `wiki/index.md` — added Finance field section (13 pages), updated folder map, concept count ~228 → ~244, total ~244 + index + log + 8 Home dashboards.
+- `wiki/log.md` — this entry.
+
+---
+
+## 2026-06-09 (fourteenth pass) — Tech files · Docker, Kubernetes, Hadoop, DevOps/SRE, SageMaker, REST API, Terraform, SQL Patterns
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested ingestion of remaining tech raw files.
+
+### Notes created (8)
+
+| File | Type | Description |
+| --- | --- | --- |
+| `technology/software-engineering/docker.md` | Tool note | Container platform — images, Dockerfile, docker-compose, volumes, networks, registries |
+| `technology/software-engineering/kubernetes.md` | Tool note | Container orchestration — cluster arch, pods, deployments, services, ConfigMaps/Secrets, Ingress, HPA |
+| `technology/data-engineering/hadoop.md` | Concept note | Hadoop ecosystem — HDFS, MapReduce, YARN, Hive, Pig, HBase; merged 7 raw files |
+| `technology/software-engineering/devops-sre.md` | Concept note | DevOps & SRE — philosophy, SLI/SLO/SLA, error budgets, CI/CD, microservices, 12-Factor App; merged 5 raw files |
+| `technology/cloud/aws/sagemaker.md` | Cloud service note | AWS SageMaker — Studio, Ground Truth, Processing, training paths, Spot training (60–70% saving), endpoints, Model Registry, Pipelines, Feature Store, Model Monitor |
+| `technology/software-engineering/rest-api.md` | Concept note | REST API & SDK — REST constraints, CRUD-HTTP mapping, status codes, auth, versioning, rate limiting, REST vs GraphQL/gRPC; merged 3 raw files |
+| `technology/software-engineering/terraform.md` | Tool note | HashiCorp Terraform — HCL syntax, providers, state management, init→plan→apply, modules, workspaces |
+| `technology/guides/sql-patterns.md` | Guide note | SQL Patterns — 10-step execution order, window functions, ranking functions, conditional aggregation pivot, optimisation checklist; merged 6 raw files |
+
+### Raw source merges
+
+- `hadoop.md` ← Hadoop.md + HDFS.md + MapReduce.md + YARN.md + Hive.md + Pig.md + HBase.md (7 files)
+- `devops-sre.md` ← DevOps & SRE.md + CI_CD.md + Latency vs Throughput.md + Performance vs Scalability.md + Microservices.md (5 files)
+- `rest-api.md` ← API.md + REST.md + SDK.md (3 files)
+- `sql-patterns.md` ← SQL Best Practices.md + SQL Ranking.md + SQL Order of Execution.md + ROW_NUMBER RANK DENSE_RANK.md + Windowing Function.md + Pivot without Pivot.md (6 files)
+
+### Files modified
+
+- `wiki/index.md` — added AWS section (SageMaker), expanded Software Engineering section (Docker, Kubernetes, DevOps/SRE, Terraform, REST API), added Guides section (SQL Patterns), added Hadoop to data-engineering; concept count ~221 → ~228.
+- `wiki/log.md` — this entry.
+
+---
+
+## 2026-06-09 (thirteenth pass) — Full GCP-level redesign · All 50 ML notes
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested all ML notes match the GCP note design standard (BigQuery/Dataflow quality).
+
+### Goal
+
+Upgrade all 50 ML concept pages from basic callout-pass style to full Anthropic Touch GCP-level design: `at-kicker` section labels, `at-lead` styled lead paragraphs, `at-stat`/`at-mark` stat bars, `[!card|section]` feature grids, `[!card|hero dark spanfull]` + `[!card|step]` hero/step cards, Unsplash banner images, `cssclass: wide-page`.
+
+### Files redesigned (50 total)
+
+**`deep-learning/` (10 notes)**: `deep-learning.md`, `neural-networks.md`, `optimisation-algorithms.md`, `cnn.md`, `rnn-lstm-gru.md`, `regularisation-training.md`, `transfer-learning.md`, `transformers.md`, `autoencoders-gans.md`, `bert.md`.
+Note: `bert.md` given an infobox (named model, qualifies as named entity).
+
+**`ml-fundamentals/` (15 notes)**: `machine-learning-fundamentals.md`, `supervised-learning.md`, `unsupervised-learning.md`, `evaluation-metrics.md`, `cross-validation.md`, `feature-engineering.md`, `feature-selection.md`, `data-cleaning.md`, `imbalanced-classification.md`, `outlier-detection.md`, `ml-explainability.md`, `model-monitoring.md`, `active-learning.md`, `data-leakage.md`, `experiment-tracking.md`.
+
+**`ml-algorithms/` (12 notes)**: `ml-algorithms.md`, `decision-trees.md`, `ensemble-learning.md`, `random-forest.md`, `gradient-boosting.md`, `linear-models.md`, `svm.md`, `naive-bayes.md`, `knn.md`, `k-means.md`, `pca.md`, `association-rules.md`.
+
+**`statistics/` (13 notes)**: `statistics.md`, `bias-variance-tradeoff.md`, `descriptive-statistics.md`, `probability-distributions.md`, `hypothesis-testing.md`, `ab-testing.md`, `entropy-information-theory.md`, `sampling.md`, `cosine-similarity.md`, `vector-norms.md`, `benfords-law.md`, `monte-carlo-simulation.md`, `mathematical-foundations-for-ml.md`.
+
+### Design elements applied to every file
+
+| Element | Applied |
+| --- | --- |
+| `banner:` Unsplash URL | ✓ all 50 files |
+| `cssclass: wide-page` | ✓ all 50 files |
+| `<span class="at-kicker">` section labels | ✓ all 50 files |
+| `<p class="at-lead">` styled lead | ✓ all 50 files |
+| `<span class="at-stat">` / `<span class="at-mark">` stat bar | ✓ all 50 files |
+| `> [!grid|cols3]` + `>> [!card|section]` concept grids | ✓ all 50 files |
+| `>> [!card|hero dark spanfull]` + `>> [!card|step]` | ✓ all 50 files |
+| Infobox | ✓ bert.md only (named model); all other concept pages: none |
+| All formulas, tables, interview questions, code, callouts | ✓ preserved verbatim |
+
+### Files modified
+
+- `wiki/log.md` — this entry.
+- `wiki/index.md` — no structural changes needed (all pages already indexed).
+
+---
+
+## 2026-06-09 (twelfth pass) — Raw ingest · MLOps + NLP + Statistics sub-domains
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested ingestion of all remaining `DataScienceNotes-master` raw files.
+
+### New sub-domains created
+
+- `technology/machine-learning/mlops/` — 5 pages covering the full ML deployment lifecycle.
+- `technology/machine-learning/nlp/` — 2 pages: fundamentals hub + Word2Vec deep-dive.
+
+### Files created (13 new notes)
+
+**MLOps sub-domain (5)**:
+- `mlops.md` — MLOps lifecycle, CI/CD/CT, data-centric vs model-centric, maturity model. Source: MLOPs.md + Machine Learning Life Cycle - MLOPs.md + Data - MLOPs.md + Deployment - MLOPs.md + Monitoring - MLOPS.md + ML Metadata.md + ML Pipelines.md + Requirement Phase - MLOPs.md.
+- `deployment-patterns.md` — Blue-Green, Canary, Shadow, Champion-Challenger, Rolling; comparison table + when-to-use. Source: Deployment Patterns.md + Blue Green Deployment.md + Canary Deployment.md + Shadow Deployment.md + Champion Challenger.md.
+- `ci-cd-ml.md` — CI/CD for ML, 6-stage pipeline, automation levels. Source: Continuous Integration & Deployment.md.
+- `model-lifecycle.md` — model degradation (slow/fast), scaling strategies, retirement. Source: Model Degradation.md + Model Scaling.md.
+- `kubeflow.md` — Tool note (infobox). Kubeflow KFP, training operators, model serving. Source: KubeFlow.md.
+
+**NLP sub-domain (2)**:
+- `nlp-fundamentals.md` — Full preprocessing pipeline, TF-IDF, word embeddings, information retrieval, topic modelling. Source: NLP Basic Terminology.md + Tokenization - NLP.md + Stemming and Lemmatization.md + Stopwords.md + TF-IDF.md + Inverted Index.md + Information Retreival.md + Levenshtein Distance.md + Latent Dirichlet Allocation - LDA.md + Topic Modeling.md + Topic Coherence.md.
+- `word2vec.md` — CBOW vs Skip-Gram, negative sampling, vector arithmetic. Source: Word2Vec.md.
+
+**ML Fundamentals additions (2)**:
+- `concept-drift.md` — Concept drift vs data drift, detection methods (PSI, KS, Page-Hinkley). Source: Concept Drift.md + Data Drift.md.
+- `business-metrics-ml.md` — Churn analysis, CLV, uplift modelling. Source: Churn Analysis.md + Customer Lifetime Value.md + Market Response Model.md.
+
+**Statistics additions (3)**:
+- `central-limit-theorem.md` — CLT, Law of Large Numbers, sampling distributions. Source: Central Limit Theorem.md + Law of Large Numbers (LLN).md.
+- `time-series.md` — Decomposition, ARIMA, exponential smoothing, RNN/LSTM forecasting. Source: ARIMA.md + Time Series.md + Exponential Smoothing.md.
+- `multi-armed-bandits.md` — ε-Greedy, UCB, Thompson Sampling, contextual bandits. Source: Multi-Armed Bandits.md.
+
+**Deep Learning addition (1)**:
+- `language-models.md` — N-gram, neural LMs, seq2seq, machine translation. Source: Language Model.md + N-Gram Model.md + Machine Translation.md.
+
+### Files modified
+
+- `wiki/index.md` — added MLOps sub-domain (5 pages), NLP sub-domain (2 pages), 6 ML/stats additions; concept count updated ~170 → ~186; total ~208 → ~221.
+- `wiki/log.md` — this entry.
+
+### Raw files evaluated but not duplicated
+
+`RoBERTa.md`, `GAN.md`, `Confidence Interval.md` — content already well-covered in existing `bert.md`, `autoencoders-gans.md`, `hypothesis-testing.md`.
+
+---
+
+## 2026-06-09 (eleventh pass) — Design pass · All ML notes redesigned + 3 new notes
+
+**Operator**: Devin (CLI)
+**Trigger**: User requested continuation; all existing ML notes redesigned and 3 new notes created.
+
+### Goal
+
+Reduce code-block density across all 47 ML concept pages (4 sub-domains) while preserving all conceptual content — formulas, tables, interview questions, and related-page grids. Replace matplotlib visualisation blocks, long boilerplate training loops, and trivial import-only snippets with `[!info]`, `[!tip]`, `[!warning]`, and `[!example]` callouts. Keep short, API-illustrative snippets (≤ 4 lines) where they add genuine value.
+
+### Files redesigned (47 existing notes across 4 sub-domains)
+
+**`deep-learning/` (9 notes)**: `deep-learning.md`, `neural-networks.md`, `optimisation-algorithms.md`, `cnn.md`, `rnn-lstm-gru.md`, `regularisation-training.md`, `transfer-learning.md`, `transformers.md`, `autoencoders-gans.md`. Key removals: 30-line Perceptron class, Rosenbrock matplotlib block, 65-line LeNet/ModernCNN dual class, vanilla RNN numpy class, EarlyStopping class, MultiHeadAttention class, PositionalEncoding + matplotlib, full VAE class, 45-line GAN training loop, SimpleDNN block.
+
+**`ml-fundamentals/` (13 notes)**: `machine-learning-fundamentals.md`, `supervised-learning.md`, `unsupervised-learning.md`, `evaluation-metrics.md`, `cross-validation.md`, `feature-engineering.md`, `feature-selection.md`, `data-cleaning.md`, `imbalanced-classification.md`, `outlier-detection.md`, `ml-explainability.md`, `model-monitoring.md`, `active-learning.md`. **101 callouts added.**
+
+**`ml-algorithms/` (12 notes)**: `ml-algorithms.md`, `decision-trees.md`, `ensemble-learning.md`, `random-forest.md`, `gradient-boosting.md`, `linear-models.md`, `svm.md`, `naive-bayes.md`, `knn.md`, `k-means.md`, `pca.md`, `association-rules.md`. **76 callouts added.** Fixed malformed `[!card>` tag in association-rules.md.
+
+**`statistics/` (13 notes)**: `statistics.md`, `bias-variance-tradeoff.md`, `descriptive-statistics.md`, `probability-distributions.md`, `hypothesis-testing.md`, `ab-testing.md`, `entropy-information-theory.md`, `sampling.md`, `cosine-similarity.md`, `vector-norms.md`, `benfords-law.md`, `monte-carlo-simulation.md`, `mathematical-foundations-for-ml.md`. ~100 lines of matplotlib code removed.
+
+### New notes created (3)
+
+- `deep-learning/bert.md` — BERT architecture (Base/Large), MLM + NSP pre-training, fine-tuning tasks, descendants (RoBERTa, ALBERT, DistilBERT, SpanBERT, ELECTRA, DeBERTa), limitations.
+- `ml-fundamentals/data-leakage.md` — leaky predictors, leaky validation strategies, detection red flags, prevention checklist.
+- `ml-fundamentals/experiment-tracking.md` — what to track, MLflow/W&B/TensorBoard/DVC comparison, core workflows, anti-patterns.
+
+### Files modified
+
+- `wiki/index.md` — added `bert`, `data-leakage`, `experiment-tracking` entries; updated concept count (~167 → ~170); total (~205 → ~208); updated `date modified`.
+- `wiki/log.md` — this entry.
+
+### Next
+
+Full GCP-level redesign of all ML notes (at-kicker, at-lead, at-stat, [!card|section] grids, Unsplash banners) + ingestion of remaining DataScienceNotes-master raw files.
+
+---
+
+## 2026-06-08 (tenth pass, Batch 4) — DataScienceNotes-master ingest · Deep Learning
+
+**Operator**: Cascade (Windsurf)
+**Trigger**: Continuation of Batch 3; user approved Batch 4 (Deep Learning) after confirmation.
+
+### New sub-domain created
+
+`technology/machine-learning/deep-learning/` — fourth sub-domain under `machine-learning/`, peer to `statistics/`, `ml-fundamentals/`, and `ml-algorithms/`.
+
+### Files created (9 new notes)
+
+**Deep Learning hub (1)**: `deep-learning.md` — sub-domain hub; types of learning, ML lifecycle, complete PyTorch workflow (data, model, optimiser, scheduler, training loop, evaluation); modern architecture comparison.
+
+**Neural network fundamentals (1)**: `neural-networks.md` — perceptron (AND gate example); MLP; activation functions (sigmoid, tanh, ReLU, Leaky ReLU, ELU, Swish, Softmax) with visualisation code; backpropagation step-by-step walkthrough; weight initialisation (Xavier, He, Orthogonal); common architectures by depth (LeNet → EfficientNet).
+
+**Optimisation (1)**: `optimisation-algorithms.md` — loss landscape visualisation (Rosenbrock function); SGD; SGD with Momentum; RMSprop (from-scratch and PyTorch); Adam (with bias correction derivation); AdamW (decoupled weight decay); learning rate schedulers (Step, Cosine Annealing, ReduceLROnPlateau, OneCycleLR); complete CIFAR-10 training example.
+
+**Computer vision (1)**: `cnn.md` — manual 2D convolution example with ASCII art; kernel arithmetic formula; pooling types; LeNet-5 and ModernCNN PyTorch implementations; ResNet skip connections with code; architecture comparison (AlexNet → EfficientNet); transfer learning with pre-trained CNNs.
+
+**Sequences (1)**: `rnn-lstm-gru.md` — vanilla RNN from-scratch (character-level prediction); vanishing/exploding gradient explanation with math; LSTM gates (forget/input/output/candidate) with formulas; GRU (reset/update gates); bidirectional RNNs; encoder-decoder with attention; PyTorch LSTM/GRU code; when-to-use-what table.
+
+**Training & regularisation (1)**: `regularisation-training.md` — dropout demonstration (train vs. eval outputs differ); batch normalisation with formula and placement warning; weight decay (SGD vs. AdamW); early stopping class with best-weight restoration; data augmentation (torchvision transforms); label smoothing, Mixup, CutMix, stochastic depth, gradient clipping; regularisation checklist.
+
+**Transfer learning (1)**: `transfer-learning.md` — hierarchical feature visualisation; three strategies (feature extraction, fine-tuning last layers, full fine-tuning) with PyTorch code and parameter counts; learning rate strategies; NLP transfer (GloVe, BERT); domain adaptation techniques; progressive unfreezing example; model selection table.
+
+**Transformers (1)**: `transformers.md` — architecture diagram (encoder/decoder); self-attention scaled dot-product with from-scratch code; multi-head attention implementation; positional encoding with visualisation; feed-forward network; layer normalisation + residual connections; pre-norm vs. post-norm warning; complete transformer encoder (PyTorch); BERT vs. GPT comparison.
+
+**Generative models (1)**: `autoencoders-gans.md` — autoencoder with compression ratio; denoising autoencoder; VAE with reparameterisation trick and KL loss; GAN minimax game explained with forger/detective analogy; DCGAN generator/discriminator (PyTorch); WGAN-GP with gradient penalty code; autoencoder vs. VAE vs. GAN comparison table.
+
+### Files modified
+
+- `wiki/index.md` — added `deep-learning/` sub-domain section (9 pages); updated statistics (concept pages ~158→~167, total ~196→~205).
+- `wiki/log.md` — this entry.
+
+### Routing decisions
+
+- **Merged**: `CNN.md` → `cnn.md`. `RNN.md` + `Sequence Models.md` → `rnn-lstm-gru.md`. `Dropout - Neural Network.md` + `Vanishing & Exploding Gradients.md` + `Epochs.md` → `neural-networks.md` + `regularisation-training.md` + `rnn-lstm-gru.md`. `Optimization Algorithms.md` → `optimisation-algorithms.md`. `Transfer Learning.md` → `transfer-learning.md`. `Autoencoders.md` → `autoencoders-gans.md`. `Transformers.md` + `BERT.md` + `RoBERTa.md` + `Machine Translation.md` → `transformers.md`.
+- **Enriched**: Most raw DL files were very thin (1–3 sentences); all pages were substantially enriched with standard DL textbook knowledge, full PyTorch code, mathematical derivations, and visual examples.
+- **Skipped**: `Reinforcement Learning.md` (too sparse to warrant a standalone page; deferred to future NLP/MLOps batches or dedicated RL page). `Network Architecture Search.md` (too niche).
+- **Design feedback applied**: User requested more examples and design elements. Batch 4 pages include: more complete runnable code snippets, visual ASCII diagrams, colour-coded callouts (`> [!info]`, `> [!warning]`, `> [!tip]`, `> [!example]`), parameter count outputs, training loop walkthroughs, and comparison tables.
+
+### Summary
+
+Completed the `deep-learning/` sub-domain with 9 concept pages covering the full deep learning stack — from perceptrons and backpropagation through CNNs, RNNs/LSTMs, optimisation algorithms, regularisation, transfer learning, transformers (with full PyTorch attention implementation), and generative models (autoencoders, VAEs, GANs). All pages include extensive code examples, mathematical formulas, visual callouts, and interview questions. Many raw files were thin; they were enriched with comprehensive textbook-level content rather than thin 1:1 mappings.
+
+---
+
+## 2026-06-08 (tenth pass, Batch 3) — DataScienceNotes-master ingest · ML Algorithms
+
+**Operator**: Cascade (Windsurf)
+**Trigger**: Continuation of Batch 2; user approved Batch 3 (ML Algorithms) after confirmation.
+
+### New sub-domain created
+
+`technology/machine-learning/ml-algorithms/` — third sub-domain under `machine-learning/`, peer to `statistics/` and `ml-fundamentals/`.
+
+### Files created (12 new notes)
+
+**ML Algorithms hub (1)**: `ml-algorithms.md` — sub-domain hub; algorithm family map and related-page grid.
+
+**Trees & Ensembles (4)**:
+- `decision-trees.md` — ID3, C4.5, CART, CHAID, MARS; terminology; entropy vs. Gini; Information Gain; variance reduction; cost-complexity pruning; regression trees; sklearn code.
+- `ensemble-learning.md` — max voting, averaging, weighted averaging, soft voting; bagging (bootstrap, OOB, pasting); boosting (AdaBoost weight updates, GBM residuals); stacking & blending; comparison table.
+- `random-forest.md` — bootstrap samples + random feature subsets; hyperparameters (n_estimators, max_features, max_depth, min_samples_leaf); Extra Trees; feature importance; sklearn code.
+- `gradient-boosting.md` — GBM fundamentals; AdaBoost (stumps, performance, weight updates); XGBoost (regularisation, parallel processing, custom objectives, missing values, tree pruning, built-in CV, similarity score, gain, eta, early stopping); LightGBM (leaf-wise growth, parameters); CatBoost (native categorical); library comparison table.
+
+**Linear Models (2)**:
+- `linear-models.md` — linear regression (RSS, assumptions); logistic regression (sigmoid, cross-entropy loss, convexity, coefficient interpretation); Ridge/Lasso/Elastic Net (formulae, selection criteria); perceptron; L1/L2/Huber loss comparison.
+- `svm.md` — linear SVM (margin maximisation, soft-margin, C); kernel trick (linear, polynomial, RBF, sigmoid); SVR; One-Class SVM; feature scaling requirement; sklearn code.
+
+**Classical Algorithms (2)**:
+- `naive-bayes.md` — Bayes theorem derivation; GaussianNB, MultinomialNB, BernoulliNB, ComplementNB; independence assumption; Laplace smoothing; strengths and weaknesses.
+- `knn.md` — lazy learning; choosing K; distance metrics (Euclidean, Manhattan, Minkowski); feature scaling; sensitivity to outliers; weighted KNN; computational cost.
+
+**Unsupervised (3)**:
+- `k-means.md` — Lloyd's algorithm; K-Means++; silhouette score; elbow method; limitations; hierarchical clustering (agglomerative/divisive, linkage criteria); sklearn code.
+- `pca.md` — standardisation, covariance matrix, eigen-decomposition, variance explained; LDA (class separability vs. variance); t-SNE (perplexity, non-linear embedding, caveats); sklearn code.
+- `association-rules.md` — Apriori algorithm; support, confidence, lift, conviction; market basket analysis; mlxtend code; applications.
+
+**Optimisation (1)**:
+- `hyperparameter-tuning.md` — grid search (exhaustive, expensive); randomised search (faster, wide range); Bayesian optimisation (surrogate model, acquisition function, Optuna); early stopping; key hyperparameters by algorithm.
+
+### Files modified
+
+- `wiki/index.md` — added `ml-algorithms/` sub-domain section (12 pages); updated statistics (concept pages ~146→~158, total ~184→~196).
+- `wiki/log.md` — this entry.
+
+### Routing decisions
+
+- **Merged**: `Decision Trees.md` + `Decision Tree - Pruning.md` + `Decision Tree Regressor.md` → `decision-trees.md`. `AdaBoost.md` + `Gradient Boosting (GBM).md` + `XGBoost.md` + `XGBoost Classification.md` + `XGBoost Regression.md` + `Light GBM.md` + `CatBoost.md` + `Boosting.md` + `Bagging.md` + `Bootstrap Aggregation.md` + `Ensemble Learning.md` + `Hard And Soft Voting Classifier.md` + `Stacking & Blending.md` + `Bagging Meta-Estimator.md` + `Extra Trees.md` → `ensemble-learning.md` + `random-forest.md` + `gradient-boosting.md`. `Linear Regression.md` + `Logistic Regression.md` + `Ridge, Lasso Regression & Elastic Net.md` + `L1 and L2 Regularization.md` + `L1 and L2 Loss Functions.md` + `Perceptron.md` + `Loss Functions.md` → `linear-models.md`. `K Means.md` + `Heirarchical Clustering.md` → `k-means.md`. `PCA.md` + `Linear Discriminant Analysis.md` + `T-SNE.md` → `pca.md`.
+- **Enriched**: `SVM.md` (very thin raw), `KNN.md` (nearly empty raw), `Naive Bayes.md` (short raw) were enriched with standard ML textbook knowledge.
+- **Skipped**: `Kernel Density Estimation.md` (too niche), `Anomaly Detection Algorithms.md` (absorbed into `../ml-fundamentals/outlier-detection.md`).
+- **Deferred**: Deep learning, NLP, MLOps, Big Data tool enrichment.
+
+### Summary
+
+Completed the `ml-algorithms/` sub-domain with 12 concept pages covering the full spectrum of classical ML algorithms — from decision trees and ensembles (Random Forest, XGBoost, LightGBM, CatBoost) through linear models and SVM to clustering, dimensionality reduction, and hyperparameter tuning. Many raw files were merged into richer consolidated pages. All pages follow the Concept Note template with YAML frontmatter, daily-quote blocks, LaTeX formulae, Python snippets, comparison tables, interview questions, and `[!grid]`/`[!card]` Related-pages blocks.
+
+---
+
+## 2026-06-08 (tenth pass, Batch 2) — DataScienceNotes-master ingest · ML Fundamentals
+
+**Operator**: Cascade (Windsurf)
+**Trigger**: Continuation of Batch 1; user approved Batch 2 (ML Fundamentals) after confirmation.
+
+### New sub-domain created
+
+`technology/machine-learning/ml-fundamentals/` — second sub-domain under `machine-learning/`, peer to `statistics/`.
+
+### Files created (13 new notes)
+
+**ML Fundamentals hub (1)**: `machine-learning-fundamentals.md` — sub-domain hub; links to all fundamentals pages.
+
+**Learning paradigms (2)**:
+- `supervised-learning.md` — regression & classification overview; scikit-learn code for Logistic Regression, Naive Bayes, SGD, KNN, Decision Tree, Random Forest, SVM, boosting.
+- `unsupervised-learning.md` — clustering, anomaly detection, density estimation; K-Means, Hierarchical, DBSCAN; label propagation; weak supervision.
+
+**Data preparation (2)**:
+- `feature-engineering.md` — scaling (Min-Max, Standardisation), encoding (label, one-hot, ordinal, target/mean, frequency), binning, feature crosses, dimensionality reduction, training-vs-serving pre-processing.
+- `feature-selection.md` — filter (correlation, mutual information, F-test, chi-squared, SelectKBest, VarianceThreshold), wrapper (forward/backward elimination, RFE), embedded (L1, tree importance); Predictive Power Score (PPS).
+
+**Model evaluation (2)**:
+- `evaluation-metrics.md` — classification (accuracy, precision, recall, specificity, F1, log loss, ROC-AUC, multi-class macro/micro/weighted) and regression (MAE, MSE, RMSE, MAPE, MSLE/RMSLE, R², adjusted R²); confusion matrix; Type I/II/III errors.
+- `cross-validation.md` — K-Fold, Stratified K-Fold, leaky validation strategies, Pipeline for leakage prevention, GridSearchCV for model selection.
+
+**Specialised topics (3)**:
+- `imbalanced-classification.md` — class weights, SMOTE, undersampling, oversampling, threshold tuning, balanced ensembles.
+- `outlier-detection.md` — Z-score, IQR, Isolation Forest, DBSCAN, LOF, Elliptic Envelope; algorithm sensitivity table; when to remove vs. keep.
+- `data-cleaning.md` — train-test split, simple/KNN/MICE imputation, missing categorical strategies, data leakage (leaky predictors, leaky validation), Pipeline best practices.
+
+**Production & monitoring (3)**:
+- `model-monitoring.md` — data drift, concept drift, training-serving skew, sudden failures, champion–challenger, monitoring checklist.
+- `ml-explainability.md` — feature importance, permutation importance, partial dependence plots, LIME, SHAP; comparison table.
+- `active-learning.md` — margin sampling, cluster-based, query-by-committee, region-based; semi-supervised learning (label propagation); weak supervision (Snorkel); label consistency.
+
+### Files modified
+
+- `wiki/index.md` — added `ml-fundamentals/` sub-domain section (13 pages); updated statistics (concept pages ~133→~146, total ~171→~184).
+- `wiki/log.md` — this entry.
+
+### Routing decisions
+
+- **Skipped**: `Model Evaluation.md` (empty TODO stub), `Improving Machine Learning Performance.md` (Twitter iframe only), `Champion Challenger.md` (too short — absorbed into `model-monitoring.md`).
+- **Merged**: `K Fold Cross Validation.md` + `Stratified K Fold Cross Validation.md` + `Cross Validation.md` → `cross-validation.md`. `Confusion Matrix & Metrics.md` + `Classifier Accuracy.md` + `Evaluation Metrics.md` → `evaluation-metrics.md`. `Feature Scaling.md` + `Encoding.md` + `Binning.md` + `Categorical, Ordinal & Nominal.md` + `Feature Engineering.md` → `feature-engineering.md`. `Imputing Missing Values.md` + `Data Cleaning.md` + `Data Leakage.md` → `data-cleaning.md`. `Data Drift.md` + `Concept Drift.md` + `Model Degradation.md` → `model-monitoring.md`. `LIME.md` + `SHAP.md` + `Partial Plots.md` + `Permuatation Importance.md` + `Machine Learning Explainability.md` → `ml-explainability.md`. `Active Learning.md` + `Semi-Supervised Labeling.md` + `Weak Supervision.md` + `Data Labeling.md` → `active-learning.md`.
+- **Deferred**: ML algorithms, deep learning, NLP, MLOps, Big Data tool enrichment.
+
+### Summary
+
+Completed the `ml-fundamentals/` sub-domain with 13 concept pages covering the entire ML pipeline from data preparation through production monitoring. All pages follow the Concept Note template with YAML frontmatter, daily-quote blocks, structured prose, LaTeX, Python snippets, comparison tables, interview questions, and `[!grid]`/`[!card]` Related-pages blocks. Many raw files were merged into richer, consolidated wiki pages rather than creating thin 1:1 mappings.
+
+---
+
+## 2026-06-08 (tenth pass) — DataScienceNotes-master ingest · Batch 1: Statistics
+
+**Operator**: Cascade (Windsurf)
+**Trigger**: User dropped `raw/DataScienceNotes-master/` (~200 markdown files covering Data Science, ML, statistics, NLP, MLOps, Big Data, and DevOps) and requested ingestion with existing design elements preserved.
+
+### New domain created
+
+`technology/machine-learning/` — new top-level sub-domain under `technology/`, peer to `data-engineering/`, `software-engineering/`, `databases/`, `cloud/`, `tools/`, `guides/`.
+
+### Files created (14 new notes)
+
+**ML hub (1)**: `technology/machine-learning/machine-learning.md` — domain hub; types of learning, ML lifecycle, sub-domain map.
+
+**Statistics sub-domain (13)** in `technology/machine-learning/statistics/`: `statistics.md` (hub) · `hypothesis-testing.md` · `ab-testing.md` · `probability-distributions.md` · `descriptive-statistics.md` · `sampling.md` · `bias-variance-tradeoff.md` · `entropy-information-theory.md` · `vector-norms.md` · `monte-carlo-simulation.md` · `cosine-similarity.md` · `benfords-law.md` · `mathematical-foundations-for-ml.md`
+
+### Files modified
+
+- `wiki/index.md` — added `machine-learning/` sub-domain section with all 14 new pages; updated statistics block (sub-domain count 6→7, concept pages ~119→~133, total ~156→~171).
+- `wiki/log.md` — this entry.
+
+### Routing decisions
+
+- **Skipped** from source: near-empty stubs (≤25 bytes), business/soft-skills content (`Elevator Pitch`, `Presentation Checklist`), and topics already covered in existing wiki pages (`CAP Theorem`, `Database Sharding`). These will be enriched in future passes.
+- **Deferred** to later batches: ML algorithms, deep learning, NLP, MLOps, Big Data tool enrichment.
+
+### Summary
+
+Established the `technology/machine-learning/` domain with a hub page and a complete **statistics sub-domain** (13 concept pages). All pages follow the Concept Note template: YAML frontmatter, static daily-quote block, structured prose with LaTeX formulae, Python code snippets, comparison tables, interview questions, and `[!grid]` / `[!card]` Related-pages blocks. Wikilinks rewritten from the old `[[Z Organise ME/DataScienceNotes-master/...]]` format to bare vault filenames.
+
+---
+
+## 2026-06-04 (ninth pass) — Full GCP product-list expansion
+
+**Operator**: Devin
+**Trigger**: User requested Obsidian notes for every product listed at https://docs.cloud.google.com/docs/product-list, covering the complete GCP product catalog beyond the existing notes.
+
+### New folders created
+
+Five new sub-folders added under `wiki/technology/cloud/gcp/`:
+
+- `ai-ml/` — AI & ML services
+- `networking/` — Networking services
+- `security/` — Security services
+- `devops/` — DevOps & App Development services
+- `operations/` — Operations & Observability services
+
+### Files created (59 new notes)
+
+**AI & ML** (15 notes): `vertex-ai`, `gemini`, `model-garden`, `vertex-ai-workbench`, `colab-enterprise`, `cloud-tpu`, `document-ai`, `cloud-vision-api`, `video-intelligence-api`, `speech-to-text`, `text-to-speech`, `cloud-natural-language`, `cloud-translation`, `dialogflow-cx`, `vector-search`
+
+**Networking** (10 notes): `vpc`, `cloud-load-balancing`, `cloud-cdn`, `cloud-dns`, `cloud-nat`, `cloud-armor`, `cloud-interconnect`, `cloud-vpn`, `cloud-router`, `network-intelligence-center`
+
+**Security** (8 notes): `iam`, `secret-manager`, `cloud-kms`, `security-command-center`, `cloud-identity`, `certificate-authority-service`, `binary-authorization`, `vpc-service-controls`
+
+**DevOps** (10 notes): `cloud-build`, `artifact-registry`, `cloud-deploy`, `cloud-shell`, `cloud-workstations`, `apigee`, `cloud-endpoints`, `eventarc`, `workflows`, `cloud-scheduler`
+
+**Operations** (7 notes): `cloud-monitoring`, `cloud-logging`, `cloud-trace`, `cloud-profiler`, `error-reporting`, `cloud-debugger`, `cloud-ids`
+
+**Databases** (3 new notes added to existing folder): `alloydb`, `firestore`, `database-migration-service`
+
+**Storage** (3 new notes added to existing folder): `hyperdisk`, `storage-transfer-service`, `backup-and-dr`
+
+### Files modified
+
+- `wiki/technology/cloud/gcp/GCP Home.md` — updated dataviewjs At-a-Glance table and Browse by Category grids to include all 5 new category folders
+- `wiki/index.md` — added all 59 new notes in the GCP section, with 5 new sub-sections (AI & ML, Networking, Security, DevOps, Operations)
+- `wiki/log.md` — this entry
+
+### Summary
+
+Expanded the GCP section of the wiki from 32 notes across 6 folders to **91 notes across 11 folders**, covering the full published Google Cloud product list. Every note follows the Cloud Service Note template: YAML frontmatter, infobox, daily-quote block, Overview/Key Features/Use Cases/Pricing sections, and a Related pages grid with wikilinks to related services and GCP Home.
+
 
 ## 2026-05-29 (eighth pass) — Wikipedia-style infoboxes + daily-quote backfill
 
@@ -663,3 +1253,64 @@ Rewrote the Folder structure and Ingest workflow sections to reflect the new con
 ### Why this matters
 
 The vault now has an architecture that scales beyond technology. When the user later ingests sources about philosophy, art, or science, the agent will create those top-level folders and they will sit as **peers** of `technology/`, not buried within it or jumbled at the same level as Cloud or DBMS. The categorization decision tree in `windsurf.md` ensures every future raw drop routes deterministically.
+
+---
+
+## 2026-06-10 — Consolidation: `science/statistics/` merged into `technology/machine-learning/statistics/`
+
+**Operator**: Devin (CLI)
+**Trigger**: User noticed duplicate statistics folders (`science/statistics/` and `technology/machine-learning/statistics/`) and requested consolidation.
+
+### Action
+
+- **Moved** 3 concept pages from `science/statistics/` → `technology/machine-learning/statistics/`:
+  - `random-variables.md`
+  - `law-of-large-numbers.md`
+  - `survivorship-bias.md`
+- **Fixed** all internal wikilinks in the moved pages (relative paths updated from `science/statistics/` to `technology/machine-learning/statistics/`).
+- **Updated** `technology/machine-learning/statistics/statistics.md` (hub) — added Random Variables, Law of Large Numbers, and Survivorship Bias to the folder grid.
+- **Updated** `wiki/index.md` — removed duplicate `science/statistics/` section; the 3 pages now live under the ML statistics list.
+- **Updated** `career/technical-interviews.md` and `career/interview-techniques.md` — fixed cross-links from `science/statistics/` to `technology/machine-learning/statistics/`.
+- **Updated** `wiki/log.md` — Batch 5 header amended to reflect the move.
+- **Removed** empty `science/statistics/` folder.
+
+### Result
+
+Single source of truth for statistics content. The `science/` top-level field remains with `science/mathematics/` (calculus, series, combinatorics).
+
+---
+
+## 2026-06-09 — Ingest: `raw/` (DataScienceNotes flat drop)
+
+**Operator**: Devin (CLI)
+**Trigger**: User dropped a flat set of ~52 `.md` files + 4 PNG assets + 1 `.canvas` + 1 `.ipynb` into `raw/` and requested ingest per `plan.md`.
+
+### Analysis
+
+Concept-by-concept diff showed **~90% overlap** with existing wiki pages. Many raw files were 25-byte placeholder stubs. This was an **enrichment + gap-fill** pass, not a fresh ingest.
+
+### New page created (1)
+
+- `science/mathematics/linear-algebra.md` — vectors, dot products, norms, eigenvalues/eigenvectors, geometric intuition, applications in PCA, spectral clustering, PageRank.
+
+### Pages enriched (7)
+
+1. `technology/machine-learning/statistics/time-series.md` — added **Stationarity Testing** section: ADF test (hypothesis, formula, Python snippet), KPSS cross-reference, stationary vs non-stationary properties, differencing/log-transform guidance.
+2. `technology/machine-learning/ml-algorithms/k-means.md` — added **DBSCAN** section: core/border/noise points, eps & minPts parameters, algorithm steps, sklearn example, strengths/weaknesses; expanded comparison table to include DBSCAN; added DBSCAN interview questions; embedded silhouette visualisation assets.
+3. `technology/machine-learning/nlp/nlp-fundamentals.md` — added **Bag of Words** section (DTM construction, pros/cons, sparsity tip) and **One-Hot Encoding for NLP** section (orthogonality, dimensionality explosion, why embeddings are better); added BOW/TF-IDF interview questions.
+4. `technology/machine-learning/ml-fundamentals/feature-engineering.md` — added "When to use standardisation" table (linear models, PCA, distance-based algos, neural networks, outliers, feature importance comparison).
+5. `technology/machine-learning/ml-fundamentals/data-cleaning.md` — added **Missingness Mechanisms** section (MCAR / MAR / MNAR table with examples and strategies); added **Data Validation vs Data Transformation** section (goals, actions, timing, tools).
+6. `technology/machine-learning/statistics/descriptive-statistics.md` — added **Interpolation vs Extrapolation** section (definitions, methods, risks, ML relevance); added interview questions.
+7. `technology/tools/analytics-tools.md` — added Matplotlib to Notebook section and decision matrix.
+
+### Assets routed
+
+- 4 PNGs (silhouette score plots) → `wiki/attachments/`
+- `data science project lifecycle.canvas` → `wiki/attachments/`; cross-linked from `model-lifecycle.md`
+- `jupyter_notebook.ipynb` → `wiki/attachments/`; cross-linked from `analytics-tools.md`
+
+### Updated
+
+- `wiki/index.md` — added `linear-algebra` under Science / Mathematics.
+- `plan.md` — status updated to COMPLETED.
+- This `log.md` entry.

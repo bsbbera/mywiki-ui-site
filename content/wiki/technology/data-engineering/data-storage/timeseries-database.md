@@ -1,27 +1,37 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Timeseries Database
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Timeseries Database
   - TSDB
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Storage
   - TimeSeries
   - IoT
-banner:
+banner: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "I never said it would be easy, I only said it would be worth it."
-> <cite>— Mae West</cite>
+<span class="at-kicker">Data Engineering · Storage</span>
 
----
+# Timeseries Database
 
-A **time-series database (TSDB)** is optimized to **store, aggregate, and analyze** large amounts of **continuously generated, time-stamped data** from sources like **IoT devices, sensors, application metrics, financial markets** (source: Concepts/Data Storage/Timeseries Database.md). Used in applications that monitor performance over time or track event sequences.
+<p class="at-lead">
+A time-series database (TSDB) is optimized to store, aggregate, and analyze large amounts of continuously generated, time-stamped data from sources like IoT devices, sensors, application metrics, and financial markets.
+</p>
+
+<span class="at-stat">Millions</span> of points per second &nbsp;·&nbsp; <span class="at-stat">10×</span> compression typical &nbsp;·&nbsp; <span class="at-mark">Purpose-built for the unique patterns of time-ordered data</span>
+
+> [!tip] Time-Series Data Characteristics
+> Time-stamped data is **append-only** (rarely modified), **time-ordered** (natural primary key), **high write rate**, and **aggregation-heavy**. TSDBs optimize all of these with specialized compression (Gorilla, delta-of-delta), time-bucketed indexing, and automatic lifecycle management.
+
+<span class="at-kicker">Unique Characteristics</span>
 
 ## What makes TSDBs special
 
@@ -35,19 +45,25 @@ Time-stamped data has unique characteristics:
 
 TSDBs optimize all of these.
 
-## Advantages
+<span class="at-kicker">Trade-offs</span>
 
-- **Built-in time-aware functions** — windowing, downsampling, gap-filling.
-- **Lifecycle management** — automatic retention + tiered storage.
-- **Aggressive compression** — Gorilla / delta-of-delta encoding common.
-- **Specialized indexing** — time-bucketed, per-tag indexes.
-- **High ingestion rates**.
+## Advantages vs Disadvantages
 
-## Disadvantages
+> [!grid|cols2]
+>
+> > [!card|section] Advantages
+> > - **Built-in time-aware functions** — windowing, downsampling, gap-filling.
+> > - **Lifecycle management** — automatic retention + tiered storage.
+> > - **Aggressive compression** — Gorilla / delta-of-delta encoding common.
+> > - **Specialized indexing** — time-bucketed, per-tag indexes.
+> > - **High ingestion rates**.
+>
+> > [!card|section] Disadvantages
+> > - **Not optimal for relationships** — no joins / FK semantics.
+> > - **Higher storage requirement** — every point indexed.
+> > - **Niche tooling** — fewer DBAs; learning curve.
 
-- **Not optimal for relationships** — no joins / FK semantics.
-- **Higher storage requirement** — every point indexed.
-- **Niche tooling** — fewer DBAs; learning curve.
+<span class="at-kicker">Use Cases</span>
 
 ## Use cases
 
@@ -57,6 +73,8 @@ TSDBs optimize all of these.
 - **Real-time ad bidding**.
 - **Server metrics, SLOs, SLAs**.
 - **Energy-grid monitoring**.
+
+<span class="at-kicker">Popular Systems</span>
 
 ## Popular TSDBs
 
@@ -69,6 +87,8 @@ TSDBs optimize all of these.
 - **VictoriaMetrics** — Prometheus-compatible, scalable.
 - **Amazon Timestream**, **Azure Data Explorer (Kusto)**.
 
+<span class="at-kicker">Cloud Platforms</span>
+
 ## TSDB on GCP
 
 GCP doesn't offer a dedicated managed TSDB, but:
@@ -78,12 +98,16 @@ GCP doesn't offer a dedicated managed TSDB, but:
 - **Cloud Monitoring** uses an internal TSDB for metrics.
 - **TimescaleDB on Cloud SQL** (Postgres) for SQL-native TS.
 
+<span class="at-kicker">Time-Series Patterns</span>
+
 ## Time-series patterns
 
 - **Tags + timestamps** — store metric, tags (host, region), value, timestamp.
 - **Downsampling** — keep raw data for 24h, 1-min averages for 30d, hourly for 1y.
 - **Continuous aggregates** — TimescaleDB's killer feature; auto-rolling materialized views.
 - **Bucket / time-window queries** — `time_bucket('1 hour', ts)` style aggregations.
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview Questions
 
@@ -92,6 +116,8 @@ GCP doesn't offer a dedicated managed TSDB, but:
 3. How does **Bigtable** fit time-series workloads?
 4. **Downsampling** strategy — design tradeoffs.
 5. **Gorilla compression** — what + why.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -107,4 +133,3 @@ GCP doesn't offer a dedicated managed TSDB, but:
 >
 >> [!card] Products
 >> [[../../cloud/gcp/databases/cloud-bigtable|Cloud Bigtable]], [[../../tools/databases-overview|Databases Overview]]
-

@@ -2,7 +2,7 @@
 title: Analytics + BI Tools
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Tuesday, June 9th 2026, 6:00:00 pm
 aliases:
   - Analytics Tools
   - BI Tools
@@ -97,7 +97,7 @@ OLAP DB used as a real-time analytics layer.
 
 ### Jupyter / JupyterLab
 
-The canonical Python notebook.
+The canonical Python notebook. A sample exploratory notebook from the raw ingest is archived at `[[../../attachments/jupyter_notebook|jupyter_notebook.ipynb]]`.
 
 ### Google Colab / Vertex AI Workbench / Colab Enterprise
 
@@ -124,6 +124,7 @@ Collaborative notebook + dashboard hybrids.
 | **Headless metrics layer** | **dbt Semantic Layer / Cube** |
 | **Real-time dashboards** | **Druid / Pinot / ClickHouse / Rill** |
 | **Notebook + collaboration** | **Hex / Deepnote / Databricks Notebooks** |
+| **Python viz + EDA** | **Matplotlib / Seaborn / Plotly** |
 
 ## Modern trends
 

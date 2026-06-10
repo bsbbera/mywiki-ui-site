@@ -2,7 +2,7 @@
 title: Dimensional Modeling
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - Dimensional Model
   - Kimball Modeling
@@ -14,8 +14,10 @@ tags:
   - Modeling
   - OLAP
   - Warehouse
-banner:
+banner: https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400
 publish: true
+cssclass: wide-page
+maturity: evergreen
 ---
 
 > "Life begins at the end of our comfort zone."
@@ -23,17 +25,33 @@ publish: true
 
 ---
 
-**Dimensional modeling** is the popular technique developed by **Ralph Kimball** for modeling data for **analytics**. At its core, dimensional modeling organizes data into two types of tables: **fact tables** and **dimension tables**. Facts comprise **numerical, aggregable measures**; dimensions hold **descriptive attributes** of entities (source: Concepts/Data Modeling/Dimensional Modeling.md).
+<span class="at-kicker">Data Modeling · Kimball Pattern</span>
 
-The key trade-off: dimensional modeling **[[denormalization|denormalizes]]** data to **speed up queries**.
+# Dimensional Modeling
+
+<p class="at-lead">
+Dimensional modeling is the popular technique developed by Ralph Kimball for modeling data for analytics. At its core, it organizes data into fact tables (numerical, aggregable measures) and dimension tables (descriptive attributes), trading normalization for query speed.
+</p>
+
+<span class="at-stat">Star</span> + snowflake schemas &nbsp;·&nbsp; <span class="at-stat">SCD</span> patterns &nbsp;·&nbsp; <span class="at-mark">facts and dimensions — the star schema that powers most BI tools</span>
+
+> [!tip] When to Use Dimensional Modeling
+> Choose dimensional modeling for analytics warehouses where BI tools need fast, predictable queries. The denormalized structure reduces joins and simplifies analyst workflows. Perfect for historical tracking via slowly changing dimensions.
+
+<span class="at-kicker">Schema Patterns</span>
 
 ## Schema patterns
 
-| Pattern | Description |
-| --- | --- |
-| **Star schema** | One fact + many denormalized dimensions (recommended default) |
-| **Snowflake schema** | Star + dimensions further normalized into hierarchies |
-| **Galaxy schema** | Multiple facts sharing dimensions ("fact constellation") |
+> [!grid|cols3]
+>
+> > [!card|section] Star Schema
+> > One fact + many denormalized dimensions (recommended default).
+>
+> > [!card|section] Snowflake Schema
+> > Star + dimensions further normalized into hierarchies.
+>
+> > [!card|section] Galaxy Schema
+> > Multiple facts sharing dimensions ("fact constellation").
 
 ## Star schema example
 
@@ -53,19 +71,37 @@ The key trade-off: dimensional modeling **[[denormalization|denormalizes]]** dat
 - **Fact** — measures (units sold, revenue, clicks); high-cardinality; many rows.
 - **Dimensions** — descriptive (date, customer, product); low cardinality; many fewer rows.
 
+<span class="at-kicker">Trade-offs</span>
+
 ## Advantages
 
-- **Intuitive** — analysts grasp star schemas quickly.
-- **Good query performance** for analytics — fewer joins, predictable shape.
-- **Tracks history** easily via **slowly changing dimensions** (SCD).
+> [!grid|cols2]
+>
+> > [!card|section] Intuitive
+> > Analysts grasp star schemas quickly.
+>
+> > [!card|section] Query Performance
+> > Good performance for analytics — fewer joins, predictable shape.
+>
+> > [!card|section] History Tracking
+> > Tracks history easily via slowly changing dimensions (SCD).
 
 ## Disadvantages
 
-- **Complex to query** sometimes — multi-fact comparisons need careful conformity.
-- **Storage overhead** from denormalization.
-- **Maintenance** — adding new measures or dimensions requires care.
+> [!grid|cols2]
+>
+> > [!card|section] Query Complexity
+> > Multi-fact comparisons need careful conformity.
+>
+> > [!card|section] Storage Overhead
+> > Cost of denormalization.
+>
+> > [!card|section] Maintenance
+> > Adding new measures or dimensions requires care.
 
-## Slowly Changing Dimensions (SCD)
+<span class="at-kicker">Slowly Changing Dimensions</span>
+
+## SCD Patterns
 
 Patterns for tracking how dimension attributes change over time:
 
@@ -76,6 +112,8 @@ Patterns for tracking how dimension attributes change over time:
 | **Type 2** | New row + effective dates | Track history |
 | **Type 3** | Add prior-value column | Track 1 step back only |
 | **Type 6** | Hybrid (Type 1 + 2 + 3) | Best of all |
+
+<span class="at-kicker">Modern Context</span>
 
 ## Modern dimensional modeling
 
@@ -92,6 +130,8 @@ Patterns for tracking how dimension attributes change over time:
 | Effort | High upfront | Faster delivery |
 | Flexibility | Rigid | Flexible |
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. **Star** vs **snowflake** schema — when prefer each?
@@ -99,6 +139,8 @@ Patterns for tracking how dimension attributes change over time:
 3. Walk through SCD Type 2 with an example.
 4. Why denormalize? Doesn't normalization improve integrity?
 5. **Inmon** vs **Kimball** approaches.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -122,4 +164,3 @@ Patterns for tracking how dimension attributes change over time:
 >
 >> [!card] Books
 >> [[../../../books/the-data-warehouse-toolkit|The Data Warehouse Toolkit]]
-

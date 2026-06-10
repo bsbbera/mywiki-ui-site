@@ -1,8 +1,9 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Spark DataFrame
 Created:
   - 2026-05-28
-date modified: Thursday, May 28th 2026
 aliases:
   - Spark DataFrame
   - DataFrame
@@ -10,22 +11,29 @@ aliases:
   - StructType
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Processing
   - Spark
   - DataFrame
-banner:
+banner: https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "Good things aren't supposed to just fall into your lap."
-> <cite>— Audrey Hepburn</cite>
+<span class="at-kicker">Data Engineering · Spark</span>
 
----
+# Spark DataFrame
 
-A **DataFrame** is Spark's high-level structured API: an **immutable, distributed collection of data organized into named columns** — conceptually a table in a relational database, but distributed and lazily evaluated (source: pyspark interview prep.pdf). It is the recommended starting point for most [[pyspark|PySpark]] work, with [[rdd|RDDs]] reserved for low-level control.
+<p class="at-lead">
+A DataFrame is Spark's high-level structured API: an immutable, distributed collection of data organized into named columns — conceptually a table in a relational database, but distributed and lazily evaluated. It is the recommended starting point for most PySpark work.
+</p>
 
-A DataFrame is divided into two parts: **rows and columns**; you need a DataFrame to manipulate columns (source: pyspark basics.pdf).
+<span class="at-stat">Catalyst</span> optimizer powered &nbsp;·&nbsp; <span class="at-stat">2.0+</span> Spark versions &nbsp;·&nbsp; <span class="at-mark">Structured data processing with SQL-like expressiveness</span>
+
+> [!tip] RDD vs DataFrame vs Dataset
+> RDDs are low-level objects with no optimizer. DataFrames are named columns with Catalyst optimization (recommended for PySpark). Datasets are typed JVM objects (not available in PySpark — need Scala/Java). For structured work, DataFrames outperform raw RDDs.
+
+<span class="at-kicker">Comparison</span>
 
 ## RDD vs DataFrame vs Dataset
 
@@ -36,11 +44,13 @@ A DataFrame is divided into two parts: **rows and columns**; you need a DataFram
 | Type safety | Compile-time (typed) | **No compile-time** schema safety | Compile-time |
 | Best for | Functional, low-level control | Most structured work | Type-safe JVM code (Scala/Java) |
 
-Datasets are a **subset of DataFrames** with an encoder for compile-time type safety; they are **not available in PySpark** because Python is dynamically typed — Datasets need a compile-time, type-safe language like Scala (source: pyspark interview prep.pdf). PySpark users work with DataFrames and benefit from Catalyst optimization and Tungsten's fast code generation.
+Datasets are a **subset of DataFrames** with an encoder for compile-time type safety; they are **not available in PySpark** because Python is dynamically typed — Datasets need a compile-time, type-safe language like Scala. PySpark users work with DataFrames and benefit from Catalyst optimization and Tungsten's fast code generation.
+
+<span class="at-kicker">Schema Definition</span>
 
 ## Schema: StructType and StructField
 
-A **schema is the metadata that defines column names and types** (source: pyspark basics.pdf). PySpark models it explicitly (source: pyspark interview prep.pdf):
+A **schema is the metadata that defines column names and types**. PySpark models it explicitly:
 
 - **`StructType`** — a collection of `StructField` objects describing the whole structure (shown as `struct` by `printSchema()`).
 - **`StructField`** — one column: name (String), type (`DataType`), nullable (Boolean), and metadata.
@@ -54,13 +64,11 @@ schema = StructType([
 df = spark.createDataFrame(data=data, schema=schema)
 ```
 
-Specifying a schema on read **avoids extra inference jobs** — schema inference forces Spark to scan part of the data, triggering additional jobs (source: pyspark basics.pdf).
+Specifying a schema on read **avoids extra inference jobs** — schema inference forces Spark to scan part of the data, triggering additional jobs. Complex/nested columns use **`ArrayType`** (collection of same-typed items) and **`MapType`** (key/value, with optional `valueContainsNull`).
 
-Complex/nested columns use **`ArrayType`** (collection of same-typed items) and **`MapType`** (key/value, with optional `valueContainsNull`) (source: pyspark interview prep.pdf).
+<span class="at-kicker">Common Operations</span>
 
 ## Common operations
-
-From the source notes (source: pyspark basics.pdf, pyspark interview prep.pdf):
 
 | Operation | Method |
 | --- | --- |
@@ -77,13 +85,17 @@ From the source notes (source: pyspark basics.pdf, pyspark interview prep.pdf):
 | Pivot / unpivot | `groupBy().pivot().sum()` / `unpivot()` |
 | Convert to pandas | `toPandas()` |
 
-> `toPandas()` **collects all rows to the driver** — use it only on small/aggregated results, or large datasets will fail with a memory error (source: pyspark interview prep.pdf). The reverse (PySpark vs Pandas trade-offs) is covered in [[pyspark|PySpark]].
+> `toPandas()` **collects all rows to the driver** — use it only on small/aggregated results, or large datasets will fail with a memory error. The reverse (PySpark vs Pandas trade-offs) is covered in [[pyspark|PySpark]].
 
-When the DataFrame API feels awkward, the **`expr()`** function lets you drop into SQL expressions easily (source: pyspark basics.pdf).
+When the DataFrame API feels awkward, the **`expr()`** function lets you drop into SQL expressions easily.
+
+<span class="at-kicker">UDFs</span>
 
 ## User-defined functions
 
-A **[[spark-sql|UDF]]** wraps a Python function so it can be applied column-wise on a DataFrame. UDFs extend Spark's built-ins but run **outside Catalyst's optimizations**, so prefer built-in functions when one exists (source: pyspark interview prep.pdf).
+A **[[spark-sql|UDF]]** wraps a Python function so it can be applied column-wise on a DataFrame. UDFs extend Spark's built-ins but run **outside Catalyst's optimizations**, so prefer built-in functions when one exists.
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview questions
 
@@ -92,6 +104,8 @@ A **[[spark-sql|UDF]]** wraps a Python function so it can be applied column-wise
 3. **`distinct()`** vs **`dropDuplicates()`**.
 4. How do you convert a PySpark DataFrame to **pandas**, and what's the risk?
 5. What are **`ArrayType`** and **`MapType`** for?
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 

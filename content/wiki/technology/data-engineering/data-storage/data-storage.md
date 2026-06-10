@@ -1,27 +1,34 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Data Storage
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Data Storage
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Storage
-banner:
+banner: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "No valid plans for the future can be made by those who have no capacity for living now."
-> <cite>— Alan Watts</cite>
+<span class="at-kicker">Data Engineering · Storage</span>
 
----
+# Data Storage
 
-**Data storage** covers the technologies and systems used to store and retrieve data in various formats and structures. Modern storage divides into two categories (source: Concepts/Data Storage/Data Storage.md):
+<p class="at-lead">
+Data storage covers the technologies and systems used to store and retrieve data in various formats and structures. Modern storage divides into two categories: databases with built-in compute, and object/blob storage requiring external compute.
+</p>
 
-1. **[[database|Databases]]** — managed storage *with* built-in compute (queries via SQL or DB API).
-2. **Object / Blob Storage** — raw storage requiring *external* compute.
+<span class="at-stat">2</span> major categories &nbsp;·&nbsp; <span class="at-stat">10+</span> database types &nbsp;·&nbsp; <span class="at-mark">The foundation layer that determines performance, cost, and scalability</span>
+
+> [!tip] The Storage Decision Tree
+> Need ACID + complex joins? → Relational. Document-shaped data? → Document DB. Sub-millisecond reads? → In-memory. Petabyte time-series? → Wide-column or TSDB. The storage choice is the most consequential architecture decision — it affects every downstream operation.
+
+<span class="at-kicker">Storage Categories</span>
 
 ## 1. Databases
 
@@ -46,6 +53,8 @@ Types:
 - [[timeseries-database|Time-series]]
 - Search-engine (Elasticsearch, OpenSearch)
 
+<span class="at-kicker">Object Storage</span>
+
 ## 2. Object / Blob Storage
 
 Raw data persistence without compute — external engines (Spark, Presto, Dataflow, BigQuery) read the data on demand.
@@ -65,6 +74,8 @@ Cloud examples:
 - **Azure Blob Storage**, **ADLS Gen2**
 - **[[Cloud Storage|GCP Cloud Storage]]**
 
+<span class="at-kicker">Decision Framework</span>
+
 ## Choosing the right storage
 
 | Need | Pick |
@@ -78,6 +89,8 @@ Cloud examples:
 | Analytics aggregations | [[column-oriented-database\|Columnar]] (in warehouse) |
 | Cheap raw blobs | Object storage |
 | Full-text search | Search engine (Elasticsearch) |
+
+<span class="at-kicker">Cloud Platforms</span>
 
 ## Storage in cloud platforms
 
@@ -93,11 +106,15 @@ Cloud examples:
 | [[../../cloud/gcp/databases/memorystore\|Memorystore]] | ElastiCache | Cache for Redis |
 | [[../../cloud/gcp/analytics/bigquery\|BigQuery]] | Redshift | Synapse |
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. **Database** vs **object storage** — fundamental difference.
 2. Walk through choosing storage for: a SaaS app, IoT telemetry, analytics warehouse, real-time leaderboard.
 3. **SQL** vs **NoSQL** — when prefer which?
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -117,4 +134,3 @@ Cloud examples:
 >
 >> [!card] Tools + theory
 >> [[../../tools/databases-overview|Databases Overview]], [[../../tools/object-storage|Object Storage]], [[../../databases/acid-properties|ACID Properties]]
-

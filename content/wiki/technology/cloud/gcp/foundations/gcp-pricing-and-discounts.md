@@ -2,7 +2,7 @@
 title: GCP Pricing and Discounts
 Created:
   - 2026-04-27
-date modified: Monday, April 27th 2026, 9:28:50 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - GCP Pricing
   - SUD
@@ -14,8 +14,21 @@ tags:
   - GCP
   - CloudEngineering
   - Pricing
-banner:
+banner: https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1400
+cssclass: wide-page
 publish: true
+---
+
+> [!infobox|right]
+> # GCP Pricing and Discounts
+> ###### Cloud Platform
+> | | |
+> | --- | --- |
+> | **Provider** | Google Cloud |
+> | **Type** | Cost management |
+> | **Domain** | Billing & optimization |
+> | **Key models** | SUD, CUD, Spot, Free Tier |
+
 ---
 
 > "To be prepared is half the victory."
@@ -23,11 +36,48 @@ publish: true
 
 ---
 
-GCP's pricing is built around **per-second billing** with multiple stacking discounts that reward sustained or committed usage. Understanding these levers is the difference between a typical bill and a 50–80%-cheaper one.
+<span class="at-kicker">Cost Management · Google Cloud</span>
+# GCP Pricing and Discounts
+<p class="at-lead">GCP's pricing is built around per-second billing with multiple stacking discounts that reward sustained or committed usage. Understanding these levers is the difference between a typical bill and a 50–80%-cheaper one.</p>
+<span class="at-stat">SUDs</span> automatic · <span class="at-stat">CUDs</span> up to <span class="at-stat">57%</span> off · <span class="at-stat">Free Tier</span> always-on &nbsp;·&nbsp; <span class="at-mark">GCP automatically applies sustained use discounts — no upfront commitment needed</span>
+
+<span class="at-kicker">How It Works</span>
+## Overview
+
+Google was the **first major cloud provider** to bill VMs by the second instead of rounding up to the hour (source: Google Cloud Platform (GCP).md). For workloads that churn VMs (CI runners, batch jobs), this alone yields meaningful savings.
 
 ## Per-second billing
 
-Google was the **first major cloud provider** to bill VMs by the second instead of rounding up to the hour (source: Google Cloud Platform (GCP).md). For workloads that churn VMs (CI runners, batch jobs), this alone yields meaningful savings.
+GCP pioneered per-second billing for VMs. No more rounding up to the hour — pay only for the seconds you use. This benefits workloads with variable runtimes and frequent VM cycling.
+
+<span class="at-kicker">Core Capabilities</span>
+## Key Features
+
+> [!grid|cols3]
+>
+>> [!card|section]
+>> **Sustained Use Discounts (SUD)**
+>> Automatic discount once a VM runs >25% of the billing month. No commitment required — GCP applies it silently to your bill.
+>
+>> [!card|section]
+>> **Committed Use Discounts (CUD)**
+>> Up to ~57% off for 1- or 3-year commitments. Best for steady-state production workloads. Stackable with SUD on overage.
+>
+>> [!card|section]
+>> **Preemptible / Spot VMs**
+>> ~80% lower price for short-lived instances Google can reclaim with 30 seconds notice. Best for fault-tolerant workloads.
+>
+>> [!card|section]
+>> **Free Tier**
+>> $300 in credits for new accounts plus always-free quotas across 20+ services. Never expires for eligible services.
+>
+>> [!card|section]
+>> **Custom Machine Types**
+>> Pick arbitrary CPU/RAM ratios — pay only for what your workload actually needs rather than over-provisioning.
+>
+>> [!card|section]
+>> **Per-Second Billing**
+>> First major cloud provider to bill by the second. Meaningful savings for workloads that churn VMs frequently.
 
 ## Sustained Use Discounts (SUD)
 
@@ -62,30 +112,55 @@ Best for fault-tolerant workloads: batch processing, rendering, CI, big-data job
 
 (source: Google Cloud Platform - Compute Services.md, [cloud.google.com/free](https://cloud.google.com/free))
 
-## Custom machine types
-
-Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what your workload actually needs rather than over-provisioning to a predefined size (source: Google Cloud Platform (GCP).md).
-
+<span class="at-kicker">Real-World Applications</span>
 ## Cost-saving checklist
 
-1. Use **preemptible/Spot VMs** for non-critical / batch workloads (-80%).
-2. Use **CUDs** for predictable steady-state workloads (-57%).
-3. Let **SUDs** apply automatically — don't restart VMs unnecessarily.
-4. **Right-size** with custom machine types.
-5. Apply **lifecycle management** in [[Cloud Storage]] to tier cold data.
-6. **Scale to zero** with [[cloud-run]] / [[app-engine]] Standard / [[cloud-functions]] for bursty workloads.
-7. Use **autoscaling** to match demand.
-8. Monitor with **GCP Billing Reports** and budgets to catch surprises.
+> [!grid|cols2]
+>
+>> [!card|section]
+>> **Use Preemptible/Spot VMs**
+>> For non-critical / batch workloads (-80%). Fault-tolerant compute at a fraction of the cost.
+>
+>> [!card|section]
+>> **Apply CUDs**
+>> For predictable steady-state workloads (-57%). Commit to baseline capacity for significant savings.
+>
+>> [!card|section]
+>> **Let SUDs Apply Automatically**
+>> Don't restart VMs unnecessarily. Long-running workloads automatically receive sustained use discounts.
+>
+>> [!card|section]
+>> **Right-size with Custom Types**
+>> Match CPU/RAM to actual needs. Avoid over-provisioning to predefined instance sizes.
+>
+>> [!card|section]
+>> **Lifecycle Management**
+>> In Cloud Storage, auto-tier cold data. Move infrequently accessed data to colder storage classes.
+>
+>> [!card|section]
+>> **Scale to Zero**
+>> With Cloud Run, App Engine Standard, or Cloud Functions for bursty workloads. Pay only when processing.
+>
+>> [!card|section]
+>> **Use Autoscaling**
+>> Match compute capacity to demand. Scale up for peak, down for valleys.
+>
+>> [!card|section]
+>> **Monitor with Billing Reports**
+>> Set budgets and alerts to catch surprises. Proactive cost monitoring prevents bill shock.
 
 (source: Google Cloud Platform - Compute Services.md, source: Cloud Storage in GCP.md)
 
+<span class="at-kicker">Cost Model</span>
 ## Hidden costs to watch
 
-- **Egress** — data leaving GCP costs ~$0.12/GB (source: Google Cloud Platform (GCP).md).
-- **Inter-region traffic** — also billed.
-- **Load balancer rule-hours** — small but constant.
-- **Cloud Logging volume** — easy to over-ingest.
-- **NAT Gateway data** — per-GB processing fee.
+| Dimension | Detail |
+|-----------|--------|
+| **Egress** | Data leaving GCP costs ~$0.12/GB (source: Google Cloud Platform (GCP).md) |
+| **Inter-region traffic** | Also billed at standard rates |
+| **Load balancer rule-hours** | Small but constant charge per forwarding rule |
+| **Cloud Logging volume** | Easy to over-ingest; set retention policies |
+| **NAT Gateway data** | Per-GB processing fee for Cloud NAT |
 
 ## Interesting Facts
 
@@ -101,6 +176,29 @@ Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what 
 4. What egress patterns would dominate the bill of a global SaaS on GCP?
 5. Walk through the always-free tier and which services scale-to-zero.
 
+> [!grid|cols4]
+>
+>> [!card|hero dark spanfull]
+>> ###### 3 STEPS · GCP PRICING & DISCOUNTS
+>> # From *pay-as-you-go* to *optimized GCP spend*.
+>> Understand pricing dimensions, apply CUDs for predictable workloads, and monitor with Cost Management tools.
+>
+>> [!card|step]
+>> ###### Step 01
+>> ### *Understand* pricing dimensions.
+>> Compute, storage, networking, and operations all have distinct pricing models. Identify the cost drivers for your architecture.
+>
+>> [!card|step]
+>> ###### Step 02
+>> ### *Apply* CUDs for predictable workloads.
+>> Commit to 1- or 3-year baselines for steady-state workloads. Save up to 57% with zero operational changes.
+>
+>> [!card|step]
+>> ###### Step 03
+>> ### *Monitor* with Cost Management.
+>> Use Billing Reports, Budgets, and Cost Tables. Set alerts at 50%, 90%, and 100% of budget to catch overruns early.
+
+<span class="at-kicker">Continue Reading</span>
 ## Related pages
 
 > [!grid]
@@ -115,4 +213,3 @@ Compute Engine lets you pick **arbitrary CPU/RAM ratios** — pay only for what 
 >
 >> [!card] Cross-cloud guides
 >> [[../../../guides/cost-optimization-cloud|Cost Optimization in the Cloud]]
-

@@ -1,27 +1,37 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Graph Database
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Graph Database
   - GDB
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Storage
   - NoSQL
   - Graph
-banner:
+banner: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1400
 publish: true
 ---
 
-> "A good stance and posture reflect a proper state of mind."
-> <cite>— Morihei Ueshiba</cite>
+<span class="at-kicker">Data Engineering · Storage</span>
 
----
+# Graph Database
 
-A **graph database** is a type of [[non-relational-database|NoSQL]] database that uses **nodes, edges, and properties** to store data about **entities and the relationships between them**. The main purpose: efficiently **traverse** the network of nodes/edges and **analyze relationships** (source: Concepts/Data Storage/Graph Database.md).
+<p class="at-lead">
+A graph database is a type of NoSQL database that uses nodes, edges, and properties to store data about entities and the relationships between them. The main purpose: efficiently traverse the network of nodes/edges and analyze relationships.
+</p>
+
+<span class="at-stat">Millions</span> of hops per second &nbsp;·&nbsp; <span class="at-stat">2000s</span> mainstream adoption &nbsp;·&nbsp; <span class="at-mark">Relationships are first-class citizens, not afterthoughts</span>
+
+> [!tip] When Graphs Win
+> The killer use case: **multi-hop traversals**. "Find friends of friends of friends who bought a product Alice bought, in the last 6 months." In SQL, this is 3 self-joins or recursive CTEs — slow and verbose. In a graph DB, it's a 3-hop graph traversal — milliseconds.
+
+<span class="at-kicker">Data Model</span>
 
 ## Data model
 
@@ -39,14 +49,7 @@ A **graph database** is a type of [[non-relational-database|NoSQL]] database tha
 - **Edges** = relationships, often with direction + properties.
 - **Properties** = attributes on nodes/edges.
 
-## When graphs win
-
-The killer use case: **multi-hop traversals**.
-
-> "Find friends of friends of friends who bought a product Alice bought, in the last 6 months."
-
-In SQL, this is **3 self-joins** or recursive CTEs — slow and verbose.
-In a graph DB, it's a **3-hop graph traversal** — milliseconds.
+<span class="at-kicker">Use Cases</span>
 
 ## Use cases
 
@@ -58,7 +61,7 @@ In a graph DB, it's a **3-hop graph traversal** — milliseconds.
 - **Network / IT topology** — dependency graphs.
 - **Machine learning** — graph neural networks.
 
-(source: Concepts/Data Storage/Graph Database.md)
+<span class="at-kicker">Popular Systems</span>
 
 ## Popular graph DBs
 
@@ -70,12 +73,16 @@ In a graph DB, it's a **3-hop graph traversal** — milliseconds.
 - **TigerGraph** — ultra-fast for very large graphs.
 - **Dgraph** — open-source, GraphQL-native.
 
+<span class="at-kicker">Query Languages</span>
+
 ## Query languages
 
 - **Cypher** — Neo4j's pattern-matching language; easy to read.
 - **Gremlin** — Apache TinkerPop traversal language; verbose but powerful.
 - **SPARQL** — RDF / semantic web.
 - **GQL** — emerging ISO standard combining the best of Cypher + others.
+
+<span class="at-kicker">Cloud Platforms</span>
 
 ## Graphs in cloud
 
@@ -87,12 +94,16 @@ GCP doesn't offer a managed graph DB; users typically run **Neo4j on GKE** or us
 - **RDF triple stores** (Apache Jena, Stardog) — semantic web; SPARQL.
 - **Graph compute engines** — Apache Spark GraphX, NetworkX (Python).
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. **Why use a graph DB** instead of relational with self-joins?
 2. **Cypher** vs **Gremlin** — distinguishing features.
 3. Walk through fraud detection on a graph.
 4. **Property graph** vs **RDF triple store**.
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -108,4 +119,3 @@ GCP doesn't offer a managed graph DB; users typically run **Neo4j on GKE** or us
 >
 >> [!card] Tools
 >> [[../../tools/databases-overview|Databases Overview]]
-

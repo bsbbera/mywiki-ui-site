@@ -1,29 +1,38 @@
 ---
+cssclass: wide-page
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 title: Data Ethics
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
 aliases:
   - Data Ethics
 category: Computer Science
 tags:
-  - DataEngineering
+  - data-engineering
+  - concept
   - Ethics
   - Compliance
-banner:
+banner: https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400
 publish: true
+maturity: seedling
 ---
 
-> "Don't measure yourself by what you have accomplished, but by what you should have accomplished with your ability."
-> <cite>— John Wooden</cite>
+<span class="at-kicker">Data Engineering · Governance</span>
 
----
+# Data Ethics
 
-> **Data ethics** is a new branch of ethics that studies and evaluates moral problems related to **data** (generation, recording, curation, processing, dissemination, sharing, use), **algorithms** (AI, ML, autonomous agents), and **corresponding practices** (responsible innovation, programming, hacking, professional codes), in order to formulate and support morally good solutions.
->
-> — Luciano Floridi & Mariarosaria Taddeo, *[What is data ethics?](https://royalsocietypublishing.org/doi/10.1098/rsta.2016.0360)*
+<p class="at-lead">
+Data ethics is a new branch of ethics that studies and evaluates moral problems related to data (generation, recording, curation, processing, dissemination, sharing, use), algorithms (AI, ML, autonomous agents), and corresponding practices (responsible innovation, programming, hacking, professional codes), in order to formulate and support morally good solutions.
+</p>
 
-(source: Concepts/Data Security, Ethics, and Compliance/Data Ethics.md)
+<span class="at-stat">8+</span> compliance frameworks &nbsp;·&nbsp; <span class="at-stat">2018</span> GDPR enforcement &nbsp;·&nbsp; <span class="at-mark">Engineering decisions have ethical consequences — privacy, bias, transparency</span>
+
+> [!tip] Ethics for Engineers
+> Data engineers don't just move bytes — they shape **what gets analyzed**, **who can see it**, and **what decisions are made on it**. Ethical considerations include: privacy (collecting only what's needed), consent, bias detection, transparency, accountability, and fairness.
+> 
+> — Luciano Floridi & Mariarosaria Taddeo, *What is data ethics?*
+
+<span class="at-kicker">Why Ethics Matters</span>
 
 ## Why data ethics matters for engineers
 
@@ -35,6 +44,8 @@ Data engineers don't just move bytes — they shape **what gets analyzed**, **wh
 - **Transparency** — explainable models, accessible documentation.
 - **Accountability** — clear ownership of data + decisions.
 - **Fairness** — equitable outcomes across demographic groups.
+
+<span class="at-kicker">Regulatory Frameworks</span>
 
 ## Key frameworks
 
@@ -48,6 +59,8 @@ Data engineers don't just move bytes — they shape **what gets analyzed**, **wh
 | **EU AI Act** | EU AI regulation (2024) |
 | **NIST AI Risk Management** | US AI governance |
 | **OECD AI Principles** | Multilateral guidelines |
+
+<span class="at-kicker">Engineering Practices</span>
 
 ## Practical engineering ethics
 
@@ -79,11 +92,15 @@ Users can request deletion of their data. This conflicts with [[event-sourcing-p
 - **Column-level security** — see [[../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]].
 - **Row-level security** — predicate filters per user.
 
+<span class="at-kicker">Professional Codes</span>
+
 ## Codes of conduct
 
 - **ACM Code of Ethics**
 - **IEEE Code of Ethics**
 - **Data Science Association** code
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview Questions
 
@@ -92,14 +109,15 @@ Users can request deletion of their data. This conflicts with [[event-sourcing-p
 3. **Differential privacy** — when use it?
 4. **Anonymization** vs **pseudonymization** vs **encryption** — distinguish.
 
+<span class="at-kicker">Continue Reading</span>
+
 ## Related pages
 
 > [!grid]
 >
 >> [!card] Governance
->> [[data-governance|Data Governance]], [[../cloud/gcp/analytics/data-catalog|Data Catalog]], [[../guides/data-governance-guide|Data Governance Guide]]
+>> [[data-governance|Data Governance]], [[../../cloud/gcp/analytics/data-catalog|Data Catalog]], [[../../guides/data-governance-guide|Data Governance Guide]]
 >
 >
 >> [!card] Security
->> [[../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]]
-
+>> [[../../cloud/gcp/analytics/bigquery-iam|BigQuery IAM]]

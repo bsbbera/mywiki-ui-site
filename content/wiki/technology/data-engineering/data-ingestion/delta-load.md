@@ -2,7 +2,7 @@
 title: Delta Load
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - Delta Load
   - Incremental Load
@@ -11,8 +11,9 @@ category: Computer Science
 tags:
   - DataEngineering
   - Ingestion
-banner:
+banner: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1400
 publish: true
+cssclass: wide-page
 ---
 
 > "It takes half your life before you discover life is a do-it-yourself project."
@@ -20,11 +21,22 @@ publish: true
 
 ---
 
-A **delta load** (or **incremental load**) extracts only the data that has **changed** since the last extract run. It is typically **query-based** and requires an **incrementing id** or a **`modified_at` timestamp** column to identify new records (source: Concepts/Data Ingestion/Delta Load.md).
+<span class="at-kicker">Data Ingestion · Load Pattern</span>
 
-Sometimes called **query-based CDC** to distinguish from log-based [[change-data-capture|CDC]].
+# Delta Load
 
-## Process
+<p class="at-lead">
+A delta load (or incremental load) extracts only the data that has changed since the last extract run. It is typically query-based and requires an incrementing id or a modified_at timestamp column to identify new records — efficient, incremental, and scalable.
+</p>
+
+<span class="at-stat">Only</span> changed data &nbsp;·&nbsp; <span class="at-stat">High-water</span> mark tracking &nbsp;·&nbsp; <span class="at-mark">only move data that changed — efficient, incremental, scalable</span>
+
+> [!tip] When to Use Delta Load
+> Use delta load when the source DB exposes timestamps and you can't access transaction logs. Ideal for append-only or rarely-deleted tables (events, transactions, sensor readings) where you don't need full audit trail of every change.
+
+<span class="at-kicker">Process</span>
+
+## How it works
 
 ```mermaid
 graph TD
@@ -41,26 +53,57 @@ graph TD
 
 Standard steps:
 
-1. Ensure the source has a `modified_at` timestamp **or** an incrementing primary key.
-2. **Initial run** — full load the entire dataset.
-3. **Subsequent runs** — query destination for `MAX(column)`.
-4. Query source filtering for values **greater than** the high-water mark.
-5. Insert/upsert into destination.
+> [!grid|cols2]
+>
+> > [!card|section] 1. Identify Timestamp
+> > Ensure the source has a `modified_at` timestamp **or** an incrementing primary key.
+>
+> > [!card|section] 2. Initial Run
+> > **Initial run** — full load the entire dataset.
+>
+> > [!card|section] 3. Get High-Water Mark
+> > Query destination for `MAX(column)`.
+>
+> > [!card|section] 4. Filter Source
+> > Query source filtering for values **greater than** the high-water mark.
+>
+> > [!card|section] 5. Insert/Upsert
+> > Insert/upsert into destination.
 
 (source: Concepts/Data Ingestion/Delta Load.md)
 
+<span class="at-kicker">Trade-offs</span>
+
 ## Advantages
 
-- **Resource efficient** — only moves changed data.
-- **Easy to implement** with SQL queries.
-- Only needs **read permissions** on the source (no privileged log access).
+> [!grid|cols2]
+>
+> > [!card|section] Resource Efficient
+> > **Resource efficient** — only moves changed data.
+>
+> > [!card|section] Easy Implementation
+> > **Easy to implement** with SQL queries.
+>
+> > [!card|section] Simple Permissions
+> > Only needs **read permissions** on the source (no privileged log access).
 
 ## Disadvantages
 
-- **Doesn't capture deletes** — a deleted row simply disappears; the destination still has it.
-- **Requires extra metadata** — uniquely identifying column + timestamp on the source.
-- **Misses intermediate changes** — if a row updates 5 times between polls, you only see the latest state.
-- **Source query overhead** — each delta scan can hurt OLTP performance.
+> [!grid|cols2]
+>
+> > [!card|section] Misses Deletes
+> > **Doesn't capture deletes** — a deleted row simply disappears; the destination still has it.
+>
+> > [!card|section] Requires Metadata
+> > **Requires extra metadata** — uniquely identifying column + timestamp on the source.
+>
+> > [!card|section] Misses Intermediates
+> > **Misses intermediate changes** — if a row updates 5 times between polls, you only see the latest state.
+>
+> > [!card|section] Source Overhead
+> > **Source query overhead** — each delta scan can hurt OLTP performance.
+
+<span class="at-kicker">Decision Framework</span>
 
 ## When to use
 
@@ -72,7 +115,9 @@ Standard steps:
 
 - Need to capture **deletes** → use [[change-data-capture|CDC]].
 - Source has no `modified_at` or incrementing key.
-- Need intermediate state changes (e.g. for fraud detection).
+- Need intermediate state changes (e.g., for fraud detection).
+
+<span class="at-kicker">Implementation</span>
 
 ## Worked example
 
@@ -93,12 +138,16 @@ In tools: dbt incremental models, Airbyte "Incremental — Append Dedup", AWS DM
 
 Add a `deleted_at` column to the source. Deletes become updates (`UPDATE … SET deleted_at = NOW()`), which delta load can capture. Filter `WHERE deleted_at IS NULL` for live data downstream.
 
+<span class="at-kicker">Interview Prep</span>
+
 ## Interview Questions
 
 1. **Delta load** vs **CDC** — what does each capture and miss?
 2. Why doesn't delta load handle deletes?
 3. How would you use **soft deletes** to make delta deletes work?
 4. What's the impact on the source DB of a poorly-indexed delta query?
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -110,4 +159,3 @@ Add a `deleted_at` column to the source. Deletes become updates (`UPDATE … SET
 >
 >> [!card] Reliability
 >> [[../../software-engineering/idempotence|Idempotence]], [[../../software-engineering/indexing|Indexing]], [[../../guides/data-pipeline-best-practices|Pipeline Best Practices]]
-

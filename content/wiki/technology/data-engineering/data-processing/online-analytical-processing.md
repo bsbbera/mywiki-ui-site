@@ -2,7 +2,7 @@
 title: Online Analytical Processing (OLAP)
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - OLAP
   - Online Analytical Processing
@@ -12,7 +12,8 @@ tags:
   - Database
   - OLAP
   - Analytics
-banner:
+banner: https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400
+cssclass: wide-page
 publish: true
 ---
 
@@ -21,17 +22,45 @@ publish: true
 
 ---
 
-**Online Analytical Processing (OLAP)** is the term for a [[../data-modeling/data-modeling|data model]] that **aggregates data across multiple dimensions** to make it easier and faster to query. OLAP systems are mostly **optimized for reading** and are used primarily for **reporting + analysis** (source: Concepts/Data Processing/Online Analytical Processing.md).
+<span class="at-kicker">Data Processing · Analytics Pattern</span>
+
+# Online Analytical Processing (OLAP)
+
+<p class="at-lead">
+OLAP is the data model and workload type that aggregates data across multiple dimensions to make it faster and easier to query for reporting and analysis. OLAP systems are optimized overwhelmingly for reading — columnar storage, denormalized schemas, and massive parallelism at TB-to-PB scale.
+</p>
+
+<span class="at-stat">Column-oriented Storage</span> scans only needed columns &nbsp;·&nbsp; <span class="at-stat">TB–PB Scale</span> historical, time-variant data &nbsp;·&nbsp; <span class="at-mark">multi-dimensional analysis — slicing, dicing, and drilling through aggregated data</span>
+
+---
+
+<span class="at-kicker">CHARACTERISTICS</span>
 
 ## Characteristics
 
-- **Optimized for reads** — scans + aggregations across many rows.
-- **[[../data-modeling/denormalization|Denormalized]]** — wide tables with redundant data; joins minimized.
-- **[[../data-storage/column-oriented-database|Column-oriented]] storage** — only relevant columns are scanned.
-- **Massive parallelism** — queries shard across many workers.
-- **Time-variant** — keeps historical data over years.
-- **High data volume** — TB to PB.
-- **Lower concurrency** — fewer, longer queries.
+> [!grid|cols3]
+>
+>> [!card|section] Read-Optimized
+>> Scans and aggregations across many rows are the primary workload. Write throughput is secondary — bulk/batch loads rather than frequent small updates.
+>
+>> [!card|section] Columnar Storage
+>> Only relevant columns are read from disk. Columnar formats (Parquet, ORC) compress well and enable vectorized execution — orders of magnitude faster for analytics.
+>
+>> [!card|section] Denormalized Schema
+>> Wide tables with redundant data minimize joins. Star and snowflake schemas pre-join dimension data so analytical queries hit fewer tables.
+>
+>> [!card|section] Massive Parallelism
+>> Queries shard across many worker nodes simultaneously. A 1 TB scan that takes hours on one machine takes seconds across a hundred.
+>
+>> [!card|section] Time-Variant
+>> Keeps historical data over years. The primary question answered is "what happened over time?" — trends, seasonality, cohort analysis.
+>
+>> [!card|section] Lower Concurrency
+>> Fewer simultaneous users than OLTP, but each query is much heavier — running minutes-long scans rather than millisecond point lookups.
+
+---
+
+<span class="at-kicker">CUBE MODEL</span>
 
 ## OLAP cube model
 
@@ -45,15 +74,30 @@ Classical OLAP organized data as a **cube** with multiple dimensions (time, geog
 
 Modern columnar warehouses make explicit cubes mostly unnecessary; the warehouse runs ad-hoc OLAP queries directly.
 
+---
+
+<span class="at-kicker">ECOSYSTEM</span>
+
 ## Popular OLAP systems
 
-- [[../../cloud/gcp/analytics/bigquery|Google BigQuery]]
-- **Snowflake**
-- **Amazon Redshift**
-- **Azure Synapse**
-- **ClickHouse**
-- **Apache Druid**, **Apache Pinot** — real-time OLAP for sub-second analytics.
-- [[../../cloud/databricks/databricks|Databricks SQL]] (lakehouse-style)
+> [!grid|cols2]
+>
+>> [!card|section] Cloud Warehouses (ROLAP)
+>> - [[../../cloud/gcp/analytics/bigquery|Google BigQuery]]
+>> - **Snowflake**
+>> - **Amazon Redshift**
+>> - **Azure Synapse**
+>> - [[../../cloud/databricks/databricks|Databricks SQL]] (lakehouse-style)
+>
+>> [!card|section] Real-time OLAP
+>> Sub-second analytics for user-facing dashboards:
+>> - **Apache Druid** — pioneer of real-time OLAP
+>> - **Apache Pinot** — LinkedIn-born
+>> - **ClickHouse** — Yandex-born; used by Cloudflare, Sentry
+
+---
+
+<span class="at-kicker">COMPARISON</span>
 
 ## OLAP vs OLTP
 
@@ -67,6 +111,10 @@ Modern columnar warehouses make explicit cubes mostly unnecessary; the warehouse
 | Concurrency | Lower | Higher |
 | Updates | Bulk / batch | Frequent small |
 
+---
+
+<span class="at-kicker">ARCHITECTURE VARIANTS</span>
+
 ## ROLAP vs MOLAP vs HOLAP
 
 - **ROLAP** — relational OLAP; cubes are virtual, queries hit relational warehouse. (Snowflake, BigQuery)
@@ -75,15 +123,14 @@ Modern columnar warehouses make explicit cubes mostly unnecessary; the warehouse
 
 Modern stacks are overwhelmingly **ROLAP** because warehouse compute is cheap.
 
-## Real-time OLAP (modern)
+---
 
-A new generation handles **real-time aggregations** at sub-second latency:
+> [!note] Real-time OLAP: the new generation
+> A new generation of OLAP engines (Druid, Pinot, ClickHouse) handles real-time aggregations at sub-second latency — powering user-facing analytics like "your post got 1,342 views in the last hour" updating live. These differ from cloud warehouses: they ingest directly from Kafka/event streams, pre-aggregate into indexes, and serve queries in milliseconds rather than seconds.
 
-- **Apache Druid** — pioneer.
-- **Apache Pinot** — LinkedIn-born.
-- **ClickHouse** — Yandex-born; used by Cloudflare, Sentry.
+---
 
-These power **user-facing analytics** (e.g. "your post got 1342 views in the last hour" updating live).
+<span class="at-kicker">INTERVIEW PREP</span>
 
 ## Interview Questions
 
@@ -92,6 +139,10 @@ These power **user-facing analytics** (e.g. "your post got 1342 views in the las
 3. Why are warehouses **columnar**?
 4. **Druid** / **Pinot** / **ClickHouse** vs traditional warehouses.
 5. **OLAP cube** operations — slice, dice, roll-up.
+
+---
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -115,4 +166,3 @@ These power **user-facing analytics** (e.g. "your post got 1342 views in the las
 >
 >> [!card] People
 >> [[../../../people/ralph-kimball|Ralph Kimball]]
-

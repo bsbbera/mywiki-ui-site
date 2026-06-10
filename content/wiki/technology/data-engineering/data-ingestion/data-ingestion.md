@@ -2,7 +2,7 @@
 title: Data Ingestion
 Created:
   - 2026-04-29
-date modified: Wednesday, April 29th 2026, 12:35:00 pm
+date modified: Thursday, June 4th 2026, 7:00:00 pm
 aliases:
   - Data Ingestion
   - Ingestion
@@ -12,8 +12,9 @@ tags:
   - Ingestion
   - ETL
   - ELT
-banner:
+banner: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1400
 publish: true
+cssclass: wide-page
 ---
 
 > "Quality is not an act, it is a habit."
@@ -21,9 +22,20 @@ publish: true
 
 ---
 
-**Data ingestion** is the process of extracting and importing data from various sources into a destination system where it can be stored, transformed, and analyzed (source: Concepts/Data Ingestion/Data Ingestion.md). It commonly involves moving data from operational systems, external APIs, or real-time streams into [[../data-architecture/data-warehouse|warehouses]] and [[../data-architecture/data-lake|lakes]].
+<span class="at-kicker">Data Engineering · Ingestion</span>
 
-Two main approaches: **batch** (scheduled intervals) and **streaming** (continuous, real-time).
+# Data Ingestion
+
+<p class="at-lead">
+Data ingestion is the process of extracting and importing data from various sources into a destination system where it can be stored, transformed, and analyzed. It commonly involves moving data from operational systems, external APIs, or real-time streams into warehouses and lakes.
+</p>
+
+<span class="at-stat">Batch</span> + streaming &nbsp;·&nbsp; <span class="at-stat">ETL/ELT</span> patterns &nbsp;·&nbsp; <span class="at-mark">getting data from source to destination reliably is the first engineering challenge</span>
+
+> [!tip] When to Choose Each Pattern
+> Two main approaches: **batch** (scheduled intervals) for efficiency and simplicity, and **streaming** (continuous, real-time) for low-latency analytics. ELT has won mindshare in modern stacks — cloud warehouse compute is cheap and elastic, and keeping raw data preserves flexibility.
+
+<span class="at-kicker">Data Sources</span>
 
 ## Components
 
@@ -31,17 +43,34 @@ Two main approaches: **batch** (scheduled intervals) and **streaming** (continuo
 
 Common sources include:
 
-- **Databases** — PostgreSQL, MySQL, SQL Server.
-- **Applications** — SaaS (Hubspot, Salesforce), CRM, ERP.
-- **Files** — CSV, JSON, XML, Parquet on SFTP/FTP/cloud storage.
-- **APIs** — REST, GraphQL, webhooks.
-- **Message queues** — Kafka, RabbitMQ, SQS.
-- **Streaming** — IoT devices, clickstreams, social feeds.
-- **Cloud** — S3, GCS, ADLS.
+> [!grid|cols3]
+>
+> > [!card|section] Databases
+> > PostgreSQL, MySQL, SQL Server.
+>
+> > [!card|section] Applications
+> > SaaS (Hubspot, Salesforce), CRM, ERP.
+>
+> > [!card|section] Files
+> > CSV, JSON, XML, Parquet on SFTP/FTP/cloud storage.
+>
+> > [!card|section] APIs
+> > REST, GraphQL, webhooks.
+>
+> > [!card|section] Message Queues
+> > Kafka, RabbitMQ, SQS.
+>
+> > [!card|section] Streaming
+> > IoT devices, clickstreams, social feeds.
+>
+> > [!card|section] Cloud Storage
+> > S3, GCS, ADLS.
 
-### 2. Ingestion Patterns
+<span class="at-kicker">Ingestion Patterns</span>
 
-#### ETL (Extract → Transform → Load)
+## 2. Ingestion Patterns
+
+### ETL (Extract → Transform → Load)
 
 Traditional pattern: extract, transform during ingestion, then load.
 
@@ -50,7 +79,7 @@ graph LR
   A[Source] -->|Raw| B[Extract] -->|Extracted| C[Transform] -->|Clean| D[Load] -->|Structured| E[(Warehouse)]
 ```
 
-#### ELT (Extract → Load → Transform)
+### ELT (Extract → Load → Transform)
 
 Modern pattern: load **raw** data into the destination first, transform inside it. Storage is cheap and keeping raw data preserves flexibility.
 
@@ -60,36 +89,62 @@ graph LR
   E --> D[Transform in destination] --> E
 ```
 
-#### Batch ingestion
+### Batch ingestion
 
 Discrete chunks at scheduled intervals.
 
-- **Higher latency** (minutes to hours).
-- **Efficient for large volumes**.
-- Easiest to implement and debug.
-- Lower infrastructure costs.
+> [!grid|cols2]
+>
+> > [!card|section] Higher Latency
+> > Minutes to hours between updates.
+>
+> > [!card|section] Large Volume Efficiency
+> > **Efficient for large volumes**.
+>
+> > [!card|section] Simplest
+> > Easiest to implement and debug.
+>
+> > [!card|section] Lower Cost
+> > Lower infrastructure costs.
 
-#### Streaming ingestion
+### Streaming ingestion
 
 Continuous, real-time as data arrives.
 
-- **Low latency** (seconds–milliseconds).
-- More complex to implement.
-- Higher infrastructure cost.
-- Enables real-time analytics.
+> [!grid|cols2]
+>
+> > [!card|section] Low Latency
+> > Seconds–milliseconds.
+>
+> > [!card|section] Complex
+> > More complex to implement.
+>
+> > [!card|section] Higher Cost
+> > Higher infrastructure cost.
+>
+> > [!card|section] Real-time Analytics
+> > Enables real-time analytics.
 
-#### Micro-batch ingestion
+### Micro-batch ingestion
 
 Hybrid — small batches every few minutes (5–15 min typical).
 
-- **Near** real-time.
-- Balances latency and efficiency.
-- Easier than true streaming.
-- Good fit for most use cases.
+> [!grid|cols2]
+>
+> > [!card|section] Near Real-time
+> > Good balance of latency and efficiency.
+>
+> > [!card|section] Easier
+> > Easier than true streaming.
+>
+> > [!card|section] Most Use Cases
+> > Good fit for most use cases.
 
 (source: Concepts/Data Ingestion/Data Ingestion.md)
 
-### 3. Ingestion Strategies
+<span class="at-kicker">Ingestion Strategies</span>
+
+## 3. Ingestion Strategies
 
 | Strategy | What it does | Best for |
 | --- | --- | --- |
@@ -97,21 +152,7 @@ Hybrid — small batches every few minutes (5–15 min typical).
 | [[delta-load\|Delta / Incremental Load]] | Pull only new/changed records | Most common pattern |
 | [[change-data-capture\|Change Data Capture (CDC)]] | Read database transaction log | Real-time DB replication |
 
-## Common patterns
-
-### API ingestion
-
-Scheduled REST/GraphQL pull → write to data lake.
-
-### Database replication (CDC)
-
-PostgreSQL WAL → **Debezium** → **Kafka** → **Kafka Connect** → warehouse.
-
-### File-based ingestion
-
-External system uploads → cloud storage → event trigger → processing function → warehouse.
-
-(source: Concepts/Data Ingestion/Data Ingestion.md)
+<span class="at-kicker">ETL vs ELT</span>
 
 ## ETL vs ELT — when prefer which
 
@@ -125,20 +166,35 @@ External system uploads → cloud storage → event trigger → processing funct
 
 ELT has won mindshare since cloud warehouse compute is cheap and elastic. Notable exception: **PII / regulated data** where raw must be transformed before landing.
 
-## GCP service mapping
-
-- **Batch**: [[../../cloud/gcp/analytics/bigquery|BigQuery]] load jobs, [[../../cloud/gcp/analytics/dataflow|Dataflow]] from [[Cloud Storage|GCS]].
-- **Streaming**: [[../../cloud/gcp/analytics/pubsub|Pub/Sub]] → [[../../cloud/gcp/analytics/dataflow|Dataflow]] → BigQuery; or Pub/Sub → BigQuery direct subscription.
-- **CDC**: **Datastream** for managed CDC into BigQuery / GCS.
-- **Visual ETL**: [[../../cloud/gcp/analytics/datafusion|Data Fusion]].
+<span class="at-kicker">Tools</span>
 
 ## Popular ingestion tools
 
-- **Open-source**: Airbyte, Meltano, dlt, Debezium.
-- **Commercial**: Fivetran, Stitch, Matillion.
-- **Cloud-native**: Datastream (GCP), AWS DMS, Azure Data Factory.
+> [!grid|cols3]
+>
+> > [!card|section] Open-source
+> > Airbyte, Meltano, dlt, Debezium.
+>
+> > [!card|section] Commercial
+> > Fivetran, Stitch, Matillion.
+>
+> > [!card|section] Cloud-native
+> > Datastream (GCP), AWS DMS, Azure Data Factory.
 
 See [[../../tools/ingestion-tools|Ingestion Tools]] for the full catalog.
+
+<span class="at-kicker">GCP Mapping</span>
+
+## GCP service mapping
+
+| Pattern | Service |
+| --- | --- |
+| **Batch** | [[../../cloud/gcp/analytics/bigquery\|BigQuery]] load jobs, [[../../cloud/gcp/analytics/dataflow\|Dataflow]] from [[Cloud Storage\|GCS]] |
+| **Streaming** | [[../../cloud/gcp/analytics/pubsub\|Pub/Sub]] → [[../../cloud/gcp/analytics/dataflow\|Dataflow]] → BigQuery; or Pub/Sub → BigQuery direct |
+| **CDC** | **Datastream** for managed CDC into BigQuery / GCS |
+| **Visual ETL** | [[../../cloud/gcp/analytics/datafusion\|Data Fusion]] |
+
+<span class="at-kicker">Interview Prep</span>
 
 ## Interview Questions
 
@@ -147,6 +203,8 @@ See [[../../tools/ingestion-tools|Ingestion Tools]] for the full catalog.
 3. **Full load** vs **delta load** vs **CDC** — pros and cons.
 4. Walk through replicating a Postgres OLTP DB to BigQuery in real time.
 5. How do you handle **schema evolution** during ingestion?
+
+<span class="at-kicker">Continue Reading</span>
 
 ## Related pages
 
@@ -162,4 +220,3 @@ See [[../../tools/ingestion-tools|Ingestion Tools]] for the full catalog.
 >
 >> [!card] People
 >> [[../../../people/martin-kleppmann|Martin Kleppmann]]
-

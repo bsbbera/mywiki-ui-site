@@ -19,6 +19,8 @@ cssclasses:
 
 > Everything platform-specific: GCP, AWS, Azure, Databricks. Cross-platform comparisons live here too.
 
+*📄 `$= dv.pages('"wiki/technology/cloud"').length` notes in this field · ⏱ `$= Math.max(1, Math.ceil(dv.current().file.size / 1100))` min read · 🕘 updated `$= dv.current().file.mtime.toFormat("MMM d, yyyy")`*
+
 ## 🧭 Vault Navigation
 
 > [!info] You are here

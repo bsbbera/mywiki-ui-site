@@ -34,17 +34,30 @@ dv.paragraph(`**${pages.length}** people · last added **${latest ? latest.file.
 
 ## 📚 Browse
 
-> [!grid]
->
-> > [!card] 👥 Directory (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
->
-> > [!card] 🕒 Recently Added
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+```dataviewjs
+const palette = ["#d8552f", "#2f7e78", "#4a7ba6", "#c08a2e", "#96597c", "#6a5b9c", "#3e7a55", "#a4633a"];
+const people = dv.pages('"wiki/people"')
+  .where(p => p.file.name !== "People Home")
+  .sort(p => p.file.name, 'asc')
+  .array();
+const cards = people.map((p, i) => {
+  const name = p.title ?? p.file.name;
+  const initial = name.trim().charAt(0).toUpperCase();
+  const tag = (p.file.etags ?? []).map(t => t.replace("#", ""))
+    .filter(t => t !== "person")[0]?.replace(/_/g, " ") ?? "";
+  return `<div class="mw-person">
+    <div class="mw-avatar" style="background:${palette[i % palette.length]}">${initial}</div>
+    <a class="internal-link" data-href="${p.file.path}" href="${p.file.path}">${name}</a>
+    <span class="mw-chip">${tag}</span>
+  </div>`;
+}).join("");
+dv.el("div", cards, { cls: "mw-people" });
+```
+
+> [!note]- 🕒 Recently added
+> ```dataviewjs
+> dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
+> ```
 
 ## Related pages
 

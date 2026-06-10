@@ -1,0 +1,273 @@
+---
+title: Master Home
+Created:
+  - 2026-06-09
+date modified: Wednesday, June 10th 2026, 12:37:32 am
+aliases:
+  - Home
+  - Dashboard
+  - Master Home
+category: Index
+tags:
+  - index
+  - dashboard
+  - moc
+cssclasses:
+  - wide-page
+banner:
+publish: false
+publish: true
+---
+
+> [!card|hero dark spanfull]
+> ###### A SECOND BRAIN FOR DATA & THE CLOUD
+> # Everything I know, <span class="at-gradient">connected.</span>
+> <p class="at-lead">370+ interlinked notes on data engineering, the cloud and machine learning — distilled from books, docs and hard-won practice into one navigable map.</p>
+>
+> **[[Technology Home|Explore the vault →]]**  ·  **[🔍 Search the vault](obsidian://search?query=)**  ·  [[index|A–Z catalog]]
+>
+> <span class="at-badge">EVERGREEN · TENDED DAILY</span>  <span class="at-badge ghost">BUILT WITH OBSIDIAN + AI</span>
+
+> [!grid|cols4]
+>
+>> [!card|step]
+>> ###### NOTES
+>> ### <span class="at-3xl">390+</span>
+>> interlinked & evergreen
+>
+>> [!card|step]
+>> ###### FIELDS
+>> ### <span class="at-3xl">7</span>
+>> tech · ML · cloud · books · finance · people · paradoxes
+>
+>> [!card|step]
+>> ###### CLOUD PLATFORMS
+>> ### <span class="at-3xl">4</span>
+>> GCP · AWS · Azure · Databricks
+>
+>> [!card|step]
+>> ###### BOOKS DISTILLED
+>> ### <span class="at-3xl">12</span>
+>> reference texts, fully noted
+
+## What's inside
+
+> [!infobox|right] The vault at a glance
+> ## 390+ notes
+> *across seven fields of knowledge.*
+>
+> | Field | Notes |
+> | --- | --- |
+> | Technology | 280+ |
+> | People | 35 |
+> | Finance | 13 |
+> | Paradoxes | 19 |
+> | Books | 12 |
+>
+> **Mostly evergreen**
+> Tended, cross-linked, and growing.
+
+This is a working **knowledge base for modern data work** — the connective tissue between the books I read, the cloud services I run, and the systems I build. Its spine is **[[data-engineering|data engineering]]**: how data is modeled, moved, stored and served. Around that spine sit **[[machine-learning|machine learning]]**, the **[[Cloud Home|cloud platforms]]** that run it — GCP, AWS, Azure and Databricks — and the **[[Software Engineering Home|software craft]]** that holds everything together.
+
+Every note links to its neighbours, so a single idea always opens onto the next. Start with a field below, jump to the **most-connected** concepts, or press <span class="at-mark">/ search</span> to find anything in seconds.
+
+## Explore by field
+
+<span class="at-kicker">SIX FIELDS · ONE GRAPH</span>
+
+> [!grid|cols3]
+>
+>> [!card|section de]
+>> ###### I · THE SPINE
+>> ### [[data-engineering|Data Engineering]]
+>> Pipelines, modeling, storage & warehousing — the core of the vault.
+>> - [[apache-spark|Apache Spark]] · [[pyspark|PySpark]]
+>> - [[data-warehousing|Warehousing]] · [[data-pipeline|Pipelines]]
+>
+>> [!card|section ml]
+>> ###### II · INTELLIGENCE
+>> ### [[machine-learning|Machine Learning]]
+>> Models, deep learning, MLOps & the statistics beneath them.
+>> - [[transformers|Transformers]] · [[k-means|k-Means]]
+>> - [[probability-distributions|Probability]] · [[model-lifecycle|MLOps]]
+>
+>> [!card|section cloud]
+>> ###### III · THE PLATFORM
+>> ### [[Cloud Home|Cloud]]
+>> Where it all runs — GCP, AWS, Azure & Databricks.
+>> - [[google-cloud-platform|Google Cloud]] · [[bigquery|BigQuery]]
+>> - [[cloud-run|Cloud Run]] · [[vertex-ai|Vertex AI]]
+>
+>> [!card|section soft]
+>> ###### IV · THE CRAFT
+>> ### [[Software Engineering Home|Software]]
+>> Patterns, systems and the engineering practice behind reliable data tools.
+>> - [[cap-theorem|CAP Theorem]] · [[kubernetes|Kubernetes]]
+>
+>> [!card|section books]
+>> ###### V · THE LIBRARY
+>> ### [[Books Home|Books]]
+>> Reading notes & reference texts that shaped the rest.
+>> - [[designing-data-intensive-applications|Designing Data-Intensive Apps]]
+>> - [[fundamentals-of-data-engineering|Fundamentals of DE]]
+>
+>> [!card|section fin]
+>> ###### VI · THE LEDGER
+>> ### [[Finance Home|Finance]]
+>> Money, markets and personal planning — the long game.
+>> - [[financial-statements|Statements]] · [[dcf-valuation|DCF]]
+>
+>> [!card|section pdx]
+>> ###### VII · THE PUZZLES
+>> ### [[Paradoxes Home|Paradoxes]]
+>> ~300 paradoxes across logic, math, physics, philosophy & beyond.
+>> - [[top-100-paradoxes|Top 100]] · [[logical-paradoxes|Logic]]
+>> - [[physics-paradoxes|Physics]] · [[philosophical-paradoxes|Philosophy]]
+
+---
+
+## Inside the main fields
+
+> [!infobox|right] Data Engineering
+> ## Move · model · store · serve
+> *The core discipline of the vault.*
+>
+> | Area | Notes |
+> | --- | --- |
+> | Modeling | [[dimensional-modeling\|Dimensional]] |
+> | Storage | [[data-lake\|Data Lake]] |
+> | Processing | [[apache-spark\|Spark]] |
+> | Quality | [[data-ethics\|Ethics]] |
+
+### 🗄️ Data Engineering — *the spine*
+
+Data engineering is the plumbing of every data product: getting raw, messy data from a hundred sources into clean, trustworthy, query-ready shape. These notes cover the full journey — **modeling** (how data is structured), **ingestion & pipelines** (how it moves), **storage** (lakes, warehouses, lakehouses), and **processing** (batch and streaming). It's the field most of the vault hangs off.
+
+**Useful notes —** [[data-engineering|Overview]] · [[data-modeling|Data Modeling]] · [[dimensional-modeling|Dimensional Modeling]] · [[medallion-architecture|Medallion Architecture]] · [[data-lake|Data Lake]] · [[data-warehousing|Warehousing]] · [[data-pipeline|Pipelines]] · [[apache-spark|Apache Spark]] · [[pyspark|PySpark]].
+
+> [!columns]
+>
+>> [!col|w7]
+>> ### 🤖 Machine Learning — *turning data into decisions*
+>>
+>> Where data stops describing the past and starts predicting the future. The notes run from the **statistics and probability** that underpin everything, through **classic algorithms** and **neural networks**, to the **deep-learning** architectures powering today's AI — and the **MLOps** discipline of shipping models to production and keeping them honest.
+>
+>> [!col|w5]
+>>> [!card|section ml]
+>>> ###### USEFUL NOTES
+>>> ### Start with
+>>> - [[machine-learning|ML overview]]
+>>> - [[neural-networks|Neural Networks]] · [[deep-learning|Deep Learning]]
+>>> - [[transformers|Transformers]] · [[feature-engineering|Feature Engineering]]
+>>> - [[probability-distributions|Probability]] · [[k-means|k-Means]]
+>>> - [[mlops|MLOps]] · [[model-lifecycle|Model Lifecycle]]
+
+### ☁️ Cloud — *where it all runs*
+
+Almost nothing here lives on a laptop. These notes map the managed services that store, move and crunch data at scale — heaviest on **Google Cloud** (the platform I use most), with growing corners for AWS, Azure and the Databricks lakehouse.
+
+> [!grid|cols4]
+>
+>> [!card|section cloud]
+>> ###### GCP
+>> ### [[google-cloud-platform|Google Cloud]]
+>> [[bigquery|BigQuery]] · [[cloud-run|Cloud Run]] · [[vertex-ai|Vertex AI]] · [[pubsub|Pub/Sub]]
+>
+>> [!card|section cloud]
+>> ###### AWS
+>> ### [[AWS Home|Amazon AWS]]
+>> Compute, storage & analytics on AWS.
+>
+>> [!card|section cloud]
+>> ###### AZURE
+>> ### [[Azure Home|Microsoft Azure]]
+>> The Microsoft cloud stack.
+>
+>> [!card|section cloud]
+>> ###### LAKEHOUSE
+>> ### [[databricks|Databricks]]
+>> Spark + Delta on a unified platform.
+
+---
+
+## See it in action
+
+> [!card|skill] Apache Spark — the engine behind the spine.
+> ###### FEATURED · DATA PROCESSING
+> The unified engine for large-scale data processing. RDDs and DataFrames turn a whole cluster into one programmable machine — the workhorse behind most pipelines in this vault.
+> ```python
+> df = spark.read.parquet("gs://lake/events")
+> df.groupBy("country").count().orderBy("count", ascending=False).show()
+> ```
+> 1. **Read the concept** — [[apache-spark|Apache Spark]] explains the engine, [[spark-architecture|Architecture]] the cluster anatomy.
+> 2. **Go deeper** — [[rdd|RDDs]], [[spark-dataframe|DataFrames]] and [[spark-performance|Performance]] cover the moving parts.
+> 3. **Connect outward** — every page links into [[data-pipeline|Pipelines]] and the wider data-engineering graph.
+
+## How to use this vault
+
+> [!grid|cols3]
+>
+>> [!card|hero accent spanfull]
+>> ###### THREE WAYS IN
+>> # Navigate like a *graph*, not a folder.
+>> Every note is a node — jump in however you think, and let the links pull you onward.
+>
+>> [!card|step]
+>> ###### Step 01
+>> ### *Search* anything.
+>> Press `/` or the search button — full-text across every note.
+>
+>> [!card|step]
+>> ###### Step 02
+>> ### Pick a *field*.
+>> Start from a hub above and follow it outward.
+>
+>> [!card|step]
+>> ###### Step 03
+>> ### Follow the *graph*.
+>> Backlinks reveal how ideas connect across fields.
+
+## Live from the vault
+
+> [!columns]
+>
+>> [!col|w6]
+>> ### 🔗 Most connected
+>> The hubs everything else hangs off — the best place to start.
+>>
+>> ```dataview
+>> TABLE WITHOUT ID file.link AS "Note", length(file.inlinks) AS "Links"
+>> FROM "wiki"
+>> WHERE file.name != "Master Home" AND file.name != "index"
+>> SORT length(file.inlinks) DESC
+>> LIMIT 6
+>> ```
+>
+>> [!col|w6]
+>> ### 🕘 Recently updated
+>> Where the thinking is happening right now.
+>>
+>> ```dataview
+>> TABLE WITHOUT ID file.link AS "Note", dateformat(file.mtime, "MMM d") AS "Updated"
+>> FROM "wiki"
+>> WHERE file.name != "Master Home" AND file.name != "index"
+>> SORT file.mtime DESC
+>> LIMIT 6
+>> ```
+
+> [!quote]
+> "Data is a precious thing and will last longer than the systems themselves."
+> <cite>— Tim Berners-Lee</cite>
+
+> [!card|hero dark spanfull]
+> ###### READY TO WANDER?
+> # Pick a thread. <span class="at-gradient">Pull.</span>
+> <p class="at-lead">The graph does the rest — every note opens onto the next.</p>
+>
+> **[[Technology Home|Start with Technology →]]**  ·  **[[machine-learning|Jump into ML →]]**  ·  **[[index|Browse the full catalog →]]**
+
+> [!note]- More & maintenance
+> **Search:** press `/` or use **[🔍 Search the vault](obsidian://search?query=)**.
+> **Stats:** live numbers, top concepts & the maturity garden — [[Vault Stats]].
+> **Catalog:** the full agent-facing index lives at [[index]]. **Changelog:** [[log]].
+> **Smaller collections:** Career · Science · AI Recipes — all reachable from [[index]].
