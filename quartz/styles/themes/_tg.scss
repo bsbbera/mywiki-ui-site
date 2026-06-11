@@ -75,9 +75,6 @@ body {
   .page > #quartz-body .center {
     transition: max-width 300ms cubic-bezier(0.32, 0.72, 0, 1);
   }
-  :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body {
-    grid-template-columns: 380px minmax(0, 1fr) 64px !important;
-  }
   :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body .center {
     max-width: min(1100px, 100%) !important;
     margin-inline: auto; /* balance the article inside the widened track */
@@ -100,18 +97,58 @@ body {
   }
 }
 
-/* Reader mode (book icon): a clean, distraction-free reading view.
-   The old approach dimmed a ghost 320px left rail and folded only the right —
-   which on wide / 4K screens left the article marooned off-centre in a sea of
-   empty space ("everything disappeared"). Reader mode now reuses the Full-width
-   "top menu bar" chrome defined below (the left rail reflows into a horizontal
-   bar so the toggles stay reachable; the right rail is stowed) — see the
-   `:is(..., [reader-mode="on"])` additions in the Full-mode block — and simply
-   centres the article at a comfortable reading measure. */
+/* Reader mode (book icon): distraction-free reading.
+   The left sidebar is NOT touched in any way. The right rail's grid track
+   animates to 0 while its contents fade, and the article column stretches to
+   absorb the freed space. The left track is pinned to the same width as the
+   active reading-width preset so it never moves during the transition. */
 @media (min-width: 1200px) {
-  :root[reader-mode="on"] .page > #quartz-body > .center {
-    max-width: min(900px, 92%) !important;
-    margin-inline: auto !important;
+  .page > #quartz-body > .sidebar.right {
+    transition: opacity 280ms ease;
+  }
+  :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body > .center {
+    max-width: 100% !important;
+  }
+  :root[reader-mode="on"]:not([data-reading-width="full"])
+    .page > #quartz-body > .sidebar.right {
+    opacity: 0;
+    min-width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+  }
+}
+/* Reader mode + TOC collapse both fold the right rail (reader → 0, collapsed
+   TOC → a 64px chevron strip). In every case the left track is pinned to the
+   active tier's rail width so the left sidebar never moves when toggling. */
+@media (min-width: 1200px) and (max-width: 1449.98px) {
+  :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body {
+    grid-template-columns: 280px minmax(0, 1fr) 64px !important;
+  }
+  :root[data-toc-collapsed="true"][data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 260px minmax(0, 1fr) 64px !important;
+  }
+  :root[reader-mode="on"]:is([data-reading-width="narrow"], [data-reading-width="normal"])
+    .page > #quartz-body {
+    grid-template-columns: 280px minmax(0, 1fr) 0px !important;
+  }
+  :root[reader-mode="on"][data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 260px minmax(0, 1fr) 0px !important;
+  }
+}
+@media (min-width: 1450px) {
+  :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body {
+    grid-template-columns: 380px minmax(0, 1fr) 64px !important;
+  }
+  :root[data-toc-collapsed="true"][data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 300px minmax(0, 1fr) 64px !important;
+  }
+  :root[reader-mode="on"]:is([data-reading-width="narrow"], [data-reading-width="normal"])
+    .page > #quartz-body {
+    grid-template-columns: 380px minmax(0, 1fr) 0px !important;
+  }
+  :root[reader-mode="on"][data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 300px minmax(0, 1fr) 0px !important;
   }
 }
 
@@ -141,6 +178,19 @@ body {
 /* On desktop, sidebars also shrink in wider presets so the reading column
    actually gains width even when the viewport is constrained. */
 @media (min-width: 1200px) {
+  /* Laptop tier (1200–1449px): fixed 380px rails would strangle the article
+     (a 1280px screen left only ~440px of content — tables and infoboxes bled
+     over the TOC). Rails slim to 280px so the article keeps a real measure. */
+  :root[data-reading-width="narrow"] .page > #quartz-body,
+  :root[data-reading-width="normal"] .page > #quartz-body {
+    grid-template-columns: 280px minmax(0, 1fr) 280px !important;
+  }
+  :root[data-reading-width="wide"] .page > #quartz-body {
+    grid-template-columns: 260px minmax(0, 1fr) 260px !important;
+  }
+}
+/* Desktop tier (≥1450px): roomy rails, capped reading measures. */
+@media (min-width: 1450px) {
   :root[data-reading-width="narrow"] .page > #quartz-body {
     grid-template-columns: 380px minmax(0, 720px) 380px !important;
   }
@@ -150,13 +200,13 @@ body {
   :root[data-reading-width="wide"] .page > #quartz-body {
     grid-template-columns: 300px minmax(0, 1fr) 300px !important;
   }
+}
+@media (min-width: 1200px) {
 
-  /* "Full" mode (and Reader mode): the left sidebar collapses into a horizontal
-     top menu bar (Page title + Search + Darkmode + ReaderMode); the right
-     sidebar is stowed; the layout becomes a single column. Reader mode shares
-     this exact chrome via `:is(..., [reader-mode="on"])` — the only difference
-     is the article measure (Full = 100% bleed; Reader = centred ~900px). */
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body {
+  /* "Full" mode: the left sidebar collapses into a horizontal top menu bar
+     (Page title + Search + Darkmode + ReaderMode); the right sidebar is
+     stowed; the layout becomes a single column. */
+  :root[data-reading-width="full"] .page > #quartz-body {
     grid-template-columns: 1fr !important;
     grid-template-areas:
       "grid-sidebar-left"
@@ -164,16 +214,16 @@ body {
       "grid-center"
       "grid-footer" !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.right {
+  :root[data-reading-width="full"] .sidebar.right {
     display: none !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body > .center {
+  :root[data-reading-width="full"] .page > #quartz-body > .center {
     grid-area: grid-center !important;
     padding: 0 1.5rem;
   }
 
   /* Left sidebar reflowed as a single horizontal menu bar at the top */
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left {
+  :root[data-reading-width="full"] .sidebar.left {
     position: sticky;
     top: 0;
     z-index: 50;
@@ -194,18 +244,18 @@ body {
     overflow: visible !important;
   }
   /* The grid row holding the menu bar should not be stretched to fill height */
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body {
+  :root[data-reading-width="full"] .page > #quartz-body {
     grid-template-rows: auto auto 1fr auto !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left > * {
+  :root[data-reading-width="full"] .sidebar.left > * {
     margin: 0 !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .page-title {
+  :root[data-reading-width="full"] .sidebar.left .page-title {
     font-size: 1.2rem;
     flex: 0 0 auto;
     margin-right: 0.5rem !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .flex-component {
+  :root[data-reading-width="full"] .sidebar.left .flex-component {
     flex: 0 0 auto;
     display: flex;
     flex-direction: row !important;
@@ -215,10 +265,10 @@ body {
   /* Graph stays stowed (no compact horizontal representation makes sense).
      Explorer is repositioned as an absolute dropdown anchored to the Browse
      button — hidden by default, revealed when the user clicks Browse. */
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .graph {
+  :root[data-reading-width="full"] .sidebar.left .graph {
     display: none !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .explorer {
+  :root[data-reading-width="full"] .sidebar.left .explorer {
     position: absolute !important;
     top: calc(100% + 4px);
     left: 1.5rem;
@@ -234,12 +284,12 @@ body {
     display: none !important;
     margin: 0 !important;
   }
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left.nav-open .explorer {
+  :root[data-reading-width="full"] .sidebar.left.nav-open .explorer {
     display: block !important;
   }
-  /* The Browse toggle is shown in Full + Reader mode (script injects it into
+  /* The Browse toggle is shown in Full mode only (script injects it into
      every page; CSS controls visibility). */
-  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .nav-toggle {
+  :root[data-reading-width="full"] .sidebar.left .nav-toggle {
     display: inline-flex;
   }
 }
@@ -794,7 +844,10 @@ a.tag-link::before,
   .callout[data-callout="infobox"] tr:last-child td {
     border-bottom: none;
   }
-  @media all and (max-width: 800px) {
+  /* Below the desktop tier the article column is too narrow to host a 320px
+     float — text would be crushed beside it and the box bled over the TOC
+     rail. Let it flow full-width instead (same as the existing mobile rule). */
+  @media all and (max-width: 1449.98px) {
     .callout[data-callout="infobox"] {
       float: none;
       width: 100%;

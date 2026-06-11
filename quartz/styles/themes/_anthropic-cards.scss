@@ -812,8 +812,10 @@ body { --at-infobox-width: 300px; }
     margin: 22px auto;
     max-width: var(--at-infobox-width, 300px);
 }
-/* narrow panes: stop floating, span full width (webpage-like reflow) */
-@media (max-width: 700px) {
+/* Below the desktop tier (laptops included) the article column can't host the
+   float — text gets crushed into a sliver beside it and the box bleeds toward
+   the TOC rail. Stop floating, span full width (webpage-like reflow). */
+@media (max-width: 1449.98px) {
     .callout[data-callout="infobox"] {
         float: none !important;
         width: 100% !important;

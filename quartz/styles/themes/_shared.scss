@@ -50,24 +50,20 @@ input:focus-visible,
   border-radius: 4px;
 }
 
-/* ---- Layout: pull the whole page left (Medium / blog style) ---------------
-   Global so every theme shares the same layout — the sidebar hugs the viewport
-   edge instead of floating in centered whitespace. ------------------------- */
+/* ---- Layout: one consistent centered container at every screen size -------
+   Global so every theme shares the same layout. The grid is capped and
+   centered with fluid gutters, so laptop, desktop and 4K all read as the same
+   composition — no edge-bleeding on small screens, no stranded content on
+   huge ones. ---------------------------------------------------------------- */
 .page {
   max-width: 100%;
   margin: 0;
 }
 .page > #quartz-body {
-  justify-content: start;
-  padding: 0 2rem;
-}
-/* Ultra-wide (27"+ / 4K): hugging the left edge strands the article in the
-   left half of a huge viewport. Cap the whole grid and center it instead. */
-@media (min-width: 1800px) {
-  .page > #quartz-body {
-    max-width: 1760px;
-    margin: 0 auto;
-  }
+  justify-content: center;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3vw, 3rem);
 }
 
 /* ---- Layered surfaces (matches the Obsidian app) -------------------------

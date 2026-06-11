@@ -820,7 +820,9 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   & article > :is(h1, h2, h3, h4, h5, h6, hr) {
     clear: both;
   }
-  @media (max-width: 700px) {
+  /* Below the desktop tier the article column can't host the float — text gets
+     crushed beside it and the box bleeds toward the TOC rail. Flow full-width. */
+  @media (max-width: 1449.98px) {
     & .callout[data-callout="infobox"] {
       float: none !important;
       width: 100% !important;
