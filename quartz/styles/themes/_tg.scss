@@ -132,6 +132,15 @@ body {
   :root[reader-mode="on"] .sidebar.left :is(.explorer, .graph) {
     display: none;
   }
+  /* In reader mode the article widens into the freed right rail, so a
+     `float: right` infobox slams against the new edge and overhangs. Unfloat
+     it and drop it inline so the reading column stays clean. */
+  :root[reader-mode="on"] article .callout[data-callout="infobox"] {
+    float: none !important;
+    width: 320px !important;
+    max-width: 100% !important;
+    margin: 0.5rem auto 1.5rem !important;
+  }
 }
 
 /* Flexible content width: default to 900px; `data-reading-width` (set by
