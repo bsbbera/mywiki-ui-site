@@ -104,8 +104,11 @@ body {
    and let the article take the width, animated by the grid transition above.
    The left rail fades instead of vanishing so the toggle stays reachable. */
 @media (min-width: 1200px) {
+  /* keep the left rail at its NATURAL width (squeezing it wraps the title
+     letter-by-letter and clips the controls) — just dim it; only the right
+     rail folds, and the article takes that width. */
   :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body {
-    grid-template-columns: 80px minmax(0, 1fr) 0px !important;
+    grid-template-columns: 320px minmax(0, 1fr) 0px !important;
   }
   :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body .center {
     max-width: min(1100px, 100%) !important;
@@ -118,8 +121,7 @@ body {
     padding: 0;
   }
   :root[reader-mode="on"] .sidebar.left {
-    opacity: 0.35;
-    overflow: hidden;
+    opacity: 0.4;
     transition: opacity 250ms ease;
   }
   :root[reader-mode="on"] .sidebar.left:hover,
