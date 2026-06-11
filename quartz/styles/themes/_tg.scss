@@ -80,6 +80,7 @@ body {
   }
   :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body .center {
     max-width: min(1100px, 100%) !important;
+    margin-inline: auto; /* balance the article inside the widened track */
   }
   /* fold everything in the right rail except the TOC re-open chevron */
   :root[data-toc-collapsed="true"] .sidebar.right > *:not(.toc),
@@ -96,6 +97,38 @@ body {
   }
   :root[data-toc-collapsed="true"] .sidebar.right .toc-header .fold {
     transform: rotate(90deg); /* chevron points left: "expand me" */
+  }
+}
+
+/* Reader mode (book icon): don't just hide the right rail — fold BOTH rails
+   and let the article take the width, animated by the grid transition above.
+   The left rail fades instead of vanishing so the toggle stays reachable. */
+@media (min-width: 1200px) {
+  :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body {
+    grid-template-columns: 80px minmax(0, 1fr) 0px !important;
+  }
+  :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body .center {
+    max-width: min(1100px, 100%) !important;
+    margin-inline: auto;
+  }
+  :root[reader-mode="on"] .sidebar.right {
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    padding: 0;
+  }
+  :root[reader-mode="on"] .sidebar.left {
+    opacity: 0.35;
+    overflow: hidden;
+    transition: opacity 250ms ease;
+  }
+  :root[reader-mode="on"] .sidebar.left:hover,
+  :root[reader-mode="on"] .sidebar.left:focus-within {
+    opacity: 1;
+  }
+  /* hide the bulky widgets; keep title + the search/dark/reader toggles */
+  :root[reader-mode="on"] .sidebar.left :is(.explorer, .graph) {
+    display: none;
   }
 }
 

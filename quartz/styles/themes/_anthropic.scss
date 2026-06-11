@@ -917,21 +917,25 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
   & pre {
     position: relative;
   }
+  /* language chip lives INSIDE the block (pre's scroll container clips
+     anything that straddles its top edge) — translucent pill, top-left */
+  & pre[data-language] {
+    padding-top: 2.2rem;
+  }
   & pre[data-language]::before {
     content: attr(data-language);
     position: absolute;
-    top: 0;
-    left: 0.6rem;
-    transform: translateY(-50%);
-    padding: 0.05rem 0.5rem;
-    font-size: 0.66rem;
+    top: 0.55rem;
+    left: 0.8rem;
+    padding: 0.08rem 0.55rem;
+    font-size: 0.64rem;
     font-family: var(--codeFont);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--at-accent);
-    background: var(--at-pane-2);
-    border: 1px solid var(--at-border-2);
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
   }
   & .clipboard-button {
     background: var(--at-pane-2) !important;
@@ -948,26 +952,36 @@ $not-cards: ':not([data-callout="card"]):not([data-callout="grid"]):not([data-ca
     border-color: var(--at-accent) !important;
     background: var(--at-accent-soft) !important;
   }
+  /* backlinks as compact chips — a tag cloud, not a stack of boxes */
+  & .backlinks ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.1rem;
+    margin: 0.4rem 0 0;
+    list-style: none;
+  }
   & .backlinks ul li {
-    margin: 0.3rem 0;
+    margin: 0;
   }
   & .backlinks ul li > a {
-    display: block;
-    padding: 0.45rem 0.7rem !important;
+    display: inline-block;
+    padding: 0.2rem 0.7rem !important;
     border: 1px solid var(--at-border);
-    border-radius: 9px;
+    border-radius: 999px;
     background: var(--at-pane-2);
     color: var(--at-muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
     transition:
-      transform var(--at-dur) var(--at-ease),
       color var(--at-dur) var(--at-ease),
+      background-color var(--at-dur) var(--at-ease),
       border-color var(--at-dur) var(--at-ease);
   }
   & .backlinks ul li > a:hover {
-    transform: translateY(-1px);
     border-color: var(--at-accent);
     color: var(--at-accent);
-    background: var(--at-pane-2);
+    background: var(--at-accent-soft);
   }
 }
 

@@ -61,6 +61,14 @@ input:focus-visible,
   justify-content: start;
   padding: 0 2rem;
 }
+/* Ultra-wide (27"+ / 4K): hugging the left edge strands the article in the
+   left half of a huge viewport. Cap the whole grid and center it instead. */
+@media (min-width: 1800px) {
+  .page > #quartz-body {
+    max-width: 1760px;
+    margin: 0 auto;
+  }
+}
 
 /* ---- Layered surfaces (matches the Obsidian app) -------------------------
    Obsidian stacks three tones: window (page) < side rails < the bright note.

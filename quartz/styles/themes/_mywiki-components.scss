@@ -185,10 +185,36 @@ article .at-kicker { font-weight: 600; }
   color: color-mix(in srgb, var(--secondary) 72%, var(--darkgray));
 }
 
-/* ---------- Backlinks panel: cap + scroll (hygiene) ---------- */
+/* ---------- Backlinks: compact chips instead of stacked boxes ---------- */
 .backlinks > ul {
-  max-height: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  max-height: 280px;
   overflow-y: auto;
+  list-style: none;
+  padding: 0.1rem;
+  margin: 0.4rem 0 0;
+}
+.backlinks > ul > li {
+  margin: 0;
+}
+.backlinks > ul > li > a {
+  display: inline-block;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gray) 35%, transparent);
+  background: color-mix(in srgb, var(--lightgray) 60%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-decoration: none;
+  color: var(--darkgray);
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+.backlinks > ul > li > a:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
