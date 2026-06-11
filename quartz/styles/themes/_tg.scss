@@ -100,37 +100,18 @@ body {
   }
 }
 
-/* Reader mode (book icon): don't just hide the right rail — fold BOTH rails
-   and let the article take the width, animated by the grid transition above.
-   The left rail fades instead of vanishing so the toggle stays reachable. */
+/* Reader mode (book icon): a clean, distraction-free reading view.
+   The old approach dimmed a ghost 320px left rail and folded only the right —
+   which on wide / 4K screens left the article marooned off-centre in a sea of
+   empty space ("everything disappeared"). Reader mode now reuses the Full-width
+   "top menu bar" chrome defined below (the left rail reflows into a horizontal
+   bar so the toggles stay reachable; the right rail is stowed) — see the
+   `:is(..., [reader-mode="on"])` additions in the Full-mode block — and simply
+   centres the article at a comfortable reading measure. */
 @media (min-width: 1200px) {
-  /* keep the left rail at its NATURAL width (squeezing it wraps the title
-     letter-by-letter and clips the controls) — just dim it; only the right
-     rail folds, and the article takes that width. */
-  :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body {
-    grid-template-columns: 320px minmax(0, 1fr) 0px !important;
-  }
-  :root[reader-mode="on"]:not([data-reading-width="full"]) .page > #quartz-body .center {
-    max-width: min(1100px, 100%) !important;
-    margin-inline: auto;
-  }
-  :root[reader-mode="on"] .sidebar.right {
-    opacity: 0;
-    pointer-events: none;
-    overflow: hidden;
-    padding: 0;
-  }
-  :root[reader-mode="on"] .sidebar.left {
-    opacity: 0.4;
-    transition: opacity 250ms ease;
-  }
-  :root[reader-mode="on"] .sidebar.left:hover,
-  :root[reader-mode="on"] .sidebar.left:focus-within {
-    opacity: 1;
-  }
-  /* hide the bulky widgets; keep title + the search/dark/reader toggles */
-  :root[reader-mode="on"] .sidebar.left :is(.explorer, .graph) {
-    display: none;
+  :root[reader-mode="on"] .page > #quartz-body > .center {
+    max-width: min(900px, 92%) !important;
+    margin-inline: auto !important;
   }
 }
 
@@ -170,10 +151,12 @@ body {
     grid-template-columns: 300px minmax(0, 1fr) 300px !important;
   }
 
-  /* "Full" mode: the left sidebar collapses into a horizontal top menu bar
-     (Page title + Search + Darkmode + ReaderMode); the right sidebar is
-     stowed; the article gets the full width of the page. */
-  :root[data-reading-width="full"] .page > #quartz-body {
+  /* "Full" mode (and Reader mode): the left sidebar collapses into a horizontal
+     top menu bar (Page title + Search + Darkmode + ReaderMode); the right
+     sidebar is stowed; the layout becomes a single column. Reader mode shares
+     this exact chrome via `:is(..., [reader-mode="on"])` — the only difference
+     is the article measure (Full = 100% bleed; Reader = centred ~900px). */
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body {
     grid-template-columns: 1fr !important;
     grid-template-areas:
       "grid-sidebar-left"
@@ -181,16 +164,16 @@ body {
       "grid-center"
       "grid-footer" !important;
   }
-  :root[data-reading-width="full"] .sidebar.right {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.right {
     display: none !important;
   }
-  :root[data-reading-width="full"] .page > #quartz-body > .center {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body > .center {
     grid-area: grid-center !important;
     padding: 0 1.5rem;
   }
 
   /* Left sidebar reflowed as a single horizontal menu bar at the top */
-  :root[data-reading-width="full"] .sidebar.left {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left {
     position: sticky;
     top: 0;
     z-index: 50;
@@ -211,18 +194,18 @@ body {
     overflow: visible !important;
   }
   /* The grid row holding the menu bar should not be stretched to fill height */
-  :root[data-reading-width="full"] .page > #quartz-body {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .page > #quartz-body {
     grid-template-rows: auto auto 1fr auto !important;
   }
-  :root[data-reading-width="full"] .sidebar.left > * {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left > * {
     margin: 0 !important;
   }
-  :root[data-reading-width="full"] .sidebar.left .page-title {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .page-title {
     font-size: 1.2rem;
     flex: 0 0 auto;
     margin-right: 0.5rem !important;
   }
-  :root[data-reading-width="full"] .sidebar.left .flex-component {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .flex-component {
     flex: 0 0 auto;
     display: flex;
     flex-direction: row !important;
@@ -232,10 +215,10 @@ body {
   /* Graph stays stowed (no compact horizontal representation makes sense).
      Explorer is repositioned as an absolute dropdown anchored to the Browse
      button — hidden by default, revealed when the user clicks Browse. */
-  :root[data-reading-width="full"] .sidebar.left .graph {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .graph {
     display: none !important;
   }
-  :root[data-reading-width="full"] .sidebar.left .explorer {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .explorer {
     position: absolute !important;
     top: calc(100% + 4px);
     left: 1.5rem;
@@ -251,12 +234,12 @@ body {
     display: none !important;
     margin: 0 !important;
   }
-  :root[data-reading-width="full"] .sidebar.left.nav-open .explorer {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left.nav-open .explorer {
     display: block !important;
   }
-  /* The Browse toggle is only shown in Full mode (script injects it into
+  /* The Browse toggle is shown in Full + Reader mode (script injects it into
      every page; CSS controls visibility). */
-  :root[data-reading-width="full"] .sidebar.left .nav-toggle {
+  :root:is([data-reading-width="full"], [reader-mode="on"]) .sidebar.left .nav-toggle {
     display: inline-flex;
   }
 }
