@@ -29,28 +29,7 @@ cssclasses:
 
 ## 📊 At a Glance
 
-```dataviewjs
-const sub = [
-  { icon: "📊", name: "Data Engineering",     path: "wiki/technology/data-engineering",     home: "data-engineering" },
-  { icon: "🧩", name: "Software Engineering", path: "wiki/technology/software-engineering", home: "Software Engineering Home" },
-  { icon: "🗄️", name: "Databases",            path: "wiki/technology/databases",            home: "Databases Home" },
-  { icon: "☁️", name: "Cloud",                path: "wiki/technology/cloud",                home: "Cloud Home" },
-  { icon: "🧰", name: "Tools",                path: "wiki/technology/tools",                home: "Tools Home" },
-  { icon: "📘", name: "Guides",               path: "wiki/technology/guides",               home: "Guides Home" },
-];
-dv.table(
-  ["Sub-domain", "Notes", "Last touched"],
-  sub.map(s => {
-    const pages = dv.pages(`"${s.path}"`);
-    const latest = pages.sort(p => p.file.mtime, 'desc').first();
-    return [
-      `${s.icon} [[${s.home}|${s.name}]]`,
-      pages.length,
-      latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"
-    ];
-  })
-);
-```
+<p class="mw-prerendered-note">🔁 This view updates live in Obsidian; the website shows a snapshot from the last publish.</p>
 
 ## 🗺️ Browse by Sub-domain
 
@@ -102,14 +81,21 @@ dv.table(
 
 ## 🕒 Recently Updated Across Technology
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology" and !"wiki/technology/Technology Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(15)
-    .map(p => p.file.link)
-);
-```
+- [Machine Learning](/wiki/technology/machine-learning/machine-learning)
+- [Data Engineering](/wiki/technology/data-engineering/data-engineering)
+- [Feature Engineering](/wiki/technology/machine-learning/ml-fundamentals/feature-engineering)
+- [Transformers](/wiki/technology/machine-learning/deep-learning/transformers)
+- [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
+- [MLOps](/wiki/technology/machine-learning/mlops/mlops)
+- [Apache Spark](/wiki/technology/data-engineering/data-processing/spark/apache-spark)
+- [Dimensional Modeling](/wiki/technology/data-engineering/data-modeling/dimensional-modeling)
+- [Data Ethics](/wiki/technology/data-engineering/data-ethics)
+- [Descriptive Statistics](/wiki/technology/machine-learning/statistics/descriptive-statistics)
+- [Survivorship Bias](/wiki/technology/machine-learning/statistics/survivorship-bias)
+- [Law of Large Numbers](/wiki/technology/machine-learning/statistics/law-of-large-numbers)
+- [Hypothesis Testing](/wiki/technology/machine-learning/statistics/hypothesis-testing)
+- [Imbalanced Classification](/wiki/technology/machine-learning/ml-fundamentals/imbalanced-classification)
+- [N-Gram Model](/wiki/technology/machine-learning/nlp/n-gram-model)
 
 ## Related pages
 

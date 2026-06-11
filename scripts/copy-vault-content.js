@@ -7,6 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { prerenderContent } from "./prerender-dataview.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -246,6 +247,11 @@ This site is a public reflection of notes I keep in [Obsidian](https://obsidian.
     console.log(
       `✅ Vault sync complete! Copied ${totalCopied} files total.\n`
     );
+
+    // Bake Dataview into static snapshots (the plugin only runs in Obsidian)
+    console.log("  📊 Pre-rendering Dataview blocks...");
+    const baked = prerenderContent(CONTENT_PATH, VAULT_PATH);
+    console.log(`     ✓ Pre-rendered ${baked} files\n`);
   } catch (error) {
     console.error("❌ Error syncing vault:", error.message);
     process.exit(1);

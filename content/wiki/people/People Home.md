@@ -26,38 +26,24 @@ cssclasses:
 
 ## 📊 At a Glance
 
-```dataviewjs
-const pages = dv.pages('"wiki/people" and !"wiki/people/People Home"');
-const latest = pages.sort(p => p.file.mtime, 'desc').first();
-dv.paragraph(`**${pages.length}** people · last added **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
-```
+**34** people · last added **2026-06-10**
 
 ## 📚 Browse
 
-```dataviewjs
-const palette = ["#d8552f", "#2f7e78", "#4a7ba6", "#c08a2e", "#96597c", "#6a5b9c", "#3e7a55", "#a4633a"];
-const people = dv.pages('"wiki/people"')
-  .where(p => p.file.name !== "People Home")
-  .sort(p => p.file.name, 'asc')
-  .array();
-const cards = people.map((p, i) => {
-  const name = p.title ?? p.file.name;
-  const initial = name.trim().charAt(0).toUpperCase();
-  const tag = (p.file.etags ?? []).map(t => t.replace("#", ""))
-    .filter(t => t !== "person")[0]?.replace(/_/g, " ") ?? "";
-  return `<div class="mw-person">
-    <div class="mw-avatar" style="background:${palette[i % palette.length]}">${initial}</div>
-    <a class="internal-link" data-href="${p.file.path}" href="${p.file.path}">${name}</a>
-    <span class="mw-chip">${tag}</span>
-  </div>`;
-}).join("");
-dv.el("div", cards, { cls: "mw-people" });
-```
+<div class="mw-people"><div class="mw-person"><div class="mw-avatar" style="background:#d8552f">A</div><a href="/wiki/people/andrej-karpathy" class="internal">Andrej Karpathy</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#2f7e78">B</div><a href="/wiki/people/benjamin-graham" class="internal">Benjamin Graham</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#4a7ba6">B</div><a href="/wiki/people/bertrand-russell" class="internal">Bertrand Russell</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#c08a2e">B</div><a href="/wiki/people/bill-inmon" class="internal">Bill Inmon</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#96597c">D</div><a href="/wiki/people/dan-linstedt" class="internal">Dan Linstedt</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#6a5b9c">D</div><a href="/wiki/people/daniel-abadi" class="internal">Daniel Abadi</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#3e7a55">D</div><a href="/wiki/people/david-hilbert" class="internal">David Hilbert</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#a4633a">D</div><a href="/wiki/people/doug-cutting" class="internal">Doug Cutting</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#d8552f">E</div><a href="/wiki/people/edgar-f-codd" class="internal">Edgar F. Codd</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#2f7e78">E</div><a href="/wiki/people/enrico-fermi" class="internal">Enrico Fermi</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#4a7ba6">E</div><a href="/wiki/people/eric-brewer" class="internal">Eric Brewer</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#c08a2e">E</div><a href="/wiki/people/erwin-schrodinger" class="internal">Erwin Schrödinger</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#96597c">G</div><a href="/wiki/people/gene-kim" class="internal">Gene Kim</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#6a5b9c">G</div><a href="/wiki/people/georg-cantor" class="internal">Georg Cantor</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#3e7a55">G</div><a href="/wiki/people/greg-young" class="internal">Greg Young</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#a4633a">J</div><a href="/wiki/people/jay-kreps" class="internal">Jay Kreps</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#d8552f">J</div><a href="/wiki/people/jeff-dean-sanjay-ghemawat" class="internal">Jeff Dean + Sanjay Ghemawat</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#2f7e78">J</div><a href="/wiki/people/jez-humble" class="internal">Jez Humble</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#4a7ba6">J</div><a href="/wiki/people/joe-reis-matt-housley" class="internal">Joe Reis + Matt Housley</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#c08a2e">J</div><a href="/wiki/people/joseph-piotroski" class="internal">Joseph Piotroski</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#96597c">K</div><a href="/wiki/people/kenneth-arrow" class="internal">Kenneth Arrow</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#6a5b9c">M</div><a href="/wiki/people/martin-fowler" class="internal">Martin Fowler</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#3e7a55">M</div><a href="/wiki/people/martin-kleppmann" class="internal">Martin Kleppmann</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#a4633a">M</div><a href="/wiki/people/matei-zaharia" class="internal">Matei Zaharia</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#d8552f">M</div><a href="/wiki/people/maurice-allais" class="internal">Maurice Allais</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#2f7e78">M</div><a href="/wiki/people/mitchell-hashimoto" class="internal">Mitchell Hashimoto</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#4a7ba6">P</div><a href="/wiki/people/peter-lynch" class="internal">Peter Lynch</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#c08a2e">R</div><a href="/wiki/people/ralph-kimball" class="internal">Ralph Kimball</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#96597c">S</div><a href="/wiki/people/seth-gilbert-nancy-lynch" class="internal">Seth Gilbert + Nancy Lynch</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#6a5b9c">S</div><a href="/wiki/people/solomon-hykes" class="internal">Solomon Hykes</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#3e7a55">W</div><a href="/wiki/people/warren-buffett" class="internal">Warren Buffett</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#a4633a">W</div><a href="/wiki/people/wenqiang-feng" class="internal">Wenqiang Feng</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#d8552f">Z</div><a href="/wiki/people/zeno-of-elea" class="internal">Zeno of Elea</a><span class="mw-chip"></span></div><div class="mw-person"><div class="mw-avatar" style="background:#2f7e78">Z</div><a href="/wiki/people/zhamak-dehghani" class="internal">Zhamak Dehghani</a><span class="mw-chip"></span></div></div>
+<p class="mw-prerendered-note">🔁 This view updates live in Obsidian; the website shows a snapshot from the last publish.</p>
 
 > [!note]- 🕒 Recently added
-> ```dataviewjs
-> dv.list(dv.pages('"wiki/people" and !"wiki/people/People Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> ```
+> - [Maurice Allais](/wiki/people/maurice-allais)
+> - [Kenneth Arrow](/wiki/people/kenneth-arrow)
+> - [Enrico Fermi](/wiki/people/enrico-fermi)
+> - [Erwin Schrödinger](/wiki/people/erwin-schrodinger)
+> - [David Hilbert](/wiki/people/david-hilbert)
+> - [Georg Cantor](/wiki/people/georg-cantor)
+> - [Bertrand Russell](/wiki/people/bertrand-russell)
+> - [Zeno of Elea](/wiki/people/zeno-of-elea)
+> - [Joseph Piotroski](/wiki/people/joseph-piotroski)
+> - [Jez Humble](/wiki/people/jez-humble)
 
 ## Related pages
 

@@ -38,9 +38,14 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
               slugAnchor.reset()
               const toc: TocEntry[] = []
               let highestDepth: number = opts.maxDepth
-              visit(tree, "heading", (node) => {
+              visit(tree, "heading", (node, _index, parent) => {
+                // headings inside callouts/blockquotes are card titles, not
+                // document structure — keep them out of the TOC
+                if (parent && parent.type === "blockquote") return
                 if (node.depth <= opts.maxDepth) {
-                  const text = toString(node)
+                  // toString includes raw inline-HTML values; strip tags so
+                  // styled headings don't leak markup into the TOC
+                  const text = toString(node).replace(/<[^>]+>/g, "").trim()
                   highestDepth = Math.min(highestDepth, node.depth)
                   toc.push({
                     depth: node.depth,

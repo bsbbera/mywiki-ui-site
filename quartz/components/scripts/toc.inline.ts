@@ -13,6 +13,13 @@ const observer = new IntersectionObserver((entries) => {
   }
 })
 
+// Collapsing the TOC also folds the right rail and hands the width back to
+// the article (the grid transition in the theme CSS animates the change).
+function syncTocCollapsedState(collapsed: boolean) {
+  document.documentElement.setAttribute("data-toc-collapsed", collapsed ? "true" : "false")
+  localStorage.setItem("toc-collapsed", collapsed ? "true" : "false")
+}
+
 function toggleToc(this: HTMLElement) {
   this.classList.toggle("collapsed")
   this.setAttribute(
@@ -22,13 +29,20 @@ function toggleToc(this: HTMLElement) {
   const content = this.nextElementSibling as HTMLElement | undefined
   if (!content) return
   content.classList.toggle("collapsed")
+  syncTocCollapsedState(this.classList.contains("collapsed"))
 }
 
 function setupToc() {
+  const stored = localStorage.getItem("toc-collapsed") === "true"
+  document.documentElement.setAttribute("data-toc-collapsed", stored ? "true" : "false")
   for (const toc of document.getElementsByClassName("toc")) {
     const button = toc.querySelector(".toc-header")
     const content = toc.querySelector(".toc-content")
     if (!button || !content) return
+    // restore the persisted state on every page load / SPA nav
+    button.classList.toggle("collapsed", stored)
+    button.setAttribute("aria-expanded", stored ? "false" : "true")
+    content.classList.toggle("collapsed", stored)
     button.addEventListener("click", toggleToc)
     window.addCleanup(() => button.removeEventListener("click", toggleToc))
   }

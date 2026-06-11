@@ -18,3 +18,5 @@
 // card systems load after the base skins so their card rules win
 @use "./themes/glass-cards";
 @use "./themes/anthropic-cards";
+// vault component twins (field colors, maturity, bars, grids) — all themes
+@use "./themes/mywiki-components";

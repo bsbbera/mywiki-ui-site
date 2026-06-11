@@ -65,6 +65,40 @@ body {
    Theme-independent layout overrides
    ============================================ */
 
+/* Dynamic TOC ↔ layout: collapsing the TOC folds the whole right rail into a
+   slim chevron strip and the article column animates wider. State lives on
+   :root[data-toc-collapsed], set by toc.inline.ts and persisted. */
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    transition: grid-template-columns 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .page > #quartz-body .center {
+    transition: max-width 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body {
+    grid-template-columns: 380px minmax(0, 1fr) 64px !important;
+  }
+  :root[data-toc-collapsed="true"]:not([data-reading-width="full"]) .page > #quartz-body .center {
+    max-width: min(1100px, 100%) !important;
+  }
+  /* fold everything in the right rail except the TOC re-open chevron */
+  :root[data-toc-collapsed="true"] .sidebar.right > *:not(.toc),
+  :root[data-toc-collapsed="true"] .sidebar.right .toc-content {
+    display: none !important;
+  }
+  :root[data-toc-collapsed="true"] .sidebar.right .toc-header h3 {
+    display: none;
+  }
+  :root[data-toc-collapsed="true"] .sidebar.right .toc-header {
+    justify-content: center;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
+  :root[data-toc-collapsed="true"] .sidebar.right .toc-header .fold {
+    transform: rotate(90deg); /* chevron points left: "expand me" */
+  }
+}
+
 /* Flexible content width: default to 900px; `data-reading-width` (set by
    WidthToggle) overrides per user preference, persisted in localStorage.
    The middle grid track on desktop is `auto` by default (sized to content) —

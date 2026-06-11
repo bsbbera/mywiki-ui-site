@@ -19,7 +19,7 @@ cssclasses:
 
 > Everything platform-specific: GCP, AWS, Azure, Databricks. Cross-platform comparisons live here too.
 
-*📄 `$= dv.pages('"wiki/technology/cloud"').length` notes in this field · ⏱ `$= Math.max(1, Math.ceil(dv.current().file.size / 1100))` min read · 🕘 updated `$= dv.current().file.mtime.toFormat("MMM d, yyyy")`*
+*📄 101 notes in this field · ⏱ 3 min read · 🕘 updated Jun 10, 2026*
 
 ## 🧭 Vault Navigation
 
@@ -30,26 +30,7 @@ cssclasses:
 
 ## 📊 Platform Comparison
 
-```dataviewjs
-const platforms = [
-  { icon: "☁️", name: "Google Cloud (GCP)", path: "wiki/technology/cloud/gcp",        home: "GCP Home" },
-  { icon: "📦", name: "Amazon Web Services", path: "wiki/technology/cloud/aws",        home: "AWS Home" },
-  { icon: "🟦", name: "Microsoft Azure",     path: "wiki/technology/cloud/azure",      home: "Azure Home" },
-  { icon: "🧱", name: "Databricks",          path: "wiki/technology/cloud/databricks", home: "Databricks Home" },
-];
-dv.table(
-  ["Platform", "Notes", "Last touched"],
-  platforms.map(p => {
-    const pages = dv.pages(`"${p.path}"`);
-    const latest = pages.sort(x => x.file.mtime, 'desc').first();
-    return [
-      `${p.icon} [[${p.home}|${p.name}]]`,
-      pages.length,
-      latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"
-    ];
-  })
-);
-```
+<p class="mw-prerendered-note">🔁 This view updates live in Obsidian; the website shows a snapshot from the last publish.</p>
 
 ## 🗺️ Browse by Platform
 
@@ -85,14 +66,21 @@ dv.table(
 
 ## 🕒 Recently Updated Across Cloud
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/cloud" and !"wiki/technology/cloud/Cloud Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(15)
-    .map(p => p.file.link)
-);
-```
+- [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
+- [AWS SageMaker](/wiki/technology/cloud/aws/sagemaker)
+- [Cloud Natural Language API](/wiki/technology/cloud/gcp/ai-ml/cloud-natural-language)
+- [Cloud TPU](/wiki/technology/cloud/gcp/ai-ml/cloud-tpu)
+- [Cloud Translation API](/wiki/technology/cloud/gcp/ai-ml/cloud-translation)
+- [Vertex AI](/wiki/technology/cloud/gcp/ai-ml/vertex-ai)
+- [Cloud Logging](/wiki/technology/cloud/gcp/operations/cloud-logging)
+- [Cloud IDS](/wiki/technology/cloud/gcp/operations/cloud-ids)
+- [Cloud Workstations](/wiki/technology/cloud/gcp/devops/cloud-workstations)
+- [Cloud Shell](/wiki/technology/cloud/gcp/devops/cloud-shell)
+- [Cloud Debugger](/wiki/technology/cloud/gcp/operations/cloud-debugger)
+- [Cloud Deploy](/wiki/technology/cloud/gcp/devops/cloud-deploy)
+- [Cloud Build](/wiki/technology/cloud/gcp/devops/cloud-build)
+- [Artifact Registry](/wiki/technology/cloud/gcp/devops/artifact-registry)
+- [VPC Service Controls](/wiki/technology/cloud/gcp/security/vpc-service-controls)
 
 ## Related pages
 

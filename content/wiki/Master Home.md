@@ -2,7 +2,7 @@
 title: Master Home
 Created:
   - 2026-06-09
-date modified: Wednesday, June 10th 2026, 12:37:32 am
+date modified: Thursday, June 11th 2026, 1:11:00 pm
 aliases:
   - Home
   - Dashboard
@@ -23,7 +23,7 @@ publish: true
 > # Everything I know, <span class="at-gradient">connected.</span>
 > <p class="at-lead">370+ interlinked notes on data engineering, the cloud and machine learning — distilled from books, docs and hard-won practice into one navigable map.</p>
 >
-> **[[Technology Home|Explore the vault →]]**  ·  **[🔍 Search the vault](obsidian://search?query=)**  ·  [[index|A–Z catalog]]
+> **[[Technology Home|Explore the vault →]]**  ·  **🔍 Search the vault**  ·  [[index|A–Z catalog]]
 >
 > <span class="at-badge">EVERGREEN · TENDED DAILY</span>  <span class="at-badge ghost">BUILT WITH OBSIDIAN + AI</span>
 
@@ -69,6 +69,12 @@ publish: true
 This is a working **knowledge base for modern data work** — the connective tissue between the books I read, the cloud services I run, and the systems I build. Its spine is **[[data-engineering|data engineering]]**: how data is modeled, moved, stored and served. Around that spine sit **[[machine-learning|machine learning]]**, the **[[Cloud Home|cloud platforms]]** that run it — GCP, AWS, Azure and Databricks — and the **[[Software Engineering Home|software craft]]** that holds everything together.
 
 Every note links to its neighbours, so a single idea always opens onto the next. Start with a field below, jump to the **most-connected** concepts, or press <span class="at-mark">/ search</span> to find anything in seconds.
+                                                                                                                                                    
+
+
+
+
+
 
 ## Explore by field
 
@@ -234,25 +240,27 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >> ### 🔗 Most connected
 >> The hubs everything else hangs off — the best place to start.
 >>
->> ```dataview
->> TABLE WITHOUT ID file.link AS "Note", length(file.inlinks) AS "Links"
->> FROM "wiki"
->> WHERE file.name != "Master Home" AND file.name != "index"
->> SORT length(file.inlinks) DESC
->> LIMIT 6
->> ```
+>> | Note | Links |
+>> | --- | --- |
+>> | [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery) | 95 |
+>> | [Google Cloud Platform](/wiki/technology/cloud/gcp/foundations/google-cloud-platform) | 83 |
+>> | [Google Cloud Platform](/wiki/technology/cloud/gcp/GCP-Home) | 55 |
+>> | [Pub/Sub](/wiki/technology/cloud/gcp/analytics/pubsub) | 53 |
+>> | [Cloud Storage](/wiki/technology/cloud/gcp/storage/Cloud-Storage) | 51 |
+>> | [Cloud Spanner](/wiki/technology/cloud/gcp/databases/cloud-spanner) | 48 |
 >
 >> [!col|w6]
 >> ### 🕘 Recently updated
 >> Where the thinking is happening right now.
 >>
->> ```dataview
->> TABLE WITHOUT ID file.link AS "Note", dateformat(file.mtime, "MMM d") AS "Updated"
->> FROM "wiki"
->> WHERE file.name != "Master Home" AND file.name != "index"
->> SORT file.mtime DESC
->> LIMIT 6
->> ```
+>> | Note | Updated |
+>> | --- | --- |
+>> | [Books](/wiki/books/Books-Home) | Jun 11 |
+>> | [Vault Stats](/wiki/Vault-Stats) | Jun 10 |
+>> | [Cloud Home](/wiki/technology/cloud/Cloud-Home) | Jun 10 |
+>> | [Machine Learning](/wiki/technology/machine-learning/machine-learning) | Jun 10 |
+>> | [Data Engineering](/wiki/technology/data-engineering/data-engineering) | Jun 10 |
+>> | [Feature Engineering](/wiki/technology/machine-learning/ml-fundamentals/feature-engineering) | Jun 10 |
 
 > [!quote]
 > "Data is a precious thing and will last longer than the systems themselves."
@@ -266,7 +274,7 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 > **[[Technology Home|Start with Technology →]]**  ·  **[[machine-learning|Jump into ML →]]**  ·  **[[index|Browse the full catalog →]]**
 
 > [!note]- More & maintenance
-> **Search:** press `/` or use **[🔍 Search the vault](obsidian://search?query=)**.
+> **Search:** press `/` or use **🔍 Search the vault**.
 > **Stats:** live numbers, top concepts & the maturity garden — [[Vault Stats]].
 > **Catalog:** the full agent-facing index lives at [[index]]. **Changelog:** [[log]].
 > **Smaller collections:** Career · Science · AI Recipes — all reachable from [[index]].

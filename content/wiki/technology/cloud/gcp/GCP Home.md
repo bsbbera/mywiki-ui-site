@@ -29,25 +29,7 @@ cssclasses:
 
 ## 📊 At a Glance
 
-```dataviewjs
-const subs = [
-  { icon: "🏗️", name: "Foundations",    path: "wiki/technology/cloud/gcp/foundations" },
-  { icon: "💻", name: "Compute",        path: "wiki/technology/cloud/gcp/compute" },
-  { icon: "💾", name: "Storage",        path: "wiki/technology/cloud/gcp/storage" },
-  { icon: "🗄️", name: "Databases",      path: "wiki/technology/cloud/gcp/databases" },
-  { icon: "📊", name: "Analytics",      path: "wiki/technology/cloud/gcp/analytics" },
-  { icon: "🤖", name: "AI & ML",        path: "wiki/technology/cloud/gcp/ai-ml" },
-  { icon: "🌐", name: "Networking",     path: "wiki/technology/cloud/gcp/networking" },
-  { icon: "🔒", name: "Security",       path: "wiki/technology/cloud/gcp/security" },
-  { icon: "🚀", name: "DevOps",         path: "wiki/technology/cloud/gcp/devops" },
-  { icon: "📡", name: "Operations",     path: "wiki/technology/cloud/gcp/operations" },
-  { icon: "🎓", name: "Certifications", path: "wiki/technology/cloud/gcp/certifications" },
-];
-dv.table(
-  ["Category", "Notes"],
-  subs.map(s => [`${s.icon} ${s.name}`, dv.pages(`"${s.path}"`).length])
-);
-```
+<p class="mw-prerendered-note">🔁 This view updates live in Obsidian; the website shows a snapshot from the last publish.</p>
 
 ## 📂 Browse by Category
 
@@ -127,22 +109,109 @@ dv.table(
 
 ## 📋 All Notes (A–Z)
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/cloud/gcp" and !"wiki/technology/cloud/gcp/GCP Home"')
-    .sort(p => p.file.name, 'asc')
-    .map(p => p.file.link)
-);
-```
+- [AlloyDB](/wiki/technology/cloud/gcp/databases/alloydb)
+- [Apigee API Management](/wiki/technology/cloud/gcp/devops/apigee)
+- [App Engine](/wiki/technology/cloud/gcp/compute/app-engine)
+- [Artifact Registry](/wiki/technology/cloud/gcp/devops/artifact-registry)
+- [Google Cloud Backup and DR](/wiki/technology/cloud/gcp/storage/backup-and-dr)
+- [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
+- [BigQuery Authorized Views](/wiki/technology/cloud/gcp/analytics/bigquery-authorized-views)
+- [BigQuery External Data](/wiki/technology/cloud/gcp/analytics/bigquery-external-data)
+- [BigQuery IAM](/wiki/technology/cloud/gcp/analytics/bigquery-iam)
+- [Loading Data to BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery-loading-data)
+- [BigQuery Query Management](/wiki/technology/cloud/gcp/analytics/bigquery-query-management)
+- [BigQuery Sandbox](/wiki/technology/cloud/gcp/analytics/bigquery-sandbox)
+- [BigQuery Tables](/wiki/technology/cloud/gcp/analytics/bigquery-tables)
+- [BigQuery User-Defined Functions](/wiki/technology/cloud/gcp/analytics/bigquery-udfs)
+- [BigQuery Data Visualization](/wiki/technology/cloud/gcp/analytics/bigquery-visualization)
+- [Binary Authorization](/wiki/technology/cloud/gcp/security/binary-authorization)
+- [Certificate Authority Service](/wiki/technology/cloud/gcp/security/certificate-authority-service)
+- [Cloud Storage](/wiki/technology/cloud/gcp/storage/Cloud-Storage)
+- [Cloud Armor](/wiki/technology/cloud/gcp/networking/cloud-armor)
+- [Cloud Bigtable](/wiki/technology/cloud/gcp/databases/cloud-bigtable)
+- [Cloud Build](/wiki/technology/cloud/gcp/devops/cloud-build)
+- [Cloud CDN](/wiki/technology/cloud/gcp/networking/cloud-cdn)
+- [Cloud Datastore](/wiki/technology/cloud/gcp/databases/cloud-datastore)
+- [Cloud Debugger](/wiki/technology/cloud/gcp/operations/cloud-debugger)
+- [Cloud Deploy](/wiki/technology/cloud/gcp/devops/cloud-deploy)
+- [Cloud DNS](/wiki/technology/cloud/gcp/networking/cloud-dns)
+- [Cloud Endpoints](/wiki/technology/cloud/gcp/devops/cloud-endpoints)
+- [Cloud Functions](/wiki/technology/cloud/gcp/compute/cloud-functions)
+- [Cloud Identity](/wiki/technology/cloud/gcp/security/cloud-identity)
+- [Cloud IDS](/wiki/technology/cloud/gcp/operations/cloud-ids)
+- [Cloud Interconnect](/wiki/technology/cloud/gcp/networking/cloud-interconnect)
+- [Cloud Key Management Service](/wiki/technology/cloud/gcp/security/cloud-kms)
+- [Cloud Load Balancing](/wiki/technology/cloud/gcp/networking/cloud-load-balancing)
+- [Cloud Logging](/wiki/technology/cloud/gcp/operations/cloud-logging)
+- [Cloud Monitoring](/wiki/technology/cloud/gcp/operations/cloud-monitoring)
+- [Cloud NAT](/wiki/technology/cloud/gcp/networking/cloud-nat)
+- [Cloud Natural Language API](/wiki/technology/cloud/gcp/ai-ml/cloud-natural-language)
+- [Cloud Profiler](/wiki/technology/cloud/gcp/operations/cloud-profiler)
+- [Cloud Router](/wiki/technology/cloud/gcp/networking/cloud-router)
+- [Cloud Run](/wiki/technology/cloud/gcp/compute/cloud-run)
+- [Cloud Scheduler](/wiki/technology/cloud/gcp/devops/cloud-scheduler)
+- [Cloud Shell](/wiki/technology/cloud/gcp/devops/cloud-shell)
+- [Cloud Spanner](/wiki/technology/cloud/gcp/databases/cloud-spanner)
+- [Cloud SQL](/wiki/technology/cloud/gcp/databases/cloud-sql)
+- [Cloud TPU](/wiki/technology/cloud/gcp/ai-ml/cloud-tpu)
+- [Cloud Trace](/wiki/technology/cloud/gcp/operations/cloud-trace)
+- [Cloud Translation API](/wiki/technology/cloud/gcp/ai-ml/cloud-translation)
+- [Cloud Vision API](/wiki/technology/cloud/gcp/ai-ml/cloud-vision-api)
+- [Cloud VPN](/wiki/technology/cloud/gcp/networking/cloud-vpn)
+- [Cloud Workstations](/wiki/technology/cloud/gcp/devops/cloud-workstations)
+- [Colab Enterprise](/wiki/technology/cloud/gcp/ai-ml/colab-enterprise)
+- [Compute Engine](/wiki/technology/cloud/gcp/compute/compute-engine)
+- [Compute Engine vs App Engine](/wiki/technology/cloud/gcp/compute/compute-engine-vs-app-engine)
+- [Data Catalog](/wiki/technology/cloud/gcp/analytics/data-catalog)
+- [Database Migration Service](/wiki/technology/cloud/gcp/databases/database-migration-service)
+- [Cloud Dataflow](/wiki/technology/cloud/gcp/analytics/dataflow)
+- [Cloud Data Fusion](/wiki/technology/cloud/gcp/analytics/datafusion)
+- [Dialogflow CX](/wiki/technology/cloud/gcp/ai-ml/dialogflow-cx)
+- [Document AI](/wiki/technology/cloud/gcp/ai-ml/document-ai)
+- [Error Reporting](/wiki/technology/cloud/gcp/operations/error-reporting)
+- [Eventarc](/wiki/technology/cloud/gcp/devops/eventarc)
+- [Filestore](/wiki/technology/cloud/gcp/storage/filestore)
+- [Firebase Cloud Storage](/wiki/technology/cloud/gcp/storage/firebase-cloud-storage)
+- [Firestore](/wiki/technology/cloud/gcp/databases/firestore)
+- [GCP Compute Services](/wiki/technology/cloud/gcp/compute/gcp-compute-services)
+- [GCP Pricing and Discounts](/wiki/technology/cloud/gcp/foundations/gcp-pricing-and-discounts)
+- [Gemini on Google Cloud](/wiki/technology/cloud/gcp/ai-ml/gemini)
+- [Google Cloud Platform](/wiki/technology/cloud/gcp/foundations/google-cloud-platform)
+- [Google File System](/wiki/technology/cloud/gcp/storage/google-file-system)
+- [Hyperdisk](/wiki/technology/cloud/gcp/storage/hyperdisk)
+- [Identity and Access Management (IAM)](/wiki/technology/cloud/gcp/security/iam)
+- [Google Kubernetes Engine](/wiki/technology/cloud/gcp/compute/kubernetes-engine)
+- [Memorystore](/wiki/technology/cloud/gcp/databases/memorystore)
+- [Model Garden](/wiki/technology/cloud/gcp/ai-ml/model-garden)
+- [Network Intelligence Center](/wiki/technology/cloud/gcp/networking/network-intelligence-center)
+- [Persistent Disk](/wiki/technology/cloud/gcp/storage/persistent-disk)
+- [Professional Data Engineer](/wiki/technology/cloud/gcp/certifications/Professional-Data-Engineer)
+- [Pub/Sub](/wiki/technology/cloud/gcp/analytics/pubsub)
+- [Regions and Zones](/wiki/technology/cloud/gcp/foundations/regions-and-zones)
+- [Secret Manager](/wiki/technology/cloud/gcp/security/secret-manager)
+- [Security Command Center](/wiki/technology/cloud/gcp/security/security-command-center)
+- [Cloud Service Models](/wiki/technology/cloud/gcp/foundations/service-models)
+- [Speech-to-Text](/wiki/technology/cloud/gcp/ai-ml/speech-to-text)
+- [Storage Transfer Service](/wiki/technology/cloud/gcp/storage/storage-transfer-service)
+- [Text-to-Speech](/wiki/technology/cloud/gcp/ai-ml/text-to-speech)
+- [Vector Search](/wiki/technology/cloud/gcp/ai-ml/vector-search)
+- [Vertex AI](/wiki/technology/cloud/gcp/ai-ml/vertex-ai)
+- [Vertex AI Workbench](/wiki/technology/cloud/gcp/ai-ml/vertex-ai-workbench)
+- [Video Intelligence API](/wiki/technology/cloud/gcp/ai-ml/video-intelligence-api)
+- [Virtual Private Cloud (VPC)](/wiki/technology/cloud/gcp/networking/vpc)
+- [VPC Service Controls](/wiki/technology/cloud/gcp/security/vpc-service-controls)
+- [Workflows](/wiki/technology/cloud/gcp/devops/workflows)
 
 ## 🕒 Recently Updated
 
-```dataviewjs
-dv.list(
-  dv.pages('"wiki/technology/cloud/gcp" and !"wiki/technology/cloud/gcp/GCP Home"')
-    .sort(p => p.file.mtime, 'desc')
-    .limit(10)
-    .map(p => p.file.link)
-);
-```
+- [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
+- [Cloud Natural Language API](/wiki/technology/cloud/gcp/ai-ml/cloud-natural-language)
+- [Cloud TPU](/wiki/technology/cloud/gcp/ai-ml/cloud-tpu)
+- [Cloud Translation API](/wiki/technology/cloud/gcp/ai-ml/cloud-translation)
+- [Vertex AI](/wiki/technology/cloud/gcp/ai-ml/vertex-ai)
+- [Cloud Logging](/wiki/technology/cloud/gcp/operations/cloud-logging)
+- [Cloud IDS](/wiki/technology/cloud/gcp/operations/cloud-ids)
+- [Cloud Workstations](/wiki/technology/cloud/gcp/devops/cloud-workstations)
+- [Cloud Shell](/wiki/technology/cloud/gcp/devops/cloud-shell)
+- [Cloud Debugger](/wiki/technology/cloud/gcp/operations/cloud-debugger)
 

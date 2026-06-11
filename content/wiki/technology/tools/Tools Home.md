@@ -26,11 +26,7 @@ cssclasses:
 
 ## 📊 At a Glance
 
-```dataviewjs
-const pages = dv.pages('"wiki/technology/tools" and !"wiki/technology/tools/Tools Home"');
-const latest = pages.sort(p => p.file.mtime, 'desc').first();
-dv.paragraph(`**${pages.length}** notes · last touched **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
-```
+**14** notes · last added **2026-06-09**
 
 ## 📚 Browse
 

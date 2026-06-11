@@ -22,7 +22,7 @@ maturity: budding
 
 ---
 
-*📄 `$= dv.pages('"wiki/technology/machine-learning"').length` notes in this field · ⏱ `$= Math.max(1, Math.ceil(dv.current().file.size / 1100))` min read · 🕘 updated `$= dv.current().file.mtime.toFormat("MMM d, yyyy")`* <span class="mw-maturity is-budding">🌿 Budding</span>
+*📄 74 notes in this field · ⏱ 3 min read · 🕘 updated Jun 10, 2026* <span class="mw-maturity is-budding">🌿 Budding</span>
 
 **Machine Learning** is a sub-field of artificial intelligence that enables computers to learn from data without being explicitly programmed. ML algorithms build models from training examples, identify patterns, and make predictions or decisions on new, unseen data (source: DataScienceNotes-master).
 

@@ -27,11 +27,7 @@ cssclasses:
 
 ## 📊 At a Glance
 
-```dataviewjs
-const pages = dv.pages('"wiki/technology/software-engineering" and !"wiki/technology/software-engineering/Software Engineering Home"');
-const latest = pages.sort(p => p.file.mtime, 'desc').first();
-dv.paragraph(`**${pages.length}** notes · last touched **${latest ? latest.file.mtime.toFormat("yyyy-MM-dd") : "—"}**`);
-```
+**18** notes · last added **2026-06-08**
 
 ## 📚 Browse
 

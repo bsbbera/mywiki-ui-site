@@ -1,0 +1,196 @@
+/* =============================================================================
+   MyWiki components — web twin of the vault's `mywiki-components.css` snippet.
+   Field color identity, maturity badges, rank bars, people grid, book shelf,
+   series strip. Token-mapped to Quartz vars so every theme family inherits it.
+   Keep in sync with: MyWiki/.obsidian/snippets/mywiki-components.css
+   ========================================================================== */
+
+/* ---------- Field palette (muted, warm-leaning — mirrors the vault) -------- */
+:root {
+  --mw-de: #d8552f;     /* Data Engineering — coral (the spine) */
+  --mw-ml: #2f7e78;     /* Machine Learning — deep teal  */
+  --mw-cloud: #4a7ba6;  /* Cloud — slate blue            */
+  --mw-soft: #7a8a3a;   /* Software — olive              */
+  --mw-db: #a4633a;     /* Databases — terracotta        */
+  --mw-tools: #8a7a64;  /* Tools — warm stone            */
+  --mw-books: #c08a2e;  /* Books — ochre gold            */
+  --mw-fin: #3e7a55;    /* Finance — forest green        */
+  --mw-people: #96597c; /* People — plum                 */
+  --mw-pdx: #6a5b9c;    /* Paradoxes — dusk violet       */
+  --mw-seedling: #7d9a4a;
+  --mw-budding: #4f8d6b;
+  --mw-evergreen: #2f6b4f;
+}
+:root[saved-theme="dark"] {
+  --mw-ml: #4da39c;
+  --mw-cloud: #6f9fc9;
+  --mw-soft: #a3b35e;
+  --mw-db: #c98a5e;
+  --mw-tools: #b0a085;
+  --mw-books: #d9a84e;
+  --mw-fin: #66a37e;
+  --mw-people: #b97fa0;
+  --mw-pdx: #9486c4;
+  --mw-seedling: #a3bb6e;
+  --mw-budding: #6fae8a;
+  --mw-evergreen: #4f9a76;
+}
+
+/* ---------- Field-colored section cards  [!card|section de] etc. ----------- */
+.callout[data-callout="card"][data-callout-metadata~="de"]     { --mw-field: var(--mw-de); }
+.callout[data-callout="card"][data-callout-metadata~="ml"]     { --mw-field: var(--mw-ml); }
+.callout[data-callout="card"][data-callout-metadata~="cloud"]  { --mw-field: var(--mw-cloud); }
+.callout[data-callout="card"][data-callout-metadata~="soft"]   { --mw-field: var(--mw-soft); }
+.callout[data-callout="card"][data-callout-metadata~="db"]     { --mw-field: var(--mw-db); }
+.callout[data-callout="card"][data-callout-metadata~="books"]  { --mw-field: var(--mw-books); }
+.callout[data-callout="card"][data-callout-metadata~="fin"]    { --mw-field: var(--mw-fin); }
+.callout[data-callout="card"][data-callout-metadata~="people"] { --mw-field: var(--mw-people); }
+.callout[data-callout="card"][data-callout-metadata~="pdx"]    { --mw-field: var(--mw-pdx); }
+
+.callout[data-callout="card"][data-callout-metadata~="de"],
+.callout[data-callout="card"][data-callout-metadata~="ml"],
+.callout[data-callout="card"][data-callout-metadata~="cloud"],
+.callout[data-callout="card"][data-callout-metadata~="soft"],
+.callout[data-callout="card"][data-callout-metadata~="db"],
+.callout[data-callout="card"][data-callout-metadata~="books"],
+.callout[data-callout="card"][data-callout-metadata~="fin"],
+.callout[data-callout="card"][data-callout-metadata~="people"],
+.callout[data-callout="card"][data-callout-metadata~="pdx"] {
+  border-left: 3px solid var(--mw-field) !important;
+}
+.callout[data-callout="card"][data-callout-metadata*="section"] h6 {
+  color: var(--mw-field, inherit);
+}
+
+/* ---------- Maturity badges ---------- */
+.mw-maturity {
+  display: inline-flex; align-items: center; gap: 0.35em;
+  padding: 0.18em 0.7em; border-radius: 999px;
+  font-size: 0.7rem; font-weight: 650; letter-spacing: 0.06em;
+  text-transform: uppercase; border: 1px solid currentColor;
+}
+.mw-maturity.is-seedling  { color: var(--mw-seedling);  background: color-mix(in srgb, var(--mw-seedling) 12%, transparent); }
+.mw-maturity.is-budding   { color: var(--mw-budding);   background: color-mix(in srgb, var(--mw-budding) 12%, transparent); }
+.mw-maturity.is-evergreen { color: var(--mw-evergreen); background: color-mix(in srgb, var(--mw-evergreen) 12%, transparent); }
+
+/* ---------- Ranked bars (pre-rendered Dataview) ---------- */
+.mw-rank { display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0; }
+.mw-rank-n {
+  flex: none; width: 1.7rem; height: 1.7rem; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.78rem;
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 13%, transparent);
+}
+.mw-rank-label { flex: 0 1 240px; min-width: 140px; font-size: 0.92rem; }
+.mw-rank-label a { text-decoration: none; font-weight: 600; }
+.mw-bar {
+  flex: 1 1 auto; height: 8px; border-radius: 999px; overflow: hidden;
+  background: var(--lightgray);
+}
+.mw-bar-fill {
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--secondary), var(--mw-books));
+}
+.mw-rank-count {
+  flex: none; min-width: 2.4rem; text-align: right;
+  font-size: 0.82rem; font-variant-numeric: tabular-nums;
+  color: var(--gray);
+}
+
+/* ---------- People grid ---------- */
+.mw-people {
+  display: grid; gap: 0.9rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin: 0.75rem 0 1.5rem;
+}
+.mw-person {
+  background: var(--lightgray);
+  border: 1px solid color-mix(in srgb, var(--gray) 30%, transparent);
+  border-radius: 14px; padding: 1.05rem 0.85rem; text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .mw-person:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.35); cursor: pointer; }
+}
+.mw-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.6rem; font-weight: 700; font-size: 1.15rem; color: #fff;
+}
+.mw-person a.internal { display: block; text-decoration: none; font-weight: 600; font-size: 0.92rem; line-height: 1.3; background: none; }
+.mw-chip {
+  display: inline-block; margin-top: 0.4rem;
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--gray);
+}
+
+/* ---------- Book shelf (horizontal scroll-snap) ---------- */
+.mw-shelf {
+  display: flex; gap: 1.1rem; overflow-x: auto;
+  padding: 0.5rem 0.25rem 1.1rem;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+}
+.mw-shelf::-webkit-scrollbar { height: 8px; }
+.mw-shelf::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 999px; }
+.mw-book { flex: 0 0 148px; scroll-snap-align: start; text-align: center; }
+.mw-book img {
+  width: 148px; height: 198px; object-fit: cover; border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--gray) 30%, transparent);
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  margin: 0;
+}
+.mw-book-fallback {
+  width: 148px; height: 198px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0.8rem; font-weight: 650; font-size: 0.85rem; line-height: 1.35;
+  color: #fff; background: linear-gradient(150deg, var(--mw-books), var(--mw-db));
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .mw-book:hover img, .mw-book:hover .mw-book-fallback { transform: translateY(-3px); }
+}
+.mw-book a.internal {
+  display: block; margin-top: 0.5rem;
+  font-size: 0.8rem; line-height: 1.35; text-decoration: none; font-weight: 600;
+  background: none;
+}
+
+/* ---------- Series strip ---------- */
+.mw-series {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem;
+  padding: 0.55rem 0.9rem; border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--gray) 30%, transparent);
+  background: var(--lightgray);
+  font-size: 0.85rem; margin: 0.5rem 0 1rem;
+}
+.mw-series-pos {
+  font-weight: 650; font-size: 0.7rem; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--secondary);
+}
+.mw-series a.internal { text-decoration: none; font-weight: 600; background: none; }
+
+/* ---------- Pre-rendered dataview footer note ---------- */
+.mw-prerendered-note {
+  font-size: 0.72rem; color: var(--gray); letter-spacing: 0.04em;
+  margin: 0.2rem 0 1rem;
+}
+
+/* ---------- Kicker contrast: readable in light mode, loaded after the card
+   systems so it wins ---------- */
+article .at-kicker { font-weight: 600; }
+:root:not([saved-theme="dark"]) article .at-kicker {
+  color: color-mix(in srgb, var(--secondary) 72%, var(--darkgray));
+}
+
+/* ---------- Backlinks panel: cap + scroll (hygiene) ---------- */
+.backlinks > ul {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mw-person, .mw-book img, .mw-book-fallback { transition: none !important; }
+}
