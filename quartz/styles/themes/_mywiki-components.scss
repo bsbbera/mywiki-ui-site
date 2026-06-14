@@ -36,31 +36,11 @@
   --mw-evergreen: #4f9a76;
 }
 
-/* ---------- Field-colored section cards  [!card|section de] etc. ----------- */
-.callout[data-callout="card"][data-callout-metadata~="de"]     { --mw-field: var(--mw-de); }
-.callout[data-callout="card"][data-callout-metadata~="ml"]     { --mw-field: var(--mw-ml); }
-.callout[data-callout="card"][data-callout-metadata~="cloud"]  { --mw-field: var(--mw-cloud); }
-.callout[data-callout="card"][data-callout-metadata~="soft"]   { --mw-field: var(--mw-soft); }
-.callout[data-callout="card"][data-callout-metadata~="db"]     { --mw-field: var(--mw-db); }
-.callout[data-callout="card"][data-callout-metadata~="books"]  { --mw-field: var(--mw-books); }
-.callout[data-callout="card"][data-callout-metadata~="fin"]    { --mw-field: var(--mw-fin); }
-.callout[data-callout="card"][data-callout-metadata~="people"] { --mw-field: var(--mw-people); }
-.callout[data-callout="card"][data-callout-metadata~="pdx"]    { --mw-field: var(--mw-pdx); }
-
-.callout[data-callout="card"][data-callout-metadata~="de"],
-.callout[data-callout="card"][data-callout-metadata~="ml"],
-.callout[data-callout="card"][data-callout-metadata~="cloud"],
-.callout[data-callout="card"][data-callout-metadata~="soft"],
-.callout[data-callout="card"][data-callout-metadata~="db"],
-.callout[data-callout="card"][data-callout-metadata~="books"],
-.callout[data-callout="card"][data-callout-metadata~="fin"],
-.callout[data-callout="card"][data-callout-metadata~="people"],
-.callout[data-callout="card"][data-callout-metadata~="pdx"] {
-  border-left: 3px solid var(--mw-field) !important;
-}
-.callout[data-callout="card"][data-callout-metadata*="section"] h6 {
-  color: var(--mw-field, inherit);
-}
+/* ---------- Section cards: UNIFORM accent (no per-field "rainbow") ----------
+   Twin of the vault snippet. The theme styles [!card|section] with a single
+   theme-accent top-stripe + kicker; the old per-field border-left + coloured h6
+   produced a multicoloured "rainbow" of cards, so it's removed. The --mw-* field
+   palette is kept for the people grid / maturity badges / stats bars. */
 
 /* ---------- Maturity badges ---------- */
 .mw-maturity {

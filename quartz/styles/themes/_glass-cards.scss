@@ -32,6 +32,44 @@
 @media (max-width: 700px) {
     .callout[data-callout="grid"] > .callout-content { grid-template-columns: 1fr; }
 }
+
+/* ----- RATIO distribution: cards w1..w10 split a row by weight (like [!col|wN]). */
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w1"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w2"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w3"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w4"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w5"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w6"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w7"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w8"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w9"]),
+.callout[data-callout="grid"] > .callout-content:has(> .callout[data-callout="card"][data-callout-metadata~="w10"]) {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w1"]  { flex: 1  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w2"]  { flex: 2  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w3"]  { flex: 3  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w4"]  { flex: 4  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w5"]  { flex: 5  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w6"]  { flex: 6  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w7"]  { flex: 7  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w8"]  { flex: 8  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w9"]  { flex: 9  1 0 !important; min-width: 0; }
+.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w10"] { flex: 10 1 0 !important; min-width: 0; }
+@media (max-width: 700px) {
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w1"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w2"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w3"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w4"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w5"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w6"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w7"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w8"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w9"],
+    .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="w10"] { flex: 1 1 100% !important; }
+}
 /* the blank ">" separators between child cards can leave empty paragraphs —
    don't let them become stray grid cells */
 .callout[data-callout="grid"] > .callout-content > p:empty,
@@ -243,39 +281,47 @@
     margin-bottom: 2px;
 }
 
-/* ----- STYLE: section — flat column block (use inside [!grid|cols3]) ----- */
+/* section — a clean FIELD CARD (frosted surface + accent top-stripe + kicker),
+   uniform theme accent (no per-field "rainbow"). */
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    --cc: var(--mwg-accent);
+    position: relative;
+    background: var(--mwg-pane-2);
+    border: 1px solid var(--mwg-border-2);
+    border-radius: var(--radius-l);
+    box-shadow: var(--mwg-shadow-card, var(--mwg-shadow-soft));
     padding: 0;
+    overflow: hidden;
+}
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata]))::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--cc);
 }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])):hover {
-    transform: none;
-    box-shadow: none;
-    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: var(--mwg-shadow-card-hover, var(--mwg-shadow-pop));
+    border-color: color-mix(in srgb, var(--cc) 32%, var(--mwg-border-2));
 }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
-    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 4px 0; }
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 20px 22px 22px; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child { color: var(--cc); }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child::before { background: var(--cc); }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) h3 { margin: 4px 0 8px; font-size: 1.4em; }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
-    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul { padding-left: 1.1em; }
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul { padding-left: 1.1em; margin-bottom: 0; }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
-    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul > li::marker { color: var(--mwg-accent); }
-/* vertical divider between section columns (skips the first in a row) */
-.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"] {
-    border-left: 1px solid color-mix(in srgb, currentColor 30%, transparent);
-    padding-left: 1.8rem;
-}
-.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="section"]:first-child {
-    border-left: none;
-    padding-left: 0;
-}
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) ul > li::marker { color: var(--cc); }
 
 /* ----- STYLE: step — SELF-CONTAINED dark tile (ring + "Step 0N" + heading + body).
    Built like the honor/profile cards (which render reliably) — a complete dark card,
@@ -295,7 +341,17 @@
 :is(.callout[data-callout="card"][data-callout-metadata~="step"],
     body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
 :is(.callout[data-callout="card"][data-callout-metadata~="step"],
-    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content { padding: 30px 26px 40px; }
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content {
+    padding: 30px 26px 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+:is(.callout[data-callout="card"][data-callout-metadata~="step"],
+    body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-content > p:last-child {
+    margin-top: auto;
+    margin-bottom: 0;
+}
 /* "Step 0N" kicker: title-case (not all-caps) like the reference */
 :is(.callout[data-callout="card"][data-callout-metadata~="step"],
     body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) .callout-content > h6:first-child { text-transform: none; letter-spacing: 0.12em; }
@@ -313,17 +369,30 @@
     background-size: 20px 20px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
 }
-/* per-step reference icons (file / chat / list). The spanfull hero is the grid's
-   1st child, so Step 01 = nth-of-type(2) keeps the default magnifier and the
-   file/chat/list icons sit on nth-of-type 3/4/5 (Steps 02/03/04). */
-.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(3) > .callout-content::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z'/%3E%3Cpath d='M14 4v5h5'/%3E%3C/svg%3E");
+/* NAMED icons (intent-based). Add `icon-NAME` to a step card. Blue Glass stroke. */
+.callout[data-callout="card"][data-callout-metadata~="icon-search"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") !important;
 }
-.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(4) > .callout-content::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E");
+.callout[data-callout="card"][data-callout-metadata~="icon-file"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z'/%3E%3Cpath d='M14 4v5h5'/%3E%3C/svg%3E") !important;
 }
-.callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata~="step"]:nth-of-type(5) > .callout-content::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12l2 2 4-4M3 6l2 2 4-4M3 18l2 2 4-4M13 6h8M13 12h8M13 18h8'/%3E%3C/svg%3E");
+.callout[data-callout="card"][data-callout-metadata~="icon-chat"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E") !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="icon-list"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12l2 2 4-4M3 6l2 2 4-4M3 18l2 2 4-4M13 6h8M13 12h8M13 18h8'/%3E%3C/svg%3E") !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="icon-book"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/%3E%3Cpath d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/%3E%3C/svg%3E") !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="icon-cloud"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.5 19a4.5 4.5 0 1 0 0-9 6 6 0 0 0-11.6 2.1A3.5 3.5 0 0 0 6.5 19z'/%3E%3C/svg%3E") !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="icon-database"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5'/%3E%3Cpath d='M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3'/%3E%3C/svg%3E") !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="icon-layers"] > .callout-content::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d8fe6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 2 9 5-9 5-9-5 9-5z'/%3E%3Cpath d='m3 12 9 5 9-5'/%3E%3Cpath d='m3 17 9 5 9-5'/%3E%3C/svg%3E") !important;
 }
 :is(.callout[data-callout="card"][data-callout-metadata~="step"],
     body.at-card-step .callout[data-callout="card"]:not([data-callout-metadata])) h3 {
@@ -384,6 +453,17 @@
 .callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) :is(h1, h2, h3) { color: var(--mwg-on-dark) !important; }
 .callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) :is(h6, em) { color: var(--mwg-accent) !important; }
 .callout[data-callout="grid"]:has(> .callout-content > .callout[data-callout-metadata~="step"]) p:not(:has(strong)) { color: var(--mwg-on-dark-muted) !important; }
+
+/* Fuse a standalone hero card with an immediately-following step grid (Quartz DOM
+   = adjacent .callout siblings, no .el-div wrapper). */
+.callout[data-callout="card"][data-callout-metadata~="hero"]:has(+ .callout[data-callout="grid"] .callout[data-callout-metadata~="step"]) {
+    margin-bottom: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.callout[data-callout="card"][data-callout-metadata~="hero"] + .callout[data-callout="grid"]:has(.callout[data-callout-metadata~="step"]) { margin-top: 0 !important; }
+.callout[data-callout="card"][data-callout-metadata~="hero"] + .callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata~="step"]:first-of-type { border-bottom-left-radius: var(--radius-l) !important; }
+.callout[data-callout="card"][data-callout-metadata~="hero"] + .callout[data-callout="grid"] > .callout-content > .callout[data-callout-metadata~="step"]:last-of-type { border-bottom-right-radius: var(--radius-l) !important; }
 
 /* HEADER: two columns — display heading left, intro paragraph right (reference). */
 .callout[data-callout="grid"] > .callout-content > .callout[data-callout="card"][data-callout-metadata*="hero"] > .callout-content {
