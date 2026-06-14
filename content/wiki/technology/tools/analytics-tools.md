@@ -97,7 +97,7 @@ OLAP DB used as a real-time analytics layer.
 
 ### Jupyter / JupyterLab
 
-The canonical Python notebook. A sample exploratory notebook from the raw ingest is archived at `[[../../attachments/jupyter_notebook|jupyter_notebook.ipynb]]`.
+The canonical Python notebook. A sample exploratory notebook from the raw ingest is archived at `[[attachments/jupyter_notebook|jupyter_notebook.ipynb]]`.
 
 ### Google Colab / Vertex AI Workbench / Colab Enterprise
 

@@ -299,4 +299,4 @@ flowchart TD
 >> [[kubeflow|Kubeflow]] · [[../../cloud/gcp/vertex-ai|Vertex AI]] · [[../../cloud/aws/sagemaker|SageMaker]]
 >
 >> [!card] Foundations
->> [[../../devops/ci-cd|CI/CD]] · [[../../data-engineering/pipelines|Data Pipelines]] · [[../ml-fundamentals/evaluation-metrics|Evaluation]]
+>> [[devops-sre|CI/CD]] · [[../../data-engineering/pipelines|Data Pipelines]] · [[../ml-fundamentals/evaluation-metrics|Evaluation]]

@@ -262,7 +262,7 @@ def handle_degradation(metrics):
 > 4. Version all models for easy rollback
 
 > [!info] Visual reference
-> A canvas diagram of the full data-science project lifecycle is available in `[[../../../attachments/data science project lifecycle.canvas|Data Science Project Lifecycle Canvas]]`.
+> A canvas diagram of the full data-science project lifecycle is available in `[[attachments/data science project lifecycle.canvas|Data Science Project Lifecycle Canvas]]`.
 
 ---
 

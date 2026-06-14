@@ -79,10 +79,10 @@ Everything sits on top of **Spark Core** (the distributed execution engine that 
 | Library | Purpose |
 | --- | --- |
 | **Spark Core** | RDD API, task scheduling, memory management, fault recovery |
-| [[spark-sql\|Spark SQL]] + [[spark-dataframe\|DataFrames]] | Structured data, the Catalyst optimizer, SQL interface |
-| [[spark-mllib\|MLlib]] | Distributed machine learning |
+| [[spark-sql|Spark SQL]] + [[spark-dataframe|DataFrames]] | Structured data, the Catalyst optimizer, SQL interface |
+| [[spark-mllib|MLlib]] | Distributed machine learning |
 | **GraphX** | Graph + graph-parallel computation (the Resilient Distributed Property Graph) |
-| [[spark-streaming\|Spark Streaming]] / Structured Streaming | Scalable, fault-tolerant stream processing |
+| [[spark-streaming|Spark Streaming]] / Structured Streaming | Scalable, fault-tolerant stream processing |
 
 ---
 

@@ -27,7 +27,7 @@ publish: true
 > ###### Book
 > | | |
 > | --- | --- |
-> | **Author** | [[../people/benjamin-graham\|Benjamin Graham]] |
+> | **Author** | [[../people/benjamin-graham|Benjamin Graham]] |
 > | **Publisher** | Harper & Row (1st ed.); HarperBusiness (revised ed.) |
 > | **Published** | 1949 (1st ed.); revised editions through 1973 |
 > | **Domain** | Value investing, personal finance |

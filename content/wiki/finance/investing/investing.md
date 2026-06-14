@@ -219,5 +219,5 @@ Stage 4: VALUE → DCF analysis, intrinsic value, margin of safety
 >> Complete ratio reference for screening and evaluation.
 >
 >> [!card] People & books
->> [[../../people/warren-buffett|Warren Buffett]] · [[../../people/benjamin-graham|Benjamin Graham]] · [[../../people/peter-lynch|Peter Lynch]]
+>> [[../../people/warren-buffett|Warren Buffett]] · [[../../people/benjamin-graham|Benjamin Graham]] · [[../../people/peter-lynch|Peter Lynch]] · [[../../people/charlie-munger|Charlie Munger]]
 >> [[../../books/the-intelligent-investor|The Intelligent Investor]] · [[../../books/security-analysis|Security Analysis]]

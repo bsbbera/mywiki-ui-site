@@ -29,7 +29,7 @@ publish: true
 > | **Nationality** | British |
 > | **Domain** | Continuous delivery, DevOps, software delivery, lean product development |
 > | **Known for** | *Continuous Delivery* (2010); *Accelerate* (2018); DORA metrics; former ThoughtWorks Technical Principal |
-> | **Notable works** | [[../books/accelerate\|Accelerate]] (2018), *Continuous Delivery* (2010, with David Farley), *Lean Enterprise* (2014) |
+> | **Notable works** | [[../books/accelerate|Accelerate]] (2018), *Continuous Delivery* (2010, with David Farley), *Lean Enterprise* (2014) |
 > | **Institution** | ThoughtWorks (former); Google (former); DORA (research contributor) |
 
 British software engineer, author, and researcher best known for co-authoring **Continuous Delivery** (2010, with David Farley) — the book that defined and formalized the discipline of releasing software reliably and rapidly. The book distilled lessons from years of working as a technical principal at **ThoughtWorks** on large-scale enterprise delivery projects.

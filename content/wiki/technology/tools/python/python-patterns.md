@@ -347,7 +347,7 @@ class Point(NamedTuple):
 >> [[pandas-patterns|Pandas Patterns]] · [[../../machine-learning/ml-fundamentals/feature-engineering|Feature Engineering]]
 >
 >> [!card] Tools
->> [[../Tools Home|Tools Home]] · [[../docker|Docker]] · [[../kubernetes|Kubernetes]]
+>> [[../Tools Home|Tools Home]] · [[docker|Docker]] · [[kubernetes|Kubernetes]]
 >
 >> [!card] Software Engineering
 >> [[../../software-engineering/Software Engineering Home|Software Engineering]] · [[../../software-engineering/rest-api|REST API]]

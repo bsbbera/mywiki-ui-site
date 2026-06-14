@@ -204,4 +204,4 @@ a fraud detection system, or a search ranking model at scale?
 >> [[../../technology/machine-learning/statistics/random-variables|Random Variables]] · [[../../technology/machine-learning/statistics/probability-distributions|Probability Distributions]] · [[../../technology/machine-learning/statistics/hypothesis-testing|Hypothesis Testing]]
 >
 >> [!card] ML Design
->> [[../../technology/machine-learning/mlops/deployment-patterns|Deployment Patterns]] · [[../../technology/machine-learning/mlops/ml-pipeline|ML Pipelines]] · [[../../technology/machine-learning/deep-learning/recommender-systems|Recommender Systems]]
+>> [[deployment-patterns|Deployment Patterns]] · [[ml-pipeline|ML Pipelines]] · [[recommender-systems|Recommender Systems]]

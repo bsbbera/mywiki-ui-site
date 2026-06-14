@@ -207,7 +207,7 @@ ORDER BY flights DESC;
 
 ## BigLake (modern, not in raw)
 
-**BigLake** extends external tables to **AWS S3 and Azure Blob**, adds **fine-grained access control** (column / row-level on external data), and unifies governance with [[data-catalog|Data Catalog / Dataplex]]. Treat as the production-grade evolution of external tables for data-lake architectures.
+**BigLake** extends external tables to **AWS S3 and Azure Blob**, adds **fine-grained access control** (column / row-level on external data), and unifies governance with [[technology/cloud/gcp/analytics/data-catalog|Data Catalog / Dataplex]]. Treat as the production-grade evolution of external tables for data-lake architectures.
 
 ## Interesting Facts
 

@@ -45,6 +45,7 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> **Setup:** Arrow's impossibility theorem proves that no voting system can satisfy a minimal set of fairness criteria when there are more than two candidates.
 >> **Bite:** Democracy seems impossible to design rationally.
 >> **Resolution:** The theorem applies only to ranked-choice systems and universal domain; restricting preferences or allowing cardinal utilities restores possibility.
+>> [[people/kenneth-arrow|Kenneth Arrow]]
 >
 >> [!card] **Buridan's ass**
 >> **Setup:** A perfectly rational donkey placed exactly midway between two identical bales of hay starves because it has no reason to prefer one over the other.
@@ -186,7 +187,7 @@ Yet no one will pay more than a modest fee to play. Daniel Bernoulli resolved th
 
 ## Deep dive: Allais paradox
 
-Maurice Allais showed that people's choices violate the independence axiom of expected utility theory:
+[[people/maurice-allais|Maurice Allais]] showed that people's choices violate the independence axiom of expected utility theory:
 
 - Most prefer **A:** $1M guaranteed over **B:** 10 % chance of $5M, 89 % chance of $1M, 1 % chance of nothing.
 - But most also prefer **D:** 10 % chance of $5M over **C:** 11 % chance of $1M.

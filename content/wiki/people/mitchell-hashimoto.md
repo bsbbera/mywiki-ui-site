@@ -29,7 +29,7 @@ publish: true
 > | --- | --- |
 > | **Nationality** | American |
 > | **Domain** | Infrastructure as Code, DevOps tooling, cloud infrastructure |
-> | **Known for** | Founder of HashiCorp; creator of [[../technology/software-engineering/terraform\|Terraform]], Vagrant, Packer, Vault, Consul, Nomad |
+> | **Known for** | Founder of HashiCorp; creator of [[../technology/software-engineering/terraform|Terraform]], Vagrant, Packer, Vault, Consul, Nomad |
 > | **Notable works** | Terraform, Vagrant, Packer, Vault, Consul, Nomad |
 > | **Institution** | HashiCorp (co-founder); University of Washington (CS, attended) |
 

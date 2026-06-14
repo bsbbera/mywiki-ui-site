@@ -2,7 +2,7 @@
 title: BERT
 Created:
   - 2026-06-08
-date modified: Monday, June 9th 2026, 6:00:00 pm
+date modified: Sunday, June 14th 2026, 4:26:34 pm
 aliases:
   - BERT
   - Bidirectional Encoder Representations from Transformers
@@ -182,7 +182,7 @@ BERT spawned an entire family of improved models:
 > - **Static at inference** — Each word's representation is computed in one pass; there's no iterative refinement.
 > - **NSP is weak** — Next Sentence Prediction was found to be a noisy pre-training signal; RoBERTa removes it entirely.
 
-> [!grid|cols4]
+> [!grid|cols3]
 >
 >> [!card|hero dark spanfull]
 >> ###### BERT IN PRACTICE

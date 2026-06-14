@@ -32,7 +32,7 @@ publish: true
 > | **Known for** | Chairman & CEO of [[berkshire-hathaway\|Berkshire Hathaway]]; "Oracle of Omaha"; 60-year track record outperforming the S&P 500 |
 > | **Notable works** | Annual Berkshire Hathaway shareholder letters (1965–present) |
 > | **Institution** | Berkshire Hathaway |
-> | **Education** | BS Economics, University of Nebraska; MS Economics, Columbia Business School (studied under [[benjamin-graham\|Benjamin Graham]]) |
+> | **Education** | BS Economics, University of Nebraska; MS Economics, Columbia Business School (studied under [[benjamin-graham|Benjamin Graham]]) |
 
 American investor and philanthropist widely regarded as the greatest capital allocator in history. Buffett began investing at age 11 and filed his first tax return at 13. After studying under [[benjamin-graham|Benjamin Graham]] at Columbia Business School — the man who invented value investing — he formed the **Buffett Partnership** in 1956 and later took control of **Berkshire Hathaway** (1965), transforming it from a failing textile company into one of the world's largest conglomerates.
 

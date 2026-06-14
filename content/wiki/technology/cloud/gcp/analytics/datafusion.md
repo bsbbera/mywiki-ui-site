@@ -168,7 +168,7 @@ If you want **code-first** pipelines, use [[dataflow]]. Data Fusion is the **vis
 > [!grid]
 >
 >> [!card] Sister GCP analytics
->> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[pubsub|Pub/Sub]], [[data-catalog|Data Catalog]]
+>> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[pubsub|Pub/Sub]], [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Data Engineering

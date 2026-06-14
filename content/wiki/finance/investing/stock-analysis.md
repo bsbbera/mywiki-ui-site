@@ -81,10 +81,10 @@ Stock screening filters for stocks meeting specific quantitative criteria:
 | **Market Cap** | > ₹6,000 Cr (Large & Mid Cap) | — |
 | **Revenue CAGR** | > 7% (3 years) | Revenue trend |
 | **Profit CAGR** | > 7% (3 years) | PAT trend |
-| **Capital Use** | ROCE > 15% | [[../financial-ratios/profitability-ratios\|ROCE]] |
-| **Debt Safety** | Debt/Equity < 0.5 | [[../financial-ratios/leverage-ratios\|D/E Ratio]] |
-| **Valuation** | Current P/E < 1.5× 5-year avg P/E | [[valuation-ratios\|P/E Ratio]] |
-| **Growth Valuation** | PEG < 2 | [[valuation-ratios\|PEG Ratio]] |
+| **Capital Use** | ROCE > 15% | [[../financial-ratios/profitability-ratios|ROCE]] |
+| **Debt Safety** | Debt/Equity < 0.5 | [[../financial-ratios/leverage-ratios|D/E Ratio]] |
+| **Valuation** | Current P/E < 1.5× 5-year avg P/E | [[valuation-ratios|P/E Ratio]] |
+| **Growth Valuation** | PEG < 2 | [[valuation-ratios|PEG Ratio]] |
 
 > [!tip] Institutional vs. Retail Investor
 > | Institutional | Retail Investor |

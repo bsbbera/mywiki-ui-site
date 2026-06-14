@@ -25,7 +25,7 @@ cssclasses:
 
 ## 📊 At a Glance
 
-**11** books · last added **2026-06-08**
+**11** books · last added **2026-06-12**
 
 ## 📚 The shelf
 
@@ -44,11 +44,11 @@ cssclasses:
 
 ## 🕒 Recently Added
 
-- [The Phoenix Project](/wiki/books/the-phoenix-project)
-- [Accelerate](/wiki/books/accelerate)
-- [Site Reliability Engineering](/wiki/books/site-reliability-engineering)
-- [Security Analysis](/wiki/books/security-analysis)
 - [The Intelligent Investor](/wiki/books/the-intelligent-investor)
+- [Security Analysis](/wiki/books/security-analysis)
+- [Accelerate](/wiki/books/accelerate)
+- [The Phoenix Project](/wiki/books/the-phoenix-project)
+- [Site Reliability Engineering](/wiki/books/site-reliability-engineering)
 - [Building a Scalable Data Warehouse with Data Vault 2.0](/wiki/books/building-a-scalable-data-warehouse-with-data-vault-2)
 - [Learning Apache Spark with Python](/wiki/books/learning-apache-spark-with-python)
 - [Building the Data Warehouse](/wiki/books/building-the-data-warehouse)

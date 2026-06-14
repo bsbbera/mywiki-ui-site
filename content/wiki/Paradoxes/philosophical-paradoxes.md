@@ -282,3 +282,5 @@ Goodman argued that projectibility depends on **entrenchment**: predicates that 
 >>
 >> - [[machine-learning]]
 >> - [[science/mathematics/linear-algebra]]
+>> - [[people/aristotle|Aristotle]]
+>> - [[people/bertrand-russell|Bertrand Russell]]

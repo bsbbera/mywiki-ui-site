@@ -150,10 +150,10 @@ When screening for quality stocks, a practical starting framework:
 | **Size** | Market Cap > ₹6,000 Cr | — |
 | **Revenue Growth** | 3-year CAGR > 7% | Revenue trend |
 | **Profit Growth** | 3-year CAGR > 7% | PAT trend |
-| **Capital Use** | ROCE > 15% | [[profitability-ratios\|ROCE]] |
-| **Debt Safety** | Debt/Equity < 0.5 | [[leverage-ratios\|D/E Ratio]] |
-| **Valuation** | Current P/E < 1.5× 5-year avg P/E | [[../investing/valuation-ratios\|P/E]] |
-| **Growth Valuation** | PEG < 2 (lower is better) | [[../investing/valuation-ratios\|PEG]] |
+| **Capital Use** | ROCE > 15% | [[profitability-ratios|ROCE]] |
+| **Debt Safety** | Debt/Equity < 0.5 | [[leverage-ratios|D/E Ratio]] |
+| **Valuation** | Current P/E < 1.5× 5-year avg P/E | [[../investing/valuation-ratios|P/E]] |
+| **Growth Valuation** | PEG < 2 (lower is better) | [[../investing/valuation-ratios|PEG]] |
 
 > [!tip] Context is Everything
 > No ratio should be evaluated in isolation. Always:

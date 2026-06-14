@@ -79,17 +79,19 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> **Setup:** To travel from A to B, you must first reach the halfway point, then half of the remainder, and so on — infinitely many steps.
 >> **Bite:** How can an infinite number of actions be completed in finite time?
 >> **Resolution:** Each sub-journey takes half the time of the previous one. The total time is a convergent geometric series $\sum_{n=1}^{\infty} \frac{1}{2^n} = 1$, yielding a finite sum. Modern calculus formalizes this via limits: the infinite sequence of partial sums converges to a finite distance. The Arrow paradox similarly dissolves under the continuum of space-time and the definition of instantaneous velocity.
->> [[science/mathematics/linear-algebra]]
+>> [[science/mathematics/linear-algebra]] · [[people/zeno-of-elea|Zeno of Elea]]
 >
 >> [!card] **Hilbert's Hotel**
 >> **Setup:** A hotel with infinitely many rooms is completely full. A new guest arrives — can they be accommodated?
 >> **Bite:** A full hotel should turn guests away, yet every guest can be moved from room $n$ to room $n+1$, freeing room 1.
 >> **Resolution:** This demonstrates that infinite sets can be put into bijection with proper subsets of themselves. The set of natural numbers has the same cardinality as itself plus one element, or even as itself times infinity (busloads of infinitely many guests). It is the canonical intuition pump for the countability of infinite sets.
+>> [[people/david-hilbert|David Hilbert]]
 >
 >> [!card] **Cantor's Paradox**
 >> **Setup:** If a set of all sets $U$ existed, its power set $\mathcal{P}(U)$ would be a subset of $U$.
 >> **Bite:** Cantor's theorem proves $|\mathcal{P}(S)| > |S|$ for any set $S$. Thus $|U| < |\mathcal{P}(U)| \leq |U|$, a contradiction.
 >> **Resolution:** There is no universal set. This, along with **Cantor's diagonal argument** — which proves the reals are uncountable by constructing a number differing from every enumerated real in at least one digit — establishes that some infinities are strictly larger than others, founding modern set theory's hierarchy of transfinite cardinals.
+>> [[people/georg-cantor|Georg Cantor]]
 >
 >> [!card] **Galileo's Paradox**
 >> **Setup:** Every square is a natural number, yet most natural numbers are not squares. So there should be more naturals than squares.

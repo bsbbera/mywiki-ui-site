@@ -380,3 +380,6 @@ Useful for spell checking, fuzzy matching, and search suggestions.
 >
 >> [!card] Applications
 >> [[sentiment-analysis|Sentiment Analysis]] · [[named-entity-recognition|NER]] · [[text-classification|Text Classification]] · [[machine-translation|Machine Translation]]
+>
+>> [!card] NLP Techniques
+>> [[autocorrect|Autocorrect]] · [[backtranslation|Backtranslation]] · [[beam-search|Beam Search]] · [[dialogue-systems|Dialogue Systems]]

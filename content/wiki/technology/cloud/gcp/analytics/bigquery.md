@@ -222,11 +222,11 @@ Public datasets are free to query (only your scan cost). The [[bigquery-sandbox]
 >
 >
 >> [!card] Sister GCP analytics
->> [[dataflow|Dataflow]], [[datafusion|Data Fusion]], [[pubsub|Pub/Sub]], [[data-catalog|Data Catalog]]
+>> [[dataflow|Dataflow]], [[datafusion|Data Fusion]], [[pubsub|Pub/Sub]], [[datastream|Datastream]], [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Data Engineering
->> [[../../../data-engineering/data-lifecycle|Data Lifecycle]], [[../../../data-engineering/data-pipeline|Data Pipeline]]
+>> [[data-lifecycle|Data Lifecycle]], [[data-pipeline|Data Pipeline]]
 >
 >
 >> [!card] Certifications

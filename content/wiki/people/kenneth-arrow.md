@@ -35,7 +35,7 @@ publish: true
 
 ---
 
-American economist and mathematician who won the 1972 Nobel Memorial Prize in Economic Sciences (jointly with John Hicks) for his pioneering contributions to general economic equilibrium theory and welfare theory. His [[Arrow's impossibility theorem|impossibility theorem]] proved that no rank-order electoral system can satisfy a minimal set of fairness criteria when there are more than two candidates. He also founded modern information economics with the [[Arrow information paradox]].
+American economist and mathematician who won the 1972 Nobel Memorial Prize in Economic Sciences (jointly with John Hicks) for his pioneering contributions to general economic equilibrium theory and welfare theory. His Arrow's impossibility theorem proved that no rank-order electoral system can satisfy a minimal set of fairness criteria when there are more than two candidates. He also founded modern information economics with the [[Arrow information paradox]].
 
 ## Related pages
 

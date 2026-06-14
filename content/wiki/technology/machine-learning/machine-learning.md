@@ -22,7 +22,7 @@ maturity: budding
 
 ---
 
-*📄 74 notes in this field · ⏱ 3 min read · 🕘 updated Jun 10, 2026* <span class="mw-maturity is-budding">🌿 Budding</span>
+*📄 156 notes in this field · ⏱ 3 min read · 🕘 updated Jun 12, 2026* <span class="mw-maturity is-budding">🌿 Budding</span>
 
 **Machine Learning** is a sub-field of artificial intelligence that enables computers to learn from data without being explicitly programmed. ML algorithms build models from training examples, identify patterns, and make predictions or decisions on new, unseen data (source: DataScienceNotes-master).
 
@@ -70,7 +70,7 @@ maturity: budding
 > [!grid]
 >
 >> [!card] Data Engineering
->> [[../data-engineering/data-engineering|Data Engineering]], [[../data-engineering/data-processing/spark-mllib|Spark MLlib]]
+>> [[../data-engineering/data-engineering|Data Engineering]], [[spark-mllib|Spark MLlib]]
 >
 >> [!card] Cloud ML
 >> [[../cloud/gcp/ai-ml/vertex-ai|Vertex AI]], [[../cloud/databricks/databricks|Databricks]]

@@ -31,7 +31,7 @@ Modern-day Data Engineering is a subset of software engineering that focuses on 
 
 <span class="at-stat">7</span> sub-disciplines &nbsp;·&nbsp; <span class="at-stat">3</span> skill levels &nbsp;·&nbsp; <span class="at-mark">the discipline of building reliable, scalable data infrastructure for analytical and operational use</span>
 
-*📄 60 notes in this field · ⏱ 7 min read · 🕘 updated Jun 10, 2026* <span class="mw-maturity is-evergreen">🌳 Evergreen</span>
+*📄 67 notes in this field · ⏱ 7 min read · 🕘 updated Jun 10, 2026* <span class="mw-maturity is-evergreen">🌳 Evergreen</span>
 
 > [!tip] The DE Career Path
 > Data engineering is typically not an entry-level job — most start in adjacent roles (Data Analyst, BI Developer, Backend Engineer) and transition. The journey progresses from SQL and data modeling basics to advanced cloud, streaming, and infrastructure-as-code skills.

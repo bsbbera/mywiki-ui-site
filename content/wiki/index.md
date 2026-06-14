@@ -58,7 +58,11 @@ wiki/
 │
 ├── people/                   ← 👥 cross-cutting metadata
 ├── books/                    ← 📚 cross-cutting metadata
-└── paradoxes/                ← 🧩 paradoxes field (activated 2026-06-11)
+├── paradoxes/                ← 🧩 paradoxes field (activated 2026-06-11)
+├── science/                  ← 🔬 natural sciences & mathematics
+│   └── mathematics/          ← calculus, combinatorics, linear algebra, series
+├── career/                   ← 💼 interviews & professional development
+└── Notion/                   ← 🤖 AI recipes & productivity workflows
 ```
 
 ## Technology — `technology/`
@@ -463,6 +467,12 @@ Newly activated field (2026-06-11) — ~300 paradoxes across 17 thematic notes +
 - [[psychological-paradoxes|Psychological Paradoxes]] — Psychology & sociology + cognitive biases.
 - [[miscellaneous-paradoxes|Miscellaneous Paradoxes]] — Outliers and curiosities.
 
+## Notion — `Notion/`
+
+AI recipes, productivity workflows, and platform walkthroughs migrated from Notion.
+
+- [[Notion/AI Recipes|AI Recipes]] — hub page with 27 copy-paste AI workflows.
+
 ## People — `people/`
 
 Stub pages (frontmatter + minimal bio + related-page links) for individuals referenced across the wiki.
@@ -569,16 +579,17 @@ These folders do not exist yet. They will be created on the first ingest of rele
 
 ## Statistics
 
-- **Top-level folders**: 5 active (`technology/`, `people/`, `books/`, `science/`, `career/`) + 2 reserved (`philosophy/`, `art/`).
+- **Top-level folders**: 8 active (`technology/`, `people/`, `books/`, `paradoxes/`, `science/`, `career/`, `finance/`, `Notion/`) + 2 reserved (`philosophy/`, `art/`).
 - **Sub-domains under `technology/`**: 7 (`data-engineering/`, `software-engineering/`, `databases/`, `cloud/`, `tools/`, `guides/`, `machine-learning/`); `tools/python/` added 2026-06-08.
 - **Cloud platforms under `technology/cloud/`**: 4 (`gcp/`, `aws/`, `azure/`, `databricks/`).
-- **People stubs**: 35.
-- **Book stubs**: 11.
-- **Concept pages**: ~240 (incl. 9 Apache Spark / PySpark pages; +14 ML/statistics +15 ML/fundamentals +12 ML/algorithms +10 ML/deep-learning pages; +16 new ML/MLOps/NLP notes 2026-06-09; +8 tech notes 2026-06-09: docker, kubernetes, hadoop, devops-sre, sagemaker, rest-api, terraform, sql-patterns; +13 finance notes 2026-06-09: Finance Home, financial-statements, income-statement, balance-sheet, cash-flow-statement, financial-ratios, profitability-ratios, leverage-ratios, operating-ratios, investing, valuation-ratios, dcf-valuation, stock-analysis).
+- **People stubs**: 35+.
+- **Book stubs**: 12.
+- **Concept pages**: ~370+
+- **Newly created stubs (2026-06-12)**: ~131 notes across technology/cloud (40+ GCP stubs), ML/MLOps/NLP (16+), deep learning (10+), ML algorithms (15+), software engineering (8+), finance (13+), paradoxes (49), science (13), people (10+), career (3), and Notion AI recipes (27). (incl. 9 Apache Spark / PySpark pages; +14 ML/statistics +15 ML/fundamentals +12 ML/algorithms +10 ML/deep-learning pages; +16 new ML/MLOps/NLP notes 2026-06-09; +8 tech notes 2026-06-09: docker, kubernetes, hadoop, devops-sre, sagemaker, rest-api, terraform, sql-patterns; +13 finance notes 2026-06-09: Finance Home, financial-statements, income-statement, balance-sheet, cash-flow-statement, financial-ratios, profitability-ratios, leverage-ratios, operating-ratios, investing, valuation-ratios, dcf-valuation, stock-analysis).
 - **Source-summary pages**: 0 (concept pages cite raw sources inline).
 - **Related-pages format**: topic-grouped callouts (per `windsurf.md`).
 - **Infoboxes**: `> [!infobox|right]` on all named-entity notes (18 people + 6 books + 31 tools/cloud-services/platforms + 1 certification = 56); placed above the daily-quote block. Abstract concept/theory/pattern/guide pages intentionally have **no infobox**.
-- **Total wiki pages**: ~290 + index + log + 9 Home dashboards (new: science/mathematics/, career/ 2026-06-08).
+- **Total wiki pages**: ~480+ incl. index, log, and field Home dashboards.
 
 ## See also
 

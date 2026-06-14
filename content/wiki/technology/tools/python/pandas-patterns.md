@@ -240,7 +240,7 @@ df.loc[('US', 'NYC')]           # select all NYC rows
 >> [[../../machine-learning/deep-learning/keras|Keras]] · [[../../machine-learning/ml-fundamentals/data-cleaning|Data Cleaning]]
 >
 >> [!card] Scale
->> [[../../data-engineering/data-processing/apache-spark|Apache Spark]] · [[../../data-engineering/data-processing/pyspark|PySpark]]
+>> [[apache-spark|Apache Spark]] · [[pyspark|PySpark]]
 >
 >> [!card] Storage
 >> [[../../databases/Databases Home|Databases]] · [[../../data-engineering/data-storage/relational-database|Relational Databases]]

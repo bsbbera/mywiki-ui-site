@@ -29,7 +29,7 @@ publish: true
 > | **Nationality** | American |
 > | **Domain** | DevOps, IT management, software delivery performance, security |
 > | **Known for** | *The Phoenix Project*; *Accelerate*; *The DevOps Handbook*; founder of Tripwire |
-> | **Notable works** | [[../books/the-phoenix-project\|The Phoenix Project]] (2013), [[../books/accelerate\|Accelerate]] (2018), *The DevOps Handbook* (2016) |
+> | **Notable works** | [[../books/the-phoenix-project|The Phoenix Project]] (2013), [[../books/accelerate|Accelerate]] (2018), *The DevOps Handbook* (2016) |
 > | **Institution** | IT Revolution (founder); Tripwire Inc (founder & former CTO) |
 
 American author, researcher, and entrepreneur who has studied high-performing technology organizations for over 25 years. Kim founded **Tripwire Inc** (enterprise security software) in 1999 and served as CTO for 13 years. He then pivoted to research and writing, becoming one of the most influential voices in the **DevOps movement**.

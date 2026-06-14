@@ -770,11 +770,11 @@ Refactored every page created in pass 5 to convert flat bullet lists → topic-g
 > [!grid]
 >
 >> [!card] Topic 1
->> [[link1|Label]], [[link2|Label]]
+>> `link1`, `link2`
 >
 >
 >> [!card] Topic 2
->> [[link3|Label]]
+>> `link3`
 
 
 ## 2026-04-29 (fifth pass) — Massive Data Engineering build-out (~71 new pages, ~150 sources)

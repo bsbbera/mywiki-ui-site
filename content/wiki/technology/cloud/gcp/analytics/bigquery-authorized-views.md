@@ -169,7 +169,7 @@ Three IAM grants:
 >
 >
 >> [!card] Sister GCP services
->> [[data-catalog|Data Catalog]]
+>> [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Data Management

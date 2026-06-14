@@ -211,7 +211,7 @@ The application that **receives** messages from a subscription.
 > [!grid]
 >
 >> [!card] Sister GCP analytics
->> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[datafusion|Data Fusion]], [[data-catalog|Data Catalog]]
+>> [[bigquery|BigQuery]], [[dataflow|Dataflow]], [[datafusion|Data Fusion]], [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Software Engineering
@@ -219,7 +219,7 @@ The application that **receives** messages from a subscription.
 >
 >
 >> [!card] Data Architecture
->> [[../../../data-engineering/data-architecture/event-driven-architecture|Event-Driven Architecture]]
+>> [[event-driven-architecture|Event-Driven Architecture]]
 >
 >
 >> [!card] Related products

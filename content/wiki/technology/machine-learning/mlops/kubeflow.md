@@ -255,10 +255,10 @@ def ml_pipeline(input_data: str):
 >> [[mlops|MLOps Hub]] · [[../../cloud/gcp/vertex-ai|Vertex AI]] · [[../../cloud/aws/sagemaker|SageMaker]]
 >
 >> [!card] Infrastructure
->> [[../../devops/kubernetes|Kubernetes]] · [[../../devops/docker|Docker]] · [[../../cloud/gcp/gke|GKE]]
+>> [[kubernetes|Kubernetes]] · [[docker|Docker]] · [[kubernetes-engine|GKE]]
 >
 >> [!card] Pipelines
 >> [[ci-cd-ml|CI/CD for ML]] · [[deployment-patterns|Deployment Patterns]]
 >
 >> [!card] Experimentation
->> [[../../data-engineering/airflow|Airflow]] · [[../../data-engineering/prefect|Prefect]]
+>> [[airflow|Airflow]] · [[prefect|Prefect]]

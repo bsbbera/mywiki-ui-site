@@ -197,7 +197,7 @@ product in a high-dimensional feature space.
 >> [[calculus|Calculus]] · [[combinatorics|Combinatorics]]
 >
 >> [!card] Probability & Statistics
->> [[../statistics/probability-distributions|Probability Distributions]] · [[../statistics/random-variables|Random Variables]]
+>> [[probability-distributions|Probability Distributions]] · [[random-variables|Random Variables]]
 >
 >> [!card] ML Foundations
 >> [[../../technology/machine-learning/deep-learning/optimisation-algorithms|Optimisation Algorithms]] · [[../../technology/machine-learning/deep-learning/neural-networks|Neural Networks]]

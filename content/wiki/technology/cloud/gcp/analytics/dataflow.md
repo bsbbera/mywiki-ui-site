@@ -169,7 +169,7 @@ If you want a **visual, drag-and-drop** alternative, see [[datafusion]]; for **S
 > [!grid]
 >
 >> [!card] Sister GCP analytics
->> [[bigquery|BigQuery]], [[datafusion|Data Fusion]], [[pubsub|Pub/Sub]], [[data-catalog|Data Catalog]]
+>> [[bigquery|BigQuery]], [[datafusion|Data Fusion]], [[pubsub|Pub/Sub]], [[dataproc|Dataproc]], [[technology/cloud/gcp/analytics/data-catalog|Data Catalog]]
 >
 >
 >> [!card] Data Processing

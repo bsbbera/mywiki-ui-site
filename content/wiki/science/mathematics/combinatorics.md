@@ -260,7 +260,7 @@ $\{\{1,3\},\{2\}\}$, $\{\{2,3\},\{1\}\}$, $\{\{1\},\{2\},\{3\}\}$.
 >> [[calculus|Calculus]] · [[series|Series & Sequences]]
 >
 >> [!card] Probability & Statistics
->> [[../statistics/probability-distributions|Probability Distributions]] · [[../statistics/random-variables|Random Variables]] · [[../statistics/binomial-distribution|Binomial Distribution]]
+>> [[probability-distributions|Probability Distributions]] · [[random-variables|Random Variables]] · [[../statistics/binomial-distribution|Binomial Distribution]]
 >
 >> [!card] ML Foundations
 >> [[../../technology/machine-learning/ml-fundamentals/feature-selection|Feature Selection]] · [[../../technology/machine-learning/ml-algorithms/ensemble-learning|Ensemble Learning]]

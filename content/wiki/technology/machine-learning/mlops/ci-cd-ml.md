@@ -307,7 +307,7 @@ jobs:
 >> [[mlops|MLOps Hub]] · [[deployment-patterns|Deployment Patterns]] · [[model-lifecycle|Model Lifecycle]]
 >
 >> [!card] Infrastructure
->> [[kubeflow|Kubeflow]] · [[../../devops/kubernetes|Kubernetes]] · [[../../devops/docker|Docker]]
+>> [[kubeflow|Kubeflow]] · [[kubernetes|Kubernetes]] · [[docker|Docker]]
 >
 >> [!card] Quality
 >> [[../ml-fundamentals/concept-drift|Drift Detection]] · [[monitoring|ML Monitoring]]

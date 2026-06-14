@@ -99,7 +99,7 @@ Measures how similar a point is to its own cluster (cohesion) compared to the ne
 > print(silhouette_score(X, kmeans.labels_)) # [-1, 1] (higher = better)
 > ```
 >
-> Silhouette visualisations: `[[../../attachments/Pasted image 20230810165528.png|Silhouette 1]]` · `[[../../attachments/Pasted image 20230810165610.png|Silhouette 2]]` · `[[../../attachments/Pasted image 20230810165703.png|Silhouette 3]]`
+> Silhouette visualisations: `![[attachments/Pasted image 20230810165528.png|Silhouette 1]]` · `![[attachments/Pasted image 20230810165610.png|Silhouette 2]]` · `![[attachments/Pasted image 20230810165703.png|Silhouette 3]]`
 
 ---
 

@@ -232,7 +232,7 @@ opposite signs. Linear convergence — safe but slower than Newton.
 >> [[series|Series & Sequences]] · [[combinatorics|Combinatorics]]
 >
 >> [!card] Probability & Statistics
->> [[../statistics/probability-distributions|Probability Distributions]] · [[../statistics/random-variables|Random Variables]] · [[../statistics/expected-value|Expected Value]]
+>> [[probability-distributions|Probability Distributions]] · [[random-variables|Random Variables]] · [[../statistics/expected-value|Expected Value]]
 >
 >> [!card] ML Foundations
 >> [[../../technology/machine-learning/statistics/vector-norms|Vector Norms]] · [[../../technology/machine-learning/ml-fundamentals/feature-engineering|Feature Engineering]] · [[../../technology/machine-learning/deep-learning/optimisation-algorithms|Optimisation Algorithms]]

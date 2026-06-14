@@ -31,8 +31,8 @@ publish: true
 > | **Died** | September 21, 1976, Aix-en-Provence, France |
 > | **Nationality** | British-American |
 > | **Domain** | Value investing, financial analysis, security analysis |
-> | **Known for** | "Father of value investing"; *Security Analysis* (1934); *The Intelligent Investor* (1949); mentor to [[warren-buffett\|Warren Buffett]] |
-> | **Notable works** | [[../books/security-analysis\|Security Analysis]] (1934), [[../books/the-intelligent-investor\|The Intelligent Investor]] (1949) |
+> | **Known for** | "Father of value investing"; *Security Analysis* (1934); *The Intelligent Investor* (1949); mentor to [[warren-buffett|Warren Buffett]] |
+> | **Notable works** | [[../books/security-analysis|Security Analysis]] (1934), [[../books/the-intelligent-investor|The Intelligent Investor]] (1949) |
 > | **Institution** | Columbia Business School (Professor); Graham-Newman Corporation |
 
 British-American financial analyst, professor, and investor widely regarded as the **father of value investing**. Graham was born in London and raised in New York City. He graduated from Columbia University at 20 and joined a Wall Street bond-trading firm, later founding the **Graham-Newman Corporation** investment fund and teaching at **Columbia Business School** for 28 years.

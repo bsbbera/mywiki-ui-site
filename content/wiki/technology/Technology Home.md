@@ -81,24 +81,25 @@ cssclasses:
 
 ## 🕒 Recently Updated Across Technology
 
-- [Machine Learning](/wiki/technology/machine-learning/machine-learning)
-- [Data Engineering](/wiki/technology/data-engineering/data-engineering)
-- [Feature Engineering](/wiki/technology/machine-learning/ml-fundamentals/feature-engineering)
-- [Transformers](/wiki/technology/machine-learning/deep-learning/transformers)
+- [BERT](/wiki/technology/machine-learning/deep-learning/bert)
+- [Recommender Systems](/wiki/technology/machine-learning/deep-learning/recommender-systems)
+- [NLP Fundamentals](/wiki/technology/machine-learning/nlp/nlp-fundamentals)
 - [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
-- [MLOps](/wiki/technology/machine-learning/mlops/mlops)
-- [Apache Spark](/wiki/technology/data-engineering/data-processing/spark/apache-spark)
-- [Dimensional Modeling](/wiki/technology/data-engineering/data-modeling/dimensional-modeling)
-- [Data Ethics](/wiki/technology/data-engineering/data-ethics)
-- [Descriptive Statistics](/wiki/technology/machine-learning/statistics/descriptive-statistics)
-- [Survivorship Bias](/wiki/technology/machine-learning/statistics/survivorship-bias)
-- [Law of Large Numbers](/wiki/technology/machine-learning/statistics/law-of-large-numbers)
-- [Hypothesis Testing](/wiki/technology/machine-learning/statistics/hypothesis-testing)
-- [Imbalanced Classification](/wiki/technology/machine-learning/ml-fundamentals/imbalanced-classification)
-- [N-Gram Model](/wiki/technology/machine-learning/nlp/n-gram-model)
+- [Cloud Dataflow](/wiki/technology/cloud/gcp/analytics/dataflow)
+- [Model Lifecycle Management](/wiki/technology/machine-learning/mlops/model-lifecycle)
+- [Information Retrieval](/wiki/technology/machine-learning/nlp/information-retrieval)
+- [Doc2Vec](/wiki/technology/machine-learning/nlp/doc2vec)
+- [ELECTRA](/wiki/technology/machine-learning/nlp/electra)
+- [DistilBERT](/wiki/technology/machine-learning/nlp/distilbert)
+- [DeBERTa](/wiki/technology/machine-learning/nlp/deberta)
+- [Binomial Distribution](/wiki/technology/machine-learning/statistics/binomial-distribution)
+- [Bayes' Theorem](/wiki/technology/machine-learning/statistics/bayes-theorem)
+- [Distributed Transactions](/wiki/technology/software-engineering/distributed-transactions)
+- [Database Recovery](/wiki/technology/software-engineering/database-recovery)
 
 ## Related pages
 
 > [!info] Cross-cutting metadata
 > - [[People Home]]
 > - [[Books Home]]
+> - [[_anthropic-touch-showcase|Anthropic Touch UI Showcase]] — theme test harness

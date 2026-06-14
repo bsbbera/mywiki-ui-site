@@ -28,7 +28,7 @@ publish: true
 > ###### Book
 > | | |
 > | --- | --- |
-> | **Authors** | Nicole Forsgren, [[../people/jez-humble\|Jez Humble]], [[../people/gene-kim\|Gene Kim]] |
+> | **Authors** | Nicole Forsgren, [[../people/jez-humble|Jez Humble]], [[../people/gene-kim|Gene Kim]] |
 > | **Publisher** | IT Revolution / Simon & Schuster |
 > | **Published** | 2018 |
 > | **Domain** | Software delivery performance, DevOps, organizational transformation |

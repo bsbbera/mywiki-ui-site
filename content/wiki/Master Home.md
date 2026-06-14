@@ -2,7 +2,7 @@
 title: Master Home
 Created:
   - 2026-06-09
-date modified: Thursday, June 11th 2026, 1:11:00 pm
+date modified: Sunday, June 14th 2026, 4:08:10 pm
 aliases:
   - Home
   - Dashboard
@@ -21,23 +21,23 @@ publish: true
 > [!card|hero dark spanfull]
 > ###### A SECOND BRAIN FOR DATA & THE CLOUD
 > # Everything I know, <span class="at-gradient">connected.</span>
-> <p class="at-lead">370+ interlinked notes on data engineering, the cloud and machine learning — distilled from books, docs and hard-won practice into one navigable map.</p>
+> <p class="at-lead">480+ interlinked notes on data engineering, the cloud, machine learning, science and paradoxes — distilled from books, docs and hard-won practice into one navigable map.</p>
 >
 > **[[Technology Home|Explore the vault →]]**  ·  **🔍 Search the vault**  ·  [[index|A–Z catalog]]
 >
 > <span class="at-badge">EVERGREEN · TENDED DAILY</span>  <span class="at-badge ghost">BUILT WITH OBSIDIAN + AI</span>
 
-> [!grid|cols4]
+>[!grid|cols4]
 >
 >> [!card|step]
 >> ###### NOTES
->> ### <span class="at-3xl">390+</span>
+>> ### <span class="at-3xl">480+</span>
 >> interlinked & evergreen
 >
 >> [!card|step]
 >> ###### FIELDS
->> ### <span class="at-3xl">7</span>
->> tech · ML · cloud · books · finance · people · paradoxes
+>> ### <span class="at-3xl">10</span>
+>> tech · ML · cloud · books · finance · people · paradoxes · science · career · AI recipes
 >
 >> [!card|step]
 >> ###### CLOUD PLATFORMS
@@ -52,16 +52,18 @@ publish: true
 ## What's inside
 
 > [!infobox|right] The vault at a glance
-> ## 390+ notes
-> *across seven fields of knowledge.*
+> ## 480+ notes
+> *across ten fields of knowledge.*
 >
 > | Field | Notes |
 > | --- | --- |
 > | Technology | 280+ |
+> | Paradoxes | 50+ |
 > | People | 35 |
-> | Finance | 13 |
-> | Paradoxes | 19 |
+> | Finance | 20+ |
 > | Books | 12 |
+> | Science | 15+ |
+> | Career | 3 |
 >
 > **Mostly evergreen**
 > Tended, cross-linked, and growing.
@@ -128,6 +130,25 @@ Every note links to its neighbours, so a single idea always opens onto the next.
 >> ~300 paradoxes across logic, math, physics, philosophy & beyond.
 >> - [[top-100-paradoxes|Top 100]] · [[logical-paradoxes|Logic]]
 >> - [[physics-paradoxes|Physics]] · [[philosophical-paradoxes|Philosophy]]
+>
+>> [!card|section sci]
+>> ###### VIII · THE LAB
+>> ### [[Science Home|Science]]
+>> Mathematics, physics, chemistry and biology — the quantitative foundations.
+>> - [[science/mathematics/linear-algebra|Linear Algebra]] · [[science/calculus|Calculus]]
+>> - [[science/quantum-mechanics|Quantum Mechanics]] · [[science/general-relativity|Relativity]]
+>
+>> [!card|section car]
+>> ###### IX · THE CAREER
+>> ### [[Career Home|Career]]
+>> Interview techniques, technical prep and professional growth.
+>> - [[career/interview-techniques|Interviews]] · [[career/technical-interviews|Technical Prep]]
+>
+>> [!card|section ai]
+>> ###### X · CONTENT & AI
+>> ### [[Notion/AI Recipes|AI Recipes]]
+>> Copy-paste AI workflows, prompts and productivity recipes.
+>> - [[Claude Chat 101- Your First Steps|Claude 101]] · [[Build a ChatGPT Agent|ChatGPT Agent]]
 
 ---
 
@@ -147,6 +168,11 @@ Every note links to its neighbours, so a single idea always opens onto the next.
 ### 🗄️ Data Engineering — *the spine*
 
 Data engineering is the plumbing of every data product: getting raw, messy data from a hundred sources into clean, trustworthy, query-ready shape. These notes cover the full journey — **modeling** (how data is structured), **ingestion & pipelines** (how it moves), **storage** (lakes, warehouses, lakehouses), and **processing** (batch and streaming). It's the field most of the vault hangs off.
+
+
+
+
+
 
 **Useful notes —** [[data-engineering|Overview]] · [[data-modeling|Data Modeling]] · [[dimensional-modeling|Dimensional Modeling]] · [[medallion-architecture|Medallion Architecture]] · [[data-lake|Data Lake]] · [[data-warehousing|Warehousing]] · [[data-pipeline|Pipelines]] · [[apache-spark|Apache Spark]] · [[pyspark|PySpark]].
 
@@ -214,7 +240,7 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >
 >> [!card|hero accent spanfull]
 >> ###### THREE WAYS IN
->> # Navigate like a *graph*, not a folder.
+>> # Navigate like a *<font color="#000000">graph</font>*, not a folder.
 >> Every note is a node — jump in however you think, and let the links pull you onward.
 >
 >> [!card|step]
@@ -242,12 +268,12 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >>
 >> | Note | Links |
 >> | --- | --- |
->> | [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery) | 95 |
->> | [Google Cloud Platform](/wiki/technology/cloud/gcp/foundations/google-cloud-platform) | 83 |
+>> | [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery) | 99 |
+>> | [Google Cloud Platform](/wiki/technology/cloud/gcp/foundations/google-cloud-platform) | 86 |
+>> | [Pub/Sub](/wiki/technology/cloud/gcp/analytics/pubsub) | 56 |
 >> | [Google Cloud Platform](/wiki/technology/cloud/gcp/GCP-Home) | 55 |
->> | [Pub/Sub](/wiki/technology/cloud/gcp/analytics/pubsub) | 53 |
 >> | [Cloud Storage](/wiki/technology/cloud/gcp/storage/Cloud-Storage) | 51 |
->> | [Cloud Spanner](/wiki/technology/cloud/gcp/databases/cloud-spanner) | 48 |
+>> | [Cloud Run](/wiki/technology/cloud/gcp/compute/cloud-run) | 48 |
 >
 >> [!col|w6]
 >> ### 🕘 Recently updated
@@ -255,12 +281,12 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >>
 >> | Note | Updated |
 >> | --- | --- |
->> | [Books](/wiki/books/Books-Home) | Jun 11 |
->> | [Vault Stats](/wiki/Vault-Stats) | Jun 10 |
->> | [Cloud Home](/wiki/technology/cloud/Cloud-Home) | Jun 10 |
->> | [Machine Learning](/wiki/technology/machine-learning/machine-learning) | Jun 10 |
->> | [Data Engineering](/wiki/technology/data-engineering/data-engineering) | Jun 10 |
->> | [Feature Engineering](/wiki/technology/machine-learning/ml-fundamentals/feature-engineering) | Jun 10 |
+>> | [Galactic Center](/wiki/science/galactic-center) | Jun 14 |
+>> | [BERT](/wiki/technology/machine-learning/deep-learning/bert) | Jun 14 |
+>> | [Behavioral Economics](/wiki/finance/behavioral-economics) | Jun 12 |
+>> | [Recommender Systems](/wiki/technology/machine-learning/deep-learning/recommender-systems) | Jun 12 |
+>> | [McGurk Effect](/wiki/Paradoxes/mcgurk-effect) | Jun 12 |
+>> | [Shepard Tone](/wiki/science/shepard-tone) | Jun 12 |
 
 > [!quote]
 > "Data is a precious thing and will last longer than the systems themselves."
@@ -277,4 +303,4 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 > **Search:** press `/` or use **🔍 Search the vault**.
 > **Stats:** live numbers, top concepts & the maturity garden — [[Vault Stats]].
 > **Catalog:** the full agent-facing index lives at [[index]]. **Changelog:** [[log]].
-> **Smaller collections:** Career · Science · AI Recipes — all reachable from [[index]].
+> **Smaller collections:** [[Career Home|Career]] · [[Science Home|Science]] · [[Notion/AI Recipes|AI Recipes]] — all reachable from [[index]].

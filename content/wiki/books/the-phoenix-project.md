@@ -28,7 +28,7 @@ publish: true
 > ###### Book
 > | | |
 > | --- | --- |
-> | **Authors** | [[../people/gene-kim\|Gene Kim]], Kevin Behr, George Spafford |
+> | **Authors** | [[../people/gene-kim|Gene Kim]], Kevin Behr, George Spafford |
 > | **Publisher** | IT Revolution Press |
 > | **Published** | 2013 (1st ed.); 2018 (5th anniversary ed.) |
 > | **Domain** | DevOps, IT management, business transformation |

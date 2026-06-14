@@ -158,6 +158,7 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> **Setup:** If there are, as arguments like the Drake equation suggest, many other sentient species in the universe, then where are they?
 >> **Bite:** Their presence should be obvious, yet we detect none.
 >> **Resolution:** Possible explanations include vast distances, self-destruction, communication limits, or simply that we are among the first intelligent species to arise in cosmic history.
+>> [[people/enrico-fermi|Enrico Fermi]]
 >
 >> [!card] **Heat death paradox**
 >> **Setup:** If the universe were infinitely old, it would have reached thermodynamic equilibrium by now.
@@ -285,6 +286,7 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> **Setup:** According to the Copenhagen interpretation, a cat in a sealed box with a quantum trigger could be simultaneously alive and dead as long as it remains unobserved.
 >> **Bite:** How can a macroscopic object exist in superposition?
 >> **Resolution:** Decoherence causes the quantum system to entangle with the environment, effectively selecting a definite outcome long before a human opens the box. The cat is never truly in a pure superposition. However, the broader measurement problem — why we perceive a single result from a branching wavefunction — remains an open question in the foundations of [[quantum-mechanics|quantum mechanics]].
+>> [[people/erwin-schrodinger|Erwin Schrödinger]]
 >
 >> [!card] **Uncertainty principle**
 >> **Setup:** There is a fundamental limit to the precision with which complementary variables such as position and momentum can be known simultaneously.

@@ -120,6 +120,7 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> Does the set of all sets that do not contain themselves contain itself?
 >>
 >> If it does, it doesn't; if it doesn't, it does. The paradox shakes the foundations of naive set theory.
+>> [[people/bertrand-russell|Bertrand Russell]]
 >>
 >> Also examined in [[mathematical-paradoxes]]. Resolved by type theory (every entity has a type, and a set can only contain members of a lower type) and by ZFC axioms, which restrict set formation via the axiom of separation.
 >

@@ -28,7 +28,7 @@ publish: true
 > ###### Book
 > | | |
 > | --- | --- |
-> | **Author** | [[../people/benjamin-graham\|Benjamin Graham]] & David Dodd |
+> | **Author** | [[../people/benjamin-graham|Benjamin Graham]] & David Dodd |
 > | **Publisher** | McGraw-Hill |
 > | **Published** | 1934 (1st ed.); 6th edition 2008 |
 > | **Domain** | Financial statement analysis, value investing, fundamental analysis |

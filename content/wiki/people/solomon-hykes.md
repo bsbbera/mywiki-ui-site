@@ -29,7 +29,7 @@ publish: true
 > | **Born** | 1983, New York City, USA (raised in France) |
 > | **Nationality** | American |
 > | **Domain** | Containers, developer tooling, CI/CD infrastructure |
-> | **Known for** | Creator of [[../technology/software-engineering/docker\|Docker]]; founder of dotCloud; founder of Dagger |
+> | **Known for** | Creator of [[../technology/software-engineering/docker|Docker]]; founder of dotCloud; founder of Dagger |
 > | **Notable works** | Docker (2013), Dagger (2022) |
 > | **Institution** | Docker Inc (founder); Dagger (founder) |
 

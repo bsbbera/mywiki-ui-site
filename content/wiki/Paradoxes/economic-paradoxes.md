@@ -45,6 +45,7 @@ source: https://en.wikipedia.org/wiki/List_of_paradoxes
 >> **Setup:** A change in a possible outcome that is shared by different alternatives affects people's choices among those alternatives.
 >> **Bite:** This contradicts [[expected utility]] theory.
 >> **Resolution:** Demonstrates that human preferences violate the independence axiom; foundational for [[prospect theory]] and [[behavioral economics]].
+>> [[people/maurice-allais|Maurice Allais]]
 >
 >> [!card] **The Antitrust Paradox**
 >> **Setup:** A book-length argument that antitrust enforcement artificially raised prices.
@@ -278,7 +279,7 @@ The certainty equivalent is only about £4. The paradox is foundational for [[de
 
 ### Arrow information paradox and information economics
 
-Kenneth Arrow observed that a piece of information has a curious property: to establish its value, the buyer must know it, but once known, the buyer can use it without paying. This creates a market-failure triangle:
+[[people/kenneth-arrow|Kenneth Arrow]] observed that a piece of information has a curious property: to establish its value, the buyer must know it, but once known, the buyer can use it without paying. This creates a market-failure triangle:
 
 1. **Ex-ante:** The seller cannot prove value without disclosure.
 2. **Ex-post:** Disclosure eliminates the buyer's willingness to pay.
