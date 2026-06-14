@@ -385,7 +385,16 @@ article .at-fs { font-size: var(--fs, 1em); }
 /* ----- STYLE: section — flat column block (use inside [!grid|cols3]) ----- */
 /* section — the USUAL card style: inherits the base [!card] chrome verbatim
    (surface, border, radius, shadow, hover, dot-kicker). Only hides the auto title
-   and tightens the heading + list. No top-stripe / no square kicker / no per-field. */
+   and tightens the heading + list. No top-stripe / no square kicker / no per-field.
+   EXCEPTION: section cards rest FLAT (no resting shadow), gentle lift on hover only —
+   the base card's permanent shadow + heavy 26/60 hover lift read as harsh here. */
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) { box-shadow: none; }
+:is(.callout[data-callout="card"][data-callout-metadata*="section"],
+    body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])):hover {
+    transform: translateY(-3px);
+    box-shadow: var(--at-shadow-pop);
+}
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],
     body.at-card-section .callout[data-callout="card"]:not([data-callout-metadata])) > .callout-title { display: none; }
 :is(.callout[data-callout="card"][data-callout-metadata*="section"],

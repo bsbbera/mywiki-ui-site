@@ -33,14 +33,26 @@ cssclasses:
 > [!grid]
 >
 > > [!card] 📋 All Guides (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
+> > - [Cloud Services Map](/wiki/technology/guides/cloud-services-map)
+> > - [Cost Optimization in the Cloud](/wiki/technology/guides/cost-optimization-cloud)
+> > - [Data Governance Guide](/wiki/technology/guides/data-governance-guide)
+> > - [Data Pipeline Best Practices](/wiki/technology/guides/data-pipeline-best-practices)
+> > - [Getting Started With Data Engineering](/wiki/technology/guides/getting-started)
+> > - [Choosing Your Optimal Messaging Service](/wiki/technology/guides/messaging-service-guide)
+> > - [SQL Guide](/wiki/technology/guides/sql-guide)
+> > - [SQL Patterns & Best Practices](/wiki/technology/guides/sql-patterns)
+> > - [Testing Your Data Pipeline](/wiki/technology/guides/testing-data-pipeline)
 >
 > > [!card] 🕒 Recently Updated
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/guides" and !"wiki/technology/guides/Guides Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+> > - [SQL Patterns & Best Practices](/wiki/technology/guides/sql-patterns)
+> > - [Getting Started With Data Engineering](/wiki/technology/guides/getting-started)
+> > - [Choosing Your Optimal Messaging Service](/wiki/technology/guides/messaging-service-guide)
+> > - [SQL Guide](/wiki/technology/guides/sql-guide)
+> > - [Testing Your Data Pipeline](/wiki/technology/guides/testing-data-pipeline)
+> > - [Data Governance Guide](/wiki/technology/guides/data-governance-guide)
+> > - [Data Pipeline Best Practices](/wiki/technology/guides/data-pipeline-best-practices)
+> > - [Cost Optimization in the Cloud](/wiki/technology/guides/cost-optimization-cloud)
+> > - [Cloud Services Map](/wiki/technology/guides/cloud-services-map)
 
 ## Related pages
 

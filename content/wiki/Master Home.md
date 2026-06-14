@@ -2,7 +2,7 @@
 title: Master Home
 Created:
   - 2026-06-09
-date modified: Sunday, June 14th 2026, 4:08:10 pm
+date modified: Sunday, June 14th 2026, 5:02:46 pm
 aliases:
   - Home
   - Dashboard
@@ -84,28 +84,28 @@ Every note links to its neighbours, so a single idea always opens onto the next.
 
 > [!grid|cols3]
 >
->> [!card|section de]
+>> [!card|section]
 >> ###### I · THE SPINE
 >> ### [[data-engineering|Data Engineering]]
 >> Pipelines, modeling, storage & warehousing — the core of the vault.
 >> - [[apache-spark|Apache Spark]] · [[pyspark|PySpark]]
 >> - [[data-warehousing|Warehousing]] · [[data-pipeline|Pipelines]]
 >
->> [!card|section ml]
+>> [!card|section]
 >> ###### II · INTELLIGENCE
 >> ### [[machine-learning|Machine Learning]]
 >> Models, deep learning, MLOps & the statistics beneath them.
 >> - [[transformers|Transformers]] · [[k-means|k-Means]]
 >> - [[probability-distributions|Probability]] · [[model-lifecycle|MLOps]]
 >
->> [!card|section cloud]
+>> [!card|section]
 >> ###### III · THE PLATFORM
 >> ### [[Cloud Home|Cloud]]
 >> Where it all runs — GCP, AWS, Azure & Databricks.
 >> - [[google-cloud-platform|Google Cloud]] · [[bigquery|BigQuery]]
 >> - [[cloud-run|Cloud Run]] · [[vertex-ai|Vertex AI]]
 >
->> [!card|section soft]
+>> [!card|section]
 >> ###### IV · THE CRAFT
 >> ### [[Software Engineering Home|Software]]
 >> Patterns, systems and the engineering practice behind reliable data tools.
@@ -240,7 +240,7 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >
 >> [!card|hero accent spanfull]
 >> ###### THREE WAYS IN
->> # Navigate like a *<font color="#000000">graph</font>*, not a folder.
+>> # Navigate like a <span class="at-gradient at-fs" style="--fs: 50px">Graph</span>, not a folder.
 >> Every note is a node — jump in however you think, and let the links pull you onward.
 >
 >> [!card|step]

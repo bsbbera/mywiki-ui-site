@@ -39,30 +39,27 @@ cssclasses:
 > > [!card] ☁️ Google Cloud
 > > BigQuery, Dataflow, Pub/Sub, GCS, Spanner, certifications.
 > > Open the [[GCP Home|GCP dashboard]].
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/gcp" and !"wiki/technology/cloud/gcp/GCP Home"').sort(p => p.file.mtime, 'desc').limit(5).map(p => p.file.link))
-> > ```
+> > - [BigQuery](/wiki/technology/cloud/gcp/analytics/bigquery)
+> > - [Cloud Dataflow](/wiki/technology/cloud/gcp/analytics/dataflow)
+> > - [Identity-Aware Proxy](/wiki/technology/cloud/gcp/security/identity-aware-proxy)
+> > - [Pub/Sub](/wiki/technology/cloud/gcp/analytics/pubsub)
+> > - [BigQuery Authorized Views](/wiki/technology/cloud/gcp/analytics/bigquery-authorized-views)
 >
 > > [!card] 📦 Amazon Web Services
 > > S3, Redshift, Glue, Kinesis, Lambda, Athena.
 > > Open the [[AWS Home|AWS dashboard]].
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"').sort(p => p.file.mtime, 'desc').limit(5).map(p => p.file.link))
-> > ```
+> > - [AWS SageMaker](/wiki/technology/cloud/aws/sagemaker)
+> > - [Amazon Web Services](/wiki/technology/cloud/aws/AWS)
 >
 > > [!card] 🟦 Microsoft Azure
 > > ADLS, Synapse, Data Factory, Event Hubs, Cosmos DB.
 > > Open the [[Azure Home|Azure dashboard]].
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/azure" and !"wiki/technology/cloud/azure/Azure Home"').sort(p => p.file.mtime, 'desc').limit(5).map(p => p.file.link))
-> > ```
+> > - [Microsoft Azure](/wiki/technology/cloud/azure/azure)
 >
 > > [!card] 🧱 Databricks
 > > Lakehouse, Delta Lake, Unity Catalog, Spark, MLflow.
 > > Open the [[Databricks Home|Databricks dashboard]].
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/databricks" and !"wiki/technology/cloud/databricks/Databricks Home"').sort(p => p.file.mtime, 'desc').limit(5).map(p => p.file.link))
-> > ```
+> > - [Databricks](/wiki/technology/cloud/databricks/databricks)
 
 ## 🕒 Recently Updated Across Cloud
 

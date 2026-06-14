@@ -35,14 +35,10 @@ cssclasses:
 > [!grid]
 >
 > > [!card] 📋 All Notes (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/databricks" and !"wiki/technology/cloud/databricks/Databricks Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
+> > - [Databricks](/wiki/technology/cloud/databricks/databricks)
 >
 > > [!card] 🕒 Recently Updated
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/databricks" and !"wiki/technology/cloud/databricks/Databricks Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+> > - [Databricks](/wiki/technology/cloud/databricks/databricks)
 
 ## Related pages
 

@@ -35,14 +35,10 @@ cssclasses:
 > [!grid]
 >
 > > [!card] 📋 All Notes (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/azure" and !"wiki/technology/cloud/azure/Azure Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
+> > - [Microsoft Azure](/wiki/technology/cloud/azure/azure)
 >
 > > [!card] 🕒 Recently Updated
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/azure" and !"wiki/technology/cloud/azure/Azure Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+> > - [Microsoft Azure](/wiki/technology/cloud/azure/azure)
 
 ## Related pages
 

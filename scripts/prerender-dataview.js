@@ -277,11 +277,13 @@ export function prerenderContent(contentDir, vaultDir) {
     let content = fs.readFileSync(full, "utf8");
     const before = content;
 
-    // fenced dataview / dataviewjs blocks (also inside callouts, "> " prefixed)
+    // fenced dataview / dataviewjs blocks (also inside callouts). Obsidian writes
+    // nested callouts with space-separated markers ("> > "), so the quote prefix
+    // is one-or-more "> " groups — not just consecutive ">" — on both fences.
     content = content.replace(
-      /(^|\n)((?:>+ ?)?)```(dataviewjs|dataview)\n([\s\S]*?)\n(?:>+ ?)?```/g,
+      /(^|\n)((?:> ?)*)```(dataviewjs|dataview)\n([\s\S]*?)\n(?:> ?)*```/g,
       (match, lead, quote, lang, body) => {
-        const clean = body.replace(/^>+ ?/gm, "");
+        const clean = body.replace(/^(?:> ?)+/gm, "");
         const rendered =
           lang === "dataview"
             ? renderDataviewBlock(clean, ctx)

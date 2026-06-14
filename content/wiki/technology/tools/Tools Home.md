@@ -33,14 +33,32 @@ cssclasses:
 > [!grid]
 >
 > > [!card] 📋 All Tools (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/tools" and !"wiki/technology/tools/Tools Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
+> > - [Analytics + BI Tools](/wiki/technology/tools/analytics-tools)
+> > - [Databases Overview](/wiki/technology/tools/databases-overview)
+> > - [File Formats](/wiki/technology/tools/file-formats)
+> > - [Data Ingestion Tools](/wiki/technology/tools/ingestion-tools)
+> > - [Object Storage](/wiki/technology/tools/object-storage)
+> > - [Workflow Orchestrators Overview](/wiki/technology/tools/orchestrators-overview)
+> > - [Pandas Patterns](/wiki/technology/tools/python/pandas-patterns)
+> > - [Data Processing Tools](/wiki/technology/tools/processing-tools)
+> > - [Programming Languages for Data Engineering](/wiki/technology/tools/programming-languages)
+> > - [Python Language Patterns](/wiki/technology/tools/python/python-patterns)
+> > - [Data Quality Tools](/wiki/technology/tools/quality-tools)
+> > - [Shell Toolkit](/wiki/technology/tools/shell-toolkit)
+> > - [SSH & Tunneling](/wiki/technology/tools/ssh)
+> > - [Tmux](/wiki/technology/tools/tmux)
 >
 > > [!card] 🕒 Recently Updated
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/tools" and !"wiki/technology/tools/Tools Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+> > - [Analytics + BI Tools](/wiki/technology/tools/analytics-tools)
+> > - [Python Language Patterns](/wiki/technology/tools/python/python-patterns)
+> > - [Pandas Patterns](/wiki/technology/tools/python/pandas-patterns)
+> > - [Tmux](/wiki/technology/tools/tmux)
+> > - [SSH & Tunneling](/wiki/technology/tools/ssh)
+> > - [Shell Toolkit](/wiki/technology/tools/shell-toolkit)
+> > - [Workflow Orchestrators Overview](/wiki/technology/tools/orchestrators-overview)
+> > - [Data Processing Tools](/wiki/technology/tools/processing-tools)
+> > - [Programming Languages for Data Engineering](/wiki/technology/tools/programming-languages)
+> > - [Data Quality Tools](/wiki/technology/tools/quality-tools)
 
 ## Related pages
 

@@ -35,14 +35,12 @@ cssclasses:
 > [!grid]
 >
 > > [!card] 📋 All Notes (A–Z)
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"').sort(p => p.file.name, 'asc').map(p => p.file.link))
-> > ```
+> > - [Amazon Web Services](/wiki/technology/cloud/aws/AWS)
+> > - [AWS SageMaker](/wiki/technology/cloud/aws/sagemaker)
 >
 > > [!card] 🕒 Recently Updated
-> > ```dataviewjs
-> > dv.list(dv.pages('"wiki/technology/cloud/aws" and !"wiki/technology/cloud/aws/AWS Home"').sort(p => p.file.mtime, 'desc').limit(10).map(p => p.file.link))
-> > ```
+> > - [AWS SageMaker](/wiki/technology/cloud/aws/sagemaker)
+> > - [Amazon Web Services](/wiki/technology/cloud/aws/AWS)
 
 ## Related pages
 
