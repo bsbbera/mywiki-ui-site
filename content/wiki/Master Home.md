@@ -281,12 +281,12 @@ Almost nothing here lives on a laptop. These notes map the managed services that
 >>
 >> | Note | Updated |
 >> | --- | --- |
+>> | [_mywiki-glass-showcase](/wiki/_mywiki-glass-showcase) | Jun 14 |
+>> | [_anthropic-touch-showcase](/wiki/_anthropic-touch-showcase) | Jun 14 |
 >> | [Galactic Center](/wiki/science/galactic-center) | Jun 14 |
 >> | [BERT](/wiki/technology/machine-learning/deep-learning/bert) | Jun 14 |
 >> | [Behavioral Economics](/wiki/finance/behavioral-economics) | Jun 12 |
 >> | [Recommender Systems](/wiki/technology/machine-learning/deep-learning/recommender-systems) | Jun 12 |
->> | [McGurk Effect](/wiki/Paradoxes/mcgurk-effect) | Jun 12 |
->> | [Shepard Tone](/wiki/science/shepard-tone) | Jun 12 |
 
 > [!quote]
 > "Data is a precious thing and will last longer than the systems themselves."

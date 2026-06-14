@@ -6,14 +6,15 @@ date modified: Sunday, June 14th 2026, 10:17:13 pm
 publish: true
 ---
  
-# Anthropic Touch — UI showcase
+# MyWiki Glass — UI showcase
 
 > [!info] Dev/test note
-> Theme test harness for *Anthropic Touch* — not wiki content. Open in **reading** + **live preview**,
-> **light** + **dark**. Pick element styles in *Settings → Style Settings → Anthropic Touch*.
+> Theme test harness for *MyWiki Glass* — not wiki content. Open in **reading** + **live preview**,
+> **light** + **dark**. Pick element styles in *Settings → Style Settings → MyWiki Glass*.
 
-A short paragraph with **bold**, *italic*, ~~strike~~, `inline code`, a [[wikilink]] and an
-[external link](https://open-design.ai/community/).
+A short paragraph with **bold**, *italic* (note the teal), ~~strike~~, `inline code`, a [[wikilink]] and an
+[external link](https://obsidian.md). The card / column / utility syntax is **identical** to the companion
+*Anthropic Touch* theme — only the skin (frosted glass + blue + Segoe UI) changes.
 
 ## Tags
 
@@ -32,10 +33,10 @@ A short paragraph with **bold**, *italic*, ~~strike~~, `inline code`, a [[wikili
 ##### H5 — quieter still
 ###### H6 — THE SMALL LABEL
 
-Body text sits in the themed serif/sans with comfortable line-height. A paragraph with
-**bold**, *italic* (note the coral), ~~strikethrough~~, `inline code`, ==highlight==, a
-[[wikilink]] and an [external link](https://open-design.ai/community/). Italic *words* and
-*phrases* carry the warm coral accent that defines the theme.
+Body text sits in crisp Segoe UI with comfortable line-height. A paragraph with
+**bold**, *italic* (note the teal), ~~strikethrough~~, `inline code`, ==highlight==, a
+[[wikilink]] and an [external link](https://obsidian.md). Italic *words* and *phrases* carry the
+teal accent that defines the theme.
 
 ## Reusable text classes
 
@@ -49,22 +50,22 @@ Drop these on any text with inline HTML — they restyle with the palette automa
 
 <p class="at-lead">A larger, calmer lead paragraph for introductions — muted, roomy, and unmistakably on-theme.</p>
 
-<span class="at-stat">37</span> commits · <span class="at-stat">#01</span> external rank · you can write <span class="at-mark">a soft coral highlight</span> anywhere.
+<span class="at-stat">37</span> commits · <span class="at-stat">#01</span> external rank · you can write <span class="at-mark">a soft blue highlight</span> anywhere.
 
-**Gradient text** — `at-gradient` is an Apple-style gradient in **Glass**, a single accent colour in **Anthropic Touch**:
+**Gradient text** — `at-gradient` is an Apple-style multi-stop gradient in **Glass**, a single accent colour in **Anthropic Touch**:
 <span class="at-gradient at-2xl">*Apple Intelligence.*</span> · override the ramp per use: <span class="at-gradient at-xl" style="--grad: linear-gradient(100deg,#3d8fe6,#ff8a3d)">custom ramp</span>.
 
 **Inline font size** — resize any run of text in place:
 normal, <span class="at-xs">at-xs</span>, <span class="at-sm">at-sm</span>, <span class="at-lg">at-lg</span>, <span class="at-xl">at-xl</span>, <span class="at-2xl">at-2xl</span>, <span class="at-3xl">at-3xl</span>. Or an exact size: <span class="at-fs" style="--fs: 30px">30px</span>.
 
-**Composition** — utility classes keep all theme styling. Resized text still gets coral *italic*,
-**bold**, [links](https://open-design.ai/community/) and `code`:
-<span class="at-2xl">Big text with *coral italic* and **bold** inside</span>.
+**Composition** — utility classes keep all theme styling. Resized text still gets teal *italic*,
+**bold**, [links](https://obsidian.md) and `code`:
+<span class="at-2xl">Big text with *teal italic* and **bold** inside</span>.
 
 ## Lists
 
 **Unordered**
-- First item with a coral marker
+- First item with a themed marker
 - Second item
     - Nested item
     - Another nested item
@@ -85,16 +86,16 @@ normal, <span class="at-xs">at-xs</span>, <span class="at-sm">at-sm</span>, <spa
 > A standard note callout — recolored to the theme with a mono small-caps title.
 
 > [!tip] Tip
-> Tips and success take the warm green-leaning accent.
+> Tips and success take the green-leaning accent.
 
 > [!warning] Warning
-> Warnings use the amber/terracotta accent.
+> Warnings use the amber accent.
 
 > [!question] Question
 > Questions/help in a calm hue.
 
 > [!danger] Danger
-> Failure/danger/bug in the deep terracotta.
+> Failure/danger/bug in deep red.
 
 > [!quote] Quote
 > Quote/cite styled to match the blockquote treatment.
@@ -119,7 +120,7 @@ it reflow). Lock columns with `|cols2`/`|cols3`/`|cols4`; let a card span with `
 
 > [!warning] Nesting syntax matters
 > Child cards use **`>>`** and must be separated by a **blank `>` line**. Miss the separator and
-> Obsidian merges them into one card. (Same rule as Glass's `[!multi-column]`.)
+> Obsidian merges them into one card. (Same rule as the `[!multi-column]` snippet.)
 
 ## Flexible grid — any number of cards, auto-flow
 
@@ -209,7 +210,7 @@ Just like multi-column notes, cards can be distributed by ratio. Add `w1…w10` 
 >> - **Welcome the new hand.** Usher newcomers.
 
 
-## profile — cream and dark
+## profile — frosted and dark
 
 > [!grid|cols3]
 >
@@ -231,9 +232,6 @@ Just like multi-column notes, cards can be distributed by ratio. Add `w1…w10` 
 >> ###### STEWARD OF THE ROOM
 >> ### Victor
 >> Keeps the room warm, the doors open, the conversation flowing.
-
-
-
 
 ## honor + channels
 
@@ -292,7 +290,7 @@ Step/stat tiles can carry an **intent-named icon**: add `icon-search`, `icon-fil
 >> # From zero to *merged*, in an afternoon.
 >> Whether you're a designer, a writer, or an engineer, there's a contribution shape for you.
 >>
->> **[Read the contributing guide →](https://open-design.ai/community/)**
+>> **[Read the contributing guide →](https://obsidian.md)**
 >
 >> [!card|step]
 >> ###### Step 01
@@ -319,10 +317,7 @@ Step/stat tiles can carry an **intent-named icon**: add `icon-search`, `icon-fil
 >> ### Merge → *card*.
 >> The bot mints your honor card the moment you're merged.
 
-
-
-
-## hero — accent (coral) with nested profiles + channels
+## hero — accent (blue) with nested profiles + channels
 
 > [!card|hero accent spanfull split]
 > ###### Where contributors hang out
@@ -333,13 +328,13 @@ Step/stat tiles can carry an **intent-named icon**: add `icon-search`, `icon-fil
 >>> ![Koki](https://cdn.discordapp.com/avatars/1433334626641907803/659cec9ed75df0156957ff23e81e27f1.webp?size=256)
 >>> ###### From the studio
 >>> ### Koki
->>> From the Open Design founding team. Hopes the Discord stays a good place to be. Wave at any time, on any question.
+>>> From the founding team. Hopes the Discord stays a good place to be. Wave at any time, on any question.
 >>
 >>> [!card|profile dark]
 >>> ![Victor](https://cdn.discordapp.com/avatars/1174739309509759008/60d038042d7246391a6c982d6508892e.webp?size=256)
 >>> ###### Steward of the room
 >>> ### Victor
->>> A practiced hand at Discord and community-tending. Keeps the room warm, the doors open, the conversation flowing. Passionate about Open Design.
+>>> A practiced hand at Discord and community-tending. Keeps the room warm, the doors open, the conversation flowing.
 >>
 >>> [!card|channels dark spanfull]
 >>> | Channel | Label |
@@ -351,9 +346,9 @@ Step/stat tiles can carry an **intent-named icon**: add `icon-search`, `icon-fil
 >
 > # Talk to the people who'll *review your PR*.
 >
-> The front line of the agent-design era opens here. Our Discord is where the world's sharpest AI-native designers gather: shipping work, opening plugins, breaking betas, pulling one another unstuck. Step in. Bring what you're making.
+> The front line of the agent-design era opens here. Step in. Bring what you're making.
 >
-> **[Join the Discord](https://discord.gg/3C6EWXbdQQ)** [GitHub Discussions](https://github.com/nexu-io/open-design/discussions)
+> **[Join the Discord](https://discord.gg/3C6EWXbdQQ)** [GitHub Discussions](https://github.com/)
 
 ---
 
@@ -370,7 +365,7 @@ Step/stat tiles can carry an **intent-named icon**: add `icon-search`, `icon-fil
 > | Released | 2006 |
 > | Durability | 11 nines |
 
-A plain **text** infobox — title becomes the coral tag, a serif name + description, then key/value fields.
+A plain **text** infobox — title becomes the accent tag, a name + description, then key/value fields.
 
 > "I am Subhadip."
 > <cite>Subhadip</cite>
@@ -378,7 +373,6 @@ A plain **text** infobox — title becomes the coral tag, a serif name + descrip
 It floats **right** and the body wraps beside it. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus
 auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.
-Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient.
 
 ## Infobox — left-floated, with a dark footer caption
 
@@ -397,8 +391,7 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatib
 
 Floats **left**, text wraps to the right. The last **bold** line plus the line after it fuse into a dark
 caption footer at the bottom of the card — fully optional. Hover the card to see the lift and the tag
-straighten. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel
-scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla quam.
+straighten. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna.
 
 ## Infobox — centered (no wrap)
 
@@ -466,8 +459,6 @@ ratio. Columns hold normal note content (headings, lists, callouts) — no card 
 
 ## Equal columns (no weights)
 
-
-
 > [!columns|ruled]
 >
 >> [!col]
@@ -485,9 +476,9 @@ ratio. Columns hold normal note content (headings, lists, callouts) — no card 
 
 ### Code *Block*
 
-All code blocks share one surface, line-number gutter and copy button. With the **code-emitter**
+All code blocks share one frosted surface, line-number gutter and copy button. With the **code-emitter**
 plugin a runnable block (e.g. `python`) gets a ▶ run button; its output renders **inside** the same
-dark surface, recolored onto the on-dark palette so it stays legible.
+surface — and the runnable block's background is matched to the other code blocks.
 
 ```text
 I am Subhadip
@@ -500,4 +491,3 @@ print("Hello")
 ```sql
 SELECT *
 ```
-

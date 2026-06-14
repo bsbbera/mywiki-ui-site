@@ -25,12 +25,12 @@ publish: true
 >
 >> [!card|step]
 >> ###### NOTES
->> ### <span class="at-3xl">567</span>
+>> ### <span class="at-3xl">568</span>
 >> across the whole vault
 >
 >> [!card|step]
 >> ###### WORDS (EST.)
->> ### <span class="at-3xl">481k</span>
+>> ### <span class="at-3xl">484k</span>
 >> of distilled knowledge
 >
 >> [!card|step]
